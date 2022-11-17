@@ -4,7 +4,7 @@ import './SingleCalendar.css'
 
 const SingleCalendar = () => {
   return (
-    <div className='w-[40%] text-sm'>
+    <div className='text-sm'>
       <Calendar 
 				calendarType='US'
 				selectRange />
