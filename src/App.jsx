@@ -1,12 +1,12 @@
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
-import CreateEvent from "./pages/createEvent";
-import Home from "./pages/Home";
-import Invitee from "./pages/Invitee";
-import SignIn from "./pages/SignIn";
-import SignUp from "./pages/SignUp";
-import ViewEvent from "./pages/ViewEvent";
+import CreateEvent from "./pages/dashboard/createEvent";
+import Home from "./pages/home";
+import Invitee from "./pages/dashboard/Invitee";
+import SignIn from "./pages/signIn";
+import SignUp from "./pages/signUp";
+import ViewEvent from "./pages/dashboard/ViewEvent";
 
 import "./index.css";
 import { Routes, Route } from "react-router-dom";
