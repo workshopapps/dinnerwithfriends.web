@@ -1,0 +1,31 @@
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+
+import CreateEvent from "./pages/createEvent";
+import Home from "./pages/Home";
+import Invitee from "./pages/Invitee";
+import SignIn from "./pages/SignIn";
+import SignUp from "./pages/SignUp";
+import ViewEvent from "./pages/ViewEvent";
+
+import "./index.css";
+import { Routes, Route } from "react-router-dom";
+
+function App() {
+  return (
+    <div className="App">
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/create_event" element={<CreateEvent />} />
+        <Route path="/invitee" element={<Invitee />} />
+        <Route path="/sign_in" element={<SignIn />} />
+        <Route path="/sign_up" element={<SignUp />} />
+        <Route path="/view_event" element={<ViewEvent />} />
+      </Routes>
+      <Footer />
+    </div>
+  );
+}
+
+export default App;
