@@ -1,29 +1,16 @@
 import React from 'react'
+import Navbar from '../../components/Navbar'
 
 const UpcomingEvent = () => {
     return (
         <>
-        <section className='px-5 lg:px-20 pt-16'>
-          <h2 className='text-[#061A37] text-center text-2xl lg:text-[34px] leading-9 lg:leading-[44px] font-bold'>Hi, Mubaraq, you have been invited by Rahmoni Taiwo to attend a CatchUp event. See details below</h2>
-          <div className='flex flex-col justify-center items-start md:w-[80%] lg:w-[60%] mt-[44px] lg:mt-[70px] mx-auto gap-y-6 '>
-             <span className='flex items-center gap-x-6'>
-                <div className='w-10 h-10 md:w-12 md:h-12'>
-                  <img src="" alt="" />
-                </div>
-               <p className='text-[#717172] font-medium md:font-bold text-[18px] md:text-2xl'> HNG finalist meetup</p>
-             </span>
-             <span className='flex items-center gap-x-6'>
-                <div className='w-10 h-10 md:w-12 md:h-12'>
-                  <img src="" alt="" />
-                </div>
-               <p className='text-[#717172] font-medium md:font-bold text-[18px]  md:text-2xl'> Durban St. Lekki Penninsula II, 904101, Abuja</p>
-             </span>
-             <span className='flex items-center gap-x-6'>
-                <div className='w-10 h-10 md:w-12 md:h-12'>
-                  <img src="" alt="" />
-                </div>
-               <p className='text-[#717172] font-medium md:font-bold text-[18px] md:text-2xl'>Proposed between 20th November - 26th November</p>
-             </span>
+        <Navbar />
+        <section className='px-[22px] lg:px-20 pt-11 lg:pt-16'>
+          <div className='flex flex-col justify-center lg:justify-between items:center gap-4'>
+            <div className='flex flex-col justify-center lg:justify-start items:center lg:items-start gap-y-4'>
+               <h2 className='text-[#151517] text-2xl font-bold lg:text-[40px]'>Welcome</h2>
+               <p className='text-[#898989] font-bold lg:font-normal text-sm lg:text-lg'>Create events, send invites and keep up with your friends</p>
+            </div>
           </div>
           <div className='mt-[44px] md:mt-[80px] text-center'>
             <p className='flex flex-col md:flex-row justify-center items-center'>
