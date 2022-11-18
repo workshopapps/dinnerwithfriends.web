@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from "react";
 import Calendar from "react-calendar";
 import TimePicker from "react-time-picker";
+import { CatchUpEventContextUse } from "../../context/CatchUpEventContext";
 import "./SingleCalendar.css";
 
-const SingleCalendar = ({ range }) => {
+const SingleCalendar = ({ range, eventFormValues, setEventFormValues }) => {
 	const [value, setValue] = useState(new Date());
 	const [time, setTime] = useState("17:00");
 	const [dates, setDates] = useState([]);
 	const [times, setTimes] = useState([]);
 	const [dateLimit, setDateLimit] = useState(false);
+	const { dateAndTime, setDateAndTime } = CatchUpEventContextUse();
 
 	const valueRange =
 		value.length > 1 &&
@@ -20,24 +22,24 @@ const SingleCalendar = ({ range }) => {
 	const setDT = (valueRangeString) => {
 		setDates([...dates, !range ? value.toDateString() : valueRangeString]);
 		setTimes([...times, time]);
+		setDateAndTime([
+			...dateAndTime,
+			{ id: value.toDateString(), title: `${value.toDateString()}  (${time})` },
+		]);
+		setEventFormValues({
+			...eventFormValues,
+			eventPeriods: dateAndTime,
+		});
 	};
 
 	useEffect(() => {
-		if (dates.length > 10) {
+		if (dateAndTime.length > 8) {
 			setDateLimit(true);
 		}
-	}, [dates]);
+	}, [dateAndTime]);
 
 	return (
-		<div className='text-xs rounded-[8px] border border-[#66a3ff] p-1'>
-			<div className='mt-2 text-center flex justify-center'>
-				<div
-					className={`bg-red-600 w-fit py-2 px-6 text-white transition-all duration-150 ${
-						dateLimit ? "opacity-100" : "opacity-0"
-					}`}>
-					No more dates available.
-				</div>
-			</div>
+		<div className='text-xs rounded-[8px] border border-[#D1D7DA] p-1'>
 			<Calendar
 				calendarType='US'
 				selectRange={range ? true : false}
@@ -60,8 +62,8 @@ const SingleCalendar = ({ range }) => {
 					<button
 						disabled={dateLimit ? true : false}
 						onClick={() => setDT(valueRangeString)}
-						className={`rounded-[8px] ${
-							dateLimit ? "bg-blue-300" : "bg-blue-600"
+						className={`rounded-[4px] ${
+							dateLimit ? "bg-blue-300" : "bg-[#1070FF]"
 						} p-2 text-white`}>
 						Add date and time
 					</button>

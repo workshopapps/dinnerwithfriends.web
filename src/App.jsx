@@ -1,7 +1,4 @@
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-
-import CreateEvent from "./pages/dashboard/createEvent";
+import CreateEvent from "./pages/dashboard/createEvent/CreateEvent";
 import Home from "./pages/home";
 import Invitee from "./pages/dashboard/Invitee";
 import SignIn from "./pages/signIn";
@@ -13,7 +10,7 @@ import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div classNameName="App">
+    <div className="App">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/create_event" element={<CreateEvent />} />
