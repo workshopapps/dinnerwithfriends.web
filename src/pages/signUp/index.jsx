@@ -26,17 +26,11 @@ const SignUp = () => {
           </div>
         </header>
         <div className='mt-10 tablet:mt-14 px-4 w-full max-w-md mx-auto'>
-          {/*<h1 className='mb-12 text-center text-[#0056D6] font-semibold tablet:text-5xl '>Create an Account</h1>*/}
+         
           <h2 className='font-medium text-xl text-[#717172] tablet:text-4xl'>Welcome!</h2>
           <p className='mt-2 text-[#424245] text-base tablet:text-xl'>Sign up here! Please enter your details</p>
           <form onSubmit={handleSubmit(onSubmit)} className=' mt-7 text-[#4B4B4C] font-normal [&>input]:mt-2 [&>input]:w-full [&>input]:mb-3.5'>
             
-              {/*<label  htmlFor="username">Username</label><br />
-              <input className='focus:outline-none focus:border-[#0056D6] border border-[#D0D5DD] h-11 p-3.5 rounded-lg' type="text" name="username" placeholder="Pick your username"/>*/}
-
-            
-
-              
             <label className='pt-3.5' htmlFor="email">Email</label><br />
 
             <input 
@@ -47,21 +41,16 @@ const SignUp = () => {
             />
             {errors.email && <p className='text-sm mb-4' style={{color: 'red'}}>Please enter a valid email</p>}
 
+               
+            <label htmlFor="password">Passsword</label><br />
 
-              
-              
-            
+            <input 
+            style={{border: errors.password ? '1px solid red': '1px solid #D0D5DD'}}
+            className='focus:outline-none h-11 p-3.5 rounded-lg'  type="password" name="password" placeholder="Please enter your unique password"
+            {...register("password", {required: true})}/>
+            {errors.password && <p className='text-sm mb-4' style={{color: 'red'}}>Password must not be empty</p>}
 
-            
-              <label htmlFor="password">Passsword</label><br />
-
-              <input 
-              style={{border: errors.password ? '1px solid red': '1px solid #D0D5DD'}}
-              className='focus:outline-none h-11 p-3.5 rounded-lg'  type="password" name="password" placeholder="Please enter your unique password"
-              {...register("password", {required: true})}/>
-              {errors.password && <p className='text-sm mb-4' style={{color: 'red'}}>Password must not be empty</p>}
-
-            
+          
 
             <button className=' mt-2 text-white bg-[#0056D6] w-full h-11 rounded-lg' type="submit">Create a free account</button>
 
@@ -69,7 +58,11 @@ const SignUp = () => {
 
             <p className='my-2.5 text-center text-[#0056D6]' >Or</p>
 
-            <button className='flex justify-center items-center font-medium text-[#344054] w-full  border border-[#D0D5DD] h-11 p-2 rounded-lg'><img className='mr-2 w-6' src={google} alt="google logo"/> Sign Up with Google</button>
+            <button className='flex justify-center items-center font-medium text-[#344054] w-full  border border-[#D0D5DD] h-11 p-2 rounded-lg'>
+              <img className='mr-2 w-6' src={google} alt="google logo"/>
+               Sign Up with Google
+            </button>
+
             <p className=' my-8 font-normal text-center text-[#0056D6]'>Have an account already? Sign in for free</p>
              
         </div>
