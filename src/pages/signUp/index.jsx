@@ -14,14 +14,14 @@ const SignUp = () => {
   }
   
   return (
-    <div className='w-full mx-auto mt-4 tablet:flex tablet:justify-center'>
+    <div className='w-full mx-auto tablet:flex tablet:justify-center'>
       <div className='w-full h-full bg-white tablet:w-6/12 tablet:p-3.5 mx-auto '>
-        <header className=' w-full flex justify-between items-center px-4 tablet:mt-4'>
+        <header className=' w-full flex justify-between items-center px-4 mt-3.5'>
           <img className='w-32 tablet:w-48' src={catchup} alt="logo of app" />
           <div className='px-1 rounded-[20px] w-24 tablet:w-32 tablet:h-10 h-[32px]  bg-blue-100 flex justify-around items-center'>
-            <img src={nigeria} alt="nigerian flag" />
+            <img className='w-5' src={nigeria} alt="nigerian flag" />
             <strong className='text-xs tablet:text-sm'>English</strong>
-            <img src={chevron} alt="dropdown " />
+            <img className='w-[12px]' src={chevron} alt="dropdown " />
 
           </div>
         </header>
