@@ -15,7 +15,7 @@ const SignUp = () => {
   
   return (
     <div className='w-full mx-auto tablet:flex tablet:justify-center'>
-      <div className='w-full h-full bg-white tablet:w-6/12 tablet:p-3.5 mx-auto '>
+      <div className=' w-full h-full bg-white tablet:w-6/12 tablet:p-3.5 mx-auto '>
         <header className=' w-full flex justify-between items-center px-4 pt-4 mt-3.5 tablet:mt-0'>
           <img className='w-32 tablet:w-48' src={catchup} alt="logo of app" />
           <div className='px-1 rounded-[20px] w-24 tablet:w-32 tablet:h-10 h-[32px]  bg-blue-100 flex justify-around items-center'>
@@ -31,28 +31,31 @@ const SignUp = () => {
           <p className='mt-2 text-[#424245] text-base tablet:text-xl'>Sign up here! Please enter your details</p>
           <form onSubmit={handleSubmit(onSubmit)} className=' mt-7 text-[#4B4B4C] font-normal [&>input]:mt-2 [&>input]:w-full [&>input]:mb-3.5'>
             
-            <label className='pt-3.5' htmlFor="email">Email</label><br />
+            <div className='relative w-full mb-4'>
+              <label className='pt-3.5' htmlFor="email">Email</label><br />
+              
+              <input 
+              style={{border: errors.email ? '1px solid red': '1px solid #D0D5DD'}}
+              className='focus:outline-none mt-2 w-full h-11 p-3.5 rounded-lg' type="text" name="email" placeholder="Enter your email"
+              {...register("email", 
+              {required: true, pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ })}
+              />
+              {errors.email && <p className='right-0 bottom-[-37px] italic absolute text-sm mb-4' style={{color: 'red'}}>Please enter a valid email</p>}
+            </div>
 
-            <input 
-            style={{border: errors.email ? '1px solid red': '1px solid #D0D5DD'}}
-            className='focus:outline-none   h-11 p-3.5 rounded-lg' type="text" name="email" placeholder="Enter your email"
-            {...register("email", 
-            {required: true, pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ })}
-            />
-            {errors.email && <p className='text-sm mb-4' style={{color: 'red'}}>Please enter a valid email</p>}
 
-               
-            <label htmlFor="password">Passsword</label><br />
+            <div className='relative w-full mb-4'>
+              <label htmlFor="password">Passsword</label><br />
 
-            <input 
-            style={{border: errors.password ? '1px solid red': '1px solid #D0D5DD'}}
-            className='focus:outline-none h-11 p-3.5 rounded-lg'  type="password" name="password" placeholder="Please enter your unique password"
-            {...register("password", {required: true})}/>
-            {errors.password && <p className='text-sm mb-4' style={{color: 'red'}}>Password must not be empty</p>}
-
+              <input 
+              style={{border: errors.password ? '1px solid red': '1px solid #D0D5DD'}}
+              className='focus:outline-none mt-2 w-full h-11 p-3.5 rounded-lg'  type="password" name="password" placeholder="Please enter your unique password"
+              {...register("password", {required: true})}/>
+              {errors.password && <p className='right-0 bottom-[-37px] italic absolute text-sm mb-4' style={{color: 'red'}}>Password must not be empty</p>}
+            </div>
           
 
-            <button className=' mt-2 text-white bg-[#0056D6] w-full h-11 rounded-lg' type="submit">Create a free account</button>
+            <button className=' transition ease-in duration-200 hover:bg-[#66A3FF] mt-4 text-white bg-[#0056D6] w-full h-11 rounded-lg' type="submit">Create a free account</button>
 
             </form>
 
@@ -67,7 +70,7 @@ const SignUp = () => {
              
         </div>
       </div>
-      <div className="hidden tablet:block tablet:w-6/12 h-[658px] bg-cover bg-gray-100" style={{backgroundImage: `linear-gradient(115deg, rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(${image})`}}></div>
+      <div className="hidden tablet:block tablet:w-6/12 h-[670px] bg-cover bg-gray-100" style={{backgroundImage: `linear-gradient(115deg, rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(${image})`}}></div>
     </div>
   )
 }
