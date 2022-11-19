@@ -81,8 +81,8 @@ const ViewEvent = () => {
           <p className="text-gray-600 w-4/5 mx-auto my-7">Guys! It's been long we have gathered, let's try to make time for champions league next Tuesday. If you know your Goat no qualify, no bring yourself here.</p>
         </section>
         <aside className="text-right font-medium my-3 text-sm">Agreed Date <span className="bg-blue-100 text-blue-800 text-sm px-2 py-1 font-semibold rounded ml-1">21st Nov. 2022</span></aside>
-        <section>
-          <div>
+        <section className="flex flex-col justify-center">
+          <div className="max-h-[17em] overflow-y-scroll pr-4">
           {
                 invitees.map(invitee => (
                         <div 
@@ -97,7 +97,7 @@ const ViewEvent = () => {
                                   <p className="text-gray-600">{invitee.name}</p>
                                 </div>
                               </div>
-                              <img className="peer-active:rotate-90" src={arrow} alt="" />
+                              <img className="peer-active:rotate-90 w-3 sm:w-4 md:w-5" src={arrow} alt="" />
                             </div>
                             <div className="my-3 space-y-1 hidden peer-focus:block ">
                               <h5 className="font-medium text-sm">Selected Date/Time: <span className="font-normal">{invitee.dateNdTime}</span> </h5>
@@ -106,7 +106,9 @@ const ViewEvent = () => {
                         </div>
                 ))
             }
+            
           </div>
+          <button className=" px-3 py-2 hover:bg-blue-500 hover:text-white border-2 border-blue-500 rounded mx-auto mt-3 text-center text-blue-500 transition-all">Load more</button>
         </section>
       </main>
     </div>
