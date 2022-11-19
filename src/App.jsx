@@ -10,6 +10,7 @@ import ViewEvent from "./pages/dashboard/ViewEvent";
 
 import "./index.css";
 import { Routes, Route } from "react-router-dom";
+import EventSummary from "./pages/dashboard/EventSummary";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/sign_in" element={<SignIn />} />
         <Route path="/sign_up" element={<SignUp />} />
         <Route path="/view_event" element={<ViewEvent />} />
+        <Route path="/event-summary" element={<EventSummary />} />
       </Routes>
     </div>
   );
