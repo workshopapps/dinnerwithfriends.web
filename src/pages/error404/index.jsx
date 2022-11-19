@@ -13,7 +13,7 @@ const Error404 = () => {
   return (
     <div>
       <Navbar />
-      <div className='error-page bg-line-pattern mt-20 my-12 mx-auto w-[95%] tablet:w-[93%] lg:w-[96%] xl:w-[86%]'>
+      <div className='bg-line-pattern mt-20 my-12 mx-auto w-[95%] tablet:w-[93%] lg:w-[96%] xl:w-[86%]'>
         <div className="flex justify-end">
           <img src={SubHome} alt="" />
         </div>
@@ -33,12 +33,12 @@ const Error404 = () => {
               <img src={errorImg} alt="" className='mx-auto md:w-full' />
             </div>
           </div>
-          <div className="error-img">
+          <div>
             <div className="border border-[#BCD7FF] cursor-pointer flex items-center justify-between px-3 py-2 rounded  w-[65%] md:w-[35%] lg:w-[25%]">
                 <div className="img w-[30%]">
                   <img src={SubError} alt="" className='mx-auto w-full' />
                 </div>
-                <div className="text">
+                <div>
                   <p className='text-[12px] text-[#717172] font-normal'>New event</p>
                   <p className='text-[13px] '>Add more friends</p>
                 </div>
