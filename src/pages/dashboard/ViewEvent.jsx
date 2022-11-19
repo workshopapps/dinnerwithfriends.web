@@ -1,4 +1,5 @@
 import React from 'react'
+import { useState } from 'react'
 import arrow from '../../assets/icons/arrow-down.svg'
 import inviteeImg1 from '../../assets/img/inviteeImg1.png'
 import inviteeImg2 from '../../assets/img/inviteeImg2.png'
@@ -6,7 +7,8 @@ import inviteeImg3 from '../../assets/img/inviteeImg3.png'
 import inviteeImg4 from '../../assets/img/inviteeImg4.png'
 
 const ViewEvent = () => {
-
+  const [isActive, setIsActive] = useState(false)
+  
   const invitees = [
     {
         id: 1,
@@ -73,6 +75,13 @@ const ViewEvent = () => {
         status: 'Accepted'
     },
 ]
+const toggleShowAccordion = (id) => {
+  if(isActive === id){
+      setIsActive();
+  } else {
+      setIsActive(id);
+  }
+}
   return (
     <div className="font-['DM_Sans'] w-4/5 mx-auto my-4 sm:max-w-xl md:max-w-2xl sm:border sm:border-slate-300 sm:rounded-md">
       <main className="sm:p-8 mx-auto">
@@ -85,11 +94,11 @@ const ViewEvent = () => {
           <div className="max-h-[17em] overflow-y-scroll pr-4">
           {
                 invitees.map(invitee => (
-                        <div 
+                        <div onClick={() => toggleShowAccordion(invitee.id)} 
                             key={invitee.id}
-                            className="py-3 border-b border-gray-200"
+                            className="py-3 border-b border-gray-200 transition-all"
                         >
-                            <div className="flex justify-between peer">
+                            <div className="flex justify-between items-center transition-all">
                               <div className="flex items-center">
                                 <img className="h-fit w-10 mr-3" src={invitee.image} alt="" />
                                 <div className="space-y-[-3px]">
@@ -97,12 +106,13 @@ const ViewEvent = () => {
                                   <p className="text-gray-600">{invitee.name}</p>
                                 </div>
                               </div>
-                              <img className="peer-active:rotate-90 w-3 sm:w-4 md:w-5" src={arrow} alt="" />
+                              <img className={isActive === invitee.id ? "w-3 sm:w-4 md:w-5 rotate-180" : "w-3 sm:w-4 md:w-5 transitioni-all"} src={arrow} alt="" />
                             </div>
-                            <div className="my-3 space-y-1 hidden peer-focus:block ">
+                            {isActive === invitee.id &&
+                            <div className="my-3 space-y-1 transition-all">
                               <h5 className="font-medium text-sm">Selected Date/Time: <span className="font-normal">{invitee.dateNdTime}</span> </h5>
                               <p className="text-gray-500 text-sm font-medium ">Status of Attendance: <span className="bg-green-200 text-green-900 text-xs p-1 rounded ml-1">{invitee.status}</span></p>
-                            </div>
+                            </div>}
                         </div>
                 ))
             }
