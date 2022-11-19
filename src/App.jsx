@@ -18,7 +18,7 @@ function App() {
         <Route path="/invitee" element={<Invitee />} />
         <Route path="/sign_in" element={<SignIn />} />
         <Route path="/sign_up" element={<SignUp />} />
-        <Route path="/view_event" element={<ViewEvent />} />
+        <Route path="/dashboard/view_event" element={<ViewEvent />} />
         <Route path="/dashboard/upcoming_events" element={<UpcomingEvent />} />
       </Routes>
     </div>
