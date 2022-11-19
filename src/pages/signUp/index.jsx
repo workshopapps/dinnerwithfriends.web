@@ -16,7 +16,7 @@ const SignUp = () => {
   return (
     <div className='w-full mx-auto tablet:flex tablet:justify-center'>
       <div className='w-full h-full bg-white tablet:w-6/12 tablet:p-3.5 mx-auto '>
-        <header className=' w-full flex justify-between items-center px-4 mt-3.5'>
+        <header className=' w-full flex justify-between items-center px-4 pt-4 mt-3.5 tablet:mt-0'>
           <img className='w-32 tablet:w-48' src={catchup} alt="logo of app" />
           <div className='px-1 rounded-[20px] w-24 tablet:w-32 tablet:h-10 h-[32px]  bg-blue-100 flex justify-around items-center'>
             <img className='w-5' src={nigeria} alt="nigerian flag" />
