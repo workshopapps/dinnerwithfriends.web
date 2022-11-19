@@ -4,6 +4,7 @@ import Invitee from "./pages/dashboard/Invitee";
 import SignIn from "./pages/signIn";
 import SignUp from "./pages/signUp";
 import ViewEvent from "./pages/dashboard/ViewEvent";
+import ContactUs from "./pages/contactUs";
 
 import "./index.css";
 import { Routes, Route } from "react-router-dom";
@@ -18,6 +19,7 @@ function App() {
         <Route path="/sign_in" element={<SignIn />} />
         <Route path="/sign_up" element={<SignUp />} />
         <Route path="/view_event" element={<ViewEvent />} />
+        <Route path="/contact-us" element={<ContactUs />} />
       </Routes>
     </div>
   );
