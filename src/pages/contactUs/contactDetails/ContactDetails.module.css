@@ -1,8 +1,7 @@
 .details-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  margin-left: auto;
+  margin: 6.5rem 0 0 auto;
 }
 
 .detail-item {
