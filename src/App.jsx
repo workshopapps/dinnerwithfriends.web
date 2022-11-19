@@ -8,6 +8,8 @@ import TermsOfUse from "./pages/termsOfUse";
 
 import "./index.css";
 import { Routes, Route } from "react-router-dom";
+import EventSummary from "./pages/dashboard/EventSummary";
+import UpcomingEvent from "./pages/dashboard/UpcomingEvent";
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
         <Route path="/sign_up" element={<SignUp />} />
         <Route path="/view_event" element={<ViewEvent />} />
         <Route path="/terms_of_use" element={<TermsOfUse />} />
+        <Route path="/dashboard/event_summary" element={<EventSummary />} />
+        <Route path="/dashboard/upcoming_events" element={<UpcomingEvent />} />
       </Routes>
     </div>
   );

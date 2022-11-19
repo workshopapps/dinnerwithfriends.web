@@ -1,9 +1,25 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-const Button = ({children, onClick, className}) => {
-  return (
-    <button onClick={onClick} className={`text-xs font-medium px-6 py-2 bg-[#1070FF] w-fit text-white rounded-[4px] ${className}`}>{children}</button>
-  )
-}
+const Button = ({
+  type, onClick, children, className,
+}) => (
+  <button type={type} onClick={onClick} className={className}>
+    {children}
+  </button>
+);
 
-export default Button
+Button.propTypes = {
+  type: PropTypes.oneOf(['button', 'submit']).isRequired,
+  children: PropTypes.oneOfType([PropTypes.object, PropTypes.string]).isRequired,
+  onClick: PropTypes.func,
+  className: PropTypes.string,
+};
+
+Button.defaultProps = {
+  className: '',
+  type: 'button',
+  onClick: null,
+};
+
+export default Button;
