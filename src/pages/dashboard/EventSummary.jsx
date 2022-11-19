@@ -1,5 +1,5 @@
 import React from "react";
-import { CiLocationOn } from "react-icons/ci";
+import { CiLocationOn, CiCalendar } from "react-icons/ci";
 import { CgMenuLeftAlt } from "react-icons/cg";
 import { AiOutlineLike, AiOutlineDislike, AiOutlineUser } from "react-icons/ai";
 import { BsPlus } from "react-icons/bs";
@@ -20,7 +20,7 @@ const EventSummary = () => {
               </p>
             </div>
             <div className="flex items-center">
-              <CiLocationOn className="text-xl" />
+              <CiCalendar className="text-xl" />
               <p className="text-base font-normal ml-2">
                 12th November 2022 - 20th November 2022 9:30 - 11:30
               </p>
