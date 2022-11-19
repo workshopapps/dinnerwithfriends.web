@@ -6,6 +6,7 @@ import SignUp from "./pages/signUp";
 import ViewEvent from "./pages/dashboard/ViewEvent";
 import TermsOfUse from "./pages/termsOfUse";
 import Error from "./pages/error404"
+import HowItWorks from "./pages/howItWorks/HowItWorks";
 
 import "./index.css";
 import { Routes, Route } from "react-router-dom";
@@ -26,6 +27,7 @@ function App() {
         <Route path="/terms_of_use" element={<TermsOfUse />} />
         <Route path="/dashboard/event_summary" element={<EventSummary />} />
         <Route path="/dashboard/upcoming_events" element={<UpcomingEvent />} />
+        <Route path="/howItWorks" element={<HowItWorks />} />
       </Routes>
     </div>
   );
