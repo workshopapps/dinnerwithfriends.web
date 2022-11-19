@@ -1,8 +1,12 @@
 import { Link } from "react-router-dom"
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
 import ForgetPasswordImage from "../../assets/ForgetPasswordImage.png";
 import BackToSignIn from "../../assets/BackToSignIn.png";
 const ResetLink = () => {
   return (
+    <>
+    <Navbar />
     <div className="container mx-auto  mt-10 px-10">
       <div className="md:flex items-center justify-center gap-20">
         <div className="grid items-center justify-center">
@@ -48,6 +52,8 @@ const ResetLink = () => {
         </div>
       </div>
     </div>
+    <Footer />
+    </>
   );
 };
 
