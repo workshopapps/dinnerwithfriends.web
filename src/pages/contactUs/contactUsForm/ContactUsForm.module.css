@@ -1,6 +1,9 @@
 .form {
   width: 50%;
 }
+input {
+  font-size: 16px !important;
+}
 
 .input-container {
   width: 100%;
@@ -47,4 +50,5 @@ textarea::placeholder {
   font-size: 1.25rem;
   font-weight: 700;
   padding: 1.25rem 0;
+  margin-top: 7.5rem;
 }
