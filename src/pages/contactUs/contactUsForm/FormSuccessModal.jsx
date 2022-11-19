@@ -3,9 +3,9 @@ import successImg from "../../../assets/img/success-icon.svg";
 import Button from "../../../components/Button";
 import { IoIosClose } from "react-icons/io";
 
-const FormSuccessModal = () => {
+const FormSuccessModal = (props) => {
   return (
-    <div className={classes["success-modal"]}>
+    <div className={classes["success-modal"]} onClick={props.onCloseModal}>
       <div className={classes["notification-box"]}>
         <IoIosClose className={classes["close-icon"]} />
         <div className={classes["success-img"]}>
