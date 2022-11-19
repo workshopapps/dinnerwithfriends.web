@@ -67,7 +67,7 @@ const SignUp = () => {
              
         </div>
       </div>
-      <img className="hidden tablet:block tablet:w-6/12 h-full " src={image} alt="fornmimage" />
+      <div className="hidden tablet:block tablet:w-6/12 h-[658px] bg-cover bg-gray-100" style={{backgroundImage: `linear-gradient(115deg, rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(${image})`}}></div>
     </div>
   )
 }
