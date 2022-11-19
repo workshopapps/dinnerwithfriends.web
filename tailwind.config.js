@@ -10,8 +10,11 @@ module.exports = {
       },
       backgroundImage: {
         'line-pattern': "url('assets/img/VectorsHome.png')",
-      }
+      },
+      screens: {
+        "tablet": "850px",
+      },
     },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar-hide")],
 }
