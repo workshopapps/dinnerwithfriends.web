@@ -1,0 +1,49 @@
+.form {
+  width: 50%;
+}
+
+.input-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-container:not(:last-child) {
+  margin-bottom: 1.85rem;
+}
+
+.input-container label {
+  margin-bottom: 10px;
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #424245;
+}
+
+.input-container input,
+textarea {
+  width: 100%;
+  border: 1px solid rgba(36, 24, 24, 0.2);
+  border-radius: 8px;
+  padding: 0.75rem;
+}
+
+.input-container input::placeholder,
+textarea::placeholder {
+  color: #717172;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.input-container p {
+  margin-top: 1.25rem;
+  color: #424245;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.contact-submit-btn {
+  width: 100%;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
