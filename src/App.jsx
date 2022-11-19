@@ -1,5 +1,5 @@
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+// import Navbar from "./components/Navbar";
+// import Footer from "./components/Footer";
 
 import CreateEvent from "./pages/dashboard/createEvent";
 import Home from "./pages/home";
@@ -13,7 +13,7 @@ import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div classNameName="App">
+    <div className="App">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/create_event" element={<CreateEvent />} />
@@ -22,6 +22,7 @@ function App() {
         <Route path="/sign_up" element={<SignUp />} />
         <Route path="/view_event" element={<ViewEvent />} />
       </Routes>
+      <SignIn />
     </div>
   );
 }
