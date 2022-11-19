@@ -47,14 +47,14 @@ const EventSummary = () => {
             </div>
           </div>
         </div>
-        <div className="flex md:justify-start justify-between my-4">
+        <div className="flex md:justify-start justify-between my-5">
           <p className="text-lg font-bold md:mr-7">Participant(3)</p>
           <button className="bg-transparent flex items-center text-[#1070FF]">
             <p className="mr-1.5 md:text-base text-sm">Add participant</p>
             <BsPlus />
           </button>
         </div>
-        <div className="w-full my-4 bg-[#E7F0FF] flex justify-betweenn py-2 px-3">
+        <div className="w-full my-5 bg-[#E7F0FF] flex justify-betweenn py-2 px-3">
           <input
             type="email"
             placeholder="Add a participant email"
