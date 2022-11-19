@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Catch-Up HNGi9 
 
 What better way to have a scheduled hangout with your friends where you can unwind after a busy week, this is why we built 
@@ -62,6 +61,3 @@ Give a ⭐️ if you like this project!
 ## 📝 License
 
 This project is [MIT](./MIT.md) licensed.# catch_up
-=======
-# dinnerwithfriends.mobile
->>>>>>> d9aacc5be14e42673199c5be3597ddee7ce8f0e3
