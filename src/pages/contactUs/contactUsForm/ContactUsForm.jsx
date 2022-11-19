@@ -1,12 +1,15 @@
 import Button from "../../../components/Button";
 import classes from "./ContactUsForm.module.css";
 import { useState } from "react";
+import FormSuccessModal from "./FormSuccessModal";
 
 const ContactUsForm = () => {
   const [enteredFirstName, setEnteredFirstName] = useState("");
   const [enteredLastName, setEnteredLastName] = useState("");
   const [enteredEmail, setEnteredEmail] = useState("");
   const [enteredMessage, setEnteredMessage] = useState("");
+  const [formSubmittedSuccessfully, setFormSubmittedSuccessfully] =
+    useState(false);
 
   const firstNameOnChangeHandler = (e) => {
     setEnteredFirstName(e.target.value);
@@ -24,6 +27,10 @@ const ContactUsForm = () => {
   const contactUsFormSubmitHandler = (e) => {
     e.preventDefault();
 
+    // sends form data successfully
+    // display message
+    setFormSubmittedSuccessfully(true);
+
     // reset form
     setEnteredFirstName("");
     setEnteredLastName("");
@@ -32,51 +39,54 @@ const ContactUsForm = () => {
   };
 
   return (
-    <form onSubmit={contactUsFormSubmitHandler} className={classes.form}>
-      <div className={classes["input-container"]}>
-        <label htmlFor={"first-name"}>First Name</label>
-        <input
-          type={"text"}
-          id="first-name"
-          placeholder="Eunice"
-          value={enteredFirstName}
-          onChange={firstNameOnChangeHandler}
-        />
-      </div>
-      <div className={classes["input-container"]}>
-        <label htmlFor="last-name">Last Name</label>
-        <input
-          type={"text"}
-          id="last-name"
-          placeholder="David"
-          value={enteredLastName}
-          onChange={lastNameOnChangeHandler}
-        />
-      </div>
-      <div className={classes["input-container"]}>
-        <label htmlFor="email">Enter mail address</label>
-        <input
-          type={"email"}
-          id="email"
-          placeholder="davideunice07@gmail.com"
-          value={enteredEmail}
-          onChange={emailOnChangeHandler}
-        />
-      </div>
-      <div className={classes["input-container"]}>
-        <label htmlFor="message">Type your message</label>
-        <textarea
-          rows={"10"}
-          id="message"
-          placeholder="Hello..."
-          value={enteredMessage}
-          onChange={messageOnChangeHandler}
-          maxLength={100}
-        />
-        <p>Maximum of 100 words</p>
-      </div>
-      <Button className={classes["contact-submit-btn"]}>Send</Button>
-    </form>
+    <>
+      <form onSubmit={contactUsFormSubmitHandler} className={classes.form}>
+        <div className={classes["input-container"]}>
+          <label htmlFor={"first-name"}>First Name</label>
+          <input
+            type={"text"}
+            id="first-name"
+            placeholder="Eunice"
+            value={enteredFirstName}
+            onChange={firstNameOnChangeHandler}
+          />
+        </div>
+        <div className={classes["input-container"]}>
+          <label htmlFor="last-name">Last Name</label>
+          <input
+            type={"text"}
+            id="last-name"
+            placeholder="David"
+            value={enteredLastName}
+            onChange={lastNameOnChangeHandler}
+          />
+        </div>
+        <div className={classes["input-container"]}>
+          <label htmlFor="email">Enter mail address</label>
+          <input
+            type={"email"}
+            id="email"
+            placeholder="davideunice07@gmail.com"
+            value={enteredEmail}
+            onChange={emailOnChangeHandler}
+          />
+        </div>
+        <div className={classes["input-container"]}>
+          <label htmlFor="message">Type your message</label>
+          <textarea
+            rows={"10"}
+            id="message"
+            placeholder="Hello..."
+            value={enteredMessage}
+            onChange={messageOnChangeHandler}
+            maxLength={100}
+          />
+          <p>Maximum of 100 words</p>
+        </div>
+        <Button className={classes["contact-submit-btn"]}>Send</Button>
+      </form>
+      <FormSuccessModal />
+    </>
   );
 };
 

@@ -29,6 +29,7 @@ textarea {
   border: 1px solid rgba(36, 24, 24, 0.2);
   border-radius: 8px;
   padding: 0.75rem;
+  outline: none;
 }
 
 .input-container input::placeholder,
