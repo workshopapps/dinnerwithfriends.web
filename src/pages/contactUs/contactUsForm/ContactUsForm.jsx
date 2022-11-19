@@ -1,4 +1,5 @@
 import Button from "../../../components/Button";
+import classes from "./ContactUsForm.module.css";
 import { useState } from "react";
 
 const ContactUsForm = () => {
@@ -31,8 +32,8 @@ const ContactUsForm = () => {
   };
 
   return (
-    <form onSubmit={contactUsFormSubmitHandler}>
-      <div>
+    <form onSubmit={contactUsFormSubmitHandler} className={classes.form}>
+      <div className={classes["input-container"]}>
         <label htmlFor={"first-name"}>First Name</label>
         <input
           type={"text"}
@@ -42,7 +43,7 @@ const ContactUsForm = () => {
           onChange={firstNameOnChangeHandler}
         />
       </div>
-      <div>
+      <div className={classes["input-container"]}>
         <label htmlFor="last-name">Last Name</label>
         <input
           type={"text"}
@@ -52,7 +53,7 @@ const ContactUsForm = () => {
           onChange={lastNameOnChangeHandler}
         />
       </div>
-      <div>
+      <div className={classes["input-container"]}>
         <label htmlFor="email">Enter mail address</label>
         <input
           type={"email"}
@@ -62,7 +63,7 @@ const ContactUsForm = () => {
           onChange={emailOnChangeHandler}
         />
       </div>
-      <div>
+      <div className={classes["input-container"]}>
         <label htmlFor="message">Type your message</label>
         <textarea
           rows={"10"}
@@ -74,7 +75,7 @@ const ContactUsForm = () => {
         />
         <p>Maximum of 100 words</p>
       </div>
-      <Button>Send</Button>
+      <Button className={classes["contact-submit-btn"]}>Send</Button>
     </form>
   );
 };

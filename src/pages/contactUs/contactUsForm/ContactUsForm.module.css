@@ -46,4 +46,5 @@ textarea::placeholder {
   width: 100%;
   font-size: 1.25rem;
   font-weight: 700;
+  padding: 1.25rem 0;
 }

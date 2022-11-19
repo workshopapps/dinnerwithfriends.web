@@ -1,7 +1,7 @@
 import Footer from "../../../components/Footer";
 import Navbar from "../../../components/Navbar";
 import ContactUsForm from "../contactUsForm/ContactUsForm";
-import classes from "./ContactUs.module.css";
+import classes from "./ContactUsComp.module.css";
 
 const ContactUsComp = () => {
   return (
@@ -15,7 +15,7 @@ const ContactUsComp = () => {
             problems
           </p>
         </div>
-        <div>
+        <div className={classes["form-container"]}>
           <ContactUsForm />
         </div>
       </section>

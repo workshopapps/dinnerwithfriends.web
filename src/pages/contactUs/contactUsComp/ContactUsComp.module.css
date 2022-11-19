@@ -26,3 +26,9 @@
   font-size: 1rem;
   margin-top: 1.25rem;
 }
+
+.form-container {
+  width: 100%;
+  display: flex;
+  padding: 4.375rem 11.75rem;
+}
