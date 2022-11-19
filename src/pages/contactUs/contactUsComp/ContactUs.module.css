@@ -1,0 +1,28 @@
+.in-touch-container {
+  width: 100%;
+  height: 17rem;
+  color: #fff;
+  margin-top: 4.5rem;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(16, 112, 255, 0.23),
+      rgba(16, 112, 255, 0.23)
+    ),
+    url("../../../assets/img/contact-us.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 5.2rem;
+  font-weight: 700;
+}
+
+.in-touch-container h3 {
+  font-size: 3rem;
+}
+
+.in-touch-container p {
+  font-size: 1rem;
+  margin-top: 1.25rem;
+}
