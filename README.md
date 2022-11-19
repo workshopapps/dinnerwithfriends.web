@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Catch-Up HNGi9 
 
 What better way to have a scheduled hangout with your friends where you can unwind after a busy week, this is why we built 
