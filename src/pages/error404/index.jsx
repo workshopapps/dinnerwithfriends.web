@@ -15,7 +15,7 @@ const Error404 = () => {
       <Navbar />
       <div className='bg-line-pattern mt-20 my-12 mx-auto w-[95%] tablet:w-[93%] lg:w-[96%] xl:w-[86%]'>
         <div className="flex justify-end">
-          <img src={SubHome} alt="" />
+          <img src={SubHome} alt="" className="w-fit" />
         </div>
         <div>
           <div className="md:flex text-center md:text-left">
