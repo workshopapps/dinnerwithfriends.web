@@ -102,12 +102,12 @@ const EventSummary = () => {
             </div>
           </div>
         </div>
-        <div className="my-3 flex justify-between items-center">
+        <div className="my-6 flex justify-between items-center">
           <Link to="/" className="text-xl font-semibold">
             Back
           </Link>
-          <button className="rounded flex md:px-8 px-4 py-2.5 bg-[#1070FF] text-white items-center">
-            <p className="md:text-xl text-base font-medium md:mr-2 mr-1">
+          <button className="rounded flex md:px-6 px-4 py-2.5 bg-[#1070FF] text-white items-center">
+            <p className="md:text-xl text-base font-medium md:mr-2">
               Create invite
             </p>
             <BsPlus className="text-xl" />
