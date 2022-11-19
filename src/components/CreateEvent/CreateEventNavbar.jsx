@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "./Logo";
+import Logo from "../Logo";
 import { SlArrowDown } from "react-icons/sl";
 import { HiOutlineMenu } from "react-icons/hi";
 
