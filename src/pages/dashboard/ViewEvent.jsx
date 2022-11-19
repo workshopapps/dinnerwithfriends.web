@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
+import Navbar from '../../components/CreateEvent/CreateEventNavbar'
 import arrow from '../../assets/icons/arrow-down.svg'
 import inviteeImg1 from '../../assets/img/inviteeImg1.png'
 import inviteeImg2 from '../../assets/img/inviteeImg2.png'
@@ -83,45 +84,48 @@ const toggleShowAccordion = (id) => {
   }
 }
   return (
-    <div className="font-['DM_Sans'] w-4/5 mx-auto my-4 sm:max-w-xl md:max-w-2xl sm:border sm:border-slate-300 sm:rounded-md">
-      <main className="sm:p-8 mx-auto">
-        <section className="text-center">
-          <h1 className="text-blue-500 font-semibold text-3xl sm:border-b-2 sm:border-dashed sm:border-slate-300 sm:py-6">Team UEFA Champe</h1>
-          <p className="text-gray-600 w-4/5 mx-auto my-7">Guys! It's been long we have gathered, let's try to make time for champions league next Tuesday. If you know your Goat no qualify, no bring yourself here.</p>
-        </section>
-        <aside className="text-right font-medium my-3 text-sm">Agreed Date <span className="bg-blue-100 text-blue-800 text-sm px-2 py-1 font-semibold rounded ml-1">21st Nov. 2022</span></aside>
-        <section className="flex flex-col justify-center">
-          <div className="max-h-[17em] overflow-y-scroll pr-4">
-          {
-                invitees.map(invitee => (
-                        <div onClick={() => toggleShowAccordion(invitee.id)} 
-                            key={invitee.id}
-                            className="py-3 border-b border-gray-200 transition-all"
-                        >
-                            <div className="flex justify-between items-center transition-all">
-                              <div className="flex items-center">
-                                <img className="h-fit w-10 mr-3" src={invitee.image} alt="" />
-                                <div className="space-y-[-3px]">
-                                  <h4 className="font-semibold text-sm">{invitee.position}</h4>
-                                  <p className="text-gray-600">{invitee.name}</p>
+    <>
+    <Navbar />
+      <div className="font-['DM_Sans'] w-4/5 mx-auto my-4 sm:max-w-xl md:max-w-2xl sm:border sm:border-slate-300 sm:rounded-md">
+        <main className="sm:p-8 mx-auto">
+          <section className="text-center">
+            <h1 className="text-blue-500 font-semibold text-3xl sm:border-b-2 sm:border-dashed sm:border-slate-300 sm:py-6">Team UEFA Champe</h1>
+            <p className="text-gray-600 w-4/5 mx-auto my-7">Guys! It's been long we have gathered, let's try to make time for champions league next Tuesday. If you know your Goat no qualify, no bring yourself here.</p>
+          </section>
+          <aside className="text-right font-medium my-3 text-sm">Agreed Date <span className="bg-blue-100 text-blue-800 text-sm px-2 py-1 font-semibold rounded ml-1">21st Nov. 2022</span></aside>
+          <section className="flex flex-col justify-center">
+            <div className="max-h-[17em] overflow-y-scroll pr-4">
+            {
+                  invitees.map(invitee => (
+                          <div onClick={() => toggleShowAccordion(invitee.id)} 
+                              key={invitee.id}
+                              className="py-3 border-b border-gray-200 transition-all"
+                          >
+                              <div className="flex justify-between items-center transition-all">
+                                <div className="flex items-center">
+                                  <img className="h-fit w-10 mr-3" src={invitee.image} alt="" />
+                                  <div className="space-y-[-3px]">
+                                    <h4 className="font-semibold text-sm">{invitee.position}</h4>
+                                    <p className="text-gray-600">{invitee.name}</p>
+                                  </div>
                                 </div>
+                                <img className={isActive === invitee.id ? "w-3 sm:w-4 md:w-5 rotate-180" : "w-3 sm:w-4 md:w-5 transitioni-all"} src={arrow} alt="" />
                               </div>
-                              <img className={isActive === invitee.id ? "w-3 sm:w-4 md:w-5 rotate-180" : "w-3 sm:w-4 md:w-5 transitioni-all"} src={arrow} alt="" />
-                            </div>
-                            {isActive === invitee.id &&
-                            <div className="my-3 space-y-1 transition-all">
-                              <h5 className="font-medium text-sm">Selected Date/Time: <span className="font-normal">{invitee.dateNdTime}</span> </h5>
-                              <p className="text-gray-500 text-sm font-medium ">Status of Attendance: <span className="bg-green-200 text-green-900 text-xs p-1 rounded ml-1">{invitee.status}</span></p>
-                            </div>}
-                        </div>
-                ))
-            }
-            
-          </div>
-          <button className=" px-3 py-2 hover:bg-blue-500 hover:text-white border-2 border-blue-500 rounded mx-auto mt-3 text-center text-blue-500 transition-all">Load more</button>
-        </section>
-      </main>
-    </div>
+                              {isActive === invitee.id &&
+                              <div className="my-3 space-y-1 transition-all">
+                                <h5 className="font-medium text-sm">Selected Date/Time: <span className="font-normal">{invitee.dateNdTime}</span> </h5>
+                                <p className="text-gray-500 text-sm font-medium ">Status of Attendance: <span className="bg-green-200 text-green-900 text-xs p-1 rounded ml-1">{invitee.status}</span></p>
+                              </div>}
+                          </div>
+                  ))
+              }
+              
+            </div>
+            <button className=" px-3 py-2 hover:bg-blue-500 hover:text-white border-2 border-blue-500 rounded mx-auto mt-3 text-center text-blue-500 transition-all">Load more</button>
+          </section>
+        </main>
+      </div>
+    </>
   )
 }
 
