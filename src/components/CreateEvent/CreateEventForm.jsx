@@ -234,7 +234,7 @@ const CreateEventForm = () => {
 					<Button
 						type='submit'
 						onClick={handleSubmit}
-						className='flex items-center'>
+						className='flex items-center text-xs font-medium px-6 py-2 bg-[#1070FF] w-fit text-white rounded-[4px]'>
 						<span>Next</span>
 						<span className='text-[8px] ml-2'>
 							<SlArrowRight />
