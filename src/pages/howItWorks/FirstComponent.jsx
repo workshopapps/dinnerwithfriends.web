@@ -7,7 +7,7 @@ import icon4 from "../../assets/img/howItWorks/icon-4.svg";
 
 export default function FirstComponent() {
   return (
-    <div className="mt-[7.5rem] lg:mt-40 text-base w-full flex flex-col items-center">
+    <div className="mt-[7.5rem] lg:mt-40 text-base w-full flex flex-col items-center ">
       <h1 className="text-center text-2xl px-14 md:text-4xl lg:text-6xl lg:w-[825px]">
         <span className="font-bold text-[#1070FF]">Catch</span>{" "}
         <span className="font-bold">up</span> makes it easier to connect with
