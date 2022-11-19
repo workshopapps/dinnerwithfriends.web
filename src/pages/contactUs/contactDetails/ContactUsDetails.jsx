@@ -1,12 +1,51 @@
-import { SiWechat } from "react-icons/si";
-import { IoLocationOutline } from "react-icons/io";
 import { FiPhoneCall } from "react-icons/fi";
 import { FaFacebook } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { AiFillTwitterCircle } from "react-icons/ai";
+import { RiWechatLine } from "react-icons/ri";
+import { SlLocationPin } from "react-icons/sl";
+import classes from "./ContactDetails.module.css";
 
 const ContactUsDetails = () => {
-  return <div></div>;
+  return (
+    <div className={classes["details-container"]}>
+      <div className={classes["detail-item"]}>
+        <RiWechatLine className={classes.icon} />
+        <div>
+          <p>Chat us up</p>
+          <p>Our friendly team is here to help</p>
+          <a href="http://hi@catchup.com">hi@catchup.com</a>
+        </div>
+      </div>
+      <div className={classes["detail-item"]}>
+        <SlLocationPin className={classes.icon} />
+        <div>
+          <p>Office</p>
+          <p>come say hello to our offline HQ</p>
+          <address>42 mark cresent silver tower 3rd floor</address>
+        </div>
+      </div>
+      <div className={classes["detail-item"]}>
+        <FiPhoneCall className={classes.icon} />
+        <div>
+          <p>Phone</p>
+          <p>Mon-Fri 9am - 4pm</p>
+          <a href="tel:+838 8372 226">+838 8372 226</a>
+        </div>
+      </div>
+      <div className={classes["links"]}>
+        <a href="http://www.facebook.com">
+          <FaFacebook />
+        </a>
+        <a href="http://www.linkedIn.com">
+          <FaLinkedin />
+        </a>
+        <a href="http://www.twitter.com">
+          <AiFillTwitterCircle />
+        </a>
+      </div>
+    </div>
+  );
 };
 
 export default ContactUsDetails;

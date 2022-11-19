@@ -1,5 +1,6 @@
 import Footer from "../../../components/Footer";
 import Navbar from "../../../components/Navbar";
+import ContactUsDetails from "../contactDetails/ContactUsDetails";
 import ContactUsForm from "../contactUsForm/ContactUsForm";
 import classes from "./ContactUsComp.module.css";
 
@@ -17,6 +18,7 @@ const ContactUsComp = () => {
         </div>
         <div className={classes["form-container"]}>
           <ContactUsForm />
+          <ContactUsDetails />
         </div>
       </section>
       <Footer />
