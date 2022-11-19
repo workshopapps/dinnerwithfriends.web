@@ -20,13 +20,13 @@ const EventSummary = () => {
               </p>
             </div>
             <div className="flex items-center">
-              <CiCalendar className="text-xl" />
+              <CiCalendar className="md:text-xl text-5xl" />
               <p className="text-base font-normal ml-2">
                 12th November 2022 - 20th November 2022 9:30 - 11:30
               </p>
             </div>
             <div className="flex items-center">
-              <CgMenuLeftAlt className="text-xl" />
+              <CgMenuLeftAlt className="md:text-xl text-5xl" />
               <p className="text-base font-normal ml-2">
                 Highly anticipated girls weekend. Time away with the girls. Fun,
                 frugal, no spend amazing Bring gifts, everyone.{" "}
@@ -50,7 +50,7 @@ const EventSummary = () => {
         <div className="flex md:justify-start justify-between my-5">
           <p className="text-lg font-bold md:mr-7">Participant(3)</p>
           <button className="bg-transparent flex items-center text-[#1070FF]">
-            <p className="mr-1.5 md:text-base text-sm">Add participant</p>
+            <p className="mr-2 md:text-base text-sm">Add participant</p>
             <BsPlus />
           </button>
         </div>
