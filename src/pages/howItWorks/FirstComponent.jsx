@@ -28,55 +28,55 @@ export default function FirstComponent() {
         <h3 className="font-bold mx-6 md:text-3xl lg:px-32 lg:text-5xl">
           Plan and organise every get-together, from dinner to a reunion.
         </h3>
-        <section className="mt-10 py-[4.875rem] px-8 bg-[#e7f0ffcc] w-full grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-          <div className="bg-white flex flex-col justify-center items-center gap-6 w-[20.375rem] mx-auto py-5 px-[1.125rem] shadow-md">
-            <img className="w-[72px]" src={icon1} alt="Icon 1" />
+        <section className="mt-10 py-[4.875rem] px-8 bg-[#e7f0ffcc] w-full grid gap-4 md:gap-12 lg:px-32 md:grid-cols-2 xl:grid-cols-4">
+          <div className="bg-white flex flex-col justify-center items-center gap-6 w-[20.375rem] h-[435px] lg:w-[15.81rem] mx-auto py-5 px-[1.125rem] shadow-md">
+            <img className="w-[72px] h-[72px]" src={icon1} alt="Icon 1" />
             <h4 className="text-[#1070FF] font-bold">Get RSVPs</h4>
-            <p>
+            <p className="font-medium">
               Easily send invites with details of your get-together and your
               list can automatically respond to let you know that they are
               coming.
             </p>
-            <p>
+            <p className="font-medium">
               This gives you a better handle on planning for the right number of
               people.
             </p>
           </div>
-          <div className="bg-white flex flex-col justify-center items-center gap-6 w-[20.375rem] mx-auto py-5 px-[1.125rem] shadow-md">
-            <img className="w-[72px]" src={icon2} alt="icon 2" />
+          <div className="bg-white flex flex-col justify-center items-center gap-6 w-[20.375rem] h-[435px] lg:w-[15.81rem] mx-auto py-5 px-[1.125rem] shadow-md">
+            <img className="w-[72px] h-[72px]" src={icon2} alt="icon 2" />
             <h4 className="text-[#1070FF] font-bold">Interactive Features </h4>
-            <p>
+            <p className="font-medium">
               Access features that allow every participant that has been invited
               or accepted an invitation to have their say in what you’re doing.
             </p>
-            <p>
+            <p className="font-medium">
               Use “vote” to get others' opinions on happenings in your
               get-together or utilize the chat feature to share updates to
               everyone .
             </p>
           </div>
-          <div className="bg-white flex flex-col justify-center items-center gap-6 w-[20.375rem] mx-auto py-5 px-[1.125rem] shadow-md">
-            <img className="w-[72px]" src={icon3} alt="icon 3" />
+          <div className="bg-white flex flex-col justify-center items-center gap-6 w-[20.375rem] h-[435px] lg:w-[15.81rem] mx-auto py-5 px-[1.125rem] shadow-md">
+            <img className="w-[72px] h-[72px]" src={icon3} alt="icon 3" />
             <h4 className="text-[#1070FF] font-bold">Keep Track of Events </h4>
-            <p>
+            <p className="font-medium">
               Catch Up App will flawlessly add all occasions into your calendar,
               that you’ve planned or accepted an invite for, to help you manage
               it all from one place.
             </p>
-            <p>
+            <p className="font-medium">
               You can instantly get access to all invites whatever you need to
               share.
             </p>
           </div>
-          <div className="bg-white flex flex-col justify-center items-center gap-6 w-[20.375rem] mx-auto py-5 px-[1.125rem] shadow-md">
-            <img className="w-[72px]" src={icon4} alt="icon 4" />
+          <div className="bg-white flex flex-col justify-center items-center gap-6 w-[20.375rem] h-[435px] lg:w-[15.81rem] mx-auto py-5 px-[1.125rem] shadow-md">
+            <img className="w-[72px] h-[72px]" src={icon4} alt="icon 4" />
             <h4 className="text-[#1070FF] font-bold">Live Location </h4>
-            <p>
+            <p className="font-medium">
               The address of where you’re getting together is always visible to
               the whole invite list so you never have to share it in other chats
               or texts.
             </p>
-            <p>The location is automatically updated if you change venues.</p>
+            <p className="font-medium">The location is automatically updated if you change venues.</p>
           </div>
         </section>
       </div>
