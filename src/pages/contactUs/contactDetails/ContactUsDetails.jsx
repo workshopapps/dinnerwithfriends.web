@@ -12,7 +12,7 @@ const ContactUsDetails = () => {
       <div className={classes["detail-item"]}>
         <RiWechatLine className={classes.icon} />
         <div>
-          <p>Chat us up</p>
+          <p className={classes.title}>Chat us up</p>
           <p>Our friendly team is here to help</p>
           <a href="http://hi@catchup.com">hi@catchup.com</a>
         </div>
@@ -20,29 +20,32 @@ const ContactUsDetails = () => {
       <div className={classes["detail-item"]}>
         <SlLocationPin className={classes.icon} />
         <div>
-          <p>Office</p>
+          <p className={classes.title}>Office</p>
           <p>come say hello to our offline HQ</p>
-          <address>42 mark cresent silver tower 3rd floor</address>
+          <address>
+            42 mark cresent
+            <br /> silver tower 3rd floor
+          </address>
         </div>
       </div>
       <div className={classes["detail-item"]}>
         <FiPhoneCall className={classes.icon} />
         <div>
-          <p>Phone</p>
+          <p className={classes.title}>Phone</p>
           <p>Mon-Fri 9am - 4pm</p>
           <a href="tel:+838 8372 226">+838 8372 226</a>
+          <div className={classes["links"]}>
+            <a href="http://www.facebook.com">
+              <FaFacebook />
+            </a>
+            <a href="http://www.linkedIn.com">
+              <FaLinkedin />
+            </a>
+            <a href="http://www.twitter.com">
+              <AiFillTwitterCircle />
+            </a>
+          </div>
         </div>
-      </div>
-      <div className={classes["links"]}>
-        <a href="http://www.facebook.com">
-          <FaFacebook />
-        </a>
-        <a href="http://www.linkedIn.com">
-          <FaLinkedin />
-        </a>
-        <a href="http://www.twitter.com">
-          <AiFillTwitterCircle />
-        </a>
       </div>
     </div>
   );
