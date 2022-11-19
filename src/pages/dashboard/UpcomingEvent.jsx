@@ -8,6 +8,62 @@ import Footer from '../../components/Footer'
 
 const UpcomingEvent = () => {
   const [status, setStatus] = useState('Upcoming');
+  const event = [
+    {
+      id: 1,
+      title: 'Catch Up with Football (UEFA Championship)',
+      description: 'Guys! It’s been long we have gathered, let’s try to make time for champions league next week tuesday. If you know your GOAT no qualify, no bring yourself here.',
+      status: 'Upcoming',
+      date: '21st November',
+      invitee: '2'
+    },
+    {
+      id: 2,
+      title: 'Catch Up with Football (UEFA Championship)',
+      description: 'Guys! It’s been long we have gathered, let’s try to make time for champions league next week tuesday. If you know your GOAT no qualify, no bring yourself here.',
+      status: 'Upcoming',
+      date: '21st November',
+      invitee: '3',
+    },
+    {
+      id: 3,
+      title: 'Catch Up with Football (UEFA Championship)',
+      description: 'Guys! It’s been long we have gathered, let’s try to make time for champions league next week tuesday. If you know your GOAT no qualify, no bring yourself here.',
+      status: 'Rsvp',
+      date: '21st November',
+      invitee: '5',
+    },
+    {
+      id: 4,
+      title: 'Catch Up with Football (UEFA Championship)',
+      description: 'Guys! It’s been long we have gathered, let’s try to make time for champions league next week tuesday. If you know your GOAT no qualify, no bring yourself here.',
+      status: 'Rsvp',
+      date: '21st November',
+      invitee: '7',
+    },
+    {
+      id: 5,
+      title: 'Catch Up with Football (UEFA Championship)',
+      description: 'Guys! It’s been long we have gathered, let’s try to make time for champions league next week tuesday. If you know your GOAT no qualify, no bring yourself here.',
+      status: 'Pending',
+      date: '21st November',
+      invitee: '3',
+    },
+    {
+      id: 6,
+      title: 'Catch Up with Football (UEFA Championship)',
+      description: 'Guys! It’s been long we have gathered, let’s try to make time for champions league next week tuesday. If you know your GOAT no qualify, no bring yourself here.',
+      status: 'Pending',
+      date: '26th November',
+      invitee: '5',
+    },
+  ]
+
+    const filteredEvents = event.filter((event) => event.status === status )
+
+    const events = filteredEvents.map(({id, title, description, date, invitee}) => (
+      <Event status={status} key={id} title={title} description={description} date={date} invitee={invitee} filteredEvents={filteredEvents}/>
+    ))
 
     return (
         <>
@@ -41,47 +97,53 @@ const UpcomingEvent = () => {
              <MediaQuery minWidth={1024}>
                <ul className='flex justify-start items-center gap-x-8'>
                 <li>
-                  <Button className={`${status === 'Upcoming' ? 'pb-4 border-[#1070FF] border-b-4 '  : ''}'pb-4 outline-0 border-0 text-[#717172] bg-inherit text-lg'`} onClick={() => setStatus('Upcoming')}>
+                  <Button className={`${status === 'Upcoming' ? 'pb-3 border-[#1070FF] border-b-4 '  : ''}'pb-3 outline-0 border-0 text-[#717172] bg-inherit text-lg'`} onClick={() => setStatus('Upcoming')}>
                     Upcoming Event
                   </Button>
                 </li>
                 <li>
-                  <Button className={`${status === 'Rsvp' ? 'pb-4 border-[#1070FF] border-b-4 '  : ''}' pb-4 outline-0 border-0 text-[#717172] bg-inherit text-lg'`} onClick={() => setStatus('Rsvp')}>
+                  <Button className={`${status === 'Rsvp' ? 'pb-3 border-[#1070FF] border-b-4 '  : ''}' pb-3 outline-0 border-0 text-[#717172] bg-inherit text-lg'`} onClick={() => setStatus('Rsvp')}>
                    Rsvp Event
                   </Button>
                 </li>
                 <li>
-                  <Button className={`${status === 'Pending' ? 'pb-4 border-[#1070FF] border-b-4 '  : ''}' pb-4 outline-0  text-[#717172] bg-inherit text-lg'`} onClick={() => setStatus('Pending')}>
+                  <Button className={`${status === 'Pending' ? 'pb-3 border-[#1070FF] border-b-4 '  : ''}' pb-3 outline-0  text-[#717172] bg-inherit text-lg'`} onClick={() => setStatus('Pending')}>
                     Pending Event
                   </Button>
                 </li>
                </ul>
               </MediaQuery>
           </div>
-          <div className='flex flex-col justify-center items-center gap-y-8 lg:border border-solid border-[#CDCDCD] lg:pt-12 lg:pb-[200px]'>
+          <div className='flex flex-col justify-center items-center gap-y-8 lg:border border-solid border-[#CDCDCD] lg:pt-12 lg:pb-[200px] px-[20px] 8lg:px-12'>
             <MediaQuery minWidth={1024}>
               {status === 'Upcoming' && (
-                <Event status={status}/>
+                <div className='lg:grid lg:grid-cols-2 grid-flow-row content-start gap-4 px-8'>
+                  {events}
+                </div>
               )}
               {status === 'Rsvp' && (
-                <Event status={status}/>
+                <div className='lg:grid lg:grid-cols-2 grid-flow-row content-start gap-4 px-8'>
+                {events}
+              </div>
               )}
               {status === 'Pending' && (
-                <Event status={status}/>
+              <div className='lg:grid lg:grid-cols-2 grid-flow-row content-start gap-4 px-8'>
+                {events}
+              </div>
               )}
             </MediaQuery>
             <MediaQuery maxWidth={1024}>
             <div>
               <p className='text-[#424245] font-medium mb-4 text-center'>Upcoming Events</p>
-              <Event status='Upcoming'/>
+             { events}
             </div>
             <div>
               <p className='text-[#424245] font-medium mb-4 text-center'>Rsvp Events</p>
-              <Event status='Rsvp'/>
+            { events}
             </div>
             <div>
               <p className='text-[#424245] font-medium mb-4 text-center'>Pending Events</p>
-              <Event status='Pending'/>
+              {events}
             </div>
             </MediaQuery>
           </div>
