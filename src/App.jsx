@@ -5,6 +5,7 @@ import SignIn from "./pages/signIn";
 import SignUp from "./pages/signUp";
 import ViewEvent from "./pages/dashboard/ViewEvent";
 import TermsOfUse from "./pages/termsOfUse";
+import Error from "./pages/error404"
 
 import "./index.css";
 import { Routes, Route } from "react-router-dom";
@@ -17,6 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/create_event" element={<CreateEvent />} />
+        <Route path="/error" element={<Error />} />
         <Route path="/invitee" element={<Invitee />} />
         <Route path="/sign_in" element={<SignIn />} />
         <Route path="/sign_up" element={<SignUp />} />
