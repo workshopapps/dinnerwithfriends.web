@@ -20,8 +20,8 @@ const Home = () => {
           <img src={SubHome} alt="subHome" className="md:w-[13rem]" />
         </div>
         {/* <div className=" grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-4 lg:grid-cols-12"> */}
-        <div className="flex flex-col-reverse justify-between max-w-screen-xl px-4 mx-auto lg:flex-row">
-          <div className=" hidden lg:mt-0 lg:col-span-5 lg:flex">
+        <div className="flex flex-col-reverse  justify-between max-w-screen-xl px-4 mx-auto lg:flex-row">
+          <div className=" hidden mr-0 md:mr-16  lg:mt-0 lg:col-span-5 lg:flex">
             <img src={HomeImage} alt="Home" />
           </div>
           <div className="block mt-20 lg:mt-0 lg:col-span-5 lg:hidden">
