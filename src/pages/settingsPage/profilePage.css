@@ -86,12 +86,12 @@ label {
 .field {
   width: 40%;
 }
-/* Nav {
+Nav {
   display: none;
-} */
-/* footer {
+}
+footer {
   display: none;
-} */
+}
 
 /* media queries starts here */
 @media screen and (max-width: 376px){
