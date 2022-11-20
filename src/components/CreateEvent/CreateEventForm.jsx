@@ -15,22 +15,28 @@ const CreateEventForm = () => {
 		CatchUpEventContextUse();
 	const navigate = useNavigate();
 
-	const [errors, setErrors] = useState({});
+	const [errors, setErrors] = useState({
+		eventInvite: "",
+		description: "",
+		location: "",
+		eventType: "",
+		noOfParticipants: "",
+		startDate: "",
+		endDate: "",
+		preferredDate: "",
+	});
 
 	const handleSubmit = () => {
 		setErrors(formLogic(formValues));
 		setFormValues({ ...formValues, preferredDate, endDate, startDate });
 		console.log(formValues);
-		if (Object.keys(errors).length === 0) {
-			navigate("/dashboard/upcoming_events");
-		}
 	};
 
-	// useEffect(() => {
-	//   if(Object.keys(errors).length === 0){
-	// 	navigate('/dashboard/upcoming_events')
-	//   }
-	// }, [errors])
+	useEffect(() => {
+		if (Object.keys(errors).length === 0) {
+			navigate("/event_summary");
+		}
+	}, [errors]);
 
 	return (
 		<div className='w-full py-8'>

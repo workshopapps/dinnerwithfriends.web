@@ -4,10 +4,15 @@ import { CgMenuLeftAlt } from "react-icons/cg";
 import { AiOutlineLike, AiOutlineDislike, AiOutlineUser } from "react-icons/ai";
 import { BsPlus } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import EventModal from "../../components/EventModal";
+import { CatchUpEventContextUse } from "../../context/CatchUpEventContext";
 
 const EventSummary = () => {
+  const { showModal, setShowModal } = CatchUpEventContextUse();
+
   return (
     <div>
+    <EventModal />
       <div className="mt-16 md:mx-14 mx-6">
         <h2 className="mt-7 text-3xl font-bold">Event Summary</h2>
         <div className="mt-4 border w-full p-5 rounded-lg shadow text-[#59595B]">
@@ -106,7 +111,7 @@ const EventSummary = () => {
           <Link to="/" className="text-xl font-semibold">
             Back
           </Link>
-          <button className="rounded flex md:px-6 px-4 py-2.5 bg-[#1070FF] text-white items-center">
+          <button onClick={() => setShowModal(true)} className="rounded flex md:px-6 px-4 py-2.5 bg-[#1070FF] text-white items-center">
             <p className="md:text-xl text-base font-medium md:mr-2">
               Create invite
             </p>

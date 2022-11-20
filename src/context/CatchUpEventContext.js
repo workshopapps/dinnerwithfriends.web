@@ -5,6 +5,7 @@ const CatchUpEventContext = createContext()
 export const CatchUpEventContextProvider = ({children}) =>{
 
 	const [startDate, setStartDate] = useState('')
+	const [showModal, setShowModal] = useState(false)
 	const [endDate, setEndDate] = useState('')
 	const [preferredDate, setPreferredDate] = useState('')
     const [formValues, setFormValues] = useState({
@@ -18,7 +19,7 @@ export const CatchUpEventContextProvider = ({children}) =>{
 		preferredDate: "",
 	});
 
-    const values={startDate, setStartDate, endDate, setEndDate, preferredDate, setPreferredDate, formValues, setFormValues}
+    const values={startDate, setStartDate, endDate, setEndDate, preferredDate, setPreferredDate, formValues, setFormValues, showModal, setShowModal}
     return(
         <CatchUpEventContext.Provider value={values}>{children}</CatchUpEventContext.Provider>
     )
