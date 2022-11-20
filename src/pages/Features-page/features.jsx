@@ -15,7 +15,7 @@ import Arrow from "../../pages/Features-page/arrow.png"
                 <div>
                     <img className="w-80" src={F1}/>
                     </div>
-            <div className="flex flex-col-reverse items-start justify-center md:w-96 w-60  ">
+            <div className="flex flex-col items-start justify-center md:w-96 w-60  ">
                 <h1 className="font-bold">Availability Preferences</h1>
                 <p className="">One of our most important feautures at catch up, 
                     is the availability prefrences where your friends can notify you the host of
