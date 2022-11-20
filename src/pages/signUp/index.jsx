@@ -51,7 +51,7 @@ const SignUp = () => {
 
               <input 
               style={{border: errors.password ? '1px solid red': '1px solid #D0D5DD'}}
-              className={`focus:outline-none focus:${errors.password === true? 'shadow-[0px_0px_0px_4px_rgba(74,74,104,0.1)]' : 'shadow-[0px_0px_0px_4px_rgba(249,50,50,0.1)]'} mt-2 w-full h-11 p-3.5 rounded-lg`} type="text" name="email" placeholder="Enter your unique password"
+              className={`focus:outline-none focus:${errors.password === true? 'shadow-[0px_0px_0px_4px_rgba(74,74,104,0.1)]' : 'shadow-[0px_0px_0px_4px_rgba(249,50,50,0.1)]'} mt-2 w-full h-11 p-3.5 rounded-lg`} type="password" name="password" placeholder="Please enter your unique password"
               {...register("password", {required: true})}/>
               {errors.password && <p className='right-0 bottom-[-37px] italic absolute text-sm mb-4' style={{color: 'red'}}>Password must not be empty</p>}
             </div>
