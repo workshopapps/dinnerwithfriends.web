@@ -64,3 +64,18 @@ This project is [MIT](./MIT.md) licensed.# catch_up
 =======
 # dinnerwithfriends.mobile
 >>>>>>> d9aacc5be14e42673199c5be3597ddee7ce8f0e3
+
+
+# Creating a Topical Branch
+First, you will need to create a branch from the latest commit on master. Make sure your repository is up to date first using
+
+git pull origin master
+
+# Note: git pull does a git fetch followed by a git merge to update the local repo with the remote repo. For a more detailed explanation, see this stackoverflow post.
+
+To create a branch, use git checkout -b <new-branch-name> [<base-branch-name>], where base-branch-name is optional and defaults to master. Creating a new branch called pull-request-demo from the master branch and push it to github.
+ 
+git checkout -b pull-request-demo
+git push origin pull-request-demo
+
+# ⭐️ Contributor-Gozinne
