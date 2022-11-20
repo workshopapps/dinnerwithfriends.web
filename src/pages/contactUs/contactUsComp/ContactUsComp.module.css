@@ -1,3 +1,20 @@
+.contact-section {
+  width: 60%;
+  margin: 0 auto;
+}
+
+@media all and (max-width: 2200px) {
+  .contact-section {
+    width: 80%;
+  }
+}
+
+@media all and (max-width: 1800px) {
+  .contact-section {
+    width: 100%;
+  }
+}
+
 .in-touch-container {
   width: 100%;
   height: 17rem;
@@ -18,6 +35,30 @@
   font-weight: 700;
 }
 
+@media all and (max-width: 1000px) {
+  .in-touch-container {
+    padding: 0 3.75rem;
+  }
+}
+
+@media all and (max-width: 850px) {
+  .in-touch-container {
+    padding: 0 2.5rem;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .in-touch-container {
+    padding: 0 2rem;
+  }
+}
+
+@media all and (max-width: 300px) {
+  .in-touch-container {
+    padding: 0 1rem;
+  }
+}
+
 .in-touch-container h3 {
   font-size: 3rem;
 }
@@ -31,4 +72,40 @@
   width: 100%;
   display: flex;
   padding: 4.375rem 11.75rem;
+}
+
+@media all and (max-width: 1280px) {
+  .form-container {
+    padding: 4.375rem 6.75rem;
+  }
+}
+
+@media all and (max-width: 1000px) {
+  .form-container {
+    padding: 4.375rem 3.75rem;
+  }
+}
+
+@media all and (max-width: 850px) {
+  .form-container {
+    padding: 4.375rem 2.5rem;
+  }
+}
+
+@media all and (max-width: 760px) {
+  .form-container {
+    flex-direction: column;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .form-container {
+    padding: 4.375rem 2rem;
+  }
+}
+
+@media all and (max-width: 300px) {
+  .form-container {
+    padding: 4.375rem 1rem;
+  }
 }

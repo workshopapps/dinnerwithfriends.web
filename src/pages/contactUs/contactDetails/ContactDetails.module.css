@@ -4,6 +4,12 @@
   margin: 6.5rem 0 0 auto;
 }
 
+@media all and (max-width: 760px) {
+  .details-container {
+    margin: 6.5rem 0 0 0;
+  }
+}
+
 .detail-item {
   display: flex;
   align-items: flex-start;
@@ -33,6 +39,7 @@ address {
   color: #59595b;
   display: block;
   margin-top: 8px;
+  font-style: normal;
 }
 
 .links {

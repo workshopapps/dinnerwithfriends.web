@@ -6,23 +6,21 @@ import classes from "./ContactUsComp.module.css";
 
 const ContactUsComp = () => {
   return (
-    <>
+    <section className={classes["contact-section"]}>
       <Navbar />
-      <section>
-        <div className={classes["in-touch-container"]}>
-          <h3>Get in touch</h3>
-          <p>
-            24/7 We will answer your questions and provide solutions to your
-            problems
-          </p>
-        </div>
-        <div className={classes["form-container"]}>
-          <ContactUsForm />
-          <ContactUsDetails />
-        </div>
-      </section>
+      <div className={classes["in-touch-container"]}>
+        <h3>Get in touch</h3>
+        <p>
+          24/7 We will answer your questions and provide solutions to your
+          problems
+        </p>
+      </div>
+      <div className={classes["form-container"]}>
+        <ContactUsForm />
+        <ContactUsDetails />
+      </div>
       <Footer />
-    </>
+    </section>
   );
 };
 
