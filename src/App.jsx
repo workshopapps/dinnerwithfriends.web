@@ -7,9 +7,9 @@ import ViewEvent from "./pages/dashboard/ViewEvent";
 import Policy from "./pages/policy";
 import Error404 from "./pages/error404";
 import HowItWorks from "./pages/howItWorks/HowItWorks";
-
 import { Routes, Route } from "react-router-dom";
 import "./index.css";
+import Faq from "./pages/FAQ/Faq";
 
 function App() {
   return (
@@ -24,6 +24,7 @@ function App() {
         <Route path="/view_event" element={<ViewEvent />} />
         <Route path="/policy" element={<Policy />} />
         <Route path="/howItWorks" element={<HowItWorks />} />
+        <Route path="/faq" element={<Faq />} />
       </Routes>
     </div>
   );
