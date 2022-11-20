@@ -5,8 +5,13 @@ import SignIn from "./pages/signIn";
 import SignUp from "./pages/signUp";
 import ViewEvent from "./pages/dashboard/ViewEvent";
 import TermsOfUse from "./pages/termsOfUse";
+<<<<<<< HEAD
 import Error from "./pages/error404";
 import { Features } from "./pages/Features-page/features";
+=======
+import Error from "./pages/error404"
+import HowItWorks from "./pages/howItWorks/HowItWorks";
+>>>>>>> f895cff42ee97d069af5417bee24a975b0af58e9
 
 import "./index.css";
 import { Routes, Route } from "react-router-dom";
@@ -27,7 +32,11 @@ function App() {
         <Route path="/terms_of_use" element={<TermsOfUse />} />
         <Route path="/dashboard/event_summary" element={<EventSummary />} />
         <Route path="/dashboard/upcoming_events" element={<UpcomingEvent />} />
+<<<<<<< HEAD
         <Route path="/pages/Features-page/features" element={<Features/>} />
+=======
+        <Route path="/howItWorks" element={<HowItWorks />} />
+>>>>>>> f895cff42ee97d069af5417bee24a975b0af58e9
       </Routes>
     </div>
   );
