@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import Faq from '../../../pages/FAQ/Faq';
+import Faq from '../../pages/FAQ/Faq';
 import { BrowserRouter } from 'react-router-dom';
 
 describe('Faq page', () => {
