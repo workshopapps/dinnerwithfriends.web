@@ -6,6 +6,7 @@ import SignUp from "./pages/signUp";
 import ViewEvent from "./pages/dashboard/ViewEvent";
 import Policy from "./pages/policy";
 import Error404 from "./pages/error404";
+import HowItWorks from "./pages/howItWorks/HowItWorks";
 
 import { Routes, Route } from "react-router-dom";
 import "./index.css";
@@ -22,6 +23,7 @@ function App() {
         <Route path="/sign_up" element={<SignUp />} />
         <Route path="/view_event" element={<ViewEvent />} />
         <Route path="/policy" element={<Policy />} />
+        <Route path="/howItWorks" element={<HowItWorks />} />
       </Routes>
     </div>
   );
