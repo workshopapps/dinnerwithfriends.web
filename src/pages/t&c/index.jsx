@@ -1,6 +1,6 @@
-import React from 'react'
-import Navbar from '../../components/Navbar';
-import Footer from '../../components/Footer';
+import React from "react";
+import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
 
 const Terms = () => {
   const contents = [
@@ -176,19 +176,19 @@ const Terms = () => {
       p: `Links to third-party websites or services that are not within the Company's control or ownership may be found on our service. The Company has no control over, and accepts no liability for, any third-party web sites or services' content, privacy policies, or practices. You further acknowledge and agree that the Company shall not be responsible or liable, directly or indirectly, for any injury or damage of any kind resulting from use of or reliance on any such content, goods, or services made available on or through any such web sites or services, whether such injury or damage is foreseeable or arises from a negligent act or omission on the part of the Company.
       We firmly encourage that before using any third-party websites or services, you read their terms of service and privacy policies.
       `,
-      href: "#"
+      href: "#",
     },
     {
       links: "Indemnification",
       p: `You agree to hold all Catchup Parties harmless from any Claims made by any third party due to or arising out of (a) your violations of this Agreement, (b) your use, misuse, or abuse of our Platform, (c) your Content, (d) your violation of any law, statute, ordinance, or regulation or the rights of a third party, or (e) your participation or conduct in a Catchup group or a Catchup event that violates this Agreement, to the fullest extent permitted by applicable You agree to cooperate with the Catchup Parties in defending against any claims made by third parties, promptly notify us of any such claims, and pay all fees, costs, and expenses (including, but not limited to, legal fees) incurred in doing so.`,
-      href: "#"
+      href: "#",
     },
     {
       links: "Changes to These Terms of Use",
       p: `We reserve the right, at Our sole discretion, to modify or replace these Terms at any time. If a revision is material We will make reasonable efforts to provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at Our sole discretion.
       By continuing to access or use Our Service after those revisions become effective, You agree to be bound by the revised terms. If You do not agree to the new terms, in whole or in part, please stop using the website and the Service.
       `,
-      href: "#"
+      href: "#",
     },
     {
       links: "Contact Us",
@@ -196,7 +196,7 @@ const Terms = () => {
       By visiting this page on our website at www.catchup.com/contactus/
       By sending us an email at catchup@gmail.com
       `,
-      href: "#"
+      href: "#",
     },
   ];
   return (
@@ -206,7 +206,7 @@ const Terms = () => {
         <div className="w-full md:w-[30%] ">
           <div className="mx-3 mb-4 md:hidden md:mx-0">
             <h1 className="text-2xl mb-2 font-bold md:text-3xl">
-              Privacy Policy
+              Terms &amp; Conditons
             </h1>
             <p className="leading-7 text-gray-800 font-sm">
               This document was last updated 15th of December, 2022. To start
@@ -229,7 +229,7 @@ const Terms = () => {
         <div className="w-full md:w-[70%] md:mx-8 mb-20">
           <div className="hidden mb-4 md:block">
             <h1 className="text-2xl mb-2 font-bold md:text-3xl">
-              Privacy Policy
+              Terms &amp; Conditons
             </h1>
             <p className="leading-7 text-gray-600 font-sm">
               This document was last updated 15th of December, 2022. To start
@@ -239,8 +239,12 @@ const Terms = () => {
           <div className="mx-3 md:mx-0">
             {policies.map((policy) => (
               <div>
-                <a href={policy.href} className="mt-4 text-xl">{policy.links} </a>
-                <p className="leading-7 text-gray-600 font-sm my-4">{policy.p}</p>
+                <a href={policy.href} className="mt-4 text-xl">
+                  {policy.links}{" "}
+                </a>
+                <p className="leading-7 text-gray-600 font-sm my-4">
+                  {policy.p}
+                </p>
               </div>
             ))}
           </div>
@@ -252,4 +256,4 @@ const Terms = () => {
   );
 };
 
-export default Terms
+export default Terms;
