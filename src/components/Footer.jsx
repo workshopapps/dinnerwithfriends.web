@@ -5,7 +5,24 @@ import {BsFillSuitHeartFill} from "react-icons/bs"
 const Footer = () => {
   const company = ['Careers','About us', 'Contact us', 'Partner with us']
   const learn = ['Blogs', 'Webinars', 'How it works']
-  const legal = ['Security', 'Privacy policy', 'Cookies Setting', 'Terms & Conditions']
+  const legal = [
+    {
+    name: 'Security',
+    link: '/',
+  },
+    {
+    name: 'Privacy policy',
+    link: '/',
+  },
+    {
+    name: 'Cookies Setting',
+    link: '/',
+  },
+    {
+    name: 'Terms & Conditions',
+    link: '/terms_of_use',
+  },
+]
   const help = ['FAQs', 'Help Center', 'Customer support']
 
   return (
@@ -57,8 +74,8 @@ const Footer = () => {
           <ul className="text-gray-100">
           {legal.map((e, i) => (
               <li key={i} className="mb-1 lg:mb-4">
-              <Link href="#" className=" hover:underline">
-                {e}
+              <Link href={e.link} className=" hover:underline">
+                {e.name}
               </Link>
             </li>
             ))}

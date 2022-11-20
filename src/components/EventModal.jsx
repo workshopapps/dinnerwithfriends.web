@@ -2,13 +2,13 @@ import React from "react";
 import { CatchUpEventContextUse } from "../context/CatchUpEventContext";
 import { IoMdClose } from "react-icons/io";
 import { MdDone } from "react-icons/md";
-import {BiCopy} from 'react-icons/bi'
+import { BiCopy } from "react-icons/bi";
 import Button from "./Button";
 import { useNavigate } from "react-router";
 
 const EventModal = () => {
 	const { showModal, setShowModal } = CatchUpEventContextUse();
-	const navigate = useNavigate()
+	const navigate = useNavigate();
 	return (
 		<>
 			{showModal ? (
@@ -22,7 +22,9 @@ const EventModal = () => {
 								<div className='border-b border-[#CFD8DC]'>
 									<div className='p-4'>
 										<div className='flex justify-end w-full'>
-											<span onClick={() => setShowModal(false)} className='bg-[#FAFAFA] cursor-pointer text-[#717172] flex justify-center items-center rounded-full h-[35px] w-[35px]'>
+											<span
+												onClick={() => setShowModal(false)}
+												className='bg-[#FAFAFA] cursor-pointer text-[#717172] flex justify-center items-center rounded-full h-[35px] w-[35px]'>
 												<IoMdClose />
 											</span>
 										</div>
@@ -33,20 +35,28 @@ const EventModal = () => {
 												</div>
 											</div>
 										</div>
-										<div className="w-[70%] mx-auto mt-5 text-center">
-											<h1 className="font-semibold text-[1.5rem] mb-2">Event Successfully Created</h1>
-											<p className="text-[#898989] font-semibold">
+										<div className='md:w-[70%] mx-auto mt-5 text-center'>
+											<h1 className='font-semibold text-[1.5rem] mb-2'>
+												Event Successfully Created
+											</h1>
+											<p className='text-[#898989] font-semibold text-sm'>
 												You’ve successfully created your event, you can check
 												your notifications to see your friends who has accepted
 												your invite.
 											</p>
-											<div className="mt-6 mx-auto flex justify-center gap-5">
-												<Button onClick={() => {
-													setShowModal(false)
-													navigate('/view_event')
-												}} children='Ok, Thanks!' className='rounded-[4px] bg-[#1070FF] py-3 px-6 text-sm text-white' />
-												<Button className='border border-[#1070FF] rounded-[4px] py-3 px-6 text-sm text-[#1070FF] flex items-center'>
-													<span className="mr-2"><BiCopy /></span>
+											<div className='mt-6 mx-auto flex justify-center gap-2 md:gap-5'>
+												<Button
+													onClick={() => {
+														setShowModal(false);
+														navigate("/view_event");
+													}}
+													children='Ok, Thanks!'
+													className='rounded-[4px] bg-[#1070FF] py-3 px-6 text-xs  text-white'
+												/>
+												<Button className='border border-[#1070FF] rounded-[4px] py-3 px-6 text-xs  text-[#1070FF] flex items-center'>
+													<span className='mr-2'>
+														<BiCopy />
+													</span>
 													<span>Copy link</span>
 												</Button>
 											</div>

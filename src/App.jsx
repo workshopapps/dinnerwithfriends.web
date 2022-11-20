@@ -1,6 +1,7 @@
 import CreateEvent from "./pages/dashboard/createEvent/CreateEvent";
 import Home from "./pages/home";
 import Invitee from "./pages/invitee";
+import ClosedEvent from "./pages/closedEvent";
 import SignIn from "./pages/signIn";
 import SignUp from "./pages/signUp";
 import ViewEvent from "./pages/dashboard/ViewEvent";
@@ -13,6 +14,7 @@ import "./index.css";
 import Faq from "./pages/FAQ/Faq";
 import TermsOfUse from "./pages/termsOfUse";
 import EventSummary from "./pages/dashboard/EventSummary";
+import UpcomingEvent from "./pages/dashboard/UpcomingEvent";
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/create_event" element={<CreateEvent />} />
+        <Route path="/closed_event" element={<ClosedEvent />} />
+        <Route path="/upcoming_event" element={<UpcomingEvent />} />
         <Route path="/event_summary" element={<EventSummary />} />
         <Route path="/error404" element={<Error404 />} />
         <Route path="/invitee" element={<Invitee />} />
@@ -32,7 +36,6 @@ function App() {
         <Route path="/terms_of_use" element={<TermsOfUse />} />
         <Route path="/terms" element={<Terms />} />
       </Routes>
-      {/* <SignIn /> */}
     </div>
   );
 }
