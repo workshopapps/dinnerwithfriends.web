@@ -1,0 +1,63 @@
+# @format
+
+name: build
+
+on:
+  push:
+    branches:
+      - dev
+
+env:
+  DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+  DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+  REPOSITORY_NAME: ${{ secrets.REPOSITORY_NAME}}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js 16
+        uses: actions/setup-node@v1
+        with:
+          node-version: "13.10"
+      - name: Install npm and run
+        run: |
+          npm i
+          npm run build
+        env:
+          CI: true
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Get Current Date
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d--%M-%S')"
+      - name: Build Docker Image
+        run: docker build . --file Dockerfile --tag $DOCKERHUB_USERNAME/$REPOSITORY_NAME:${{ steps.date.outputs.date }}
+      - name: Push Docker Image to Docker Hub
+        run: docker push $DOCKERHUB_USERNAME/$REPOSITORY_NAME:${{ steps.date.outputs.date }}
+      - name: Deploy package to your instance
+        uses: appleboy/ssh-action@master
+        env:
+          GITHUB_USERNAME: secrets.USERNAME_NAME
+          GITHUB_TOKEN: ${{ secrets.TOKEN_TOKEN }}
+        with:
+          host: 139.162.251.16
+          username: root
+          password: Linode123#Linode123#
+          port: 22
+          envs: GITHUB_USERNAME, GITHUB_TOKEN
+          script: |
+            cd calendarApp/
+            docker compose down
+            docker stop $(docker ps -a -q)
+            docker system prune -a
+            rm -r dinnerwithfriends.web/
+            git clone https://github.com/workshopapps/dinnerwithfriends.web
+            cd dinnerwithfriends.web/
+            sudo docker build -t thefrontent:$(date +'%Y-%m-%d') .
+            sudo docker run -d -p 3000:3000 thefrontent:$(date +'%Y-%m-%d')
+            echo "refresh the page and check"
