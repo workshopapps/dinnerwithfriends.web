@@ -12,6 +12,8 @@ const SignUp = () => {
   const onSubmit = (data) => {
     console.log(data)
   }
+  /* eslint-disable-next-line */
+  const pattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
   
   return (
     <div className='w-full mx-auto tablet:flex tablet:justify-center'>
@@ -38,7 +40,7 @@ const SignUp = () => {
               style={{border: errors.email ? '1px solid red': '1px solid #D0D5DD'}}
               className='focus:outline-none mt-2 w-full h-11 p-3.5 rounded-lg' type="text" name="email" placeholder="Enter your email"
               {...register("email", 
-              {required: true, pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ })}
+              {required: true, pattern: pattern })}
               />
               {errors.email && <p className='right-0 bottom-[-37px] italic absolute text-sm mb-4' style={{color: 'red'}}>Please enter a valid email</p>}
             </div>
