@@ -25,12 +25,9 @@ function App() {
         <Route path="/sign_up" element={<SignUp />} />
         <Route path="/view_event" element={<ViewEvent />} />
         <Route path="/policy" element={<Policy />} />
-<<<<<<< HEAD
         <Route path="/howItWorks" element={<HowItWorks />} />
         <Route path="/faq" element={<Faq />} />
-=======
         <Route path="/terms" element={<Terms />} />
->>>>>>> dfa8675d798ac51e2c579370a8639ffb9284d42f
       </Routes>
     </div>
   );
