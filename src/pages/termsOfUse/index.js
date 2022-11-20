@@ -1,5 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
+import Footer from '../../components/Footer'
+import Navbar from '../../components/Navbar'
 import { termsData } from './termsData'
 
 const TermsOfUse = () => {
@@ -10,7 +12,9 @@ const TermsOfUse = () => {
   }
 
   return (
-    <div className='flex justify-end md:flex-wrap flex-col mx-4 md:flex-row md:mx-10 m-5'>
+    <>
+    <Navbar />
+    <div className='flex justify-end md:flex-wrap flex-col mx-4 md:flex-row md:mx-8 m-5 pt-20'>
 
         <div className='md:w-4/6 w-full m-2 md:px-4'>
           <p className='mb-5 font-bold text-3xl'>Terms of Use</p>
@@ -42,10 +46,10 @@ const TermsOfUse = () => {
               termsData.map(term => {
                 return (
                   <div key={term.id} id={term.heading}>
-                    <h3 className='my-3 mt-10 font-semibold text-base'>{term.heading}</h3>
+                    <h3 className='py-3 pt-10 font-semibold text-base'>{term.heading}</h3>
                     {
                       term.paragraphs.map((para, index) => { return (
-                        <p key={index} className='mt-2 mb-5 text-medium'>{para}
+                        <p key={index} className='pt-2 pb-4 text-medium'>{para}
                           <a className='text-blue-700' href={`mail.to:${term.emailLink}`}>{term.emailLink && term.emailLink}</a>
                         </p>
                       )})
@@ -64,6 +68,8 @@ const TermsOfUse = () => {
 
         </div>
     </div>
+    <Footer />
+    </>
   )
 }
 

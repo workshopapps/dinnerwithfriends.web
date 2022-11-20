@@ -9,6 +9,7 @@ import Error404 from "./pages/error404";
 
 import { Routes, Route } from "react-router-dom";
 import "./index.css";
+import TermsOfUse from "./pages/termsOfUse";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/sign_up" element={<SignUp />} />
         <Route path="/view_event" element={<ViewEvent />} />
         <Route path="/policy" element={<Policy />} />
+        <Route path="/terms_of_use" element={<TermsOfUse />} />
       </Routes>
     </div>
   );
