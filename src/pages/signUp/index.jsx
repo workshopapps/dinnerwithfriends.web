@@ -33,12 +33,12 @@ const SignUp = () => {
           <p className='mt-2 text-[#424245] text-base tablet:text-xl'>Sign up here! Please enter your details</p>
           <form onSubmit={handleSubmit(onSubmit)} className=' mt-7 text-[#4B4B4C] font-normal [&>input]:mt-2 [&>input]:w-full [&>input]:mb-3.5'>
             
-            <div className='relative w-full mb-4'>
-              <label className='pt-3.5' htmlFor="email">Email</label><br />
+            <div className='relative w-full mb-4 '>
+              <label className='pb-0' htmlFor="email">Email</label>
               
               <input 
-              style={{border: errors.email ? '1px solid red': '1px solid #D0D5DD'}}
-              className='focus:outline-none mt-2 w-full h-11 p-3.5 rounded-lg' type="text" name="email" placeholder="Enter your email"
+              style={{border:errors.email ? '1px solid red': '1px solid #D0D5DD'}}
+              className={`focus:outline-none focus:${errors.email === true ? 'shadow-[0px_0px_0px_4px_rgba(74,74,104,0.1)]' : 'shadow-[0px_0px_0px_4px_rgba(249,50,50,0.1)]'}  mt-2 w-full h-11 p-3.5 rounded-lg`} type="text" name="email" placeholder="Enter your email"
               {...register("email", 
               {required: true, pattern: pattern })}
               />
@@ -46,12 +46,12 @@ const SignUp = () => {
             </div>
 
 
-            <div className='relative w-full mb-4'>
-              <label htmlFor="password">Passsword</label><br />
+            <div className='relative w-full mb-4 '>
+              <label className='pb-0' htmlFor="password">Passsword</label>
 
               <input 
               style={{border: errors.password ? '1px solid red': '1px solid #D0D5DD'}}
-              className='focus:outline-none mt-2 w-full h-11 p-3.5 rounded-lg'  type="password" name="password" placeholder="Please enter your unique password"
+              className={`focus:outline-none focus:${errors.password === true? 'shadow-[0px_0px_0px_4px_rgba(74,74,104,0.1)]' : 'shadow-[0px_0px_0px_4px_rgba(249,50,50,0.1)]'} mt-2 w-full h-11 p-3.5 rounded-lg`} type="text" name="email" placeholder="Enter your unique password"
               {...register("password", {required: true})}/>
               {errors.password && <p className='right-0 bottom-[-37px] italic absolute text-sm mb-4' style={{color: 'red'}}>Password must not be empty</p>}
             </div>
