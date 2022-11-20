@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Faq page expect faq page to render correctly 1`] = `
+exports[`Accordion component expect faq page to render correctly 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>

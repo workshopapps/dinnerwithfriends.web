@@ -11,7 +11,11 @@ import Terms from "./pages/t&c";
 
 import { Routes, Route } from "react-router-dom";
 import "./index.css";
+<<<<<<< HEAD
 import Faq from "./pages/FAQ/Faq";
+=======
+import TermsOfUse from "./pages/termsOfUse";
+>>>>>>> 4affbd89ea34eca6d36dbca592b06b03161ba0bd
 
 function App() {
   return (
@@ -27,6 +31,7 @@ function App() {
         <Route path="/policy" element={<Policy />} />
         <Route path="/howItWorks" element={<HowItWorks />} />
         <Route path="/faq" element={<Faq />} />
+        <Route path="/terms_of_use" element={<TermsOfUse />} />
         <Route path="/terms" element={<Terms />} />
       </Routes>
     </div>
