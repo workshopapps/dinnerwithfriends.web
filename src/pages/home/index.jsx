@@ -15,8 +15,8 @@ const Home = () => {
     <div className="">
       <Navbar />
 
-      <section className="bg-[url('assets/img/VectorsHome.png')] bg-no-repeat bg-center">
-        <div className="flex flex-row-reverse text-black mt-32 mx-20">
+      <section className="bg-[url('assets/img/VectorsHome.png')] bg-no-repeat bg-center overflow-x-hidden">
+        <div className="flex flex-row-reverse text-black mt-32 w-[11.5rem] ml-auto -mr-4 md:mr-4 lg:mr-10">
           <img src={SubHome} alt="subHome" />
         </div>
         {/* <div className=" grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-4 lg:grid-cols-12"> */}
