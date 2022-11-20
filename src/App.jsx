@@ -8,14 +8,10 @@ import Policy from "./pages/policy";
 import Error404 from "./pages/error404";
 import HowItWorks from "./pages/howItWorks/HowItWorks";
 import Terms from "./pages/t&c";
-
 import { Routes, Route } from "react-router-dom";
 import "./index.css";
-<<<<<<< HEAD
 import Faq from "./pages/FAQ/Faq";
-=======
 import TermsOfUse from "./pages/termsOfUse";
->>>>>>> 4affbd89ea34eca6d36dbca592b06b03161ba0bd
 
 function App() {
   return (
