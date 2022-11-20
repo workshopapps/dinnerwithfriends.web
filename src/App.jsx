@@ -21,6 +21,7 @@ function App() {
         <Route path="/view_event" element={<ViewEvent />} />
         <Route path="/dashboard/upcoming_events" element={<UpcomingEvent />} />
       </Routes>
+      <SignIn />
     </div>
   );
 }
