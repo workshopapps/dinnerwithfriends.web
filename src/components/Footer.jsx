@@ -9,9 +9,9 @@ const Footer = () => {
   const help = ['FAQs', 'Help Center', 'Customer support']
 
   return (
-    <footer class="bg-blue-700">
+    <footer className="bg-blue-700">
 
-      <div class="mx-auto lg:mx-24 grid grid-cols-2 gap-8 py-8 px-6 md:grid-cols-5">
+      <div className="mx-auto lg:mx-24 grid grid-cols-2 gap-8 py-8 px-6 md:grid-cols-5">
         <div>
         <Link to="/" className="flex items-center">
             <span className="self-center text-white text-3xl font-semibold whitespace-nowrap ">
@@ -23,13 +23,13 @@ const Footer = () => {
           </Link>
         </div>
         <div>
-          <h2 class="mb-3 lg:mb-6 text-sm font-semibold text-gray-100 uppercase">
+          <h2 className="mb-3 lg:mb-6 text-sm font-semibold text-gray-100 uppercase">
             Company
           </h2>
-          <ul class="text-gray-100">
-            {company.map((e) => (
-              <li class="mb-1 lg:mb-4">
-              <Link href="#" class=" hover:underline">
+          <ul className="text-gray-100">
+            {company.map((e, i) => (
+              <li key={i} className="mb-1 lg:mb-4">
+              <Link href="#" className=" hover:underline">
                 {e}
               </Link>
             </li>
@@ -37,13 +37,13 @@ const Footer = () => {
           </ul>
         </div>
         <div>
-          <h2 class="mb-3 lg:mb-6 text-sm font-semibold text-gray-100 uppercase">
+          <h2 className="mb-3 lg:mb-6 text-sm font-semibold text-gray-100 uppercase">
             Help center
           </h2>
-          <ul class="text-gray-100">
-          {learn.map((e) => (
-              <li class="mb-1 lg:mb-4">
-              <Link href="#" class=" hover:underline">
+          <ul className="text-gray-100">
+          {learn.map((e, i) => (
+              <li key={i} className="mb-1 lg:mb-4">
+              <Link href="#" className=" hover:underline">
                 {e}
               </Link>
             </li>
@@ -51,13 +51,13 @@ const Footer = () => {
           </ul>
         </div>
         <div>
-          <h2 class="mb-3 lg:mb-6 text-sm font-semibold text-gray-100 uppercase">
+          <h2 className="mb-3 lg:mb-6 text-sm font-semibold text-gray-100 uppercase">
             Legal
           </h2>
-          <ul class="text-gray-100">
-          {legal.map((e) => (
-              <li class="mb-1 lg:mb-4">
-              <Link href="#" class=" hover:underline">
+          <ul className="text-gray-100">
+          {legal.map((e, i) => (
+              <li key={i} className="mb-1 lg:mb-4">
+              <Link href="#" className=" hover:underline">
                 {e}
               </Link>
             </li>
@@ -65,13 +65,13 @@ const Footer = () => {
           </ul>
         </div>
         <div>
-          <h2 class="mb-3 lg:mb-6 text-sm font-semibold text-gray-100 uppercase">
+          <h2 className="mb-3 lg:mb-6 text-sm font-semibold text-gray-100 uppercase">
             Download
           </h2>
-          <ul class="text-gray-100">
-          {help.map((e) => (
-              <li class="mb-1 lg:mb-4">
-              <Link href="#" class=" hover:underline">
+          <ul className="text-gray-100">
+          {help.map((e, i) => (
+              <li key={i} className="mb-1 lg:mb-4">
+              <Link href="#" className=" hover:underline">
                 {e}
               </Link>
             </li>
@@ -79,12 +79,12 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-      <div class="mx-auto lg:mx-24 py-6 px-4 md:flex md:items-center md:justify-between">
-        <span class="text-md text-gray-100 sm:text-center">
+      <div className="mx-auto lg:mx-24 py-6 px-4 md:flex md:items-center md:justify-between">
+        <span className="text-md text-gray-100 sm:text-center">
           © 2022 <Link href="https://flowbite.com/">TEAM PRYBAR™</Link>. All Rights
           Reserved.
         </span>
-        <div class="flex mt-1 text-md text-white space-x-6 sm:justify-center md:mt-0">
+        <div className="flex mt-1 text-md text-white space-x-6 sm:justify-center md:mt-0">
           Made with love <BsFillSuitHeartFill />
         </div>
       </div>

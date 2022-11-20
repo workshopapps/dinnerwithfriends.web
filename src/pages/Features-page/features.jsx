@@ -6,7 +6,7 @@ import F1 from "../../pages/Features-page/F1.png";
 import F2 from "../../pages/Features-page/F2.png";
 import F3 from "../../pages/Features-page/F3.png";
 import Arrow from "../../pages/Features-page/arrow.png"
-export function Features(){
+ function Features(){
     return(
         <div>
         <Navbar/>
@@ -59,3 +59,5 @@ flex flex-row items-center justify-between space-x-5 "><p>Get Started</p>
         </div>
     )
 }
+
+export default Features
