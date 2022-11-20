@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Invite = () => {
+const Invitee = () => {
   return (
     <div>
       <div>
@@ -19,4 +19,4 @@ const Invite = () => {
   )
 }
 
-export default Invite
+export default Invitee
