@@ -15,6 +15,8 @@ import Faq from "./pages/FAQ/Faq";
 import TermsOfUse from "./pages/termsOfUse";
 import UpcomingEvent from "./pages/dashboard/UpcomingEvent";
 import EventSummary from "./pages/dashboard/EventSummary";
+import ForgetPassword from "./pages/ForgetPassword/index"
+import ResetLink from "./pages/ForgetPassword/LinkReset"
 
 function App() {
 	return (
@@ -35,6 +37,8 @@ function App() {
 				<Route path='/terms_of_use' element={<TermsOfUse />} />
 				<Route path='/terms' element={<Terms />} />
 				<Route path='/dashboard/upcoming_events' element={<UpcomingEvent />} />
+				<Route path='/forget_password' element={<ForgetPassword />} />
+				<Route path='/reset_link' element={<ResetLink />} />
 			</Routes>
 		</div>
 	);
