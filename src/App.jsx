@@ -20,6 +20,7 @@ import ResetLink from "./pages/ForgetPassword/LinkReset";
 import EventInvite from "./pages/invitee/EventInvite";
 import EventInviteResponse from "./pages/invitee/EventInviteResponse";
 import Settings from "./pages/settingsPage/profilePage"
+import Features from "./pages/Features-page/features";
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
           path="/event_invite/event_invite_response"
           element={<EventInviteResponse />}
         />
+        <Route path="/features" element={<Features />} />
       </Routes>
     </div>
   );
