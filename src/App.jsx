@@ -12,6 +12,9 @@ import { Routes, Route } from "react-router-dom";
 import "./index.css";
 import Faq from "./pages/FAQ/Faq";
 import TermsOfUse from "./pages/termsOfUse";
+import EventInvite from "./pages/invitee/EventInvite";
+import EventInviteResponse from "./pages/invitee/EventInviteResponse";
+import EventSummary from "./pages/dashboard/EventSummary";
 
 function App() {
   return (
@@ -29,6 +32,9 @@ function App() {
         <Route path="/faq" element={<Faq />} />
         <Route path="/terms_of_use" element={<TermsOfUse />} />
         <Route path="/terms" element={<Terms />} />
+        <Route path="/event_invite" element={<EventInvite />} />
+        <Route path="/event_summary" element={<EventSummary />} />
+        <Route path="/event_invite/event_invite_response" element={<EventInviteResponse />} />
       </Routes>
     </div>
   );
