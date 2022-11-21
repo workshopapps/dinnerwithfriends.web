@@ -7,11 +7,11 @@ const ResetLink = () => {
   return (
     <>
     <Navbar />
-    <div className="container mx-auto  mt-10 px-10">
+    <div className="container mx-auto  mt-20 px-10 mb-20">
       <div className="md:flex items-center justify-center gap-20">
         <div className="grid items-center justify-center">
           <div className="md:hidden mb-5">
-            <Link to="#sign_in"><img src={BackToSignIn} alt="" /></Link>
+            <Link to="/sign_in"><img src={BackToSignIn} alt="" /></Link>
           </div>
           <h1 className="text-3xl font-bold">Reset Link Sent</h1>
           <p className="w-60 md:w-96 mt-3">
@@ -41,9 +41,9 @@ const ResetLink = () => {
 
             <p className="w-60 md:w-96 mt-5">
               Didn't receive the email yet?{" "}
-              <a href="#SignUp" className="text-blue-700 font-semi-bold">
+              <Link to="/forget_password" className="text-blue-700 font-semi-bold">
                Click here to resend
-              </a>
+              </Link>
             </p>
           </form>
         </div>
