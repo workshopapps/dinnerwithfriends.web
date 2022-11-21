@@ -17,7 +17,7 @@ export default function Howitwork2() {
       </div>
 
       <section className=" pb-32 max-md:py-20 max-sm:py-20 ">
-        <div className=" grid grid-cols-2 gap-5 px-24 max-md:flex flex-col max-md:px-8 ">
+        <div className=" grid grid-cols-2 gap-5 px-24 max-sm:flex-col max-md:flex max-md:flex-col max-md:px-8 ">
           <div className="flex items-center py-8 border border-gray-200 max-w[538px]  max-md:flex-col mx-auto max-md:text-center">
             <img src={google} className="p-6 w-40 h-40 " alt="img" />
             <div className="flex flex-col w-80 ">
@@ -76,8 +76,8 @@ export default function Howitwork2() {
 
         
       </section>
-      <div className=' flex justify-between pb-32 max-md:py-20 max-md:flex-col max-md:p-4 max-sm:py-20'>
-        <div className=' '>
+      <div className=' flex justify-between pb-32 max-md:py-20 max-sm:flex-col max-md:flex-col max-md:p-4 max-sm:py-20'>
+        <div>
           <h1 className='text-6xl text-blue-700 font-bold max-md:text-base' >Still have questions ?</h1>
           <p className='text-base py-3 max-md:text-start max-md:text-base '>Send us any questions you may have about Catch Up 
             and we’ll 
