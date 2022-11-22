@@ -1,9 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 const withMT = require("@material-tailwind/react/utils/withMT");
 module.exports = withMT({
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-  ],
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
       colors: {
@@ -21,12 +19,12 @@ module.exports = withMT({
         },
       },
       backgroundImage: {
-        'line-pattern': "url('assets/img/VectorsHome.png')",
+        "line-pattern": "url('assets/img/VectorsHome.png')",
       },
       screens: {
-        "tablet": "850px",
+        tablet: "850px",
       },
     },
   },
   plugins: [require("tailwind-scrollbar-hide")],
-})
+});
