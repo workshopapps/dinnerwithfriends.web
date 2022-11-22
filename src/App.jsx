@@ -4,6 +4,12 @@ import Invitee from "./pages/invitee";
 import SignIn from "./pages/signIn";
 import SignUp from "./pages/signUp";
 import ViewEvent from "./pages/dashboard/ViewEvent";
+import ContactUs from "./pages/contactUs";
+import ProfilePage from "./pages/settingsPage/profilePage";
+import TermsOfUse from "./pages/termsOfUse";
+import Error from "./pages/error404";
+import ForgetPassword from "./pages/ForgetPassword/index";
+import HowItWorks from "./pages/howItWorks/HowItWorks";
 import Policy from "./pages/policy";
 import Error404 from "./pages/error404";
 import HowItWorks from "./pages/howItWorks/HowItWorks";
@@ -25,6 +31,7 @@ function App() {
         <Route path="/sign_in" element={<SignIn />} />
         <Route path="/sign_up" element={<SignUp />} />
         <Route path="/view_event" element={<ViewEvent />} />
+        <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/policy" element={<Policy />} />
         <Route path="/howItWorks" element={<HowItWorks />} />
         <Route path="/faq" element={<Faq />} />
