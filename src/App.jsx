@@ -1,3 +1,6 @@
+import { Routes, Route } from "react-router-dom";
+import "./index.css";
+
 import CreateEvent from "./pages/dashboard/createEvent/CreateEvent";
 import Home from "./pages/home";
 import Invitee from "./pages/invitee";
@@ -7,15 +10,11 @@ import SignUp from "./pages/signUp";
 import ViewEvent from "./pages/dashboard/ViewEvent";
 import ContactUs from "./pages/contactUs";
 import ProfilePage from "./pages/settingsPage/profilePage";
-import TermsOfUse from "./pages/termsOfUse";
-import Error from "./pages/error404";
 import ForgetPassword from "./pages/ForgetPassword/index";
 import Policy from "./pages/policy";
 import Error404 from "./pages/error404";
 import HowItWorks from "./pages/howItWorks/HowItWorks";
 import Terms from "./pages/t&c";
-import { Routes, Route } from "react-router-dom";
-import "./index.css";
 import Faq from "./pages/FAQ/Faq";
 import Settings from "./pages/settingsPage/profilePage"
 import EventInvite from "./pages/invitee/EventInvite";
@@ -40,12 +39,14 @@ function App() {
         <Route path="/policy" element={<Policy />} />
         <Route path="/howItWorks" element={<HowItWorks />} />
         <Route path="/faq" element={<Faq />} />
-        <Route path="/terms_of_use" element={<TermsOfUse />} />
+        <Route path="/terms-of-use" element={<TermsOfUse />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="/event_invite" element={<EventInvite />} />
         <Route path="/event_summary" element={<EventSummary />} />
         <Route path="/event_invite/event_invite_response" element={<EventInviteResponse />} />
         <Route path="/dashboard/upcoming_events" element={<UpcomingEvent />} />
+        <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/forget-password" element={<ForgetPassword />} />
       </Routes>
     </div>
   );
