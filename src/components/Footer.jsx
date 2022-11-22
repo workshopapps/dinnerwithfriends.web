@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { BsFillSuitHeartFill } from "react-icons/bs";
+import {BsFillSuitHeartFill} from "react-icons/bs"
 
 const Footer = () => {
   const company = [
@@ -28,14 +28,15 @@ const Footer = () => {
 
   return (
     <footer className="bg-blue-700">
+
       <div className="mx-auto lg:mx-24 grid grid-cols-2 gap-8 py-8 px-6 md:grid-cols-5">
         <div>
-          <Link to="/" className="flex items-center">
+        <Link to="/" className="flex items-center">
             <span className="self-center text-white text-3xl font-semibold whitespace-nowrap ">
-              Catch
+            Catch
             </span>
             <span className="self-center text-black text-3xl font-semibold whitespace-nowrap">
-              Up
+            Up
             </span>
           </Link>
         </div>
@@ -44,6 +45,7 @@ const Footer = () => {
             Company
           </h2>
           <ul className="text-gray-100">
+<
             {company.map((item, i) => (
               <li className="mb-1 lg:mb-4" key={i}>
                 <Link to={item.to} className=" hover:underline">
@@ -58,12 +60,15 @@ const Footer = () => {
             Help center
           </h2>
           <ul className="text-gray-100">
+
             {learn.map((item, i) => (
               <li className="mb-1 lg:mb-4" key={i}>
                 <Link to={item.to} className=" hover:underline">
                   {item.title}
                 </Link>
               </li>
+
+
             ))}
           </ul>
         </div>
@@ -78,6 +83,7 @@ const Footer = () => {
                   {item.title}
                 </Link>
               </li>
+
             ))}
           </ul>
         </div>
@@ -92,6 +98,7 @@ const Footer = () => {
                   {item.title}
                 </Link>
               </li>
+
             ))}
           </ul>
         </div>

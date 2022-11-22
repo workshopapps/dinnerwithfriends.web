@@ -4,6 +4,7 @@ import "./index.css";
 import CreateEvent from "./pages/dashboard/createEvent/CreateEvent";
 import Home from "./pages/home";
 import Invitee from "./pages/invitee";
+import ClosedEvent from "./pages/closedEvent";
 import SignIn from "./pages/signIn";
 import SignUp from "./pages/signUp";
 import ViewEvent from "./pages/dashboard/ViewEvent";
@@ -15,7 +16,6 @@ import Error404 from "./pages/error404";
 import HowItWorks from "./pages/howItWorks/HowItWorks";
 import Terms from "./pages/t&c";
 import Faq from "./pages/FAQ/Faq";
-import TermsOfUse from "./pages/termsOfUse";
 import Settings from "./pages/settingsPage/profilePage"
 import EventInvite from "./pages/invitee/EventInvite";
 import EventInviteResponse from "./pages/invitee/EventInviteResponse";
@@ -28,6 +28,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/create_event" element={<CreateEvent />} />
+        <Route path='/closed_event' element={<ClosedEvent />} />
         <Route path="/settings" element={<Settings />} />
         <Route path="/error404" element={<Error404 />} />
         <Route path="/invitee" element={<Invitee />} />
