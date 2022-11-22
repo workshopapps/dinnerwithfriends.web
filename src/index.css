@@ -54,3 +54,20 @@ a {
 li {
   list-style-type: none;
 }
+
+form-image {
+  display: block;
+  width: auto;
+  height: 100%;
+}
+@media (max-width: 950px) {
+  .form-container {
+    flex-direction: column;
+  }
+  .form-wrapper {
+    width: 100%;
+  }
+  .form-image {
+    display: none;
+  }
+}

@@ -157,7 +157,7 @@ const SignIn = () => {
                       name="form-check-input"
                     />
                     <label
-                      className="form-check-label text-xs w-full"
+                      className="form-check-label text-xs w-full inline ml-2"
                       Htmlfor="form-check-input"
                     >
                       Remember for 30days
