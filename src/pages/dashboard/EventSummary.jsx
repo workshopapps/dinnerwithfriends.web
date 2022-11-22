@@ -4,8 +4,7 @@ import { CgMenuLeftAlt } from "react-icons/cg";
 import { AiOutlineLike, AiOutlineDislike, AiOutlineUser } from "react-icons/ai";
 import { BsPlus } from "react-icons/bs";
 import { Link } from "react-router-dom";
-
-import Navbar from "../../components/Navbar";
+import { Navbar } from "@material-tailwind/react";
 import Footer from "../../components/Footer";
 
 const EventSummary = () => {
