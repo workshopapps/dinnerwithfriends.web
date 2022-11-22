@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import HomeDashboard from "../../assets/img/HomeDashboard.png"
+import HomeDashboard from "../../assets/img/HomeDashboard.png";
 
 const HeroDashboard = () => {
   return (
@@ -14,9 +14,7 @@ const HeroDashboard = () => {
           <span className="text-xs bg-primary-600 rounded-full text-white px-4 py-1.5 mr-3">
             New
           </span>
-          <span className="text-sm font-medium">
-            See what's new!
-          </span>
+          <span className="text-sm font-medium">See what's new!</span>
           <svg
             className="ml-2 w-5 h-5"
             fill="currentColor"
