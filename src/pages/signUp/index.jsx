@@ -5,12 +5,16 @@ import google from './google.svg'
 import nigeria from './nigeria.svg'
 import chevron from './chevron.svg'
 import { useForm } from "react-hook-form"
+import Logo from '../../components/Logo'
+import { Link, useNavigate } from 'react-router-dom'
 const SignUp = () => {
   const { register, handleSubmit, formState: { errors } } = useForm()
+  const navigate = useNavigate()
   
-  
+  !errors.email ? console.log(' no email error') : console.log(' email error')
   const onSubmit = (data) => {
     console.log(data)
+    !errors.email && navigate('/create_event')
   }
   /* eslint-disable-next-line */
   const pattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
@@ -19,7 +23,9 @@ const SignUp = () => {
     <div className='w-full mx-auto tablet:flex tablet:justify-center'>
       <div className=' w-full h-full bg-white tablet:w-6/12 tablet:p-3.5 mx-auto '>
         <header className=' w-full flex justify-between items-center px-4 pt-4 mt-3.5 tablet:mt-0'>
-          <img className='w-32 tablet:w-48' src={catchup} alt="logo of app" />
+          <Link to='/'>
+            <Logo />
+          </Link>
           <div className='px-1 rounded-[20px] w-24 tablet:w-32 tablet:h-10 h-[32px]  bg-blue-100 flex justify-around items-center'>
             <img className='w-5' src={nigeria} alt="nigerian flag" />
             <strong className='text-xs tablet:text-sm'>English</strong>
@@ -38,7 +44,7 @@ const SignUp = () => {
               
               <input 
               style={{border:errors.email ? '1px solid red': '1px solid #D0D5DD'}}
-              className={`focus:outline-none focus:${errors.email === true ? 'shadow-[0px_0px_0px_4px_rgba(74,74,104,0.1)]' : 'shadow-[0px_0px_0px_4px_rgba(249,50,50,0.1)]'}  mt-2 w-full h-11 p-3.5 rounded-lg`} type="text" name="email" placeholder="Enter your email"
+              className={`focus:outline-none focus:${!errors.email?  'shadow-[0px_0px_0px_4px_rgba(74,74,104,0.1)]' : 'shadow-[0px_0px_0px_4px_rgba(249,50,50,0.1)]'}  mt-2 w-full h-11 p-3.5 rounded-lg`} type="text" name="email" placeholder="Enter your email"
               {...register("email", 
               {required: true, pattern: pattern })}
               />
@@ -51,7 +57,7 @@ const SignUp = () => {
 
               <input 
               style={{border: errors.password ? '1px solid red': '1px solid #D0D5DD'}}
-              className={`focus:outline-none focus:${errors.password === true? 'shadow-[0px_0px_0px_4px_rgba(74,74,104,0.1)]' : 'shadow-[0px_0px_0px_4px_rgba(249,50,50,0.1)]'} mt-2 w-full h-11 p-3.5 rounded-lg`} type="password" name="password" placeholder="Please enter your unique password"
+              className={`focus:outline-none focus:${!errors.password? 'shadow-[0px_0px_0px_4px_rgba(74,74,104,0.1)]' : 'shadow-[0px_0px_0px_4px_rgba(249,50,50,0.1)]'} mt-2 w-full h-11 p-3.5 rounded-lg`} type="password" name="password" placeholder="Please enter your unique password"
               {...register("password", {required: true})}/>
               {errors.password && <p className='right-0 bottom-[-37px] italic absolute text-sm mb-4' style={{color: 'red'}}>Password must not be empty</p>}
             </div>

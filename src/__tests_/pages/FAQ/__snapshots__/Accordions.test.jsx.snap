@@ -1,0 +1,688 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Accordion component expect faq page to render correctly 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="block relative w-full"
+      >
+        <button
+          class="flex justify-between items-center w-full py-4 border-b border-b-blue-gray-100 text-blue-gray-700 antialiased font-sans text-xl font-semibold leading-snug select-none hover:text-blue-gray-900 transition-colors !font-bold !text-xs lg:!text-xl !text-[#151517] !border-0 !border-[#fff]"
+          type="button"
+        >
+          What is catch up?
+          <span
+            class="w-5 h-5 ml-4"
+          >
+            <svg
+              class=" h-5 w-5 transition-transform text-[#0056D6] border border-solid border-[#0056D6] p-1 rounded-full "
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M19 9l-7 7-7-7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </span>
+        </button>
+        <div
+          class="overflow-hidden"
+          style="height: 0px;"
+        >
+          <div
+            class="block w-full py-4 text-gray-700 antialiased font-sans text-sm font-light leading-normal !text-[#616161] !text-[10px] lg:!text-sm"
+            style="opacity: 0;"
+          >
+            It is an invitation, gathering, hangout management tool. it enables you to easily send, manage, vote, and receive invitations seamlessly.
+          </div>
+        </div>
+      </div>
+      <div
+        class="block relative w-full"
+      >
+        <button
+          class="flex justify-between items-center w-full py-4 border-b border-b-blue-gray-100 text-blue-gray-700 antialiased font-sans text-xl font-semibold leading-snug select-none hover:text-blue-gray-900 transition-colors !font-bold !text-xs lg:!text-xl !text-[#151517] !border-0 !border-[#fff]"
+          type="button"
+        >
+          How do i create an invitation?
+          <span
+            class="w-5 h-5 ml-4"
+          >
+            <svg
+              class=" h-5 w-5 transition-transform text-[#0056D6] border border-solid border-[#0056D6] p-1 rounded-full "
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M19 9l-7 7-7-7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </span>
+        </button>
+        <div
+          class="overflow-hidden"
+          style="height: 0px;"
+        >
+          <div
+            class="block w-full py-4 text-gray-700 antialiased font-sans text-sm font-light leading-normal !text-[#616161] !text-[10px] lg:!text-sm"
+            style="opacity: 0;"
+          >
+            Please click on the New (+) at the bottom of the screen to start a new invitation or request a vote on time or location, fill all required fileds, and make sure to have at least one person invited to complete the process.
+          </div>
+        </div>
+      </div>
+      <div
+        class="block relative w-full"
+      >
+        <button
+          class="flex justify-between items-center w-full py-4 border-b border-b-blue-gray-100 text-blue-gray-700 antialiased font-sans text-xl font-semibold leading-snug select-none hover:text-blue-gray-900 transition-colors !font-bold !text-xs lg:!text-xl !text-[#151517] !border-0 !border-[#fff] !text-left"
+          type="button"
+        >
+          Can I change my mind about an invitation I received?
+          <span
+            class="w-5 h-5 ml-4"
+          >
+            <svg
+              class=" h-5 w-5 transition-transform text-[#0056D6] border border-solid border-[#0056D6] p-1 rounded-full "
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M19 9l-7 7-7-7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </span>
+        </button>
+        <div
+          class="overflow-hidden"
+          style="height: 0px;"
+        >
+          <div
+            class="block w-full py-4 text-gray-700 antialiased font-sans text-sm font-light leading-normal !text-[#616161] !text-[10px] lg:!text-sm"
+            style="opacity: 0;"
+          >
+            Yes, you can reselect another reply to your received invitations if the event did not start yet. Once the event starts, you cannot change your reply
+          </div>
+        </div>
+      </div>
+      <div
+        class="block relative w-full"
+      >
+        <button
+          class="flex justify-between items-center w-full py-4 border-b border-b-blue-gray-100 text-blue-gray-700 antialiased font-sans text-xl font-semibold leading-snug select-none hover:text-blue-gray-900 transition-colors !font-bold !text-xs lg:!text-xl !text-[#151517] !border-0 !border-[#fff]"
+          type="button"
+        >
+          Who should use catchup?
+          <span
+            class="w-5 h-5 ml-4"
+          >
+            <svg
+              class=" h-5 w-5 transition-transform text-[#0056D6] border border-solid border-[#0056D6] p-1 rounded-full "
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M19 9l-7 7-7-7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </span>
+        </button>
+        <div
+          class="overflow-hidden"
+          style="height: 0px;"
+        >
+          <div
+            class="block w-full py-4 text-gray-700 antialiased font-sans text-sm font-light leading-normal !text-[#616161] !text-[10px] lg:!text-sm"
+            style="opacity: 0;"
+          >
+            Anyone  struggling with their social life, trying to figure  out what works for them and their guest/friends. Now they can instantly find out when their friends are all free and make plans on the spot.
+          </div>
+        </div>
+      </div>
+      <div
+        class="block relative w-full"
+      >
+        <button
+          class="flex justify-between items-center w-full py-4 border-b border-b-blue-gray-100 text-blue-gray-700 antialiased font-sans text-xl font-semibold leading-snug select-none hover:text-blue-gray-900 transition-colors !font-bold !text-xs lg:!text-xl !text-[#151517] !border-0 !border-[#fff]"
+          type="button"
+        >
+          How do I get help?
+          <span
+            class="w-5 h-5 ml-4"
+          >
+            <svg
+              class=" h-5 w-5 transition-transform text-[#0056D6] border border-solid border-[#0056D6] p-1 rounded-full "
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M19 9l-7 7-7-7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </span>
+        </button>
+        <div
+          class="overflow-hidden"
+          style="height: 0px;"
+        >
+          <div
+            class="block w-full py-4 text-gray-700 antialiased font-sans text-sm font-light leading-normal !text-[#616161] !text-[10px] lg:!text-sm"
+            style="opacity: 0;"
+          >
+            We have a live chat, offering support as fast as possible. Otherwise, you can always email us at support@catchup.com, and will get back to you within 24 hours.
+          </div>
+        </div>
+      </div>
+      <div
+        class="block relative w-full"
+      >
+        <button
+          class="flex justify-between items-center w-full py-4 border-b border-b-blue-gray-100 text-blue-gray-700 antialiased font-sans text-xl font-semibold leading-snug select-none hover:text-blue-gray-900 transition-colors !font-bold !text-xs lg:!text-xl !text-[#151517] !border-0 !border-[#fff]"
+          type="button"
+        >
+          Can I add an event to my calendar?
+          <span
+            class="w-5 h-5 ml-4"
+          >
+            <svg
+              class=" h-5 w-5 transition-transform text-[#0056D6] border border-solid border-[#0056D6] p-1 rounded-full "
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M19 9l-7 7-7-7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </span>
+        </button>
+        <div
+          class="overflow-hidden"
+          style="height: 0px;"
+        >
+          <div
+            class="block w-full py-4 text-gray-700 antialiased font-sans text-sm font-light leading-normal !text-[#616161] !text-[10px] lg:!text-sm"
+            style="opacity: 0;"
+          >
+            Catch up would ask to get permission to your calender, If you allowed access, then events will be added to your calendar using the time zone of the location of the even
+          </div>
+        </div>
+      </div>
+      <div
+        class="block relative w-full"
+      >
+        <button
+          class="flex justify-between items-center w-full py-4 border-b border-b-blue-gray-100 text-blue-gray-700 antialiased font-sans text-xl font-semibold leading-snug select-none hover:text-blue-gray-900 transition-colors !font-bold !text-xs lg:!text-xl !text-[#151517] !border-0 !border-[#fff] !text-left"
+          type="button"
+        >
+          Do I need to download the app to create or receive invite?
+          <span
+            class="w-5 h-5 ml-4"
+          >
+            <svg
+              class=" h-5 w-5 transition-transform text-[#0056D6] border border-solid border-[#0056D6] p-1 rounded-full "
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M19 9l-7 7-7-7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </span>
+        </button>
+        <div
+          class="overflow-hidden"
+          style="height: 0px;"
+        >
+          <div
+            class="block w-full py-4 text-gray-700 antialiased font-sans text-sm font-light leading-normal !text-[#616161] !text-[10px] lg:!text-sm"
+            style="opacity: 0;"
+          >
+            No, you don’t need to download  to create an invite. With access to your mobile phone or desktop that has internet you can utilize all the fuctions and features of the app.
+          </div>
+        </div>
+      </div>
+      <div
+        class="block relative w-full"
+      >
+        <button
+          class="flex justify-between items-center w-full py-4 border-b border-b-blue-gray-100 text-blue-gray-700 antialiased font-sans text-xl font-semibold leading-snug select-none hover:text-blue-gray-900 transition-colors !font-bold !text-xs lg:!text-xl !text-[#151517] !border-0 !border-[#fff]"
+          type="button"
+        >
+          Can I invite friends from my contact list?
+          <span
+            class="w-5 h-5 ml-4"
+          >
+            <svg
+              class=" h-5 w-5 transition-transform text-[#0056D6] border border-solid border-[#0056D6] p-1 rounded-full "
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M19 9l-7 7-7-7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </span>
+        </button>
+        <div
+          class="overflow-hidden"
+          style="height: 0px;"
+        >
+          <div
+            class="block w-full py-4 text-gray-700 antialiased font-sans text-sm font-light leading-normal !text-[#616161] !text-[10px] lg:!text-sm"
+            style="opacity: 0;"
+          >
+            Catch up would ask to get permission from your contact list, if contact is allowed access, then you can add your contact to catch up.
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="block relative w-full"
+    >
+      <button
+        class="flex justify-between items-center w-full py-4 border-b border-b-blue-gray-100 text-blue-gray-700 antialiased font-sans text-xl font-semibold leading-snug select-none hover:text-blue-gray-900 transition-colors !font-bold !text-xs lg:!text-xl !text-[#151517] !border-0 !border-[#fff]"
+        type="button"
+      >
+        What is catch up?
+        <span
+          class="w-5 h-5 ml-4"
+        >
+          <svg
+            class=" h-5 w-5 transition-transform text-[#0056D6] border border-solid border-[#0056D6] p-1 rounded-full "
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19 9l-7 7-7-7"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </span>
+      </button>
+      <div
+        class="overflow-hidden"
+        style="height: 0px;"
+      >
+        <div
+          class="block w-full py-4 text-gray-700 antialiased font-sans text-sm font-light leading-normal !text-[#616161] !text-[10px] lg:!text-sm"
+          style="opacity: 0;"
+        >
+          It is an invitation, gathering, hangout management tool. it enables you to easily send, manage, vote, and receive invitations seamlessly.
+        </div>
+      </div>
+    </div>
+    <div
+      class="block relative w-full"
+    >
+      <button
+        class="flex justify-between items-center w-full py-4 border-b border-b-blue-gray-100 text-blue-gray-700 antialiased font-sans text-xl font-semibold leading-snug select-none hover:text-blue-gray-900 transition-colors !font-bold !text-xs lg:!text-xl !text-[#151517] !border-0 !border-[#fff]"
+        type="button"
+      >
+        How do i create an invitation?
+        <span
+          class="w-5 h-5 ml-4"
+        >
+          <svg
+            class=" h-5 w-5 transition-transform text-[#0056D6] border border-solid border-[#0056D6] p-1 rounded-full "
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19 9l-7 7-7-7"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </span>
+      </button>
+      <div
+        class="overflow-hidden"
+        style="height: 0px;"
+      >
+        <div
+          class="block w-full py-4 text-gray-700 antialiased font-sans text-sm font-light leading-normal !text-[#616161] !text-[10px] lg:!text-sm"
+          style="opacity: 0;"
+        >
+          Please click on the New (+) at the bottom of the screen to start a new invitation or request a vote on time or location, fill all required fileds, and make sure to have at least one person invited to complete the process.
+        </div>
+      </div>
+    </div>
+    <div
+      class="block relative w-full"
+    >
+      <button
+        class="flex justify-between items-center w-full py-4 border-b border-b-blue-gray-100 text-blue-gray-700 antialiased font-sans text-xl font-semibold leading-snug select-none hover:text-blue-gray-900 transition-colors !font-bold !text-xs lg:!text-xl !text-[#151517] !border-0 !border-[#fff] !text-left"
+        type="button"
+      >
+        Can I change my mind about an invitation I received?
+        <span
+          class="w-5 h-5 ml-4"
+        >
+          <svg
+            class=" h-5 w-5 transition-transform text-[#0056D6] border border-solid border-[#0056D6] p-1 rounded-full "
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19 9l-7 7-7-7"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </span>
+      </button>
+      <div
+        class="overflow-hidden"
+        style="height: 0px;"
+      >
+        <div
+          class="block w-full py-4 text-gray-700 antialiased font-sans text-sm font-light leading-normal !text-[#616161] !text-[10px] lg:!text-sm"
+          style="opacity: 0;"
+        >
+          Yes, you can reselect another reply to your received invitations if the event did not start yet. Once the event starts, you cannot change your reply
+        </div>
+      </div>
+    </div>
+    <div
+      class="block relative w-full"
+    >
+      <button
+        class="flex justify-between items-center w-full py-4 border-b border-b-blue-gray-100 text-blue-gray-700 antialiased font-sans text-xl font-semibold leading-snug select-none hover:text-blue-gray-900 transition-colors !font-bold !text-xs lg:!text-xl !text-[#151517] !border-0 !border-[#fff]"
+        type="button"
+      >
+        Who should use catchup?
+        <span
+          class="w-5 h-5 ml-4"
+        >
+          <svg
+            class=" h-5 w-5 transition-transform text-[#0056D6] border border-solid border-[#0056D6] p-1 rounded-full "
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19 9l-7 7-7-7"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </span>
+      </button>
+      <div
+        class="overflow-hidden"
+        style="height: 0px;"
+      >
+        <div
+          class="block w-full py-4 text-gray-700 antialiased font-sans text-sm font-light leading-normal !text-[#616161] !text-[10px] lg:!text-sm"
+          style="opacity: 0;"
+        >
+          Anyone  struggling with their social life, trying to figure  out what works for them and their guest/friends. Now they can instantly find out when their friends are all free and make plans on the spot.
+        </div>
+      </div>
+    </div>
+    <div
+      class="block relative w-full"
+    >
+      <button
+        class="flex justify-between items-center w-full py-4 border-b border-b-blue-gray-100 text-blue-gray-700 antialiased font-sans text-xl font-semibold leading-snug select-none hover:text-blue-gray-900 transition-colors !font-bold !text-xs lg:!text-xl !text-[#151517] !border-0 !border-[#fff]"
+        type="button"
+      >
+        How do I get help?
+        <span
+          class="w-5 h-5 ml-4"
+        >
+          <svg
+            class=" h-5 w-5 transition-transform text-[#0056D6] border border-solid border-[#0056D6] p-1 rounded-full "
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19 9l-7 7-7-7"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </span>
+      </button>
+      <div
+        class="overflow-hidden"
+        style="height: 0px;"
+      >
+        <div
+          class="block w-full py-4 text-gray-700 antialiased font-sans text-sm font-light leading-normal !text-[#616161] !text-[10px] lg:!text-sm"
+          style="opacity: 0;"
+        >
+          We have a live chat, offering support as fast as possible. Otherwise, you can always email us at support@catchup.com, and will get back to you within 24 hours.
+        </div>
+      </div>
+    </div>
+    <div
+      class="block relative w-full"
+    >
+      <button
+        class="flex justify-between items-center w-full py-4 border-b border-b-blue-gray-100 text-blue-gray-700 antialiased font-sans text-xl font-semibold leading-snug select-none hover:text-blue-gray-900 transition-colors !font-bold !text-xs lg:!text-xl !text-[#151517] !border-0 !border-[#fff]"
+        type="button"
+      >
+        Can I add an event to my calendar?
+        <span
+          class="w-5 h-5 ml-4"
+        >
+          <svg
+            class=" h-5 w-5 transition-transform text-[#0056D6] border border-solid border-[#0056D6] p-1 rounded-full "
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19 9l-7 7-7-7"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </span>
+      </button>
+      <div
+        class="overflow-hidden"
+        style="height: 0px;"
+      >
+        <div
+          class="block w-full py-4 text-gray-700 antialiased font-sans text-sm font-light leading-normal !text-[#616161] !text-[10px] lg:!text-sm"
+          style="opacity: 0;"
+        >
+          Catch up would ask to get permission to your calender, If you allowed access, then events will be added to your calendar using the time zone of the location of the even
+        </div>
+      </div>
+    </div>
+    <div
+      class="block relative w-full"
+    >
+      <button
+        class="flex justify-between items-center w-full py-4 border-b border-b-blue-gray-100 text-blue-gray-700 antialiased font-sans text-xl font-semibold leading-snug select-none hover:text-blue-gray-900 transition-colors !font-bold !text-xs lg:!text-xl !text-[#151517] !border-0 !border-[#fff] !text-left"
+        type="button"
+      >
+        Do I need to download the app to create or receive invite?
+        <span
+          class="w-5 h-5 ml-4"
+        >
+          <svg
+            class=" h-5 w-5 transition-transform text-[#0056D6] border border-solid border-[#0056D6] p-1 rounded-full "
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19 9l-7 7-7-7"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </span>
+      </button>
+      <div
+        class="overflow-hidden"
+        style="height: 0px;"
+      >
+        <div
+          class="block w-full py-4 text-gray-700 antialiased font-sans text-sm font-light leading-normal !text-[#616161] !text-[10px] lg:!text-sm"
+          style="opacity: 0;"
+        >
+          No, you don’t need to download  to create an invite. With access to your mobile phone or desktop that has internet you can utilize all the fuctions and features of the app.
+        </div>
+      </div>
+    </div>
+    <div
+      class="block relative w-full"
+    >
+      <button
+        class="flex justify-between items-center w-full py-4 border-b border-b-blue-gray-100 text-blue-gray-700 antialiased font-sans text-xl font-semibold leading-snug select-none hover:text-blue-gray-900 transition-colors !font-bold !text-xs lg:!text-xl !text-[#151517] !border-0 !border-[#fff]"
+        type="button"
+      >
+        Can I invite friends from my contact list?
+        <span
+          class="w-5 h-5 ml-4"
+        >
+          <svg
+            class=" h-5 w-5 transition-transform text-[#0056D6] border border-solid border-[#0056D6] p-1 rounded-full "
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19 9l-7 7-7-7"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </span>
+      </button>
+      <div
+        class="overflow-hidden"
+        style="height: 0px;"
+      >
+        <div
+          class="block w-full py-4 text-gray-700 antialiased font-sans text-sm font-light leading-normal !text-[#616161] !text-[10px] lg:!text-sm"
+          style="opacity: 0;"
+        >
+          Catch up would ask to get permission from your contact list, if contact is allowed access, then you can add your contact to catch up.
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
