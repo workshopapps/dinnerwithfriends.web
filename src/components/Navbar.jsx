@@ -22,7 +22,6 @@ const Navbar = () => {
               Sign up
             </button>
             </Link>
-
             <button
               data-collapse-toggle="navbar-sticky"
               type="button"
