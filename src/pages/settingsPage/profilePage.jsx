@@ -1,7 +1,11 @@
 import React from "react";
 import { MdOutlineArrowBack } from "react-icons/md";
+import { IoIosArrowDown } from "react-icons/io";
 import { BiEdit } from "react-icons/bi";
+import { AiOutlineCopyright } from "react-icons/ai";
 import avatar from "../../assets/img/Avatar.png";
+import Dp from "../../assets/img/m-img.png";
+import CatchUp from "../../assets/img/Catch Up.png";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 
@@ -11,6 +15,17 @@ const profilePage = () => {
   return (
     <div>
       <Navbar />
+
+      <div className="profile_header">
+        <span className="catch__Up">
+          <img src={CatchUp} alt="" />
+        </span>
+        <div className="Dp__area">
+          <img src={Dp} alt="" className="profile__pic" />
+          <IoIosArrowDown />
+        </div>
+      </div>
+
       <div className="settings_body">
         <div className="body_title_container">
           <div className="body_title">
@@ -67,6 +82,34 @@ const profilePage = () => {
             <div className="field">25 June</div>
           </label>
         </section>
+      </div>
+      <div className="settings-footer">
+        <div className="footer_top">
+          <span>
+            <a href="/">Catch Up</a>
+            <a href="/">About Us</a>
+            <a href="/">Careers</a>
+            <a href="/">How it works</a>
+            <a href="/">Blog</a>
+            <a href="/">Privay policy</a>
+          </span>
+          <span>
+            <a href="/">Terms & Conditions</a>
+            <a href="/">Security</a>
+            <a href="/">FAQs</a>
+            <a href="/">Help Center</a>
+          </span>
+        </div>
+        <div className="footer_bottom">
+          <div className="footer_bottom_text">
+            <p>English</p>
+            <IoIosArrowDown />
+          </div>
+          <div className="footer_bottom_text">
+            <AiOutlineCopyright />
+            <p>2022 Team PryBar</p>
+          </div>
+        </div>
       </div>
       <Footer />
     </div>
