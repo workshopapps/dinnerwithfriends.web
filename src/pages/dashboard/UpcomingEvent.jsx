@@ -5,6 +5,7 @@ import MediaQuery from 'react-responsive'
 import Event from '../../components/Event'
 import add from '../../assets/img/add.png'
 import Footer from '../../components/Footer'
+import { Link } from 'react-router-dom'
 
 const UpcomingEvent = () => {
   const [status, setStatus] = useState('Upcoming');
@@ -81,11 +82,13 @@ const UpcomingEvent = () => {
             </Button>
           </div>
           <div className='flex flex-col p-8 gap-y-8 mt-9 justify-center items-center border border-solid border-[#CDCDCD] bg-[#FAFAFA] lg:bg-white'>
-            <Button type='button' className='font-bold text-sm lg:text-xl flex justify-between items-center gap-x-3.5 text-white bg-[#1070FF] rounded py-3 px-4 lg:px-8 outline-0'>
-              <span>
-                <img src={add} alt="add" />
-              </span>
-              <span>Create Event</span>
+            <Button type='button' className=' text-white bg-[#1070FF] rounded py-3 px-4 lg:px-8 outline-0'>
+              <Link to="/create_event" className='font-bold text-sm lg:text-xl flex justify-between items-center gap-x-3.5 text-white'>
+                <span>
+                  <img src={add} alt="add" />
+                </span>
+                <span>Create Event</span>
+              </Link>
             </Button>
             <div className='flex flex-col justify-center items-center gap-y-2'>
               <span className='text-[#151517] font-bold lg:font-medium text-xl'>New Catch Up Event</span>
