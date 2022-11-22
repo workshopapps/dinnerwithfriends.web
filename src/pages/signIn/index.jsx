@@ -1,6 +1,6 @@
 import React from "react";
-import SignInImage from "../../assets/img/Sign-in-img.png";
-import Flag from "../../assets/img/Flag.png";
+import SignInImage from "../../assets/img/faq-models.png";
+import Flag from "../../assets/img/google.png";
 import {
   emailValidator,
   passwordValidator,
