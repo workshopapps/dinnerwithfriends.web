@@ -2,11 +2,13 @@ import React from "react";
 
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
+import ClosedEventModal from "../../components/ClosedEventModal";
 
-const Invitee = () => {
+const index = () => {
 	return (
 		<div>
 			<Navbar />
+			<ClosedEventModal />
 			<div className=' my-28 mx-auto md:mx-32'>
 				<div className='mx-3 md:mx-0 text-center w-full'>
 					<h1 className='text-2xl font-bold md:text-3xl'>Hello, there.</h1>
@@ -26,4 +28,4 @@ const Invitee = () => {
 	);
 };
 
-export default Invitee;
+export default index;

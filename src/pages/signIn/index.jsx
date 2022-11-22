@@ -1,7 +1,16 @@
 import React from "react";
+<<<<<<< HEAD
 import signInImage from "../../assets/img/Rectangle 254.png";
 import nigeriaFlag from "../../assets/img/Group.png";
 import { emailValidator, passwordValidator } from "../../utils/LoginAuth";
+=======
+// import SignInImage from "../../assets/img/Sign-in-img.png";
+// import Flag from "../../assets/img/Flag.png";
+import {
+  emailValidator,
+  passwordValidator,
+} from "../../components/LoginRegexValidator";
+>>>>>>> 0be9e2ca267eb9f6073b61eb69bae06d3f3d1eda
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -57,6 +66,7 @@ const SignIn = () => {
               </div>
               <div className="relative">
                 <label className="block mt-4">
+<<<<<<< HEAD
                   <img
                     className="flag-image absolute top-[26px] left-[8px]"
                     src={nigeriaFlag}
@@ -66,6 +76,17 @@ const SignIn = () => {
                     <option className="bg-blue-200">English</option>
                     <option className="bg-blue-200">French</option>
                     <option className="bg-blue-200">German</option>
+=======
+                  {/* <img
+                    className="flag-image absolute top-[28px] left-[8px]"
+                    src={Flag}
+                    alt=" "
+                  /> */}
+                  <select className="form-select text-center rounded-2xl mt-1 block w-[140px] px-6 py-2 bg-slate-200">
+                    <option className="bg-slate-50">English</option>
+                    <option className="bg-slate-50">French</option>
+                    <option className="bg-slate-50">German</option>
+>>>>>>> 0be9e2ca267eb9f6073b61eb69bae06d3f3d1eda
                   </select>
                 </label>
               </div>
@@ -180,8 +201,13 @@ const SignIn = () => {
             </div>
           </div>
           {/*image*/}
+<<<<<<< HEAD
           <div className="form-image w-1/2">
             <img className="" src={signInImage} alt=" " />
+=======
+          <div className="form-image">
+            {/* <img className="" src={SignInImage} alt=" " /> */}
+>>>>>>> 0be9e2ca267eb9f6073b61eb69bae06d3f3d1eda
           </div>
         </div>
       </section>
