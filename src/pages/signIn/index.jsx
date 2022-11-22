@@ -1,6 +1,6 @@
 import React from "react";
-import SignInImage from "../../assets/img/Sign-in-img.png";
-import Flag from "../../assets/img/Flag.png";
+// import SignInImage from "../../assets/img/Sign-in-img.png";
+// import Flag from "../../assets/img/Flag.png";
 import {
   emailValidator,
   passwordValidator,
@@ -59,11 +59,11 @@ const SignIn = () => {
               </div>
               <div className="relative">
                 <label className="block mt-4">
-                  <img
+                  {/* <img
                     className="flag-image absolute top-[28px] left-[8px]"
                     src={Flag}
                     alt=" "
-                  />
+                  /> */}
                   <select className="form-select text-center rounded-2xl mt-1 block w-[140px] px-6 py-2 bg-slate-200">
                     <option className="bg-slate-50">English</option>
                     <option className="bg-slate-50">French</option>
@@ -175,7 +175,7 @@ const SignIn = () => {
           </div>
           {/*image*/}
           <div className="form-image">
-            <img className="" src={SignInImage} alt=" " />
+            {/* <img className="" src={SignInImage} alt=" " /> */}
           </div>
         </div>
       </section>
