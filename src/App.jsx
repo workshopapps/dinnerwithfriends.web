@@ -12,6 +12,7 @@ import { Routes, Route } from "react-router-dom";
 import "./index.css";
 import Faq from "./pages/FAQ/Faq";
 import TermsOfUse from "./pages/termsOfUse";
+import Settings from "./pages/settingsPage/profilePage"
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/create_event" element={<CreateEvent />} />
+        <Route path="/settings" element={<Settings />} />
         <Route path="/error404" element={<Error404 />} />
         <Route path="/invitee" element={<Invitee />} />
         <Route path="/sign_in" element={<SignIn />} />
