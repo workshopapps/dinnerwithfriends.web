@@ -45,10 +45,10 @@ const EventInvite = () => {
               />
             </div>
             <div className="my-7 flex justify-between">
-              <Link to={'/event_invite/event_invite_response'} className="rounded bg-[#1070FF] text-white py-2.5 px-3 text-lg">
+              <Link to={'/event_invite/event_invite_response'} className="rounded bg-[#1070FF] text-white py-2.5 md:px-3 px-2 text-lg">
                 Accept Invite
               </Link>
-              <button className="rounded border border-[#0056D6] text-[#0056D6] py-2.5 px-3 text-lg">
+              <button className="rounded border border-[#0056D6] text-[#0056D6] py-2.5 md:px-3 px-2 text-lg">
                 Decline Invite
               </button>
             </div>
