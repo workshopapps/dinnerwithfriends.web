@@ -20,8 +20,10 @@ const EventInviteResponse = () => {
             You’ll receive a notification and updates to this event by mail. In
             the main time, you can try creating your own events with CatchUp
           </p>
-          <Link to={'/'} className="my-5 bg-[#1070FF] rounded text-white text-xl px-4 py-2.5">
-            Give CatchUp a Try
+          <Link to={"/"} className="my-10">
+            <button className="my-8 bg-[#1070FF] rounded text-white text-xl px-4 py-2.5">
+              Give CatchUp a Try
+            </button>
           </Link>
         </div>
       </div>

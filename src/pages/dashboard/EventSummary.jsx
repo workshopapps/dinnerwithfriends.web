@@ -6,13 +6,25 @@ import { BsPlus } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { Navbar } from "@material-tailwind/react";
 import Footer from "../../components/Footer";
+import { IoIosArrowDown } from "react-icons/io";
+import Dp from "../../assets/img/m-img.png";
+import CatchUp from "../../assets/img/Catch Up.png";
+import "../settingsPage/profilePage.css";
 
 const EventSummary = () => {
   return (
     <div>
-     <Navbar />
-      <div className="mt-16 md:mx-14 mx-6 my-10">
-        <h2 className="mt-28 text-3xl font-bold">Event Summary</h2>
+     <div className="profile_header">
+        <span className="catch__Up">
+          <img src={CatchUp} alt="" />
+        </span>
+        <div className="Dp__area">
+          <img src={Dp} alt="" className="profile__pic" />
+          <IoIosArrowDown />
+        </div>
+      </div>
+      <div className="mt-2 md:mx-14 mx-6 my-10">
+        <h2 className="mt-10 text-3xl font-bold">Event Summary</h2>
         <div className="mt-4 border w-full p-5 rounded-lg shadow text-[#59595B]">
           <h5 className="text-2xl font-bold">Girls Monthly Trip</h5>
           <div className="grid gap-y-3 mt-4">
