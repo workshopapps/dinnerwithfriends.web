@@ -118,7 +118,6 @@ const EventSummary = () => {
           </button>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

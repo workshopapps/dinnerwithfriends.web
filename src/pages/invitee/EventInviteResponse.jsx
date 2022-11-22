@@ -2,6 +2,7 @@ import Navbar from "../../components/Navbar";
 import React from "react";
 import { IoCheckmark } from "react-icons/io5";
 import Footer from "../../components/Footer";
+import { Link } from "react-router-dom";
 
 const EventInviteResponse = () => {
   return (
@@ -19,9 +20,9 @@ const EventInviteResponse = () => {
             You’ll receive a notification and updates to this event by mail. In
             the main time, you can try creating your own events with CatchUp
           </p>
-          <button className="my-5 bg-[#1070FF] rounded text-white text-xl px-4 py-2.5">
+          <Link to={'/'} className="my-5 bg-[#1070FF] rounded text-white text-xl px-4 py-2.5">
             Give CatchUp a Try
-          </button>
+          </Link>
         </div>
       </div>
       <Footer />
