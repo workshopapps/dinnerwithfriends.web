@@ -1,7 +1,7 @@
-import React from 'react'
+import React from "react";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const EventInvite = () => {
   return (
@@ -24,6 +24,7 @@ const EventInvite = () => {
                 type="text"
                 placeholder="John Doe"
                 className="outline-none border border-[#898989] rounded md:w-[477px] w-full px-3 py-3 text-base font-medium"
+                required
               />
             </div>
             <div className="my-4 grid">
@@ -32,6 +33,7 @@ const EventInvite = () => {
                 type="email"
                 placeholder="JohnDoe@gmail.com"
                 className="outline-none border border-[#898989] rounded md:w-[477px] w-full px-3 py-3 text-base font-medium"
+                required
               />
             </div>
             <div className="my-4 grid">
@@ -42,22 +44,29 @@ const EventInvite = () => {
                 type="datetime-local"
                 placeholder="17/11/2022 - 3pm"
                 className="outline-none border border-[#898989] rounded md:w-[477px] w-full px-3 py-3 text-base font-medium"
+                required
               />
             </div>
             <div className="my-7 flex justify-between">
-              <Link to={'/event_invite/event_invite_response'} className="rounded bg-[#1070FF] text-white py-2.5 md:px-3 px-2 text-lg">
+              <Link
+                to={"/event_invite/event_invite_response"}
+                className="rounded bg-[#1070FF] text-white py-2.5 md:px-3 px-2 text-lg"
+              >
                 Accept Invite
               </Link>
-              <button className="rounded border border-[#0056D6] text-[#0056D6] py-2.5 md:px-3 px-2 text-lg">
+              <Link
+                to={"/"}
+                className="rounded border border-[#0056D6] text-[#0056D6] py-2.5 md:px-3 px-2 text-lg"
+              >
                 Decline Invite
-              </button>
+              </Link>
             </div>
           </form>
         </div>
       </div>
       <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default EventInvite
+export default EventInvite;
