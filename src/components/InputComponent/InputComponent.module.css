@@ -18,6 +18,7 @@ input {
   font-weight: 700;
   letter-spacing: -0.02em;
   color: #424245;
+  padding: 0;
 }
 
 .input-container input {

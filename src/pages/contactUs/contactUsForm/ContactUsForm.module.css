@@ -26,6 +26,7 @@ textarea::placeholder {
   font-weight: 700;
   letter-spacing: -0.02em;
   color: #424245;
+  padding: 0;
 }
 
 .text-area-container p {
@@ -61,4 +62,7 @@ small {
   font-weight: 700;
   padding: 1.25rem 0;
   margin-top: 7.5rem;
+  color: #fff;
+  background-color: #1976d2;
+  border-radius: 8px;
 }
