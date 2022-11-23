@@ -87,7 +87,7 @@ export default function Howitwork2() {
         <div>
           <form >
             <div >
-            <input className=' border border-gray-300 p-4 mr-10 rounded-lg max-md:mr-3 max-md:p-3' type='text' placeholder='Firstname'/>
+            <input className=' border border-gray-300 p-4 mr-10 rounded-lg max-md:mr-4 max-md:p-3' type='text' placeholder='Firstname'/>
             <input className=' border border-gray-300 p-4 rounded-lg max-md:p-3' type='text' placeholder='Lastname'/>
             </div>
             <input className='border border-gray-300 p-4 w-full mt-6 rounded-lg 'type='email' placeholder='olivia@untitledui.com'/>
