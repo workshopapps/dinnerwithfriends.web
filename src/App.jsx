@@ -1,6 +1,5 @@
 import { Routes, Route } from "react-router-dom";
 import "./index.css";
-
 import CreateEvent from "./pages/dashboard/createEvent/CreateEvent";
 import Home from "./pages/home";
 import Invitee from "./pages/invitee";
@@ -46,7 +45,7 @@ function App() {
         <Route path="/event_invite" element={<EventInvite />} />
         <Route path="/event_summary" element={<EventSummary />} />
         <Route path="/event_invite/event_invite_response" element={<EventInviteResponse />} />
-        <Route path="/dashboard/upcoming_events" element={<UpcomingEvent />} />
+        <Route path="/dashboard/home" element={<UpcomingEvent />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/forget-password" element={<ForgetPassword />} />
       </Routes>
