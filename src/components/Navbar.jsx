@@ -61,7 +61,7 @@ const Navbar = () => {
               </li>
               <li>
                 <Link
-                  to="#"
+                  to="/error404"
                   className="block py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 "
                 >
                   Blog
@@ -69,7 +69,7 @@ const Navbar = () => {
               </li>
               <li>
                 <Link
-                  to="#"
+                  to="/error404"
                   className="flex py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 "
                 >
                   Company<svg className="w-5 h-5 ml-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
@@ -77,7 +77,7 @@ const Navbar = () => {
               </li>
               <li>
                 <Link
-                  to="#"
+                  to="/error404"
                   className="block py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 "
                 >
                   Features
