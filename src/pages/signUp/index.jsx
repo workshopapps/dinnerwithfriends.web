@@ -5,7 +5,7 @@ import nigeria from './nigeria.svg'
 import chevron from './chevron.svg'
 import { useForm } from "react-hook-form"
 import Logo from '../../components/Logo'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 const SignUp = () => {
   const { register, handleSubmit, formState: { errors } } = useForm()
   const navigate = useNavigate()
@@ -71,7 +71,7 @@ const SignUp = () => {
                Sign Up with Google
             </button>
 
-            <p className=' my-8 font-normal text-center text-[#0056D6]'>Have an account already? Sign in for free</p>
+            <p className=' my-8 font-normal text-center text-[#0056D6]'>Have an account already? <Link to="/sign_in">Sign in for free</Link></p>
              
         </div>
       </div>
