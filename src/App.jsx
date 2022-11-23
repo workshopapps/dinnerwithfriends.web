@@ -11,6 +11,7 @@ import ViewEvent from "./pages/dashboard/ViewEvent";
 import ContactUs from "./pages/contactUs";
 import ProfilePage from "./pages/settingsPage/profilePage";
 import ForgetPassword from "./pages/ForgetPassword/index";
+import ResetLink from "./pages/ForgetPassword/LinkReset"
 import Policy from "./pages/policy";
 import Error404 from "./pages/error404";
 import HowItWorks from "./pages/howItWorks/HowItWorks";
@@ -50,6 +51,7 @@ function App() {
         <Route path="/dashboard/upcoming_events" element={<UpcomingEvent />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/forget-password" element={<ForgetPassword />} />
+        <Route path="/reset_link" element={<ResetLink />} />
         <Route path="*" element={<Error404 />} />
       </Routes>
     </div>

@@ -5,7 +5,7 @@ import nigeria from './nigeria.svg'
 import chevron from './chevron.svg'
 import { useForm } from "react-hook-form"
 import Logo from '../../components/Logo'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 const SignUp = () => {
   const { register, handleSubmit, formState: { errors } } = useForm()
   const navigate = useNavigate()
@@ -13,7 +13,7 @@ const SignUp = () => {
   !errors.email ? console.log(' no email error') : console.log(' email error')
   const onSubmit = (data) => {
     console.log(data)
-    !errors.email && navigate('/create_event')
+    !errors.email && navigate('/dashboard/upcoming_events')
   }
   /* eslint-disable-next-line */
   const pattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
@@ -71,7 +71,7 @@ const SignUp = () => {
                Sign Up with Google
             </button>
 
-            <p className=' my-8 font-normal text-center text-[#0056D6]'>Have an account already? Sign in for free</p>
+            <p className=' my-8 font-normal text-center text-[#0056D6]'>Have an account already? <Link to="/sign_in">Sign in for free</Link></p>
              
         </div>
       </div>
