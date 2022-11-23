@@ -3,15 +3,28 @@ import { Link } from "react-router-dom";
 import { BsFillSuitHeartFill } from "react-icons/bs";
 
 const Footer = () => {
-  const company = ["Careers", "About us", "Contact us", "Partner with us"];
-  const learn = ["Blogs", "Webinars", "How it works"];
-  const legal = [
-    "Security",
-    "Privacy policy",
-    "Cookies Setting",
-    "Terms & Conditions",
+  const company = [
+    { title: "Careers", to: "/careers" },
+    { title: "About us", to: "/error404" },
+    { title: "Contact us", to: "/contact-us" },
+    { title: "Partner with us", to: "/error404" },
   ];
-  const help = ["FAQs", "Help Center", "Customer support"];
+  const learn = [
+    { title: "Blogs", to: "/error404" },
+    { title: "Webinars", to: "/error404" },
+    { title: "How it Works", to: "/howitworks" },
+  ];
+  const legal = [
+    { title: "Security", to: "/error404" },
+    { title: "Privacy Policy", to: "/policy" },
+    { title: "Cookies Setting", to: "/error404" },
+    { title: "Terms & Conditions", to: "/terms-of-use" },
+  ];
+  const help = [
+    { title: "FAQs", to: "/faq" },
+    { title: "Help Center", to: "/error404" },
+    { title: "Customer support", to: "/error404" },
+  ];
 
   return (
     <footer className="bg-blue-700">
@@ -31,10 +44,10 @@ const Footer = () => {
             Company
           </h2>
           <ul className="text-gray-100">
-            {company.map((e, i) => (
-              <li key={i} className="mb-1 lg:mb-4">
-                <Link href="#" className=" hover:underline">
-                  {e}
+            {company.map((item, i) => (
+              <li className="mb-1 lg:mb-4" key={i}>
+                <Link to={item.to} className=" hover:underline">
+                  {item.title}
                 </Link>
               </li>
             ))}
@@ -45,10 +58,10 @@ const Footer = () => {
             Help center
           </h2>
           <ul className="text-gray-100">
-            {learn.map((e, i) => (
-              <li key={i} className="mb-1 lg:mb-4">
-                <Link href="#" className=" hover:underline">
-                  {e}
+            {learn.map((item, i) => (
+              <li className="mb-1 lg:mb-4" key={i}>
+                <Link to={item.to} className=" hover:underline">
+                  {item.title}
                 </Link>
               </li>
             ))}
@@ -59,10 +72,10 @@ const Footer = () => {
             Legal
           </h2>
           <ul className="text-gray-100">
-            {legal.map((e, i) => (
-              <li key={i} className="mb-1 lg:mb-4">
-                <Link href="#" className=" hover:underline">
-                  {e}
+            {legal.map((item, i) => (
+              <li className="mb-1 lg:mb-4" key={i}>
+                <Link to={item.to} className=" hover:underline">
+                  {item.title}
                 </Link>
               </li>
             ))}
@@ -73,10 +86,10 @@ const Footer = () => {
             Download
           </h2>
           <ul className="text-gray-100">
-            {help.map((e, i) => (
-              <li key={i} className="mb-1 lg:mb-4">
-                <Link href="#" className=" hover:underline">
-                  {e}
+            {help.map((item, i) => (
+              <li className="mb-1 lg:mb-4" key={i}>
+                <Link to={item.to} className=" hover:underline">
+                  {item.title}
                 </Link>
               </li>
             ))}
