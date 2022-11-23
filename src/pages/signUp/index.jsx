@@ -1,5 +1,5 @@
 import React from 'react'
-import image from './signup_image.svg'
+import image from './signup_image.webp'
 import google from './google.svg'
 import nigeria from './nigeria.svg'
 import chevron from './chevron.svg'
