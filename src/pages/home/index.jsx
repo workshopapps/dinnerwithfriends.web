@@ -14,7 +14,6 @@ const Home = () => {
   return (
     <div className="">
       <Navbar />
-
       <section className="bg-[url('assets/img/VectorsHome.png')] bg-no-repeat bg-center">
         <div className="flex flex-row-reverse mt-28 w-[13rem] mx-auto md:mx-32 md:w-[80%]">
           <img src={SubHome} alt="subHome" className="md:w-[13rem]" />
