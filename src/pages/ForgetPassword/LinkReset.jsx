@@ -16,7 +16,7 @@ const ResetLink = () => {
               </Link>
             </div>
             <h1 className="text-3xl font-bold">Reset Link Sent</h1>
-            <p className="w-60 md:w-96 mt-3">
+            <p className="w-60 md:w-96 mt-3 text-base xl:text-lg">
               A password reset link has been sent to john@gmail.com
             </p>
 
@@ -29,7 +29,7 @@ const ResetLink = () => {
               </button>
             </div>
 
-            <p className="w-60 md:w-96 mt-5">
+            <p className="w-60 md:w-96 mt-5 text-sm xl:text-base">
               Didn't receive the email yet?{" "}
               <Link
                 to="/forget_password"
