@@ -222,8 +222,9 @@ const Policy = () => {
           </div>
           <div>
             <h1 className="mx-3 mb-3 text-xl md:text-2xl md:mx-0">Contents</h1>
-            {contents.map((content) => (
+            {contents.map((content, i) => (
               <a
+                key={i}
                 href={content.link}
                 className="block py-2 pl-3 pr-4 md:mb-2 text-gray-800 font-sm rounded hover:text-blue-700 md:p-0"
               >
@@ -244,8 +245,8 @@ const Policy = () => {
             </p>
           </div>
           <div className="mx-3 md:mx-0">
-            {policies.map((policy) => (
-              <div>
+            {policies.map((policy, i) => (
+              <div key={i}>
                 <a href={policy.href} className="mt-4 text-xl">{policy.links} </a>
                 <p className="leading-7 text-gray-600 font-sm my-4">{policy.p}</p>
               </div>

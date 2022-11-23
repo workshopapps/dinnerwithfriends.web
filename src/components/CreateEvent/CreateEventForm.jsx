@@ -36,7 +36,7 @@ const CreateEventForm = () => {
 		if (Object.keys(errors).length === 0) {
 			navigate("/event_summary");
 		}
-	}, [errors]);
+	}, [errors, navigate]);
 
 	return (
 		<div className='w-full py-8'>

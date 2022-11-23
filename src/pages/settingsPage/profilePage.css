@@ -117,9 +117,6 @@ label {
 .field {
   width: 40%;
 }
-Nav {
-  display: none;
-}
 .settings-footer {
   position: fixed;
   bottom: 0;
@@ -147,9 +144,6 @@ Nav {
   gap: 0.3rem;
   font-size: 13px;
   cursor: pointer;
-}
-footer {
-  display: none;
 }
 
 /* media queries starts here */
