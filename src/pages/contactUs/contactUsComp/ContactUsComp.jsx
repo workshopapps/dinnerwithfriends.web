@@ -3,8 +3,13 @@ import Navbar from "../../../components/Navbar";
 import ContactUsDetails from "../contactDetails/ContactUsDetails";
 import ContactUsForm from "../contactUsForm/ContactUsForm";
 import classes from "./ContactUsComp.module.css";
+import { useEffect } from "react";
 
 const ContactUsComp = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <section className={classes["contact-section"]}>
       <Navbar />
