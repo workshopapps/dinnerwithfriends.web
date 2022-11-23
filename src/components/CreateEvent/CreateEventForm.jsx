@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IoCalendarOutline } from "react-icons/io5";
 import { SlArrowRight } from "react-icons/sl";
+import { useNavigate } from "react-router";
 import { CatchUpEventContextUse } from "../../context/CatchUpEventContext";
 import { formLogic } from "../../data/createEventErrorLogic";
 import Button from "../Button";
@@ -12,14 +13,30 @@ const CreateEventForm = () => {
 	const [showCalendar3, setShowCalendar3] = useState(false);
 	const { startDate, endDate, preferredDate, setFormValues, formValues } =
 		CatchUpEventContextUse();
+	const navigate = useNavigate();
 
-	const [errors, setErrors] = useState({});
+	const [errors, setErrors] = useState({
+		eventInvite: "",
+		description: "",
+		location: "",
+		eventType: "",
+		noOfParticipants: "",
+		startDate: "",
+		endDate: "",
+		preferredDate: "",
+	});
 
 	const handleSubmit = () => {
 		setErrors(formLogic(formValues));
 		setFormValues({ ...formValues, preferredDate, endDate, startDate });
 		console.log(formValues);
 	};
+
+	useEffect(() => {
+		if (Object.keys(errors).length === 0) {
+			navigate("/event_summary");
+		}
+	}, [errors, navigate]);
 
 	return (
 		<div className='w-full py-8'>
@@ -232,6 +249,7 @@ const CreateEventForm = () => {
 
 				<div className='w-full flex justify-center mt-6'>
 					<Button
+						children
 						type='submit'
 						onClick={handleSubmit}
 						className='flex items-center text-xs font-medium px-6 py-2 bg-[#1070FF] w-fit text-white rounded-[4px]'>

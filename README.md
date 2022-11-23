@@ -61,6 +61,3 @@ Give a ⭐️ if you like this project!
 ## 📝 License
 
 This project is [MIT](./MIT.md) licensed.# catch_up
-=======
-# dinnerwithfriends.mobile
->>>>>>> d9aacc5be14e42673199c5be3597ddee7ce8f0e3
