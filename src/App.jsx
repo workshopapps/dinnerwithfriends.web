@@ -22,6 +22,7 @@ import EventInvite from "./pages/invitee/EventInvite";
 import EventInviteResponse from "./pages/invitee/EventInviteResponse";
 import EventSummary from "./pages/dashboard/EventSummary";
 import UpcomingEvent from "./pages/dashboard/UpcomingEvent";
+import Features from "./pages/Features-page/features";
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
         <Route path="/event_summary" element={<EventSummary />} />
         <Route path="/event_invite/event_invite_response" element={<EventInviteResponse />} />
         <Route path="/dashboard/upcoming_events" element={<UpcomingEvent />} />
+        <Route path="/features" element={<Features />} />
       </Routes>
     </div>
   );
