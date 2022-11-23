@@ -69,12 +69,12 @@ const ContactUsForm = () => {
       enteredMessageIsValid
     ) {
       // use form data
-      const data = {
-        firstName: enteredFirstName,
-        lastName: enteredLastName,
-        email: enteredEmail,
-        message: enteredMessage,
-      };
+      // const data = {
+      //   firstName: enteredFirstName,
+      //   lastName: enteredLastName,
+      //   email: enteredEmail,
+      //   message: enteredMessage,
+      // };
       // display message
       setFormSubmittedSuccessfully(true);
     }
