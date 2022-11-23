@@ -90,7 +90,7 @@ export default function Howitwork2() {
             <input className=' border border-gray-300 p-4 mr-10 rounded-lg max-md:mr-3 max-md:p-3' type='text' placeholder='Firstname'/>
             <input className=' border border-gray-300 p-4 rounded-lg max-md:p-3' type='text' placeholder='Lastname'/>
             </div>
-            <input className='border border-gray-300 p-4 w-full mt-5 rounded-lg 'type='email' placeholder='olivia@untitledui.com'/>
+            <input className='border border-gray-300 p-4 w-full mt-6 rounded-lg 'type='email' placeholder='olivia@untitledui.com'/>
                      <textarea className=' border border-gray-300 pb-20 pl-3  pt-3 mt-5 w-full rounded-lg' placeholder='Enter a description...'/>
                      <button className='w-full text-white bg-blue-700 rounded-lg p-3 '>Send</button>
                      
