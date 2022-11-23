@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"
 // import SignInImage from "../../assets/img/Sign-in-img.png";
 // import Flag from "../../assets/img/Flag.png";
 import {
@@ -161,7 +162,7 @@ const SignIn = () => {
                     </label>
                   </div>
                   <div className="font-bold text-xs">
-                    <a href=" ">Forgot password?</a>
+                    <Link to="/forget_password">Forgot password?</Link>
                   </div>
                 </div>
 
