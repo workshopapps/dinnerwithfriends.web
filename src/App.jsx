@@ -17,7 +17,7 @@ import HowItWorks from "./pages/howItWorks/HowItWorks";
 import Terms from "./pages/t&c";
 import TermsOfUse from "./pages/termsOfUse";
 import Faq from "./pages/FAQ/Faq";
-import Settings from "./pages/settingsPage/profilePage"
+import Settings from "./pages/settingsPage/profilePage";
 import EventInvite from "./pages/invitee/EventInvite";
 import EventInviteResponse from "./pages/invitee/EventInviteResponse";
 import EventSummary from "./pages/dashboard/EventSummary";
@@ -29,9 +29,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/create_event" element={<CreateEvent />} />
-        <Route path='/closed_event' element={<ClosedEvent />} />
+        <Route path="/closed_event" element={<ClosedEvent />} />
         <Route path="/settings" element={<Settings />} />
-        <Route path="/error404" element={<Error404 />} />
         <Route path="/invitee" element={<Invitee />} />
         <Route path="/sign_in" element={<SignIn />} />
         <Route path="/sign_up" element={<SignUp />} />
@@ -44,10 +43,14 @@ function App() {
         <Route path="/terms" element={<Terms />} />
         <Route path="/event_invite" element={<EventInvite />} />
         <Route path="/event_summary" element={<EventSummary />} />
-        <Route path="/event_invite/event_invite_response" element={<EventInviteResponse />} />
+        <Route
+          path="/event_invite/event_invite_response"
+          element={<EventInviteResponse />}
+        />
         <Route path="/dashboard/upcoming_events" element={<UpcomingEvent />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/forget-password" element={<ForgetPassword />} />
+        <Route path="*" element={<Error404 />} />
       </Routes>
     </div>
   );
