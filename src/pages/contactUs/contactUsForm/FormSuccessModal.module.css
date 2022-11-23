@@ -1,0 +1,47 @@
+.success-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 25;
+  width: 100%;
+  height: 100vh;
+  background-color: #15151779;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notification-box {
+  background-color: #fff;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 700;
+  color: #241818;
+  text-align: center;
+  font-size: 1.25rem;
+}
+
+.close-icon {
+  width: 2rem;
+  height: 2rem;
+  align-self: flex-end;
+  cursor: pointer;
+  margin: 0.5rem;
+}
+
+.success-img {
+  margin: 2rem 0;
+}
+
+.first-p {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.check-mail-btn {
+  font-size: 1.25rem;
+  margin: 4rem 0 2.5rem;
+  padding: 0.8rem 2rem;
+}

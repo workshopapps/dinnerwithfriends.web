@@ -4,12 +4,15 @@ import { CgMenuLeftAlt } from "react-icons/cg";
 import { AiOutlineLike, AiOutlineDislike, AiOutlineUser } from "react-icons/ai";
 import { BsPlus } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import { Navbar } from "@material-tailwind/react";
+import Footer from "../../components/Footer";
 
 const EventSummary = () => {
   return (
     <div>
-      <div className="mt-16 md:mx-14 mx-6">
-        <h2 className="mt-7 text-3xl font-bold">Event Summary</h2>
+     <Navbar />
+      <div className="mt-16 md:mx-14 mx-6 my-10">
+        <h2 className="mt-28 text-3xl font-bold">Event Summary</h2>
         <div className="mt-4 border w-full p-5 rounded-lg shadow text-[#59595B]">
           <h5 className="text-2xl font-bold">Girls Monthly Trip</h5>
           <div className="grid gap-y-3 mt-4">
@@ -114,6 +117,7 @@ const EventSummary = () => {
           </button>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
