@@ -5,6 +5,7 @@ import { AiOutlineLike, AiOutlineDislike, AiOutlineUser } from "react-icons/ai";
 import { BsPlus } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import "../settingsPage/profilePage.css";
+import SecondNavbar from "../../components/SecondNavbar";
 
 const EventSummary = () => {
   const [email, setEmail] = useState("");
@@ -34,6 +35,7 @@ const EventSummary = () => {
   };
   return (
     <div>
+      <SecondNavbar />
       <div className="mt-2 md:mx-14 mx-5 my-10">
         <h2 className="mt-10 text-3xl font-bold">Event Summary</h2>
         <div className="mt-4 border w-full p-5 rounded-lg shadow text-[#59595B]">
