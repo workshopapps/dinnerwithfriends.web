@@ -1,6 +1,5 @@
 import React from 'react'
 import image from './signup_image.svg'
-import catchup from './catchup_logo.svg'
 import google from './google.svg'
 import nigeria from './nigeria.svg'
 import chevron from './chevron.svg'

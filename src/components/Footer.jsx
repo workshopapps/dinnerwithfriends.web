@@ -45,7 +45,6 @@ const Footer = () => {
             Company
           </h2>
           <ul className="text-gray-100">
-<
             {company.map((item, i) => (
               <li className="mb-1 lg:mb-4" key={i}>
                 <Link to={item.to} className=" hover:underline">
@@ -67,8 +66,6 @@ const Footer = () => {
                   {item.title}
                 </Link>
               </li>
-
-
             ))}
           </ul>
         </div>
@@ -83,7 +80,6 @@ const Footer = () => {
                   {item.title}
                 </Link>
               </li>
-
             ))}
           </ul>
         </div>
@@ -98,7 +94,6 @@ const Footer = () => {
                   {item.title}
                 </Link>
               </li>
-
             ))}
           </ul>
         </div>
