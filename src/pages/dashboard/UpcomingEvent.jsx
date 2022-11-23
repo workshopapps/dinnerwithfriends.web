@@ -6,6 +6,7 @@ import Event from "../../components/Event";
 import add from "../../assets/img/add.png";
 import Footer from "../../components/Footer";
 import { Link } from "react-router-dom";
+import CreateEventNavbar from "../../components/CreateEvent/CreateEventNavbar";
 
 const UpcomingEvent = () => {
 	const [status, setStatus] = useState("Upcoming");
@@ -84,6 +85,7 @@ const UpcomingEvent = () => {
 
 	return (
 		<>
+      <CreateEventNavbar />
 			<section className='px-[22px] lg:px-20 pt-11 lg:pt-16 mb-16'>
 				<div className='flex flex-col lg:flex-row justify-center lg:justify-between gap-x-4 mb-4 lg:mb-8'>
 					<div className='flex flex-col justify-center items-center lg:justify-start lg:items-start gap-y-4'>
