@@ -1,5 +1,4 @@
 import Button from "../../../components/Button";
-import classes from "./ContactUsForm.module.css";
 import { useState } from "react";
 import FormSuccessModal from "./FormSuccessModal";
 import useInput from "../../../hooks/user-input";
@@ -10,8 +9,10 @@ const ContactUsForm = () => {
     useState(false);
 
   // close the form submission modal
-  const closeModalHandler = () => {
-    setFormSubmittedSuccessfully(false);
+  const closeModalHandler = (e) => {
+    if (e.target.dataset.close === "close") {
+      setFormSubmittedSuccessfully(false);
+    }
   };
 
   const {
@@ -88,7 +89,7 @@ const ContactUsForm = () => {
 
   return (
     <>
-      <form onSubmit={contactUsFormSubmitHandler} className={classes.form}>
+      <form onSubmit={contactUsFormSubmitHandler} className="w-full sm:w-1/2">
         <InputComponent
           type={"text"}
           id={"first_name"}
@@ -122,14 +123,13 @@ const ContactUsForm = () => {
           inputInvalid={enteredEmailIsInValid}
           errorText={"Email is invalid"}
         />
-        <div
-          className={`${classes["text-area-container"]} ${
-            enteredMessageIsInValid
-              ? classes["invalid-input"]
-              : classes["valid-input"]
-          }`}
-        >
-          <label htmlFor="message">Type your message</label>
+        <div>
+          <label
+            htmlFor="message"
+            className="mb-2 p-0 text-lg font-bold text-stone-900"
+          >
+            Type your message
+          </label>
           <textarea
             rows={"10"}
             id="message"
@@ -138,14 +138,29 @@ const ContactUsForm = () => {
             onChange={messageInputChangeHandler}
             onBlur={messageInputBlurHandler}
             maxLength={100}
+            className={` w-full border rounded-lg p-3 outline-none mt-2.5 placeholder:text-slate-400 placeholder:text-base placeholder:font-medium ${
+              enteredMessageIsInValid
+                ? "border-red-500 focus:border-red-500 text-red-500"
+                : "border-gray-400 focus:border-blue-500"
+            }`}
           />
-          {enteredMessageIsInValid && <small>Enter a message</small>}
-          <p>Maximum of 100 words</p>
+          {enteredMessageIsInValid && (
+            <small className="text-red-500 text-xs">Enter a message</small>
+          )}
+          <p className="text-base font-bold text-gray-800">Maximum of 100 words</p>
         </div>
-        <Button className={classes["contact-submit-btn"]}>Send</Button>
+        <Button
+          type="submit"
+          className="w-full text-xl font-bold py-2.5 mt-24 mb-9 text-white bg-blue-700 rounded-lg"
+        >
+          Send
+        </Button>
       </form>
       {formSubmittedSuccessfully && (
-        <FormSuccessModal onCloseModal={closeModalHandler} />
+        <FormSuccessModal
+          onCloseModal={closeModalHandler}
+          btnCloseModal={setFormSubmittedSuccessfully}
+        />
       )}
     </>
   );

@@ -11,9 +11,9 @@ const ContactUsComp = () => {
   }, []);
 
   return (
-    <section className={classes["contact-section"]}>
+    <section className="w-full mx-auto">
       <Navbar />
-      <div className={classes["in-touch-container"]}>
+      <div className="w-full h-64 text-white mt-16 ">
         <h3>Get in touch</h3>
         <p>
           24/7 We will answer your questions and provide solutions to your
