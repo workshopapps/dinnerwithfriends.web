@@ -23,6 +23,7 @@ import EventInvite from "./pages/invitee/EventInvite";
 import EventInviteResponse from "./pages/invitee/EventInviteResponse";
 import EventSummary from "./pages/dashboard/EventSummary";
 import UpcomingEvent from "./pages/dashboard/UpcomingEvent";
+import Features from "./pages/Features-page/features";
 
 function App() {
   return (
@@ -49,6 +50,8 @@ function App() {
           element={<EventInviteResponse />}
         />
         <Route path="/dashboard/upcoming_events" element={<UpcomingEvent />} />
+        fro-17-features-page
+        <Route path="/features" element={<Features />} /
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/forget-password" element={<ForgetPassword />} />
         <Route path="/reset_link" element={<ResetLink />} />
