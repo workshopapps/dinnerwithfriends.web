@@ -1,4 +1,5 @@
 # @format
+# hello
 
 name: build
 
@@ -52,9 +53,7 @@ jobs:
           envs: GITHUB_USERNAME, GITHUB_TOKEN
           script: |
             cd calendarApp/
-            docker compose down
             docker stop $(docker ps -a -q)
-            docker system prune -a
             rm -r dinnerwithfriends.web/
             git clone https://github.com/workshopapps/dinnerwithfriends.web
             cd dinnerwithfriends.web/
