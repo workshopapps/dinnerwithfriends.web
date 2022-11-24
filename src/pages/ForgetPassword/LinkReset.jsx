@@ -11,7 +11,7 @@ const ResetLink = () => {
         <div className="md:flex items-center justify-center gap-20">
           <div className="grid items-center justify-center">
             <div className="md:hidden mb-5">
-              <Link to="/sign_in">
+              <Link to="#sign_in">
                 <img src={BackToSignIn} alt="" />
               </Link>
             </div>

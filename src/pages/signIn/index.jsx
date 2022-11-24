@@ -2,23 +2,25 @@ import React from "react";
 import signInImage from "../../assets/img/Rectangle 254.png";
 import nigeriaFlag from "../../assets/img/Group.png";
 import { useState } from "react";
-import { useForm } from "react-hook-form"
+import { useForm } from "react-hook-form";
 
 import { Link, useNavigate } from "react-router-dom";
 
 const SignIn = () => {
-  const navigate = useNavigate()
-  const {register, handleSubmit, formState: { errors }} = useForm();
-  const [userInput, setUserInput] = useState({email: "Enter your email address",
-  password: "**********"});
-  const onSubmit = (data) =>{
-    setUserInput(data)
-    if (!errors.email && !errors.password)  
-    return navigate('/create_event')
-
+  const navigate = useNavigate();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const [userInput, setUserInput] = useState({
+    email: "Enter your email address",
+    password: "**********",
+  });
+  const onSubmit = (data) => {
+    setUserInput(data);
+    if (!errors.email && !errors.password) return navigate("/create_event");
   };
-  
- 
 
   return (
     <div>
@@ -61,19 +63,21 @@ const SignIn = () => {
                 action=""
                 className=" flex flex-col gap-4"
               >
-                
                 <label className="pb-0">Email</label>
                 <input
                   className="p-2 rounded-xl border"
                   type="text"
                   name="email"
                   id="email"
-                  
                   placeholder={userInput.email}
-                  
-                  {...register("email", 
-                  {required: "Email is required", pattern:{value: /^[^\s@]+@[^\s@]+$/, message: "This is not a valid email",} })}
-                  />
+                  {...register("email", {
+                    required: "Email is required",
+                    pattern: {
+                      value: /^[^\s@]+@[^\s@]+$/,
+                      message: "This is not a valid email",
+                    },
+                  })}
+                />
                 <p className="text-red-500 text-sm ">{errors.email?.message}</p>
 
                 <label className="pb-0">Password</label>
@@ -82,20 +86,23 @@ const SignIn = () => {
                   type="password"
                   name="password"
                   id="password"
-                  
                   placeholder={userInput.email}
-                  
-                  {...register("password", {required: "Password is required", minLength: {
+                  {...register("password", {
+                    required: "Password is required",
+                    minLength: {
                       value: 4,
                       message: "Password must be more than 4 characters",
-                     },
-                      maxLength: {
+                    },
+                    maxLength: {
                       value: 10,
                       message: "Password cannot exceed more than 10 characters",
-                      }, })}/>
+                    },
+                  })}
+                />
 
-              
-                <p className="text-red-500 text-sm">{errors.password?.message}</p>
+                <p className="text-red-500 text-sm">
+                  {errors.password?.message}
+                </p>
                 <div className="flex justify-between items-center">
                   <div>
                     <input
