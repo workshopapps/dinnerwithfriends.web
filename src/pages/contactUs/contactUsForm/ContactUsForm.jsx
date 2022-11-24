@@ -89,7 +89,7 @@ const ContactUsForm = () => {
 
   return (
     <>
-      <form onSubmit={contactUsFormSubmitHandler} className="w-full sm:w-1/2">
+      <form onSubmit={contactUsFormSubmitHandler} className="w-full md:w-1/2">
         <InputComponent
           type={"text"}
           id={"first_name"}
@@ -147,7 +147,9 @@ const ContactUsForm = () => {
           {enteredMessageIsInValid && (
             <small className="text-red-500 text-xs">Enter a message</small>
           )}
-          <p className="text-base font-bold text-gray-800">Maximum of 100 words</p>
+          <p className="text-base font-bold text-gray-800">
+            Maximum of 100 words
+          </p>
         </div>
         <Button
           type="submit"

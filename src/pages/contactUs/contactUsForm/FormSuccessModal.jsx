@@ -9,9 +9,9 @@ const FormSuccessModal = (props) => {
       onClick={props.onCloseModal}
       data-close="close"
     >
-      <div className="bg-white w-2/3 flex flex-col items-center font-bold  text-center text-xl pb-12">
+      <div className="bg-white w-5/6 sm:w-2/3 px-2 flex flex-col items-center font-bold  text-center text-xl pb-12">
         <IoIosClose
-          className="w-8 h-8 self-end cursor-pointer m-2"
+          className="w-10 h-10 self-end cursor-pointer my-2"
           data-close="close"
           onClick={props.onCloseModal}
         />
