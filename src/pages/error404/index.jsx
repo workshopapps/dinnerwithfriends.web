@@ -18,14 +18,15 @@ const Error404 = () => {
           <img src={SubHome} alt="" className="w-fit" />
         </div>
         <div>
-          <div className="md:flex text-center md:text-left">
-            <div className='w-[85%] mx-auto md:w-2/4'>
-              <h2 className='text-4xl font-bold my-10 md:mb-5 md:text-3xl lg:text-5xl'>Oops! Error 404</h2>
-              <p className='text-2xl font-bold md:text-lg lg:text-2xl lg:py-5 text-[#717172]'>
-                We can’t seem to find the page you’re looking for, Let’s help you get somewhere even better.
+          <div className="md:flex">
+            <div className='w-[85%] mx-auto md:w-2/4 mt-4 xl:mt-24'>
+              <h2 className='text-[1.8rem] font-bold my-10 md:mb-5 md:text-3xl lg:text-[2rem]'>Oops! Error 404</h2>
+              <p className='tablet:w-[77%] text-[1rem] font-bold md:text-[1rem] lg:py-5 text-[#717172]'>
+                We can’t seem to find the page you’re 
+                looking for, Let’s help you get  somewhere even better.
               </p>
               <button 
-                className='bg-[#1070FF] font-bold hover:bg-[#1070ffa1] transition-all duration-300 my-8 py-4 px-8 md:py-3 md:px-6 rounded text-white text-md'>
+                className='bg-[#1070FF] font-bold hover:bg-[#1070ffa1] transition-all duration-300 my-8 py-3 px-[1rem] rounded text-white text-[1rem]'>
                 <Link to="/">Return Home</Link>
               </button>
             </div>
