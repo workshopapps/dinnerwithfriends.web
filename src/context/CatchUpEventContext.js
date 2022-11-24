@@ -1,4 +1,5 @@
 import { useContext, createContext, useState } from "react";
+import userServices from "../services/userServices";
 
 const CatchUpEventContext = createContext();
 
@@ -33,8 +34,14 @@ export const CatchUpEventContextProvider = ({ children }) => {
 		showClosedModal,
 		setShowClosedModal,
 	};
+
+	const events = userServices.getAllEvents()
+	
 	return (
-		<CatchUpEventContext.Provider value={values}>
+		<CatchUpEventContext.Provider value={{
+			value: values,
+			events: events,
+		}}>
 			{children}
 		</CatchUpEventContext.Provider>
 	);
