@@ -50,6 +50,7 @@ function App() {
           element={<EventInviteResponse />}
         />
         <Route path="/dashboard/upcoming_events" element={<UpcomingEvent />} />
+        {/* fro-17-features-page */}
         <Route path="/features" element={<Features />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/forget-password" element={<ForgetPassword />} />
