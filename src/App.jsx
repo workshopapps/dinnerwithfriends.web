@@ -13,7 +13,7 @@ import ProfilePage from "./pages/settingsPage/profilePage";
 import ForgetPassword from "./pages/ForgetPassword/index";
 import Policy from "./pages/policy";
 import Error404 from "./pages/error404";
-// import HowItWorks from "./pages/howItWorks/HowItWorks";
+import HowItWorks from "./pages/howItWorks/HowItWorks";
 import Terms from "./pages/t&c";
 import TermsOfUse from "./pages/termsOfUse";
 import Faq from "./pages/FAQ/Faq";

@@ -1,50 +1,25 @@
 import React from "react";
 import signInImage from "../../assets/img/Rectangle 254.png";
 import nigeriaFlag from "../../assets/img/Group.png";
-import { emailValidator, passwordValidator } from "../../utils/LoginAuth";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form"
+
+import { Link, useNavigate } from "react-router-dom";
 
 const SignIn = () => {
-  const [input, setInput] = useState({
-    email: "Enter your email address",
-    password: "**********",
-  });
-  const [errorMessage, seterrorMessage] = useState("");
-  const [successMessage, setsuccessMessage] = useState("");
-  const handleChange = (e) => {
-    setInput({ ...input, [e.target.name]: e.target.value });
-  };
+  const navigate = useNavigate()
+  const {register, handleSubmit, formState: { errors }} = useForm();
+  const [userInput, setUserInput] = useState({email: "Enter your email address",
+  password: "**********"});
+  const onSubmit = (data) =>{
+    setUserInput(data)
+    if (!errors.email && !errors.password)  
+    return navigate('/create_event')
 
-  const formSubmitter = (e) => {
-    e.preventDefault();
-    setsuccessMessage("");
-    if (!emailValidator(input.email))
-      return seterrorMessage("Please enter valid email");
-
-    if (!passwordValidator(input.password))
-      return seterrorMessage(
-        "Password should have minimum 8 character with the combination of uppercase, lowercase, numbers and specialcharaters"
-      );
-    // setsuccessMessage('Successfully Log in');
-    if (input.email !== "admin@gmail.com" || input.password !== "Password@1")
-      return seterrorMessage("Invalid email and password");
-    else if (
-      input.email === "admin@gmail.com" &&
-      input.password !== "Password@1"
-    )
-      return seterrorMessage("invalid password");
-    else if (
-      input.email !== "admin@gmail.com" &&
-      input.password === "Password@1"
-    )
-      return seterrorMessage("invalid email");
-    else if (
-      input.email === "admin@gmail.com" &&
-      input.password === "Password@1"
-    )
-      return setsuccessMessage("successfully logged in");
   };
+  
+ 
+
   return (
     <div>
       <section className=" min-h-screen flex items-center justify-center ">
@@ -82,38 +57,45 @@ const SignIn = () => {
               </p>
 
               <form
-                onSubmit={formSubmitter}
+                onSubmit={handleSubmit(onSubmit)}
                 action=""
                 className=" flex flex-col gap-4"
               >
-                {errorMessage.length > 0 && (
-                  <div style={{ marginBottom: "10px", color: "red" }}>
-                    {errorMessage}
-                  </div>
-                )}
-                {successMessage.length > 0 && (
-                  <div style={{ marginBottom: "10px", color: "green" }}>
-                    {successMessage}
-                  </div>
-                )}
+                
                 <label className="pb-0">Email</label>
                 <input
                   className="p-2 rounded-xl border"
                   type="text"
                   name="email"
                   id="email"
-                  placeholder={input.email}
-                  onChange={handleChange}
-                />
+                  
+                  placeholder={userInput.email}
+                  
+                  {...register("email", 
+                  {required: "Email is required", pattern:{value: /^[^\s@]+@[^\s@]+$/, message: "This is not a valid email",} })}
+                  />
+                <p className="text-red-500 text-sm ">{errors.email?.message}</p>
+
                 <label className="pb-0">Password</label>
                 <input
                   className="p-2 rounded-xl border"
                   type="password"
                   name="password"
                   id="password"
-                  placeholder={input.password}
-                  onChange={handleChange}
-                />
+                  
+                  placeholder={userInput.email}
+                  
+                  {...register("password", {required: "Password is required", minLength: {
+                      value: 4,
+                      message: "Password must be more than 4 characters",
+                     },
+                      maxLength: {
+                      value: 10,
+                      message: "Password cannot exceed more than 10 characters",
+                      }, })}/>
+
+              
+                <p className="text-red-500 text-sm">{errors.password?.message}</p>
                 <div className="flex justify-between items-center">
                   <div>
                     <input
