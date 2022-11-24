@@ -77,7 +77,7 @@ const SignUp = () => {
              
         </div>
       </div>
-      <div className="hidden tablet:block tablet:w-6/12 h-[670px] bg-cover bg-gray-100" style={{backgroundImage: `linear-gradient(115deg, rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(${image})`}}></div>
+      <div className="hidden tablet:block tablet:w-6/12 bg-cover bg-gray-100" style={{backgroundImage: `linear-gradient(115deg, rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(${image})`}}></div>
     </div>
   )
 }
