@@ -1,9 +1,22 @@
 import { Link } from "react-router-dom";
+import {useForm} from "react-hook-form"
+import userServices from "../../services/userServices";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ForgetPasswordImage from "../../assets/img/ForgetPasswordImage.png";
 import BackToSignIn from "../../assets/img/BackToSignIn.png";
+
 const ForgetPassword = () => {
+  const { register, handleSubmit, formState:{ errors}} = useForm();
+
+  const onSubmit = (data) => {
+    const recovery = userServices.forgotPassword(data);
+    console.log(recovery);
+    }
+    
+
+  /* eslint-disable-next-line */
+  const pattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
   return (
     <>
       <Navbar />
@@ -21,7 +34,7 @@ const ForgetPassword = () => {
               associated with you account
             </p>
 
-            <form className="mt-7">
+            <form className="mt-7" onSubmit={handleSubmit(onSubmit)}>
               <div>
                 <label
                   className="block mb-2 font-normal text-gray-600"
@@ -34,8 +47,10 @@ const ForgetPassword = () => {
                   id="email"
                   placeholder="Enter your email address"
                   className="block w-60 md:w-96 p-3 border rounded-md"
-                  required
+                  {...register("email", 
+                  {required: true, pattern: pattern })}
                 />
+                  {errors.email && <p className='italic text-sm mt-2' style={{color: 'red'}}>Please enter a valid email</p>}
               </div>
 
               <div className="mt-5">
