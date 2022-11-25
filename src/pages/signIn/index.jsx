@@ -5,14 +5,14 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import userServices from "../../services/userServices";
 
-import { Link, useNavigate } from "react-router-dom";
+import { Link/*, useNavigate*/ } from "react-router-dom";
 
 const SignIn = () => {
   const [userInput, setUserInput] = useState({
     email: "Enter your email address",
     password: "**********",
   });
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
   const {
     register,
     handleSubmit,

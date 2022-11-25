@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import image from './signup_image.webp'
 import google from './google.svg'
 import nigeria from './nigeria.svg'
@@ -20,7 +20,7 @@ const SignUp = () => {
           throw Error(response.status);
       }
       return response})
-    .then(result => console.log(result))
+    .then(result => console.log(result.text()))
     .catch(err => {
         console.log(err)
         setSubmitting(false)
@@ -48,7 +48,7 @@ const SignUp = () => {
     }
     
 
-    fetch('api.catchup.hng.tech/api/v1/auth/signup', options)
+    fetch('/auth/signup', options)
         .then(response => {
             if (!response.ok) {
                 throw Error(response.status);
