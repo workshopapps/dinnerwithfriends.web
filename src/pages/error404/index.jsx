@@ -10,9 +10,9 @@ import SubError from "../../assets/img/SubError.png";
 import ArrowRight from "../../assets/img/ArrowRight.png";
 
 const Error404 = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  // useEffect(() => {
+  //   window.scrollTo(0, 0);
+  // }, []);
 
   return (
     <div>
