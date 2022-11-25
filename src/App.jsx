@@ -24,6 +24,7 @@ import EventInviteResponse from "./pages/invitee/EventInviteResponse";
 import EventSummary from "./pages/dashboard/EventSummary";
 import UpcomingEvent from "./pages/dashboard/UpcomingEvent";
 import Features from "./pages/Features-page/features";
+import HelpRoutes from "./pages/helpCenter/helpRoutes";
 
 function App() {
   return (
@@ -55,6 +56,7 @@ function App() {
         <Route path="/forget-password" element={<ForgetPassword />} />
         <Route path="/reset_link" element={<ResetLink />} />
         <Route path="*" element={<Error404 />} />
+        <Route path="/help/*" element={<HelpRoutes />} />
       </Routes>
     </div>
   );

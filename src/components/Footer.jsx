@@ -22,8 +22,8 @@ const Footer = () => {
   ];
   const help = [
     { title: "FAQs", to: "/faq" },
-    { title: "Help Center", to: "/error404" },
-    { title: "Customer support", to: "/error404" },
+    { title: "Help Center", to: "/help" },
+    { title: "Customer support", to: "/error404" }
   ];
 
   return (
