@@ -89,7 +89,9 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                to="/error404"
+                fro-17-features-page
+                to="/features"
+                dev
                 className="block py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 "
               >
                 Features
