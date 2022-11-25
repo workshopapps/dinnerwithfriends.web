@@ -6,7 +6,7 @@ import {
     LOGIN_URL,
     CREATE_EVENT,
     GET_EVENTS,
-  } from './rootEndpoints';
+  } from './rootEndPoints.js';
 
   const register = async (params) => {
     try {
