@@ -3,23 +3,25 @@ import signInImage from "../../assets/img/Rectangle 254.png";
 import nigeriaFlag from "../../assets/img/Group.png";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import userServices from "../../services/userServices";
 
 import { Link, useNavigate } from "react-router-dom";
 
 const SignIn = () => {
+  const [userInput, setUserInput] = useState({
+    email: "Enter your email address",
+    password: "**********",
+  });
   const navigate = useNavigate();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const [userInput, setUserInput] = useState({
-    email: "Enter your email address",
-    password: "**********",
-  });
-  const onSubmit = (data) => {
+
+  const onSubmit = async (data) => {
     setUserInput(data);
-    if (!errors.email && !errors.password) return navigate("/create_event");
+    userServices.login(data);
   };
 
   return (
@@ -113,7 +115,7 @@ const SignIn = () => {
                     />
                     <label
                       className="form-check-label text-xs w-full inline ml-2 lg:text-base"
-                      Htmlfor="form-check-input"
+                      htmlFor="form-check-input"
                     >
                       Remember for 30days
                     </label>
