@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import Accordions from "./Accordions";
 import people from '../../assets/img/faq-models.png'
@@ -23,8 +24,10 @@ const Faq = () => {
             </div>
             <h3 className="text-[#151517] font-bold text-xs lg:text-xl">Still have questions?</h3>
             <p className="text-[#717172] text-[6px] lg:text-lg">Can’t find the answer you’re looking for? Please, visit the Help Center for more help</p>
-            <Button className='bg-[#1070FF] rounded py-2.5 lg:py-3 px-6 lg:px-8 text-[#fff] font-bold text-sm lg:text-xl'>
-               Get in touch
+            <Button className='bg-[#1070FF] rounded py-2.5 lg:py-3 px-6 lg:px-8'>
+              <Link to='/contact-us' className="text-[#fff] font-bold text-sm lg:text-xl">
+                Get in touch
+              </Link>
             </Button>
           </div>
         </section>
