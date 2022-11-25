@@ -9,7 +9,7 @@ const Career = () => {
         <Navbar/>
         <div className=" w-full flex lg:flex-col flex-col p-[2rem] justify-center items-center lg:h-[50vh] bg-[url('assets/img/VectorsHome.png')] bg-no-repeat bg-center md:h-[100%] h-[100%] ">
             <p className='text-center text-[#151517] lg:text-5xl text-2xl mt-[3rem] font-bold '>Careers</p>
-            <p className='text-base text-[#424245] font-normal text-center w-[100%] lg:mt-8 md:mt-8 mt-6'>At CatchUp, Our mission is to help people establish and maintain better relationships with those who matter most, and we are looking for the best and right people that can help us accomplish this.We value unique contributions, embrace diversity in people and ideas and welcome everyone.
+            <p className='text-base px-[2rem] text-[#424245] font-normal text-center w-[100%] lg:mt-8 md:mt-8 mt-6'>At CatchUp, Our mission is to help people establish and maintain better relationships with those who matter most, and we are looking for the best and right people that can help us accomplish this.We value unique contributions, embrace diversity in people and ideas and welcome everyone.
             </p>
         </div>
         <div className='w-full p-[2rem] flex flex-col h-[100%] lg:h-[25vh] justify-evenly items-center  bg-[#F5F9FF]  lg:flex-row flex-wrap'>
