@@ -1,53 +1,29 @@
 import React from "react";
-import { Link } from "react-router-dom"
-// import SignInImage from "../../assets/img/Sign-in-img.png";
-// import Flag from "../../assets/img/Flag.png";
-import {
-  emailValidator,
-  passwordValidator,
-} from "../../components/LoginRegexValidator";
+import signInImage from "../../assets/img/Rectangle 254.png";
+import nigeriaFlag from "../../assets/img/Group.png";
 import { useState } from "react";
+import { useForm } from "react-hook-form";
+import userServices from "../../services/userServices";
+
+import { Link, useNavigate } from "react-router-dom";
 
 const SignIn = () => {
-  const [input, setInput] = useState({
+  const [userInput, setUserInput] = useState({
     email: "Enter your email address",
     password: "**********",
   });
-  const [errorMessage, seterrorMessage] = useState("");
-  const [successMessage, setsuccessMessage] = useState("");
-  const handleChange = (e) => {
-    setInput({ ...input, [e.target.name]: e.target.value });
+  const navigate = useNavigate();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = async (data) => {
+    setUserInput(data);
+    userServices.login(data);
   };
 
-  const formSubmitter = (e) => {
-    e.preventDefault();
-    setsuccessMessage("");
-    if (!emailValidator(input.email))
-      return seterrorMessage("Please enter valid email");
-
-    if (!passwordValidator(input.password))
-      return seterrorMessage(
-        "Password should have minimum 8 character with the combination of uppercase, lowercase, numbers and specialcharaters"
-      );
-    // setsuccessMessage('Successfully Log in');
-    if (input.email !== "admin@gmail.com" || input.password !== "Password@1")
-      return seterrorMessage("Invalid email and password");
-    else if (
-      input.email === "admin@gmail.com" &&
-      input.password !== "Password@1"
-    )
-      return seterrorMessage("invalid password");
-    else if (
-      input.email !== "admin@gmail.com" &&
-      input.password === "Password@1"
-    )
-      return seterrorMessage("invalid email");
-    else if (
-      input.email === "admin@gmail.com" &&
-      input.password === "Password@1"
-    )
-      return setsuccessMessage("successfully logged in");
-  };
   return (
     <div>
       <section className=" min-h-screen flex items-center justify-center ">
@@ -55,34 +31,111 @@ const SignIn = () => {
           <div className="form-wrapper h-screen w-1/2 px-8 mt-6">
             <div className="flex justify-between items-center gap-8">
               <div>
-                <span className="font-bold text-2xl text-blue-600">Catch</span>
-                <span className="font-bold text-2xl ml-1">Up</span>
+                <span className="font-bold text-5xl text-blue-600">Catch</span>
+                <span className="font-bold text-5xl ml-1">Up</span>
               </div>
               <div className="relative">
                 <label className="block mt-4">
-                  {/* <img
-                    className="flag-image absolute top-[28px] left-[8px]"
-                    src={Flag}
+                  <img
+                    className="flag-image absolute top-[26px] left-[8px]"
+                    src={nigeriaFlag}
                     alt=" "
-                  /> */}
-                  <select className="form-select text-center rounded-2xl mt-1 block w-[140px] px-6 py-2 bg-slate-200">
-                    <option className="bg-slate-50">English</option>
-                    <option className="bg-slate-50">French</option>
-                    <option className="bg-slate-50">German</option>
+                  />
+                  <select className="language-select font-bold text-black text-center rounded-2xl mt-1 block w-[140px] px-6 py-2 bg-blue-100">
+                    <option className="bg-blue-200">English</option>
+                    <option className="bg-blue-200">French</option>
+                    <option className="bg-blue-200">German</option>
                   </select>
                 </label>
               </div>
             </div>
-            <div className="border p-8 rounded mt-24">
+            <div className=" px-14 mt-24">
               <h2 className="text-4xl font-bold text-center text-blue-600 mb-16">
                 Sign In
               </h2>
-              <h3 className="text-2xl font-bold text-gray-600">Welcome!</h3>
-              <p className="text-sm text-gray-600">
+              <h3 className="sm:text-3xl lg:text-4xl font-bold text-gray-600 ">
+                Welcome!
+              </h3>
+              <p className="sm:text-base lg:text-xl text-gray-600 mb-8 ">
                 Sign in here! Please enter your details
               </p>
+
+              <form
+                onSubmit={handleSubmit(onSubmit)}
+                action=""
+                className=" flex flex-col gap-4"
+              >
+                <label className="pb-0">Email</label>
+                <input
+                  className="p-2 rounded-xl border"
+                  type="text"
+                  name="email"
+                  id="email"
+                  placeholder={userInput.email}
+                  {...register("email", {
+                    required: "Email is required",
+                    pattern: {
+                      value: /^[^\s@]+@[^\s@]+$/,
+                      message: "This is not a valid email",
+                    },
+                  })}
+                />
+                <p className="text-red-500 text-sm ">{errors.email?.message}</p>
+
+                <label className="pb-0">Password</label>
+                <input
+                  className="p-2 rounded-xl border"
+                  type="password"
+                  name="password"
+                  id="password"
+                  placeholder={userInput.email}
+                  {...register("password", {
+                    required: "Password is required",
+                    minLength: {
+                      value: 4,
+                      message: "Password must be more than 4 characters",
+                    },
+                    maxLength: {
+                      value: 10,
+                      message: "Password cannot exceed more than 10 characters",
+                    },
+                  })}
+                />
+
+                <p className="text-red-500 text-sm">
+                  {errors.password?.message}
+                </p>
+                <div className="flex justify-between items-center">
+                  <div>
+                    <input
+                      type="checkbox"
+                      className="form-check-input mt-0"
+                      id="anime"
+                      name="form-check-input"
+                    />
+                    <label
+                      className="form-check-label text-xs w-full inline ml-2 lg:text-base"
+                      htmlFor="form-check-input"
+                    >
+                      Remember for 30days
+                    </label>
+                  </div>
+                  <div className="font-bold text-xs lg:text-base">
+                    <Link to="/forgot_password">Forgot password?</Link>
+                  </div>
+                </div>
+
+                <input
+                  type="submit"
+                  className="bg-blue-700 hover:bg-blue-500 rounded-xl text-white py-2 hover:scale-105 duration-300"
+                  value="Sign in"
+                />
+              </form>
+              <div className="mt-6 items-center text-blue-600">
+                <p className="text-center text-sm">Or</p>
+              </div>
               <a href=" ">
-                <button className="bg-white border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-sm hover:scale-105 duration-300">
+                <button className="bg-white border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-base hover:scale-105 duration-300">
                   <svg
                     className="mr-3"
                     xmlns="http://www.w3.org/2000/svg"
@@ -109,74 +162,16 @@ const SignIn = () => {
                   Sign in with Google
                 </button>
               </a>
-              <div className="mt-6 items-center text-blue-600">
-                <p className="text-center text-sm">Or</p>
+              <div className="text-center text-blue-700 text-base mt-4">
+                <Link to="/sign_up">
+                  <span>Dont have an account yet?</span>
+                  <span className="ml-2">Sign Up for free</span>
+                </Link>
               </div>
-
-              <form
-                onSubmit={formSubmitter}
-                action=""
-                className=" flex flex-col gap-4"
-              >
-                {errorMessage.length > 0 && (
-                  <div style={{ marginBottom: "10px", color: "red" }}>
-                    {errorMessage}
-                  </div>
-                )}
-                {successMessage.length > 0 && (
-                  <div style={{ marginBottom: "10px", color: "green" }}>
-                    {successMessage}
-                  </div>
-                )}
-                <label>Email</label>
-                <input
-                  className="p-2 rounded-xl border"
-                  type="text"
-                  name="email"
-                  id="email"
-                  placeholder={input.email}
-                  onChange={handleChange}
-                />
-                <label>Password</label>
-                <input
-                  className="p-2 rounded-xl border"
-                  type="password"
-                  name="password"
-                  id="password"
-                  placeholder={input.password}
-                  onChange={handleChange}
-                />
-                <div className="flex justify-between items-center">
-                  <div>
-                    <input
-                      type="checkbox"
-                      className="form-check-input"
-                      id="anime"
-                      name="form-check-input"
-                    />
-                    <label
-                      className="form-check-label ml-2 text-xs"
-                      Htmlfor="form-check-input"
-                    >
-                      Remember for 30days
-                    </label>
-                  </div>
-                  <div className="font-bold text-xs">
-                    <Link to="/forget_password">Forgot password?</Link>
-                  </div>
-                </div>
-
-                <input
-                  type="submit"
-                  className="bg-blue-700 hover:bg-blue-500 rounded-xl text-white py-2 hover:scale-105 duration-300"
-                  value="Sign in"
-                />
-              </form>
             </div>
           </div>
-          {/*image*/}
-          <div className="form-image">
-            {/* <img className="" src={SignInImage} alt=" " /> */}
+          <div className="form-image w-1/2">
+            <img className="" src={signInImage} alt=" " />
           </div>
         </div>
       </section>
