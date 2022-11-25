@@ -4,14 +4,10 @@ import nigeriaFlag from "../../assets/img/Group.png";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import userServices from "../../services/userServices";
-import axios from "axios";
 
 import { Link, useNavigate } from "react-router-dom";
 
 const SignIn = () => {
-  // const [post, setPost] = useState();
-  // const [error, setError] = useState("");
-
   const [userInput, setUserInput] = useState({
     email: "Enter your email address",
     password: "**********",
@@ -23,52 +19,9 @@ const SignIn = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = async (register) => {
-    // setUserInput(data);
-    console.log("clicked");
-    userServices.login(register);
-    // var baseURL = "https://prybar.onrender.com/api-docs/#/auth/signin";
-
-    // try {
-    //   const res = await axios.post(
-    //     baseURL,
-
-    //     {
-    //       headers: {
-    //         "Content-Type": "application/json",
-    //         // "Access-Control-Allow-Origin": "*",
-    //         Accept: "application/json",
-    //       },
-    //       data: {
-    //         ...register,
-    //       },
-    //     }
-    //   );
-    //   console.log(res.data);
-    //   setPost(await res.data);
-    // } catch (e) {
-    //   console.log(e);
-    //   setError(e.message);
-    // }
-    // if (!errors.email && !errors.password) return navigate("/create_event");
-    // const post = async (url, data) => {
-    //   const config = {
-    //     method: 'POST',
-    //     headers: {
-    //       'Content-Type': 'application/json',
-    //       ...authHeader(),
-    //     },
-    //     body: JSON.stringify(data),
-    //   };
-
-    //   try {
-    //     const response = await fetch(url, config);
-    //     const datas = await response.json();
-    //     return datas;
-    //   } catch (err) {
-    //     return err;
-    //   }
-    // };
+  const onSubmit = async (data) => {
+    setUserInput(data);
+    userServices.login(data);
   };
 
   return (
