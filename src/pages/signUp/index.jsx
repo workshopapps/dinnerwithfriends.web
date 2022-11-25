@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import image from './signup_image.webp'
 import google from './google.svg'
 import nigeria from './nigeria.svg'
@@ -14,12 +14,12 @@ const SignUp = () => {
   !errors.email ? console.log(' no email error') : console.log(' email error')
 
   const googleSubmit = () => {
-    fetch('https://api.catchup.hng.tech/api/v1/auth/google/url')
+    fetch('https://catchup.hng.tech/api/v1/auth/google/url')
     .then(response => {
       if (!response.ok) {
           throw Error(response.status);
       }
-      return response.json()})
+      return response})
     .then(result => console.log(result))
     .catch(err => {
         console.log(err)
@@ -74,7 +74,7 @@ const SignUp = () => {
   /* eslint-disable-next-line */
   const pattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
   /* eslint-disable-next-line */
-  const secondPattern = /^[a-z][a-z0-9]+$/ig
+  const secondPattern = /^[a-z][a-z0-9]+$/ig; const thirdPattern = /^[a-z][a-z0-9\s]+$/ig;
   return (
     <div className='w-full mx-auto tablet:flex tablet:justify-center'>
       <div className=' w-full h-full bg-white tablet:w-6/12 tablet:p-3.5 mx-auto '>
@@ -100,7 +100,7 @@ const SignUp = () => {
               style={{border:errors.name ? '1px solid red': '1px solid #D0D5DD'}}
               className={`focus:outline-none focus:${!errors.name?  'shadow-[0px_0px_0px_4px_rgba(74,74,104,0.1)]' : 'shadow-[0px_0px_0px_4px_rgba(249,50,50,0.1)]'}  mt-2 w-full h-11 p-3.5 rounded-lg`} type="text" name="email" placeholder="Enter your name"
               {...register("name", 
-              {required: true, minLength: 3, maxLength: 30, pattern: secondPattern})}
+              {required: true, minLength: 3, maxLength: 30, pattern: thirdPattern})}
               />
               {errors.name && <p className='right-0 bottom-[-37px] italic text-sm mt-2' style={{color: 'red'}}>Name has to start with a letter, can contain spaces, must be at least 3 characters, and no more than 30 characters. No special characters allowed</p>}
             </div>
