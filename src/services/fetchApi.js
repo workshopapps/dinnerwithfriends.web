@@ -6,6 +6,25 @@ const authHeader = () => {
   return {};
 };
 
+const post = async (url, data) => {
+  const config = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      ...authHeader(),
+    },
+    body: JSON.stringify(data),
+  };
+
+  try {
+    const response = await fetch(url, config);
+    const datas = await response.json();
+    return datas;
+  } catch (err) {
+    return err;
+  }
+};
+
 const get = async (url) => {
     const config = {
       method: 'GET',
@@ -22,7 +41,8 @@ const get = async (url) => {
   };
 
   const fetchApi = {
-    get
+    post,
+    get,
   };
 
   export default fetchApi;

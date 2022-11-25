@@ -4,6 +4,7 @@ import userServices from "../services/userServices";
 const CatchUpEventContext = createContext();
 
 export const CatchUpEventContextProvider = ({ children }) => {
+	const events = userServices.getAllEvents()
 	const [startDate, setStartDate] = useState("");
 	const [showModal, setShowModal] = useState(false);
 	const [showClosedModal, setShowClosedModal] = useState(true);
@@ -33,15 +34,11 @@ export const CatchUpEventContextProvider = ({ children }) => {
 		setShowModal,
 		showClosedModal,
 		setShowClosedModal,
+		events
 	};
 
-	const events = userServices.getAllEvents()
-	
 	return (
-		<CatchUpEventContext.Provider value={{
-			value: values,
-			events: events,
-		}}>
+		<CatchUpEventContext.Provider value={values}>
 			{children}
 		</CatchUpEventContext.Provider>
 	);

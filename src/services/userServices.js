@@ -1,8 +1,21 @@
 import fetchApi from './fetchApi';
 import {
     BASE_URL,
+    CREATE_EVENT,
     GET_EVENTS,
   } from './rootEndpoints';
+
+  const createEvents = async (params) => {
+    try {
+      const result = await fetchApi.post(
+        `${BASE_URL}/${CREATE_EVENT}`,
+        params,
+      );
+      return result;
+    } catch (err) {
+      return err;
+    }
+  };
 
 const getAllEvents = async () => {
     try {
@@ -15,6 +28,7 @@ const getAllEvents = async () => {
   };
 
   const userServices = {
+    createEvents,
     getAllEvents,
   };
 
