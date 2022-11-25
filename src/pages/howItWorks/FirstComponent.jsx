@@ -20,7 +20,7 @@ export default function FirstComponent() {
         alt="phone display"
       />
       <img
-        className="hidden md:flex mt-12 lg:mt-28 md:w-[1127px] mx-auto"
+        className="hidden md:flex mt-12 md:w-[700px] lg:mt-28 lg:w-[1127px] mx-auto"
         src={phoneGroupDesktop}
         alt="phone display"
       />
