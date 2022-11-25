@@ -12,7 +12,7 @@ const ResetLink = () => {
           <div className="grid items-center justify-center">
             <div className="md:hidden mb-5">
               <Link to="/sign_in">
-                <img src={BackToSignIn} alt="" />
+                <img src={BackToSignIn} alt="arrow" />
               </Link>
             </div>
             <h1 className="text-3xl font-bold">Reset Link Sent</h1>
