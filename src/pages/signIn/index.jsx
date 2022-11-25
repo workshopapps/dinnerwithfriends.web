@@ -21,7 +21,8 @@ const SignIn = () => {
 
   const onSubmit = async (data) => {
     setUserInput(data);
-    userServices.login(data);
+    const result = userServices.login(data);
+    console.log(result)
   };
 
   return (
@@ -97,7 +98,7 @@ const SignIn = () => {
                     },
                     maxLength: {
                       value: 10,
-                      message: "Password cannot exceed more than 10 characters",
+                      message: "Password cannot exceed more than 8 characters",
                     },
                   })}
                 />
