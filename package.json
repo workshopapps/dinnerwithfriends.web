@@ -2,7 +2,6 @@
   "name": "catch-up",
   "version": "0.1.0",
   "private": true,
- // "proxy": "http://api.catchup.hng.tech/api/v1",
   "dependencies": {
     "@material-tailwind/react": "^1.2.4",
     "@testing-library/jest-dom": "^5.16.5",
