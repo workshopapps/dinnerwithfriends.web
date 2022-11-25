@@ -4,6 +4,7 @@ import {
     BASE_URL,
     SIGNUP_URL,
     LOGIN_URL,
+    PASSWORD_RECOVERY_URL,
     CREATE_EVENT,
     GET_EVENTS,
   } from './rootEndPoints.js';
@@ -28,6 +29,11 @@ import {
       return err;
     }
   };
+
+  const forgotPassword = async (params) => {
+    await fetchApi.post(`${BASE_URL}/${PASSWORD_RECOVERY_URL}`, params)
+  }
+
 
   const createEvents = async (params) => {
     try {
@@ -54,6 +60,7 @@ const getAllEvents = async () => {
   const userServices = {
     register,
     login,
+    forgotPassword,
     createEvents,
     getAllEvents,
   };
