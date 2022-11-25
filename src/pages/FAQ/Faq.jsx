@@ -26,7 +26,6 @@ const Faq = () => {
           <div className="w-[46px] lg:w-[82px] h-15px lg:h-[30px]">
             <img src={people} alt="" />
           </div>
-<<<<<<< HEAD
           <div className="w-[90%] lg:w-6/12 m-auto">
             <Accordions />
           </div>
@@ -42,23 +41,9 @@ const Faq = () => {
               </Link>
             </Button>
           </div>
-        </section>
-        <Footer />
-=======
-          <h3 className="text-[#151517] font-bold text-xs lg:text-xl">
-            Still have questions?
-          </h3>
-          <p className="text-[#717172] text-[6px] lg:text-lg">
-            Can’t find the answer you’re looking for? Please, visit the Help
-            Center for more help
-          </p>
-          <Button className="bg-[#1070FF] rounded py-2.5 lg:py-3 px-6 lg:px-8 text-[#fff] font-bold text-sm lg:text-xl">
-            Get in touch
-          </Button>
         </div>
-      </section>
+        </section>
       <Footer />
->>>>>>> f8cc370b5dba813d71df1f110cd260793d1913e0
     </>
   );
 };
