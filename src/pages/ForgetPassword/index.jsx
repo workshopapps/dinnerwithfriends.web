@@ -25,13 +25,13 @@ const ForgetPassword = () => {
               <div>
                 <label
                   className="block mb-2 font-normal text-gray-600"
-                  id="email"
+                  HtmlFor="email"
                 >
                   Email
                 </label>
                 <input
                   type="email"
-                  HtmlFor="email"
+                  id="email"
                   placeholder="Enter your email address"
                   className="block w-60 md:w-96 p-3 border rounded-md"
                   required

@@ -20,14 +20,14 @@ const ResetLink = () => {
               A password reset link has been sent to john@gmail.com
             </p>
 
-            <div className="mt-5">
-              <button
-                type="submit"
-                className="w-60 md:w-96 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-              >
-                Open email app
-              </button>
-            </div>
+              <div className="mt-5">
+                <button
+                  type="submit"
+                  className="w-60 md:w-96 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Open email app
+                </button>
+              </div>
 
             <p className="w-60 md:w-96 mt-5 text-sm xl:text-base">
               Didn't receive the email yet?{" "}
