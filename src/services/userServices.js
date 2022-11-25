@@ -1,9 +1,33 @@
 import fetchApi from './fetchApi';
+
 import {
     BASE_URL,
+    SIGNUP_URL,
+    LOGIN_URL,
     CREATE_EVENT,
     GET_EVENTS,
   } from './rootEndpoints';
+
+  const register = async (params) => {
+    try {
+      const result = await fetchApi.post(`${BASE_URL}/${SIGNUP_URL}`, params);
+      return result;
+    } catch (err) {
+      return err;
+    }
+  };
+
+  const login = async (params) => {
+    try {
+      const result = await fetchApi.post(`${BASE_URL}/${LOGIN_URL}`, params);
+      if (result.status === 200) {
+        localStorage.setItem('jwt-token', result.token);
+      }
+      return result;
+    } catch (err) {
+      return err;
+    }
+  };
 
   const createEvents = async (params) => {
     try {
@@ -28,6 +52,8 @@ const getAllEvents = async () => {
   };
 
   const userServices = {
+    register,
+    login,
     createEvents,
     getAllEvents,
   };
