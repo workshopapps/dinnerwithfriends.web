@@ -7,7 +7,7 @@ const ResetLink = () => {
   return (
     <>
       <Navbar />
-      <div className="container mx-auto  mt-20 px-10 mb-20">
+      <div className="container mx-auto  mt-10 px-10">
         <div className="md:flex items-center justify-center gap-20">
           <div className="grid items-center justify-center">
             <div className="md:hidden mb-5">
