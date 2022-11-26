@@ -13,6 +13,7 @@ const SignIn = () => {
     password: "**********",
   });
   const navigate = useNavigate();
+  
   const {
     register,
     handleSubmit,
@@ -21,7 +22,11 @@ const SignIn = () => {
 
   const onSubmit = async (data) => {
     setUserInput(data);
-    userServices.login(data);
+    const responses = userServices.login(data);
+   
+  if(responses.success === true){
+    navigate('/dashboard/upcoming_events')
+}
   };
 
   return (
