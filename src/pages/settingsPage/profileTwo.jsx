@@ -18,10 +18,10 @@ const profileTwo = () => {
 
       <div id="main-body">
         <div className="body_title_wrapper">
-          <div className="body_title">
+        <Link to="/settings">  <div className="body_title">
             <MdOutlineArrowBack />
-            <Link to="/settings"><h1>Account Settings</h1></Link>
-          </div>
+           <h1>Account Settings</h1>
+          </div></Link>
           <div className="body_subtitles">
             <h5>Profile</h5>
             <span className="notification_tab">Notifications</span>
