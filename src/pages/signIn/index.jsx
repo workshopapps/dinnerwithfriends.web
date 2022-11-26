@@ -24,11 +24,6 @@ const SignIn = () => {
     setUserInput(data);
     const responses = userServices.login(data);
    
-  if(responses.success === true){
-    navigate('/dashboard/upcoming_events')
-}
-  };
-
   return (
     <div>
       <section className=" min-h-screen flex items-center justify-center ">
