@@ -5,7 +5,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import userServices from "../../services/userServices";
 
-import { Link/*, useNavigate*/ } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const SignIn = () => {
   const [userInput, setUserInput] = useState({
@@ -13,7 +13,6 @@ const SignIn = () => {
     password: "**********",
   });
   //const navigate = useNavigate();
-  
   const {
     register,
     handleSubmit,
@@ -22,8 +21,9 @@ const SignIn = () => {
 
   const onSubmit = async (data) => {
     setUserInput(data);
-    const responses = userServices.login(data);
-   
+    userServices.login(data);
+  };
+
   return (
     <div>
       <section className=" min-h-screen flex items-center justify-center ">
