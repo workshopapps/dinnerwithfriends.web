@@ -25,6 +25,7 @@ import EventSummary from "./pages/dashboard/EventSummary";
 import UpcomingEvent from "./pages/dashboard/UpcomingEvent";
 import Features from "./pages/Features-page/features";
 import Career from "./pages/career/Career";
+import JobDetails from "./pages/career/JobDetails";
 
 function App() {
   return (
@@ -56,6 +57,7 @@ function App() {
         <Route path="/forget-password" element={<ForgetPassword />} />
         <Route path="/reset_link" element={<ResetLink />} />
         <Route path="/careers" element={<Career />} />
+        <Route path="/careers/job-details" element={<JobDetails />} />
         <Route path="*" element={<Error404 />} />
       </Routes>
     </div>
