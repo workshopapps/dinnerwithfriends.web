@@ -79,8 +79,8 @@ const Career = () => {
         </div>
         <div  className='w-full h-[100%] flex flex-col lg:space-y-4 lg:mt-[2rem] mt-[2rem] space-y-2 justify-center items-center '>
             <p className='lg:text-4xl md:text-2xl text-2xl  text-center font-bold' >Open Roles</p>
-            <div className=' m-auto h-full w-full lg:m-auto'>
-                <select className='text-[1rem] m-auto text-[#424245] border-solid border-black-50 lg:border-solid m-auto font-normal lg:w-[50%] w-[90%] ' >
+            <div className=' m-auto h-full flex justify-center items-center w-full lg:m-auto p-[.5rem] lg:p-[2rem] '>
+                <select className='text-[1rem] p-[.5rem] m-auto text-[#424245] border-solid border-2 rounded-l m-auto font-normal lg:w-[25%] w-[90%] lg:h-[44px] h-[44px] ' >
                     <option>All Department</option>
                     <option>Design</option>
                     <option>Finiance</option>
