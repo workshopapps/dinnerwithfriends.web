@@ -6,9 +6,10 @@ import { useForm } from "react-hook-form"
 import catchup from './catchup_logo.svg'
 import { useNavigate, Link } from 'react-router-dom'
 const SignUp = () => {
-  const { register, handleSubmit, formState: { errors } } = useForm()
+  const { register, handleSubmit, reset, formState: { errors } } = useForm()
   const [existingUser, setExistingUser] = useState(false)
   const [submitting, setSubmitting] = useState(false)
+  const [accountCreated, setAccountCreated] = useState(false)
   const nav = useNavigate()
   !errors.email ? console.log(' no email error') : console.log(' email error')
 
@@ -28,7 +29,7 @@ const SignUp = () => {
   }*/
 
   const onSubmit = (data) => {
-    
+    reset()
     setSubmitting(true)
    
     console.log(data)
@@ -60,7 +61,11 @@ const SignUp = () => {
               setSubmitting(false)
           }
           if(result.status === 'success'){
-            nav('/sign_in')
+            setAccountCreated(true)
+            setTimeout(() => {
+              nav('/sign_in')
+            }, 3000)
+            
         }
           
           
@@ -94,6 +99,7 @@ const SignUp = () => {
           <h2 className='font-medium text-xl text-[#717172] tablet:text-4xl'>Welcome!</h2>
           <p className='mt-2 text-[#424245] text-base tablet:text-xl'>Sign up here! Please enter your details</p>
           {existingUser && <p style={{color: 'red'}} className='mt-4 text-lg'>User already exists!</p>}
+          {accountCreated && <p className='mt-4 text-xl text-green-600 text-center'>Account Created Successfully!</p>}
           <form onSubmit={handleSubmit(onSubmit)} className=' mt-7 text-[#4B4B4C] font-normal [&>input]:mt-2 [&>input]:w-full [&>input]:mb-3.5'>
             <div className='relative w-full mb-4 '>
               <label className='pb-0' htmlFor="email">Name</label>
