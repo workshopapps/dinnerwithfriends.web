@@ -49,7 +49,8 @@ const createEvents = async (params) => {
 const getAllEvents = async () => {
   try {
     const dataObj = await fetchApi.get(`${BASE_URL}/${GET_EVENTS}`);
-    const datas = await dataObj.events;
+    console.log(dataObj)
+    const datas = await dataObj.data;
     return datas;
   } catch (err) {
     return err;

@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Button from "../../components/Button";
+import userServices from "../../services/userServices";
+import { CatchUpEventContextUse } from "../../context/CatchUpEventContext";
 import calender from "../../assets/img/g-calendar.png";
 import MediaQuery from "react-responsive";
 import Event from "../../components/Event";
@@ -8,6 +10,8 @@ import Footer from "../../components/Footer";
 
 const UpcomingEvent = () => {
   const [status, setStatus] = useState(false);
+  const { events, setEvents } = CatchUpEventContextUse();
+
   const event = [
     {
       id: 1,
@@ -47,9 +51,24 @@ const UpcomingEvent = () => {
     },
   ];
 
-  const filteredEvents = event.filter((event) => event.status === status);
+  useEffect(() => {
+    async function fetchData() {
+      const data = await userServices.getAllEvents()
+      setEvents(data)
+    }
+    fetchData()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  const events = filteredEvents.map(
+  const filteredEvents = events.length === 0 ? events : events.filter((event) => event.status === status);
+
+  console.log(filteredEvents);
+  const userEvents = filteredEvents.length === 0 ?
+  (<Event
+    filteredEvents={filteredEvents}
+    status={status === false ? "upcoming" : "Rsvp"}
+    />) :
+    filteredEvents.map(
     ({ id, title, description, date, invitee }) => (
       <Event
         status={status}
@@ -63,6 +82,7 @@ const UpcomingEvent = () => {
     )
   );
 
+  console.log(userEvents)
   return (
     <>
       <section className="px-[22px] lg:px-20 pt-11 lg:pt-16 mb-16">
@@ -108,7 +128,7 @@ const UpcomingEvent = () => {
           <h3 className="text-[#151517] text-center lg:text-left font-bold lg:font-medium text-2xl lg:mb-[40px]">
             All Events
           </h3>
-          <MediaQuery minWidth={1024}>
+          <MediaQuery minWidth={1023}>
             <ul className="flex justify-start items-center gap-x-8">
               <li>
                 <Button
@@ -138,28 +158,28 @@ const UpcomingEvent = () => {
         <div className="flex flex-col justify-center items-center gap-y-8 lg:border border-solid border-[#CDCDCD] lg:pt-12 lg:pb-[200px] px-[20px] 8lg:px-12">
           <MediaQuery minWidth={1024}>
             {status === false && (
-              <div className="lg:grid lg:grid-cols-2 grid-flow-row content-start gap-4 px-8">
-                {events}
+              <div className={`${events.length === 0 ? "" : "lg:grid lg:grid-cols-2 grid-flow-row content-start gap-4 px-8"}`}>
+                {userEvents}
               </div>
             )}
             {status === true && (
-              <div className="lg:grid lg:grid-cols-2 grid-flow-row content-start gap-4 px-8">
-                {events}
+              <div className={`${events.length === 0 ? "" : "lg:grid lg:grid-cols-2 grid-flow-row content-start gap-4 px-8"}`}>
+                {userEvents}
               </div>
             )}
           </MediaQuery>
-          <MediaQuery maxWidth={1024}>
+          <MediaQuery maxWidth={1023}>
             <div>
               <p className="text-[#424245] font-medium mb-4 text-center">
                 Upcoming Events
               </p>
-              {events}
+              {userEvents}
             </div>
             <div>
               <p className="text-[#424245] font-medium mb-4 text-center">
                 Rsvp Events
               </p>
-              {events}
+              {userEvents}
             </div>
           </MediaQuery>
         </div>
