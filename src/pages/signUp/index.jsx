@@ -13,7 +13,7 @@ const SignUp = () => {
   const nav = useNavigate()
   !errors.email ? console.log(' no email error') : console.log(' email error')
 
-  const googleSubmit = () => {
+  /*const googleSubmit = () => {
     fetch('https://catchup.hng.tech/api/v1/auth/google/url')
     .then(response => {
       if (!response.ok) {
@@ -26,7 +26,7 @@ const SignUp = () => {
         setSubmitting(false)
     })
     
-  }
+  }*/
 
   const onSubmit = (data) => {
     
@@ -100,9 +100,24 @@ const SignUp = () => {
               style={{border:errors.name ? '1px solid red': '1px solid #D0D5DD'}}
               className={`focus:outline-none focus:${!errors.name?  'shadow-[0px_0px_0px_4px_rgba(74,74,104,0.1)]' : 'shadow-[0px_0px_0px_4px_rgba(249,50,50,0.1)]'}  mt-2 w-full h-11 p-3.5 rounded-lg`} type="text" name="email" placeholder="Enter your name"
               {...register("name", 
-              {required: true, minLength: 3, maxLength: 30, pattern: thirdPattern})}
+              {required: "Name cannot be empty",
+               minLength: {
+                  value: 3,
+                  message: "Name must be at least 3 characters"
+               }, 
+               maxLength: {
+                value: 30,
+                message: "Name must not be more than 30 characters"
+
+              },
+
+               pattern: {
+                value: thirdPattern,
+                message: "Name must start with a letter and no special characters are allowed"
+              }
+              })}
               />
-              {errors.name && <p className='right-0 bottom-[-37px] italic text-sm mt-2' style={{color: 'red'}}>Name has to start with a letter, can contain spaces, must be at least 3 characters, and no more than 30 characters. No special characters allowed</p>}
+              {errors.name && <p className='right-0 bottom-[-37px] italic text-sm mt-2' style={{color: 'red'}}>{errors.name?.message}</p>}
             </div>
 
             <div className='relative w-full mb-4 '>
@@ -112,9 +127,14 @@ const SignUp = () => {
               style={{border:errors.email ? '1px solid red': '1px solid #D0D5DD'}}
               className={`focus:outline-none focus:${!errors.email?  'shadow-[0px_0px_0px_4px_rgba(74,74,104,0.1)]' : 'shadow-[0px_0px_0px_4px_rgba(249,50,50,0.1)]'}  mt-2 w-full h-11 p-3.5 rounded-lg`} type="email" name="email" placeholder="Enter your email"
               {...register("email", 
-              {required: true, pattern: pattern })}
+              {required: "Email cannot be empty", 
+              pattern: {
+                value: pattern,
+                message: "Please enter a valid email"
+              } 
+              })}
               />
-              {errors.email && <p className='italic text-sm mt-2' style={{color: 'red'}}>Please enter a valid email</p>}
+              {errors.email && <p className='italic text-sm mt-2' style={{color: 'red'}}>{errors.email?.message}</p>}
             </div>
 
 
@@ -124,8 +144,23 @@ const SignUp = () => {
               <input 
               style={{border: errors.password ? '1px solid red': '1px solid #D0D5DD'}}
               className={`focus:outline-none ${!errors.password? 'focus:shadow-[0px_0px_0px_4px_rgba(74,74,104,0.1)]' : 'focus:shadow-[0px_0px_0px_4px_rgba(249,50,50,0.1)]'} mt-2 w-full h-11 p-3.5 rounded-lg`} type="password" name="password" placeholder="Please enter your unique password"
-              {...register("password", {required: true, minLength: 8, maxLength: 30, pattern: secondPattern})}/>
-              {errors.password && <p className='right-0 bottom-[-37px] italic text-sm mt-2' style={{color: 'red'}}>Password has to start with a letter, can contain numbers, must be at least 8 characters, and no more than 30 characters. No spaces and special characters allowed</p>}
+              {...register("password", 
+              {required: "Password cannot be empty", 
+                minLength: {
+                  value: 8,
+                  message: "Password must be at least 8 characters"
+               }, 
+               maxLength: {
+                value: 30,
+                message: "Passord must not be more than 30 characters"
+
+              }, 
+              pattern: {
+                value: secondPattern,
+                message: "Password has to start with a letter, can contain numbers. No spaces and special characters allowed"
+              } 
+              })}/>
+              {errors.password && <p className='right-0 bottom-[-37px] italic text-sm mt-2' style={{color: 'red'}}>{errors.password?.message}</p>}
             </div>
           
 
@@ -135,10 +170,10 @@ const SignUp = () => {
 
             <p className='my-2.5 text-center text-[#0056D6]' >Or</p>
 
-            <button onClick ={googleSubmit}className='flex justify-center items-center font-medium text-[#344054] w-full  border border-[#D0D5DD] h-11 p-2 rounded-lg'>
+            <a href="https://catchup.hng.tech/api/v1/auth/google/url" className='flex justify-center items-center font-medium text-[#344054] w-full  border border-[#D0D5DD] h-11 p-2 rounded-lg'>
               <img className='mr-2 w-6' src={google} alt="google logo"/>
                Sign Up with Google
-            </button>
+            </a>
 
 
           <Link to='/sign_in'> <p className=' my-8 font-normal text-center text-[#0056D6]'>Have an account already? Sign in for free</p></Link>
