@@ -10,7 +10,8 @@ const ForgetPassword = () => {
   const { register, handleSubmit, formState:{ errors}} = useForm();
 
   const onSubmit = (data) => {
-    const recovery = userServices.forgotPassword(data);
+    console.log(data);
+    const recovery = userServices.recoverPassword(data);
     console.log(recovery);
     }
     

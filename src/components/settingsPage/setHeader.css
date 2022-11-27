@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.profile_header {
+  width: 100%;
+  border-bottom: 1px solid #e2e2e2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem;
+  cursor: pointer;
+}
+.Dp__area {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+}
+.catch__Up {
+  cursor: pointer;
+}
+.Dp__area img {
+  width: 45px;
+}
+@media screen and (max-width: 376px) {
+    .SettingsHeader {
+    display: none;
+  }
+}
+@media (max-width: 567px) {
+    .SettingsHeader {
+    display: none;
+  }
+}
+@media (max-width: 486px) {
+    .SettingsHeader {
+    display: none;
+  }
+}
+@media (max-width: 892px) {
+    .SettingsHeader{
+      display: none;
+    }
+}

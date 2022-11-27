@@ -5,7 +5,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import userServices from "../../services/userServices";
 
-import { Link/*, useNavigate*/ } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const SignIn = () => {
   const [userInput, setUserInput] = useState({
@@ -93,12 +93,12 @@ const SignIn = () => {
                   {...register("password", {
                     required: "Password is required",
                     minLength: {
-                      value: 8,
-                      message: "Password must be more than 8 characters",
+                      value: 4,
+                      message: "Password must be more than 3 characters",
                     },
                     maxLength: {
                       value: 30,
-                      message: "Password cannot exceed more than 30 characters",
+                      message: "Password cannot exceed more than 10 characters",
                     },
                   })}
                 />
