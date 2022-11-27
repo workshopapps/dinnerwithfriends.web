@@ -12,7 +12,7 @@ const SignUp = () => {
   const [submitting, setSubmitting] = useState(false)
   const [accountCreated, setAccountCreated] = useState(false)
   const nav = useNavigate()
-  !errors.email ? console.log(' no email error') : console.log(' email error')
+
 
   /*const googleSubmit = () => {
     fetch('https://catchup.hng.tech/api/v1/auth/google/url')
@@ -32,7 +32,7 @@ const SignUp = () => {
   const onSubmit = (data) => {
     reset()
     setSubmitting(true)
-
+    setExistingUser(false)
     console.log(data)
     const options = {
       method: 'POST',
