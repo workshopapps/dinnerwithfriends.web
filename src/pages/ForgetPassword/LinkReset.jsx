@@ -32,7 +32,7 @@ const ResetLink = () => {
             <p className="w-60 md:w-96 mt-5 text-sm xl:text-base">
               Didn't receive the email yet?{" "}
               <Link
-                to="/forget_password"
+                to="/forgot_password"
                 className="text-blue-700 font-semi-bold"
               >
                 Click here to resend
