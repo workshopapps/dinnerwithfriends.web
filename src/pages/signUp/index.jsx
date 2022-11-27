@@ -1,10 +1,11 @@
 import React, {useState} from 'react'
+import { useNavigate, Link } from 'react-router-dom'
+import { useForm } from "react-hook-form"
 import image from './signup_image.webp'
 import google from './google.svg'
 import nigeria from './nigeria.svg'
-import { useForm } from "react-hook-form"
 import catchup from './catchup_logo.svg'
-import { useNavigate, Link } from 'react-router-dom'
+
 const SignUp = () => {
   const { register, handleSubmit, reset, formState: { errors } } = useForm()
   const [existingUser, setExistingUser] = useState(false)
@@ -63,7 +64,7 @@ const SignUp = () => {
             setAccountCreated(true)
             setTimeout(() => {
               nav('/sign_in')
-            }, 3000)
+            }, 2000)
 
         }
 
@@ -97,8 +98,8 @@ const SignUp = () => {
 
           <h2 className='font-medium text-xl text-[#717172] tablet:text-4xl'>Welcome!</h2>
           <p className='mt-2 text-[#424245] text-base tablet:text-xl'>Sign up here! Please enter your details</p>
-          {existingUser && <p style={{color: 'red'}} className='mt-4 text-lg'>User already exists!</p>}
-          {accountCreated && <p className='mt-4 text-xl text-green-600 text-center'>Account Created Successfully!</p>}
+          {existingUser && <p style={{color: 'red'}} className='mt-4 text-base text-center'>User already exists!</p>}
+          {accountCreated && <p className='mt-4 text-base text-green-600 text-center'>Account Created Successfully!</p>}
           <form onSubmit={handleSubmit(onSubmit)} className=' mt-7 text-[#4B4B4C] font-normal [&>input]:mt-2 [&>input]:w-full [&>input]:mb-3.5'>
             <div className='relative w-full mb-4 '>
               <label className='pb-0' htmlFor="email">Name</label>
@@ -109,8 +110,8 @@ const SignUp = () => {
               {...register("name",
               {required: "Name cannot be empty",
                minLength: {
-                  value: 4,
-                  message: "Name must be at least 4 characters"
+                  value: 3,
+                  message: "Name must be at least 3 characters"
                },
                maxLength: {
                 value: 30,
@@ -154,12 +155,12 @@ const SignUp = () => {
               {...register("password",
               {required: "Password cannot be empty",
                 minLength: {
-                  value: 8,
-                  message: "Password must be at least 8 characters"
+                  value: 9,
+                  message: "Password must be at least 9 characters"
                },
                maxLength: {
                 value: 30,
-                message: "Passord must not be more than 30 characters"
+                message: "Password must not be more than 30 characters"
 
               },
               pattern: {

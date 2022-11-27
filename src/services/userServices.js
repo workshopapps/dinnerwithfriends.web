@@ -21,10 +21,6 @@ const register = async (params) => {
 const login = async (params) => {
   try {
     const result = await fetchApi.post(`${BASE_URL}/${LOGIN_URL}`, params);
-    console.log(result)
-    if (result.success === true) {
-      localStorage.setItem("jwt-token", result.accessToken);
-    }
     return result;
   } catch (err) {
     return err;
