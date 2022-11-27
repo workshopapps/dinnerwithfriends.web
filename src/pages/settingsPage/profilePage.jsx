@@ -4,34 +4,30 @@ import { IoIosArrowDown } from "react-icons/io";
 import { BiEdit } from "react-icons/bi";
 import { AiOutlineCopyright } from "react-icons/ai";
 import avatar from "../../assets/img/Avatar.png";
-import Dp from "../../assets/img/m-img.png";
-import CatchUp from "../../assets/img/Catch Up.png";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
+import SettingsHeader from "../../components/settingsPage/setHeader";
+import SettingsFooter from "../../components/settingsPage/setFooter";
+import { Link } from "react-router-dom";
 
 import "./profilePage.css";
 
 const profilePage = () => {
   return (
     <div>
-      <Navbar />
-
-      <div className="profile_header">
-        <span className="catch__Up">
-          <img src={CatchUp} alt="" />
-        </span>
-        <div className="Dp__area">
-          <img src={Dp} alt="" className="profile__pic" />
-          <IoIosArrowDown />
-        </div>
+      <div id="main_navbar">
+        <Navbar />
       </div>
+      <SettingsHeader className="SettingsHeader" />
 
       <div className="settings_body">
         <div className="body_title_container">
-          <div className="body_title">
-            <MdOutlineArrowBack />
-            <h1>Account Settings</h1>
-          </div>
+          <Link to="/">
+            <div className="body_title">
+              <MdOutlineArrowBack />
+              <h1>Account Settings</h1>
+            </div>
+          </Link>
           <div className="body_subTitles">
             <h5>Profile</h5>
             <span className="notification_tab">Notifications</span>
@@ -48,12 +44,14 @@ const profilePage = () => {
             </div>
           </div>
 
-          <div>
-            <button className="edit_btn">
-              <BiEdit />
-              Edit
-            </button>
-          </div>
+          <Link to="/update_details">
+            <div>
+              <button className="edit_btn">
+                <BiEdit />
+                Edit
+              </button>
+            </div>
+          </Link>
         </div>
 
         <section className="more_user_details">
@@ -111,7 +109,10 @@ const profilePage = () => {
           </div>
         </div>
       </div>
-      <Footer />
+      <SettingsFooter className="settings-footer" />
+      <div id="main_footer">
+        <Footer />
+      </div>
     </div>
   );
 };
