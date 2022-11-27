@@ -12,44 +12,44 @@ const UpcomingEvent = () => {
   const [status, setStatus] = useState(false);
   const { events, setEvents } = CatchUpEventContextUse();
 
-  const event = [
-    {
-      id: 1,
-      title: "Catch Up with Football (UEFA Championship)",
-      description:
-        "Guys! It’s been long we have gathered, let’s try to make time for champions league next week tuesday. If you know your GOAT no qualify, no bring yourself here.",
-      status: false,
-      date: "21st November",
-      invitee: "2",
-    },
-    {
-      id: 2,
-      title: "Catch Up with Football (UEFA Championship)",
-      description:
-        "Guys! It’s been long we have gathered, let’s try to make time for champions league next week tuesday. If you know your GOAT no qualify, no bring yourself here.",
-      status: false,
-      date: "21st November",
-      invitee: "3",
-    },
-    {
-      id: 3,
-      title: "Catch Up with Football (UEFA Championship)",
-      description:
-        "Guys! It’s been long we have gathered, let’s try to make time for champions league next week tuesday. If you know your GOAT no qualify, no bring yourself here.",
-      status: true,
-      date: "21st November",
-      invitee: "5",
-    },
-    {
-      id: 4,
-      title: "Catch Up with Football (UEFA Championship)",
-      description:
-        "Guys! It’s been long we have gathered, let’s try to make time for champions league next week tuesday. If you know your GOAT no qualify, no bring yourself here.",
-      status: true,
-      date: "21st November",
-      invitee: "7",
-    },
-  ];
+  // const event = [
+  //   {
+  //     id: 1,
+  //     title: "Catch Up with Football (UEFA Championship)",
+  //     description:
+  //       "Guys! It’s been long we have gathered, let’s try to make time for champions league next week tuesday. If you know your GOAT no qualify, no bring yourself here.",
+  //     status: false,
+  //     date: "21st November",
+  //     invitee: "2",
+  //   },
+  //   {
+  //     id: 2,
+  //     title: "Catch Up with Football (UEFA Championship)",
+  //     description:
+  //       "Guys! It’s been long we have gathered, let’s try to make time for champions league next week tuesday. If you know your GOAT no qualify, no bring yourself here.",
+  //     status: false,
+  //     date: "21st November",
+  //     invitee: "3",
+  //   },
+  //   {
+  //     id: 3,
+  //     title: "Catch Up with Football (UEFA Championship)",
+  //     description:
+  //       "Guys! It’s been long we have gathered, let’s try to make time for champions league next week tuesday. If you know your GOAT no qualify, no bring yourself here.",
+  //     status: true,
+  //     date: "21st November",
+  //     invitee: "5",
+  //   },
+  //   {
+  //     id: 4,
+  //     title: "Catch Up with Football (UEFA Championship)",
+  //     description:
+  //       "Guys! It’s been long we have gathered, let’s try to make time for champions league next week tuesday. If you know your GOAT no qualify, no bring yourself here.",
+  //     status: true,
+  //     date: "21st November",
+  //     invitee: "7",
+  //   },
+  // ];
 
   useEffect(() => {
     async function fetchData() {
