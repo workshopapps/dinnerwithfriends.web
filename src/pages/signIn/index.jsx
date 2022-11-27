@@ -13,27 +13,31 @@ const SignIn = () => {
   const navigate = useNavigate();
 
   const onSubmit = async (data) => {
-    setIsSubmit(true);
     const result = await userServices.login(data);
-    console.log(result)
+
     if(result.status === 'fail'){
-      setInvalidCredentials(true)
-      console.log(invalidCredentials)
       setIsSubmit(false)
-      console.log(result)
-  }
+      setInvalidCredentials(true)
+    }
 
     if(result.status === 'success'){
       setIsSubmit(true)
-      console.log(result)
-        localStorage.setItem("jwt-token", result.accessToken);
+       localStorage.setItem("jwt-token", result.accessToken);
        setTimeout(() => {
         navigate('/dashboard/upcoming_events')
         }, 1000)
-
-}
-
+      }
   };
+
+  const errorMsg = () => {
+    let element;
+    if (isSubmit === true && invalidCredentials === false) {
+      element =  <p className='mt-4 text-xl text-green-600 text-center'>Login Successful!</p>
+     } else if(isSubmit === false && invalidCredentials === true) {
+      element = <p className='mt-4 text-xl text-red-600 text-center'>Incorrect Email or Password</p>
+     }
+     return element
+  }
 
   return (
     <div>
@@ -72,8 +76,7 @@ const SignIn = () => {
               <p className="sm:text-base lg:text-xl text-gray-600 mb-8 ">
                 Sign in here! Please enter your details
               </p>
-              {invalidCredentials && <p className='mt-4 text-xl text-red-600 text-center'>Incorrect Email or Password</p>}
-              {isSubmit && <p className='mt-4 text-xl text-green-600 text-center'>Login Successful!</p>}
+              {errorMsg()}
               <form
                 onSubmit={handleSubmit(onSubmit)}
                 action=""

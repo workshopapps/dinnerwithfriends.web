@@ -7,14 +7,14 @@ import add from "../../assets/img/add.png";
 import Footer from "../../components/Footer";
 
 const UpcomingEvent = () => {
-  const [status, setStatus] = useState("Upcoming");
+  const [status, setStatus] = useState(false);
   const event = [
     {
       id: 1,
       title: "Catch Up with Football (UEFA Championship)",
       description:
         "Guys! It’s been long we have gathered, let’s try to make time for champions league next week tuesday. If you know your GOAT no qualify, no bring yourself here.",
-      status: "Upcoming",
+      status: false,
       date: "21st November",
       invitee: "2",
     },
@@ -23,7 +23,7 @@ const UpcomingEvent = () => {
       title: "Catch Up with Football (UEFA Championship)",
       description:
         "Guys! It’s been long we have gathered, let’s try to make time for champions league next week tuesday. If you know your GOAT no qualify, no bring yourself here.",
-      status: "Upcoming",
+      status: false,
       date: "21st November",
       invitee: "3",
     },
@@ -32,7 +32,7 @@ const UpcomingEvent = () => {
       title: "Catch Up with Football (UEFA Championship)",
       description:
         "Guys! It’s been long we have gathered, let’s try to make time for champions league next week tuesday. If you know your GOAT no qualify, no bring yourself here.",
-      status: "Rsvp",
+      status: true,
       date: "21st November",
       invitee: "5",
     },
@@ -41,27 +41,9 @@ const UpcomingEvent = () => {
       title: "Catch Up with Football (UEFA Championship)",
       description:
         "Guys! It’s been long we have gathered, let’s try to make time for champions league next week tuesday. If you know your GOAT no qualify, no bring yourself here.",
-      status: "Rsvp",
+      status: true,
       date: "21st November",
       invitee: "7",
-    },
-    {
-      id: 5,
-      title: "Catch Up with Football (UEFA Championship)",
-      description:
-        "Guys! It’s been long we have gathered, let’s try to make time for champions league next week tuesday. If you know your GOAT no qualify, no bring yourself here.",
-      status: "Pending",
-      date: "21st November",
-      invitee: "3",
-    },
-    {
-      id: 6,
-      title: "Catch Up with Football (UEFA Championship)",
-      description:
-        "Guys! It’s been long we have gathered, let’s try to make time for champions league next week tuesday. If you know your GOAT no qualify, no bring yourself here.",
-      status: "Pending",
-      date: "26th November",
-      invitee: "5",
     },
   ];
 
@@ -131,11 +113,11 @@ const UpcomingEvent = () => {
               <li>
                 <Button
                   className={`${
-                    status === "Upcoming"
+                    status === false
                       ? "pb-3 border-[#1070FF] border-b-4 "
                       : ""
                   }'pb-3 outline-0 border-0 text-[#717172] bg-inherit text-lg'`}
-                  onClick={() => setStatus("Upcoming")}
+                  onClick={() => setStatus(false)}
                 >
                   Upcoming Event
                 </Button>
@@ -143,23 +125,11 @@ const UpcomingEvent = () => {
               <li>
                 <Button
                   className={`${
-                    status === "Rsvp" ? "pb-3 border-[#1070FF] border-b-4 " : ""
+                    status === true ? "pb-3 border-[#1070FF] border-b-4 " : ""
                   }' pb-3 outline-0 border-0 text-[#717172] bg-inherit text-lg'`}
-                  onClick={() => setStatus("Rsvp")}
+                  onClick={() => setStatus(true)}
                 >
-                  Rsvp Event
-                </Button>
-              </li>
-              <li>
-                <Button
-                  className={`${
-                    status === "Pending"
-                      ? "pb-3 border-[#1070FF] border-b-4 "
-                      : ""
-                  }' pb-3 outline-0  text-[#717172] bg-inherit text-lg'`}
-                  onClick={() => setStatus("Pending")}
-                >
-                  Pending Event
+                  Reserved Event
                 </Button>
               </li>
             </ul>
@@ -167,17 +137,12 @@ const UpcomingEvent = () => {
         </div>
         <div className="flex flex-col justify-center items-center gap-y-8 lg:border border-solid border-[#CDCDCD] lg:pt-12 lg:pb-[200px] px-[20px] 8lg:px-12">
           <MediaQuery minWidth={1024}>
-            {status === "Upcoming" && (
+            {status === false && (
               <div className="lg:grid lg:grid-cols-2 grid-flow-row content-start gap-4 px-8">
                 {events}
               </div>
             )}
-            {status === "Rsvp" && (
-              <div className="lg:grid lg:grid-cols-2 grid-flow-row content-start gap-4 px-8">
-                {events}
-              </div>
-            )}
-            {status === "Pending" && (
+            {status === true && (
               <div className="lg:grid lg:grid-cols-2 grid-flow-row content-start gap-4 px-8">
                 {events}
               </div>
@@ -193,12 +158,6 @@ const UpcomingEvent = () => {
             <div>
               <p className="text-[#424245] font-medium mb-4 text-center">
                 Rsvp Events
-              </p>
-              {events}
-            </div>
-            <div>
-              <p className="text-[#424245] font-medium mb-4 text-center">
-                Pending Events
               </p>
               {events}
             </div>
