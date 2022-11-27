@@ -54,7 +54,7 @@ function App() {
         <Route path="/dashboard/upcoming_events" element={<UpcomingEvent />} />
         <Route path="/features" element={<Features />} />
         <Route path="/profile" element={<ProfilePage />} />
-        <Route path="/forget-password" element={<ForgetPassword />} />
+        <Route path="/forgot_password" element={<ForgetPassword />} />
         <Route path="/reset_link" element={<ResetLink />} />
         <Route path="*" element={<Error404 />} />
       </Routes>
