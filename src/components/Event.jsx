@@ -6,11 +6,12 @@ import people from '../assets/img/people.png'
 import calendery from '../assets/img/calendery.png'
 
 const Event = ({ status, title, description, date, invitee, filteredEvents }) => {
+  console.log(filteredEvents.length);
   return (
     <>
-    {filteredEvents[0] === undefined ? (
+    {filteredEvents.length === 0 ? (
 
-      <div className='flex flex-col justify-center items-center g-y-4'>
+      <div className='flex flex-col justify-center items-center g-y-4 lg:w-50 '>
         <div className='w-[154px] h-[154px] lg:w-[199px] lg:h-[199px] '>
           <img src={calender} alt="calender" />
         </div>

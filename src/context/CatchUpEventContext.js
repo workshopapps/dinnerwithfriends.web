@@ -1,10 +1,9 @@
 import { useContext, createContext, useState } from "react";
-import userServices from "../services/userServices";
 
 const CatchUpEventContext = createContext();
 
 export const CatchUpEventContextProvider = ({ children }) => {
-	const events = userServices.getAllEvents()
+	const [events, setEvents] = useState([])
 	const [startDate, setStartDate] = useState("");
 	const [showModal, setShowModal] = useState(false);
 	const [showClosedModal, setShowClosedModal] = useState(true);
@@ -34,6 +33,7 @@ export const CatchUpEventContextProvider = ({ children }) => {
 		setShowModal,
 		showClosedModal,
 		setShowClosedModal,
+		setEvents,
 		events
 	};
 
