@@ -3,23 +3,25 @@ import signInImage from "../../assets/img/Rectangle 254.png";
 import nigeriaFlag from "../../assets/img/Group.png";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import userServices from "../../services/userServices";
 
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const SignIn = () => {
-  const navigate = useNavigate();
+  const [userInput, setUserInput] = useState({
+    email: "Enter your email address",
+    password: "**********",
+  });
+  //const navigate = useNavigate();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const [userInput, setUserInput] = useState({
-    email: "Enter your email address",
-    password: "**********",
-  });
-  const onSubmit = (data) => {
+
+  const onSubmit = async (data) => {
     setUserInput(data);
-    if (!errors.email && !errors.password) return navigate("/create_event");
+    userServices.login(data);
   };
 
   return (
@@ -47,7 +49,7 @@ const SignIn = () => {
                 </label>
               </div>
             </div>
-            <div className=" px-14 mt-24">
+            <div className="px-2 lg:px-14 mt-24">
               <h2 className="text-4xl font-bold text-center text-blue-600 mb-16">
                 Sign In
               </h2>
@@ -90,11 +92,11 @@ const SignIn = () => {
                   {...register("password", {
                     required: "Password is required",
                     minLength: {
-                      value: 4,
+                      value: 8,
                       message: "Password must be more than 4 characters",
                     },
                     maxLength: {
-                      value: 10,
+                      value: 30,
                       message: "Password cannot exceed more than 10 characters",
                     },
                   })}
@@ -113,7 +115,7 @@ const SignIn = () => {
                     />
                     <label
                       className="form-check-label text-xs w-full inline ml-2 lg:text-base"
-                      Htmlfor="form-check-input"
+                      htmlFor="form-check-input"
                     >
                       Remember for 30days
                     </label>
