@@ -20,17 +20,17 @@ const CatchupPress = ({ dimension }) => {
                     <div className="grid gap-3 h-28 md:h-40">
                         <span className="text-xs md:text-base text-[#1E1E1E]">8 November, 2022 . Tech Crunch</span>
                         <p className="font-bold text-sm md:text-2xl w-[70vw] md:w-[630px]">6 reasons Catch Up is  THAT platform for keeping up with your friends</p>
-                        <a className="text-[#1070FF] flex gap-2"> Read article <BlueArrow /></a>
+                        <a className="text-[#1070FF] flex gap-2" href="#"> Read article <BlueArrow /></a>
                     </div>
                     <div className="grid gap-3 h-28 md:h-40">
                         <span className="text-sm md:text-base text-[#1E1E1E]">8 November, 2022 . Tech Crunch</span>
                         <p className="font-bold text-sm md:text-2xl w-[70vw] md:w-[630px]">The Future of Event Scheduling</p>
-                        <a className="text-[#1070FF] flex gap-2">Read Article <BlueArrow /></a>
+                        <a className="text-[#1070FF] flex gap-2" href="#">Read Article <BlueArrow /></a>
                     </div>
                     <div className="grid gap-3 h-28 md:h-40">
                         <span className="text-sm md:text-base text-[#1E1E1E]">8 November, 2022 . TechCabal</span>
                         <p className="font-bold text-sm md:text-2xl w-[70vw] md:w-[630px]">Platfroms for you & your friends to keep up with</p>
-                        <a className="text-[#1070FF] flex gap-2">Read article <BlueArrow /></a>
+                        <a className="text-[#1070FF] flex gap-2" href="#">Read article <BlueArrow /></a>
                     </div>
                     <button type="button" className="bg-[#1070FF] justify-self-center  text-white w-28 h-11 md:w-40 md:h-14 flex justify-center items-center gap-3 mt-5 rounded-md">
                         Read All <Arrow />
