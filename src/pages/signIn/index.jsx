@@ -49,7 +49,7 @@ const SignIn = () => {
                 </label>
               </div>
             </div>
-            <div className=" px-14 mt-24">
+            <div className="px-2 lg:px-14 mt-24">
               <h2 className="text-4xl font-bold text-center text-blue-600 mb-16">
                 Sign In
               </h2>
@@ -92,11 +92,11 @@ const SignIn = () => {
                   {...register("password", {
                     required: "Password is required",
                     minLength: {
-                      value: 4,
+                      value: 8,
                       message: "Password must be more than 4 characters",
                     },
                     maxLength: {
-                      value: 10,
+                      value: 30,
                       message: "Password cannot exceed more than 10 characters",
                     },
                   })}
