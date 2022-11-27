@@ -92,12 +92,12 @@ const SignIn = () => {
                   {...register("password", {
                     required: "Password is required",
                     minLength: {
-                      value: 8,
-                      message: "Password must be more than 4 characters",
+                      value: 9,
+                      message: "Password must be at least 9 characters",
                     },
                     maxLength: {
                       value: 30,
-                      message: "Password cannot exceed more than 10 characters",
+                      message: "Password cannot exceed more than 30 characters",
                     },
                   })}
                 />
