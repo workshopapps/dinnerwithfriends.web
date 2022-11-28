@@ -9,22 +9,23 @@ import BackToSignIn from "../../assets/img/BackToSignIn.png";
 
 const ForgetPassword = () => {
   const [isSubmit, setIsSubmit] = useState(false);
+  const [validCredentials, setValidCredentials] = useState(false)
   const [invalidCredentials, setInvalidCredentials] = useState(false)
   const { register, handleSubmit, formState:{ errors}} = useForm();
 
   const navigate = useNavigate();
 
   const onSubmit = async (data) => {
-    console.log(data);
+    setIsSubmit(true)
     const recovery = await userServices.recoverPassword(data);
-    console.log(recovery);
+
     if(recovery.status === 'fail'){
-      setInvalidCredentials(true)
       setIsSubmit(false)
+      setInvalidCredentials(true)
   }
 
     if(recovery.status === 'success'){
-      setIsSubmit(true)
+      setValidCredentials(true)
       setTimeout(() => {
         navigate('/reset_link')
         }, 2000)
@@ -33,9 +34,9 @@ const ForgetPassword = () => {
 
   const errorMsg = () => {
     let element;
-    if (isSubmit === true && invalidCredentials === false) {
+    if (validCredentials) {
       element =  <p className='mt-4 text-xl text-green-600 text-center'>Successful, Kindly proceed to your email!</p>
-     } else if(isSubmit === false && invalidCredentials === true) {
+     } else if(invalidCredentials) {
       element = <p className='mt-4 text-xl text-red-600 text-center'>Incorrect email address</p>
      }
      return element

@@ -9,10 +9,12 @@ import userServices from "../../services/userServices";
 const SignIn = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const [isSubmit, setIsSubmit] = useState(false);
+  const [isLoggedIn, setIsloggedIn] = useState(false)
   const [invalidCredentials, setInvalidCredentials] = useState(false)
   const navigate = useNavigate();
 
   const onSubmit = async (data) => {
+    setIsSubmit(true)
     const result = await userServices.login(data);
 
     if(result.status === 'fail'){
@@ -21,7 +23,7 @@ const SignIn = () => {
     }
 
     if(result.status === 'success'){
-      setIsSubmit(true)
+       setIsloggedIn(true)
        localStorage.setItem("jwt-token", result.accessToken);
        setTimeout(() => {
         navigate('/dashboard/upcoming_events')
@@ -31,9 +33,9 @@ const SignIn = () => {
 
   const errorMsg = () => {
     let element;
-    if (isSubmit === true && invalidCredentials === false) {
+    if (isLoggedIn) {
       element =  <p className='mt-4 text-xl text-green-600 text-center'>Login Successful!</p>
-     } else if(isSubmit === false && invalidCredentials === true) {
+     } else if(invalidCredentials) {
       element = <p className='mt-4 text-xl text-red-600 text-center'>Incorrect Email or Password</p>
      }
      return element
