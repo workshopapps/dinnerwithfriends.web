@@ -11,7 +11,7 @@
     align-items: center;
     gap: 0.5rem;
   }
-  input:not(.edit_btn) {
+  #main-body input:not(.edit_btn) {
     border: 1px solid grey;
     border-radius: 4px;
   }
