@@ -57,10 +57,9 @@ const ResetPassword = () => {
     return element;
   };
   /* eslint-disable-next-line */
-  const pattern =
-/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  const pattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   /* eslint-disable-next-line */
-    const secondPattern = /^[a-z][a-z0-9]+$/ig; 
+  const secondPattern = /^[a-z][a-z0-9]+$/ig; 
   return (
     <>
       <Navbar />
