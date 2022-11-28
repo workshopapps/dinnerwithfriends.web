@@ -46,10 +46,10 @@ jobs:
           GITHUB_USERNAME: secrets.USERNAME_NAME
           GITHUB_TOKEN: ${{ secrets.TOKEN_TOKEN }}
         with:
-          host: 139.162.251.16
-          username: root
-          password: Linode123#Linode123#
-          port: 22
+          host: ${{ secrets.HOST_IP }}
+          username: ${{ secrets.HOST_USER }}
+          password: ${{ secrets.HOST_USER_PWD }}
+          port: ${{ secrets.HOST_PORT }}  
           envs: GITHUB_USERNAME, GITHUB_TOKEN
           script: |
             cd calendarApp/
