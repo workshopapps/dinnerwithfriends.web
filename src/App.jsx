@@ -26,6 +26,8 @@ import EventInviteResponse from "./pages/invitee/EventInviteResponse";
 import EventSummary from "./pages/dashboard/EventSummary";
 import UpcomingEvent from "./pages/dashboard/UpcomingEvent";
 import Features from "./pages/Features-page/features";
+import HelpRoutes from "./pages/helpCenter/helpRoutes";
+
 import AboutUsPage from "./pages/aboutUs";
 
 function App() {
@@ -60,6 +62,7 @@ function App() {
         <Route path="/reset_link" element={<ResetLink />} />
         <Route path="/reset_password" element={<ResetPassword />} />
         <Route path="*" element={<Error404 />} />
+        <Route path="/help/*" element={<HelpRoutes />} />
         <Route path="/aboutUs" element={<AboutUsPage />} />
       </Routes>
     </div>
