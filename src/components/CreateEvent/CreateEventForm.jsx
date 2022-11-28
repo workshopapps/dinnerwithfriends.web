@@ -4,6 +4,7 @@ import { SlArrowRight } from "react-icons/sl";
 import { useNavigate } from "react-router";
 import { CatchUpEventContextUse } from "../../context/CatchUpEventContext";
 import { formLogic } from "../../data/createEventErrorLogic";
+import userServices from "../../services/userServices";
 import Button from "../Button";
 import SingleCalendar from "../SingleCalendar/SingleCalendar";
 
@@ -16,25 +17,37 @@ const CreateEventForm = () => {
 	const navigate = useNavigate();
 
 	const [errors, setErrors] = useState({
-		eventInvite: "",
-		description: "",
+		event_title: "",
+		event_description: "",
 		location: "",
-		eventType: "",
-		noOfParticipants: "",
-		startDate: "",
-		endDate: "",
-		preferredDate: "",
+		event_type: "",
+		participant_number: "",
+		start_date: "",
+		end_date: "",
+		host_prefered_time: "",
 	});
 
 	const handleSubmit = () => {
 		setErrors(formLogic(formValues));
-		setFormValues({ ...formValues, preferredDate, endDate, startDate });
+		setFormValues({
+			...formValues,
+			host_prefered_time: preferredDate,
+			end_date: endDate,
+			start_date: startDate,
+		});
 		console.log(formValues);
 	};
 
+	const submitForm = async (data) => {
+		const result = await userServices.createEvents(data);
+		console.log(result);
+		if (result.status === "success") {
+			navigate("/event_summary");
+		}
+	};
 	useEffect(() => {
 		if (Object.keys(errors).length === 0) {
-			navigate("/event_summary");
+			submitForm(formValues);
 		}
 	}, [errors, navigate]);
 
@@ -50,15 +63,15 @@ const CreateEventForm = () => {
 						required
 						id='title'
 						type='text'
-						value={formValues.eventInvite}
+						value={formValues.event_title}
 						onChange={(e) =>
-							setFormValues({ ...formValues, eventInvite: e.target.value })
+							setFormValues({ ...formValues, event_title: e.target.value })
 						}
-						placeholder='Hangout With the Boys'
+						placeholder='Time out with friends'
 						className='p-3 bg-white border border-[#0000004D] text-[#151517] placeholder:text-[#B6B6B6] rounded-[4px] text-sm mt-3 outline-none'
 					/>
 					<small className='text-red-600 text-[10px] mt-2'>
-						{errors?.eventInvite}
+						{errors?.event_title}
 					</small>
 				</div>
 				<div className='flex flex-col mb-4'>
@@ -68,15 +81,18 @@ const CreateEventForm = () => {
 					<textarea
 						required
 						id='desc'
-						value={formValues.description}
+						value={formValues.event_description}
 						onChange={(e) =>
-							setFormValues({ ...formValues, description: e.target.value })
+							setFormValues({
+								...formValues,
+								event_description: e.target.value,
+							})
 						}
 						placeholder='This Event should be a wonderful hangout. I will want everyone to be available for this event. Let me know when you will be free from the link I will send to you.'
 						className='p-3 bg-white border border-[#0000004D] text-[#151517] placeholder:text-[#B6B6B6]  rounded-[4px] text-sm mt-3 outline-none h-[120px]'
 					/>
 					<small className='text-red-600 text-[10px] mt-2'>
-						{errors?.description}{" "}
+						{errors?.event_description}{" "}
 					</small>
 				</div>
 				<div className='flex flex-col mb-4'>
@@ -90,8 +106,9 @@ const CreateEventForm = () => {
 							setFormValues({ ...formValues, location: e.target.value })
 						}
 						id='location'
+						pattern='[A-Za-z][A-Za-z ]{2,30}$'
 						type='text'
-						placeholder='Lagos, Nigeria'
+						placeholder='Sheraton Hotels'
 						className='p-3 bg-white border border-[#0000004D] text-[#151517] placeholder:text-[#B6B6B6] rounded-[4px] text-sm mt-3 outline-none'
 					/>
 					<small className='text-red-600 text-[10px] mt-2'>
@@ -104,17 +121,17 @@ const CreateEventForm = () => {
 					</label>
 					<input
 						required
-						value={formValues.eventType}
+						value={formValues.event_type}
 						onChange={(e) =>
-							setFormValues({ ...formValues, eventType: e.target.value })
+							setFormValues({ ...formValues, event_type: e.target.value })
 						}
 						id='eventType'
 						type='text'
-						placeholder='Beach Hangout'
+						placeholder='Dinner'
 						className='p-3 bg-white border border-[#0000004D] text-[#151517] placeholder:text-[#B6B6B6] rounded-[4px] text-sm mt-3 outline-none'
 					/>
 					<small className='text-red-600 text-[10px] mt-2'>
-						{errors?.eventType}{" "}
+						{errors?.event_type}{" "}
 					</small>
 				</div>
 				<div className='flex flex-col mb-4'>
@@ -124,16 +141,19 @@ const CreateEventForm = () => {
 					<input
 						required
 						id='noOfParticipants'
-						value={formValues.noOfParticipants}
+						value={formValues.participant_number}
 						onChange={(e) =>
-							setFormValues({ ...formValues, noOfParticipants: e.target.value })
+							setFormValues({
+								...formValues,
+								participant_number: e.target.value,
+							})
 						}
 						type='number'
 						placeholder='5'
 						className='p-3 bg-white border border-[#0000004D] text-[#151517] placeholder:text-[#B6B6B6] rounded-[4px] text-sm mt-3 outline-none w-fit'
 					/>
 					<small className='text-red-600 text-[10px] mt-2'>
-						{errors?.noOfParticipants}{" "}
+						{errors?.participant_number}{" "}
 					</small>
 				</div>
 				<div className='flex flex-col md:flex-row md:gap-5 lg:gap-10 w-full'>
@@ -158,7 +178,7 @@ const CreateEventForm = () => {
 							</span>
 						</div>
 						<small className='text-red-600 text-[10px] mt-2'>
-							{errors?.startDate}
+							{errors?.start_date}
 						</small>
 
 						<div
@@ -194,7 +214,7 @@ const CreateEventForm = () => {
 							</span>
 						</div>
 						<small className='text-red-600 text-[10px] mt-2'>
-							{errors?.endDate}
+							{errors?.end_date}
 						</small>
 
 						<div
@@ -231,7 +251,7 @@ const CreateEventForm = () => {
 						</span>
 					</div>
 					<small className='text-red-600 text-[10px] mt-2'>
-						{errors?.preferredDate}{" "}
+						{errors?.host_prefered_time}{" "}
 					</small>
 
 					<div
