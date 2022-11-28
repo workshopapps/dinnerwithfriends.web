@@ -29,7 +29,7 @@ function Features() {
 flex flex-row items-center justify-between space-x-5 "
             >
               <p>Get Started</p>
-              <img className="w-3" src={Arrow} alt="arrow" />
+              <img className="w-3" src={Arrow} />{" "}
             </Link>
           </div>
         </section>
@@ -72,7 +72,7 @@ flex flex-row items-center justify-between space-x-5 "
 flex flex-row items-center justify-between space-x-5 "
             >
               <p>Get Started</p>
-              <img className="w-3" src={Arrow} alt="arrow" />{" "}
+              <img className="w-3" src={Arrow} />{" "}
             </Link>
           </div>
         </section>

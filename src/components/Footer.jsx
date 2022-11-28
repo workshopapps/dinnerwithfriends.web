@@ -5,7 +5,7 @@ import { BsFillSuitHeartFill } from "react-icons/bs";
 const Footer = () => {
   const company = [
     { title: "Careers", to: "/careers" },
-    { title: "About us", to: "/error404" },
+    { title: "About us", to: "/aboutUs" },
     { title: "Contact us", to: "/contact-us" },
     { title: "Partner with us", to: "/error404" },
   ];
@@ -22,8 +22,8 @@ const Footer = () => {
   ];
   const help = [
     { title: "FAQs", to: "/faq" },
-    { title: "Help Center", to: "/error404" },
-    { title: "Customer support", to: "/error404" },
+    { title: "Help Center", to: "/help" },
+    { title: "Customer support", to: "/error404" }
   ];
 
   return (
