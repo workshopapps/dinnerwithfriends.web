@@ -95,7 +95,7 @@ const CreateEventForm = () => {
 						className='p-3 bg-white border border-[#0000004D] text-[#151517] placeholder:text-[#B6B6B6] rounded-[4px] text-sm mt-3 outline-none'
 					/>
 					<small className='text-red-600 text-[10px] mt-2'>
-						{errors?.location}{" "}
+						{errors?.location}
 					</small>
 				</div>
 				<div className='flex flex-col mb-4'>
