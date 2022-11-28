@@ -89,7 +89,7 @@ const ResetPassword = () => {
                   id="code"
                   placeholder="Enter code"
                   name="code"
-                  className="block w-60 md:w-96 p-3 border rounded-md"
+                  className="block w-60 md:w-96 p-3 border rounded-md mb-4"
                   {...register("token", { required: true})}
                 />
                 {errors.token && (
@@ -110,7 +110,7 @@ const ResetPassword = () => {
                   type="email"
                   id="email"
                   placeholder="Enter your email address"
-                  className="block w-60 md:w-96 p-3 border rounded-md"
+                  className="block w-60 md:w-96 p-3 border rounded-md mb-4"
                   {...register("email",
                   {required: true, pattern: pattern })}
                 />
@@ -119,7 +119,7 @@ const ResetPassword = () => {
 
               <div>
                 <label
-                  className="block mb-2 font-normal text-gray-600"
+                  className="block font-normal text-gray-600"
                   HtmlFor="password"
                 >
                   New Password
@@ -130,11 +130,7 @@ const ResetPassword = () => {
                       ? "1px solid red"
                       : "1px solid #D0D5DD",
                   }}
-                  className={`focus:outline-none ${
-                    !errors.password
-                      ? "focus:shadow-[0px_0px_0px_4px_rgba(74,74,104,0.1)]"
-                      : "focus:shadow-[0px_0px_0px_4px_rgba(249,50,50,0.1)]"
-                  } mt-2 w-full h-11 p-3.5 rounded-lg`}
+                  className="block w-60 md:w-96 p-3 border rounded-md mb-4"
                   type="password"
                   name="password"
                   placeholder="Please enter your unique password"
