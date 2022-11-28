@@ -89,7 +89,7 @@
 .more_user_details {
   padding: 1rem;
 }
-label {
+.more_user_details label {
   display: flex;
   justify-content: space-between;
   width: 80%;
@@ -117,7 +117,7 @@ label {
   .avatar {
     width: 55px;
   }
-  label {
+  .more_user_details label {
     display: flex;
     flex-direction: column;
     width: 62%;
@@ -151,7 +151,7 @@ label {
     gap: 1rem;
     padding: 1rem;
   }
-  label {
+  .more_user_details label {
     display: flex;
     flex-direction: column;
     width: 62%;
@@ -207,7 +207,7 @@ label {
     gap: 1.2rem;
     padding: 1rem;
   }
-  label {
+  .more_user_details label {
     display: flex;
     width: 100%;
     text-align: left;
