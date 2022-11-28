@@ -49,6 +49,7 @@ const CreateEventForm = () => {
 		if (Object.keys(errors).length === 0) {
 			submitForm(formValues);
 		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [errors, navigate]);
 
 	return (
