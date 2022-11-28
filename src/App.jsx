@@ -12,6 +12,7 @@ import ContactUs from "./pages/contactUs";
 import ProfilePage from "./pages/settingsPage/profilePage";
 import ForgetPassword from "./pages/ForgetPassword/index";
 import ResetLink from "./pages/ForgetPassword/LinkReset";
+import ResetPassword from "./pages/ForgetPassword/ResetPassword";
 import Policy from "./pages/policy";
 import Error404 from "./pages/error404";
 import HowItWorks from "./pages/howItWorks/HowItWorks";
@@ -57,6 +58,7 @@ function App() {
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/forgot_password" element={<ForgetPassword />} />
         <Route path="/reset_link" element={<ResetLink />} />
+        <Route path="/reset_password" element={<ResetPassword />} />
         <Route path="*" element={<Error404 />} />
         <Route path="/aboutUs" element={<AboutUsPage />} />
       </Routes>
