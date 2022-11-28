@@ -19,12 +19,14 @@ import Terms from "./pages/t&c";
 import TermsOfUse from "./pages/termsOfUse";
 import Faq from "./pages/FAQ/Faq";
 import Settings from "./pages/settingsPage/profilePage";
+import AccountSettings from "./pages/settingsPage/profileTwo";
 import EventInvite from "./pages/invitee/EventInvite";
 import EventInviteResponse from "./pages/invitee/EventInviteResponse";
 import EventSummary from "./pages/dashboard/EventSummary";
 import UpcomingEvent from "./pages/dashboard/UpcomingEvent";
 import Features from "./pages/Features-page/features";
 import HelpRoutes from "./pages/helpCenter/helpRoutes";
+import AboutUsPage from "./pages/aboutUs";
 
 function App() {
   return (
@@ -33,6 +35,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/create_event" element={<CreateEvent />} />
         <Route path="/closed_event" element={<ClosedEvent />} />
+        <Route path="/update_details" element={<AccountSettings />} />
         <Route path="/settings" element={<Settings />} />
         <Route path="/invitee" element={<Invitee />} />
         <Route path="/sign_in" element={<SignIn />} />
@@ -53,10 +56,11 @@ function App() {
         <Route path="/dashboard/upcoming_events" element={<UpcomingEvent />} />
         <Route path="/features" element={<Features />} />
         <Route path="/profile" element={<ProfilePage />} />
-        <Route path="/forget-password" element={<ForgetPassword />} />
+        <Route path="/forgot_password" element={<ForgetPassword />} />
         <Route path="/reset_link" element={<ResetLink />} />
         <Route path="*" element={<Error404 />} />
         <Route path="/help/*" element={<HelpRoutes />} />
+        <Route path="/aboutUs" element={<AboutUsPage />} />
       </Routes>
     </div>
   );
