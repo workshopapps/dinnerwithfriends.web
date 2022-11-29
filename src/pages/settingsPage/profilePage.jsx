@@ -11,6 +11,7 @@ import SettingsFooter from "../../components/settingsPage/setFooter";
 import { Link } from "react-router-dom";
 
 import "./profilePage.css";
+import CreateEventNavbar from "../../components/CreateEvent/CreateEventNavbar";
 
 const profilePage = () => {
   return (
@@ -18,7 +19,7 @@ const profilePage = () => {
       <div id="main_navbar">
         <Navbar />
       </div>
-      <SettingsHeader className="SettingsHeader" />
+      <CreateEventNavbar />
 
       <div className="settings_body">
         <div className="body_title_container">
