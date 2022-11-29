@@ -15,19 +15,19 @@ const Invitee = () => {
           <h1 className="text-3xl mb-2 font-bold md:text-5xl md:mb-4">
             Hello, there.
           </h1>
-          <p className="leading-6 text-gray-600 font-sm text-[14px] md:text-[17px]">
+          <p className="leading-6 text-gray-600 font-sm">
             You have been invited to dinner by{" "}
             <span className="text-blue-700 font-bold"> Mathew Mathais.</span>
             <br /> You can view the details below..
           </p>
         </div>
-        <div className="w-[90%] my-10 mb-20 mx-4 md:flex md:mx-0">
+        <div className="w-[95%] my-10 mb-20 mx-4 md:flex md:mx-0">
           <div className="md:w-1/2">
             <h1 className="text-xl mb-2 font-bold md:text-2xl md:mb-4">
               Event Summary
             </h1>
             <p className="leading-6 text-gray-600 font-bold font-sm">Dinner</p>
-            <div className="text-[14px] md:text-[16px]">
+            <div>
               <span className="flex mt-3">
                 {" "}
                 <CiLocationOn className="mr-4 text-[25px]" />
@@ -41,7 +41,7 @@ const Invitee = () => {
               <span className="flex mt-3">
                 {" "}
                 <CiCalendar className="mr-4 text-[25px]" />
-                Agreed Date: 
+                Agreed Date:
                 <span className="font-bold"> November 20, 2022</span>{" "}
               </span>
 

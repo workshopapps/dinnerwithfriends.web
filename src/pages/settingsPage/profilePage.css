@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+#main_navbar {
+  display: none;
+}
 .the_user {
   display: flex;
   align-items: center;
@@ -11,11 +14,6 @@
 .the_user span {
   border-radius: 100%;
   padding: 0.5rem;
-}
-.settings_body {
-  max-width: 50%;
-  margin: 5rem auto;
-  height: 70vh;
 }
 .body_title_container {
   display: flex;
@@ -38,14 +36,20 @@
   border-bottom: 1px solid grey;
   padding-bottom: 1rem;
 }
+.body_subTitles h5 {
+  font-weight: 700;
+  cursor: pointer;
+}
 .fullName h1 {
   font-family: "DM Sans";
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
+  cursor: pointer;
 }
 .notification_tab {
   color: #717172;
+  cursor: pointer;
 }
 .user_details_field {
   display: flex;
@@ -71,14 +75,24 @@
   border-radius: 4px;
   background-color: #1070ff;
 }
+.edit_btn:hover {
+  background-color: #2c80ff;
+}
+.edit_btn:active {
+  background-color: #1070ff;
+}
+.settings_body {
+  max-width: 60%;
+  margin: 5rem auto;
+  height: 70vh;
+}
 .more_user_details {
   padding: 1rem;
 }
-label {
+.more_user_details label {
   display: flex;
   justify-content: space-between;
-  width: 62%;
-  text-align: left;
+  width: 80%;
   padding-bottom: 2rem;
   color: #717172;
   font-family: DM Sans;
@@ -86,19 +100,24 @@ label {
 .field {
   width: 40%;
 }
-Nav {
-  display: none;
-}
-footer {
+#main_footer {
   display: none;
 }
 
 /* media queries starts here */
 @media screen and (max-width: 376px){
+  #main_navbar,
+  #main_footer {
+    display: block;
+  }
+  .SettingsHeader,
+  .settings-footer {
+    display: none;
+  }
   .avatar {
     width: 55px;
   }
-  label {
+  .more_user_details label {
     display: flex;
     flex-direction: column;
     width: 62%;
@@ -114,12 +133,14 @@ footer {
   }
 }
 
-@media (max-width: 476px) {
-  footer {
+@media (max-width: 567px) {
+  #main_navbar,
+  #main_footer {
     display: block;
   }
-  Nav {
-    display: block;
+  .SettingsHeader,
+  .settings-footer {
+    display: none;
   }
   .settings_body {
     max-width: 100%;
@@ -130,7 +151,7 @@ footer {
     gap: 1rem;
     padding: 1rem;
   }
-  label {
+  .more_user_details label {
     display: flex;
     flex-direction: column;
     width: 62%;
@@ -168,6 +189,13 @@ footer {
   }
 }
 @media (max-width: 568px) {
+  #main_navbar,
+  #main_footer {
+    display: block;
+  }
+  .SettingsHeader {
+    display: none;
+  }
   .settings_body {
     max-width: 100%;
     margin: 5rem auto;
@@ -179,9 +207,8 @@ footer {
     gap: 1.2rem;
     padding: 1rem;
   }
-  label {
+  .more_user_details label {
     display: flex;
-    /* flex-direction: column; */
     width: 100%;
     text-align: left;
     padding-bottom: 0.5rem;
@@ -218,9 +245,36 @@ footer {
   }
 }
 @media (max-width: 892px) {
+  .SettingsHeader{
+    display: none;
+  }
+  .footer_top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .settings-footer a{
+    font-size: 13px;
+    padding: 0.7rem;
+  }
+  .footer_bottom_text {
+    font-size: 13px;
+    padding: 0.7rem;
+  }
   .settings_body {
     max-width: 100%;
     margin: 5rem auto;
     height: 70vh;
   }
 }
+@media (max-width: 486px) {
+  #main_navbar,
+  #main_footer {
+    display: block;
+  }
+  .SettingsHeader,
+  .settings-footer {
+    display: none;
+  }
+}
+

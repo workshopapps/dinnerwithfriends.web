@@ -13,3 +13,4 @@ root.render(
 		</BrowserRouter>
 	</CatchUpEventContextProvider>
 );
+
