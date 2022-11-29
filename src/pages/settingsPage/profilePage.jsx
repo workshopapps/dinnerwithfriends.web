@@ -4,8 +4,6 @@ import { IoIosArrowDown } from "react-icons/io";
 import { BiEdit } from "react-icons/bi";
 import { AiOutlineCopyright } from "react-icons/ai";
 import avatar from "../../assets/img/Avatar.png";
-import Dp from "../../assets/img/m-img.png";
-import CatchUp from "../../assets/img/Catch Up.png";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import SettingsHeader from "../../components/settingsPage/setHeader";
@@ -17,24 +15,10 @@ import "./profilePage.css";
 const profilePage = () => {
   return (
     <div>
-<<<<<<< HEAD
       <div id="main_navbar">
         <Navbar />
       </div>
       <SettingsHeader className="SettingsHeader" />
-=======
-      <Navbar />
-
-      <div className="profile_header">
-        <span className="catch__Up">
-          <img src={CatchUp} alt="" />
-        </span>
-        <div className="Dp__area">
-          <img src={Dp} alt="" className="profile__pic" />
-          <IoIosArrowDown />
-        </div>
-      </div>
->>>>>>> 5c5a72cb448745edcd9260fe08fc8af53512a968
 
       <div className="settings_body">
         <div className="body_title_container">
@@ -125,14 +109,10 @@ const profilePage = () => {
           </div>
         </div>
       </div>
-<<<<<<< HEAD
       <SettingsFooter className="settings-footer" />
       <div id="main_footer">
         <Footer />
       </div>
-=======
-      <Footer />
->>>>>>> 5c5a72cb448745edcd9260fe08fc8af53512a968
     </div>
   );
 };

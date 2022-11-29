@@ -3,26 +3,8 @@
   padding: 0;
   box-sizing: border-box;
 }
-<<<<<<< HEAD
 #main_navbar {
   display: none;
-=======
-.profile_header {
-  width: 100%;
-  border-bottom: 1px solid #e2e2e2;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.6rem;
-}
-.Dp__area {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-.Dp__area img {
-  width: 45px;
->>>>>>> 5c5a72cb448745edcd9260fe08fc8af53512a968
 }
 .the_user {
   display: flex;
@@ -118,51 +100,16 @@
 .field {
   width: 40%;
 }
-<<<<<<< HEAD
 #main_footer {
-=======
-Nav {
-  display: none;
-}
-.settings-footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  border-top: 1px solid #9F9F9F;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  color: #9F9F9F;
-}
-.footer_top a {
-  padding: 0.5rem;
-  font-size: 13px;
-}
-.footer_bottom {
-  display: flex;
-  gap: 1rem;
-}
-.footer_bottom_text {
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-  font-size: 13px;
-}
-footer {
->>>>>>> 5c5a72cb448745edcd9260fe08fc8af53512a968
   display: none;
 }
 
 /* media queries starts here */
 @media screen and (max-width: 376px){
-<<<<<<< HEAD
   #main_navbar,
   #main_footer {
     display: block;
   }
-=======
->>>>>>> 5c5a72cb448745edcd9260fe08fc8af53512a968
   .SettingsHeader,
   .settings-footer {
     display: none;
@@ -186,18 +133,9 @@ footer {
   }
 }
 
-<<<<<<< HEAD
 @media (max-width: 567px) {
   #main_navbar,
   #main_footer {
-=======
-@media (max-width: 476px) {
-  .SettingsHeader,
-  .settings-footer {
-    display: none;
-  }
-  footer {
->>>>>>> 5c5a72cb448745edcd9260fe08fc8af53512a968
     display: block;
   }
   .SettingsHeader,
@@ -251,13 +189,10 @@ footer {
   }
 }
 @media (max-width: 568px) {
-<<<<<<< HEAD
   #main_navbar,
   #main_footer {
     display: block;
   }
-=======
->>>>>>> 5c5a72cb448745edcd9260fe08fc8af53512a968
   .SettingsHeader {
     display: none;
   }
@@ -333,13 +268,10 @@ footer {
   }
 }
 @media (max-width: 486px) {
-<<<<<<< HEAD
   #main_navbar,
   #main_footer {
     display: block;
   }
-=======
->>>>>>> 5c5a72cb448745edcd9260fe08fc8af53512a968
   .SettingsHeader,
   .settings-footer {
     display: none;

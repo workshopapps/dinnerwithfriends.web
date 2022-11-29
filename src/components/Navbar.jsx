@@ -14,20 +14,6 @@ const Navbar = () => {
           </span>
         </Link>
         <div className="flex md:order-2">
-<<<<<<< HEAD
-          <Link to="/sign_up">
-=======
-          <Link to="/sign_in">
->>>>>>> 5c5a72cb448745edcd9260fe08fc8af53512a968
-            <button
-              type="button"
-              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-            >
-              Sign up
-            </button>
-          </Link>
-<<<<<<< HEAD
-=======
           <Link to="/sign_up">
             <button
               type="button"
@@ -36,8 +22,6 @@ const Navbar = () => {
               Sign up
             </button>
           </Link>
-
->>>>>>> 5c5a72cb448745edcd9260fe08fc8af53512a968
           <button
             data-collapse-toggle="navbar-sticky"
             type="button"
@@ -77,11 +61,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-<<<<<<< HEAD
                 to="/error404"
-=======
-                to="#"
->>>>>>> 5c5a72cb448745edcd9260fe08fc8af53512a968
                 className="block py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 "
               >
                 Blog
@@ -89,11 +69,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-<<<<<<< HEAD
                 to="/error404"
-=======
-                to="#"
->>>>>>> 5c5a72cb448745edcd9260fe08fc8af53512a968
                 className="flex py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 "
               >
                 Company
@@ -113,13 +89,9 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-<<<<<<< HEAD
                 fro-17-features-page
                 to="/features"
                 dev
-=======
-                to="/features"
->>>>>>> 5c5a72cb448745edcd9260fe08fc8af53512a968
                 className="block py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 "
               >
                 Features
