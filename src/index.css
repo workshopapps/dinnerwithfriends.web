@@ -39,6 +39,8 @@ html {
 }
 
 body {
+  margin: 0;
+  padding: 0;
   width: 100%;
   min-height: 100%;
   background-color: #fff;
@@ -53,9 +55,15 @@ li {
   list-style-type: none;
 }
 
+<<<<<<< HEAD
 .form-image {
   display: block;
   /* width: 100%; */
+=======
+form-image {
+  display: block;
+  width: auto;
+>>>>>>> 5c5a72cb448745edcd9260fe08fc8af53512a968
   height: 100%;
 }
 @media (max-width: 950px) {

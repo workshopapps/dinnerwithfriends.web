@@ -24,11 +24,20 @@ import AccountSettings from "./pages/settingsPage/profileTwo";
 import EventInvite from "./pages/invitee/EventInvite";
 import EventInviteResponse from "./pages/invitee/EventInviteResponse";
 import EventSummary from "./pages/dashboard/EventSummary";
+<<<<<<< HEAD
 import UpcomingEvent from "./pages/dashboard/UpcomingEvent";
 import Features from "./pages/Features-page/features";
 import HelpRoutes from "./pages/helpCenter/helpRoutes";
 
 import AboutUsPage from "./pages/aboutUs";
+=======
+import ForgetPassword from "./pages/ForgetPassword/index";
+import ResetLink from "./pages/ForgetPassword/LinkReset";
+import EventInvite from "./pages/invitee/EventInvite";
+import EventInviteResponse from "./pages/invitee/EventInviteResponse";
+import Settings from "./pages/settingsPage/profilePage"
+import Features from "./pages/Features-page/features";
+>>>>>>> 5c5a72cb448745edcd9260fe08fc8af53512a968
 
 function App() {
   return (
@@ -37,6 +46,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/create_event" element={<CreateEvent />} />
         <Route path="/closed_event" element={<ClosedEvent />} />
+<<<<<<< HEAD
         <Route path="/update_details" element={<AccountSettings />} />
         <Route path="/settings" element={<Settings />} />
         <Route path="/invitee" element={<Invitee />} />
@@ -51,10 +61,29 @@ function App() {
         <Route path="/terms" element={<Terms />} />
         <Route path="/event_invite" element={<EventInvite />} />
         <Route path="/event_summary" element={<EventSummary />} />
+=======
+        <Route path="/event_summary" element={<EventSummary />} />
+        <Route path="/settings" element={<Settings />} />
+        <Route path="/error404" element={<Error404 />} />
+        <Route path="/invitee" element={<Invitee />} />
+        <Route path="/sign_in" element={<SignIn />} />
+        <Route path="/sign_up" element={<SignUp />} />
+        <Route path="/view_event" element={<ViewEvent />} />
+        <Route path="/policy" element={<Policy />} />
+        <Route path="/howItWorks" element={<HowItWorks />} />
+        <Route path="/faq" element={<Faq />} />
+        <Route path="/terms_of_use" element={<TermsOfUse />} />
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/dashboard/upcoming_events" element={<UpcomingEvent />} />
+        <Route path="/forget_password" element={<ForgetPassword />} />
+        <Route path="/reset_link" element={<ResetLink />} />
+        <Route path="/event_invite" element={<EventInvite />} />
+>>>>>>> 5c5a72cb448745edcd9260fe08fc8af53512a968
         <Route
           path="/event_invite/event_invite_response"
           element={<EventInviteResponse />}
         />
+<<<<<<< HEAD
         <Route path="/dashboard/upcoming_events" element={<UpcomingEvent />} />
         <Route path="/features" element={<Features />} />
         <Route path="/profile" element={<ProfilePage />} />
@@ -64,6 +93,9 @@ function App() {
         <Route path="*" element={<Error404 />} />
         <Route path="/help/*" element={<HelpRoutes />} />
         <Route path="/aboutUs" element={<AboutUsPage />} />
+=======
+        <Route path="/features" element={<Features />} />
+>>>>>>> 5c5a72cb448745edcd9260fe08fc8af53512a968
       </Routes>
     </div>
   );

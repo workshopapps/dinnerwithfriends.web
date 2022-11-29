@@ -4,7 +4,12 @@ import { CgMenuLeftAlt } from "react-icons/cg";
 import { AiOutlineLike, AiOutlineDislike, AiOutlineUser } from "react-icons/ai";
 import { BsPlus } from "react-icons/bs";
 import { Link } from "react-router-dom";
+<<<<<<< HEAD
 import CreateEventNavbar from "../../components/CreateEvent/CreateEventNavbar";
+=======
+import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
+>>>>>>> 5c5a72cb448745edcd9260fe08fc8af53512a968
 
 const EventSummary = () => {
   const [email, setEmail] = useState("");
@@ -34,9 +39,15 @@ const EventSummary = () => {
   };
   return (
     <div>
+<<<<<<< HEAD
       <CreateEventNavbar />
       <div className="mt-2 md:mx-14 mx-5 my-10">
         <h2 className="mt-10 text-3xl font-bold">Event Summary</h2>
+=======
+      <Navbar />
+      <div className="mt-28 md:mx-14 mx-6 my-28">
+        <h2 className="mt-7 text-3xl font-bold">Event Summary</h2>
+>>>>>>> 5c5a72cb448745edcd9260fe08fc8af53512a968
         <div className="mt-4 border w-full p-5 rounded-lg shadow text-[#59595B]">
           <h5 className="text-2xl font-bold">Girls Monthly Trip</h5>
           <div className="grid gap-y-3 mt-4">
@@ -132,6 +143,7 @@ const EventSummary = () => {
           </Link>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
