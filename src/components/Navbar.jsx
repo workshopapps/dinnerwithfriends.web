@@ -1,18 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Logo from "./Logo";
 
 const Navbar = () => {
   return (
     <nav className="bg-white px-2 sm:px-4 py-2.5 fixed w-full z-20 top-0 left-0 border-b border-white">
       <div className="container flex flex-wrap items-center justify-between mx-auto">
-        <Link to="/" className="flex items-center">
-          <span className="self-center text-blue-700 text-3xl font-semibold whitespace-nowrap ">
-            Catch
-          </span>
-          <span className="self-center text-black text-3xl font-semibold whitespace-nowrap">
-            Up
-          </span>
-        </Link>
+        <Logo />
         <div className="flex md:order-2">
           <Link to="/sign_up">
             <button
