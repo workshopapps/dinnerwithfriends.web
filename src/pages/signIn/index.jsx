@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import signInImage from "../../assets/img/Rectangle 254.png";
 import nigeriaFlag from "../../assets/img/Group.png";
 import userServices from "../../services/userServices";
+import Logo from "../../components/Logo";
 
 
 const SignIn = () => {
@@ -48,10 +49,7 @@ const SignIn = () => {
           <div className="form-wrapper h-screen w-1/2 px-8 mt-6">
             <div className="flex justify-between items-center gap-8">
               <div>
-              <Link to='/'>
-                <span className="font-bold text-3xl lg:text-5xl text-blue-600">Catch</span>
-                <span className="font-bold text-3xl lg:text-5xl ml-1">Up</span>
-              </Link>
+              <Logo />
               </div>
               <div className="relative">
                 <label className="block mt-4">

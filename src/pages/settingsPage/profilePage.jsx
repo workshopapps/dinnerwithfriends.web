@@ -6,7 +6,6 @@ import { AiOutlineCopyright } from "react-icons/ai";
 import avatar from "../../assets/img/Avatar.png";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
-import SettingsHeader from "../../components/settingsPage/setHeader";
 import SettingsFooter from "../../components/settingsPage/setFooter";
 import { Link } from "react-router-dom";
 
