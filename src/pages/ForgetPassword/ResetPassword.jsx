@@ -20,11 +20,8 @@ const ResetPassword = () => {
   const navigate = useNavigate();
 
   const onSubmit = async (data) => {
-    console.log('hi');
-    console.log(data);
     setIsSubmit(true);
     const reset = await userServices.resetPassword(data);
-    console.log(reset);
 
     if (reset.status === "fail") {
       setIsSubmit(false);
@@ -59,7 +56,7 @@ const ResetPassword = () => {
   /* eslint-disable-next-line */
   const pattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   /* eslint-disable-next-line */
-  const secondPattern = /^[a-z][a-z0-9]+$/ig; 
+  const secondPattern = /^[a-z][a-z0-9]+$/ig;
   return (
     <>
       <Navbar />

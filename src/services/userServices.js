@@ -40,7 +40,6 @@ const recoverPassword = async (params) => {
 const resetPassword = async (params) => {
   try {
     const result = await fetchApi.post(`${BASE_URL}/${RESET_PASSWORD_URL}`, params);
-    console.log(result)
     return result;
   } catch (err) {
     return err;
@@ -59,7 +58,6 @@ const createEvents = async (params) => {
 const getAllEvents = async () => {
   try {
     const dataObj = await fetchApi.get(`${BASE_URL}/${GET_EVENTS}`);
-    console.log(dataObj)
     const datas = await dataObj.data;
     return datas;
   } catch (err) {
