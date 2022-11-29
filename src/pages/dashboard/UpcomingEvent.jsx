@@ -3,53 +3,15 @@ import Button from "../../components/Button";
 import userServices from "../../services/userServices";
 import { CatchUpEventContextUse } from "../../context/CatchUpEventContext";
 import calender from "../../assets/img/g-calendar.png";
-import MediaQuery from "react-responsive";
 import Event from "../../components/Event";
 import add from "../../assets/img/add.png";
 import Footer from "../../components/Footer";
+import { Link } from "react-router-dom";
+import CreateEventNavbar from "../../components/CreateEvent/CreateEventNavbar";
 
 const UpcomingEvent = () => {
   const [status, setStatus] = useState(false);
   const { events, setEvents } = CatchUpEventContextUse();
-
-  // const event = [
-  //   {
-  //     id: 1,
-  //     title: "Catch Up with Football (UEFA Championship)",
-  //     description:
-  //       "Guys! It’s been long we have gathered, let’s try to make time for champions league next week tuesday. If you know your GOAT no qualify, no bring yourself here.",
-  //     status: false,
-  //     date: "21st November",
-  //     invitee: "2",
-  //   },
-  //   {
-  //     id: 2,
-  //     title: "Catch Up with Football (UEFA Championship)",
-  //     description:
-  //       "Guys! It’s been long we have gathered, let’s try to make time for champions league next week tuesday. If you know your GOAT no qualify, no bring yourself here.",
-  //     status: false,
-  //     date: "21st November",
-  //     invitee: "3",
-  //   },
-  //   {
-  //     id: 3,
-  //     title: "Catch Up with Football (UEFA Championship)",
-  //     description:
-  //       "Guys! It’s been long we have gathered, let’s try to make time for champions league next week tuesday. If you know your GOAT no qualify, no bring yourself here.",
-  //     status: true,
-  //     date: "21st November",
-  //     invitee: "5",
-  //   },
-  //   {
-  //     id: 4,
-  //     title: "Catch Up with Football (UEFA Championship)",
-  //     description:
-  //       "Guys! It’s been long we have gathered, let’s try to make time for champions league next week tuesday. If you know your GOAT no qualify, no bring yourself here.",
-  //     status: true,
-  //     date: "21st November",
-  //     invitee: "7",
-  //   },
-  // ];
 
   useEffect(() => {
     async function fetchData() {
@@ -60,31 +22,34 @@ const UpcomingEvent = () => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const filteredEvents = events.length === 0 ? events : events.filter((event) => event.status === status);
 
-  console.log(filteredEvents);
+  const filteredEvents = events.length === 0 ? events : events.filter((event) => event.published === status);
+
+  console.log(filteredEvents)
   const userEvents = filteredEvents.length === 0 ?
   (<Event
     filteredEvents={filteredEvents}
     status={status === false ? "upcoming" : "Rsvp"}
     />) :
     filteredEvents.map(
-    ({ id, title, description, date, invitee }) => (
+    ({ _id, event_title, event_description, final_event_date, participant_number }) => (
       <Event
         status={status}
-        key={id}
-        title={title}
-        description={description}
-        date={date}
-        invitee={invitee}
+        key={_id}
+        id={_id}
+        event_title={event_title}
+        event_description={event_description}
+        final_event_date={final_event_date}
+        participant_number={participant_number}
         filteredEvents={filteredEvents}
       />
     )
   );
 
-  console.log(userEvents)
+
   return (
     <>
+    <CreateEventNavbar />
       <section className="px-[22px] lg:px-20 pt-11 lg:pt-16 mb-16">
         <div className="flex flex-col lg:flex-row justify-center lg:justify-between gap-x-4 mb-4 lg:mb-8">
           <div className="flex flex-col justify-center items-center lg:justify-start lg:items-start gap-y-4">
@@ -108,12 +73,14 @@ const UpcomingEvent = () => {
         <div className="flex flex-col p-8 gap-y-8 mt-9 justify-center items-center border border-solid border-[#CDCDCD] bg-[#FAFAFA] lg:bg-white">
           <Button
             type="button"
-            className="font-bold text-sm lg:text-xl flex justify-between items-center gap-x-3.5 text-white bg-[#1070FF] rounded py-3 px-4 lg:px-8 outline-0"
+            className="font-bold text-sm lg:text-xl  gap-x-3.5 text-white bg-[#1070FF] rounded py-3 px-4 lg:px-8 outline-0"
           >
-            <span>
-              <img src={add} alt="add" />
-            </span>
-            <span>Create Event</span>
+            <Link to="/create_event" className="flex justify-between items-center">
+              <span>
+                <img src={add} alt="add" />
+              </span>
+              <span>Create Event</span>
+            </Link>
           </Button>
           <div className="flex flex-col justify-center items-center gap-y-2">
             <span className="text-[#151517] font-bold lg:font-medium text-xl">
@@ -124,11 +91,10 @@ const UpcomingEvent = () => {
             </span>
           </div>
         </div>
-        <div className="lg:border border-solid border-[#CDCDCD] px-[46px] py-9">
-          <h3 className="text-[#151517] text-center lg:text-left font-bold lg:font-medium text-2xl lg:mb-[40px]">
+        <div className="lg:border border-solid border-[#CDCDCD] lg:px-[46px] py-9">
+          <h3 className="text-[#151517] text-center lg:text-left font-bold lg:font-medium text-2xl mb-[40px]">
             All Events
           </h3>
-          <MediaQuery minWidth={1023}>
             <ul className="flex justify-start items-center gap-x-8">
               <li>
                 <Button
@@ -136,7 +102,7 @@ const UpcomingEvent = () => {
                     status === false
                       ? "pb-3 border-[#1070FF] border-b-4 "
                       : ""
-                  }'pb-3 outline-0 border-0 text-[#717172] bg-inherit text-lg'`}
+                  }'pb-3 outline-0 border-0 text-[#717172] bg-inherit lg:text-lg'`}
                   onClick={() => setStatus(false)}
                 >
                   Upcoming Event
@@ -146,42 +112,25 @@ const UpcomingEvent = () => {
                 <Button
                   className={`${
                     status === true ? "pb-3 border-[#1070FF] border-b-4 " : ""
-                  }' pb-3 outline-0 border-0 text-[#717172] bg-inherit text-lg'`}
+                  }' pb-3 outline-0 border-0 text-[#717172] bg-inherit lg:text-lg'`}
                   onClick={() => setStatus(true)}
                 >
                   Reserved Event
                 </Button>
               </li>
             </ul>
-          </MediaQuery>
         </div>
-        <div className="flex flex-col justify-center items-center gap-y-8 lg:border border-solid border-[#CDCDCD] lg:pt-12 lg:pb-[200px] px-[20px] 8lg:px-12">
-          <MediaQuery minWidth={1024}>
+        <div className={`${filteredEvents.length === 0 ? "pt-12" : "pt-[10px]"} "flex flex-col justify-center items-center gap-y-8 lg:border border-solid border-[#CDCDCD] lg:pb-[200px] lg:px-[20px] max-h-[30rem] overflow-y-scroll "`}>
             {status === false && (
-              <div className={`${events.length === 0 ? "" : "lg:grid lg:grid-cols-2 grid-flow-row content-start gap-4 px-8"}`}>
+              <div className={`${filteredEvents.length === 0 ? "" : "lg:grid lg:grid-cols-2 grid-flow-row content-start gap-4 px-0 pr-[15px] lg:pr-[20px] lg:px-8 w-[100%] py-4"}`}>
                 {userEvents}
               </div>
             )}
             {status === true && (
-              <div className={`${events.length === 0 ? "" : "lg:grid lg:grid-cols-2 grid-flow-row content-start gap-4 px-8"}`}>
+              <div className={`${filteredEvents.length === 0 ? "" : "lg:grid lg:grid-cols-2 grid-flow-row content-start gap-4 px-0 lg:px-8 py-4 pr-[15px] lg:pr-[20px] w-[100%]"}`}>
                 {userEvents}
               </div>
             )}
-          </MediaQuery>
-          <MediaQuery maxWidth={1023}>
-            <div>
-              <p className="text-[#424245] font-medium mb-4 text-center">
-                Upcoming Events
-              </p>
-              {userEvents}
-            </div>
-            <div>
-              <p className="text-[#424245] font-medium mb-4 text-center">
-                Rsvp Events
-              </p>
-              {userEvents}
-            </div>
-          </MediaQuery>
         </div>
       </section>
       <Footer />
