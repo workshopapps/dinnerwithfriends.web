@@ -33,7 +33,6 @@ const SignUp = () => {
     reset()
     setSubmitting(true)
     setExistingUser(false)
-    console.log(data)
     const options = {
       method: 'POST',
       headers: {
@@ -55,7 +54,6 @@ const SignUp = () => {
             }
             return response.json()})
         .then(result => {
-          console.log(result)
           if(result.status === 'error'){
               setExistingUser(true)
               setSubmitting(false)

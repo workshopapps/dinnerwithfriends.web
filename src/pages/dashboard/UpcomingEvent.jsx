@@ -25,7 +25,6 @@ const UpcomingEvent = () => {
 
   const filteredEvents = events.length === 0 ? events : events.filter((event) => event.published === status);
 
-  console.log(filteredEvents)
   const userEvents = filteredEvents.length === 0 ?
   (<Event
     filteredEvents={filteredEvents}
