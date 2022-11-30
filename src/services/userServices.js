@@ -6,6 +6,8 @@ import {
   LOGIN_URL,
   CREATE_EVENT,
   GET_EVENTS,
+  PASSWORD_RECOVERY_URL,
+  RESET_PASSWORD_URL,
 } from "./rootEndPoints.js";
 
 const register = async (params) => {
@@ -20,9 +22,24 @@ const register = async (params) => {
 const login = async (params) => {
   try {
     const result = await fetchApi.post(`${BASE_URL}/${LOGIN_URL}`, params);
-    if (result.success === true) {
-      localStorage.setItem("jwt-token", result.accessToken);
-    }
+    return result;
+  } catch (err) {
+    return err;
+  }
+};
+
+const recoverPassword = async (params) => {
+  try {
+    const result = await fetchApi.post(`${BASE_URL}/${PASSWORD_RECOVERY_URL}`, params);
+    return result;
+  } catch (err) {
+    return err;
+  }
+};
+
+const resetPassword = async (params) => {
+  try {
+    const result = await fetchApi.post(`${BASE_URL}/${RESET_PASSWORD_URL}`, params);
     return result;
   } catch (err) {
     return err;
@@ -41,7 +58,7 @@ const createEvents = async (params) => {
 const getAllEvents = async () => {
   try {
     const dataObj = await fetchApi.get(`${BASE_URL}/${GET_EVENTS}`);
-    const datas = await dataObj.events;
+    const datas = await dataObj.data;
     return datas;
   } catch (err) {
     return err;
@@ -53,6 +70,8 @@ const userServices = {
   login,
   createEvents,
   getAllEvents,
+  recoverPassword,
+  resetPassword,
 };
 
 export default userServices;

@@ -12,15 +12,12 @@ function AddParticipantModal() {
   const [participant, setParticipant] = useState([
     {
       email: "Damijoshua@gmail.com",
-      // value: "Yes",
     },
     {
       email: "SarahM32492@gmail.com",
-      // value: "No",
     },
     {
       email: "FaithBala2@gmail.com",
-      // value: "No",
     },
   ]);
   const addParticipant = (email) => {
@@ -96,12 +93,6 @@ function AddParticipantModal() {
                       >
                         <AiOutlineCloseCircle />
                       </button>
-                      {/* <p className="text-xs ml-1.5">{invite.value}</p> */}
-                      {/* {invite.value === "Yes" ? (
-                        <AiOutlineLike className="text-2xl text-[#006600]" />
-                      ) : (
-                        <AiOutlineDislike className="text-2xl text-[#CC0000]" />
-                      )} */}
                     </div>
                   </div>
                 ))}
