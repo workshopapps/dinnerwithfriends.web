@@ -53,19 +53,12 @@ const SignIn = () => {
                 <span className="font-bold text-3xl lg:text-5xl ml-1">Up</span>
               </Link>
               </div>
-              <div className="relative">
-                <label className="block mt-4">
-                  <img
-                    className="flag-image absolute top-[26px] left-[8px]"
-                    src={nigeriaFlag}
-                    alt=" "
-                  />
-                  <select className="language-select font-bold text-black text-center rounded-2xl mt-1 block w-[140px] px-6 py-2 bg-blue-100">
-                    <option className="bg-blue-200">English</option>
-                    <option className="bg-blue-200">French</option>
-                    <option className="bg-blue-200">German</option>
-                  </select>
-                </label>
+              <div className='px-1 rounded-[20px] w-29 tablet:w-35 tablet:h-10 h-[34px]  bg-blue-100 flex justify-around items-center'>
+                <img className='w-5' src={nigeriaFlag} alt="nigerian flag" />
+                <select className='language-select bg-blue-100 w-full font-semibold focus:outline-none text-xs tablet:text-sm' name="language" id="language">
+                  <option value="uk">English (UK)</option>
+                  <option value="us">English (US)</option>
+                </select>
               </div>
             </div>
             <div className="px-2 lg:px-14 mt-10 lg:mt-14">
