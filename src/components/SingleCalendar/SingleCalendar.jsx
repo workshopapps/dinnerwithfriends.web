@@ -31,8 +31,12 @@ const SingleCalendar = ({ setShowCalendar, showCalendar, id, addTime }) => {
 		if (id === "preferredDate") {
 			setPreferredDate(`${date} - ${time}`);
 		}
-		setFormValues({ ...formValues, startDate, endDate, preferredDate });
-
+		setFormValues({
+			...formValues,
+			host_prefered_time: preferredDate,
+			end_date: endDate,
+			start_date: startDate,
+		});
 	};
 
 	return (
