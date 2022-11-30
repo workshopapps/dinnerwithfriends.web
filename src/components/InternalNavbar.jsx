@@ -13,11 +13,11 @@ function InternalNavbar() {
   
   return (
     <nav className="px-4 py-7 flex justify-between relative">
-        <h1>CatchUp</h1>
+        <h1 className="text-2xl font-bold text-blue-600">Catch<span className="text-gray-900">Up</span></h1>
         {/* desktop menu items */}
         <div className={isActive ? "px-4 py-7 flex flex-col h-screen w-screen fixed bg-white top-0 left-0" : "hidden"}>
             <div className="flex justify-between w-full">
-                <h1>Catchup</h1>
+            <h1 className="text-2xl font-bold text-blue-600">Catch<span className="text-gray-900">Up</span></h1>
                 <svg
                     onClick={handleClick}    
                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>
