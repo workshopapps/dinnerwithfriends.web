@@ -1,0 +1,124 @@
+import React from 'react'
+import { useState } from 'react'
+import ArrowDown from '../assets/icons/arrow-down.svg'
+import NotificationIcon from '../assets/img/notification.png'
+import GCalendar from '../assets/img/g-calendar.png'
+import { Link } from 'react-router-dom'
+
+function InternalNavbar() {
+  const [isActive, setActive] = useState(false)
+
+  function handleClick() {  
+    isActive ? setActive(false) : setActive(true)
+
+    // if (window.innerWidth > 768) {
+    //   setActive(true)
+      
+    // }
+  }
+  return (
+    <nav className="px-4 py-7 flex justify-between relative">
+        <h1>CatchUp</h1>
+        {/* desktop menu items */}
+        <div className={isActive ? "px-4 py-7 flex flex-col h-screen w-screen fixed bg-white top-0 left-0" : "hidden"}>
+            <div className="flex justify-between w-full">
+                <h1>Catchup</h1>
+                <svg
+                    onClick={handleClick}    
+                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>
+            </div>
+            <div className="my-4 text-gray-700 flex flex-col">
+                <Link to="/dashboard" className="block py-3 border-b ">Dashboard</Link>
+                <Link to="/settings" className="block py-3 border-b ">Account Setting</Link>
+                <Link to="/help/*" className="block py-3 border-b ">Help and Support</Link>
+                <Link to="/" className="block py-3 border-b">Notifications</Link>
+                <div className="flex items-center space-x-3 border-b py-3">
+                    <img src={GCalendar} alt="" />
+                    <span>Sync with Google Calendar</span>
+                </div>
+                <div className="flex items-center space-x-2 py-3 border-b">
+                    <span className="h-fit px-3 py-[7px] rounded-full border-blue-600 border-2">M</span>
+                    <div className="-space-y-2">
+                        <h3 className="font-medium">Mbulu Benita</h3>
+                        <span>beniottabenita@gmail.com</span>
+                    </div>
+                </div>
+                <Link to="/" className=" w-full border-2 rounded border-blue-600 text-blue-600 font-medium text-center py-2">Log out</Link>
+            </div>
+        </div>
+        <div className="hidden md:flex items-center space-x-2">
+            <button>
+                <img src={NotificationIcon} alt="" />
+            </button>
+            <button onClick={handleClick} className="space-x-1 flex items-center">
+                <div>
+                    <span className="px-3 py-[9px] rounded-full bg-gray-200 border-blue-600 border-2">M</span>
+                </div>
+                <img className="w-3" src={ArrowDown} alt="" />
+            </button>
+        </div>
+        {/* mobile menu icon */}
+        <div onClick={handleClick} className="md:hidden">
+            <svg
+              
+              className="w-6 h-6"
+              aria-hidden="true"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+            <path
+                fillRule="evenodd"
+                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                clipRule="evenodd"
+              ></path>
+            </svg>
+        </div>
+    </nav>
+  )
+//   return (
+//     <header className="relative flex justify-between mx-auto list-none overflow-hidden w-full">
+//         <h1 className="px-10 py-8  sm:px-14 sm:py-10 md:px-24 md:py-12 font-bold text-2xl">prackage</h1>
+//         <div className=
+//           {isActive ? "left-[0vw] md:left-unset transition-all flex flex-col md:flex-row justify-between w-full h-screen md:h-fit text-2xl md:text-base space-y-4 md:space-y-0 fixed md:relative bg-white" : "transition-all left-[100vw] absolute md:relative md:flex md:justify-between w-full md:left-0 md:text-lg md:my-2"}>
+//           <div className="flex justify-between px-10 py-8 md:px-0 md:py-0">    
+//             <h1 className="font-bold md:hidden">prackage</h1>
+//             <div onClick={handleClick}>
+//                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>
+//             </div>
+//           </div>
+//           <nav className="space-y-7 md:w-full md:space-y-0 md:flex md:items-center md:justify-center px-10 md:py-8 md:px-0 md:space-x-5">
+//             <li>Home</li>
+//             <li>About us</li>
+//             <li>Pricing</li>
+//           </nav>
+
+//           <div className="flex flex-col w-auto md:space-x-3 md:pr-16 md:flex-row md:items-center md:justify-center space-y-4 md:space-y-0">
+//             <button className="md:w-max">Log In</button>
+//             <button className="text-xl md:text-base md:rounded  md:w-max w-full bg-blue-600 mb-0 text-white px-6 py-4 md:py-2 ">Sign Up</button>
+//           </div>
+//         </div>
+//         <svg
+//                 onClick={handleClick}
+//               className="w-6 h-6"
+//               aria-hidden="true"
+//               fill="currentColor"
+//               viewBox="0 0 20 20"
+//               xmlns="http://www.w3.org/2000/svg"
+//             >
+//               <path
+//                 fillRule="evenodd"
+//                 d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+//                 clipRule="evenodd"
+//               ></path>
+//             </svg>
+//     </header>
+//   )
+}
+
+
+export default InternalNavbar
+
+  
+
+  
