@@ -7,15 +7,10 @@ import { Link } from 'react-router-dom'
 
 function InternalNavbar() {
   const [isActive, setActive] = useState(false)
-
   function handleClick() {  
     isActive ? setActive(false) : setActive(true)
-
-    // if (window.innerWidth > 768) {
-    //   setActive(true)
-      
-    // }
   }
+  
   return (
     <nav className="px-4 py-7 flex justify-between relative">
         <h1>CatchUp</h1>
@@ -76,44 +71,6 @@ function InternalNavbar() {
         </div>
     </nav>
   )
-//   return (
-//     <header className="relative flex justify-between mx-auto list-none overflow-hidden w-full">
-//         <h1 className="px-10 py-8  sm:px-14 sm:py-10 md:px-24 md:py-12 font-bold text-2xl">prackage</h1>
-//         <div className=
-//           {isActive ? "left-[0vw] md:left-unset transition-all flex flex-col md:flex-row justify-between w-full h-screen md:h-fit text-2xl md:text-base space-y-4 md:space-y-0 fixed md:relative bg-white" : "transition-all left-[100vw] absolute md:relative md:flex md:justify-between w-full md:left-0 md:text-lg md:my-2"}>
-//           <div className="flex justify-between px-10 py-8 md:px-0 md:py-0">    
-//             <h1 className="font-bold md:hidden">prackage</h1>
-//             <div onClick={handleClick}>
-//                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>
-//             </div>
-//           </div>
-//           <nav className="space-y-7 md:w-full md:space-y-0 md:flex md:items-center md:justify-center px-10 md:py-8 md:px-0 md:space-x-5">
-//             <li>Home</li>
-//             <li>About us</li>
-//             <li>Pricing</li>
-//           </nav>
-
-//           <div className="flex flex-col w-auto md:space-x-3 md:pr-16 md:flex-row md:items-center md:justify-center space-y-4 md:space-y-0">
-//             <button className="md:w-max">Log In</button>
-//             <button className="text-xl md:text-base md:rounded  md:w-max w-full bg-blue-600 mb-0 text-white px-6 py-4 md:py-2 ">Sign Up</button>
-//           </div>
-//         </div>
-//         <svg
-//                 onClick={handleClick}
-//               className="w-6 h-6"
-//               aria-hidden="true"
-//               fill="currentColor"
-//               viewBox="0 0 20 20"
-//               xmlns="http://www.w3.org/2000/svg"
-//             >
-//               <path
-//                 fillRule="evenodd"
-//                 d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-//                 clipRule="evenodd"
-//               ></path>
-//             </svg>
-//     </header>
-//   )
 }
 
 
