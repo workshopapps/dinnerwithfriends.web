@@ -31,7 +31,7 @@ const Category = ({ data, activeLink, setActiveLink, activeCategory }) => {
 
                 <div className="md:p-8 p-4 bg-gray-100">
                     {
-                        activeCategory[0].contents && 
+                        activeCategory[0] && 
                         
                         activeCategory[0].contents.filter(item => item.question.replaceAll(" ", "-").indexOf(searchQuery) !== -1)
                         .map((content, i) => {
