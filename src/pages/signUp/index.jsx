@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import { useNavigate, Link } from 'react-router-dom'
+import { FiEye, FiEyeOff } from 'react-icons/fi'
 import { useForm } from "react-hook-form"
 import image from './signup_image.webp'
 import google from './google.svg'
@@ -12,7 +13,11 @@ const SignUp = () => {
   const [submitting, setSubmitting] = useState(false)
   const [accountCreated, setAccountCreated] = useState(false)
   const nav = useNavigate()
+  const [passwordShown, setPasswordShown] = useState(false);
 
+  const togglePassword = () => {
+    setPasswordShown(!passwordShown);
+  };
 
   /*const googleSubmit = () => {
     fetch('https://catchup.hng.tech/api/v1/auth/google/url')
@@ -147,7 +152,11 @@ const SignUp = () => {
 
               <input
               style={{border: errors.password ? '1px solid red': '1px solid #D0D5DD'}}
-              className={`focus:outline-none ${!errors.password? 'focus:shadow-[0px_0px_0px_4px_rgba(74,74,104,0.1)]' : 'focus:shadow-[0px_0px_0px_4px_rgba(249,50,50,0.1)]'} mt-2 w-full h-11 p-3.5 rounded-lg`} type="password" name="password" placeholder="Please enter your unique password"
+              className=
+                {`relative focus:outline-none ${!errors.password? 'focus:shadow-[0px_0px_0px_4px_rgba(74,74,104,0.1)]' : 'focus:shadow-[0px_0px_0px_4px_rgba(249,50,50,0.1)]'} mt-2 w-full h-11 p-3.5 rounded-lg`} 
+              type={passwordShown ? "text" : "password"} 
+              name="password" 
+              placeholder="Please enter your unique password"
               {...register("password",
               {required: "Password cannot be empty",
                 minLength: {
@@ -157,13 +166,17 @@ const SignUp = () => {
                maxLength: {
                 value: 30,
                 message: "Password must not be more than 30 characters"
-
               },
               pattern: {
                 value: secondPattern,
                 message: "Password has to start with a letter, can contain numbers. No spaces and special characters allowed"
               }
               })}/>
+              <span 
+                className='absolute bottom-4 right-3 cursor-pointer' 
+                onClick={togglePassword}>
+                  {passwordShown ?  <FiEyeOff /> : <FiEye />}
+              </span>
               {errors.password && <p className='right-0 bottom-[-37px] italic text-sm mt-2' style={{color: 'red'}}>{errors.password?.message}</p>}
             </div>
 

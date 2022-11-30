@@ -26,13 +26,18 @@
   padding: 1rem;
 }
 .theCreateEventContainerLinks {
-  display: none;
+  /* display: none; */
   flex-direction: column;
   align-items: flex-start;
   padding: 1rem;
   gap: 1rem;
   background-color: #fff;
   width: 100%;
+  display: flex;
+  position: absolute;
+  z-index: 1000;
+  opacity: 0.9;
+  transition: 500ms ease-in-out;
 }
 .goTo {
   padding-bottom: 0.5rem;
@@ -58,10 +63,11 @@
 .close {
     display: none;
 }
-@media (max-width: 719px) {
+/* @media (max-width: 719px) {
   .theCreateEventContainerLinks {
     display: flex;
     position: absolute;
     z-index: 1000;
+    opacity: 0.9;
   }
-}
+} */
