@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { FiSearch } from "react-icons/fi";
-import { data } from "./helpData"
+import { data } from "../helpData"
 
 const HelpSearch = () => {
     const [active, setActive] = useState(false);
@@ -11,13 +11,14 @@ const HelpSearch = () => {
         if(query.length > 0) {
             let searchResult = data.map(item => { 
                 return ( 
-                    item.contents.filter(item => item.question.toUpperCase().indexOf(query.toUpperCase()) !== -1) 
+                    {contents: item.contents.filter(item => item.question.toUpperCase().indexOf(query.toUpperCase()) !== -1),
+                    link: item.link}
                 )
             });
 
-            const combinedResult = [].concat.apply([], searchResult)
+            console.log(searchResult)
 
-            setResult(combinedResult.slice(0, 6))
+            setResult(searchResult.slice(0, 3))
         }
         else {
             setResult([])
@@ -39,11 +40,15 @@ const HelpSearch = () => {
                 />
 
             </div>
-            <div className="p-4 absolute top-full left-0 w-full bg-white">
+            <div className={`p-4 absolute top-full left-0 w-full bg-white ${(result.length > 0) ? "shadow-lg" : ""}`}>
                 {
-                    result.map((item,i) => {
+                    result.map((item) => {
                         return (
-                            <a key={i} href={`help/`} className="block border border-b-gray-100 p-4">{item.question}</a>
+                            item.contents.map((content, i) => {
+                                return (
+                                    <a key={i} href={`/help/category?${content.question.replaceAll(" ", "-")}#${item.link}`} className="block border border-b-gray-100 p-4 text-sm">{content.question}</a>
+                                )
+                            })
                         )
                     })
                 }
