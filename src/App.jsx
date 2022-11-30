@@ -30,7 +30,7 @@ import HelpRoutes from "./pages/helpCenter/helpRoutes";
 import AboutUsPage from "./pages/aboutUs";
 
 import { googleCalender } from "./helpers/googleCalender";
-console.log(googleCalender);
+googleCalender();
 function App() {
   return (
     <div className="App">

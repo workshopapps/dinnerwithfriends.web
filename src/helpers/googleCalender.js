@@ -1,11 +1,8 @@
-import { CatchUpEventContextUse } from "../context/CatchUpEventContext";
 import userServices from "../services/userServices";
 
-const {events} = CatchUpEventContextUse
-console.log(events)
-
-export const googleCalender = () => {
-    const filteredEvents = events.filter((event) => event.published === true);
+export const googleCalender = async() => {
+    const events = await userServices.getAllEvents()
+    const filteredEvents = events.filter((event) => event.published === false);
     const userEvents = filteredEvents.map(
         ({ event_title, location, event_description, final_event_date, participant_number }) => (
             {
@@ -25,7 +22,8 @@ export const googleCalender = () => {
             }
         )
       );
-      return userEvents
+      console.log(...userEvents)
+    //   return userEvents
 }
 
 export const addToCalender = async () => {
