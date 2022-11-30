@@ -5,14 +5,13 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import userServices from "../../services/userServices";
 
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const SignIn = () => {
   const [userInput, setUserInput] = useState({
     email: "Enter your email address",
     password: "**********",
   });
-  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -28,11 +27,11 @@ const SignIn = () => {
     <div>
       <section className=" min-h-screen flex items-center justify-center ">
         <div className="form-container flex justify-between w-full items-start">
-          <div className="form-wrapper h-screen w-1/2 px-8 mt-6">
-            <div className="flex justify-between items-center gap-8">
+          <div className="form-wrapper h-screen w-1/2 px-4 mt-6">
+            <div className="flex justify-between items-center  tablet:px-4">
               <div>
-                <span className="font-bold text-5xl text-blue-600">Catch</span>
-                <span className="font-bold text-5xl ml-1">Up</span>
+                <span className="font-black text-5xl text-blue-600">Catch</span>
+                <span className="font-black text-5xl ml-1">Up</span>
               </div>
               <div className="relative">
                 <label className="block mt-4">
@@ -49,14 +48,11 @@ const SignIn = () => {
                 </label>
               </div>
             </div>
-            <div className=" px-14 mt-24">
-              <h2 className="text-4xl font-bold text-center text-blue-600 mb-16">
-                Sign In
-              </h2>
+            <div className="w-full mt-10 max-w-[26rem] mx-auto">
               <h3 className="sm:text-3xl lg:text-4xl font-bold text-gray-600 ">
                 Welcome!
               </h3>
-              <p className="sm:text-base lg:text-xl text-gray-600 mb-8 ">
+              <p className="sm:text-base lg:text-xl text-[#424245] mb-8 ">
                 Sign in here! Please enter your details
               </p>
 
@@ -67,7 +63,7 @@ const SignIn = () => {
               >
                 <label className="pb-0">Email</label>
                 <input
-                  className="p-2 rounded-xl border"
+                  className="p-2 rounded-xl border-[1px] border-gray-400"
                   type="text"
                   name="email"
                   id="email"
@@ -84,11 +80,11 @@ const SignIn = () => {
 
                 <label className="pb-0">Password</label>
                 <input
-                  className="p-2 rounded-xl border"
+                  className="p-2 rounded-xl border-[1px] border-gray-400"
                   type="password"
                   name="password"
                   id="password"
-                  placeholder={userInput.email}
+                  placeholder={userInput.password}
                   {...register("password", {
                     required: "Password is required",
                     minLength: {
