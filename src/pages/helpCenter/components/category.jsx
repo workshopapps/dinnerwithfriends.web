@@ -13,7 +13,7 @@ const Category = ({ data, activeLink, setActiveLink, activeCategory }) => {
     }
 
     useEffect(() => {
-        setActiveLink(location.hash.slice(1) || "get_satrted")
+        setActiveLink(location.hash.slice(1) || "get_started")
     })
 
     return (
