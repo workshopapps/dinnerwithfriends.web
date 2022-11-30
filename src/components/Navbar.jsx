@@ -14,6 +14,10 @@ const Navbar = () => {
           </span>
         </Link>
         <div className="flex md:order-2">
+        <Link to="/sign_in" className="mr-5 mt-2">
+            Log In
+          </Link>
+  
           <Link to="/sign_up">
             <button
               type="button"
