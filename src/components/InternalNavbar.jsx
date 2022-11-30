@@ -12,22 +12,21 @@ function InternalNavbar() {
   }
   
   return (
-    <nav className="px-4 py-7 sm:px-8 md:px-12 lg:px-16 flex justify-between relative">
+    <nav className="px-4 sm:px-8 md:px-12 lg:px-16 py-7 flex justify-between relative">
         <h1 className="text-2xl font-bold text-blue-600">Catch<span className="text-gray-900">Up</span></h1>
-        {/* desktop menu items */}
-        <div className={isActive ? "px-4 py-7 flex flex-col h-screen w-screen fixed bg-white top-0 left-0" : "hidden"}>
-            <div className="flex justify-between w-full">
-            <h1 className="text-2xl font-bold text-blue-600">Catch<span className="text-gray-900">Up</span></h1>
+        <div className={isActive ? "px-4 py-7 flex flex-col h-screen md:h-fit w-screen md:w-fit fixed bg-white top-0 md:top-16 left-0 md:left-auto md:right-8 md:border md:shadow md:rounded transition-all" : "hidden"}>
+            <div className="flex justify-between w-full md:hidden">
+                <h1>Catchup</h1>
                 <svg
                     onClick={handleClick}    
                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>
             </div>
-            <div className="my-4 text-gray-700 flex flex-col">
-                <Link to="/dashboard" className="block py-3 border-b ">Dashboard</Link>
-                <Link to="/settings" className="block py-3 border-b ">Account Setting</Link>
-                <Link to="/help/*" className="block py-3 border-b ">Help and Support</Link>
-                <Link to="/" className="block py-3 border-b">Notifications</Link>
-                <div className="flex items-center space-x-3 border-b py-3">
+            <div className="my-4 md:my-0 text-gray-700 flex flex-col">
+                <Link to="/dashboard" className="block py-3 md:pb-3 md:pt-0 border-b  hover:bg-gray-50 transition-all">Dashboard</Link>
+                <Link to="/settings" className="block py-3 border-b  hover:bg-gray-50 transition-all">Account Setting</Link>
+                <Link to="/help/*" className="block py-3 border-b  hover:bg-gray-50 transition-all">Help and Support</Link>
+                <Link to="/" className="block py-3 border-b md:hidden hover:bg-gray-50 transition-all">Notifications</Link>
+                <div className="flex items-center space-x-3 border-b py-3 hover:bg-gray-50 transition-all">
                     <img src={GCalendar} alt="" />
                     <span>Sync with Google Calendar</span>
                 </div>
@@ -38,9 +37,10 @@ function InternalNavbar() {
                         <span>beniottabenita@gmail.com</span>
                     </div>
                 </div>
-                <Link to="/" className=" w-full border-2 rounded border-blue-600 text-blue-600 font-medium text-center py-2">Log out</Link>
+                <Link to="/" className=" w-full border-2 rounded border-blue-600 hover:bg-blue-600 hover:text-white text-blue-600 font-medium text-center py-2">Log out</Link>
             </div>
         </div>
+        {/* desktop menu items */}
         <div className="hidden md:flex items-center space-x-2">
             <button>
                 <img src={NotificationIcon} alt="" />
