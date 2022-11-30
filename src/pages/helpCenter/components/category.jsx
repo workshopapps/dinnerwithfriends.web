@@ -23,10 +23,10 @@ const Category = ({ data, activeLink, setActiveLink, activeCategory }) => {
             <div className="flex-1">
                 <div className="flex p-6 items-center justify-between bg-blue-50 text-primary-800">
                     <div>
-                        <h1 className="text-3xl font-semibold py-2">{activeCategory[0].heading}</h1>
-                        <p className="font-semibold">{activeCategory[0].para}</p>
+                        <h1 className="text-3xl font-semibold py-2">{activeCategory[0] && activeCategory[0].heading}</h1>
+                        <p className="font-semibold">{activeCategory[0] && activeCategory[0].para}</p>
                     </div>
-                    <img src={activeCategory[0].icon} alt={activeCategory[0].heading} />
+                    <img src={activeCategory[0] && activeCategory[0].icon} alt={activeCategory[0] && activeCategory[0].heading} />
                 </div>
 
                 <div className="md:p-8 p-4 bg-gray-100">
