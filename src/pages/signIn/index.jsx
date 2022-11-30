@@ -139,7 +139,7 @@ const SignIn = () => {
                       Remember for 30days
                     </label>
                   </div>
-                  <div className="font-bold text-xs lg:text-base">
+                  <div className="text-[#0056D6] text-xs lg:text-base">
                     <Link to="/forgot_password">Forgot password?</Link>
                   </div>
                 </div>
