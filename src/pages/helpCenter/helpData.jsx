@@ -174,11 +174,7 @@ export const data = [
         icon: menu,
         contents: [
             {
-                question: "Create Your First Event",
-                answer: "Welcome to catchup. we are updating the help center. please check back",
-            },
-            {
-                question: "Invite People to Your Event",
+                question: "Attendee User Guide",
                 answer: "Welcome to catchup. we are updating the help center. please check back",
             },
             {
@@ -186,11 +182,15 @@ export const data = [
                 answer: "Welcome to catchup. we are updating the help center. please check back",
             },
             {
-                question: "Moderate Your Event",
+                question: "Best Practices Before Creating an Event",
                 answer: "Welcome to catchup. we are updating the help center. please check back",
             },
             {
-                question: "Event Automation",
+                question: "Log in to the Event",
+                answer: "Welcome to catchup. we are updating the help center. please check back",
+            },
+            {
+                question: "Resend the Event Access Link to a Registrant",
                 answer: "Welcome to catchup. we are updating the help center. please check back",
             },
             {
@@ -198,19 +198,11 @@ export const data = [
                 answer: "Welcome to catchup. we are updating the help center. please check back",
             },
             {
-                question: "Delete a Registrant From an Event",
+                question: "The Event Page Doesn't Load. Why?",
                 answer: "Welcome to catchup. we are updating the help center. please check back",
             },
             {
-                question: "Add Your Own Custom Consents",
-                answer: "Welcome to catchup. we are updating the help center. please check back",
-            },
-            {
-                question: "How Do I Block or Unblock Registrants?",
-                answer: "Welcome to catchup. we are updating the help center. please check back",
-            },
-            {
-                question: "View Your Events",
+                question: "Catch Up Status Page",
                 answer: "Welcome to catchup. we are updating the help center. please check back",
             }
         ]
@@ -223,43 +215,35 @@ export const data = [
         icon: convert,
         contents: [
             {
-                question: "Create Your First Event",
+                question: "Create Your First Event in Google Calendar",
                 answer: "Welcome to catchup. we are updating the help center. please check back",
             },
             {
-                question: "Invite People to Your Event",
+                question: "Get Your Event & Event Session ID",
                 answer: "Welcome to catchup. we are updating the help center. please check back",
             },
             {
-                question: "Add Contributors to Your Event",
+                question: "Add Apps to Your Event Room",
                 answer: "Welcome to catchup. we are updating the help center. please check back",
             },
             {
-                question: "Moderate Your Event",
+                question: "Catch Up API",
                 answer: "Welcome to catchup. we are updating the help center. please check back",
             },
             {
-                question: "Event Automation",
+                question: "Integration in Catch Up",
                 answer: "Welcome to catchup. we are updating the help center. please check back",
             },
             {
-                question: "Email Statuses",
+                question: "Connect Streaming Platforms (Youtube, Twitch...) with Catch Up",
                 answer: "Welcome to catchup. we are updating the help center. please check back",
             },
             {
-                question: "Delete a Registrant From an Event",
+                question: "Track Conversations on Your Registration Pages",
                 answer: "Welcome to catchup. we are updating the help center. please check back",
             },
             {
-                question: "Add Your Own Custom Consents",
-                answer: "Welcome to catchup. we are updating the help center. please check back",
-            },
-            {
-                question: "How Do I Block or Unblock Registrants?",
-                answer: "Welcome to catchup. we are updating the help center. please check back",
-            },
-            {
-                question: "View Your Events",
+                question: "Register to Catch Up Event from a LinkedIn Event",
                 answer: "Welcome to catchup. we are updating the help center. please check back",
             }
         ]
@@ -272,43 +256,15 @@ export const data = [
         icon: key,
         contents: [
             {
-                question: "Create Your First Event",
+                question: "Security at Catch Up",
                 answer: "Welcome to catchup. we are updating the help center. please check back",
             },
             {
-                question: "Invite People to Your Event",
+                question: "Account Settings",
                 answer: "Welcome to catchup. we are updating the help center. please check back",
             },
             {
-                question: "Add Contributors to Your Event",
-                answer: "Welcome to catchup. we are updating the help center. please check back",
-            },
-            {
-                question: "Moderate Your Event",
-                answer: "Welcome to catchup. we are updating the help center. please check back",
-            },
-            {
-                question: "Event Automation",
-                answer: "Welcome to catchup. we are updating the help center. please check back",
-            },
-            {
-                question: "Email Statuses",
-                answer: "Welcome to catchup. we are updating the help center. please check back",
-            },
-            {
-                question: "Delete a Registrant From an Event",
-                answer: "Welcome to catchup. we are updating the help center. please check back",
-            },
-            {
-                question: "Add Your Own Custom Consents",
-                answer: "Welcome to catchup. we are updating the help center. please check back",
-            },
-            {
-                question: "How Do I Block or Unblock Registrants?",
-                answer: "Welcome to catchup. we are updating the help center. please check back",
-            },
-            {
-                question: "View Your Events",
+                question: "Catch Up Data Server Location",
                 answer: "Welcome to catchup. we are updating the help center. please check back",
             }
         ]

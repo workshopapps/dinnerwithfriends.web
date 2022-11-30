@@ -1,4 +1,4 @@
-import HelpSearch from "./search";
+import HelpSearch from "./components/search";
 
 const HelpCenter = ({ data, setActiveLink }) => {
 
