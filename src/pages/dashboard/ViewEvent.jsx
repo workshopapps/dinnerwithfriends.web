@@ -110,7 +110,7 @@ const ViewEvent = () => {
                 <div
                   onClick={() => toggleShowAccordion(invitee.id)}
                   key={invitee.id}
-                  className="py-3 border-b border-gray-200 transition-all"
+                  className="py-3 border-b border-gray-200 transition duration-250 ease-in-out"
                 >
                   <div className="flex justify-between items-center transition-all">
                     <div className="flex items-center">
@@ -129,8 +129,8 @@ const ViewEvent = () => {
                     <img
                       className={
                         isActive === invitee.id
-                          ? "w-3 sm:w-4 md:w-5 rotate-180"
-                          : "w-3 sm:w-4 md:w-5 transitioni-all"
+                          ? "w-3 sm:w-4 md:w-5 rotate-180 transition duration-250 ease-in-out"
+                          : "w-3 sm:w-4 md:w-5 transition duration-250 ease-in-out"
                       }
                       src={arrow}
                       alt=""

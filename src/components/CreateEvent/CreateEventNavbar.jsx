@@ -21,10 +21,11 @@ const CreateEventNavbar = () => {
             <span>M</span>
           </div>
           <span className="ml-2 text-xs">
-            <SlArrowDown />
+            <SlArrowDown/>
           </span>
         </div>
-        <div className=" md:hidden flex items-center">
+
+        <div className="flex items-center">
           <button className={open && menuStyles.close}>
             <HiOutlineMenu onClick={() => setOpen(true)} />
           </button>
