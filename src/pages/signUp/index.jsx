@@ -4,7 +4,6 @@ import { useForm } from "react-hook-form"
 import image from './signup_image.webp'
 import google from './google.svg'
 import nigeria from './nigeria.svg'
-import catchup from './catchup_logo.svg'
 import Logo from '../../components/Logo'
 
 const SignUp = () => {
