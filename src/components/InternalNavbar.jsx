@@ -12,7 +12,7 @@ function InternalNavbar() {
   }
   
   return (
-    <nav className="px-4 py-7 flex justify-between relative">
+    <nav className="px-4 py-7 sm:px-8 md:px-12 lg:px-16 flex justify-between relative">
         <h1 className="text-2xl font-bold text-blue-600">Catch<span className="text-gray-900">Up</span></h1>
         {/* desktop menu items */}
         <div className={isActive ? "px-4 py-7 flex flex-col h-screen w-screen fixed bg-white top-0 left-0" : "hidden"}>
