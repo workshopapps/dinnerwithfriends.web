@@ -17,7 +17,7 @@ const Sidebar = ({ data, activeLink, setActiveLink }) => {
                     className={`my-4 font-medium text-base hover:text-blue-800 ${
                         activeLink === category.link ? "text-[#0056D6]" : ""
                     }`}
-                    href={`#${category.link}`}
+                    href={`?${""}#${category.link}`}
                     onClick={() => setActiveLink(category.link)}
                     >
                     {category.heading}
