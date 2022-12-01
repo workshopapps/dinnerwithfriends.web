@@ -47,12 +47,12 @@
     color:  #0056D6;
 }
 .logOutBtn {
-    border: 1px solid  rgb(11, 127, 221);
+    border: 1px solid  rgb(221, 18, 11);
     border-radius: 4px;
     text-align: center;
     padding: 0.5rem;
     width: 100%;
-    color:  rgb(11, 127, 221);
+    color:  rgb(221, 11, 11);
 }
 .logOutBtn:active {
     background-color: rgb(11, 127, 221);
