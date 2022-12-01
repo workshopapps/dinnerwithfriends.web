@@ -40,7 +40,7 @@ const SingleCalendar = ({ setShowCalendar, showCalendar, id, addTime }) => {
 	};
 
 	return (
-		<div className='text-xs rounded-[8px] border border-[#D1D7DA] p-1'>
+		<div className='text-xs rounded-[8px] border border-[#D1D7DA]'>
 			<Calendar
 				calendarType='US'
 				onChange={(e) => {
