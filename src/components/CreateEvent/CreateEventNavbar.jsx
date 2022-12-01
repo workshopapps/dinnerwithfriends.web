@@ -1,18 +1,17 @@
-import React, { useState } from "react";
+import React, { useState }  from "react";
 import Logo from "../Logo";
-import googleCalendar from "../../assets/img/g-calendar.svg";
+import googleCalendar from "../../assets/img/g-calendar.png";
 import bell from "../../assets/img/notification.png";
-import { SlArrowDown } from "react-icons/sl";
+import { SlArrowDown, SlArrowUp } from "react-icons/sl";
 import { HiOutlineMenu } from "react-icons/hi";
 import { FaTimes } from "react-icons/fa";
 import menuStyles from "./createEvent.module.css";
 import { Link } from "react-router-dom";
 
 const CreateEventNavbar = () => {
-  const [open, setOpen] = useState(false);
-
-  return (
-    <div className="border border-[#E3E3E3]">
+	const [open, setOpen] = useState(false);
+	return (
+		<div className="border border-[#E3E3E3]">
       <div className={menuStyles.theCreateEventContainer}>
         <Logo />
         <div className="items-center cursor-pointer hidden md:flex">
@@ -20,12 +19,16 @@ const CreateEventNavbar = () => {
           <div className="w-[35px] h-[35px] border border-[#66A3FF] text-[#717172] rounded-full flex justify-center items-center object-cover text-xs">
             <span>M</span>
           </div>
-          <span className="ml-2 text-xs">
-            <SlArrowDown/>
-          </span>
+          <div className="flex items-center">
+            <button className={open && menuStyles.close}>
+              <SlArrowDown onClick={() => setOpen(true)} />
+            </button>
+            <button className={!open && menuStyles.open}>
+              <SlArrowUp onClick={() => setOpen(false)} />
+            </button>
+          </div>
         </div>
-
-        <div className="flex items-center">
+        <div className=" md:hidden flex items-center">
           <button className={open && menuStyles.close}>
             <HiOutlineMenu onClick={() => setOpen(true)} />
           </button>
@@ -71,7 +74,7 @@ const CreateEventNavbar = () => {
         )}
       </div>
     </div>
-  );
+	);
 };
 
 export default CreateEventNavbar;

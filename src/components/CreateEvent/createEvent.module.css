@@ -62,11 +62,3 @@
 .close {
     display: none;
 }
-/* @media (max-width: 719px) {
-  .theCreateEventContainerLinks {
-    display: flex;
-    position: absolute;
-    z-index: 1000;
-    opacity: 0.9;
-  }
-} */

@@ -1,6 +1,5 @@
 import React, { useState }  from "react";
 import { useNavigate, Link } from 'react-router-dom'
-import { FiEye, FiEyeOff } from 'react-icons/fi'
 import { useForm } from "react-hook-form";
 import signInImage from "../../assets/img/Rectangle 254.png";
 import nigeriaFlag from "../../assets/img/Group.png";
@@ -67,7 +66,7 @@ const SignIn = () => {
               <h2 className="text-4xl font-bold text-center text-blue-600 mb-10">
                 Sign In
               </h2>
-              <h3 className="font-medium text-xl lg:text-4xl font-bold text-gray-600 ">
+              <h3 className="text-xl lg:text-4xl font-bold text-gray-600 ">
                 Welcome!
               </h3>
               <p className="sm:text-base lg:text-xl text-gray-600 mb-8 ">
