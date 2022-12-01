@@ -3,8 +3,8 @@ import { Routes, Route } from "react-router-dom";
 import HelpCenter from ".";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
-import BottomBar from "./bottomBar";
-import Category from "./category";
+import BottomBar from "./components/bottomBar";
+import Category from "./components/category";
 import { data } from "./helpData";
 
 const HelpRoutes = () => {

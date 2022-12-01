@@ -5,8 +5,12 @@ import { AiOutlineLike, AiOutlineDislike, AiOutlineUser } from "react-icons/ai";
 import { BsPlus } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import CreateEventNavbar from "../../components/CreateEvent/CreateEventNavbar";
+import EventModal from "../../components/EventModal";
+import { CatchUpEventContextUse } from "../../context/CatchUpEventContext";
 
 const EventSummary = () => {
+  const { setShowModal } = CatchUpEventContextUse();
+
   const [email, setEmail] = useState("");
   const [participant, setParticipant] = useState([
     {
@@ -30,7 +34,7 @@ const EventSummary = () => {
     e.preventDefault();
     if (!email) return;
     addParticipant(email);
-    setEmail("")
+    setEmail("");
   };
   return (
     <div>
@@ -64,15 +68,11 @@ const EventSummary = () => {
         <div className="flex justify-between my-5">
           <p className="md:text-2xl text-xl font-bold">Availability</p>
           <div className="flex">
-            <div
-              className="flex mr-4 items-center"
-            >
+            <div className="flex mr-4 items-center">
               <AiOutlineLike className="text-2xl text-[#006600]" />
               <p className="text-xs ml-1.5">Yes</p>
             </div>
-            <div
-              className="flex items-center"
-            >
+            <div className="flex items-center">
               <AiOutlineDislike className="text-2xl text-[#CC0000]" />
               <p className="text-xs ml-1.5">No</p>
             </div>
@@ -80,10 +80,16 @@ const EventSummary = () => {
         </div>
         <div className="flex md:justify-start justify-between my-5">
           <p className="text-lg font-bold md:mr-7">Participant(3)</p>
-          <button className="bg-transparent flex items-center text-[#1070FF]">
+          <button
+            className="bg-transparent flex items-center text-[#1070FF]"
+            onClick={() => {
+              setShowModal(true);
+            }}
+          >
             <p className="mr-2 md:text-base text-sm">Add participant</p>
             <BsPlus />
           </button>
+          <EventModal />
         </div>
         <div className="w-full my-5 bg-[#E7F0FF] flex justify-betweenn py-2 md:px-3 px-1">
           <input
@@ -121,10 +127,16 @@ const EventSummary = () => {
           ))}
         </div>
         <div className="my-6 flex justify-between items-center">
-          <Link to="/dashboard/upcoming_events" className="text-xl font-semibold">
+          <Link
+            to="/dashboard/upcoming_events"
+            className="text-xl font-semibold"
+          >
             Back
           </Link>
-          <Link to={'/create_event'} className="rounded flex md:px-6 px-4 py-2.5 bg-[#1070FF] text-white items-center">
+          <Link
+            to={"/create_event"}
+            className="rounded flex md:px-6 px-4 py-2.5 bg-[#1070FF] text-white items-center"
+          >
             <p className="md:text-xl text-base font-medium md:mr-2">
               Create invite
             </p>

@@ -9,46 +9,47 @@ import Button from "../Button";
 import SingleCalendar from "../SingleCalendar/SingleCalendar";
 
 const CreateEventForm = () => {
-	const [showCalendar, setShowCalendar] = useState(false);
-	const [showCalendar2, setShowCalendar2] = useState(false);
-	const [showCalendar3, setShowCalendar3] = useState(false);
-	const { startDate, endDate, preferredDate, setFormValues, formValues } =
-		CatchUpEventContextUse();
-	const navigate = useNavigate();
+  const [showCalendar, setShowCalendar] = useState(false);
+  const [showCalendar2, setShowCalendar2] = useState(false);
+  const [showCalendar3, setShowCalendar3] = useState(false);
+  const { startDate, endDate, preferredDate, setFormValues, formValues } =
+    CatchUpEventContextUse();
+  const navigate = useNavigate();
 
-	const [errors, setErrors] = useState({
-		event_title: "",
-		event_description: "",
-		location: "",
-		event_type: "",
-		participant_number: "",
-		start_date: "",
-		end_date: "",
-		host_prefered_time: "",
-	});
+  const [errors, setErrors] = useState({
+    event_title: "",
+    event_description: "",
+    location: "",
+    event_type: "",
+    participant_number: "",
+    start_date: "",
+    end_date: "",
+    host_prefered_time: "",
+  });
 
-	const handleSubmit = () => {
-		setErrors(formLogic(formValues));
-		setFormValues({
-			...formValues,
-			host_prefered_time: preferredDate,
-			end_date: endDate,
-			start_date: startDate,
-		});
-	};
+  const handleSubmit = () => {
+    setErrors(formLogic(formValues));
+    setFormValues({
+      ...formValues,
+      host_prefered_time: preferredDate,
+      end_date: endDate,
+      start_date: startDate,
+    });
+  };
 
-	const submitForm = async (data) => {
-		const result = await userServices.createEvents(data);
-		if (result.status === "success") {
-			navigate("/event_summary");
-		}
-	};
-	useEffect(() => {
-		if (Object.keys(errors).length === 0) {
-			submitForm(formValues);
-		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [errors, navigate]);
+  const submitForm = async (data) => {
+    const result = await userServices.createEvents(data);
+    console.log(result);
+    if (result.status === "success") {
+      navigate("/event_summary");
+    }
+  };
+  useEffect(() => {
+    if (Object.keys(errors).length === 0) {
+      submitForm(formValues);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [errors, navigate]);
 
 	return (
 		<div className='w-full py-8'>
@@ -266,21 +267,22 @@ const CreateEventForm = () => {
 					</div>
 				</div>
 
-				<div className='w-full flex justify-center mt-6'>
-					<Button
-						children
-						type='submit'
-						onClick={handleSubmit}
-						className='flex items-center text-xs font-medium px-6 py-2 bg-[#1070FF] w-fit text-white rounded-[4px]'>
-						<span>Next</span>
-						<span className='text-[8px] ml-2'>
-							<SlArrowRight />
-						</span>
-					</Button>
-				</div>
-			</div>
-		</div>
-	);
+        <div className="w-full flex justify-center mt-6">
+          <Button
+            children
+            type="submit"
+            onClick={handleSubmit}
+            className="flex items-center text-xs font-medium px-6 py-2 bg-[#1070FF] w-fit text-white rounded-[4px]"
+          >
+            <span>Next</span>
+            <span className="text-[8px] ml-2">
+              <SlArrowRight />
+            </span>
+          </Button>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default CreateEventForm;
