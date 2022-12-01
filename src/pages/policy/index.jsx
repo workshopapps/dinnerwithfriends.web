@@ -170,8 +170,7 @@ const Policy = () => {
       Please note that we may be required to retain your Personal Data in part even after a request for blocking or cancellation under the terms of our statutory or contractual retention requirements (such as for accounting purposes) and in such an eventuality will only block your Personal Data insofar as necessary for this purpose. In addition, the cancellation of your Personal Data may have the effect that you are no longer able to acquire or use the services registered by you. Under certain circumstances, you have the right to require us to provide you or a third party specified by you with your data in a commonly used format.
       In addition, you have the right to make a complaint concerning the data processing in question with the competent supervisory authority. You can do this with the supervisory authority at your place of residence, at your place of work, or the place of the alleged data breach. Your privacy cockpit offers you further information on the various systems and providers that we use, as well as the option to change your privacy settings at any time.
       
-      `,
-      href: "#",
+      `
     },
     {
       heading: "Contact Person",
@@ -186,8 +185,7 @@ const Policy = () => {
       p: `If you have any questions about these Privacy policies, You can contact us:
       By visiting this page on our website at www.catchup.com/contactus/
       By sending us an email at catchup@gmail.com
-      `,
-      href: "#",
+      `
     },
   ];
   return (
