@@ -2,7 +2,6 @@ import React, { useState }  from "react";
 import { useNavigate, Link } from 'react-router-dom'
 import { useForm } from "react-hook-form";
 import signInImage from "../../assets/img/Rectangle 254.png";
-import nigeriaFlag from "../../assets/img/Group.png";
 import userServices from "../../services/userServices";
 
 
@@ -54,7 +53,7 @@ const SignIn = () => {
               </Link>
               </div>
                <div className='px-1 rounded-[20px] w-29 tablet:w-35 tablet:h-10 h-[34px]  bg-blue-100 flex justify-around items-center'>
-            <img className='w-5' src={nigeriaFlag} alt="nigerian flag" />
+            
             <select className='language-select bg-blue-100 w-full font-semibold focus:outline-none text-xs tablet:text-sm' name="language" id="language">
               <option value="uk">English (UK)</option>
               <option value="us">English (US)</option>
@@ -134,7 +133,7 @@ const SignIn = () => {
                       Remember for 30days
                     </label>
                   </div>
-                  <div className="font-bold text-xs lg:text-base">
+                  <div className="text-[#0056D6] text-xs lg:text-base">
                     <Link to="/forgot_password">Forgot password?</Link>
                   </div>
                 </div>
