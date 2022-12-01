@@ -4,7 +4,7 @@ import Footer from "../../components/Footer";
 
 import Hero from "./hero";
 import Schedule from "./schedule";
-import HeroDashboard from "./heroDashboard";
+// import HeroDashboard from "./heroDashboard";
 import Testimonials from "./testimonials";
 import Banner from "./banner";
 

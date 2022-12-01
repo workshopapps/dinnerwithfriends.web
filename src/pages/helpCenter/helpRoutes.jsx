@@ -18,7 +18,7 @@ const HelpRoutes = () => {
                 <Route path="/category" exact element={<Category data={data} activeLink={activeLink} setActiveLink={setActiveLink} activeCategory={data.filter(category => category.link === activeLink )} />} />
             </Routes>
 
-            <div className="bg-blue-700 m-0 mt-24">
+            <div className="bg-[#0056D6] m-0 mt-24">
                 <BottomBar />
             </div>
 

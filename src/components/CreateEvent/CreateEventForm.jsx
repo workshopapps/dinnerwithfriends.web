@@ -8,12 +8,34 @@ import userServices from "../../services/userServices";
 import Button from "../Button";
 import SingleCalendar from "../SingleCalendar/SingleCalendar";
 import dateTimeForCalender from "../../helpers/DateTimeConverter";
+<<<<<<< HEAD
 const CreateEventForm = () => {
   const [showCalendar, setShowCalendar] = useState(false);
   const [showCalendar2, setShowCalendar2] = useState(false);
   const [showCalendar3, setShowCalendar3] = useState(false);
   const { startDate, endDate, preferredDate, setFormValues, formValues } =
     CatchUpEventContextUse();
+=======
+
+const CreateEventForm = () => {
+	const [showCalendar, setShowCalendar] = useState(false);
+	const [showCalendar2, setShowCalendar2] = useState(false);
+	const [showCalendar3, setShowCalendar3] = useState(false);
+	const { startDate, endDate, preferredDate, setFormValues, formValues } =
+		CatchUpEventContextUse();
+
+	const [minimumDate, setMinimumDate] = useState('')
+	const [maximumDate, setMaximumDate] = useState('')
+
+	useEffect(() => {
+		const start = dateTimeForCalender(startDate, "00:00")
+		const end = dateTimeForCalender(endDate, "00:00")
+		setMinimumDate(start)
+		setMaximumDate(end)
+	}, [startDate, endDate])
+
+	const navigate = useNavigate();
+>>>>>>> bc17d2e15654f702cfba459a10f2c5497fa31b70
 
   const [minimumDate, setMinimumDate] = useState('')
   const [maximumDate, setMaximumDate] = useState('')
@@ -192,7 +214,6 @@ const CreateEventForm = () => {
 						<small className='text-red-600 text-[10px] mt-2'>
 							{errors?.start_date}
 						</small>
-
 						<div
 							className={`w-full transition-all duration-150 ${
 								showCalendar ? "flex absolute top-[75px] left-0 right-0 z-10" : "hidden"
@@ -204,7 +225,10 @@ const CreateEventForm = () => {
 							/>
 						</div>
 					</div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> bc17d2e15654f702cfba459a10f2c5497fa31b70
 					<div className='flex flex-col mb-4 flex-[1] relative'>
 						<label htmlFor='endDate' className='text-sm font-semibold'>
 							End Date
@@ -241,7 +265,10 @@ const CreateEventForm = () => {
 						</div>
 					</div>
 				</div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> bc17d2e15654f702cfba459a10f2c5497fa31b70
 				<div className='flex flex-col mb-4 relative'>
 					<label htmlFor='preferredDate' className='text-sm font-semibold'>
 						Preferred Date & Time
@@ -265,7 +292,6 @@ const CreateEventForm = () => {
 					<small className='text-red-600 text-[10px] mt-2'>
 						{errors?.host_prefered_time}{" "}
 					</small>
-
 					<div
 						className={`md:w-[50%] transition-all duration-150 ${
 							showCalendar3 ? "flex absolute top-[75px] left-0 right-0 z-10" : "hidden"
@@ -281,6 +307,7 @@ const CreateEventForm = () => {
 					</div>
 				</div>
 
+<<<<<<< HEAD
         <div className="w-full flex justify-center mt-6">
           <Button
             children
@@ -297,6 +324,23 @@ const CreateEventForm = () => {
       </div>
     </div>
   );
+=======
+				<div className='w-full flex justify-center mt-6'>
+					<Button
+						children
+						type='submit'
+						onClick={handleSubmit}
+						className='flex items-center text-xs font-medium px-6 py-2 bg-[#0056D6] w-fit text-white rounded-[4px]'>
+						<span>Next</span>
+						<span className='text-[8px] ml-2'>
+							<SlArrowRight />
+						</span>
+					</Button>
+				</div>
+			</div>
+		</div>
+	);
+>>>>>>> bc17d2e15654f702cfba459a10f2c5497fa31b70
 };
 
 export default CreateEventForm;

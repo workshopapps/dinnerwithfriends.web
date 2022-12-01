@@ -18,21 +18,21 @@ const Navbar = () => {
           <Link to="/sign_up">
             <button
               type="button"
-              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              className="text-white bg-[#0056D6] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-[#0056D6] dark:focus:ring-blue-800"
             >
               Sign up
             </button>
           </Link>
         </div>
-        <div
-          className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+        <div style={nav}
+          className="transition linear duration-300 items-center justify-between  w-full md:flex md:w-auto md:order-1"
           id="navbar-sticky"
         >
-          <ul className="flex flex-col p-4 mt-4 border border-white rounded-lg bg-white md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white ">
+          <ul  className="bg-green-500 w-full flex flex-col p-4 mt-0 md:mt-4 border border-white rounded-lg bg-white md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white ">
             <li>
               <Link
                 to="/howItWorks"
-                className="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white"
+                className="block py-3 md:py-2 pl-3 pr-4 text-black hover:text-white hover:bg-blue-700 md:hover:bg-transparent md:hover:text-blue-700 rounded md:bg-transparent md:p-0 dark:text-white"
                 aria-current="page"
               >
                 How it works
@@ -71,12 +71,33 @@ const Navbar = () => {
                 fro-17-features-page
                 to="/features"
                 dev
-                className="block py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 "
+                className="block py-3 md:py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 "
               >
                 Features
               </Link>
             </li>
+            <li>
+              <Link
+                
+                to="/aboutus"
+                dev
+                className="block py-3 md:py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 "
+              >
+                About Us
+              </Link>
+            </li>
+            <li className="md:hidden">
+              <Link
+                
+                to="/sign_up"
+                dev
+                className=" mx-auto block mt-4 py-2 pl-3 pr-4 text-white text-center bg-[#1070FF] h-[44px] w-[225px] rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 "
+              >
+                Sign Up
+              </Link>
+            </li>
           </ul>
+          
         </div>
         <div className="md:hidden">
           <div

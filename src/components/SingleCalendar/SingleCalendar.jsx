@@ -4,7 +4,11 @@ import TimePicker from "react-time-picker";
 import { CatchUpEventContextUse } from "../../context/CatchUpEventContext";
 import "./SingleCalendar.css";
 
+<<<<<<< HEAD
 const SingleCalendar = ({ minDate, maxDate, setShowCalendar, showCalendar, id, addTime }) => {
+=======
+const SingleCalendar = ({minDate, maxDate, setShowCalendar, showCalendar, id, addTime }) => {
+>>>>>>> bc17d2e15654f702cfba459a10f2c5497fa31b70
 	const [dateValue, setDateValue] = useState(new Date());
 	const [time, setTime] = useState("7:00");
 
@@ -43,7 +47,7 @@ const SingleCalendar = ({ minDate, maxDate, setShowCalendar, showCalendar, id, a
 
 
 	return (
-		<div className='text-xs rounded-[8px] border border-[#D1D7DA] p-1'>
+		<div className='text-xs rounded-[8px] border border-[#D1D7DA]'>
 			<Calendar
 				calendarType='US'
 				onChange={(e) => {
@@ -73,7 +77,7 @@ const SingleCalendar = ({ minDate, maxDate, setShowCalendar, showCalendar, id, a
 							setDT();
 							setShowCalendar(!showCalendar);
 						}}
-						className={`rounded-[4px] ${"bg-[#1070FF]"} p-2 text-white`}>
+						className={`rounded-[4px] ${"bg-[#0056D6]"} p-2 text-white`}>
 						Add date
 					</button>
 				</div>

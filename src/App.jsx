@@ -60,9 +60,9 @@ function App() {
         <Route path="/forgot_password" element={<ForgetPassword />} />
         <Route path="/reset_link" element={<ResetLink />} />
         <Route path="/reset_password" element={<ResetPassword />} />
-        <Route path="*" element={<Error404 />} />
         <Route path="/help/*" element={<HelpRoutes />} />
         <Route path="/aboutUs" element={<AboutUsPage />} />
+        <Route path="*" element={<Error404 />} />
       </Routes>
     </div>
   );
