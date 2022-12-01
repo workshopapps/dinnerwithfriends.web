@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { BsFillSuitHeartFill } from "react-icons/bs";
+import Logo from "./Logo";
 
 const Footer = () => {
   const company = [
@@ -30,14 +31,7 @@ const Footer = () => {
     <footer className="bg-blue-700">
       <div className="mx-auto lg:mx-24 grid grid-cols-2 gap-8 py-8 px-6 md:grid-cols-5">
         <div>
-          <Link to="/" className="flex items-center">
-            <span className="self-center text-white text-3xl font-semibold whitespace-nowrap ">
-              Catch
-            </span>
-            <span className="self-center text-black text-3xl font-semibold whitespace-nowrap">
-              Up
-            </span>
-          </Link>
+          <Logo footer />
         </div>
         <div>
           <h2 className="mb-3 lg:mb-6 text-sm font-semibold text-gray-100 uppercase">

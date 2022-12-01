@@ -7,48 +7,61 @@ import { formLogic } from "../../data/createEventErrorLogic";
 import userServices from "../../services/userServices";
 import Button from "../Button";
 import SingleCalendar from "../SingleCalendar/SingleCalendar";
-
+import dateTimeForCalender from "../../helpers/DateTimeConverter";
 const CreateEventForm = () => {
-	const [showCalendar, setShowCalendar] = useState(false);
-	const [showCalendar2, setShowCalendar2] = useState(false);
-	const [showCalendar3, setShowCalendar3] = useState(false);
-	const { startDate, endDate, preferredDate, setFormValues, formValues } =
-		CatchUpEventContextUse();
-	const navigate = useNavigate();
+  const [showCalendar, setShowCalendar] = useState(false);
+  const [showCalendar2, setShowCalendar2] = useState(false);
+  const [showCalendar3, setShowCalendar3] = useState(false);
+  const { startDate, endDate, preferredDate, setFormValues, formValues } =
+    CatchUpEventContextUse();
 
-	const [errors, setErrors] = useState({
-		event_title: "",
-		event_description: "",
-		location: "",
-		event_type: "",
-		participant_number: "",
-		start_date: "",
-		end_date: "",
-		host_prefered_time: "",
-	});
+  const [minimumDate, setMinimumDate] = useState('')
+  const [maximumDate, setMaximumDate] = useState('')
 
-	const handleSubmit = () => {
-		setErrors(formLogic(formValues));
-		setFormValues({
-			...formValues,
-			host_prefered_time: preferredDate,
-			end_date: endDate,
-			start_date: startDate,
-		});
-	};
-
-	const submitForm = async (data) => {
-		const result = await userServices.createEvents(data);
-		if (result.status === "success") {
-			navigate("/event_summary");
-		}
-	};
 	useEffect(() => {
-		if (Object.keys(errors).length === 0) {
-			submitForm(formValues);
-		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [errors, navigate]);
+		const start = dateTimeForCalender(startDate, "00:00")
+		const end = dateTimeForCalender(endDate, "00:00")
+		setMinimumDate(start)
+		setMaximumDate(end)
+	}, [startDate, endDate])
+
+
+
+ console.log(minimumDate, maximumDate)
+  const navigate = useNavigate();
+
+  const [errors, setErrors] = useState({
+    event_title: "",
+    event_description: "",
+    location: "",
+    event_type: "",
+    participant_number: "",
+    start_date: "",
+    end_date: "",
+    host_prefered_time: "",
+  });
+
+  const handleSubmit = () => {
+    setErrors(formLogic(formValues));
+    setFormValues({
+      ...formValues,
+      host_prefered_time: preferredDate,
+      end_date: endDate,
+      start_date: startDate,
+    });
+  };
+
+  const submitForm = async (data) => {
+    const result = await userServices.createEvents(data);
+    if (result.status === "success") {
+      navigate("/event_summary");
+    }
+  };
+  useEffect(() => {
+    if (Object.keys(errors).length === 0) {
+      submitForm(formValues);
+    }
+  }, [errors, navigate]);
 
 	return (
 		<div className='w-full py-8'>
@@ -155,8 +168,8 @@ const CreateEventForm = () => {
 						{errors?.participant_number}{" "}
 					</small>
 				</div>
-				<div className='flex flex-col md:flex-row md:gap-5 lg:gap-10 w-full'>
-					<div className='flex flex-col mb-4 flex-[1]'>
+				<div className='flex flex-col md:flex-row md:gap-[1.25rem]  w-full'>
+					<div className='flex flex-col mb-4 flex-[1] relative'>
 						<label htmlFor='startDate' className='text-sm font-semibold'>
 							Start Date
 						</label>
@@ -182,7 +195,7 @@ const CreateEventForm = () => {
 
 						<div
 							className={`w-full transition-all duration-150 ${
-								showCalendar ? "flex" : "hidden"
+								showCalendar ? "flex absolute top-[75px] left-0 right-0 z-10" : "hidden"
 							}`}>
 							<SingleCalendar
 								id='startDate'
@@ -192,7 +205,7 @@ const CreateEventForm = () => {
 						</div>
 					</div>
 
-					<div className='flex flex-col mb-4 flex-[1]'>
+					<div className='flex flex-col mb-4 flex-[1] relative'>
 						<label htmlFor='endDate' className='text-sm font-semibold'>
 							End Date
 						</label>
@@ -218,7 +231,7 @@ const CreateEventForm = () => {
 
 						<div
 							className={`w-full transition-all duration-150 ${
-								showCalendar2 ? "flex" : "hidden"
+								showCalendar2 ? "flex absolute top-[75px] left-0 right-0 z-10" : "hidden"
 							}`}>
 							<SingleCalendar
 								id='endDate'
@@ -229,7 +242,7 @@ const CreateEventForm = () => {
 					</div>
 				</div>
 
-				<div className='flex flex-col mb-4'>
+				<div className='flex flex-col mb-4 relative'>
 					<label htmlFor='preferredDate' className='text-sm font-semibold'>
 						Preferred Date & Time
 					</label>
@@ -255,32 +268,35 @@ const CreateEventForm = () => {
 
 					<div
 						className={`md:w-[50%] transition-all duration-150 ${
-							showCalendar3 ? "flex" : "hidden"
+							showCalendar3 ? "flex absolute top-[75px] left-0 right-0 z-10" : "hidden"
 						}`}>
 						<SingleCalendar
 							id='preferredDate'
 							addTime
 							setShowCalendar={setShowCalendar3}
 							showCalendar={showCalendar3}
+							minDate={minimumDate}
+							maxDate={maximumDate}
 						/>
 					</div>
 				</div>
 
-				<div className='w-full flex justify-center mt-6'>
-					<Button
-						children
-						type='submit'
-						onClick={handleSubmit}
-						className='flex items-center text-xs font-medium px-6 py-2 bg-[#1070FF] w-fit text-white rounded-[4px]'>
-						<span>Next</span>
-						<span className='text-[8px] ml-2'>
-							<SlArrowRight />
-						</span>
-					</Button>
-				</div>
-			</div>
-		</div>
-	);
+        <div className="w-full flex justify-center mt-6">
+          <Button
+            children
+            type="submit"
+            onClick={handleSubmit}
+            className="flex items-center text-xs font-medium px-6 py-2 bg-[#1070FF] w-fit text-white rounded-[4px]"
+          >
+            <span>Next</span>
+            <span className="text-[8px] ml-2">
+              <SlArrowRight />
+            </span>
+          </Button>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default CreateEventForm;
