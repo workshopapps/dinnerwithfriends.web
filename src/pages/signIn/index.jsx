@@ -59,19 +59,10 @@ const SignIn = () => {
           <div className="form-wrapper h-screen w-1/2 px-8 mt-6">
             <div className="flex justify-between items-center gap-8">
               <div>
-              <Link to='/'>
-                <span className="font-bold text-3xl lg:text-5xl text-[#0056D6]">Catch</span>
-                <span className="font-bold text-3xl lg:text-5xl ml-1">Up</span>
-              </Link>
-              </div>
-              <div className='px-1 rounded-[20px] w-29 tablet:w-35 tablet:h-10 h-[34px]  bg-blue-100 flex justify-around items-center'>
-
-                <select className='language-select bg-blue-100 w-full font-semibold focus:outline-none text-xs tablet:text-sm' name="language" id="language">
-                  <option value="uk">English (UK)</option>
-                  <option value="us">English (US)</option>
-                </select>
-
-
+                <Link to='/'>
+                  <span className="font-bold text-3xl lg:text-5xl text-[#0056D6]">Catch</span>
+                  <span className="font-bold text-3xl lg:text-5xl ml-1">Up</span>
+                </Link>
               </div>
             </div>
             <div className="px-2 lg:px-14 mt-10 lg:mt-14">
