@@ -13,8 +13,8 @@ const Navbar = () => {
      }
 
   return (
-    <nav className="bg-white px-2 sm:px-4 py-2.5 fixed w-full z-20 top-0 left-0 border-b border-white">
-      <div className="h-[45px] md:h-[76px] bg-transparent container flex flex-wrap items-center justify-between mx-auto">
+    <nav className="bg-white md:px-10 px-2.5  md:pb-2 fixed w-full z-20 top-0 left-0 border-b border-white">
+      <div className="h-[45px] md:h-[76px] py-4 md:py-0 bg-transparent container flex flex-wrap items-center justify-between mx-auto">
         <Link to="/" className="flex items-center">
           <span className="self-center text-blue-700 text-3xl font-semibold whitespace-nowrap ">
             Catch
@@ -24,6 +24,14 @@ const Navbar = () => {
           </span>
         </Link>
         <div className="flex md:order-2">
+            <Link
+              
+              to="/sign_in"
+              dev
+              className="hidden md:block block py-3 mr-8 md:py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 "
+            >
+              Log in
+            </Link>
           <Link className="hidden md:block" to="/sign_up">
             <button
               type="button"
@@ -68,7 +76,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="/howItWorks"
-                className="block py-3 md:py-2 pl-3 pr-4 text-black hover:text-white hover:bg-blue-700 rounded md:bg-transparent md:p-0 dark:text-white"
+                className="block py-3 md:py-2 pl-3 pr-4 text-black hover:text-white hover:bg-blue-700 md:hover:bg-transparent md:hover:text-blue-700 rounded md:bg-transparent md:p-0 dark:text-white"
                 aria-current="page"
               >
                 How it works
@@ -88,11 +96,11 @@ const Navbar = () => {
             <li>
               <Link
                 
-                to="/sign_in"
+                to="/aboutus"
                 dev
                 className="block py-3 md:py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 "
               >
-                Login
+                About Us
               </Link>
             </li>
             <li className="md:hidden">
