@@ -1,6 +1,5 @@
 import React from "react";
 import signInImage from "../../assets/img/Rectangle 254.png";
-import nigeriaFlag from "../../assets/img/Group.png";
 import userServices from "../../services/userServices";
 
 const SignIn = () => {
@@ -75,7 +74,7 @@ const SignIn = () => {
                 </Link>
               </div>
                <div className='px-1 rounded-[20px] w-29 tablet:w-35 tablet:h-10 h-[34px]  bg-blue-100 flex justify-around items-center'>
-            <img className='w-5' src={nigeriaFlag} alt="nigerian flag" />
+            
             <select className='language-select bg-blue-100 w-full font-semibold focus:outline-none text-xs tablet:text-sm' name="language" id="language">
               <option value="uk">English (UK)</option>
               <option value="us">English (US)</option>

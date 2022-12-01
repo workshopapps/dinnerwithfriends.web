@@ -21,7 +21,7 @@ const CreateEventNavbar = () => {
             <span>M</span>
           </div>
           <span className="ml-2 text-xs">
-            <SlArrowDown/>
+            <SlArrowDown />
           </span>
         </div>
 
