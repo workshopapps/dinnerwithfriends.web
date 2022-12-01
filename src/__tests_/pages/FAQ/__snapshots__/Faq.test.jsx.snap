@@ -477,7 +477,7 @@ Object {
             Can’t find the answer you’re looking for? Please, visit the Help Center for more help
           </p>
           <button
-            class="bg-[#1070FF] rounded py-2.5 lg:py-3 px-6 lg:px-8 text-[#fff] font-bold text-sm lg:text-xl"
+            class="bg-[#0056D6] rounded py-2.5 lg:py-3 px-6 lg:px-8 text-[#fff] font-bold text-sm lg:text-xl"
             type="button"
           >
             Get in touch
@@ -698,7 +698,7 @@ Object {
           <span
             class="text-md text-gray-100 sm:text-center"
           >
-            © 2022 
+            © 2022
             <a
               href="/"
             >
@@ -709,7 +709,7 @@ Object {
           <div
             class="flex mt-1 text-md text-white space-x-6 sm:justify-center md:mt-0"
           >
-            Made with love 
+            Made with love
             <svg
               fill="currentColor"
               height="1em"
@@ -1201,7 +1201,7 @@ Object {
           Can’t find the answer you’re looking for? Please, visit the Help Center for more help
         </p>
         <button
-          class="bg-[#1070FF] rounded py-2.5 lg:py-3 px-6 lg:px-8 text-[#fff] font-bold text-sm lg:text-xl"
+          class="bg-[#0056D6] rounded py-2.5 lg:py-3 px-6 lg:px-8 text-[#fff] font-bold text-sm lg:text-xl"
           type="button"
         >
           Get in touch
@@ -1422,7 +1422,7 @@ Object {
         <span
           class="text-md text-gray-100 sm:text-center"
         >
-          © 2022 
+          © 2022
           <a
             href="/"
           >
@@ -1433,7 +1433,7 @@ Object {
         <div
           class="flex mt-1 text-md text-white space-x-6 sm:justify-center md:mt-0"
         >
-          Made with love 
+          Made with love
           <svg
             fill="currentColor"
             height="1em"

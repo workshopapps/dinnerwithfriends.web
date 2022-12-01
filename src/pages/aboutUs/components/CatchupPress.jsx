@@ -12,7 +12,7 @@ const CatchupPress = ({ dimension }) => {
             {dimension.width <= 1024 ?
                 <div className="relative justify-self-center">
                     <MobileCurlyArrow className="absolute right-0 bottom-[310px]" />
-                    <img src={people} alt="people" className="mb-12"/> 
+                    <img src={people} alt="people" className="mb-12"/>
                 </div>
             : null}
             <div className="flex justify-around justify-self-center">
@@ -20,19 +20,19 @@ const CatchupPress = ({ dimension }) => {
                     <div className="grid gap-3 h-28 md:h-40">
                         <span className="text-xs md:text-base text-[#1E1E1E]">8 November, 2022 . Tech Crunch</span>
                         <p className="font-bold text-sm md:text-2xl w-[70vw] md:w-[630px]">6 reasons Catch Up is  THAT platform for keeping up with your friends</p>
-                        <button className="text-[#1070FF] flex gap-2"> Read article <BlueArrow /></button>
+                        <button className="text-[#0056D6] flex gap-2"> Read article <BlueArrow /></button>
                     </div>
                     <div className="grid gap-3 h-28 md:h-40">
                         <span className="text-sm md:text-base text-[#1E1E1E]">8 November, 2022 . Tech Crunch</span>
                         <p className="font-bold text-sm md:text-2xl w-[70vw] md:w-[630px]">The Future of Event Scheduling</p>
-                        <button className="text-[#1070FF] flex gap-2" >Read Article <BlueArrow /></button>
+                        <button className="text-[#0056D6] flex gap-2" >Read Article <BlueArrow /></button>
                     </div>
                     <div className="grid gap-3 h-28 md:h-40">
                         <span className="text-sm md:text-base text-[#1E1E1E]">8 November, 2022 . TechCabal</span>
                         <p className="font-bold text-sm md:text-2xl w-[70vw] md:w-[630px]">Platfroms for you & your friends to keep up with</p>
-                        <button className="text-[#1070FF] flex gap-2">Read article <BlueArrow /></button>
+                        <button className="text-[#0056D6] flex gap-2">Read article <BlueArrow /></button>
                     </div>
-                    <button type="button" className="bg-[#1070FF] justify-self-center  text-white w-28 h-11 md:w-40 md:h-14 flex justify-center items-center gap-3 mt-5 rounded-md">
+                    <button type="button" className="bg-[#0056D6] justify-self-center  text-white w-28 h-11 md:w-40 md:h-14 flex justify-center items-center gap-3 mt-5 rounded-md">
                         Read All <Arrow />
                     </button>
                 </div>
