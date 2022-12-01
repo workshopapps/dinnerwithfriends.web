@@ -3,7 +3,6 @@ import { useNavigate, Link } from 'react-router-dom'
 import { useForm } from "react-hook-form"
 import image from './signup_image.webp'
 import google from './google.svg'
-import nigeria from './nigeria.svg'
 import catchup from './catchup_logo.svg'
 
 const SignUp = () => {
@@ -83,7 +82,7 @@ const SignUp = () => {
         <header className=' w-full flex justify-between items-center px-4 pt-4 mt-3.5 tablet:mt-0'>
         <Link to='/'><img className='w-32 tablet:w-48' src={catchup} alt="logo of app" /></Link>
           <div className='px-1 rounded-[20px] w-29 tablet:w-35 tablet:h-10 h-[34px]  bg-blue-100 flex justify-around items-center'>
-            <img className='w-5' src={nigeria} alt="nigerian flag" />
+            
             <select className='language-select bg-blue-100 w-full font-semibold focus:outline-none text-xs tablet:text-sm' name="language" id="language">
               <option value="uk">English (UK)</option>
               <option value="us">English (US)</option>
@@ -171,10 +170,11 @@ const SignUp = () => {
             <button className=' transition ease-in duration-200 hover:bg-[#66A3FF] mt-4 text-white bg-[#0056D6] w-full h-11 rounded-lg' type="submit">{submitting ? 'Loading...' : 'Create a free account'}</button>
 
             </form>
-
+            
             <p className='my-2.5 text-center text-[#0056D6]' >Or</p>
-
-            <a href="https://catchup.hng.tech/api/v1/auth/google/url" className='flex justify-center items-center font-medium text-[#344054] w-full  border border-[#D0D5DD] h-11 p-2 rounded-lg'>
+            
+            <a href="https://catchup.hng.tech/api/v1/auth/google/url" 
+            className='flex justify-center items-center font-medium text-[#344054] w-full  border border-[#D0D5DD] h-11 p-2 rounded-lg'>
               <img className='mr-2 w-6' src={google} alt="google logo"/>
                Sign Up with Google
             </a>

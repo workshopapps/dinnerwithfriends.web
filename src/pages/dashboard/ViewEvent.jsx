@@ -6,9 +6,13 @@ import inviteeImg1 from "../../assets/img/inviteeImg1.png";
 import inviteeImg2 from "../../assets/img/inviteeImg2.png";
 import inviteeImg3 from "../../assets/img/inviteeImg3.png";
 import inviteeImg4 from "../../assets/img/inviteeImg4.png";
+import { CatchUpEventContextUse } from "../../context/CatchUpEventContext";
+import AddParticipantModal from "../../components/AddParticipantModal";
+import { BsPlus } from "react-icons/bs";
 
 const ViewEvent = () => {
   const [isActive, setIsActive] = useState(false);
+  const { setShowModal } = CatchUpEventContextUse();
 
   const invitees = [
     {
@@ -98,14 +102,24 @@ const ViewEvent = () => {
               no bring yourself here.
             </p>
           </section>
-          <aside className="text-right font-medium my-3 text-sm">
-            Agreed Date{" "}
-            <span className="bg-blue-100 text-blue-800 text-sm px-2 py-1 font-semibold rounded ml-1">
-              21st Nov. 2022
-            </span>
-          </aside>
+          <div className="flex tablet:justify-between md:justify-start my-5">
+            <button
+              onClick={() => setShowModal(true)}
+              className="bg-transparent flex items-center text-[#1070FF]"
+            >
+              <p className="mr-2 md:text-base text-sm">Add participant</p>
+              <BsPlus />
+            </button>
+            <aside className="text-right font-medium my-3 text-sm ">
+              Agreed Date
+              <span className="bg-blue-100 text-blue-800 text-sm px-2 py-1 font-semibold rounded ml-1">
+                21st Nov. 2022
+              </span>
+            </aside>
+          </div>
+
           <section className="flex flex-col justify-center">
-            <div className="max-h-[17em] overflow-y-scroll pr-4">
+            <div className="max-h-[17em] overflow-y-scroll scroll-blue-500 pr-4">
               {invitees.map((invitee) => (
                 <div
                   onClick={() => toggleShowAccordion(invitee.id)}
@@ -160,6 +174,7 @@ const ViewEvent = () => {
             </button>
           </section>
         </main>
+        <AddParticipantModal />
       </div>
     </>
   );

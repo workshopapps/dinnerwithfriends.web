@@ -29,14 +29,14 @@ const ClosedEventModal = () => {
 										</div>
 										<div className='flex justify-center'>
 											<div className='bg-[#E7F0FF] rounded-full h-[65px] w-[65px] flex justify-center items-center'>
-												<div className='bg-[#1070FF] text-white p-2 rounded-full h-[35px] w-[35px] flex justify-center items-center'>
+												<div className='bg-[#0056D6] text-white p-2 rounded-full h-[35px] w-[35px] flex justify-center items-center'>
 													<TiInfoLarge />
 												</div>
 											</div>
 										</div>
 										<div className='md:w-[70%] mx-auto mt-5 text-center'>
 											<h1 className='font-normal text-[1.1rem] mb-2 text-[#717172]'>
-												<span className='text-[#1070FF]'>Mathew Mathais.</span>{" "}
+												<span className='text-[#0056D6]'>Mathew Mathais.</span>{" "}
 												Dinner event is as reached its maximum limit of 10
 												invitees.
 											</h1>
@@ -45,7 +45,7 @@ const ClosedEventModal = () => {
 											</div>
 											<p className='font-normal text-[1rem] mb-2 text-[#717172]'>
 												Michael, Kelvin, Mary and
-												<span className='text-[#1070FF]'> 7 others.</span>
+												<span className='text-[#0056D6]'> 7 others.</span>
 											</p>
 										</div>
 									</div>

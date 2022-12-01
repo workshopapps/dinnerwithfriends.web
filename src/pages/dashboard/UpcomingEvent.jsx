@@ -72,7 +72,7 @@ const UpcomingEvent = () => {
         <div className="flex flex-col p-8 gap-y-8 mt-9 justify-center items-center border border-solid border-[#CDCDCD] bg-[#FAFAFA] lg:bg-white">
           <Button
             type="button"
-            className="font-bold text-sm lg:text-xl  gap-x-3.5 text-white bg-[#1070FF] rounded py-3 px-4 lg:px-8 outline-0"
+            className="font-bold text-sm lg:text-xl  gap-x-3.5 text-white bg-[#0056D6] rounded py-3 px-4 lg:px-8 outline-0"
           >
             <Link to="/create_event" className="flex justify-between items-center">
               <span>
@@ -99,7 +99,7 @@ const UpcomingEvent = () => {
                 <Button
                   className={`${
                     status === false
-                      ? "pb-3 border-[#1070FF] border-b-4 "
+                      ? "pb-3 border-[#0056D6] border-b-4 "
                       : ""
                   }'pb-3 outline-0 border-0 text-[#717172] bg-inherit lg:text-lg'`}
                   onClick={() => setStatus(false)}
@@ -110,7 +110,7 @@ const UpcomingEvent = () => {
               <li>
                 <Button
                   className={`${
-                    status === true ? "pb-3 border-[#1070FF] border-b-4 " : ""
+                    status === true ? "pb-3 border-[#0056D6] border-b-4 " : ""
                   }' pb-3 outline-0 border-0 text-[#717172] bg-inherit lg:text-lg'`}
                   onClick={() => setStatus(true)}
                 >

@@ -20,7 +20,7 @@
     display: flex;
     flex-direction: column;
     margin: 5rem auto;
-  } 
+  }
   .the-container {
     max-width: 800px;
     width: 100%;
@@ -65,7 +65,7 @@
   }
   .user-details .input-box input:focus,
   .user-details .input-box input:valid {
-   border-color: grey; 
+   border-color: grey;
   }
   .the_user span {
     border-radius: 100%;
@@ -97,7 +97,7 @@
     cursor: pointer;
   }
   .fullName h1 {
-    color: #1070ff;
+    color: #0056D6;
     font-family: "DM Sans";
     font-style: normal;
     font-size: 18px;
@@ -127,7 +127,7 @@
   .avatar {
     width: 70px;
   }
-  
+
   .edit_btn {
     display: flex;
     align-items: center;
@@ -135,18 +135,18 @@
     font-size: 14px;
     padding: 0.4rem 1.5rem;
     border-radius: 4px;
-    background-color: #1070ff;
+    background-color: #0056D6;
     margin-top: 0.1rem;
   }
   .edit_btn:hover {
     background-color: #2c80ff;
   }
   .edit_btn:active {
-    background-color: #1070ff;
+    background-color: #0056D6;
   }
   #main_footer {
     display: none;
-  } 
+  }
   @media (max-width: 584px) {
     #main_navbar,
     #main_footer {
@@ -154,7 +154,7 @@
     }
     #main-body{
       max-width: 95%;
-    } 
+    }
     .container {
       max-width: 700px;
     }
@@ -171,12 +171,12 @@
     .details, .date_input {
       margin-top: 5px;
     }
-    
+
   }
   @media (max-width: 1175px) {
     #main-body{
       max-width: 75%;
-    } 
+    }
   }
   @media (max-width: 983px) {
     .SettingsHeader,
@@ -189,7 +189,7 @@
     }
     #main-body{
       max-width: 80%;
-    } 
+    }
   }
   @media (max-width: 845px) {
     #main_navbar,
@@ -206,7 +206,7 @@
     }
     #main-body{
       max-width: 90%;
-    } 
+    }
   }
   @media (max-width: 745px) {
     #main_navbar,
@@ -244,7 +244,7 @@
       max-width: 80%;
       padding: 1rem;
     }
-    
+
     .input-box {
       width: 518px;
     }
@@ -260,5 +260,4 @@
   }
 
 
- 
-  
+
