@@ -63,7 +63,7 @@ jobs:
             sudo docker run -d -p 3000:3000 thefrontent:$(date +'%Y-%m-%d')
             echo "refresh the page and check"
 # @format
-# hello
+# hell
 
 name: build
 
@@ -117,7 +117,7 @@ jobs:
           envs: GITHUB_USERNAME, GITHUB_TOKEN
           script: |
             cd calendarApp/
-            docker stop $(docker ps -a -q)
+            docker stop $(docker ps -qf expose=3000)
             rm -r dinnerwithfriends.web/
             git clone https://github.com/workshopapps/dinnerwithfriends.web
             cd dinnerwithfriends.web/
