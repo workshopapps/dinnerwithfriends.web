@@ -1,28 +1,33 @@
 export const formLogic = (values) => {
 	let error = {};
-	if (!values.eventInvite) {
-		error.eventInvite = "Please type in an event invite";
+	if (!values.event_title) {
+		error.event_title = "Please type in an event invite";
 	}
-	if (!values.description) {
-		error.description = "Please type in a description";
+
+	if (!values.event_description) {
+		error.event_description = "Please type in a description";
 	}
+
 	if (!values.location) {
 		error.location = "Please type in a location";
+	}else if(!/^[A-Za-z][A-Za-z ]{2,30}$/.test(values.location)){
+        error.location = "Location is invalid. Please remove any special characters."
+    }
+
+	if (!values.event_type) {
+		error.event_type = "Please type in an eventType";
 	}
-	if (!values.eventType) {
-		error.eventType = "Please type in an eventType";
+
+	if (!values.participant_number) {
+		error.participant_number = "Please type in a number for participants";
 	}
-	if (!values.noOfParticipants) {
-		error.noOfParticipants = "Please type in a number for participants";
+
+	if (!values.start_date) {
+		error.start_date = "Please select a startDate";
 	}
-	if (!values.startDate) {
-		error.startDate = "Please select a startDate";
-	}
-	if (!values.endDate) {
-		error.endDate = "Please select an endDate";
-	}
-	if (!values.preferredDate) {
-		error.preferredDate = "Please select a preferredDate";
+
+	if (!values.end_date) {
+		error.end_date = "Please select an endDate";
 	}
 
 	return error;

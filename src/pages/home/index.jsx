@@ -14,20 +14,19 @@ const Home = () => {
   return (
     <div className="">
       <Navbar />
-
       <section className="bg-[url('assets/img/VectorsHome.png')] bg-no-repeat bg-center">
-        <div className="flex flex-row-reverse text-black mt-32 mx-20">
-          <img src={SubHome} alt="subHome" />
+        <div className="flex flex-row-reverse mt-28 mx-auto w-[13rem] md:mx-32 md:w-[80%]">
+          <img src={SubHome} alt="subHome" className="md:w-[13rem]" />
         </div>
         {/* <div className=" grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-4 lg:grid-cols-12"> */}
-        <div className="flex flex-col-reverse justify-between max-w-screen-xl px-4 mx-auto lg:flex-row">
-          <div className=" hidden lg:mt-0 lg:col-span-5 lg:flex">
+        <div className="flex flex-col-reverse justify-between max-w-screen-xl px-6 md:px-0 mx-auto lg:flex-row">
+          <div className=" hidden w-full lg:mt-0 md:flex lg:w-1/2 lg:mr-4">
             <img src={HomeImage} alt="Home" />
           </div>
-          <div className="block mt-20 lg:mt-0 lg:col-span-5 lg:hidden">
+          <div className="block w-full mt-20 lg:mt-0 md:hidden">
             <img src={Mobile} alt="Home" />
           </div>
-          <div className="mt-6">
+          <div className="mt-6 lg:w-1/2 lg:ml-4">
             <h1 className="max-w-2xl mb-4 text-4xl font-bold tracking-tight text-center leading-none md:text-5xl xl:text-6xl lg:text-left ">
               <span className="block mb-2 lg:mb-4">Make time for</span>
               <span className="block mb-2 lg:mb-4">those that really</span>
@@ -39,8 +38,8 @@ const Home = () => {
               and all in one platform that solves this problem.
             </p>
             <Link
-              to="#"
-              className="w-full inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white bg-blue-700 rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 lg:w-1/3"
+              to="/sign_up"
+              className="w-full inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white bg-[#0056D6] rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 lg:w-1/3"
             >
               Get started
               <svg

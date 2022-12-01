@@ -1,0 +1,298 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Accordion component expect accordion component to render correctly 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="w-full mx-auto tablet:flex tablet:justify-center"
+      >
+        <div
+          class=" w-full h-full bg-white tablet:w-6/12 tablet:p-3.5 mx-auto "
+        >
+          <header
+            class=" w-full flex justify-between items-center px-4 pt-4 mt-3.5 tablet:mt-0"
+          >
+            <img
+              alt="logo of app"
+              class="w-32 tablet:w-48"
+              src="catchup_logo.svg"
+            />
+            <div
+              class="px-1 rounded-[20px] w-24 tablet:w-32 tablet:h-10 h-[32px]  bg-blue-100 flex justify-around items-center"
+            >
+              <img
+                alt="nigerian flag"
+                class="w-5"
+                src="nigeria.svg"
+              />
+              <strong
+                class="text-xs tablet:text-sm"
+              >
+                English
+              </strong>
+              <img
+                alt="dropdown "
+                class="w-[12px]"
+                src="chevron.svg"
+              />
+            </div>
+          </header>
+          <div
+            class="mt-10 tablet:mt-14 px-4 w-full max-w-md mx-auto"
+          >
+            <h2
+              class="font-medium text-xl text-[#717172] tablet:text-4xl"
+            >
+              Welcome!
+            </h2>
+            <p
+              class="mt-2 text-[#424245] text-base tablet:text-xl"
+            >
+              Sign up here! Please enter your details
+            </p>
+            <form
+              class=" mt-7 text-[#4B4B4C] font-normal [&>input]:mt-2 [&>input]:w-full [&>input]:mb-3.5"
+            >
+              <div
+                class="relative w-full mb-4 "
+              >
+                <label
+                  class="pb-0"
+                  for="email"
+                >
+                  Email
+                </label>
+                <input
+                  class="focus:outline-none focus:shadow-[0px_0px_0px_4px_rgba(74,74,104,0.1)]  mt-2 w-full h-11 p-3.5 rounded-lg"
+                  name="email"
+                  placeholder="Enter your email"
+                  style="border: 1px solid #d0d5dd;"
+                  type="text"
+                />
+              </div>
+              <div
+                class="relative w-full mb-4 "
+              >
+                <label
+                  class="pb-0"
+                  for="password"
+                >
+                  Passsword
+                </label>
+                <input
+                  class="focus:outline-none focus:shadow-[0px_0px_0px_4px_rgba(74,74,104,0.1)] mt-2 w-full h-11 p-3.5 rounded-lg"
+                  name="password"
+                  placeholder="Please enter your unique password"
+                  style="border: 1px solid #d0d5dd;"
+                  type="password"
+                />
+              </div>
+              <button
+                class=" transition ease-in duration-200 hover:bg-[#66A3FF] mt-4 text-white bg-[#0056D6] w-full h-11 rounded-lg"
+                type="submit"
+              >
+                Create a free account
+              </button>
+            </form>
+            <p
+              class="my-2.5 text-center text-[#0056D6]"
+            >
+              Or
+            </p>
+            <button
+              class="flex justify-center items-center font-medium text-[#344054] w-full  border border-[#D0D5DD] h-11 p-2 rounded-lg"
+            >
+              <img
+                alt="google logo"
+                class="mr-2 w-6"
+                src="google.svg"
+              />
+              Sign Up with Google
+            </button>
+            <p
+              class=" my-8 font-normal text-center text-[#0056D6]"
+            >
+              Have an account already? Sign in for free
+            </p>
+          </div>
+        </div>
+        <div
+          class="hidden tablet:block tablet:w-6/12 h-[670px] bg-cover bg-gray-100"
+        />
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="w-full mx-auto tablet:flex tablet:justify-center"
+    >
+      <div
+        class=" w-full h-full bg-white tablet:w-6/12 tablet:p-3.5 mx-auto "
+      >
+        <header
+          class=" w-full flex justify-between items-center px-4 pt-4 mt-3.5 tablet:mt-0"
+        >
+          <img
+            alt="logo of app"
+            class="w-32 tablet:w-48"
+            src="catchup_logo.svg"
+          />
+          <div
+            class="px-1 rounded-[20px] w-24 tablet:w-32 tablet:h-10 h-[32px]  bg-blue-100 flex justify-around items-center"
+          >
+            <img
+              alt="nigerian flag"
+              class="w-5"
+              src="nigeria.svg"
+            />
+            <strong
+              class="text-xs tablet:text-sm"
+            >
+              English
+            </strong>
+            <img
+              alt="dropdown "
+              class="w-[12px]"
+              src="chevron.svg"
+            />
+          </div>
+        </header>
+        <div
+          class="mt-10 tablet:mt-14 px-4 w-full max-w-md mx-auto"
+        >
+          <h2
+            class="font-medium text-xl text-[#717172] tablet:text-4xl"
+          >
+            Welcome!
+          </h2>
+          <p
+            class="mt-2 text-[#424245] text-base tablet:text-xl"
+          >
+            Sign up here! Please enter your details
+          </p>
+          <form
+            class=" mt-7 text-[#4B4B4C] font-normal [&>input]:mt-2 [&>input]:w-full [&>input]:mb-3.5"
+          >
+            <div
+              class="relative w-full mb-4 "
+            >
+              <label
+                class="pb-0"
+                for="email"
+              >
+                Email
+              </label>
+              <input
+                class="focus:outline-none focus:shadow-[0px_0px_0px_4px_rgba(74,74,104,0.1)]  mt-2 w-full h-11 p-3.5 rounded-lg"
+                name="email"
+                placeholder="Enter your email"
+                style="border: 1px solid #d0d5dd;"
+                type="text"
+              />
+            </div>
+            <div
+              class="relative w-full mb-4 "
+            >
+              <label
+                class="pb-0"
+                for="password"
+              >
+                Passsword
+              </label>
+              <input
+                class="focus:outline-none focus:shadow-[0px_0px_0px_4px_rgba(74,74,104,0.1)] mt-2 w-full h-11 p-3.5 rounded-lg"
+                name="password"
+                placeholder="Please enter your unique password"
+                style="border: 1px solid #d0d5dd;"
+                type="password"
+              />
+            </div>
+            <button
+              class=" transition ease-in duration-200 hover:bg-[#66A3FF] mt-4 text-white bg-[#0056D6] w-full h-11 rounded-lg"
+              type="submit"
+            >
+              Create a free account
+            </button>
+          </form>
+          <p
+            class="my-2.5 text-center text-[#0056D6]"
+          >
+            Or
+          </p>
+          <button
+            class="flex justify-center items-center font-medium text-[#344054] w-full  border border-[#D0D5DD] h-11 p-2 rounded-lg"
+          >
+            <img
+              alt="google logo"
+              class="mr-2 w-6"
+              src="google.svg"
+            />
+            Sign Up with Google
+          </button>
+          <p
+            class=" my-8 font-normal text-center text-[#0056D6]"
+          >
+            Have an account already? Sign in for free
+          </p>
+        </div>
+      </div>
+      <div
+        class="hidden tablet:block tablet:w-6/12 h-[670px] bg-cover bg-gray-100"
+      />
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

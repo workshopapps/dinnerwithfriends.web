@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IoCalendarOutline } from "react-icons/io5";
 import { SlArrowRight } from "react-icons/sl";
+import { useNavigate } from "react-router";
 import { CatchUpEventContextUse } from "../../context/CatchUpEventContext";
 import { formLogic } from "../../data/createEventErrorLogic";
+import userServices from "../../services/userServices";
 import Button from "../Button";
 import SingleCalendar from "../SingleCalendar/SingleCalendar";
+import dateTimeForCalender from "../../helpers/DateTimeConverter";
 
 const CreateEventForm = () => {
 	const [showCalendar, setShowCalendar] = useState(false);
@@ -13,13 +16,51 @@ const CreateEventForm = () => {
 	const { startDate, endDate, preferredDate, setFormValues, formValues } =
 		CatchUpEventContextUse();
 
-	const [errors, setErrors] = useState({});
+	const [minimumDate, setMinimumDate] = useState('')
+	const [maximumDate, setMaximumDate] = useState('')
+
+	useEffect(() => {
+		const start = dateTimeForCalender(startDate, "00:00")
+		const end = dateTimeForCalender(endDate, "00:00")
+		setMinimumDate(start)
+		setMaximumDate(end)
+	}, [startDate, endDate])
+
+	const navigate = useNavigate();
+
+	const [errors, setErrors] = useState({
+		event_title: "",
+		event_description: "",
+		location: "",
+		event_type: "",
+		participant_number: "",
+		start_date: "",
+		end_date: "",
+		host_prefered_time: "",
+	});
 
 	const handleSubmit = () => {
 		setErrors(formLogic(formValues));
-		setFormValues({ ...formValues, preferredDate, endDate, startDate });
-		console.log(formValues);
+		setFormValues({
+			...formValues,
+			host_prefered_time: preferredDate,
+			end_date: endDate,
+			start_date: startDate,
+		});
 	};
+
+	const submitForm = async (data) => {
+		const result = await userServices.createEvents(data);
+		if (result.status === "success") {
+			navigate("/event_summary");
+		}
+	};
+	useEffect(() => {
+		if (Object.keys(errors).length === 0) {
+			submitForm(formValues);
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [errors, navigate]);
 
 	return (
 		<div className='w-full py-8'>
@@ -33,15 +74,15 @@ const CreateEventForm = () => {
 						required
 						id='title'
 						type='text'
-						value={formValues.eventInvite}
+						value={formValues.event_title}
 						onChange={(e) =>
-							setFormValues({ ...formValues, eventInvite: e.target.value })
+							setFormValues({ ...formValues, event_title: e.target.value })
 						}
-						placeholder='Hangout With the Boys'
+						placeholder='Time out with friends'
 						className='p-3 bg-white border border-[#0000004D] text-[#151517] placeholder:text-[#B6B6B6] rounded-[4px] text-sm mt-3 outline-none'
 					/>
 					<small className='text-red-600 text-[10px] mt-2'>
-						{errors?.eventInvite}
+						{errors?.event_title}
 					</small>
 				</div>
 				<div className='flex flex-col mb-4'>
@@ -51,15 +92,18 @@ const CreateEventForm = () => {
 					<textarea
 						required
 						id='desc'
-						value={formValues.description}
+						value={formValues.event_description}
 						onChange={(e) =>
-							setFormValues({ ...formValues, description: e.target.value })
+							setFormValues({
+								...formValues,
+								event_description: e.target.value,
+							})
 						}
 						placeholder='This Event should be a wonderful hangout. I will want everyone to be available for this event. Let me know when you will be free from the link I will send to you.'
 						className='p-3 bg-white border border-[#0000004D] text-[#151517] placeholder:text-[#B6B6B6]  rounded-[4px] text-sm mt-3 outline-none h-[120px]'
 					/>
 					<small className='text-red-600 text-[10px] mt-2'>
-						{errors?.description}{" "}
+						{errors?.event_description}{" "}
 					</small>
 				</div>
 				<div className='flex flex-col mb-4'>
@@ -73,12 +117,13 @@ const CreateEventForm = () => {
 							setFormValues({ ...formValues, location: e.target.value })
 						}
 						id='location'
+						pattern='[A-Za-z][A-Za-z ]{2,30}$'
 						type='text'
-						placeholder='Lagos, Nigeria'
+						placeholder='Sheraton Hotels'
 						className='p-3 bg-white border border-[#0000004D] text-[#151517] placeholder:text-[#B6B6B6] rounded-[4px] text-sm mt-3 outline-none'
 					/>
 					<small className='text-red-600 text-[10px] mt-2'>
-						{errors?.location}{" "}
+						{errors?.location}
 					</small>
 				</div>
 				<div className='flex flex-col mb-4'>
@@ -87,17 +132,17 @@ const CreateEventForm = () => {
 					</label>
 					<input
 						required
-						value={formValues.eventType}
+						value={formValues.event_type}
 						onChange={(e) =>
-							setFormValues({ ...formValues, eventType: e.target.value })
+							setFormValues({ ...formValues, event_type: e.target.value })
 						}
 						id='eventType'
 						type='text'
-						placeholder='Beach Hangout'
+						placeholder='Dinner'
 						className='p-3 bg-white border border-[#0000004D] text-[#151517] placeholder:text-[#B6B6B6] rounded-[4px] text-sm mt-3 outline-none'
 					/>
 					<small className='text-red-600 text-[10px] mt-2'>
-						{errors?.eventType}{" "}
+						{errors?.event_type}{" "}
 					</small>
 				</div>
 				<div className='flex flex-col mb-4'>
@@ -107,20 +152,23 @@ const CreateEventForm = () => {
 					<input
 						required
 						id='noOfParticipants'
-						value={formValues.noOfParticipants}
+						value={formValues.participant_number}
 						onChange={(e) =>
-							setFormValues({ ...formValues, noOfParticipants: e.target.value })
+							setFormValues({
+								...formValues,
+								participant_number: e.target.value,
+							})
 						}
 						type='number'
 						placeholder='5'
 						className='p-3 bg-white border border-[#0000004D] text-[#151517] placeholder:text-[#B6B6B6] rounded-[4px] text-sm mt-3 outline-none w-fit'
 					/>
 					<small className='text-red-600 text-[10px] mt-2'>
-						{errors?.noOfParticipants}{" "}
+						{errors?.participant_number}{" "}
 					</small>
 				</div>
-				<div className='flex flex-col md:flex-row md:gap-5 lg:gap-10 w-full'>
-					<div className='flex flex-col mb-4 flex-[1]'>
+				<div className='flex flex-col md:flex-row md:gap-[1.25rem]  w-full'>
+					<div className='flex flex-col mb-4 flex-[1] relative'>
 						<label htmlFor='startDate' className='text-sm font-semibold'>
 							Start Date
 						</label>
@@ -141,12 +189,11 @@ const CreateEventForm = () => {
 							</span>
 						</div>
 						<small className='text-red-600 text-[10px] mt-2'>
-							{errors?.startDate}
+							{errors?.start_date}
 						</small>
-
 						<div
 							className={`w-full transition-all duration-150 ${
-								showCalendar ? "flex" : "hidden"
+								showCalendar ? "flex absolute top-[75px] left-0 right-0 z-10" : "hidden"
 							}`}>
 							<SingleCalendar
 								id='startDate'
@@ -155,8 +202,7 @@ const CreateEventForm = () => {
 							/>
 						</div>
 					</div>
-
-					<div className='flex flex-col mb-4 flex-[1]'>
+					<div className='flex flex-col mb-4 flex-[1] relative'>
 						<label htmlFor='endDate' className='text-sm font-semibold'>
 							End Date
 						</label>
@@ -177,12 +223,12 @@ const CreateEventForm = () => {
 							</span>
 						</div>
 						<small className='text-red-600 text-[10px] mt-2'>
-							{errors?.endDate}
+							{errors?.end_date}
 						</small>
 
 						<div
 							className={`w-full transition-all duration-150 ${
-								showCalendar2 ? "flex" : "hidden"
+								showCalendar2 ? "flex absolute top-[75px] left-0 right-0 z-10" : "hidden"
 							}`}>
 							<SingleCalendar
 								id='endDate'
@@ -192,8 +238,7 @@ const CreateEventForm = () => {
 						</div>
 					</div>
 				</div>
-
-				<div className='flex flex-col mb-4'>
+				<div className='flex flex-col mb-4 relative'>
 					<label htmlFor='preferredDate' className='text-sm font-semibold'>
 						Preferred Date & Time
 					</label>
@@ -214,27 +259,29 @@ const CreateEventForm = () => {
 						</span>
 					</div>
 					<small className='text-red-600 text-[10px] mt-2'>
-						{errors?.preferredDate}{" "}
+						{errors?.host_prefered_time}{" "}
 					</small>
-
 					<div
 						className={`md:w-[50%] transition-all duration-150 ${
-							showCalendar3 ? "flex" : "hidden"
+							showCalendar3 ? "flex absolute top-[75px] left-0 right-0 z-10" : "hidden"
 						}`}>
 						<SingleCalendar
 							id='preferredDate'
 							addTime
 							setShowCalendar={setShowCalendar3}
 							showCalendar={showCalendar3}
+							minDate={minimumDate}
+							maxDate={maximumDate}
 						/>
 					</div>
 				</div>
 
 				<div className='w-full flex justify-center mt-6'>
 					<Button
+						children
 						type='submit'
 						onClick={handleSubmit}
-						className='flex items-center text-xs font-medium px-6 py-2 bg-[#1070FF] w-fit text-white rounded-[4px]'>
+						className='flex items-center text-xs font-medium px-6 py-2 bg-[#0056D6] w-fit text-white rounded-[4px]'>
 						<span>Next</span>
 						<span className='text-[8px] ml-2'>
 							<SlArrowRight />

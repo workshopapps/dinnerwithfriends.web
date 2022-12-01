@@ -4,7 +4,7 @@ import TimePicker from "react-time-picker";
 import { CatchUpEventContextUse } from "../../context/CatchUpEventContext";
 import "./SingleCalendar.css";
 
-const SingleCalendar = ({ setShowCalendar, showCalendar, id, addTime }) => {
+const SingleCalendar = ({minDate, maxDate, setShowCalendar, showCalendar, id, addTime }) => {
 	const [dateValue, setDateValue] = useState(new Date());
 	const [time, setTime] = useState("7:00");
 	const {
@@ -31,17 +31,23 @@ const SingleCalendar = ({ setShowCalendar, showCalendar, id, addTime }) => {
 		if (id === "preferredDate") {
 			setPreferredDate(`${date} - ${time}`);
 		}
-		setFormValues({ ...formValues, startDate, endDate, preferredDate });
-
+		setFormValues({
+			...formValues,
+			host_prefered_time: preferredDate,
+			end_date: endDate,
+			start_date: startDate,
+		});
 	};
 
 	return (
-		<div className='text-xs rounded-[8px] border border-[#D1D7DA] p-1'>
+		<div className='text-xs rounded-[8px] border border-[#D1D7DA]'>
 			<Calendar
 				calendarType='US'
 				onChange={(e) => {
 					setDateValue(e);
 				}}
+				maxDate={maxDate}
+				minDate={minDate}
 				value={dateValue}
 			/>
 			<div className='px-10 pb-8'>
@@ -64,7 +70,7 @@ const SingleCalendar = ({ setShowCalendar, showCalendar, id, addTime }) => {
 							setDT();
 							setShowCalendar(!showCalendar);
 						}}
-						className={`rounded-[4px] ${"bg-[#1070FF]"} p-2 text-white`}>
+						className={`rounded-[4px] ${"bg-[#0056D6]"} p-2 text-white`}>
 						Add date
 					</button>
 				</div>

@@ -25,11 +25,19 @@ function Features() {
             </p>
             <Link
               to="/sign_up"
+ fec-59-create-static-pages-navbar-ui-for-mobile
               className="bg-blue-600 mt-5 text-white px-5 py-2  rounded  
 flex flex-row items-center justify-between space-x-5 "
             >
               <p>Get Started</p>
               <img className="w-3" src={Arrow} />{" "}
+
+              className="bg-blue-600 mt-5 text-white px-5 py-2  rounded
+flex flex-row items-center justify-between space-x-5 "
+            >
+              <p>Get Started</p>
+              <img className="w-3" src={Arrow} alt="arrow" />{" "}
+ dev
             </Link>
           </div>
         </section>
@@ -44,7 +52,11 @@ flex flex-row items-center justify-between space-x-5 "
             </p>
             <Link
               to="/sign_up"
+ fec-59-create-static-pages-navbar-ui-for-mobile
               className="bg-blue-600 mt-5 text-white px-5 py-2  rounded  
+
+              className="bg-blue-600 mt-5 text-white px-5 py-2  rounded
+ dev
 flex flex-row items-center justify-between space-x-5 "
             >
               <p>Get Started</p>
@@ -68,11 +80,19 @@ flex flex-row items-center justify-between space-x-5 "
             </p>
             <Link
               to="/sign_up"
+ fec-59-create-static-pages-navbar-ui-for-mobile
               className="bg-blue-800 mt-5 text-white px-5 py-2  rounded  
 flex flex-row items-center justify-between space-x-5 "
             >
               <p>Get Started</p>
               <img className="w-3" src={Arrow} />{" "}
+
+              className="bg-blue-800 mt-5 text-white px-5 py-2  rounded
+flex flex-row items-center justify-between space-x-5 "
+            >
+              <p>Get Started</p>
+              <img className="w-3" src={Arrow} alt="arrow"/>{" "}
+ dev
             </Link>
           </div>
         </section>
