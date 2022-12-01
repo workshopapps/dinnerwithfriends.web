@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react"; 
 import google from "../../assets/img/google.png";
 import elipse from "../../assets/img/elipse.png";
 import elipse2 from "../../assets/img/elipse2.png";
@@ -16,9 +16,10 @@ export default function Howitwork2() {
         <img src={video} alt="video" className=" mt-4 w-full object-cover" />
       </div>
 
-      <section className=" pb-32 max-md:py-20 max-sm:py-20 ">
-        <div className=" grid grid-cols-2 gap-5 px-24 max-md:flex flex-col max-md:px-8 ">
-          <div className="flex items-center py-8 border border-gray-200 max-w[538px]  max-md:flex-col mx-auto max-md:text-center">
+      <section className=" pb-10 max-md:py-20 max-md:flex max-md:flex-col ">
+        <div className=" grid grid-cols-1 gap-5 px-2 max-md:px-8 lg:grid-cols-2">
+          <div className="flex flex-col  items-center border border-gray-300 px-4
+           py-8 max-w[538px]  mx-auto text-center  lg:text-start lg:flex-row  lg:py-7">
             <img src={google} className="p-6 w-40 h-40 " alt="img" />
             <div className="flex flex-col w-80 ">
               <h1 className="text-lg text-blue-700 font-bold">
@@ -31,7 +32,7 @@ export default function Howitwork2() {
               </p>
             </div>
           </div>
-          <div className="flex items-center border border-gray-300 py-8 max-w[538px] max-md:flex-col mx-auto max-md:text-center">
+          <div className="flex flex-col  items-center border border-gray-300 px-4 py-8 max-w[538px]  mx-auto text-center lg:text-start lg:flex-row lg:py-7 ">
             <img src={elipse} className="p-6 w-40 h-40 " alt="img" />
             <div className="flex flex-col w-80 ">
               <h1 className="text-lg text-blue-700 font-bold">
@@ -45,7 +46,7 @@ export default function Howitwork2() {
               </p>
             </div>
           </div>
-          <div className="flex items-center py-8 border border-gray-300 max-w[538px] max-md:flex-col mx-auto max-md:text-center">
+          <div className="flex flex-col  items-center border border-gray-300 px-4 py-8 max-w[538px]  mx-auto text-center lg:text-start lg:flex-row  lg:py-7">
             <img src={HitIcon} className="p-6  w-40 h-40" alt="img" />
             <div className="flex flex-col w-80 ">
               <h1 className="text-lg text-blue-700 font-bold">
@@ -58,7 +59,7 @@ export default function Howitwork2() {
               </p>
             </div>
           </div>
-          <div className="flex items-center py-8 border border-gray-300 max-w[538px] max-md:flex-col mx-auto max-md:text-center">
+          <div className="flex flex-col  items-center border border-gray-300 px-4 py-8 max-w[538px]  mx-auto text-center lg:text-start lg:flex-row  lg:py-7">
             <img src={elipse2} className="p-6 w-40 h-40 " alt="img" />
             <div className="flex flex-col w-80 ">
               <h1 className="text-lg text-blue-700 font-bold">
@@ -76,9 +77,9 @@ export default function Howitwork2() {
 
         
       </section>
-      <div className=' flex justify-between pb-32 max-md:py-20 max-md:flex-col max-md:p-4 max-sm:py-20'>
-        <div className=' '>
-          <h1 className='text-6xl text-blue-700 font-bold max-md:text-base' >Still have questions ?</h1>
+      <div className=' flex justify-between px-3 pb-10 py-20 flex-col lg:flex-row'>
+        <div>
+          <h1 className='text-5xl text-blue-700 font-bold max-md:text-base' >Still have questions ?</h1>
           <p className='text-base py-3 max-md:text-start max-md:text-base '>Send us any questions you may have about Catch Up 
             and we’ll 
             <br/> get back to you quickly.
@@ -86,9 +87,9 @@ export default function Howitwork2() {
         </div>
         <div>
           <form >
-            <div >
-            <input className=' border border-gray-300 p-4 mr-10 rounded-lg max-md:mr-3 max-md:p-3' type='text' placeholder='Firstname'/>
-            <input className=' border border-gray-300 p-4 rounded-lg max-md:p-3' type='text' placeholder='Lastname'/>
+            <div className="flex"  >
+            <input className=' border border-gray-300 p-3 mr-3 w-[50%] rounded-lg lg:mr-5 lg:p-4 ' type='text' placeholder='Firstname'/>
+            <input className=' border border-gray-300 p-3  w-[50%] rounded-lg  lg:p-4 ' type='text' placeholder='Lastname'/>
             </div>
             <input className='border border-gray-300 p-4 w-full mt-6 rounded-lg 'type='email' placeholder='olivia@untitledui.com'/>
                      <textarea className=' border border-gray-300 pb-20 pl-3  pt-3 mt-5 w-full rounded-lg' placeholder='Enter a description...'/>

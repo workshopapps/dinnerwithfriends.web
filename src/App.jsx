@@ -12,6 +12,7 @@ import ContactUs from "./pages/contactUs";
 import ProfilePage from "./pages/settingsPage/profilePage";
 import ForgetPassword from "./pages/ForgetPassword/index";
 import ResetLink from "./pages/ForgetPassword/LinkReset";
+import ResetPassword from "./pages/ForgetPassword/ResetPassword";
 import Policy from "./pages/policy";
 import Error404 from "./pages/error404";
 import HowItWorks from "./pages/howItWorks/HowItWorks";
@@ -26,6 +27,7 @@ import EventSummary from "./pages/dashboard/EventSummary";
 import UpcomingEvent from "./pages/dashboard/UpcomingEvent";
 import Features from "./pages/Features-page/features";
 import HelpRoutes from "./pages/helpCenter/helpRoutes";
+
 import AboutUsPage from "./pages/aboutUs";
 
 function App() {
@@ -40,7 +42,7 @@ function App() {
         <Route path="/invitee" element={<Invitee />} />
         <Route path="/sign_in" element={<SignIn />} />
         <Route path="/sign_up" element={<SignUp />} />
-        <Route path="/view_event" element={<ViewEvent />} />
+        <Route path="/view_event/:id" element={<ViewEvent />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/policy" element={<Policy />} />
         <Route path="/howItWorks" element={<HowItWorks />} />
@@ -59,8 +61,11 @@ function App() {
         <Route path="/forgot_password" element={<ForgetPassword />} />
         <Route path="/reset_link" element={<ResetLink />} />
         <Route path="*" element={<Error404 />} />
+<<<<<<<<< Temporary merge branch 1
         <Route path="/help/*" element={<HelpRoutes />} />
+=========
         <Route path="/aboutUs" element={<AboutUsPage />} />
+>>>>>>>>> Temporary merge branch 2
       </Routes>
     </div>
   );
