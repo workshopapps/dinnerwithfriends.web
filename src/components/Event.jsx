@@ -33,7 +33,7 @@ const Event = ({id, status, event_title, event_description, final_event_date, pa
             <span className='w-4 h-4'>
               <img src={calendery} alt="calender" />
             </span>
-            <span className='font-medium text-[10px] text-[#1070FF] lg:font-bold text-sm'>{final_event_date === null ? "Not decided" : final_event_date }</span>
+            <span className='font-medium text-[10px] text-[#0056D6] lg:font-bold text-sm'>{final_event_date === null ? "Not decided" : final_event_date }</span>
           </div>
           <div className='flex items-center gap-x-2.5'>
             <span className='w-4 h-4'>

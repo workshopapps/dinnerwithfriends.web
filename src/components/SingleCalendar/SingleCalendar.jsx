@@ -70,7 +70,7 @@ const SingleCalendar = ({minDate, maxDate, setShowCalendar, showCalendar, id, ad
 							setDT();
 							setShowCalendar(!showCalendar);
 						}}
-						className={`rounded-[4px] ${"bg-[#1070FF]"} p-2 text-white`}>
+						className={`rounded-[4px] ${"bg-[#0056D6]"} p-2 text-white`}>
 						Add date
 					</button>
 				</div>
