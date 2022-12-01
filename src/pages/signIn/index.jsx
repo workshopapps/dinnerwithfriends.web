@@ -3,8 +3,6 @@ import { useNavigate, Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import signInImage from "../../assets/img/Rectangle 254.png";
 import userServices from "../../services/userServices";
-import Logo from "../../components/Logo";
-
 
 const SignIn = () => {
   const {

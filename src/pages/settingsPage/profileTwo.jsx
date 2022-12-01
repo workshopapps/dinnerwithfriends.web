@@ -1,6 +1,7 @@
 import React from "react";
 import { MdOutlineArrowBack } from "react-icons/md";
 import avatar from "../../assets/img/Avatar.png";
+import SettingsHeader from "../../components/settingsPage/setHeader";
 import SettingsFooter from "../../components/settingsPage/setFooter";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
