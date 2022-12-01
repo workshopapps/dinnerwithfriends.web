@@ -13,6 +13,11 @@ const SignIn = () => {
   const [isLoggedIn, setIsloggedIn] = useState(false)
   const [invalidCredentials, setInvalidCredentials] = useState(false)
   const navigate = useNavigate();
+  const [passwordShown, setPasswordShown] = useState(false);
+
+  const togglePassword = () => {
+    setPasswordShown(!passwordShown);
+  };
 
   const onSubmit = async (data) => {
     setIsSubmit(true)
@@ -54,20 +59,19 @@ const SignIn = () => {
                 <span className="font-bold text-3xl lg:text-5xl ml-1">Up</span>
               </Link>
               </div>
-               <div className='px-1 rounded-[20px] w-29 tablet:w-35 tablet:h-10 h-[34px]  bg-blue-100 flex justify-around items-center'>
-            <img className='w-5' src={nigeriaFlag} alt="nigerian flag" />
-            <select className='language-select bg-blue-100 w-full font-semibold focus:outline-none text-xs tablet:text-sm' name="language" id="language">
-              <option value="uk">English (UK)</option>
-              <option value="us">English (US)</option>
-            </select>
-
-          </div>
+              <div className='px-1 rounded-[20px] w-29 tablet:w-35 tablet:h-10 h-[34px]  bg-blue-100 flex justify-around items-center'>
+                <img className='w-5' src={nigeriaFlag} alt="nigerian flag" />
+                <select className='language-select bg-blue-100 w-full font-semibold focus:outline-none text-xs tablet:text-sm' name="language" id="language">
+                  <option value="uk">English (UK)</option>
+                  <option value="us">English (US)</option>
+                </select>
+              </div>
             </div>
             <div className="px-2 lg:px-14 mt-10 lg:mt-14">
               <h2 className="text-4xl font-bold text-center text-blue-600 mb-10">
                 Sign In
               </h2>
-              <h3 className="font-medium text-xl lg:text-4xl font-bold text-gray-600 ">
+              <h3 className="text-xl lg:text-4xl font-bold text-gray-600 ">
                 Welcome!
               </h3>
               <p className="sm:text-base lg:text-xl text-gray-600 mb-8 ">
@@ -96,25 +100,32 @@ const SignIn = () => {
                 />
                 <p className="text-red-500 text-sm ">{errors.email?.message}</p>
 
-                <label className="pb-0">Password</label>
-                <input
-                  className="p-2 rounded-xl border"
-                  type="password"
-                  name="password"
-                  id="password"
-                  placeholder="Enter your password"
-                  {...register("password", {
-                    required: "Password is required",
-                    minLength: {
-                      value: 9,
-                      message: "Password must be at least 9 characters",
-                    },
-                    maxLength: {
-                      value: 30,
-                      message: "Password cannot exceed more than 30 characters",
-                    },
-                  })}
-                />
+                <div className=" flex flex-col gap-4 relative">
+                  <label className="pb-0">Password</label>
+                  <input
+                    className="relative p-2 rounded-xl border"
+                    type={passwordShown ? "text" : "password"} 
+                    name="password"
+                    id="password"
+                    placeholder="Enter your password"
+                    {...register("password", {
+                      required: "Password is required",
+                      minLength: {
+                        value: 9,
+                        message: "Password must be at least 9 characters",
+                      },
+                      maxLength: {
+                        value: 30,
+                        message: "Password cannot exceed more than 30 characters",
+                      },
+                    })}
+                  />
+                  <span 
+                    className='absolute bottom-4 right-3 cursor-pointer' 
+                    onClick={togglePassword}>
+                      {passwordShown ?  <FiEyeOff /> : <FiEye />}
+                  </span>
+                </div>
 
                 <p className="text-red-500 text-sm">
                   {errors.password?.message}
@@ -134,7 +145,7 @@ const SignIn = () => {
                       Remember for 30days
                     </label>
                   </div>
-                  <div className="font-bold text-xs lg:text-base">
+                  <div className="text-[#0056D6] text-xs lg:text-base">
                     <Link to="/forgot_password">Forgot password?</Link>
                   </div>
                 </div>
