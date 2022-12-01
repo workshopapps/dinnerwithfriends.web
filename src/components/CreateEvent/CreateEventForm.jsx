@@ -35,12 +35,10 @@ const CreateEventForm = () => {
 			end_date: endDate,
 			start_date: startDate,
 		});
-		console.log(formValues);
 	};
 
 	const submitForm = async (data) => {
 		const result = await userServices.createEvents(data);
-		console.log(result);
 		if (result.status === "success") {
 			navigate("/event_summary");
 		}
