@@ -6,7 +6,7 @@ const Navbar = () => {
     <nav className="bg-white px-2 sm:px-4 py-2.5 fixed w-full z-20 top-0 left-0 border-b border-white">
       <div className="container flex flex-wrap items-center justify-between mx-auto">
         <Link to="/" className="flex items-center">
-          <span className="self-center text-blue-700 text-3xl font-semibold whitespace-nowrap ">
+          <span className="self-center text-[#0056D6] text-3xl font-semibold whitespace-nowrap ">
             Catch
           </span>
           <span className="self-center text-black text-3xl font-semibold whitespace-nowrap">
@@ -17,7 +17,7 @@ const Navbar = () => {
           <Link to="/sign_up">
             <button
               type="button"
-              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              className="text-white bg-[#0056D6] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-[#0056D6] dark:focus:ring-blue-800"
             >
               Sign up
             </button>
@@ -53,7 +53,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="/howItWorks"
-                className="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white"
+                className="block py-2 pl-3 pr-4 text-white bg-[#0056D6] rounded md:bg-transparent md:text-[#0056D6] md:p-0 dark:text-white"
                 aria-current="page"
               >
                 How it works
@@ -62,7 +62,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="/error404"
-                className="block py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 "
+                className="block py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#0056D6] md:p-0 "
               >
                 Blog
               </Link>
@@ -70,7 +70,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="/error404"
-                className="flex py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 "
+                className="flex py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#0056D6] md:p-0 "
               >
                 Company
                 <svg
@@ -92,7 +92,7 @@ const Navbar = () => {
                 fro-17-features-page
                 to="/features"
                 dev
-                className="block py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 "
+                className="block py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#0056D6] md:p-0 "
               >
                 Features
               </Link>

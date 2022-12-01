@@ -1,4 +1,4 @@
-// import React from "react"; 
+// import React from "react";
 import google from "../../assets/img/google.png";
 import elipse from "../../assets/img/elipse.png";
 import elipse2 from "../../assets/img/elipse2.png";
@@ -22,7 +22,7 @@ export default function Howitwork2() {
            py-8 max-w[538px]  mx-auto text-center  lg:text-start lg:flex-row  lg:py-7">
             <img src={google} className="p-6 w-40 h-40 " alt="img" />
             <div className="flex flex-col w-80 ">
-              <h1 className="text-lg text-blue-700 font-bold">
+              <h1 className="text-lg text-[#0056D6] font-bold">
                 Sync with google calender
               </h1>
               <p className="max-sm:text-center">
@@ -35,13 +35,13 @@ export default function Howitwork2() {
           <div className="flex flex-col  items-center border border-gray-300 px-4 py-8 max-w[538px]  mx-auto text-center lg:text-start lg:flex-row lg:py-7 ">
             <img src={elipse} className="p-6 w-40 h-40 " alt="img" />
             <div className="flex flex-col w-80 ">
-              <h1 className="text-lg text-blue-700 font-bold">
+              <h1 className="text-lg text-[#0056D6] font-bold">
                 Create an account
               </h1>
               <p className="max-sm:text-center">
                 {" "}
-                You can easily create an account with your 
-                mobile number We will send you an SMS to confirm your 
+                You can easily create an account with your
+                mobile number We will send you an SMS to confirm your
                 number and then you can start creatcreating your hangout.
               </p>
             </div>
@@ -49,12 +49,12 @@ export default function Howitwork2() {
           <div className="flex flex-col  items-center border border-gray-300 px-4 py-8 max-w[538px]  mx-auto text-center lg:text-start lg:flex-row  lg:py-7">
             <img src={HitIcon} className="p-6  w-40 h-40" alt="img" />
             <div className="flex flex-col w-80 ">
-              <h1 className="text-lg text-blue-700 font-bold">
+              <h1 className="text-lg text-[#0056D6] font-bold">
               Hit the “+” icon to start an invitation
               </h1>
               <p className="max-sm:text-center">
                 {" "}
-                Once you’re in the app, all you have to do is hit 
+                Once you’re in the app, all you have to do is hit
                 the ‘+’ icon to start adding the details of your next get together.
               </p>
             </div>
@@ -62,26 +62,26 @@ export default function Howitwork2() {
           <div className="flex flex-col  items-center border border-gray-300 px-4 py-8 max-w[538px]  mx-auto text-center lg:text-start lg:flex-row  lg:py-7">
             <img src={elipse2} className="p-6 w-40 h-40 " alt="img" />
             <div className="flex flex-col w-80 ">
-              <h1 className="text-lg text-blue-700 font-bold">
-              Add invitees from your contacts 
+              <h1 className="text-lg text-[#0056D6] font-bold">
+              Add invitees from your contacts
               </h1>
               <p className="max-sm:text-center">
                 {" "}
-                You can add as many invitees from your contact list and then finalize on your gathering. Each person will be able to 
+                You can add as many invitees from your contact list and then finalize on your gathering. Each person will be able to
                   see your get together details, they can accept or decline requests
               </p>
             </div>
           </div>
-          
+
         </div>
 
-        
+
       </section>
       <div className=' flex justify-between px-3 pb-10 py-20 flex-col lg:flex-row'>
         <div>
-          <h1 className='text-5xl text-blue-700 font-bold max-md:text-base' >Still have questions ?</h1>
-          <p className='text-base py-3 max-md:text-start max-md:text-base '>Send us any questions you may have about Catch Up 
-            and we’ll 
+          <h1 className='text-5xl text-[#0056D6] font-bold max-md:text-base' >Still have questions ?</h1>
+          <p className='text-base py-3 max-md:text-start max-md:text-base '>Send us any questions you may have about Catch Up
+            and we’ll
             <br/> get back to you quickly.
 </p>
         </div>
@@ -93,8 +93,8 @@ export default function Howitwork2() {
             </div>
             <input className='border border-gray-300 p-4 w-full mt-6 rounded-lg 'type='email' placeholder='olivia@untitledui.com'/>
                      <textarea className=' border border-gray-300 pb-20 pl-3  pt-3 mt-5 w-full rounded-lg' placeholder='Enter a description...'/>
-                     <button className='w-full text-white bg-blue-700 rounded-lg p-3 '>Send</button>
-                     
+                     <button className='w-full text-white bg-[#0056D6] rounded-lg p-3 '>Send</button>
+
                       </form>
         </div>
       </div>
