@@ -124,7 +124,7 @@ const EventSummary = () => {
           <Link to="/dashboard/upcoming_events" className="text-xl font-semibold">
             Back
           </Link>
-          <Link to={'/create_event'} className="rounded flex md:px-6 px-4 py-2.5 bg-[#0056D6] text-white items-center">
+          <Link to={'/create_event'} className="rounded flex md:px-6 px-4 py-2.5 bg-[#1070FF] text-white items-center">
             <p className="md:text-xl text-base font-medium md:mr-2">
               Send invite
             </p>

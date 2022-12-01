@@ -26,13 +26,25 @@
   padding: 1rem;
 }
 .theCreateEventContainerLinks {
+<<<<<<< HEAD
+  /* display: none; */
+=======
   display: none;
+>>>>>>> bc17d2e15654f702cfba459a10f2c5497fa31b70
   flex-direction: column;
   align-items: flex-start;
   padding: 1rem;
   gap: 1rem;
   background-color: #fff;
   width: 100%;
+<<<<<<< HEAD
+  display: flex;
+  position: absolute;
+  z-index: 1000;
+  opacity: 0.9;
+  transition: 500ms ease-in-out;
+=======
+>>>>>>> bc17d2e15654f702cfba459a10f2c5497fa31b70
 }
 .goTo {
   padding-bottom: 0.5rem;
@@ -43,12 +55,20 @@
     color:  #0056D6;
 }
 .logOutBtn {
+<<<<<<< HEAD
+    border: 1px solid  rgb(11, 127, 221);
+=======
     border: 1px solid  rgb(221, 18, 11);
+>>>>>>> bc17d2e15654f702cfba459a10f2c5497fa31b70
     border-radius: 4px;
     text-align: center;
     padding: 0.5rem;
     width: 100%;
+<<<<<<< HEAD
+    color:  rgb(11, 127, 221);
+=======
     color:  rgb(221, 11, 11);
+>>>>>>> bc17d2e15654f702cfba459a10f2c5497fa31b70
 }
 .logOutBtn:active {
     background-color: rgb(11, 127, 221);
@@ -58,10 +78,20 @@
 .close {
     display: none;
 }
+<<<<<<< HEAD
+/* @media (max-width: 719px) {
+=======
 @media (max-width: 719px) {
+>>>>>>> bc17d2e15654f702cfba459a10f2c5497fa31b70
   .theCreateEventContainerLinks {
     display: flex;
     position: absolute;
     z-index: 1000;
+<<<<<<< HEAD
+    opacity: 0.9;
+  }
+} */
+=======
   }
 }
+>>>>>>> bc17d2e15654f702cfba459a10f2c5497fa31b70
