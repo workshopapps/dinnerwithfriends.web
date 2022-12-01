@@ -8,6 +8,14 @@ import userServices from "../../services/userServices";
 import Button from "../Button";
 import SingleCalendar from "../SingleCalendar/SingleCalendar";
 import dateTimeForCalender from "../../helpers/DateTimeConverter";
+<<<<<<< HEAD
+const CreateEventForm = () => {
+  const [showCalendar, setShowCalendar] = useState(false);
+  const [showCalendar2, setShowCalendar2] = useState(false);
+  const [showCalendar3, setShowCalendar3] = useState(false);
+  const { startDate, endDate, preferredDate, setFormValues, formValues } =
+    CatchUpEventContextUse();
+=======
 
 const CreateEventForm = () => {
 	const [showCalendar, setShowCalendar] = useState(false);
@@ -27,40 +35,55 @@ const CreateEventForm = () => {
 	}, [startDate, endDate])
 
 	const navigate = useNavigate();
+>>>>>>> bc17d2e15654f702cfba459a10f2c5497fa31b70
 
-	const [errors, setErrors] = useState({
-		event_title: "",
-		event_description: "",
-		location: "",
-		event_type: "",
-		participant_number: "",
-		start_date: "",
-		end_date: "",
-		host_prefered_time: "",
-	});
+  const [minimumDate, setMinimumDate] = useState('')
+  const [maximumDate, setMaximumDate] = useState('')
 
-	const handleSubmit = () => {
-		setErrors(formLogic(formValues));
-		setFormValues({
-			...formValues,
-			host_prefered_time: preferredDate,
-			end_date: endDate,
-			start_date: startDate,
-		});
-	};
-
-	const submitForm = async (data) => {
-		const result = await userServices.createEvents(data);
-		if (result.status === "success") {
-			navigate("/event_summary");
-		}
-	};
 	useEffect(() => {
-		if (Object.keys(errors).length === 0) {
-			submitForm(formValues);
-		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [errors, navigate]);
+		const start = dateTimeForCalender(startDate, "00:00")
+		const end = dateTimeForCalender(endDate, "00:00")
+		setMinimumDate(start)
+		setMaximumDate(end)
+	}, [startDate, endDate])
+
+
+
+ console.log(minimumDate, maximumDate)
+  const navigate = useNavigate();
+
+  const [errors, setErrors] = useState({
+    event_title: "",
+    event_description: "",
+    location: "",
+    event_type: "",
+    participant_number: "",
+    start_date: "",
+    end_date: "",
+    host_prefered_time: "",
+  });
+
+  const handleSubmit = () => {
+    setErrors(formLogic(formValues));
+    setFormValues({
+      ...formValues,
+      host_prefered_time: preferredDate,
+      end_date: endDate,
+      start_date: startDate,
+    });
+  };
+
+  const submitForm = async (data) => {
+    const result = await userServices.createEvents(data);
+    if (result.status === "success") {
+      navigate("/event_summary");
+    }
+  };
+  useEffect(() => {
+    if (Object.keys(errors).length === 0) {
+      submitForm(formValues);
+    }
+  }, [errors, navigate]);
 
 	return (
 		<div className='w-full py-8'>
@@ -202,6 +225,10 @@ const CreateEventForm = () => {
 							/>
 						</div>
 					</div>
+<<<<<<< HEAD
+
+=======
+>>>>>>> bc17d2e15654f702cfba459a10f2c5497fa31b70
 					<div className='flex flex-col mb-4 flex-[1] relative'>
 						<label htmlFor='endDate' className='text-sm font-semibold'>
 							End Date
@@ -238,6 +265,10 @@ const CreateEventForm = () => {
 						</div>
 					</div>
 				</div>
+<<<<<<< HEAD
+
+=======
+>>>>>>> bc17d2e15654f702cfba459a10f2c5497fa31b70
 				<div className='flex flex-col mb-4 relative'>
 					<label htmlFor='preferredDate' className='text-sm font-semibold'>
 						Preferred Date & Time
@@ -276,6 +307,24 @@ const CreateEventForm = () => {
 					</div>
 				</div>
 
+<<<<<<< HEAD
+        <div className="w-full flex justify-center mt-6">
+          <Button
+            children
+            type="submit"
+            onClick={handleSubmit}
+            className="flex items-center text-xs font-medium px-6 py-2 bg-[#1070FF] w-fit text-white rounded-[4px]"
+          >
+            <span>Next</span>
+            <span className="text-[8px] ml-2">
+              <SlArrowRight />
+            </span>
+          </Button>
+        </div>
+      </div>
+    </div>
+  );
+=======
 				<div className='w-full flex justify-center mt-6'>
 					<Button
 						children
@@ -291,6 +340,7 @@ const CreateEventForm = () => {
 			</div>
 		</div>
 	);
+>>>>>>> bc17d2e15654f702cfba459a10f2c5497fa31b70
 };
 
 export default CreateEventForm;

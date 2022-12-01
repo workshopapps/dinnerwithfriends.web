@@ -6,11 +6,11 @@ import { AiOutlineCopyright } from "react-icons/ai";
 import avatar from "../../assets/img/Avatar.png";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
-import SettingsHeader from "../../components/settingsPage/setHeader";
 import SettingsFooter from "../../components/settingsPage/setFooter";
 import { Link } from "react-router-dom";
 
 import "./profilePage.css";
+import CreateEventNavbar from "../../components/CreateEvent/CreateEventNavbar";
 
 const profilePage = () => {
   return (
@@ -18,7 +18,8 @@ const profilePage = () => {
       <div id="main_navbar">
         <Navbar />
       </div>
-      <SettingsHeader className="SettingsHeader" />
+      <CreateEventNavbar />
+
 
       <div className="settings_body">
         <div className="body_title_container">

@@ -3,6 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import signInImage from "../../assets/img/Rectangle 254.png";
 import userServices from "../../services/userServices";
+import Logo from "../../components/Logo";
 
 const SignIn = () => {
   const {
@@ -53,7 +54,7 @@ const SignIn = () => {
 
   return (
     <div>
-      <section className=" min-h-screen flex items-center justify-center mb-4">
+      <section className=" min-h-screen flex items-center justify-center ">
         <div className="form-container flex justify-between w-full items-start">
           <div className="form-wrapper h-screen w-1/2 px-8 mt-6">
             <div className="flex justify-between items-center gap-8">
@@ -108,25 +109,27 @@ const SignIn = () => {
                 />
                 <p className="text-red-500 text-sm ">{errors.email?.message}</p>
 
-                <label className="pb-0">Password</label>
-                <input
-                  className="p-2 rounded-xl border"
-                  type="password"
-                  name="password"
-                  id="password"
-                  placeholder="Enter your password"
-                  {...register("password", {
-                    required: "Password is required",
-                    minLength: {
-                      value: 9,
-                      message: "Password must be at least 9 characters",
-                    },
-                    maxLength: {
-                      value: 30,
-                      message: "Password cannot exceed more than 30 characters",
-                    },
-                  })}
-                />
+                <div className=" flex flex-col gap-4 relative">
+                  <label className="pb-0">Password</label>
+                  <input
+                    className="relative p-2 rounded-xl border"
+                    type="password"
+                    name="password"
+                    id="password"
+                    placeholder="Enter your password"
+                    {...register("password", {
+                      required: "Password is required",
+                      minLength: {
+                        value: 9,
+                        message: "Password must be at least 9 characters",
+                      },
+                      maxLength: {
+                        value: 30,
+                        message: "Password cannot exceed more than 30 characters",
+                      },
+                    })}
+                  />
+                </div>
 
                 <p className="text-red-500 text-sm">
                   {errors.password?.message}
@@ -197,8 +200,8 @@ const SignIn = () => {
               </div>
             </div>
           </div>
-          <div className="form-image w-1/2">
-            <img className="" src={signInImage} alt=" " />
+          <div className="form-image h-screen w-1/2">
+            <img className=" object-cover" src={signInImage} alt=" " />
           </div>
         </div>
       </section>
