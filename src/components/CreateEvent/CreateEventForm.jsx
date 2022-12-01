@@ -155,8 +155,8 @@ const CreateEventForm = () => {
 						{errors?.participant_number}{" "}
 					</small>
 				</div>
-				<div className='flex flex-col md:flex-row md:gap-5 lg:gap-10 w-full'>
-					<div className='flex flex-col mb-4 flex-[1]'>
+				<div className='flex flex-col md:flex-row md:gap-[1.25rem]  w-full'>
+					<div className='flex flex-col mb-4 flex-[1] relative'>
 						<label htmlFor='startDate' className='text-sm font-semibold'>
 							Start Date
 						</label>
@@ -182,7 +182,7 @@ const CreateEventForm = () => {
 
 						<div
 							className={`w-full transition-all duration-150 ${
-								showCalendar ? "flex" : "hidden"
+								showCalendar ? "flex absolute top-[75px] left-0 right-0 z-10" : "hidden"
 							}`}>
 							<SingleCalendar
 								id='startDate'
@@ -192,7 +192,7 @@ const CreateEventForm = () => {
 						</div>
 					</div>
 
-					<div className='flex flex-col mb-4 flex-[1]'>
+					<div className='flex flex-col mb-4 flex-[1] relative'>
 						<label htmlFor='endDate' className='text-sm font-semibold'>
 							End Date
 						</label>
@@ -218,7 +218,7 @@ const CreateEventForm = () => {
 
 						<div
 							className={`w-full transition-all duration-150 ${
-								showCalendar2 ? "flex" : "hidden"
+								showCalendar2 ? "flex absolute top-[75px] left-0 right-0 z-10" : "hidden"
 							}`}>
 							<SingleCalendar
 								id='endDate'
@@ -229,7 +229,7 @@ const CreateEventForm = () => {
 					</div>
 				</div>
 
-				<div className='flex flex-col mb-4'>
+				<div className='flex flex-col mb-4 relative'>
 					<label htmlFor='preferredDate' className='text-sm font-semibold'>
 						Preferred Date & Time
 					</label>
@@ -255,7 +255,7 @@ const CreateEventForm = () => {
 
 					<div
 						className={`md:w-[50%] transition-all duration-150 ${
-							showCalendar3 ? "flex" : "hidden"
+							showCalendar3 ? "flex absolute top-[75px] left-0 right-0 z-10" : "hidden"
 						}`}>
 						<SingleCalendar
 							id='preferredDate'
