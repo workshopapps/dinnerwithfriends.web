@@ -4,9 +4,10 @@ import TimePicker from "react-time-picker";
 import { CatchUpEventContextUse } from "../../context/CatchUpEventContext";
 import "./SingleCalendar.css";
 
-const SingleCalendar = ({minDate, maxDate, setShowCalendar, showCalendar, id, addTime }) => {
+const SingleCalendar = ({ minDate, maxDate, setShowCalendar, showCalendar, id, addTime }) => {
 	const [dateValue, setDateValue] = useState(new Date());
 	const [time, setTime] = useState("7:00");
+
 	const {
 		formValues,
 		setFormValues,
@@ -39,6 +40,8 @@ const SingleCalendar = ({minDate, maxDate, setShowCalendar, showCalendar, id, ad
 		});
 	};
 
+
+
 	return (
 		<div className='text-xs rounded-[8px] border border-[#D1D7DA]'>
 			<Calendar
@@ -70,7 +73,7 @@ const SingleCalendar = ({minDate, maxDate, setShowCalendar, showCalendar, id, ad
 							setDT();
 							setShowCalendar(!showCalendar);
 						}}
-						className={`rounded-[4px] ${"bg-[#1070FF]"} p-2 text-white`}>
+						className={`rounded-[4px] ${"bg-[#0056D6]"} p-2 text-white`}>
 						Add date
 					</button>
 				</div>

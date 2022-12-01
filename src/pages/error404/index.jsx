@@ -31,7 +31,7 @@ const Error404 = () => {
                 We can’t seem to find the page you’re looking for, Let’s help
                 you get somewhere even better.
               </p>
-              <button className="bg-[#1070FF] font-bold hover:bg-[#1070ffa1] transition-all duration-300 my-8 py-4 px-8 md:py-3 md:px-6 rounded text-white text-md">
+              <button className="bg-[#0056D6] font-bold hover:bg-[#0056D6a1] transition-all duration-300 my-8 py-4 px-8 md:py-3 md:px-6 rounded text-white text-md">
                 <Link to="/">Return Home</Link>
               </button>
             </div>

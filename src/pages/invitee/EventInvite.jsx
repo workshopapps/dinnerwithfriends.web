@@ -12,7 +12,7 @@ const EventInvite = () => {
           <h1 className="text-2xl font-bold md:text-3xl">Hello, there.</h1>
           <p className="leading-6 text-gray-600 font-sm">
             You have been invited to dinner by{" "}
-            <span className="text-blue-700 font-bold"> Mathew Mathais.</span>
+            <span className="text-[#0056D6] font-bold"> Mathew Mathais.</span>
             <br /> You can view the details below..
           </p>
         </div>
@@ -50,7 +50,7 @@ const EventInvite = () => {
             <div className="my-7 flex justify-between">
               <Link
                 to={"/event_invite/event_invite_response"}
-                className="rounded bg-[#1070FF] text-white py-2.5 md:px-3 px-1.5 md:text-lg text-base"
+                className="rounded bg-[#0056D6] text-white py-2.5 md:px-3 px-1.5 md:text-lg text-base"
               >
                 Accept Invite
               </Link>

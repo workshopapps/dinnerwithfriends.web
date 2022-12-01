@@ -1,22 +1,23 @@
-import React, { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
-import { useForm } from "react-hook-form";
-import image from "./signup_image.webp";
-import google from "./google.svg";
-import nigeria from "./nigeria.svg";
-import Logo from "../../components/Logo";
+import React, {useState} from 'react'
+import { useNavigate, Link } from 'react-router-dom'
+import { FiEye, FiEyeOff } from 'react-icons/fi'
+import { useForm } from "react-hook-form"
+import image from './signup_image.webp'
+import google from './google.svg'
+import nigeria from './nigeria.svg'
+import Logo from '../../components/Logo'
 
 const SignUp = () => {
-	const {
-		register,
-		handleSubmit,
-		reset,
-		formState: { errors },
-	} = useForm();
-	const [existingUser, setExistingUser] = useState(false);
-	const [submitting, setSubmitting] = useState(false);
-	const [accountCreated, setAccountCreated] = useState(false);
-	const nav = useNavigate();
+  const { register, handleSubmit, reset, formState: { errors } } = useForm()
+  const [existingUser, setExistingUser] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
+  const [accountCreated, setAccountCreated] = useState(false)
+  const nav = useNavigate()
+  const [passwordShown, setPasswordShown] = useState(false);
+
+  const togglePassword = () => {
+    setPasswordShown(!passwordShown);
+  };
 
 	/*const googleSubmit = () => {
     fetch('https://catchup.hng.tech/api/v1/auth/google/url')
@@ -73,10 +74,9 @@ const SignUp = () => {
 				setSubmitting(false);
 			});
 	};
-	/* eslint-disable-next-line */
 	const pattern =
+		// eslint-disable-next-line no-useless-escape
 		/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-	/* eslint-disable-next-line */
 	const secondPattern = /^[a-z][a-z0-9]+$/gi;
 	const thirdPattern = /^[a-z][a-z0-9\s]+$/gi;
 	return (
@@ -193,48 +193,38 @@ const SignUp = () => {
 
 						<div className='relative w-full mb-4 '>
 							<label className='pb-0' htmlFor='password'>
-								Passsword
+								Password
 							</label>
 
-							<input
-								style={{
-									border: errors.password
-										? "1px solid red"
-										: "1px solid #D0D5DD",
-								}}
-								className={`focus:outline-none ${
-									!errors.password
-										? "focus:shadow-[0px_0px_0px_4px_rgba(74,74,104,0.1)]"
-										: "focus:shadow-[0px_0px_0px_4px_rgba(249,50,50,0.1)]"
-								} mt-2 w-full h-11 p-3.5 rounded-lg`}
-								type='password'
-								name='password'
-								placeholder='Please enter your unique password'
-								{...register("password", {
-									required: "Password cannot be empty",
-									minLength: {
-										value: 9,
-										message: "Password must be at least 9 characters",
-									},
-									maxLength: {
-										value: 30,
-										message: "Password must not be more than 30 characters",
-									},
-									pattern: {
-										value: secondPattern,
-										message:
-											"Password has to start with a letter, can contain numbers. No spaces and special characters allowed",
-									},
-								})}
-							/>
-							{errors.password && (
-								<p
-									className='right-0 bottom-[-37px] italic text-sm mt-2'
-									style={{ color: "red" }}>
-									{errors.password?.message}
-								</p>
-							)}
-						</div>
+              <input
+              style={{border: errors.password ? '1px solid red': '1px solid #D0D5DD'}}
+              className=
+                {`relative focus:outline-none ${!errors.password? 'focus:shadow-[0px_0px_0px_4px_rgba(74,74,104,0.1)]' : 'focus:shadow-[0px_0px_0px_4px_rgba(249,50,50,0.1)]'} mt-2 w-full h-11 p-3.5 rounded-lg`}
+              type={passwordShown ? "text" : "password"}
+              name="password"
+              placeholder="Please enter your unique password"
+              {...register("password",
+              {required: "Password cannot be empty",
+                minLength: {
+                  value: 9,
+                  message: "Password must be at least 9 characters"
+               },
+               maxLength: {
+                value: 30,
+                message: "Password must not be more than 30 characters"
+              },
+              pattern: {
+                value: secondPattern,
+                message: "Password has to start with a letter, can contain numbers. No spaces and special characters allowed"
+              }
+              })}/>
+              <span
+                className='absolute bottom-4 right-3 cursor-pointer'
+                onClick={togglePassword}>
+                  {passwordShown ?  <FiEyeOff /> : <FiEye />}
+              </span>
+              {errors.password && <p className='right-0 bottom-[-37px] italic text-sm mt-2' style={{color: 'red'}}>{errors.password?.message}</p>}
+            </div>
 
 						<button
 							className=' transition ease-in duration-200 hover:bg-[#66A3FF] mt-4 text-white bg-[#0056D6] w-full h-11 rounded-lg'
