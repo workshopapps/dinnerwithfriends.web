@@ -48,12 +48,12 @@ const SignIn = () => {
             <div className="flex justify-between items-center gap-8">
               <div>
               <Link to='/'>
-                <span className="font-bold text-3xl lg:text-5xl text-blue-600">Catch</span>
+                <span className="font-bold text-3xl lg:text-5xl text-[#0056D6]">Catch</span>
                 <span className="font-bold text-3xl lg:text-5xl ml-1">Up</span>
               </Link>
               </div>
                <div className='px-1 rounded-[20px] w-29 tablet:w-35 tablet:h-10 h-[34px]  bg-blue-100 flex justify-around items-center'>
-            
+
             <select className='language-select bg-blue-100 w-full font-semibold focus:outline-none text-xs tablet:text-sm' name="language" id="language">
               <option value="uk">English (UK)</option>
               <option value="us">English (US)</option>
@@ -63,9 +63,6 @@ const SignIn = () => {
           </div>
             </div>
             <div className="px-2 lg:px-14 mt-10 lg:mt-14">
-              <h2 className="text-4xl font-bold text-center text-blue-600 mb-10">
-                Sign In
-              </h2>
               <h3 className="font-medium text-xl lg:text-4xl font-bold text-gray-600 ">
                 Welcome!
               </h3>
@@ -138,15 +135,15 @@ const SignIn = () => {
                   </div>
                 </div>
 
-                <button type="submit" className="bg-blue-700 hover:bg-blue-500 rounded-xl text-white py-2 hover:scale-105 duration-300">
+                <button type="submit" className="bg-[#0056D6] hover:bg-[#0056D6] rounded-xl text-white py-2 hover:scale-105 duration-300">
                   {isSubmit ? 'Loading...' : 'Sign In'}
                 </button>
               </form>
-              <div className="mt-6 items-center text-blue-600">
+              <div className="mt-6 items-center text-[#0056D6]">
                 <p className="text-center text-sm">Or</p>
               </div>
               <a href=" ">
-                <button className="bg-white border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-base hover:scale-105 duration-300">
+                <button className="bg-[white] border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-base hover:scale-105 duration-300">
                   <svg
                     className="mr-3"
                     xmlns="http://www.w3.org/2000/svg"
@@ -173,7 +170,7 @@ const SignIn = () => {
                   Sign in with Google
                 </button>
               </a>
-              <div className="text-center text-blue-700 text-base mt-4">
+              <div className="text-center text-[#0056D6] text-base mt-4">
                 <Link to="/sign_up">
                   <span>Dont have an account yet?</span>
                   <span className="ml-2">Sign Up for free</span>
