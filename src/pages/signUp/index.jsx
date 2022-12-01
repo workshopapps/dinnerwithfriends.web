@@ -1,10 +1,9 @@
-import React, { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
-import { useForm } from "react-hook-form";
-import image from "./signup_image.webp";
-import google from "./google.svg";
-import nigeria from "./nigeria.svg";
-import Logo from "../../components/Logo";
+import React, {useState} from 'react'
+import { useNavigate, Link } from 'react-router-dom'
+import { useForm } from "react-hook-form"
+import image from './signup_image.webp'
+import google from './google.svg'
+import catchup from './catchup_logo.svg'
 
 const SignUp = () => {
 	const {
@@ -49,76 +48,60 @@ const SignUp = () => {
 			}),
 		};
 
-		fetch("https://prybar.onrender.com/api/v1/auth/signup", options)
-			.then((response) => {
-				if (!response.ok) {
-					throw Error(response.status);
-				}
-				return response.json();
-			})
-			.then((result) => {
-				if (result.status === "error") {
-					setExistingUser(true);
-					setSubmitting(false);
-				}
-				if (result.status === "success") {
-					setAccountCreated(true);
-					setTimeout(() => {
-						nav("/sign_in");
-					}, 2000);
-				}
-			})
-			.catch((err) => {
-				console.log(err);
-				setSubmitting(false);
-			});
-	};
-	/* eslint-disable-next-line */
-	const pattern =
-		/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-	/* eslint-disable-next-line */
-	const secondPattern = /^[a-z][a-z0-9]+$/gi;
-	const thirdPattern = /^[a-z][a-z0-9\s]+$/gi;
-	return (
-		<div className='w-full mx-auto tablet:flex tablet:justify-center'>
-			<div className=' w-full h-full bg-white tablet:w-6/12 tablet:p-3.5 mx-auto '>
-				<header className=' w-full flex justify-between items-center px-4 pt-4 mt-3.5 tablet:mt-0'>
-					<Logo />
-					<div className='px-1 rounded-[20px] w-29 tablet:w-35 tablet:h-10 h-[34px]  bg-blue-100 flex justify-around items-center'>
-						<img className='w-5' src={nigeria} alt='nigerian flag' />
-						<select
-							className='language-select bg-blue-100 w-full font-semibold focus:outline-none text-xs tablet:text-sm'
-							name='language'
-							id='language'>
-							<option value='uk'>English (UK)</option>
-							<option value='us'>English (US)</option>
-						</select>
-					</div>
-				</header>
-				<div className='mt-10 tablet:mt-14 px-4 w-full max-w-md mx-auto'>
-					<h2 className='font-medium text-xl text-[#717172] tablet:text-4xl'>
-						Welcome!
-					</h2>
-					<p className='mt-2 text-[#424245] text-base tablet:text-xl'>
-						Sign up here! Please enter your details
-					</p>
-					{existingUser && (
-						<p style={{ color: "red" }} className='mt-4 text-base text-center'>
-							User already exists!
-						</p>
-					)}
-					{accountCreated && (
-						<p className='mt-4 text-base text-green-600 text-center'>
-							Account Created Successfully!
-						</p>
-					)}
-					<form
-						onSubmit={handleSubmit(onSubmit)}
-						className=' mt-7 text-[#4B4B4C] font-normal [&>input]:mt-2 [&>input]:w-full [&>input]:mb-3.5'>
-						<div className='relative w-full mb-4 '>
-							<label className='pb-0' htmlFor='email'>
-								Name
-							</label>
+    }
+
+    fetch('https://prybar.onrender.com/api/v1/auth/signup', options)
+        .then(response => {
+            if (!response.ok) {
+                throw Error(response.status);
+            }
+            return response.json()})
+        .then(result => {
+          if(result.status === 'error'){
+              setExistingUser(true)
+              setSubmitting(false)
+          }
+          if(result.status === 'success'){
+            setAccountCreated(true)
+            setTimeout(() => {
+              nav('/sign_in')
+            }, 2000)
+
+        }
+
+
+        })
+        .catch(err => {
+            console.log(err)
+            setSubmitting(false)
+        })
+  }
+  /* eslint-disable-next-line */
+  const pattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+  /* eslint-disable-next-line */
+  const secondPattern = /^[a-z][a-z0-9]+$/ig; const thirdPattern = /^[a-z][a-z0-9\s]+$/ig;
+  return (
+    <div className='w-full mx-auto tablet:flex tablet:justify-center'>
+      <div className=' w-full h-full bg-white tablet:w-6/12 tablet:p-3.5 mx-auto '>
+        <header className=' w-full flex justify-between items-center px-4 pt-4 mt-3.5 tablet:mt-0'>
+        <Link to='/'><img className='w-32 tablet:w-48' src={catchup} alt="logo of app" /></Link>
+          <div className='px-1 rounded-[20px] w-29 tablet:w-35 tablet:h-10 h-[34px]  bg-blue-100 flex justify-around items-center'>
+            
+            <select className='language-select bg-blue-100 w-full font-semibold focus:outline-none text-xs tablet:text-sm' name="language" id="language">
+              <option value="uk">English (UK)</option>
+              <option value="us">English (US)</option>
+            </select>
+          </div>
+        </header>
+        <div className='mt-10 tablet:mt-14 px-4 w-full max-w-md mx-auto'>
+
+          <h2 className='font-medium text-xl text-[#717172] tablet:text-4xl'>Welcome!</h2>
+          <p className='mt-2 text-[#424245] text-base tablet:text-xl'>Sign up here! Please enter your details</p>
+          {existingUser && <p style={{color: 'red'}} className='mt-4 text-base text-center'>User already exists!</p>}
+          {accountCreated && <p className='mt-4 text-base text-green-600 text-center'>Account Created Successfully!</p>}
+          <form onSubmit={handleSubmit(onSubmit)} className=' mt-7 text-[#4B4B4C] font-normal [&>input]:mt-2 [&>input]:w-full [&>input]:mb-3.5'>
+            <div className='relative w-full mb-4 '>
+              <label className='pb-0' htmlFor="email">Name</label>
 
 							<input
 								style={{
@@ -236,21 +219,18 @@ const SignUp = () => {
 							)}
 						</div>
 
-						<button
-							className=' transition ease-in duration-200 hover:bg-[#66A3FF] mt-4 text-white bg-[#0056D6] w-full h-11 rounded-lg'
-							type='submit'>
-							{submitting ? "Loading..." : "Create a free account"}
-						</button>
-					</form>
 
-					<p className='my-2.5 text-center text-[#0056D6]'>Or</p>
+            <button className=' transition ease-in duration-200 hover:bg-[#66A3FF] mt-4 text-white bg-[#0056D6] w-full h-11 rounded-lg' type="submit">{submitting ? 'Loading...' : 'Create a free account'}</button>
 
-					<a
-						href='https://catchup.hng.tech/api/v1/auth/google/url'
-						className='flex justify-center items-center font-medium text-[#344054] w-full  border border-[#D0D5DD] h-11 p-2 rounded-lg'>
-						<img className='mr-2 w-6' src={google} alt='google logo' />
-						Sign Up with Google
-					</a>
+            </form>
+            
+            <p className='my-2.5 text-center text-[#0056D6]' >Or</p>
+            
+            <a href="https://catchup.hng.tech/api/v1/auth/google/url" 
+            className='flex justify-center items-center font-medium text-[#344054] w-full  border border-[#D0D5DD] h-11 p-2 rounded-lg'>
+              <img className='mr-2 w-6' src={google} alt="google logo"/>
+               Sign Up with Google
+            </a>
 
 					<Link to='/sign_in'>
 						{" "}

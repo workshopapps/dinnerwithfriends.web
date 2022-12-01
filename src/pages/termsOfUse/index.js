@@ -31,7 +31,7 @@ const TermsOfUse = () => {
                 <li className="my-5" key={term.id}>
                   <a
                     className={`my-4 font-medium text-base hover:text-blue-800 ${
-                      active === term.heading ? "text-blue-700" : ""
+                      active === term.heading ? "text-[#0056D6]" : ""
                     }`}
                     href={`#${term.heading}`}
                     onClick={() => handleActive(term.heading)}
@@ -56,7 +56,7 @@ const TermsOfUse = () => {
                     <p key={index} className="pt-2 pb-4 text-medium">
                       {para}
                       <a
-                        className="text-blue-700"
+                        className="text-[#0056D6]"
                         href={`mailto:${term.emailLink}`}
                       >
                         {term.emailLink && term.emailLink}
@@ -76,7 +76,7 @@ const TermsOfUse = () => {
                                 ? `mailto:${term.links[index]}`
                                 : `https://${term.links[index]}`
                             }
-                            className="text-blue-700"
+                            className="text-[#0056D6]"
                           >
                             {term.links[index]}
                           </a>

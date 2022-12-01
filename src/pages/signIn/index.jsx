@@ -1,46 +1,57 @@
-import React, { useState }  from "react";
-import { useNavigate, Link } from 'react-router-dom'
+import React, { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import signInImage from "../../assets/img/Rectangle 254.png";
-import nigeriaFlag from "../../assets/img/Group.png";
 import userServices from "../../services/userServices";
 import Logo from "../../components/Logo";
 
 
 const SignIn = () => {
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
   const [isSubmit, setIsSubmit] = useState(false);
-  const [isLoggedIn, setIsloggedIn] = useState(false)
-  const [invalidCredentials, setInvalidCredentials] = useState(false)
+  const [isLoggedIn, setIsloggedIn] = useState(false);
+  const [invalidCredentials, setInvalidCredentials] = useState(false);
   const navigate = useNavigate();
 
   const onSubmit = async (data) => {
-    setIsSubmit(true)
+    setIsSubmit(true);
     const result = await userServices.login(data);
 
-    if(result.status === 'fail'){
-      setIsSubmit(false)
-      setInvalidCredentials(true)
+    if (result.status === "fail") {
+      setIsSubmit(false);
+      setInvalidCredentials(true);
     }
 
-    if(result.status === 'success'){
-       setIsloggedIn(true)
-       localStorage.setItem("jwt-token", result.accessToken);
-       setTimeout(() => {
-        navigate('/dashboard/upcoming_events')
-        }, 1000)
-      }
+    if (result.status === "success") {
+      setIsloggedIn(true);
+      localStorage.setItem("jwt-token", result.accessToken);
+      setTimeout(() => {
+        navigate("/dashboard/upcoming_events");
+      }, 1000);
+    }
   };
 
   const errorMsg = () => {
     let element;
     if (isLoggedIn) {
-      element =  <p className='mt-4 text-xl text-green-600 text-center'>Login Successful!</p>
-     } else if(invalidCredentials) {
-      element = <p className='mt-4 text-xl text-red-600 text-center'>Incorrect Email or Password</p>
-     }
-     return element
-  }
+      element = (
+        <p className="mt-4 text-xl text-green-600 text-center">
+          Login Successful!
+        </p>
+      );
+    } else if (invalidCredentials) {
+      element = (
+        <p className="mt-4 text-xl text-red-600 text-center">
+          Incorrect Email or Password
+        </p>
+      );
+    }
+    return element;
+  };
 
   return (
     <div>
@@ -51,15 +62,16 @@ const SignIn = () => {
               <div>
               <Logo />
               </div>
-               <div className='px-1 rounded-[20px] w-29 tablet:w-35 tablet:h-10 h-[34px]  bg-blue-100 flex justify-around items-center'>
-            <img className='w-5' src={nigeriaFlag} alt="nigerian flag" />
-            <select className='language-select bg-blue-100 w-full font-semibold focus:outline-none text-xs tablet:text-sm' name="language" id="language">
-              <option value="uk">English (UK)</option>
-              <option value="us">English (US)</option>
-            </select>
-
-
-          </div>
+              <div className="px-1 rounded-[20px] w-29 tablet:w-35 tablet:h-10 h-[34px]  bg-blue-100 flex justify-around items-center">
+                <select
+                  className="language-select bg-blue-100 w-full font-semibold focus:outline-none text-xs tablet:text-sm"
+                  name="language"
+                  id="language"
+                >
+                  <option value="uk">English (UK)</option>
+                  <option value="us">English (US)</option>
+                </select>
+              </div>
             </div>
             <div className="px-2 lg:px-14 mt-10 lg:mt-14">
               <h2 className="text-4xl font-bold text-center text-blue-600 mb-10">
@@ -132,20 +144,23 @@ const SignIn = () => {
                       Remember for 30days
                     </label>
                   </div>
-                  <div className="font-bold text-xs lg:text-base">
+                  <div className="text-[#0056D6] text-xs lg:text-base">
                     <Link to="/forgot_password">Forgot password?</Link>
                   </div>
                 </div>
 
-                <button type="submit" className="bg-blue-700 hover:bg-blue-500 rounded-xl text-white py-2 hover:scale-105 duration-300">
-                  {isSubmit ? 'Loading...' : 'Sign In'}
+                <button
+                  type="submit"
+                  className="bg-[#0056D6] hover:bg-[#0056D6] rounded-xl text-white py-2 hover:scale-105 duration-300"
+                >
+                  {isSubmit ? "Loading..." : "Sign In"}
                 </button>
               </form>
-              <div className="mt-6 items-center text-blue-600">
+              <div className="mt-6 items-center text-[#0056D6]">
                 <p className="text-center text-sm">Or</p>
               </div>
               <a href=" ">
-                <button className="bg-white border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-base hover:scale-105 duration-300">
+                <button className="bg-[white] border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-base hover:scale-105 duration-300">
                   <svg
                     className="mr-3"
                     xmlns="http://www.w3.org/2000/svg"
@@ -172,7 +187,7 @@ const SignIn = () => {
                   Sign in with Google
                 </button>
               </a>
-              <div className="text-center text-blue-700 text-base mt-4">
+              <div className="text-center text-[#0056D6] text-base mt-4">
                 <Link to="/sign_up">
                   <span>Dont have an account yet?</span>
                   <span className="ml-2">Sign Up for free</span>

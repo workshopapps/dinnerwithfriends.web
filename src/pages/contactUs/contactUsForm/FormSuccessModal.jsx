@@ -26,7 +26,7 @@ const FormSuccessModal = (props) => {
             props.btnCloseModal(false);
           }}
           data-close="close"
-          className=" text-xl font-bold py-2.5 px-8 mt-16 mb-8 text-white bg-blue-700 rounded-lg"
+          className=" text-xl font-bold py-2.5 px-8 mt-16 mb-8 text-white bg-[#0056D6] rounded-lg"
         >
           check mail
         </Button>
