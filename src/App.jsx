@@ -26,9 +26,10 @@ import EventSummary from "./pages/dashboard/EventSummary";
 import UpcomingEvent from "./pages/dashboard/UpcomingEvent";
 import Features from "./pages/Features-page/features";
 import HelpRoutes from "./pages/helpCenter/helpRoutes";
-
 import AboutUsPage from "./pages/aboutUs";
 
+import { googleCalender } from "./helpers/googleCalender";
+googleCalender();
 function App() {
   return (
     <div className="App">

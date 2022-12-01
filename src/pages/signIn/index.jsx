@@ -49,7 +49,7 @@ const SignIn = () => {
 
   return (
     <div>
-      <section className=" min-h-screen flex items-center justify-center mb-4">
+      <section className=" min-h-screen flex items-center justify-center ">
         <div className="form-container flex justify-between w-full items-start">
           <div className="form-wrapper h-screen w-1/2 px-8 mt-6">
             <div className="flex justify-between items-center gap-8">
@@ -193,8 +193,8 @@ const SignIn = () => {
               </div>
             </div>
           </div>
-          <div className="form-image w-1/2">
-            <img className="" src={signInImage} alt=" " />
+          <div className="form-image h-screen w-1/2">
+            <img className=" object-cover" src={signInImage} alt=" " />
           </div>
         </div>
       </section>
