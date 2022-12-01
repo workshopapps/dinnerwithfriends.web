@@ -7,8 +7,7 @@ abbr[title] {
 	width: 100%;
 	max-width: 100%;
 	background: white;
-	padding: 10px 24px;
-	line-height: 1.5em;
+	padding: 10px;
 }
 .react-calendar--doubleView {
 	width: 700px;
@@ -76,7 +75,7 @@ abbr[title] {
 	color: #cdcdcd;
 }
 .react-calendar__tile {
-	margin: 0.5rem 0 !important;
+	margin: 5px 0 !important;
 }
 .react-calendar__year-view .react-calendar__tile,
 .react-calendar__decade-view .react-calendar__tile,
@@ -85,7 +84,7 @@ abbr[title] {
 }
 .react-calendar__tile {
 	max-width: 100%;
-	padding: 10px 6.6667px;
+	padding: 5px;
 	background: none;
 	text-align: center;
 	line-height: 16px;

@@ -81,15 +81,13 @@ const SignUp = () => {
     <div className='w-full mx-auto tablet:flex tablet:justify-center'>
       <div className=' w-full h-full bg-white tablet:w-6/12 tablet:p-3.5 mx-auto '>
         <header className=' w-full flex justify-between items-center px-4 pt-4 mt-3.5 tablet:mt-0'>
-          <Logo />
-          <div className='px-1 rounded-[20px] w-29 tablet:w-32 tablet:h-10 h-[34px]  bg-blue-100 flex justify-around items-center'>
+        <Link to='/'><img className='w-32 tablet:w-48' src={catchup} alt="logo of app" /></Link>
+          <div className='px-1 rounded-[20px] w-29 tablet:w-35 tablet:h-10 h-[34px]  bg-blue-100 flex justify-around items-center'>
             <img className='w-5' src={nigeria} alt="nigerian flag" />
-            <select className='bg-blue-100 w-full font-semibold focus:outline-none text-xs tablet:text-sm' name="language" id="language">
+            <select className='language-select bg-blue-100 w-full font-semibold focus:outline-none text-xs tablet:text-sm' name="language" id="language">
               <option value="uk">English (UK)</option>
               <option value="us">English (US)</option>
             </select>
-
-
           </div>
         </header>
         <div className='mt-10 tablet:mt-14 px-4 w-full max-w-md mx-auto'>
