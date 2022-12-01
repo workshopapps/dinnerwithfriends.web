@@ -37,8 +37,8 @@ const Category = ({ data, activeLink, setActiveLink, activeCategory }) => {
                         .map((content, i) => {
                             return (
                                 <Accordion key={i} open={open === i}>
-                                    <AccordionHeader className='!font-semibold !text-sm !text-[#151517] !border-0 !border-[#fff] hover:!text-blue-700 !text-primary-900' onClick={() => handleOpen(i)} id={content.question.replaceAll(" ", "-")}>
-                                        <p>{content.question}</p>
+                                    <AccordionHeader className='!font-semibold !text-xs !text-[#151517] !border-0 !border-[#fff] hover:!text-[#0056D6]' onClick={() => handleOpen(i)}>
+                                        {content.question}
                                     </AccordionHeader>
                                     <AccordionBody className="!text-[#616161] !text-[10px] lg:!text-sm">
                                         {content.answer}

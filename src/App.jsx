@@ -60,12 +60,10 @@ function App() {
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/forgot_password" element={<ForgetPassword />} />
         <Route path="/reset_link" element={<ResetLink />} />
-        <Route path="*" element={<Error404 />} />
-<<<<<<<<< Temporary merge branch 1
+        <Route path="/reset_password" element={<ResetPassword />} />
         <Route path="/help/*" element={<HelpRoutes />} />
-=========
         <Route path="/aboutUs" element={<AboutUsPage />} />
->>>>>>>>> Temporary merge branch 2
+        <Route path="*" element={<Error404 />} />
       </Routes>
     </div>
   );

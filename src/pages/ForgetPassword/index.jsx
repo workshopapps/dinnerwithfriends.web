@@ -82,7 +82,7 @@ const ForgetPassword = () => {
               <div className="mt-5">
                 <button
                   type="submit"
-                  className="w-60 md:w-96 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  className="w-60 md:w-96 text-white bg-[#0056D6] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-[#0056D6] dark:focus:ring-blue-800"
                 >
                {isSubmit ? 'Loading...' : 'Submit'}
                 </button>
@@ -90,7 +90,7 @@ const ForgetPassword = () => {
 
               <p className="w-60 md:w-96 mt-5 text-sm xl:text-base">
                 Don’t have an account yet?{" "}
-                <Link to="/sign_up" className="text-blue-700 font-semi-bold">
+                <Link to="/sign_up" className="text-[#0056D6] font-semi-bold">
                   Sign Up for free
                 </Link>
               </p>

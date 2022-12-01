@@ -80,7 +80,7 @@ const EventSummary = () => {
         </div>
         <div className="flex md:justify-start justify-between my-5">
           <p className="text-lg font-bold md:mr-7">Participant(3)</p>
-          <button className="bg-transparent flex items-center text-[#1070FF]">
+          <button className="bg-transparent flex items-center text-[#0056D6]">
             <p className="mr-2 md:text-base text-sm">Add participant</p>
             <BsPlus />
           </button>
@@ -94,7 +94,7 @@ const EventSummary = () => {
             onChange={(e) => setEmail(e.target.value)}
           />
           <button
-            className="bg-[#1070FF] md:px-12 md:py-4 py-2.5 px-5 text-white rounded-lg"
+            className="bg-[#0056D6] md:px-12 md:py-4 py-2.5 px-5 text-white rounded-lg"
             onClick={handleSubmit}
           >
             Done
@@ -124,9 +124,9 @@ const EventSummary = () => {
           <Link to="/dashboard/upcoming_events" className="text-xl font-semibold">
             Back
           </Link>
-          <Link to={'/create_event'} className="rounded flex md:px-6 px-4 py-2.5 bg-[#1070FF] text-white items-center">
+          <Link to={'/create_event'} className="rounded flex md:px-6 px-4 py-2.5 bg-[#0056D6] text-white items-center">
             <p className="md:text-xl text-base font-medium md:mr-2">
-              Create invite
+              Send invite
             </p>
             <BsPlus className="text-xl" />
           </Link>
