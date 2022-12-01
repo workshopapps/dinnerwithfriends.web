@@ -1,4 +1,5 @@
 // Get date-time string for calender
+const TIMEOFFSET = '+01:00';
 
 const dateTimeForCalander = (final_event_date, time) => {
 
