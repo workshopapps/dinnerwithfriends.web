@@ -30,26 +30,26 @@ const CreateEventForm = () => {
  console.log(minimumDate, maximumDate)
   const navigate = useNavigate();
 
-  const [errors, setErrors] = useState({
-    event_title: "",
-    event_description: "",
-    location: "",
-    event_type: "",
-    participant_number: "",
-    start_date: "",
-    end_date: "",
-    host_prefered_time: "",
-  });
+	const [errors, setErrors] = useState({
+		event_title: "",
+		event_description: "",
+		location: "",
+		event_type: "",
+		participant_number: "",
+		start_date: "",
+		end_date: "",
+		host_prefered_time: "",
+	});
 
-  const handleSubmit = () => {
-    setErrors(formLogic(formValues));
-    setFormValues({
-      ...formValues,
-      host_prefered_time: preferredDate,
-      end_date: endDate,
-      start_date: startDate,
-    });
-  };
+	const handleSubmit = () => {
+		setErrors(formLogic(formValues));
+		setFormValues({
+			...formValues,
+			host_prefered_time: preferredDate,
+			end_date: endDate,
+			start_date: startDate,
+		});
+	};
 
   const submitForm = async (data) => {
     const result = await userServices.createEvents(data);
@@ -61,7 +61,6 @@ const CreateEventForm = () => {
     if (Object.keys(errors).length === 0) {
       submitForm(formValues);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [errors, navigate]);
 
 	return (

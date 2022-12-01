@@ -19,7 +19,7 @@ const CreateEventNavbar = () => {
           <div className="w-[35px] h-[35px] border border-[#66A3FF] text-[#717172] rounded-full flex justify-center items-center object-cover text-xs">
             <span>M</span>
           </div>
-          <span className="ml-2 text-xs">
+          <span className="ml-2 text-xs" onClick={() => setOpen(!open)}>
             <SlArrowDown />
           </span>
         </div>
@@ -39,7 +39,7 @@ const CreateEventNavbar = () => {
             <Link to="/dashboard/upcoming_events" className={menuStyles.goTo}>
               Dashboard
             </Link>
-            <Link to="/Upload_details" className={menuStyles.goTo}>
+            <Link to="/profile" className={menuStyles.goTo}>
               Account Setting
             </Link>
             <Link to="/help/*" className={menuStyles.goTo}>

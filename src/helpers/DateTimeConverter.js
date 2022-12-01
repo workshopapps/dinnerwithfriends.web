@@ -1,4 +1,3 @@
-
 const TIMEOFFSET = '+01:00';
 const dateTimeForCalender = (final_event_date, time) => {
 
