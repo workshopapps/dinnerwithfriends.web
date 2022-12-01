@@ -1,112 +1,69 @@
-<<<<<<< HEAD
 import React, { useState }  from "react";
 import { useNavigate, Link } from 'react-router-dom'
-import { FiEye, FiEyeOff } from 'react-icons/fi'
-=======
-import React, { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
->>>>>>> bc17d2e15654f702cfba459a10f2c5497fa31b70
 import { useForm } from "react-hook-form";
 import signInImage from "../../assets/img/Rectangle 254.png";
 import userServices from "../../services/userServices";
-import Logo from "../../components/Logo";
+
 
 const SignIn = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  const { register, handleSubmit, formState: { errors } } = useForm();
   const [isSubmit, setIsSubmit] = useState(false);
-  const [isLoggedIn, setIsloggedIn] = useState(false);
-  const [invalidCredentials, setInvalidCredentials] = useState(false);
+  const [isLoggedIn, setIsloggedIn] = useState(false)
+  const [invalidCredentials, setInvalidCredentials] = useState(false)
   const navigate = useNavigate();
-  const [passwordShown, setPasswordShown] = useState(false);
-
-  const togglePassword = () => {
-    setPasswordShown(!passwordShown);
-  };
 
   const onSubmit = async (data) => {
-    setIsSubmit(true);
+    setIsSubmit(true)
     const result = await userServices.login(data);
 
-    if (result.status === "fail") {
-      setIsSubmit(false);
-      setInvalidCredentials(true);
+    if(result.status === 'fail'){
+      setIsSubmit(false)
+      setInvalidCredentials(true)
     }
 
-    if (result.status === "success") {
-      setIsloggedIn(true);
-      localStorage.setItem("jwt-token", result.accessToken);
-      setTimeout(() => {
-        navigate("/dashboard/upcoming_events");
-      }, 1000);
-    }
+    if(result.status === 'success'){
+       setIsloggedIn(true)
+       localStorage.setItem("jwt-token", result.accessToken);
+       setTimeout(() => {
+        navigate('/dashboard/upcoming_events')
+        }, 1000)
+      }
   };
 
   const errorMsg = () => {
     let element;
     if (isLoggedIn) {
-      element = (
-        <p className="mt-4 text-xl text-green-600 text-center">
-          Login Successful!
-        </p>
-      );
-    } else if (invalidCredentials) {
-      element = (
-        <p className="mt-4 text-xl text-red-600 text-center">
-          Incorrect Email or Password
-        </p>
-      );
-    }
-    return element;
-  };
+      element =  <p className='mt-4 text-xl text-green-600 text-center'>Login Successful!</p>
+     } else if(invalidCredentials) {
+      element = <p className='mt-4 text-xl text-red-600 text-center'>Incorrect Email or Password</p>
+     }
+     return element
+  }
 
   return (
     <div>
-      <section className=" min-h-screen flex items-center justify-center ">
+      <section className=" min-h-screen flex items-center justify-center mb-4">
         <div className="form-container flex justify-between w-full items-start">
           <div className="form-wrapper h-screen w-1/2 px-8 mt-6">
             <div className="flex justify-between items-center gap-8">
               <div>
-<<<<<<< HEAD
-              <Logo />
+              <Link to='/'>
+                <span className="font-bold text-3xl lg:text-5xl text-[#0056D6]">Catch</span>
+                <span className="font-bold text-3xl lg:text-5xl ml-1">Up</span>
+              </Link>
               </div>
-              <div className='px-1 rounded-[20px] w-29 tablet:w-35 tablet:h-10 h-[34px]  bg-blue-100 flex justify-around items-center'>
-                <img className='w-5' src={nigeriaFlag} alt="nigerian flag" />
-                <select className='language-select bg-blue-100 w-full font-semibold focus:outline-none text-xs tablet:text-sm' name="language" id="language">
-=======
-                <Link to="/">
-                  <span className="font-bold text-3xl lg:text-5xl text-[#0056D6]">
-                    Catch
-                  </span>
-                  <span className="font-bold text-3xl lg:text-5xl ml-1">
-                    Up
-                  </span>
-                </Link>
-              </div>
-              <div className="px-1 rounded-[20px] w-29 tablet:w-35 tablet:h-10 h-[34px]  bg-blue-100 flex justify-around items-center">
-                <select
-                  className="language-select bg-blue-100 w-full font-semibold focus:outline-none text-xs tablet:text-sm"
-                  name="language"
-                  id="language"
-                >
->>>>>>> bc17d2e15654f702cfba459a10f2c5497fa31b70
-                  <option value="uk">English (UK)</option>
-                  <option value="us">English (US)</option>
-                </select>
-              </div>
+               <div className='px-1 rounded-[20px] w-29 tablet:w-35 tablet:h-10 h-[34px]  bg-blue-100 flex justify-around items-center'>
+
+            <select className='language-select bg-blue-100 w-full font-semibold focus:outline-none text-xs tablet:text-sm' name="language" id="language">
+              <option value="uk">English (UK)</option>
+              <option value="us">English (US)</option>
+            </select>
+
+
+          </div>
             </div>
             <div className="px-2 lg:px-14 mt-10 lg:mt-14">
-<<<<<<< HEAD
-              <h2 className="text-4xl font-bold text-center text-blue-600 mb-10">
-                Sign In
-              </h2>
-              <h3 className="font-medium text-xl lg:text-4xl text-gray-600 ">
-=======
               <h3 className="font-medium text-xl lg:text-4xl font-bold text-gray-600 ">
->>>>>>> bc17d2e15654f702cfba459a10f2c5497fa31b70
                 Welcome!
               </h3>
               <p className="sm:text-base lg:text-xl text-gray-600 mb-8 ">
@@ -135,32 +92,25 @@ const SignIn = () => {
                 />
                 <p className="text-red-500 text-sm ">{errors.email?.message}</p>
 
-                <div className=" flex flex-col gap-4 relative">
-                  <label className="pb-0">Password</label>
-                  <input
-                    className="relative p-2 rounded-xl border"
-                    type={passwordShown ? "text" : "password"} 
-                    name="password"
-                    id="password"
-                    placeholder="Enter your password"
-                    {...register("password", {
-                      required: "Password is required",
-                      minLength: {
-                        value: 9,
-                        message: "Password must be at least 9 characters",
-                      },
-                      maxLength: {
-                        value: 30,
-                        message: "Password cannot exceed more than 30 characters",
-                      },
-                    })}
-                  />
-                  <span 
-                    className='absolute bottom-4 right-3 cursor-pointer' 
-                    onClick={togglePassword}>
-                      {passwordShown ?  <FiEyeOff /> : <FiEye />}
-                  </span>
-                </div>
+                <label className="pb-0">Password</label>
+                <input
+                  className="p-2 rounded-xl border"
+                  type="password"
+                  name="password"
+                  id="password"
+                  placeholder="Enter your password"
+                  {...register("password", {
+                    required: "Password is required",
+                    minLength: {
+                      value: 9,
+                      message: "Password must be at least 9 characters",
+                    },
+                    maxLength: {
+                      value: 30,
+                      message: "Password cannot exceed more than 30 characters",
+                    },
+                  })}
+                />
 
                 <p className="text-red-500 text-sm">
                   {errors.password?.message}
@@ -185,11 +135,8 @@ const SignIn = () => {
                   </div>
                 </div>
 
-                <button
-                  type="submit"
-                  className="bg-[#0056D6] hover:bg-[#0056D6] rounded-xl text-white py-2 hover:scale-105 duration-300"
-                >
-                  {isSubmit ? "Loading..." : "Sign In"}
+                <button type="submit" className="bg-[#0056D6] hover:bg-[#0056D6] rounded-xl text-white py-2 hover:scale-105 duration-300">
+                  {isSubmit ? 'Loading...' : 'Sign In'}
                 </button>
               </form>
               <div className="mt-6 items-center text-[#0056D6]">
@@ -231,8 +178,8 @@ const SignIn = () => {
               </div>
             </div>
           </div>
-          <div className="form-image h-screen w-1/2">
-            <img className=" object-cover" src={signInImage} alt=" " />
+          <div className="form-image w-1/2">
+            <img className="" src={signInImage} alt=" " />
           </div>
         </div>
       </section>

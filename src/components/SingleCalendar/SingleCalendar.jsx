@@ -4,11 +4,7 @@ import TimePicker from "react-time-picker";
 import { CatchUpEventContextUse } from "../../context/CatchUpEventContext";
 import "./SingleCalendar.css";
 
-<<<<<<< HEAD
 const SingleCalendar = ({ minDate, maxDate, setShowCalendar, showCalendar, id, addTime }) => {
-=======
-const SingleCalendar = ({minDate, maxDate, setShowCalendar, showCalendar, id, addTime }) => {
->>>>>>> bc17d2e15654f702cfba459a10f2c5497fa31b70
 	const [dateValue, setDateValue] = useState(new Date());
 	const [time, setTime] = useState("7:00");
 
