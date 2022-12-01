@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import HomeDashboard from "../../assets/img/HomeDashboard.png";
+import Dashboard from "../../assets/img/Dashboard.png";
 
 const HeroDashboard = () => {
   return (
@@ -37,7 +37,7 @@ const HeroDashboard = () => {
         </p>
 
         <div className="mx-auto text-center md:max-w-screen-md lg:max-w-screen-lg lg:px-36">
-          <img src={HomeDashboard} alt="dashboard" />
+          <img src={Dashboard} alt="dashboard" />
         </div>
       </div>
     </section>

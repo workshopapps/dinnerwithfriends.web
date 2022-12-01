@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import { useNavigate, Link } from 'react-router-dom'
+import { FiEye, FiEyeOff } from 'react-icons/fi'
 import { useForm } from "react-hook-form"
 import image from './signup_image.webp'
 import google from './google.svg'
@@ -12,7 +13,11 @@ const SignUp = () => {
   const [submitting, setSubmitting] = useState(false)
   const [accountCreated, setAccountCreated] = useState(false)
   const nav = useNavigate()
+  const [passwordShown, setPasswordShown] = useState(false);
 
+  const togglePassword = () => {
+    setPasswordShown(!passwordShown);
+  };
 
   /*const googleSubmit = () => {
     fetch('https://catchup.hng.tech/api/v1/auth/google/url')
@@ -82,14 +87,12 @@ const SignUp = () => {
       <div className=' w-full h-full bg-white tablet:w-6/12 tablet:p-3.5 mx-auto '>
         <header className=' w-full flex justify-between items-center px-4 pt-4 mt-3.5 tablet:mt-0'>
         <Link to='/'><img className='w-32 tablet:w-48' src={catchup} alt="logo of app" /></Link>
-          <div className='px-1 rounded-[20px] w-29 tablet:w-32 tablet:h-10 h-[34px]  bg-blue-100 flex justify-around items-center'>
+          <div className='px-1 rounded-[20px] w-29 tablet:w-35 tablet:h-10 h-[34px]  bg-blue-100 flex justify-around items-center'>
             <img className='w-5' src={nigeria} alt="nigerian flag" />
-            <select className='bg-blue-100 w-full font-semibold focus:outline-none text-xs tablet:text-sm' name="language" id="language">
+            <select className='language-select bg-blue-100 w-full font-semibold focus:outline-none text-xs tablet:text-sm' name="language" id="language">
               <option value="uk">English (UK)</option>
               <option value="us">English (US)</option>
             </select>
-
-
           </div>
         </header>
         <div className='mt-10 tablet:mt-14 px-4 w-full max-w-md mx-auto'>
@@ -149,7 +152,11 @@ const SignUp = () => {
 
               <input
               style={{border: errors.password ? '1px solid red': '1px solid #D0D5DD'}}
-              className={`focus:outline-none ${!errors.password? 'focus:shadow-[0px_0px_0px_4px_rgba(74,74,104,0.1)]' : 'focus:shadow-[0px_0px_0px_4px_rgba(249,50,50,0.1)]'} mt-2 w-full h-11 p-3.5 rounded-lg`} type="password" name="password" placeholder="Please enter your unique password"
+              className=
+                {`relative focus:outline-none ${!errors.password? 'focus:shadow-[0px_0px_0px_4px_rgba(74,74,104,0.1)]' : 'focus:shadow-[0px_0px_0px_4px_rgba(249,50,50,0.1)]'} mt-2 w-full h-11 p-3.5 rounded-lg`} 
+              type={passwordShown ? "text" : "password"} 
+              name="password" 
+              placeholder="Please enter your unique password"
               {...register("password",
               {required: "Password cannot be empty",
                 minLength: {
@@ -159,13 +166,17 @@ const SignUp = () => {
                maxLength: {
                 value: 30,
                 message: "Password must not be more than 30 characters"
-
               },
               pattern: {
                 value: secondPattern,
                 message: "Password has to start with a letter, can contain numbers. No spaces and special characters allowed"
               }
               })}/>
+              <span 
+                className='absolute bottom-4 right-3 cursor-pointer' 
+                onClick={togglePassword}>
+                  {passwordShown ?  <FiEyeOff /> : <FiEye />}
+              </span>
               {errors.password && <p className='right-0 bottom-[-37px] italic text-sm mt-2' style={{color: 'red'}}>{errors.password?.message}</p>}
             </div>
 
