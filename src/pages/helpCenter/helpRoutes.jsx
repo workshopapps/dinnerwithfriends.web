@@ -45,5 +45,3 @@ const HelpRoutes = () => {
 };
 
 export default HelpRoutes;
-
-export default HelpRoutes;
