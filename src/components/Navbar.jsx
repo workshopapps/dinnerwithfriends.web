@@ -1,7 +1,11 @@
-import React from "react";
+import React,{useState}  from "react";
+import {FaBars,FaTimes} from "react-icons/fa"
 import { Link } from "react-router-dom";
+import { HiChevronDown} from "react-icons/hi";
+import { icons } from "react-icons";
 
 const Navbar = () => {
+  const [nav, setNav] = useState(false)
   return (
     <nav className="bg-white px-2 sm:px-4 py-2.5 fixed w-full z-20 top-0 left-0 border-b border-white">
       <div className="container flex flex-wrap items-center justify-between mx-auto">
@@ -26,7 +30,7 @@ const Navbar = () => {
               Sign up
             </button>
           </Link>
-          <button
+          {/*<button
             data-collapse-toggle="navbar-sticky"
             type="button"
             className="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
@@ -47,7 +51,7 @@ const Navbar = () => {
                 clipRule="evenodd"
               ></path>
             </svg>
-          </button>
+  </button>*/}
         </div>
         <div
           className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
@@ -74,7 +78,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="/error404"
-                className="flex py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 "
+                className="flex  py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 "
               >
                 Company
                 <svg
@@ -102,7 +106,60 @@ const Navbar = () => {
               </Link>
             </li>
           </ul>
+         
         </div>
+        <div className="md:hidden"> 
+        <div className="cursor-pointer pr-4 z-100 text-gray-800 " onClick={() => setNav(!nav)}  >
+            {nav ? <FaTimes size={20}  /> : <FaBars size={30} />}
+
+          </div>
+          {nav && (
+  <ul className="flex flex-col p-4 items-center justify-center  text-white md:hidden bg-blue-700 absolute top-10 right-0 w-60 h-150  ">
+  <li>
+    <Link
+      to="/howItWorks">
+      
+      How it works
+    </Link>
+  </li>
+  <li>
+    <Link
+      to="/error404"
+      
+    >
+      Blog
+    </Link>
+  </li>
+  <li>
+    <Link to="/error404" className="flex flex-row items-center justify-center space-x-1">
+     <p>Company</p> 
+<HiChevronDown/>
+      {/*<svg
+        className="w-5 h-5 ml-1"
+        fill="currentColor"
+        viewBox="0 0 20 20"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fillRule="evenodd"
+          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+          clipRule="evenodd"
+        ></path>
+          </svg>*/}
+    </Link>
+  </li>
+  <li>
+    <Link
+      fro-17-features-page
+      to="/features"
+      
+    >
+      Features
+    </Link>
+  </li>
+</ul>
+          )}
+          </div>
       </div>
     </nav>
   );
