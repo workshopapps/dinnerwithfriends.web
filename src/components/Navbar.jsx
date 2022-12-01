@@ -16,7 +16,7 @@ const Navbar = () => {
     <nav className="bg-white md:px-10 px-2.5  md:pb-2 fixed w-full z-20 top-0 left-0 border-b border-white">
       <div className="h-[45px] md:h-[76px] py-4 md:py-0 bg-transparent container flex flex-wrap items-center justify-between mx-auto">
         <Link to="/" className="flex items-center">
-          <span className="self-center text-blue-700 text-3xl font-semibold whitespace-nowrap ">
+          <span className="self-center text-[#0056D6] text-3xl font-semibold whitespace-nowrap ">
             Catch
           </span>
           <span className="self-center text-black text-3xl font-semibold whitespace-nowrap">
@@ -35,7 +35,7 @@ const Navbar = () => {
           <Link className="hidden md:block" to="/sign_up">
             <button
               type="button"
-              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              className="text-white bg-[#0056D6] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-[#0056D6] dark:focus:ring-blue-800"
             >
               Sign up
             </button>

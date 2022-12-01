@@ -21,7 +21,7 @@ const EventInviteResponse = () => {
             the main time, you can try creating your own events with CatchUp
           </p>
           <Link to={"/"} className="my-10">
-            <button className="my-8 bg-[#1070FF] rounded text-white text-lg px-4 py-2.5">
+            <button className="my-8 bg-[#0056D6] rounded text-white text-lg px-4 py-2.5">
               Give CatchUp a Try
             </button>
           </Link>

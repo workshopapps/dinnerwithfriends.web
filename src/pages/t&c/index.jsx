@@ -78,7 +78,7 @@ const Terms = () => {
     },
     {
       links: "The Agreement",
-      p: `Catchup enables you to schedule offline, real-world Catchup events. The terms “Catchup,” “we,” “us,” and “our” include Catchup, Inc. and our corporate parent, affiliates, or subsidiaries. We use the terms “you” and “your” to mean any person using our Platform, and any organization or person using the Platform on an organization’s behalf. We use the word “Platform” to mean any website, application, or service offered by Catchup, including content we offer and electronic communications we send. We provide our Platform to you subject to these Terms of Use. We use the terms “Terms of Use” and “Agreement” interchangeably to mean this document together with our Usage and Content Policies, Groups and Events Policies, Organizer and Leadership Standards, Member Restrictions, Payment Policies, 
+      p: `Catchup enables you to schedule offline, real-world Catchup events. The terms “Catchup,” “we,” “us,” and “our” include Catchup, Inc. and our corporate parent, affiliates, or subsidiaries. We use the terms “you” and “your” to mean any person using our Platform, and any organization or person using the Platform on an organization’s behalf. We use the word “Platform” to mean any website, application, or service offered by Catchup, including content we offer and electronic communications we send. We provide our Platform to you subject to these Terms of Use. We use the terms “Terms of Use” and “Agreement” interchangeably to mean this document together with our Usage and Content Policies, Groups and Events Policies, Organizer and Leadership Standards, Member Restrictions, Payment Policies,
       Trademark Usage Guidelines, and API License Terms. Your use of the Platform signifies that you agree to this Agreement. If you are using the Platform for an organization, you agree to this Agreement on behalf of that organization, and represent you have authority to bind that organization to the terms contained in this Agreement. If you do not or are unable to agree to this Agreement, do not use our Platform. Trademark Usage Guidelines, and API License Terms. Your use of the Platform signifies that you agree to this Agreement. If you are using the Platform for an organization, you agree to this Agreement on behalf of that organization, and represent you have authority to bind that organization to the terms contained in this Agreement. If you do not or are unable to agree to this Agreement, do not use our Platform.`,
       href: "#",
     },
@@ -151,7 +151,7 @@ const Terms = () => {
     {
       links: "Intellectual Property of Catchup",
       p: `The Service is and will continue to be the sole property of the Company and its licensors, including all of its original content (aside from Content that is supplied by You or other users), features, and functionality. The copyright, trademark, and other laws of the country as well as other nations provide protection for the Service. Without the previous written approval of the Company, use of our trademarks and trade dress in connection with any good or service is strictly prohibited.
-      
+
       `,
       href: "#",
     },
@@ -218,7 +218,7 @@ const Terms = () => {
             {contents.map((content) => (
               <a
                 href={content.link}
-                className="block py-2 pl-3 pr-4 md:mb-2 text-gray-800 font-sm rounded hover:text-blue-700 md:p-0"
+                className="block py-2 pl-3 pr-4 md:mb-2 text-gray-800 font-sm rounded hover:text-[#0056D6] md:p-0"
               >
                 {content.href}
               </a>

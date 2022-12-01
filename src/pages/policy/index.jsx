@@ -183,7 +183,7 @@ const Policy = () => {
       We reserve the right to exchange correspondence with you in this regard.
       Please note that we may be required to retain your Personal Data in part even after a request for blocking or cancellation under the terms of our statutory or contractual retention requirements (such as for accounting purposes) and in such an eventuality will only block your Personal Data insofar as necessary for this purpose. In addition, the cancellation of your Personal Data may have the effect that you are no longer able to acquire or use the services registered by you. Under certain circumstances, you have the right to require us to provide you or a third party specified by you with your data in a commonly used format.
       In addition, you have the right to make a complaint concerning the data processing in question with the competent supervisory authority. You can do this with the supervisory authority at your place of residence, at your place of work, or the place of the alleged data breach. Your privacy cockpit offers you further information on the various systems and providers that we use, as well as the option to change your privacy settings at any time.
-      
+
       `,
       href: "#",
     },
@@ -226,7 +226,7 @@ const Policy = () => {
               <a
                 key={i}
                 href={content.link}
-                className="block py-2 pl-3 pr-4 md:mb-2 text-gray-800 font-sm rounded hover:text-blue-700 md:p-0"
+                className="block py-2 pl-3 pr-4 md:mb-2 text-gray-800 font-sm rounded hover:text-[#0056D6] md:p-0"
               >
                 {content.href}
               </a>
