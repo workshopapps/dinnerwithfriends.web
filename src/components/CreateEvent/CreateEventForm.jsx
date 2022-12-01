@@ -7,13 +7,27 @@ import { formLogic } from "../../data/createEventErrorLogic";
 import userServices from "../../services/userServices";
 import Button from "../Button";
 import SingleCalendar from "../SingleCalendar/SingleCalendar";
-
+import dateTimeForCalender from "../../helpers/DateTimeConverter";
 const CreateEventForm = () => {
   const [showCalendar, setShowCalendar] = useState(false);
   const [showCalendar2, setShowCalendar2] = useState(false);
   const [showCalendar3, setShowCalendar3] = useState(false);
   const { startDate, endDate, preferredDate, setFormValues, formValues } =
     CatchUpEventContextUse();
+
+  const [minimumDate, setMinimumDate] = useState('')
+  const [maximumDate, setMaximumDate] = useState('')
+
+	useEffect(() => {
+		const start = dateTimeForCalender(startDate, "00:00")
+		const end = dateTimeForCalender(endDate, "00:00")
+		setMinimumDate(start)
+		setMaximumDate(end)
+	}, [startDate, endDate])
+
+
+
+ console.log(minimumDate, maximumDate)
   const navigate = useNavigate();
 
   const [errors, setErrors] = useState({
@@ -263,6 +277,8 @@ const CreateEventForm = () => {
 							addTime
 							setShowCalendar={setShowCalendar3}
 							showCalendar={showCalendar3}
+							minDate={minimumDate}
+							maxDate={maximumDate}
 						/>
 					</div>
 				</div>

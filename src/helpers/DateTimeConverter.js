@@ -1,7 +1,7 @@
 // Get date-time string for calender
 const TIMEOFFSET = '+01:00';
 
-const dateTimeForCalander = (final_event_date, time) => {
+const dateTimeForCalender = (final_event_date, time) => {
 
     const splitDate = final_event_date.split("/");
     const splitTime = time.split(":");
@@ -11,4 +11,4 @@ const dateTimeForCalander = (final_event_date, time) => {
      return event
 };
 
-export default dateTimeForCalander
+export default dateTimeForCalender
