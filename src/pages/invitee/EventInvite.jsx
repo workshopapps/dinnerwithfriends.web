@@ -104,7 +104,7 @@ const EventInvite = () => {
             <div className="my-7 flex justify-between">
               <button
                 type="submit"
-                className="rounded bg-[#1070FF] text-white py-2.5 md:px-3 px-1.5 md:text-lg text-base"
+                className="rounded bg-[#0056D6] text-white py-2.5 md:px-3 px-1.5 md:text-lg text-base"
                 onClick={addParticipant}
               >
                 Accept Invite

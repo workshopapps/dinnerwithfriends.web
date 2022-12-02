@@ -4,7 +4,7 @@ import Logo from "./Logo";
 
 const Navbar = () => {
   const [display, setDisplay] = useState(false)
- 
+
     function hamburger() {
       setDisplay(!display)
     }
@@ -33,7 +33,7 @@ const Navbar = () => {
 							Sign up
 						</button>
 					</Link>
-					
+
 					<div onClick={hamburger} className=" z-[100] w-[30px] h-[30px] px-1 py-1 text-gray-500 rounded-lg md:hidden  ">
 						<div style={{transform: display? "translateY(5.5px) rotate(45deg)" : "rotate(0)"}} className="transition ease-in duration-200 bg-black w-[20px] h-[1.5px] mt-1"></div>
 						<div style={{opacity: display? 0 : 1}} className="transition ease-in duration-200 bg-black w-[20px] h-[1.5px] mt-1"></div>
@@ -73,7 +73,7 @@ const Navbar = () => {
                 How it works
               </Link>
             </li>
-            
+
             <li>
               <Link
                 fro-17-features-page
@@ -86,7 +86,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                
+
                 to="/aboutus"
                 dev
                 className="block py-3 md:py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 "
@@ -96,16 +96,16 @@ const Navbar = () => {
             </li>
             <li className="md:hidden">
               <Link
-                
+
                 to="/sign_up"
                 dev
-                className=" mx-auto block mt-4 py-2 pl-3 pr-4 ml-2 text-white text-center bg-[#1070FF] h-[44px] w-[225px] rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 "
+                className=" mx-auto block mt-4 py-2 pl-3 pr-4 ml-2 text-white text-center bg-[#0056D6] h-[44px] w-[225px] rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 "
               >
                 Sign Up
               </Link>
             </li>
           </ul>
-          
+
         </div>
 			</div>
 		</nav>
