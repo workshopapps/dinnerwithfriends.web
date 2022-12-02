@@ -4,7 +4,6 @@ import { FiEye, FiEyeOff } from 'react-icons/fi'
 import { useForm } from "react-hook-form"
 import image from './signup_image.webp'
 import google from './google.svg'
-import nigeria from './nigeria.svg'
 import Logo from '../../components/Logo'
 
 const SignUp = () => {
