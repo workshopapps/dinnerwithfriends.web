@@ -1,35 +1,32 @@
 .theUserDetail,
 .syncWithGoogle {
-  display: flex;
-  gap: 5px;
-  align-items: center;
-  cursor: pointer;
+	display: flex;
+	gap: 5px;
+	align-items: center;
+	cursor: pointer;
 }
 .syncWithGoogle {
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid rgb(231, 227, 227);
-  width: 100%;
+	padding-bottom: 0.5rem;
+	border-bottom: 1px solid rgb(231, 227, 227);
+	width: 100%;
 }
 .letterM {
-  border: 1px solid rgb(11, 127, 221);
-  border-radius: 50%;
-  padding: 8px;
+	border: 1px solid rgb(11, 127, 221);
+	border-radius: 50%;
+	padding: 8px;
 }
 .theUsersName {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 .theCreateEventContainer {
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem;
+	display: flex;
+	justify-content: space-between;
+	padding: 1rem;
 }
 .theCreateEventContainerLinks {
   display: flex;
-  position: absolute;
-  z-index: 1000;
-  opacity: 0.9;
   flex-direction: column;
   align-items: flex-start;
   padding: 1rem;
@@ -43,7 +40,7 @@
   width: 100%;
 }
 .goTo:hover {
-    color:  #0056D6;
+	color: #0056d6;
 }
 .logOutBtn {
     border: 1px solid  rgb(221, 18, 11);
@@ -54,10 +51,10 @@
     color:  rgb(221, 11, 11);
 }
 .logOutBtn:active {
-    background-color: rgb(11, 127, 221);
-    color: #fff;
+	background-color: rgb(11, 127, 221);
+	color: #fff;
 }
 .open,
 .close {
-    display: none;
+	display: none;
 }
