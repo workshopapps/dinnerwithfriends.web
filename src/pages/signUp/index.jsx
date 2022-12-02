@@ -34,7 +34,7 @@ const SignUp = () => {
 
   }*/
 
-	const onSubmit = (data) => {
+	const onSubmit = async (data) => {
 		reset();
 		setSubmitting(true);
 		setExistingUser(false);
@@ -64,8 +64,9 @@ const SignUp = () => {
 				}
 				if (result.status === "success") {
 					setAccountCreated(true);
+					localStorage.setItem("jwt-token", result.accessToken);
 					setTimeout(() => {
-						nav("/sign_in");
+						nav('/dashboard/upcoming_events');
 					}, 2000);
 				}
 			})
@@ -108,7 +109,7 @@ const SignUp = () => {
 					)}
 					{accountCreated && (
 						<p className='mt-4 text-base text-green-600 text-center'>
-							Account Created Successfully!
+							Account Created Successfully!. You'll be signed in just a moment!.
 						</p>
 					)}
 					<form
