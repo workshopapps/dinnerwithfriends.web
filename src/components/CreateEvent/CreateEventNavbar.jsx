@@ -2,7 +2,7 @@ import React, { useState }  from "react";
 import Logo from "../Logo";
 import googleCalendar from "../../assets/img/g-calendar.svg";
 import bell from "../../assets/img/notification.png";
-import { SlArrowDown } from "react-icons/sl";
+import { SlArrowDown, SlArrowUp } from "react-icons/sl";
 import { HiOutlineMenu } from "react-icons/hi";
 import { FaTimes } from "react-icons/fa";
 import menuStyles from "./createEvent.module.css";
@@ -16,13 +16,19 @@ const CreateEventNavbar = () => {
         <Logo />
         <div className="items-center cursor-pointer hidden md:flex">
           <img src={bell} alt="" className="w-[15px] h-[15px] mr-2" />
-          <div className="w-[35px] h-[35px] border border-[#66A3FF] text-[#717172] rounded-full flex justify-center items-center object-cover text-xs">
+          <div className="w-[35px] h-[35px] border border-[#0056D6] text-[#717172] rounded-full flex justify-center items-center object-cover text-xs">
             <span>M</span>
           </div>
-          <span className="ml-2 text-xs" onClick={() => setOpen(!open)}>
-            <SlArrowDown />
-          </span>
+          <div className="flex items-center ml-3">
+            <button className={open && menuStyles.close}>
+              <SlArrowDown onClick={() => setOpen(true)} />
+            </button>
+            <button className={!open && menuStyles.open}>
+              <SlArrowUp onClick={() => setOpen(false)} />
+            </button>
+          </div>
         </div>
+
         <div className=" md:hidden flex items-center">
           <button className={open && menuStyles.close}>
             <HiOutlineMenu onClick={() => setOpen(true)} />
@@ -54,7 +60,7 @@ const CreateEventNavbar = () => {
             </Link>
 
             <span className={menuStyles.theUserDetail}>
-              <div className="w-[35px] h-[35px] border border-[#66A3FF] text-[#717172] rounded-full flex justify-center items-center object-cover text-xs">
+              <div className="w-[35px] h-[35px] border border-[#0056D6] text-[#717172] rounded-full flex justify-center items-center object-cover text-xs">
                 <span>M</span>
               </div>
               <span className={menuStyles.theUsersName}>

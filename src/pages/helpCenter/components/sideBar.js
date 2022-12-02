@@ -3,7 +3,7 @@ import HelpSearch from "./search";
 
 const Sidebar = ({ data, activeLink, setActiveLink }) => {
 
-    return (
+    return (        
         <div className="lg:w-80 sm:w-auto lg:sticky md:mr-8 lg:h-screen top-0 static px-2 mt-10 my-20">
             <div className="md:-mt-10">
                 <HelpSearch />
@@ -14,8 +14,8 @@ const Sidebar = ({ data, activeLink, setActiveLink }) => {
                 return (
                 <li className="my-5" key={category.id}>
                     <a
-                    className={`my-4 font-medium text-base hover:text-blue-800 ${
-                        activeLink === category.link ? "text-[#0056D6]" : ""
+                    className={`my-4 font-medium text-sm hover:text-blue-800 ${
+                        activeLink === category.link ? "text-blue-700" : ""
                     }`}
                     href={`?${""}#${category.link}`}
                     onClick={() => setActiveLink(category.link)}

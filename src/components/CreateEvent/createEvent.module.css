@@ -29,8 +29,6 @@
 }
 .theCreateEventContainerLinks {
 	display: flex;
-	position: absolute;
-	z-index: 1000;
 	flex-direction: column;
 	align-items: flex-start;
 	padding: 1rem;
@@ -62,10 +60,9 @@
 .close {
 	display: none;
 }
-/* @media (max-width: 719px) {
-  .theCreateEventContainerLinks {
-    display: flex;
-    position: absolute;
-    z-index: 1000;
-  }
-} */
+
+@media screen and (max-width: 430px) {
+	.theCreateEventContainer {
+		padding: 1rem;
+	}
+}
