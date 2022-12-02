@@ -60,7 +60,7 @@ const SignIn = () => {
           </div>
             </div>
             <div className="mt-10 tablet:mt-14 lg:px-4 w-full max-w-md mx-auto">
-              <h3 className="font-medium text-xl lg:text-4xl font-bold text-gray-600 ">
+              <h3 className="font-medium text-xl lg:text-4xl text-gray-600 ">
                 Welcome!
               </h3>
               <p className="sm:text-base lg:text-xl text-gray-600 mb-8 ">

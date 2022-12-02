@@ -19,7 +19,7 @@ const CreateEventNavbar = () => {
           <div className="w-[35px] h-[35px] border border-[#66A3FF] text-[#717172] rounded-full flex justify-center items-center object-cover text-xs">
             <span>M</span>
           </div>
-          <div className="flex items-center">
+          <div className="flex items-center ml-3">
             <button className={open && menuStyles.close}>
               <SlArrowDown onClick={() => setOpen(true)} />
             </button>
