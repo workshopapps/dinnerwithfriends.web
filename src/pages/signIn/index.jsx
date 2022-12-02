@@ -1,9 +1,9 @@
 import React, { useState }  from "react";
 import { useNavigate, Link } from 'react-router-dom'
-import { FiEye, FiEyeOff } from 'react-icons/fi'
 import { useForm } from "react-hook-form";
 import signInImage from "../../assets/img/Rectangle 254.png";
 import userServices from "../../services/userServices";
+import Logo from "../../components/Logo";
 
 
 const SignIn = () => {
@@ -48,10 +48,7 @@ const SignIn = () => {
           <div className="form-wrapper h-screen w-1/2 px-8 mt-6">
             <div className="flex justify-between items-center gap-8">
               <div>
-              <Link to='/'>
-                <span className="font-bold text-3xl lg:text-5xl text-[#0056D6]">Catch</span>
-                <span className="font-bold text-3xl lg:text-5xl ml-1">Up</span>
-              </Link>
+              <Logo />
               </div>
                <div className='px-1 rounded-[20px] w-29 tablet:w-35 tablet:h-10 h-[34px]  bg-[#BCD7FF] flex justify-around items-center'>
 
@@ -62,7 +59,7 @@ const SignIn = () => {
           </div>
             </div>
             <div className="mt-10 tablet:mt-14 lg:px-4 w-full max-w-md mx-auto">
-              <h3 className="font-medium text-xl lg:text-4xl font-bold text-gray-600 ">
+              <h3 className="font-medium text-xl lg:text-4xl text-gray-600 ">
                 Welcome!
               </h3>
               <p className="sm:text-base lg:text-xl text-gray-600 mb-8 ">
