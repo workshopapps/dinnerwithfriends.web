@@ -18,13 +18,13 @@ const HelpCenter = ({ data, setActiveLink }) => {
                     {
                         data.map(category => {
                             return (
-                                <div className="p-3 px-4 bg-blue-50 hover:bg-green-50 hover:border hover:border-l-primary-500 pb-8">
+                                <div className="p-3 px-4 bg-[#0056D6] hover:bg-green-50 hover:border hover:border-l-primary-500 pb-8">
                                     <div className="flex justify-end">
                                         <img src={category.icon} alt={category.heading} />
                                     </div>
                                     <h3 className="text-xl font-bold my-4">{category.heading}</h3>
                                     <p className="my-6 w-3/4">{category.para}</p>
-            
+
                                     <a href={`/help/category#${category.link}`} onClick={() => setActiveLink(category.link)} className="p-2 border border-primary-900 rounded w-full flex justify-center hover:bg-primary-900 hover:text-white">Explore</a>
                                 </div>
                             )

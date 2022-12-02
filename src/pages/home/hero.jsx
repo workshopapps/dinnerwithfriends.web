@@ -31,7 +31,7 @@ const Hero = () => {
           </p>
           <Link
             to="/sign_up"
-            className="w-full inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white bg-blue-700 rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 lg:w-1/3"
+            className="w-full inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white bg-[#0056D6] rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 lg:w-1/3"
           >
             Get started
             <svg
