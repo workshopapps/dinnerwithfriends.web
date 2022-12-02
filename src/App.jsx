@@ -45,7 +45,7 @@ function App() {
         <Route path="/invitee" element={<Invitee />} />
         <Route path="/sign_in" element={<SignIn />} />
         <Route path="/sign_up" element={<SignUp />} />
-        <Route path="/view_event" element={<ViewEvent />} />
+        <Route path="/view_event/:id" element={<ViewEvent />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/policy" element={<Policy />} />
         <Route path="/howItWorks" element={<HowItWorks />} />

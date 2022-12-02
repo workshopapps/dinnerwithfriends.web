@@ -16,7 +16,7 @@ const CreateEventNavbar = () => {
         <Logo />
         <div className="items-center cursor-pointer hidden md:flex">
           <img src={bell} alt="" className="w-[15px] h-[15px] mr-2" />
-          <div className="w-[35px] h-[35px] border border-[#66A3FF] text-[#717172] rounded-full flex justify-center items-center object-cover text-xs">
+          <div className="w-[35px] h-[35px] border border-[#0056D6] text-[#717172] rounded-full flex justify-center items-center object-cover text-xs">
             <span>M</span>
           </div>
           <div className="flex items-center ml-3">
@@ -60,7 +60,7 @@ const CreateEventNavbar = () => {
             </Link>
 
             <span className={menuStyles.theUserDetail}>
-              <div className="w-[35px] h-[35px] border border-[#66A3FF] text-[#717172] rounded-full flex justify-center items-center object-cover text-xs">
+              <div className="w-[35px] h-[35px] border border-[#0056D6] text-[#717172] rounded-full flex justify-center items-center object-cover text-xs">
                 <span>M</span>
               </div>
               <span className={menuStyles.theUsersName}>
