@@ -112,7 +112,6 @@ const ViewEvent = () => {
 		const events = JSON.parse(eArr);
 		const sEvent = events.find((event) => event._id === id);
 		setSingleEvent(sEvent);
-    console.log(singleEvent)
 
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
