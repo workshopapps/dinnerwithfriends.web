@@ -85,10 +85,9 @@ const SignUp = () => {
 			<div className=' w-full h-full bg-white tablet:w-6/12 tablet:p-3.5 mx-auto '>
 				<header className=' w-full flex justify-between items-center px-4 pt-4 mt-3.5 tablet:mt-0'>
 					<Logo />
-					<div className='px-1 rounded-[20px] w-29 tablet:w-35 tablet:h-10 h-[34px]  bg-blue-100 flex justify-around items-center'>
-						<img className='w-5' src={nigeria} alt='nigerian flag' />
+					<div className='px-1 rounded-[20px] w-29 tablet:w-35 tablet:h-10 h-[34px]  bg-[#BCD7FF] flex justify-around items-center'>
 						<select
-							className='language-select bg-blue-100 w-full font-semibold focus:outline-none text-xs tablet:text-sm'
+							className='language-select bg-[#BCD7FF] w-full font-semibold focus:outline-none text-xs tablet:text-sm'
 							name='language'
 							id='language'>
 							<option value='uk'>English (UK)</option>
@@ -228,7 +227,7 @@ const SignUp = () => {
             </div>
 
 						<button
-							className=' transition ease-in duration-200 hover:bg-[#66A3FF] mt-4 text-white bg-[#0056D6] w-full h-11 rounded-lg'
+							className=' transition ease-in duration-200 hover:bg-[#0056D6] mt-4 text-white bg-[#0056D6] w-full h-11 rounded-lg'
 							type='submit'>
 							{submitting ? "Loading..." : "Create a free account"}
 						</button>
