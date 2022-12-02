@@ -7,9 +7,9 @@ pipeline {
         stage("Get repo"){
 
 			steps {
-				sh "rm -rf ${WORKSPACE}/catchup_web"
+				sh "rm -rf ${WORKSPACE}/dinnerwithfriends.web"
 				sh "git clone https://github.com/workshopapps/dinnerwithfriends.web.git"
-				sh "sudo cp -r ${WORKSPACE}/catchup_web /home/johnoni/dinnerwithfriends.web"
+				sh "sudo cp -r ${WORKSPACE}/dinnerwithfriends.web /home/johnoni/dinnerwithfriends.web"
 			}
 
 		}
