@@ -161,7 +161,7 @@ const ResetPassword = () => {
               <div className="mt-5">
                 <button
                   type="submit"
-                  className="w-60 md:w-96 text-white bg-[#0056D6] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-[] dark:focus:ring-blue-800"
+                  className="w-60 md:w-96 text-white bg-[#0056D6] hover:bg-[#0056D6] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-[#0056D6] dark:focus:ring-blue-800"
                 >
                   {isSubmit ? "Loading..." : "Submit"}
                 </button>
