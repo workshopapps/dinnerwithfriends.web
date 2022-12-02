@@ -25,9 +25,13 @@ import EventInviteResponse from "./pages/invitee/EventInviteResponse";
 import EventSummary from "./pages/dashboard/EventSummary";
 import UpcomingEvent from "./pages/dashboard/UpcomingEvent";
 import Features from "./pages/Features-page/features";
+import Career from "./pages/career/Career";
+import JobDetails from "./pages/career/JobDetails";
+
 import HelpRoutes from "./pages/helpCenter/helpRoutes";
 import AboutUsPage from "./pages/aboutUs";
 import { googleCalender } from "./helpers/googleCalender";
+import EventInvite from "./pages/invitee/EventInvite";
 googleCalender();
 function App() {
   return (
@@ -48,6 +52,7 @@ function App() {
         <Route path="/faq" element={<Faq />} />
         <Route path="/terms-of-use" element={<TermsOfUse />} />
         <Route path="/terms" element={<Terms />} />
+        <Route path="/event_invite/:eventId" element={<EventInvite />}/>
         <Route path="/event_summary" element={<EventSummary />} />
         <Route
           path="/event_invite/event_invite_response"
@@ -58,6 +63,11 @@ function App() {
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/forgot_password" element={<ForgetPassword />} />
         <Route path="/reset_link" element={<ResetLink />} />
+
+        <Route path="/careers" element={<Career />} />
+        <Route path="/careers/job-details" element={<JobDetails />} />
+        <Route path="*" element={<Error404 />} />
+
         <Route path="/reset_password" element={<ResetPassword />} />
         <Route path="/help/*" element={<HelpRoutes />} />
         <Route path="/aboutUs" element={<AboutUsPage />} />

@@ -29,6 +29,7 @@ pipeline {
                 sh "sudo systemctl restart nickstersz.service"
 
                 // sh "sudo serve -s /home/johnoni/dinnerwithfriends.web/build -p 3999"
+	
             }
 			
 	    }
