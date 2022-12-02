@@ -143,8 +143,8 @@ const ViewEvent = () => {
                     <img
                       className={
                         isActive === invitee.id
-                          ? "w-3 sm:w-4 md:w-5 rotate-180"
-                          : "w-3 sm:w-4 md:w-5 transitioni-all"
+                          ? "w-3 sm:w-4 md:w-5 rotate-180 transition duration-250 ease-in-out"
+                          : "w-3 sm:w-4 md:w-5 transition duration-250 ease-in-out"
                       }
                       src={arrow}
                       alt=""

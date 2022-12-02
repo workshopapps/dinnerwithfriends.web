@@ -12,11 +12,6 @@ const SignIn = () => {
   const [isLoggedIn, setIsloggedIn] = useState(false)
   const [invalidCredentials, setInvalidCredentials] = useState(false)
   const navigate = useNavigate();
-  const [passwordShown, setPasswordShown] = useState(false);
-
-  const togglePassword = () => {
-    setPasswordShown(!passwordShown);
-  };
 
   const onSubmit = async (data) => {
     setIsSubmit(true)
@@ -96,32 +91,25 @@ const SignIn = () => {
                 />
                 <p className="text-red-500 text-sm ">{errors.email?.message}</p>
 
-                <div className=" flex flex-col gap-4 relative">
-                  <label className="pb-0">Password</label>
-                  <input
-                    className="relative p-2 rounded-xl border"
-                    type={passwordShown ? "text" : "password"} 
-                    name="password"
-                    id="password"
-                    placeholder="Enter your password"
-                    {...register("password", {
-                      required: "Password is required",
-                      minLength: {
-                        value: 9,
-                        message: "Password must be at least 9 characters",
-                      },
-                      maxLength: {
-                        value: 30,
-                        message: "Password cannot exceed more than 30 characters",
-                      },
-                    })}
-                  />
-                  <span 
-                    className='absolute bottom-4 right-3 cursor-pointer' 
-                    onClick={togglePassword}>
-                      {passwordShown ?  <FiEyeOff /> : <FiEye />}
-                  </span>
-                </div>
+                <label className="pb-0">Password</label>
+                <input
+                  className="p-2 rounded-xl border"
+                  type="password"
+                  name="password"
+                  id="password"
+                  placeholder="Enter your password"
+                  {...register("password", {
+                    required: "Password is required",
+                    minLength: {
+                      value: 9,
+                      message: "Password must be at least 9 characters",
+                    },
+                    maxLength: {
+                      value: 30,
+                      message: "Password cannot exceed more than 30 characters",
+                    },
+                  })}
+                />
 
                 <p className="text-red-500 text-sm">
                   {errors.password?.message}
