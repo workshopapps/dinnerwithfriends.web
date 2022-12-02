@@ -115,7 +115,7 @@ const SignIn = () => {
                     })}
                   />
                   <span
-                    className='absolute bottom-4 right-3 cursor-pointer'
+                    className='absolute bottom-7 right-3 cursor-pointer'
                     onClick={togglePassword}>
                       {passwordShown ?  <FiEyeOff /> : <FiEye />}
                   </span>
