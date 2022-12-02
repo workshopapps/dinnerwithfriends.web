@@ -1,56 +1,45 @@
 import React, { useState }  from "react";
 import { useNavigate, Link } from 'react-router-dom'
+import { FiEye, FiEyeOff } from 'react-icons/fi'
 import { useForm } from "react-hook-form";
 import signInImage from "../../assets/img/Rectangle 254.png";
 import userServices from "../../services/userServices";
-import Logo from "../../components/Logo";
+
 
 const SignIn = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  const { register, handleSubmit, formState: { errors } } = useForm();
   const [isSubmit, setIsSubmit] = useState(false);
-  const [isLoggedIn, setIsloggedIn] = useState(false);
-  const [invalidCredentials, setInvalidCredentials] = useState(false);
+  const [isLoggedIn, setIsloggedIn] = useState(false)
+  const [invalidCredentials, setInvalidCredentials] = useState(false)
   const navigate = useNavigate();
 
   const onSubmit = async (data) => {
-    setIsSubmit(true);
+    setIsSubmit(true)
     const result = await userServices.login(data);
 
-    if (result.status === "fail") {
-      setIsSubmit(false);
-      setInvalidCredentials(true);
+    if(result.status === 'fail'){
+      setIsSubmit(false)
+      setInvalidCredentials(true)
     }
 
-    if (result.status === "success") {
-      setIsloggedIn(true);
-      localStorage.setItem("jwt-token", result.accessToken);
-      setTimeout(() => {
-        navigate("/dashboard/upcoming_events");
-      }, 1000);
-    }
+    if(result.status === 'success'){
+       setIsloggedIn(true)
+       localStorage.setItem("jwt-token", result.accessToken);
+       setTimeout(() => {
+        navigate('/dashboard/upcoming_events')
+        }, 1000)
+      }
   };
 
   const errorMsg = () => {
     let element;
     if (isLoggedIn) {
-      element = (
-        <p className="mt-4 text-xl text-green-600 text-center">
-          Login Successful!
-        </p>
-      );
-    } else if (invalidCredentials) {
-      element = (
-        <p className="mt-4 text-xl text-red-600 text-center">
-          Incorrect Email or Password
-        </p>
-      );
-    }
-    return element;
-  };
+      element =  <p className='mt-4 text-xl text-green-600 text-center'>Login Successful!</p>
+     } else if(invalidCredentials) {
+      element = <p className='mt-4 text-xl text-red-600 text-center'>Incorrect Email or Password</p>
+     }
+     return element
+  }
 
   return (
     <div>
@@ -64,17 +53,15 @@ const SignIn = () => {
                 <span className="font-bold text-3xl lg:text-5xl ml-1">Up</span>
               </Link>
               </div>
-               <div className='px-1 rounded-[20px] w-29 tablet:w-35 tablet:h-10 h-[34px]  bg-blue-100 flex justify-around items-center'>
+               <div className='px-1 rounded-[20px] w-29 tablet:w-35 tablet:h-10 h-[34px]  bg-[#BCD7FF] flex justify-around items-center'>
 
-            <select className='language-select bg-blue-100 w-full font-semibold focus:outline-none text-xs tablet:text-sm' name="language" id="language">
+            <select className='language-select bg-[#BCD7FF] w-full font-semibold focus:outline-none text-xs tablet:text-sm' name="language" id="language">
               <option value="uk">English (UK)</option>
               <option value="us">English (US)</option>
             </select>
-
-
           </div>
             </div>
-            <div className="px-2 lg:px-14 mt-10 lg:mt-14">
+            <div className="mt-10 tablet:mt-14 lg:px-4 w-full max-w-md mx-auto">
               <h3 className="font-medium text-xl lg:text-4xl font-bold text-gray-600 ">
                 Welcome!
               </h3>
@@ -147,11 +134,8 @@ const SignIn = () => {
                   </div>
                 </div>
 
-                <button
-                  type="submit"
-                  className="bg-[#0056D6] hover:bg-[#0056D6] rounded-xl text-white py-2 hover:scale-105 duration-300"
-                >
-                  {isSubmit ? "Loading..." : "Sign In"}
+                <button type="submit" className="bg-[#0056D6] hover:bg-[#0056D6] rounded-xl text-white py-2 hover:scale-105 duration-300">
+                  {isSubmit ? 'Loading...' : 'Sign In'}
                 </button>
               </form>
               <div className="mt-6 items-center text-[#0056D6]">
@@ -193,8 +177,8 @@ const SignIn = () => {
               </div>
             </div>
           </div>
-          <div className="form-image h-screen w-1/2">
-            <img className=" object-cover" src={signInImage} alt=" " />
+          <div className="form-image w-1/2">
+            <img className="" src={signInImage} alt=" " />
           </div>
         </div>
       </section>

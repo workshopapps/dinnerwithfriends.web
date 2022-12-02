@@ -26,11 +26,7 @@
   padding: 1rem;
 }
 .theCreateEventContainerLinks {
-  display: flex;
-  position: absolute;
-  z-index: 1000;
-  opacity: 0.9;
-  transition: 500ms ease-in-out;
+  display: none;
   flex-direction: column;
   align-items: flex-start;
   padding: 1rem;
@@ -61,4 +57,11 @@
 .open,
 .close {
     display: none;
+}
+@media (max-width: 719px) {
+  .theCreateEventContainerLinks {
+    display: flex;
+    position: absolute;
+    z-index: 1000;
+  }
 }
