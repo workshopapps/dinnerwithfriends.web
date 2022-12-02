@@ -13,7 +13,7 @@ const Navbar = () => {
       transform: window.matchMedia("(max-width: 767px)").matches && !display ? "translateY(-150%)" : "translateY(0)"
      }
 	return (
-		<nav className='bg-white px-2 sm:px-4 py-0 fixed w-full z-20 top-0 left-0 border-b border-white'>
+		<nav className={`bg-white px-2 sm:px-4 py-0 fixed w-full z-20 top-0 left-0 border-b border-white ${display ? "h-[300px]" : "h-[57px]"}`}>
 			<div className='container flex flex-wrap items-center justify-between mx-auto my-2'>
 			<Link to="/" className="flex items-center">
 				<Logo />
