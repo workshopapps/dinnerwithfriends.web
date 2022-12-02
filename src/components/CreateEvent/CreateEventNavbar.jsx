@@ -28,7 +28,7 @@ const CreateEventNavbar = () => {
             </button>
           </div>
         </div>
-        
+
         <div className=" md:hidden flex items-center">
           <button className={open && menuStyles.close}>
             <HiOutlineMenu onClick={() => setOpen(true)} />
