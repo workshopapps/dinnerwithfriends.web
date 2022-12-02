@@ -51,9 +51,9 @@ const EventModal = () => {
 														navigate("/view_event");
 													}}
 													children='Ok, Thanks!'
-													className='rounded-[4px] bg-[#1070FF] py-3 px-6 text-xs  text-white'
+													className='rounded-[4px] bg-[#0056D6] py-3 px-6 text-xs  text-white'
 												/>
-												<Button className='border border-[#1070FF] rounded-[4px] py-3 px-6 text-xs  text-[#1070FF] flex items-center'>
+												<Button className='border border-[#0056D6] rounded-[4px] py-3 px-6 text-xs  text-[#0056D6] flex items-center'>
 													<span className='mr-2'>
 														<BiCopy />
 													</span>

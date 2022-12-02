@@ -6,9 +6,13 @@ import inviteeImg1 from "../../assets/img/inviteeImg1.png";
 import inviteeImg2 from "../../assets/img/inviteeImg2.png";
 import inviteeImg3 from "../../assets/img/inviteeImg3.png";
 import inviteeImg4 from "../../assets/img/inviteeImg4.png";
+import { CatchUpEventContextUse } from "../../context/CatchUpEventContext";
+import AddParticipantModal from "../../components/AddParticipantModal";
+import { BsPlus } from "react-icons/bs";
 
 const ViewEvent = () => {
   const [isActive, setIsActive] = useState(false);
+  const { setShowModal } = CatchUpEventContextUse();
 
   const invitees = [
     {
@@ -98,14 +102,24 @@ const ViewEvent = () => {
               no bring yourself here.
             </p>
           </section>
-          <aside className="text-right font-medium my-3 text-sm">
-            Agreed Date{" "}
-            <span className="bg-blue-100 text-blue-800 text-sm px-2 py-1 font-semibold rounded ml-1">
-              21st Nov. 2022
-            </span>
-          </aside>
+          <div className="flex tablet:justify-between md:justify-start my-5">
+            <button
+              onClick={() => setShowModal(true)}
+              className="bg-transparent flex items-center text-[#1070FF]"
+            >
+              <p className="mr-2 md:text-base text-sm">Add participant</p>
+              <BsPlus />
+            </button>
+            <aside className="text-right font-medium my-3 text-sm ">
+              Agreed Date
+              <span className="bg-[#0056D6] text-[#0056D6] text-sm px-2 py-1 font-semibold rounded ml-1">
+                21st Nov. 2022
+              </span>
+            </aside>
+          </div>
+
           <section className="flex flex-col justify-center">
-            <div className="max-h-[17em] overflow-y-scroll pr-4">
+            <div className="max-h-[17em] overflow-y-scroll scroll-blue-500 pr-4">
               {invitees.map((invitee) => (
                 <div
                   onClick={() => toggleShowAccordion(invitee.id)}
@@ -129,8 +143,8 @@ const ViewEvent = () => {
                     <img
                       className={
                         isActive === invitee.id
-                          ? "w-3 sm:w-4 md:w-5 rotate-180"
-                          : "w-3 sm:w-4 md:w-5 transitioni-all"
+                          ? "w-3 sm:w-4 md:w-5 rotate-180 transition duration-250 ease-in-out"
+                          : "w-3 sm:w-4 md:w-5 transition duration-250 ease-in-out"
                       }
                       src={arrow}
                       alt=""
@@ -155,11 +169,12 @@ const ViewEvent = () => {
                 </div>
               ))}
             </div>
-            <button className=" px-3 py-2 hover:bg-blue-500 hover:text-white border-2 border-blue-500 rounded mx-auto mt-3 text-center text-blue-500 transition-all">
+            <button className=" px-3 py-2 hover:bg- hover:text-white border-2 border-blue-500 rounded mx-auto mt-3 text-center text-blue-500 transition-all">
               Load more
             </button>
           </section>
         </main>
+        <AddParticipantModal />
       </div>
     </>
   );

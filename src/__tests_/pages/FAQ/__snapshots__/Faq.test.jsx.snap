@@ -16,7 +16,7 @@ Object {
             href="/"
           >
             <span
-              class="self-center text-blue-700 text-3xl font-semibold whitespace-nowrap "
+              class="self-center text-[#0056D6] text-3xl font-semibold whitespace-nowrap "
             >
               Catch
             </span>
@@ -33,7 +33,7 @@ Object {
               href="/sign_up"
             >
               <button
-                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                class="text-white bg-[#0056D6] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-[#0056D6] dark:focus:ring-blue-800"
                 type="button"
               >
                 Sign up
@@ -59,9 +59,9 @@ Object {
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  clip-rule="evenodd"
+                  clipRule="evenodd"
                   d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                  fill-rule="evenodd"
+                  fillRule="evenodd"
                 />
               </svg>
             </button>
@@ -76,7 +76,7 @@ Object {
               <li>
                 <a
                   aria-current="page"
-                  class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white"
+                  class="block py-2 pl-3 pr-4 text-white bg-[#0056D6] rounded md:bg-transparent md:text-[#0056D6] md:p-0 dark:text-white"
                   href="/howItWorks"
                 >
                   How it works
@@ -84,7 +84,7 @@ Object {
               </li>
               <li>
                 <a
-                  class="block py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 "
+                  class="block py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#0056D6] md:p-0 "
                   href="/"
                 >
                   Blog
@@ -92,7 +92,7 @@ Object {
               </li>
               <li>
                 <a
-                  class="flex py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 "
+                  class="flex py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#0056D6] md:p-0 "
                   href="/"
                 >
                   Company
@@ -103,16 +103,16 @@ Object {
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      clip-rule="evenodd"
+                      clipRule="evenodd"
                       d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                      fill-rule="evenodd"
+                      fillRule="evenodd"
                     />
                   </svg>
                 </a>
               </li>
               <li>
                 <a
-                  class="block py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 "
+                  class="block py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#0056D6] md:p-0 "
                   href="/"
                 >
                   Features
@@ -477,7 +477,7 @@ Object {
             Can’t find the answer you’re looking for? Please, visit the Help Center for more help
           </p>
           <button
-            class="bg-[#1070FF] rounded py-2.5 lg:py-3 px-6 lg:px-8 text-[#fff] font-bold text-sm lg:text-xl"
+            class="bg-[#0056D6] rounded py-2.5 lg:py-3 px-6 lg:px-8 text-[#fff] font-bold text-sm lg:text-xl"
             type="button"
           >
             Get in touch
@@ -485,7 +485,7 @@ Object {
         </div>
       </section>
       <footer
-        class="bg-blue-700"
+        class="bg-[#0056D6]"
       >
         <div
           class="mx-auto lg:mx-24 grid grid-cols-2 gap-8 py-8 px-6 md:grid-cols-5"
@@ -698,7 +698,7 @@ Object {
           <span
             class="text-md text-gray-100 sm:text-center"
           >
-            © 2022 
+            © 2022
             <a
               href="/"
             >
@@ -709,7 +709,7 @@ Object {
           <div
             class="flex mt-1 text-md text-white space-x-6 sm:justify-center md:mt-0"
           >
-            Made with love 
+            Made with love
             <svg
               fill="currentColor"
               height="1em"
@@ -740,7 +740,7 @@ Object {
           href="/"
         >
           <span
-            class="self-center text-blue-700 text-3xl font-semibold whitespace-nowrap "
+            class="self-center text-[#0056D6] text-3xl font-semibold whitespace-nowrap "
           >
             Catch
           </span>
@@ -757,7 +757,7 @@ Object {
             href="/sign_up"
           >
             <button
-              class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              class="text-white bg-[#0056D6] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-[#0056D6] dark:focus:ring-blue-800"
               type="button"
             >
               Sign up
@@ -783,9 +783,9 @@ Object {
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                clip-rule="evenodd"
+                clipRule="evenodd"
                 d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                fill-rule="evenodd"
+                fillRule="evenodd"
               />
             </svg>
           </button>
@@ -800,7 +800,7 @@ Object {
             <li>
               <a
                 aria-current="page"
-                class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white"
+                class="block py-2 pl-3 pr-4 text-white bg-[#0056D6] rounded md:bg-transparent md:text-[#0056D6] md:p-0 dark:text-white"
                 href="/howItWorks"
               >
                 How it works
@@ -808,7 +808,7 @@ Object {
             </li>
             <li>
               <a
-                class="block py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 "
+                class="block py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#0056D6] md:p-0 "
                 href="/"
               >
                 Blog
@@ -816,7 +816,7 @@ Object {
             </li>
             <li>
               <a
-                class="flex py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 "
+                class="flex py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#0056D6] md:p-0 "
                 href="/"
               >
                 Company
@@ -827,16 +827,16 @@ Object {
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    clip-rule="evenodd"
+                    clipRule="evenodd"
                     d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                   />
                 </svg>
               </a>
             </li>
             <li>
               <a
-                class="block py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 "
+                class="block py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#0056D6] md:p-0 "
                 href="/"
               >
                 Features
@@ -1201,7 +1201,7 @@ Object {
           Can’t find the answer you’re looking for? Please, visit the Help Center for more help
         </p>
         <button
-          class="bg-[#1070FF] rounded py-2.5 lg:py-3 px-6 lg:px-8 text-[#fff] font-bold text-sm lg:text-xl"
+          class="bg-[#0056D6] rounded py-2.5 lg:py-3 px-6 lg:px-8 text-[#fff] font-bold text-sm lg:text-xl"
           type="button"
         >
           Get in touch
@@ -1209,7 +1209,7 @@ Object {
       </div>
     </section>
     <footer
-      class="bg-blue-700"
+      class="bg-[#0056D6]"
     >
       <div
         class="mx-auto lg:mx-24 grid grid-cols-2 gap-8 py-8 px-6 md:grid-cols-5"
@@ -1422,7 +1422,7 @@ Object {
         <span
           class="text-md text-gray-100 sm:text-center"
         >
-          © 2022 
+          © 2022
           <a
             href="/"
           >
@@ -1433,7 +1433,7 @@ Object {
         <div
           class="flex mt-1 text-md text-white space-x-6 sm:justify-center md:mt-0"
         >
-          Made with love 
+          Made with love
           <svg
             fill="currentColor"
             height="1em"

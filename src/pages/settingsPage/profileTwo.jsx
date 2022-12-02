@@ -1,12 +1,12 @@
 import React from "react";
 import { MdOutlineArrowBack } from "react-icons/md";
 import avatar from "../../assets/img/Avatar.png";
-import SettingsHeader from "../../components/settingsPage/setHeader";
 import SettingsFooter from "../../components/settingsPage/setFooter";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import {Link} from "react-router-dom"
 import "./profileTwo.css";
+import CreateEventNavbar from "../../components/CreateEvent/CreateEventNavbar";
 
 const profileTwo = () => {
   return (
@@ -14,7 +14,7 @@ const profileTwo = () => {
       <div id="main_navbar">
         <Navbar />
       </div>
-      <SettingsHeader className="SettingsHeader" />
+      <CreateEventNavbar />
 
       <div id="main-body">
         <div className="body_title_wrapper">

@@ -25,11 +25,11 @@ function Features() {
             </p>
             <Link
               to="/sign_up"
-              className="bg-blue-600 mt-5 text-white px-5 py-2  rounded  
+              className="bg-[#0056D6] mt-5 text-white px-5 py-2  rounded
 flex flex-row items-center justify-between space-x-5 "
             >
               <p>Get Started</p>
-              <img className="w-3" src={Arrow} alt="arrow" />
+              <img className="w-3" src={Arrow} alt="arrow" />{" "}
             </Link>
           </div>
         </section>
@@ -44,7 +44,7 @@ flex flex-row items-center justify-between space-x-5 "
             </p>
             <Link
               to="/sign_up"
-              className="bg-blue-600 mt-5 text-white px-5 py-2  rounded  
+              className="bg-[#0056D6] mt-5 text-white px-5 py-2  rounded
 flex flex-row items-center justify-between space-x-5 "
             >
               <p>Get Started</p>
@@ -68,11 +68,11 @@ flex flex-row items-center justify-between space-x-5 "
             </p>
             <Link
               to="/sign_up"
-              className="bg-blue-800 mt-5 text-white px-5 py-2  rounded  
+              className="bg-[#0056D6] mt-5 text-white px-5 py-2  rounded
 flex flex-row items-center justify-between space-x-5 "
             >
               <p>Get Started</p>
-              <img className="w-3" src={Arrow} alt="arrow" />{" "}
+              <img className="w-3" src={Arrow} alt="arrow"/>{" "}
             </Link>
           </div>
         </section>

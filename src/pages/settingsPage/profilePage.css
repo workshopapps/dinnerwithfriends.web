@@ -73,13 +73,13 @@
   font-size: 14px;
   padding: 0.3rem 0.8rem;
   border-radius: 4px;
-  background-color: #1070ff;
+  background-color: #0056D6;
 }
 .edit_btn:hover {
   background-color: #2c80ff;
 }
 .edit_btn:active {
-  background-color: #1070ff;
+  background-color: #0056D6;
 }
 .settings_body {
   max-width: 60%;
@@ -89,7 +89,7 @@
 .more_user_details {
   padding: 1rem;
 }
-label {
+.more_user_details label {
   display: flex;
   justify-content: space-between;
   width: 80%;
@@ -117,7 +117,7 @@ label {
   .avatar {
     width: 55px;
   }
-  label {
+  .more_user_details label {
     display: flex;
     flex-direction: column;
     width: 62%;
@@ -127,7 +127,7 @@ label {
   }
   .field {
     font-size: 12px;
-  } 
+  }
   .fullName h1 {
     font-size: 15px;
   }
@@ -151,7 +151,7 @@ label {
     gap: 1rem;
     padding: 1rem;
   }
-  label {
+  .more_user_details label {
     display: flex;
     flex-direction: column;
     width: 62%;
@@ -172,7 +172,7 @@ label {
     gap: 1rem;
   }
   .body_subTitles h5 {
-    border-bottom: 1.5px solid #1070ff;
+    border-bottom: 1.5px solid #0056D6;
     padding-bottom: 0.7rem;
   }
   .body_subTitles {
@@ -207,7 +207,7 @@ label {
     gap: 1.2rem;
     padding: 1rem;
   }
-  label {
+  .more_user_details label {
     display: flex;
     width: 100%;
     text-align: left;
@@ -225,7 +225,7 @@ label {
     gap: 0.3rem;
   }
   .body_subTitles h5 {
-    border-bottom: 1.5px solid #1070ff;
+    border-bottom: 1.5px solid #0056D6;
     padding-bottom: 0.7rem;
   }
   .body_subTitles {

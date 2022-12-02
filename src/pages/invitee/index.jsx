@@ -17,7 +17,7 @@ const Invitee = () => {
           </h1>
           <p className="leading-6 text-gray-600 font-sm">
             You have been invited to dinner by{" "}
-            <span className="text-blue-700 font-bold"> Mathew Mathais.</span>
+            <span className="text-[#0056D6] font-bold"> Mathew Mathais.</span>
             <br /> You can view the details below..
           </p>
         </div>
@@ -95,7 +95,7 @@ const Invitee = () => {
                   Accept Invite
                 </button>
                 <button
-                  className="ml-4 transition ease-in duration-200 hover:bg-[#66A3FF] mt-4 text-blue-700 border border-blue-700 w-full h-11 rounded-lg"
+                  className="ml-4 transition ease-in duration-200 hover:bg-[#66A3FF] mt-4 text-[#0056D6] border border-[#0056D6] w-full h-11 rounded-lg"
                   type="submit"
                 >
                   Decline Invite
