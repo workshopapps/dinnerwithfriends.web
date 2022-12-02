@@ -23,10 +23,11 @@
 .theCreateEventContainer {
 	display: flex;
 	justify-content: space-between;
-	padding: 1rem;
+	padding: 1rem 2rem;
+	max-width: 1200px;
+	margin: 0 auto;
 }
 .theCreateEventContainerLinks {
-	/* display: none; */
 	display: flex;
 	position: absolute;
 	z-index: 1000;
