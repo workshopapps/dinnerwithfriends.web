@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Banner = () => {
   return (
-    <section className="bg-blue-100">
+    <section className="bg-[#0056D6]">
       <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
         <h1 className="hidden mb-8 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:block md:text-5xl lg:text-6xl">
           <span className="block mb-2 lg:mb-4">Organize your next social</span>

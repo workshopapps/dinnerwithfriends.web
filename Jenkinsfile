@@ -25,7 +25,7 @@ pipeline {
 		stage("deploy") {
 		
 			steps {
-                sh "sudo cp -rf ${WORKSPACE}/catchup_web/build/* /home/johnoni/dinnerwithfriends.web/"
+                sh "sudo cp -rf ${WORKSPACE}/dinnerwithfriends.web/build/* /home/johnoni/dinnerwithfriends.web/"
                 sh "sudo serve -s /home/johnoni/dinnerwithfriends.web/build -p 3999"
             }
 			
