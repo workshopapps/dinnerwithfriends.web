@@ -26,7 +26,9 @@ pipeline {
 		
 			steps {
                 sh "sudo cp -rf ${WORKSPACE}/dinnerwithfriends.web/build/* /home/johnoni/dinnerwithfriends.web/"
-                sh "sudo serve -s /home/johnoni/dinnerwithfriends.web/build -p 3999"
+                sh "sudo systemctl restart nickstersz.service"
+
+                // sh "sudo serve -s /home/johnoni/dinnerwithfriends.web/build -p 3999"
             }
 			
 	    }
