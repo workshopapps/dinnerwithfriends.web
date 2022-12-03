@@ -83,14 +83,14 @@ const EventSummary = () => {
               </p>
             </div>
             <div className="flex items-center">
-              <CiCalendar className="md:text-xl text-5xl" />
+              <CiCalendar className="text-xl" />
               <p className="text-base font-normal ml-2">
                 {/* {location.state.start_date} - {location.state.end_date}  */}
                 {location.state.host_prefered_time}
               </p>
             </div>
             <div className="flex items-center">
-              <CgMenuLeftAlt className="md:text-xl text-5xl" />
+              <CgMenuLeftAlt className="text-xl" />
               <p className="text-base font-normal ml-2">
                 {location.state.event_description}
               </p>
