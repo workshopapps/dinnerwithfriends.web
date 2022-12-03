@@ -66,8 +66,9 @@ const SignIn = () => {
             <div className="flex justify-between items-center gap-8">
               <div>
                 <Logo />
+                <Logo />
               </div>
-              <div className="px-1 rounded-[20px] w-29 tablet:w-35 tablet:h-10 h-[34px]  bg-[#BCD7FF] flex justify-around items-center">
+              <div className="px-1 rounded-[20px] w-29 tablet:w-35 tablet:h-10 h-[34px]  bg-blue-100 flex justify-around items-center">
                 <select
                   className="language-select bg-[#BCD7FF] w-full font-semibold focus:outline-none text-xs tablet:text-sm"
                   name="language"
