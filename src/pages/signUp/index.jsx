@@ -115,7 +115,7 @@ const SignUp = () => {
 						onSubmit={handleSubmit(onSubmit)}
 						className=' mt-7 text-[#4B4B4C] font-normal [&>input]:mt-2 [&>input]:w-full [&>input]:mb-3.5'>
 						<div className='relative w-full mb-4 '>
-							<label className='pb-0' htmlFor='email'>
+							<label className='pb-0' htmlFor='name'>
 								Name
 							</label>
 
@@ -129,7 +129,7 @@ const SignUp = () => {
 										: "shadow-[0px_0px_0px_4px_rgba(249,50,50,0.1)]"
 								}  mt-2 w-full h-11 p-3.5 rounded-lg`}
 								type='text'
-								name='email'
+								name='name'
 								placeholder='Enter your name'
 								{...register("name", {
 									required: "Name cannot be empty",
@@ -195,38 +195,38 @@ const SignUp = () => {
 								Password
 							</label>
 
-              <input
-              style={{border: errors.password ? '1px solid red': '1px solid #D0D5DD'}}
-              className=
-                {`relative focus:outline-none ${!errors.password? 'focus:shadow-[0px_0px_0px_4px_rgba(74,74,104,0.1)]' : 'focus:shadow-[0px_0px_0px_4px_rgba(249,50,50,0.1)]'} mt-2 w-full h-11 p-3.5 rounded-lg`}
-              type={passwordShown ? "text" : "password"}
-              name="password"
-              placeholder="Please enter your unique password"
-              {...register("password",
-              {required: "Password cannot be empty",
-                minLength: {
-                  value: 9,
-                  message: "Password must be at least 9 characters"
-               },
-               maxLength: {
-                value: 30,
-                message: "Password must not be more than 30 characters"
-              },
-              pattern: {
-                value: secondPattern,
-                message: "Password has to start with a letter, can contain numbers. No spaces and special characters allowed"
-              }
-              })}/>
-              <span
-                className='absolute bottom-4 right-3 cursor-pointer'
-                onClick={togglePassword}>
-                  {passwordShown ?  <FiEyeOff /> : <FiEye />}
-              </span>
-              {errors.password && <p className='right-0 bottom-[-37px] italic text-sm mt-2' style={{color: 'red'}}>{errors.password?.message}</p>}
+				<input
+				style={{border: errors.password ? '1px solid red': '1px solid #D0D5DD'}}
+				className=
+					{`relative focus:outline-none ${!errors.password? 'focus:shadow-[0px_0px_0px_4px_rgba(74,74,104,0.1)]' : 'focus:shadow-[0px_0px_0px_4px_rgba(249,50,50,0.1)]'} mt-2 w-full h-11 p-3.5 rounded-lg`}
+				type={passwordShown ? "text" : "password"}
+				name="password"
+				placeholder="Please enter your unique password"
+				{...register("password",
+				{required: "Password cannot be empty",
+					minLength: {
+					value: 9,
+					message: "Password must be at least 9 characters"
+				},
+				maxLength: {
+					value: 30,
+					message: "Password must not be more than 30 characters"
+				},
+				pattern: {
+					value: secondPattern,
+					message: "Password has to start with a letter, can contain numbers. No spaces and special characters allowed"
+				}
+				})}/>
+				<span
+					className={`absolute ${errors.password ? 'bottom-11' : 'bottom-3.5'} right-3 cursor-pointer`}
+					onClick={togglePassword}>
+					{passwordShown ?  <FiEyeOff /> : <FiEye />}
+				</span>
+				{errors.password && <p className='right-0 bottom-[-37px] italic text-sm mt-2' style={{color: 'red'}}>{errors.password?.message}</p>}
             </div>
 
 						<button
-							className=' transition ease-in duration-200 hover:bg-[#0056D6] mt-4 text-white bg-[#0056D6] w-full h-11 rounded-lg'
+							className=' transition ease-in duration-200 hover:bg-blue-400 mt-4 text-white bg-[#0056D6] w-full h-11 rounded-lg'
 							type='submit'>
 							{submitting ? "Loading..." : "Create a free account"}
 						</button>
