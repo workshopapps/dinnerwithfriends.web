@@ -1,13 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import React, { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 import { useForm } from "react-hook-form";
 import signInImage from "../../assets/img/Rectangle 254.png";
 import userServices from "../../services/userServices";
-import Logo from "../../components/Logo";
-import nigeria from "../signUp/nigeria.svg";
 
 const SignIn = () => {
   const {
@@ -19,6 +15,11 @@ const SignIn = () => {
   const [isLoggedIn, setIsloggedIn] = useState(false);
   const [invalidCredentials, setInvalidCredentials] = useState(false);
   const navigate = useNavigate();
+  const [passwordShown, setPasswordShown] = useState(false);
+
+  const togglePassword = () => {
+    setPasswordShown(!passwordShown);
+  };
 
   const onSubmit = async (data) => {
     setIsSubmit(true);
@@ -58,16 +59,21 @@ const SignIn = () => {
 
   return (
     <div>
-      <section className="flex items-center justify-center">
-        <div className="form-container w-full mx-auto tablet:flex tablet:justify-center">
-          <div className="form-wrapper w-full h-full bg-white tablet:w-6/12 tablet:p-3.5 mx-auto">
-            <div className="w-full flex justify-between items-center px-4 mt-3.5">
+      <section className=" min-h-screen flex items-center justify-center mb-4">
+        <div className="form-container flex justify-between w-full items-start">
+          <div className="form-wrapper h-screen w-1/2 px-8 mt-6">
+            <div className="flex justify-between items-center gap-8">
               <div>
-                <Logo />
+                <Link to="/">
+                  <span className="font-bold text-3xl lg:text-5xl text-[#0056D6]">
+                    Catch
+                  </span>
+                  <span className="font-bold text-3xl lg:text-5xl ml-1">
+                    Up
+                  </span>
+                </Link>
               </div>
               <div className="px-1 rounded-[20px] w-29 tablet:w-35 tablet:h-10 h-[34px]  bg-blue-100 flex justify-around items-center">
-                <img className="w-5" src={nigeria} alt="nigerian flag" />
-
                 <select
                   className="language-select bg-blue-100 w-full font-semibold focus:outline-none text-xs tablet:text-sm"
                   name="language"
@@ -78,8 +84,8 @@ const SignIn = () => {
                 </select>
               </div>
             </div>
-            <div className=" mt-10 tablet:mt-14 px-4 w-full max-w-md mx-auto">
-              <h3 className="font-medium text-xl text-[#717172] tablet:text-4xl ">
+            <div className="px-2 lg:px-14 mt-10 lg:mt-14">
+              <h3 className="font-medium text-xl lg:text-4xl font-bold text-gray-600 ">
                 Welcome!
               </h3>
               <p className="mt-2 text-[#424245] text-base tablet:text-xl mb-7">
@@ -110,7 +116,7 @@ const SignIn = () => {
 
                 <label className="pb-0">Password</label>
                 <input
-                  className="p-2 rounded-xl border-[#D0D5DD] border-[1px] focus:outline-none"
+                  className="p-2 rounded-xl border"
                   type="password"
                   name="password"
                   id="password"
