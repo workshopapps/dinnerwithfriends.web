@@ -98,8 +98,8 @@ const Career = () => {
                         <p className='font-base text-[20px] lg:text-[1.75rem] text-[#424245] ' >Senior Backend Engineer </p>
                         <p className='font-base text-[12px] lg:text-[1rem] text-[#898989] ' >Remote</p>
                     </div>
-                        <Link to='/careers/job-details' className='text-center lg:text-[20px] flex items-center justify-center lg:float-right text-[14px] h-[56px] w-[110px] lg:w-[152px] float-right lg:h-[56px] font-base text-[#fff] bg-[#1070FF] lg:p-[12px 32px] ' >View Job</Link>
-                   
+                        <Link to='/careers/job-details' className='text-center lg:text-[20px] flex items-center justify-center lg:float-right text-[14px] h-[56px] w-[110px] lg:w-[152px] float-right lg:h-[56px] font-base text-[#fff] bg-[#0056D6] lg:p-[12px 32px] ' >View Job</Link>
+
                 </div>
                 <div className='lg:w-[75%] w-[90%] p-[2rem] flex justify-between items-center  border-solid border-2 rounded-xl lg:h-[153px] h=[100%] '>
                     <div className='lg:flex justify-start lg:w-50%] lg:h-[100%] lg:justify-start justify-center flex  flex-col h-[100%] w-[100%] '>
@@ -107,13 +107,13 @@ const Career = () => {
                         <p className='font-base text-[20px] lg:text-[1.75rem] text-[#424245] ' >Security Engineer</p>
                         <p className='font-base text-[12px] lg:text-[1rem] text-[#898989] ' >Remote</p>
                     </div>
-                        <Link to='/careers/job-details' className='text-center lg:text-[20px] text-[14px] h-[56px] flex items-center justify-center w-[110px] lg:w-[152px] float-right lg:float-right lg:h-[56px] font-base text-[#fff] bg-[#1070FF] lg:p-[12px 32px] ' >View Job</Link>
+                        <Link to='/careers/job-details' className='text-center lg:text-[20px] text-[14px] h-[56px] flex items-center justify-center w-[110px] lg:w-[152px] float-right lg:float-right lg:h-[56px] font-base text-[#fff] bg-[#0056D6] lg:p-[12px 32px] ' >View Job</Link>
                 </div>
             </div>
         </div>
         <div className='w-full p-[2rem] lg:mb-[3rem] h-[100%] flex flex-col lg:space-y-12 lg:mt-[2rem] mt-[2rem] space-y-10 justify-center items-center ' >
             <p className=' font-bold text-3xl lg:text-6xl font-medium text-center color-[#151517]' >We can't wait to meet you</p>
-             <Link className='lg:text-[20px] text-[14px] p-[10px, 24px, 10px, 24px] w-[90%] lg:w-[331px] flex items-center justify-center float-right lg:h-[56px] h-[41px] font-base text-[#fff] bg-[#1070FF] lg:p-[12px 32px] ' >Learn more about Catch Up</Link>
+             <Link className='lg:text-[20px] text-[14px] p-[10px, 24px, 10px, 24px] w-[90%] lg:w-[331px] flex items-center justify-center float-right lg:h-[56px] h-[41px] font-base text-[#fff] bg-[#0056D6] lg:p-[12px 32px] ' >Learn more about Catch Up</Link>
         </div>
         <Footer/>
     </div>
