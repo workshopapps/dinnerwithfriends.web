@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import { FiEye, FiEyeOff } from "react-icons/fi";
 import { useForm } from "react-hook-form";
 import signInImage from "../../assets/img/Rectangle 254.png";
 import userServices from "../../services/userServices";
 import Logo from "../../components/Logo";
-import nigeria from "../signUp/nigeria.svg";
 
 const SignIn = () => {
   const {
@@ -16,6 +16,11 @@ const SignIn = () => {
   const [isLoggedIn, setIsloggedIn] = useState(false);
   const [invalidCredentials, setInvalidCredentials] = useState(false);
   const navigate = useNavigate();
+  const [passwordShown, setPasswordShown] = useState(false);
+
+  const togglePassword = () => {
+    setPasswordShown(!passwordShown);
+  };
 
   const onSubmit = async (data) => {
     setIsSubmit(true);
@@ -55,18 +60,16 @@ const SignIn = () => {
 
   return (
     <div>
-      <section className="flex items-center justify-center">
-        <div className="form-container w-full mx-auto tablet:flex tablet:justify-center">
-          <div className="form-wrapper w-full h-full bg-white tablet:w-6/12 tablet:p-3.5 mx-auto">
-            <div className="w-full flex justify-between items-center px-4 mt-3.5">
+      <section className=" min-h-screen flex items-center justify-center ">
+        <div className="form-container flex justify-between w-full items-start">
+          <div className="form-wrapper h-screen w-1/2 px-8 mt-6">
+            <div className="flex justify-between items-center gap-8">
               <div>
                 <Logo />
               </div>
-              <div className="px-1 rounded-[20px] w-29 tablet:w-35 tablet:h-10 h-[34px]  bg-blue-100 flex justify-around items-center">
-                <img className="w-5" src={nigeria} alt="nigerian flag" />
-
+              <div className="px-1 rounded-[20px] w-29 tablet:w-35 tablet:h-10 h-[34px]  bg-[#BCD7FF] flex justify-around items-center">
                 <select
-                  className="language-select bg-blue-100 w-full font-semibold focus:outline-none text-xs tablet:text-sm"
+                  className="language-select bg-[#BCD7FF] w-full font-semibold focus:outline-none text-xs tablet:text-sm"
                   name="language"
                   id="language"
                 >
@@ -75,8 +78,8 @@ const SignIn = () => {
                 </select>
               </div>
             </div>
-            <div className=" mt-10 tablet:mt-14 px-4 w-full max-w-md mx-auto">
-              <h3 className="font-medium text-xl text-[#717172] tablet:text-4xl ">
+            <div className="mt-10 tablet:mt-14 lg:px-4 w-full max-w-md mx-auto">
+              <h3 className="font-medium text-xl lg:text-4xl text-gray-600 ">
                 Welcome!
               </h3>
               <p className="mt-2 text-[#424245] text-base tablet:text-xl mb-7">
@@ -124,10 +127,38 @@ const SignIn = () => {
                     },
                   })}
                 />
+                <div className="relative w-full mb-4 flex flex-col gap-4">
+                  <label className="pb-0">Password</label>
+                  <input
+                    className="p-2 rounded-xl border"
+                    type="password"
+                    name="password"
+                    id="password"
+                    placeholder="Enter your password"
+                    {...register("password", {
+                      required: "Password is required",
+                      minLength: {
+                        value: 9,
+                        message: "Password must be at least 9 characters",
+                      },
+                      maxLength: {
+                        value: 30,
+                        message:
+                          "Password cannot exceed more than 30 characters",
+                      },
+                    })}
+                  />
+                  <span
+                    className="absolute bottom-7 right-3 cursor-pointer"
+                    onClick={togglePassword}
+                  >
+                    {passwordShown ? <FiEyeOff /> : <FiEye />}
+                  </span>
+                  <p className="text-red-500 text-sm">
+                    {errors.password?.message}
+                  </p>
+                </div>
 
-                <p className="text-red-500 text-sm">
-                  {errors.password?.message}
-                </p>
                 <div className="flex justify-between items-center">
                   <div>
                     <input
