@@ -13,8 +13,13 @@ export default function Howitwork2() {
           {" "}
           Watch how easy it is to create your next get-together
         </h1>
-        <img src={video} alt="video" className=" mt-4 w-full object-cover" />
-
+        <div className="w-full mb-4">
+          <video
+            controls
+            className="w-full"
+            src="https://player.vimeo.com/external/414291591.sd.mp4?s=0e5f7a63156c329e28a9c3edc3847e53825974e9&profile_id=164&oauth2_token_id=57447761"
+          />
+        </div>
         <section className=" pb-10 max-md:py-20 max-md:flex max-md:flex-col ">
           <div className=" grid grid-cols-1 gap-5 px-2 max-md:px-8 lg:grid-cols-2">
             <div
