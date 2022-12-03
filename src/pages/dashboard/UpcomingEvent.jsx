@@ -8,6 +8,7 @@ import add from "../../assets/img/add.png";
 import Footer from "../../components/Footer";
 import { Link } from "react-router-dom";
 import CreateEventNavbar from "../../components/CreateEvent/CreateEventNavbar";
+import { authenticate, loadClient } from "../../helpers/googleCalender";
 
 const UpcomingEvent = () => {
 	const [status, setStatus] = useState(false);
@@ -18,7 +19,7 @@ const UpcomingEvent = () => {
 			const data = await userServices.getAllEvents();
 			setEvents(data);
       const eventsJson = JSON.stringify(data)
-      localStorage.setItem('eventsArr', eventsJson) 
+      localStorage.setItem('eventsArr', eventsJson)
 		}
 		fetchData();
 		// eslint-disable-next-line react-hooks/exhaustive-deps
@@ -58,6 +59,10 @@ const UpcomingEvent = () => {
 			)
 		);
 
+		const googleCalenderApi = () => {
+			authenticate().then(loadClient)
+		}
+
 	return (
 		<>
 			<CreateEventNavbar />
@@ -73,6 +78,7 @@ const UpcomingEvent = () => {
 					</div>
 					<Button
 						type='button'
+						onClick={googleCalenderApi}
 						className='hidden lg:flex justify-between items-center gap-x-3.5 rounded-lg border border-solid border-[#344054] px-4 outline-0'>
 						<div className='w-[28px] h-[28px]'>
 							<img src={calender} alt='google-calender' />
