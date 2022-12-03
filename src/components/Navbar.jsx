@@ -30,7 +30,7 @@ const Navbar = () => {
               dev
               className="hidden md:block block py-3 mr-8 md:py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 "
             >
-              Log in
+              Sign In
             </Link>
           <Link className="hidden md:block" to="/sign_up">
             <button
@@ -87,9 +87,9 @@ const Navbar = () => {
 
                 to="/sign_in"
                 dev
-                className="block py-3 md:py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 "
+                className="w-full block mt-4 py-2 pl-3 pr-4 text-white text-center bg-white h-[44px] text-[#0056D6] border-[1.5px] border-[#0056D6] rounded hover:bg-blue-800 md:p-0 "
               >
-                Log in
+                Sign In
               </Link>
             </li>
             <li className="md:hidden">
