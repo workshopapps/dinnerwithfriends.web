@@ -42,7 +42,8 @@ pipeline {
                 sh 'sudo ./setup_k6.sh'
                 echo 'Running K6 performance tests...'
 				sh 'ls -a'
-                // sh 'k6 run Performace_Test_Catchupf'
+				sh "pwd"
+                sh 'k6 run Performace_Test_Catchupf'
 			}
 		}
 	}
