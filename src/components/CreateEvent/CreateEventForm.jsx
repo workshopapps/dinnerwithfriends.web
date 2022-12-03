@@ -19,8 +19,8 @@ const CreateEventForm = () => {
   const [maximumDate, setMaximumDate] = useState("");
 
   useEffect(() => {
-    const start = dateTimeForCalender(startDate, "00:00");
     const end = dateTimeForCalender(endDate, "00:00");
+    const start = dateTimeForCalender(startDate, "00:00");
     setMinimumDate(start);
     setMaximumDate(end);
   }, [startDate, endDate]);
@@ -52,7 +52,7 @@ const CreateEventForm = () => {
   const submitForm = async (data) => {
     const result = await userServices.createEvents(data);
     if (result.status === "success") {
-      navigate("/event_summary");
+      navigate("/event_summary", { state: result.data });
     }
   };
   useEffect(() => {
