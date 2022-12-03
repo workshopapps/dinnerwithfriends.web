@@ -8,31 +8,29 @@ const Footer = () => {
     { title: "Careers", to: "/careers" },
     { title: "About us", to: "/aboutUs" },
     { title: "Contact us", to: "/contact-us" },
-    { title: "Partner with us", to: "/error404" },
   ];
   const learn = [
-    { title: "Blogs", to: "/error404" },
-    { title: "Webinars", to: "/error404" },
     { title: "How it Works", to: "/howitworks" },
   ];
   const legal = [
-    { title: "Security", to: "/error404" },
     { title: "Privacy Policy", to: "/policy" },
-    { title: "Cookies Setting", to: "/error404" },
     { title: "Terms & Conditions", to: "/terms-of-use" },
   ];
   const help = [
     { title: "FAQs", to: "/faq" },
     { title: "Help Center", to: "/help" },
-    { title: "Customer support", to: "/error404" }
   ];
 
   return (
-    <footer className="bg-[#0056D6]">
-      <div className="mx-auto lg:mx-24 grid grid-cols-2 gap-8 py-8 px-6 md:grid-cols-5">
-        <div>
-          <Logo footer />
-        </div>
+    <footer className="bg-[#0056D6] block md:flex">
+      <div>
+        <Logo footer className="mx-auto lg:mx-24 py-8 px-6"/>
+        <div></div>
+        {/* <Logo footer className="hidden md:block"/> */}
+      </div>
+      
+      <div>
+        <div className="mx-auto lg:mx-24 grid grid-cols-2 gap-8 py-8 px-6 md:grid-cols-5">
         <div>
           <h2 className="mb-3 lg:mb-6 text-sm font-semibold text-gray-100 uppercase">
             Company
@@ -99,6 +97,8 @@ const Footer = () => {
           Made with love <BsFillSuitHeartFill />
         </div>
       </div>
+      </div>
+      
     </footer>
   );
 };

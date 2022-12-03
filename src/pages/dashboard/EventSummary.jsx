@@ -3,7 +3,7 @@ import { CiLocationOn, CiCalendar } from "react-icons/ci";
 import { CgMenuLeftAlt } from "react-icons/cg";
 import { AiOutlineLike, AiOutlineDislike, AiOutlineUser } from "react-icons/ai";
 import { BsPlus } from "react-icons/bs";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import CreateEventNavbar from "../../components/CreateEvent/CreateEventNavbar";
 import clipboard from './icons/clipboard.svg'
 import checkmark from './icons/checkmark.svg'
@@ -12,6 +12,10 @@ const EventSummary = () => {
   const [email, setEmail] = useState("");
   const [popup, setPopup] = useState(true)
 
+  // const [eventsData, setEventsData] = useState({})
+  const location = useLocation()
+  
+  // setEventsData(location.state)
   //function to stop scrolling when popup is on
   useEffect(() => {
     if(popup) {
@@ -70,25 +74,25 @@ const EventSummary = () => {
       <div className="mt-2 md:mx-14 mx-5 my-10">
         <h2 className="mt-10 text-3xl font-bold">Event Summary</h2>
         <div className="mt-4 border w-full p-5 rounded-lg shadow text-[#59595B]">
-          <h5 className="text-2xl font-bold">Girls Monthly Trip</h5>
+          <h5 className="text-2xl font-bold">{location.state.event_title}</h5>
           <div className="grid gap-y-3 mt-4">
             <div className="flex items-center">
               <CiLocationOn className="text-xl" />
               <p className="text-base font-normal ml-2">
-                21 Tunji Street, Lagos
+                {location.state.location}
               </p>
             </div>
             <div className="flex items-center">
               <CiCalendar className="md:text-xl text-5xl" />
               <p className="text-base font-normal ml-2">
-                12th November 2022 - 20th November 2022 9:30 - 11:30
+                {/* {location.state.start_date} - {location.state.end_date}  */}
+                {location.state.host_prefered_time}
               </p>
             </div>
             <div className="flex items-center">
               <CgMenuLeftAlt className="md:text-xl text-5xl" />
               <p className="text-base font-normal ml-2">
-                Highly anticipated girls weekend. Time away with the girls. Fun,
-                frugal, no spend amazing Bring gifts, everyone.{" "}
+                {location.state.event_description}
               </p>
             </div>
           </div>
