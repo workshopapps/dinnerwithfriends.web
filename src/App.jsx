@@ -42,7 +42,7 @@ function App() {
         <Route path="/closed_event" element={<ClosedEvent />} />
         <Route path="/update_details" element={<AccountSettings />} />
         <Route path="/settings" element={<Settings />} />
-        <Route path="/invitee" element={<Invitee />} />
+        <Route path="/invitee/:id" element={<Invitee />} />
         <Route path="/sign_in" element={<SignIn />} />
         <Route path="/sign_up" element={<SignUp />} />
         <Route path="/view_event/:id" element={<ViewEvent />} />

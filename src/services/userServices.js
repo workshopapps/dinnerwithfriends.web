@@ -65,6 +65,15 @@ const getAllEvents = async () => {
     return err;
   }
 };
+const getEventsById = async (id) => {
+  try {
+    const dataObj = await fetchApi.get(`${BASE_URL}/${GET_EVENTS}/${id}`);
+    const datas = await dataObj.data;
+    return datas;
+  } catch (err) {
+    return err;
+  }
+};
 
 const addToGoogleCalender = async (params) => {
   try {
@@ -80,6 +89,7 @@ const userServices = {
   login,
   createEvents,
   getAllEvents,
+  getEventsById,
   recoverPassword,
   resetPassword,
   addToGoogleCalender

@@ -1,12 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
-
 import { CiLocationOn, CiStopwatch, CiCalendar } from "react-icons/ci";
 import { HiOutlineMenuAlt1 } from "react-icons/hi";
+import { useNavigate, useParams } from "react-router-dom/dist";
+import userServices from "../../services/userServices";
 
 const Invitee = () => {
+  const [data, setData] = useState([]);
+  let { id } = useParams();
+  console.log(id)
+  
+  const fetchEvent = async () => {
+    const result = await userServices.getEventsById(id);
+    setData(result);
+    console.log(result)
+  };
+  fetchEvent();
   return (
     <div>
       <Navbar />
@@ -16,7 +27,7 @@ const Invitee = () => {
             Hello, there.
           </h1>
           <p className="leading-6 text-gray-600 font-sm">
-            You have been invited to dinner by{" "}
+            You have been invited to {data.event_title} by{" "}
             <span className="text-[#0056D6] font-bold"> Mathew Mathais.</span>
             <br /> You can view the details below..
           </p>
@@ -31,25 +42,27 @@ const Invitee = () => {
               <span className="flex mt-3">
                 {" "}
                 <CiLocationOn className="mr-4 text-[25px]" />
-                Location:
+                Location:{" "}
                 <span className="font-bold">
-                  {" "}
-                  Raddison blues, 21 Tunji Street, Ikeja, Lagos
-                </span>{" "}
+                  {" "}&#160;
+                  {data.location}
+                </span>
               </span>
 
               <span className="flex mt-3">
                 {" "}
                 <CiCalendar className="mr-4 text-[25px]" />
                 Agreed Date:
-                <span className="font-bold"> November 20, 2022</span>{" "}
+                {data.final_event_date === !null ? 
+                <span className="font-bold"> &#160; {data.final_event_date}</span>
+                : <span className="font-bold"> &#160; Not Available</span>}
               </span>
 
               <span className="flex mt-3">
                 {" "}
                 <CiStopwatch className="mr-4 text-[25px]" />
-                Host Selected Time:
-                <span className="font-bold"> 6:00 pm - 10:00 pm</span>{" "}
+                Host Selected Time: 
+                <span className="font-bold">&#160; {data.host_prefered_time}</span>{" "}
               </span>
 
               <span className="flex mt-3">
@@ -57,8 +70,8 @@ const Invitee = () => {
                 <HiOutlineMenuAlt1 className="mr-4 text-[25px]" />
                 Dinner with
                 <span className="font-bold">
-                  {" "}
-                  Kolavic and few of his friends
+                  {" "}&#160;
+                  {data.event_description}
                 </span>{" "}
               </span>
             </div>
