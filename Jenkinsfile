@@ -25,11 +25,27 @@ pipeline {
 		stage("deploy") {
 		
 			steps {
-                sh "sudo cp -rf ${WORKSPACE}/catchup_web/build/* /home/johnoni/dinnerwithfriends.web/"
-                sh "sudo serve -s /home/johnoni/dinnerwithfriends.web/build -p 3999"
+                sh "sudo cp -rf ${WORKSPACE}/dinnerwithfriends.web/build/* /home/johnoni/dinnerwithfriends.web/"
+                sh "sudo systemctl restart nickstersz.service"
+
+                // sh "sudo serve -s /home/johnoni/dinnerwithfriends.web/build -p 3999"
+	
             }
 			
 	    }
+
+		stage("Performance test"){
+
+			steps{
+				echo 'Installing k6'
+                sh 'sudo chmod +x setup_k6.sh'
+                sh 'sudo ./setup_k6.sh'
+                echo 'Running K6 performance tests...'
+				sh 'ls -a'
+				sh "pwd"
+                sh 'k6 run Performance_Test_Catchupf.js'
+			}
+		}
 	}
 }
 

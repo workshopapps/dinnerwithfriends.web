@@ -71,7 +71,7 @@ function AddParticipantModal() {
                   onChange={(e) => setEmail(e.target.value)}
                 />
                 <button
-                  className="bg-[#1070FF] md:px-12 md:py-4 py-2.5 px-5 text-white rounded-lg"
+                  className="bg-[#0056D6] md:px-12 md:py-4 py-2.5 px-5 text-white rounded-lg"
                   onClick={handleSubmit}
                 >
                   Done
