@@ -61,7 +61,6 @@ const UpcomingEvent = () => {
 
 		const googleCalenderApi = () => {
 			authenticate().then(loadClient)
-			execute()
 		}
 
 	return (
