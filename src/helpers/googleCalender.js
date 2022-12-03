@@ -1,4 +1,5 @@
 import userServices from "../services/userServices";
+/* global gapi */
 
 export function authenticate() {
   return gapi.auth2.getAuthInstance()
@@ -6,6 +7,7 @@ export function authenticate() {
       .then(function() { console.log("Sign-in successful"); },
             function(err) { console.error("Error signing in", err); });
 }
+
 export function loadClient() {
   gapi.client.setApiKey("AIzaSyA7G2ANAJI6rm_DpTW84lsKUJT-c8bmirI");
   return gapi.client.load("https://content.googleapis.com/discovery/v1/apis/calendar/v3/rest")
