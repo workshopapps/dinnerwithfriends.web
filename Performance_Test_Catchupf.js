@@ -8,8 +8,7 @@ export const options = {
   vus: 100,
 };
 
-export default function () {{
-  setTimeout(() => {console.log("15secs")},"15000",)}
+export default function () {
   http.get("http://catchup.hng.tech");
   sleep(3);
 }
