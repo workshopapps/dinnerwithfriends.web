@@ -153,9 +153,9 @@ const ViewEvent = () => {
 							<aside className='font-medium text-sm  md:mt-0'>
 								Agreed Date
 								<span className='bg-[#E7F0FF] text-[#003585] text-xs px-2 py-1 font-semibold rounded ml-1'>
-									{/* {singleEvent?.final_event_date} */}
+									{singleEvent?.final_event_date}
 									{/* {agreed_date} */}
-									Aug 24, 2020
+									
 								</span> 
 							</aside>
 							: null
