@@ -11,6 +11,7 @@ import checkmark from './icons/checkmark.svg'
 const EventSummary = () => {
   const [email, setEmail] = useState("");
   const [popup, setPopup] = useState(true)
+	const [ copied, setCopied ] = useState(false)
 
   // const [eventsData, setEventsData] = useState({})
   const location = useLocation()
@@ -51,6 +52,15 @@ const EventSummary = () => {
     addParticipant(email);
     setEmail("")
   };
+
+  const copyLink = () => {
+		setCopied(true)
+    navigator.clipboard.writeText(`https://catchup.hng.tech/event_invite/${location.state._id}`)
+    setTimeout(() => {
+      setCopied(false)
+    }, 3000)
+	}
+
   return (
     <div>
       { popup &&
@@ -63,9 +73,10 @@ const EventSummary = () => {
           <img className="mt-4 md:mt-8 mb-4" src={checkmark} alt="a checkmark" />
           <h3 className="mb-4 text-2xl font-bold text-center">Event Succesfully Created</h3>
           <p className=" w-full md:w-[340px] text-center text-base font-bold text-[#898989]">You've successfully created your event, you can check your notifications to see your friends who have accepted your invite</p>
-          <div className="flex  flex-col md:flex-row items center my-8">
+          <div className="flex  flex-col md:flex-row items center my-8 relative">
             <button className=" w-[127px] mx-4 rounded bg-[#0056D6] text-white h-[44px]">Ok, Thanks !</button>
-            <button className="flex mt-4 md:mt-0 items-center justify-center w-[127px] mx-4 rounded bg-white border-[1px] border-[#0056D6]  text-[#0056D6] h-[44px]"><img className="mr-2" src={clipboard} alt="copy to clipboard"/> Copy link</button>
+            <button className={`flex mt-4 md:mt-0 items-center justify-center w-[127px] mx-4 rounded bg-white border-[1px] ${copied ? "border-green-500 text-green-500": "border-[#0056D6] text-[#0056D6]"} h-[44px]`} onClick={() => copyLink()}><img className="mr-2" src={clipboard} alt="copy to clipboard" /> Copy link</button>
+						<span className={`${copied ? "block" : "hidden"} absolute -top-10 left-6 p-2 text-green-500 bg-white border border-green-500 rounded transition text-xs`}>https://catchup.hng.tech/ copied. You can share to invite your friends</span>
           </div>
         </div>
       </div>

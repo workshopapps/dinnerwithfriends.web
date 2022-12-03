@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { CatchUpEventContextUse } from "../context/CatchUpEventContext";
 import { IoMdClose } from "react-icons/io";
 import { MdDone } from "react-icons/md";
@@ -9,6 +9,9 @@ import { useNavigate } from "react-router";
 const EventModal = () => {
 	const { showModal, setShowModal } = CatchUpEventContextUse();
 	const navigate = useNavigate();
+
+
+
 	return (
 		<>
 			{showModal ? (
@@ -53,7 +56,7 @@ const EventModal = () => {
 													children='Ok, Thanks!'
 													className='rounded-[4px] bg-[#0056D6] py-3 px-6 text-xs  text-white'
 												/>
-												<Button className='border border-[#0056D6] rounded-[4px] py-3 px-6 text-xs  text-[#0056D6] flex items-center'>
+												<Button className='border border-[#0056D6] rounded-[4px] py-3 px-6 text-xs  text-[#0056D6] flex items-center relative'>
 													<span className='mr-2'>
 														<BiCopy />
 													</span>
