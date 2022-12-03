@@ -8,7 +8,7 @@ import add from "../../assets/img/add.png";
 import Footer from "../../components/Footer";
 import { Link } from "react-router-dom";
 import CreateEventNavbar from "../../components/CreateEvent/CreateEventNavbar";
-import { authenticate, execute, loadClient } from "../../helpers/googleCalender";
+import { authenticate, loadClient } from "../../helpers/googleCalender";
 
 const UpcomingEvent = () => {
 	const [status, setStatus] = useState(false);
