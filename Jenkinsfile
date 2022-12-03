@@ -43,7 +43,7 @@ pipeline {
                 echo 'Running K6 performance tests...'
 				sh 'ls -a'
 				sh "pwd"
-                sh 'k6 run Performace_Test_Catchupf'
+                sh 'k6 run Performance_Test_Catchupf.js'
 			}
 		}
 	}
