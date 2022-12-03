@@ -20,7 +20,6 @@ const profilePage = () => {
       </div>
       <CreateEventNavbar />
 
-
       <div className="settings_body">
         <div className="body_title_container">
           <Link to="/">

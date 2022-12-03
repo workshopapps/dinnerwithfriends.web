@@ -52,7 +52,7 @@ const CreateEventForm = () => {
   const submitForm = async (data) => {
     const result = await userServices.createEvents(data);
     if (result.status === "success") {
-      navigate("/event_summary");
+      navigate("/event_summary", { state: result.data });
     }
   };
   useEffect(() => {

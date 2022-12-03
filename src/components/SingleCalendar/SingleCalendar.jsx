@@ -21,8 +21,7 @@ const SingleCalendar = ({ minDate, maxDate, setShowCalendar, showCalendar, id, a
 
 	const setDT = () => {
 		const splitDate = dateValue.toLocaleDateString().split("/");
-		const date = `${splitDate[1]}/${splitDate[0]}/${splitDate[2]}`;
-
+		const date = `${splitDate[1].length === 1 ? `0${splitDate[1]}` : splitDate[1]}/${splitDate[0]}/${splitDate[2]}`;
 		if (id === "startDate") {
 			setStartDate(date);
 		}
