@@ -1,19 +1,17 @@
-import React, { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
-import { useForm } from "react-hook-form";
+import React, { useState }  from "react";
+import { useNavigate, Link } from 'react-router-dom'
 import { FiEye, FiEyeOff } from 'react-icons/fi'
+import { useForm } from "react-hook-form";
 import signInImage from "../../assets/img/Rectangle 254.png";
 import userServices from "../../services/userServices";
+import Logo from "../../components/Logo";
+
 
 const SignIn = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  const { register, handleSubmit, formState: { errors } } = useForm();
   const [isSubmit, setIsSubmit] = useState(false);
-  const [isLoggedIn, setIsloggedIn] = useState(false);
-  const [invalidCredentials, setInvalidCredentials] = useState(false);
+  const [isLoggedIn, setIsloggedIn] = useState(false)
+  const [invalidCredentials, setInvalidCredentials] = useState(false)
   const navigate = useNavigate();
   const [passwordShown, setPasswordShown] = useState(false);
 
@@ -22,84 +20,77 @@ const SignIn = () => {
   };
 
   const onSubmit = async (data) => {
-    setIsSubmit(true);
+    setIsSubmit(true)
     const result = await userServices.login(data);
 
-    if (result.status === "fail") {
-      setIsSubmit(false);
-      setInvalidCredentials(true);
+    if(result.status === 'fail'){
+      setIsSubmit(false)
+      setInvalidCredentials(true)
     }
 
-    if (result.status === "success") {
-      setIsloggedIn(true);
-      localStorage.setItem("jwt-token", result.accessToken);
-      setTimeout(() => {
-        navigate("/dashboard/upcoming_events");
-      }, 1000);
-    }
+    if(result.status === 'success'){
+       setIsloggedIn(true)
+       localStorage.setItem("jwt-token", result.accessToken);
+       setTimeout(() => {
+        navigate('/dashboard/upcoming_events')
+        }, 1000)
+      }
   };
 
   const errorMsg = () => {
     let element;
     if (isLoggedIn) {
-      element = (
-        <p className="mt-4 text-xl text-green-600 text-center">
-          Login Successful!
-        </p>
-      );
-    } else if (invalidCredentials) {
-      element = (
-        <p className="mt-4 text-xl text-red-600 text-center">
-          Incorrect Email or Password
-        </p>
-      );
-    }
-    return element;
-  };
+      element =  <p className='mt-4 text-xl text-green-600 text-center'>Login Successful!</p>
+     } else if(invalidCredentials) {
+      element = <p className='mt-4 text-xl text-red-600 text-center'>Incorrect Email or Password</p>
+     }
+     return element
+  }
 
   return (
-    <div>
-      <section className=" min-h-screen flex items-center justify-center mb-4">
+    <div className="w-full">
+      <section className=" min-h-screen flex items-center justify-center ">
         <div className="form-container flex justify-between w-full items-start">
-          <div className="form-wrapper h-screen w-1/2 px-8 mt-6">
+          <div className="form-wrapper h-screen w-1/2 px-4 mt-6">
             <div className="flex justify-between items-center gap-8">
               <div>
-                <Link to="/">
-                  <span className="font-bold text-3xl lg:text-5xl text-[#0056D6]">
-                    Catch
-                  </span>
-                  <span className="font-bold text-3xl lg:text-5xl ml-1">
-                    Up
-                  </span>
-                </Link>
+              <Logo />
               </div>
-              <div className="px-1 rounded-[20px] w-29 tablet:w-35 tablet:h-10 h-[34px]  bg-blue-100 flex justify-around items-center">
-                <select
-                  className="language-select bg-blue-100 w-full font-semibold focus:outline-none text-xs tablet:text-sm"
-                  name="language"
-                  id="language"
-                >
-                  <option value="uk">English (UK)</option>
-                  <option value="us">English (US)</option>
-                </select>
-              </div>
+               <div className='px-1 rounded-[20px] w-29 tablet:w-35 tablet:h-10 h-[34px]  bg-[#BCD7FF] flex justify-around items-center'>
+
+            <select className='language-select bg-[#BCD7FF] w-full font-semibold focus:outline-none text-xs tablet:text-sm' name="language" id="language">
+              <option value="uk">English (UK)</option>
+              <option value="us">English (US)</option>
+            </select>
+          </div>
             </div>
-            <div className="px-2 lg:px-14 mt-10 lg:mt-14">
-              <h3 className="font-medium text-xl lg:text-4xl font-bold text-gray-600 ">
+            <div className="mt-10 tablet:mt-14 lg:px-4 w-full max-w-md mx-auto">
+              <h3 className="font-medium text-xl lg:text-4xl text-gray-600 ">
                 Welcome!
               </h3>
-              <p className="mt-2 text-[#424245] text-base tablet:text-xl mb-7">
+              <p className="sm:text-base lg:text-xl text-gray-600 mb-8 ">
                 Sign in here! Please enter your details
               </p>
               {errorMsg()}
               <form
                 onSubmit={handleSubmit(onSubmit)}
                 action=""
-                className=" flex flex-col gap-2 text-[#4B4B4C]"
+                className=" mt-5 text-[#4B4B4C] font-normal [&>input]:mt-2 [&>input]:w-full [&>input]:mb-3.5"
               >
-                <label className="pb-0">Email</label>
+              
+              <div className="relative w-full mb-4 ">
+                <label className='pb-0' htmlFor='email'>
+                  Name
+                </label>
                 <input
-                  className="p-2 rounded-xl border-[#D0D5DD] border-[1px] focus:outline-none"
+                  style={{
+                    border: errors.email ? "1px solid red" : "1px solid #D0D5DD",
+                  }}
+                  className={`focus:outline-none focus:${
+                    !errors.email
+                      ? "shadow-[0px_0px_0px_4px_rgba(74,74,104,0.1)]"
+                      : "shadow-[0px_0px_0px_4px_rgba(249,50,50,0.1)]"
+                  }  mt-2 w-full h-11 p-3.5 rounded-lg`}
                   type="text"
                   name="email"
                   id="email"
@@ -112,13 +103,24 @@ const SignIn = () => {
                     },
                   })}
                 />
+                <p className='right-0 bottom-[-37px] italic text-sm mt-2'
+									style={{ color: "red" }}>{errors.email?.message}</p>
+
+              </div>
                 
-                <p className="text-red-500 text-sm ">{errors.email?.message}</p>
+
+                <div className="relative w-full mb-4 ">
                   <label className="pb-0">Password</label>
-                <div className="relative flex flex-col">
                   <input
-                    className="p-2 rounded-xl border"
-                    type={passwordShown ? "text" : "password"}
+                     style={{
+                      border: errors.password ? "1px solid red" : "1px solid #D0D5DD",
+                    }}
+                    className={`focus:outline-none focus:${
+                      !errors.password
+                        ? "shadow-[0px_0px_0px_4px_rgba(74,74,104,0.1)]"
+                        : "shadow-[0px_0px_0px_4px_rgba(249,50,50,0.1)]"
+                    }  mt-2 w-full h-11 p-3.5 rounded-lg`}
+                    type="password"
                     name="password"
                     id="password"
                     placeholder="Enter your password"
@@ -135,14 +137,16 @@ const SignIn = () => {
                     })}
                   />
                   <span
-                    className='absolute bottom-3 right-3 cursor-pointer'
+                    className={`absolute ${errors.password ? 'bottom-11' : 'bottom-3.5'} right-3 cursor-pointer`}
                     onClick={togglePassword}>
-                      {passwordShown ?  <FiEye /> : <FiEyeOff />}
+                      {passwordShown ?  <FiEyeOff /> : <FiEye />}
                   </span>
-                </div>
-                  <p className="text-red-500 text-sm">
+                  <p className='right-0 bottom-[-37px] italic text-sm mt-2'
+									style={{ color: "red" }}>
                     {errors.password?.message}
                   </p>
+                </div>
+
                 <div className="flex justify-between items-center">
                   <div>
                     <input
@@ -163,18 +167,15 @@ const SignIn = () => {
                   </div>
                 </div>
 
-                <button
-                  type="submit"
-                  className=" transition ease-in duration-200 hover:bg-[#66A3FF] mt-4 text-white bg-[#0056D6] w-full h-11 rounded-lg"
-                >
-                  {isSubmit ? "Loading..." : "Sign In"}
+                <button type="submit" className='hover:bg-blue-400 transition ease-in duration-200 hover:bg-[#0056D6] mt-7 text-white bg-[#0056D6] w-full h-11 rounded-lg'>
+                  {isSubmit ? 'Loading...' : 'Sign In'}
                 </button>
               </form>
-              <div className="mt-6 items-center text-[#0056D6]">
-                <p className="text-center text-sm">Or</p>
-              </div>
+
+              <p className='my-2.5 text-center text-[#0056D6]'>Or</p>
+
               <a href=" ">
-                <button className="bg-[white] border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-[#344054] font-medium">
+                <button className="flex justify-center items-center font-medium text-[#344054] w-full  border border-[#D0D5DD] h-11 p-2 rounded-lg">
                   <svg
                     className="mr-3"
                     xmlns="http://www.w3.org/2000/svg"
@@ -198,10 +199,10 @@ const SignIn = () => {
                       d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"
                     />
                   </svg>
-                  Sign In with Google
+                  Sign in with Google
                 </button>
               </a>
-              <div className="text-center text-[#0056D6] text-base mt-4">
+              <div className="text-center text-[#0056D6] text-base mt-6">
                 <Link to="/sign_up">
                   <span>Dont have an account yet?</span>
                   <span className="ml-2">Sign Up for free</span>
