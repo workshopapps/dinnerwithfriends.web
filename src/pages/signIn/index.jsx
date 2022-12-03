@@ -48,10 +48,10 @@ const SignIn = () => {
   }
 
   return (
-    <div>
+    <div className="w-full">
       <section className=" min-h-screen flex items-center justify-center ">
         <div className="form-container flex justify-between w-full items-start">
-          <div className="form-wrapper h-screen w-1/2 px-8 mt-6">
+          <div className="form-wrapper h-screen w-1/2 px-4 mt-6">
             <div className="flex justify-between items-center gap-8">
               <div>
               <Logo />
@@ -75,11 +75,22 @@ const SignIn = () => {
               <form
                 onSubmit={handleSubmit(onSubmit)}
                 action=""
-                className=" flex flex-col gap-4"
+                className=" mt-5 text-[#4B4B4C] font-normal [&>input]:mt-2 [&>input]:w-full [&>input]:mb-3.5"
               >
-                <label className="pb-0">Email</label>
+              
+              <div className="relative w-full mb-4 ">
+                <label className='pb-0' htmlFor='email'>
+                  Name
+                </label>
                 <input
-                  className="p-2 rounded-xl border"
+                  style={{
+                    border: errors.email ? "1px solid red" : "1px solid #D0D5DD",
+                  }}
+                  className={`focus:outline-none focus:${
+                    !errors.email
+                      ? "shadow-[0px_0px_0px_4px_rgba(74,74,104,0.1)]"
+                      : "shadow-[0px_0px_0px_4px_rgba(249,50,50,0.1)]"
+                  }  mt-2 w-full h-11 p-3.5 rounded-lg`}
                   type="text"
                   name="email"
                   id="email"
@@ -92,12 +103,23 @@ const SignIn = () => {
                     },
                   })}
                 />
-                <p className="text-red-500 text-sm ">{errors.email?.message}</p>
+                <p className='right-0 bottom-[-37px] italic text-sm mt-2'
+									style={{ color: "red" }}>{errors.email?.message}</p>
 
-                <div className="relative w-full mb-4 flex flex-col gap-4">
+              </div>
+                
+
+                <div className="relative w-full mb-4 ">
                   <label className="pb-0">Password</label>
                   <input
-                    className="p-2 rounded-xl border"
+                     style={{
+                      border: errors.password ? "1px solid red" : "1px solid #D0D5DD",
+                    }}
+                    className={`focus:outline-none focus:${
+                      !errors.password
+                        ? "shadow-[0px_0px_0px_4px_rgba(74,74,104,0.1)]"
+                        : "shadow-[0px_0px_0px_4px_rgba(249,50,50,0.1)]"
+                    }  mt-2 w-full h-11 p-3.5 rounded-lg`}
                     type="password"
                     name="password"
                     id="password"
@@ -115,11 +137,12 @@ const SignIn = () => {
                     })}
                   />
                   <span
-                    className='absolute bottom-7 right-3 cursor-pointer'
+                    className={`absolute ${errors.password ? 'bottom-11' : 'bottom-3.5'} right-3 cursor-pointer`}
                     onClick={togglePassword}>
                       {passwordShown ?  <FiEyeOff /> : <FiEye />}
                   </span>
-                  <p className="text-red-500 text-sm">
+                  <p className='right-0 bottom-[-37px] italic text-sm mt-2'
+									style={{ color: "red" }}>
                     {errors.password?.message}
                   </p>
                 </div>
@@ -144,15 +167,15 @@ const SignIn = () => {
                   </div>
                 </div>
 
-                <button type="submit" className="bg-[#0056D6] hover:bg-[#0056D6] rounded-xl text-white py-2 hover:scale-105 duration-300">
+                <button type="submit" className='hover:bg-blue-400 transition ease-in duration-200 hover:bg-[#0056D6] mt-7 text-white bg-[#0056D6] w-full h-11 rounded-lg'>
                   {isSubmit ? 'Loading...' : 'Sign In'}
                 </button>
               </form>
-              <div className="mt-6 items-center text-[#0056D6]">
-                <p className="text-center text-sm">Or</p>
-              </div>
+
+              <p className='my-2.5 text-center text-[#0056D6]'>Or</p>
+
               <a href=" ">
-                <button className="bg-[white] border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-base hover:scale-105 duration-300">
+                <button className="flex justify-center items-center font-medium text-[#344054] w-full  border border-[#D0D5DD] h-11 p-2 rounded-lg">
                   <svg
                     className="mr-3"
                     xmlns="http://www.w3.org/2000/svg"
@@ -179,7 +202,7 @@ const SignIn = () => {
                   Sign in with Google
                 </button>
               </a>
-              <div className="text-center text-[#0056D6] text-base mt-4">
+              <div className="text-center text-[#0056D6] text-base mt-6">
                 <Link to="/sign_up">
                   <span>Dont have an account yet?</span>
                   <span className="ml-2">Sign Up for free</span>
