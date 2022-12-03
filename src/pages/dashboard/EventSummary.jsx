@@ -28,18 +28,18 @@ const EventSummary = () => {
 }, [popup])
 
   const [participant, setParticipant] = useState([
-    {
-      email: "Damijoshua@gmail.com",
-      value: "Yes",
-    },
-    {
-      email: "SarahM32492@gmail.com",
-      value: "No",
-    },
-    {
-      email: "FaithBala2@gmail.com",
-      value: "No",
-    },
+    // {
+    //   email: "Damijoshua@gmail.com",
+    //   value: "Yes",
+    // },
+    // {
+    //   email: "SarahM32492@gmail.com",
+    //   value: "No",
+    // },
+    // {
+    //   email: "FaithBala2@gmail.com",
+    //   value: "No",
+    // },
   ]);
   const addParticipant = (email) => {
     const newParticipant = [...participant, { email, value: "Yes" }];
@@ -97,25 +97,8 @@ const EventSummary = () => {
             </div>
           </div>
         </div>
-        <div className="flex justify-between my-5">
-          <p className="md:text-2xl text-xl font-bold">Availability</p>
-          <div className="flex">
-            <div
-              className="flex mr-4 items-center"
-            >
-              <AiOutlineLike className="text-2xl text-[#006600]" />
-              <p className="text-xs ml-1.5">Yes</p>
-            </div>
-            <div
-              className="flex items-center"
-            >
-              <AiOutlineDislike className="text-2xl text-[#CC0000]" />
-              <p className="text-xs ml-1.5">No</p>
-            </div>
-          </div>
-        </div>
         <div className="flex md:justify-start justify-between my-5">
-          <p className="text-lg font-bold md:mr-7">Participant(3)</p>
+          <p className="text-lg font-bold md:mr-7">Participant({participant.length})</p>
           <button className="bg-transparent flex items-center text-[#0056D6]">
             <p className="mr-2 md:text-base text-sm">Add participant</p>
             <BsPlus />
