@@ -11,6 +11,7 @@ import checkmark from './icons/checkmark.svg'
 const EventSummary = () => {
   const [email, setEmail] = useState("");
   const [popup, setPopup] = useState(true)
+	const [ copied, setCopied ] = useState(false)
 
   // const [eventsData, setEventsData] = useState({})
   const location = useLocation()
@@ -28,18 +29,18 @@ const EventSummary = () => {
 }, [popup])
 
   const [participant, setParticipant] = useState([
-    {
-      email: "Damijoshua@gmail.com",
-      value: "Yes",
-    },
-    {
-      email: "SarahM32492@gmail.com",
-      value: "No",
-    },
-    {
-      email: "FaithBala2@gmail.com",
-      value: "No",
-    },
+    // {
+    //   email: "Damijoshua@gmail.com",
+    //   value: "Yes",
+    // },
+    // {
+    //   email: "SarahM32492@gmail.com",
+    //   value: "No",
+    // },
+    // {
+    //   email: "FaithBala2@gmail.com",
+    //   value: "No",
+    // },
   ]);
   const addParticipant = (email) => {
     const newParticipant = [...participant, { email, value: "Yes" }];
@@ -51,6 +52,15 @@ const EventSummary = () => {
     addParticipant(email);
     setEmail("")
   };
+
+  const copyLink = () => {
+		setCopied(true)
+    navigator.clipboard.writeText(`https://catchup.hng.tech/event_invite/${location.state._id}`)
+    setTimeout(() => {
+      setCopied(false)
+    }, 3000)
+	}
+
   return (
     <div>
       { popup &&
@@ -63,9 +73,10 @@ const EventSummary = () => {
           <img className="mt-4 md:mt-8 mb-4" src={checkmark} alt="a checkmark" />
           <h3 className="mb-4 text-2xl font-bold text-center">Event Succesfully Created</h3>
           <p className=" w-full md:w-[340px] text-center text-base font-bold text-[#898989]">You've successfully created your event, you can check your notifications to see your friends who have accepted your invite</p>
-          <div className="flex  flex-col md:flex-row items center my-8">
+          <div className="flex  flex-col md:flex-row items center my-8 relative">
             <button className=" w-[127px] mx-4 rounded bg-[#0056D6] text-white h-[44px]">Ok, Thanks !</button>
-            <button className="flex mt-4 md:mt-0 items-center justify-center w-[127px] mx-4 rounded bg-white border-[1px] border-[#0056D6]  text-[#0056D6] h-[44px]"><img className="mr-2" src={clipboard} alt="copy to clipboard"/> Copy link</button>
+            <button className={`flex mt-4 md:mt-0 items-center justify-center w-[127px] mx-4 rounded bg-white border-[1px] ${copied ? "border-green-500 text-green-500": "border-[#0056D6] text-[#0056D6]"} h-[44px]`} onClick={() => copyLink()}><img className="mr-2" src={clipboard} alt="copy to clipboard" /> Copy link</button>
+						<span className={`${copied ? "block" : "hidden"} absolute -top-10 left-6 p-2 text-green-500 bg-white border border-green-500 rounded transition text-xs`}>https://catchup.hng.tech/ copied. You can share to invite your friends</span>
           </div>
         </div>
       </div>
@@ -83,39 +94,22 @@ const EventSummary = () => {
               </p>
             </div>
             <div className="flex items-center">
-              <CiCalendar className="md:text-xl text-5xl" />
+              <CiCalendar className="text-xl" />
               <p className="text-base font-normal ml-2">
                 {/* {location.state.start_date} - {location.state.end_date}  */}
                 {location.state.host_prefered_time}
               </p>
             </div>
             <div className="flex items-center">
-              <CgMenuLeftAlt className="md:text-xl text-5xl" />
+              <CgMenuLeftAlt className="text-xl" />
               <p className="text-base font-normal ml-2">
                 {location.state.event_description}
               </p>
             </div>
           </div>
         </div>
-        <div className="flex justify-between my-5">
-          <p className="md:text-2xl text-xl font-bold">Availability</p>
-          <div className="flex">
-            <div
-              className="flex mr-4 items-center"
-            >
-              <AiOutlineLike className="text-2xl text-[#006600]" />
-              <p className="text-xs ml-1.5">Yes</p>
-            </div>
-            <div
-              className="flex items-center"
-            >
-              <AiOutlineDislike className="text-2xl text-[#CC0000]" />
-              <p className="text-xs ml-1.5">No</p>
-            </div>
-          </div>
-        </div>
         <div className="flex md:justify-start justify-between my-5">
-          <p className="text-lg font-bold md:mr-7">Participant(3)</p>
+          <p className="text-lg font-bold md:mr-7">Participant({participant.length})</p>
           <button className="bg-transparent flex items-center text-[#0056D6]">
             <p className="mr-2 md:text-base text-sm">Add participant</p>
             <BsPlus />

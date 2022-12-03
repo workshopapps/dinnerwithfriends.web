@@ -128,7 +128,9 @@ const ViewEvent = () => {
 							<h1 className='text-[#0056D6] font-semibold text-[1.4rem] lg:text-3xl'>
 								{singleEvent?.event_title}
 							</h1>
-							<p className='text-gray-600 mx-auto text-xs md:text-sm my-2'>
+							
+						</div>
+						<p className='text-gray-600 mx-auto text-xs md:text-sm my-2'>
 								{singleEvent?.event_description}
 							</p>
 							<p className='text-gray-600 mx-auto text-xs md:text-sm my-2'>
@@ -139,22 +141,25 @@ const ViewEvent = () => {
 								<span className='font-semibold'>Event:</span>{" "}
 								{singleEvent?.event_type}
 							</p>
-						</div>
 					</section>
-					<div className='flex flex-col md:flex-row md:justify-between md:items-center my-10'>
+					<div className='flex flex-row justify-between md:items-center my-10'>
 						<button
 							onClick={() => setShowModal(true)}
 							className='bg-transparent flex items-center text-[#0056D6]'>
 							<p className='mr-2 text-sm'>Add participant</p>
 							<BsPlus />
 						</button>
-						<aside className='font-medium text-sm mt-8 md:mt-0'>
-							Agreed Date
-							<span className='bg-[#0056D6] text-white text-xs px-2 py-1 font-semibold rounded ml-1'>
-								Thur Dec 29, 2022
-								{/* {agreed_date} */}
-							</span>
-						</aside>
+						{singleEvent?.final_event_date === null ? 
+							<aside className='font-medium text-sm  md:mt-0'>
+								Agreed Date
+								<span className='bg-[#E7F0FF] text-[#003585] text-xs px-2 py-1 font-semibold rounded ml-1'>
+									{singleEvent?.final_event_date}
+									{/* {agreed_date} */}
+									
+								</span> 
+							</aside>
+							: null
+						}
 					</div>
 
 					<section className='flex flex-col justify-center'>
