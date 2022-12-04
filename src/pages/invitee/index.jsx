@@ -142,7 +142,7 @@ const Invitee = () => {
                   onChange={changeInviteDetails}
                 />
               </div>
-              <div className="my-4 grid">
+              <div className="relative w-full mb-4">
               <label className="text-base font-semibold mb-1">
                 Preferred Date & Time
               </label>
@@ -152,7 +152,7 @@ const Invitee = () => {
                 placeholder="17/11/2022 - 3pm"
                 defaultValue={inviteDetails.date}
                 onChange={changeInviteDetails}
-                className="outline-none border border-[#898989] rounded md:w-[477px] w-full px-3 py-3 text-base font-medium"
+                className="border border-gray-600 block w-full h-10 rounded-md px-3"
                 required
               />
             </div>
