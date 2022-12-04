@@ -1,11 +1,14 @@
 import React from "react";
 import { AiOutlineUser, AiOutlineCloseCircle } from "react-icons/ai";
 import { IoMdClose } from "react-icons/io";
+import { useParams } from "react-router-dom";
 
 import { useState } from "react";
 import { CatchUpEventContextUse } from "../context/CatchUpEventContext";
 
 function AddParticipantModal() {
+  let { eventId } = useParams();
+
   const [email, setEmail] = useState("");
   const [participant, setParticipant] = useState([]);
   const addParticipant = (email) => {
@@ -17,11 +20,22 @@ function AddParticipantModal() {
     deletefromList.splice(index, 1);
     setParticipant([...deletefromList]);
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!email) return;
     addParticipant(email);
     setEmail("");
+    const saveEmail = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ ...participant, event_id: eventId }),
+    };
+    fetch(
+      "https://prybar.onrender.com/api/v1/participant/addpart",
+      saveEmail
+    ).then((response) => response.json());
+    console.log(participant);
   };
   const { showModal, setShowModal } = CatchUpEventContextUse();
 
