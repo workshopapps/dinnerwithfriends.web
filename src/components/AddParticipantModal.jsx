@@ -2,8 +2,6 @@ import React from "react";
 import { AiOutlineUser, AiOutlineCloseCircle } from "react-icons/ai";
 import { IoMdClose } from "react-icons/io";
 
-import { BsPlus } from "react-icons/bs";
-
 import { useState } from "react";
 import { CatchUpEventContextUse } from "../context/CatchUpEventContext";
 
@@ -37,12 +35,8 @@ function AddParticipantModal() {
           ></div>
           <div className="relative my-6 mx-auto w-full">
             <div className="w-[90%] lg:w-[40%] max-w-[500px] px-6 mx-auto border-0 rounded-lg shadow-lg relative flex flex-col bg-white outline-none focus:outline-none">
-              <div className="flex justify-between my-5">
-                <button className="bg-transparent flex items-center text-[#1070FF]">
-                  <p className="mr-2 md:text-base text-sm">Add participant</p>
-                  <BsPlus />
-                </button>
-                <div className=" ">
+              <div className="flex justify-end my-5">
+                <div>
                   <span
                     onClick={() => setShowModal(false)}
                     className="bg-[#FAFAFA] cursor-pointer text-[#717172] flex justify-center items-center rounded-full h-[35px] w-[35px]"
