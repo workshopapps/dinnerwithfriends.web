@@ -91,40 +91,31 @@ const SignIn = () => {
                 action=""
                 className=" mt-5 text-[#4B4B4C] font-normal [&>input]:mt-2 [&>input]:w-full [&>input]:mb-3.5"
               >
-                <div className="relative w-full mb-4 ">
-                  <label className="pb-0" htmlFor="email">
-                    Name
-                  </label>
-                  <input
-                    style={{
-                      border: errors.email
-                        ? "1px solid red"
-                        : "1px solid #D0D5DD",
-                    }}
-                    className={`focus:outline-none focus:${
-                      !errors.email
-                        ? "shadow-[0px_0px_0px_4px_rgba(74,74,104,0.1)]"
-                        : "shadow-[0px_0px_0px_4px_rgba(249,50,50,0.1)]"
-                    }  mt-2 w-full h-11 p-3.5 rounded-lg`}
-                    type="text"
-                    name="email"
-                    id="email"
-                    placeholder="Enter your email"
-                    {...register("email", {
-                      required: "Email is required",
-                      pattern: {
-                        value: /^[^\s@]+@[^\s@]+$/,
-                        message: "This is not a valid email",
-                      },
-                    })}
-                  />
-                  <p
-                    className="right-0 bottom-[-37px] italic text-sm mt-2"
-                    style={{ color: "red" }}
-                  >
-                    {errors.email?.message}
-                  </p>
-                </div>
+                <label className="pb-0">Email</label>
+                <input
+                  style={{
+                    border: errors.email
+                      ? "1px solid red"
+                      : "1px solid #D0D5DD",
+                  }}
+                  className={`focus:outline-none focus:${
+                    !errors.email
+                      ? "shadow-[0px_0px_0px_4px_rgba(74,74,104,0.1)]"
+                      : "shadow-[0px_0px_0px_4px_rgba(249,50,50,0.1)]"
+                  }  mt-2 w-full h-11 p-3.5 rounded-lg`}
+                  type="text"
+                  name="email"
+                  id="email"
+                  placeholder="Enter your email"
+                  {...register("email", {
+                    required: "Email is required",
+                    pattern: {
+                      value: /^[^\s@]+@[^\s@]+$/,
+                      message: "This is not a valid email",
+                    },
+                  })}
+                />
+                <p className="text-red-500 text-sm ">{errors.email?.message}</p>
 
                 <div className="relative w-full mb-4 ">
                   <label className="pb-0">Password</label>
