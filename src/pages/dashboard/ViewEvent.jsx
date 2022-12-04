@@ -149,17 +149,19 @@ const ViewEvent = () => {
 							<p className='mr-2 text-sm'>Add participant</p>
 							<BsPlus />
 						</button>
-						{singleEvent?.final_event_date === null ? 
+						
 							<aside className='font-medium text-sm  md:mt-0'>
 								Agreed Date
-								<span className='bg-[#E7F0FF] text-[#003585] text-xs px-2 py-1 font-semibold rounded ml-1'>
-									{singleEvent?.final_event_date}
-									{/* {agreed_date} */}
-									
-								</span> 
+							{singleEvent?.final_event_date === !null ? 		
+									<span className='bg-[#E7F0FF] text-[#003585] text-xs px-2 py-1 font-semibold rounded ml-1'>
+										{singleEvent?.final_event_date}					
+									</span> 
+								
+								: <span className='bg-[#E7F0FF] text-[#003585] text-xs px-2 py-1 font-semibold rounded ml-1'>				
+								Not Decided
+								</span>
+							}
 							</aside>
-							: null
-						}
 					</div>
 
 					<section className='flex flex-col justify-center'>
