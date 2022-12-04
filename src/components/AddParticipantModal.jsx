@@ -9,17 +9,7 @@ import { CatchUpEventContextUse } from "../context/CatchUpEventContext";
 
 function AddParticipantModal() {
   const [email, setEmail] = useState("");
-  const [participant, setParticipant] = useState([
-    {
-      email: "Damijoshua@gmail.com",
-    },
-    {
-      email: "SarahM32492@gmail.com",
-    },
-    {
-      email: "FaithBala2@gmail.com",
-    },
-  ]);
+  const [participant, setParticipant] = useState([]);
   const addParticipant = (email) => {
     const newParticipant = [...participant, { email, value: "Yes" }];
     setParticipant(newParticipant);
