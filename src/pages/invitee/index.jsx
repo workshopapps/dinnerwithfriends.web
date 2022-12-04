@@ -16,7 +16,7 @@ const Invitee = () => {
   const [inviteDetails, setInviteDetails] = useState({
     fullname: "",
     email: "",
-    preferred_date_time: "2pm"
+    preferred_date_time: ""
   });
   const changeInviteDetails = (e) => {
     const {value, name} = e.target;
@@ -125,8 +125,10 @@ const Invitee = () => {
                 <input
                   className="border border-gray-600 block w-full h-10 rounded-md px-3"
                   placeholder="John Doe"
-                  defaultValue={inviteDetails.fullname}
+                  value={inviteDetails.fullname}
                   onChange={changeInviteDetails}
+                  required
+                  type="text"
                 />
               </div>
 
@@ -138,8 +140,10 @@ const Invitee = () => {
                 <input
                   className="border border-gray-600 block w-full h-10 rounded-md px-3"
                   placeholder="JohnDoe@gmail.com"
-                  defaultValue={inviteDetails.email}
+                  value={inviteDetails.email}
                   onChange={changeInviteDetails}
+                  required
+                  type="email"
                 />
               </div>
               <div className="relative w-full mb-4">
@@ -150,7 +154,7 @@ const Invitee = () => {
                 name="preferred_date_time"
                 type="datetime-local"
                 placeholder="17/11/2022 - 3pm"
-                defaultValue={inviteDetails.date}
+                value={inviteDetails.preferred_date_time}
                 onChange={changeInviteDetails}
                 className="border border-gray-600 block w-full h-10 rounded-md px-3"
                 required
@@ -167,7 +171,7 @@ const Invitee = () => {
                 </button>
                 <button
                   className="ml-4 transition ease-in duration-200 hover:bg-[#66A3FF] mt-4 text-[#0056D6] border border-[#0056D6] w-full h-11 rounded-lg"
-                  type="submit"
+                  
                   onClick={() => declineInvite()}
                 >
                   Decline Invite
