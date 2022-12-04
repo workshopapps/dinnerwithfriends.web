@@ -13,11 +13,11 @@ const Invitee = () => {
   const [declinedInvite, setDeclinedInvite] = useState(false);
   let { id } = useParams();
   
-  const [inviteDetails, setInviteDetails] = useState({
-    fullname: "",
-    email: "",
-    preferred_date_time: ""
-  });
+  const [inviteDetails, setInviteDetails] = useState({});
+  // const [fullname, setFullname] = useState()
+  // const [email, setEmail] = useState()
+  // const [preferred_date_time, setPreferredDateTime] = useState()
+  
   const changeInviteDetails = (e) => {
     const {value, name} = e.target;
 
@@ -40,7 +40,7 @@ const Invitee = () => {
     }, 2000)
   }
   const addParticipant = (e) => {
-    e.preventDefault();
+    
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -125,7 +125,6 @@ const Invitee = () => {
                 <input
                   className="border border-gray-600 block w-full h-10 rounded-md px-3"
                   placeholder="John Doe"
-                  value={inviteDetails.fullname}
                   onChange={changeInviteDetails}
                   required
                   type="text"
@@ -140,13 +139,13 @@ const Invitee = () => {
                 <input
                   className="border border-gray-600 block w-full h-10 rounded-md px-3"
                   placeholder="JohnDoe@gmail.com"
-                  value={inviteDetails.email}
                   onChange={changeInviteDetails}
                   required
                   type="email"
                 />
               </div>
-              <div className="relative w-full mb-4">
+            {data.published === false ?
+            <div className="relative w-full mb-4">
               <label className="text-base font-semibold mb-1">
                 Preferred Date & Time
               </label>
@@ -154,12 +153,12 @@ const Invitee = () => {
                 name="preferred_date_time"
                 type="datetime-local"
                 placeholder="17/11/2022 - 3pm"
-                value={inviteDetails.preferred_date_time}
                 onChange={changeInviteDetails}
                 className="border border-gray-600 block w-full h-10 rounded-md px-3"
                 required
               />
             </div>
+            : null}
               <div className="flex">
                 <button
                   className="mr-4 transition ease-in duration-200 hover:bg-[#66A3FF] mt-4 text-white bg-[#0056D6] w-full h-11 rounded-lg"
