@@ -5,6 +5,7 @@ import icon1 from "../../assets/img/howItWorks/icon-1.svg";
 import icon2 from "../../assets/img/howItWorks/icon-2.svg";
 import icon3 from "../../assets/img/howItWorks/icon-3.svg";
 import icon4 from "../../assets/img/howItWorks/icon-4.svg";
+import { Link } from "react-router-dom";
 
 export default function FirstComponent() {
   return (
@@ -76,22 +77,23 @@ export default function FirstComponent() {
               the whole invite list so you never have to share it in other chats
               or texts.
             </p>
-            <p className="font-medium">The location is automatically updated if you change venues.</p>
+            <p className="font-medium">
+              The location is automatically updated if you change venues.
+            </p>
           </div>
         </section>
       </div>
 
-      <section className="flex flex-col xl:flex-row-reverse pt-8 pb-24 px-6 gap-8 lg:gap-[44px] w-full mx-auto max-w-7xl">
-        <img
-          className="w-[332px] mx-auto order-2 lg:order-1 md:w-[90%]"
-          src={image}
-          alt="invite contacts preview"
-        />
-        <div className="flex flex-col gap-6 items-start justify-center">
+      <div className="flex flex-col xl:flex-row-reverse pt-8 pb-24 gap-8 px-8 w-full mx-auto">
+        <div className="xl:w-[45%] md:w-full order-2 lg:order-1">
+          <img className="w-full" src={image} alt="invite contacts preview" />
+        </div>
+
+        <div className="xl:w-[55%] flex flex-col gap-6 items-start justify-center">
           <h2 className="text-[#0056D6] text-2xl tracking-wide font-bold md:text-5xl lg:text-[3.25rem]">
             Instantly invite anyone on your contact list
           </h2>
-          <p className="text-xs tracking-[0.07em] md:text-xl lg:text-2xl">
+          <p className="text-xs tracking-[0.07em] md:text-xl lg:text-2xl text-justify">
             When you create a get-together you can add as many people as you
             would like, as long as they are in your contact list. Whether you’re
             getting together with two friends or holding a large family reunion,
@@ -100,11 +102,13 @@ export default function FirstComponent() {
             easy as when you create the gathering, and the process makes sure
             they didn’t miss anything no matter when they were added.
           </p>
-          <button className="w-fit px-8 py-3 border-0 outline-none text-white rounded bg-[#0056D6]">
-            Get Started Now
-          </button>
+          <Link to="/sign_up">
+            <button className="w-fit px-8 py-3 border-0 outline-none text-white rounded bg-[#0056D6]">
+              Get Started Now
+            </button>
+          </Link>
         </div>
-      </section>
+      </div>
     </div>
   );
 }

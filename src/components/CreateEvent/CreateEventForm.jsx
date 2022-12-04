@@ -21,8 +21,8 @@ const CreateEventForm = () => {
   const [maximumDate, setMaximumDate] = useState("");
 
   useEffect(() => {
-    const start = dateTimeForCalender(startDate, "00:00");
     const end = dateTimeForCalender(endDate, "00:00");
+    const start = dateTimeForCalender(startDate, "00:00");
     setMinimumDate(start);
     setMaximumDate(end);
   }, [startDate, endDate]);
