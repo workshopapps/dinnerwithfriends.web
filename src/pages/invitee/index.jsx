@@ -8,16 +8,55 @@ import { useNavigate, useParams } from "react-router-dom/dist";
 import userServices from "../../services/userServices";
 
 const Invitee = () => {
+  const navigate = useNavigate();
   const [data, setData] = useState([]);
+  const [declinedInvite, setDeclinedInvite] = useState(false);
   let { id } = useParams();
-  console.log(id)
   
+  const [inviteDetails, setInviteDetails] = useState({
+    fullname: "",
+    email: "",
+    preferred_date_time: "2pm"
+  });
+  const changeInviteDetails = (e) => {
+    const {value, name} = e.target;
+
+    setInviteDetails({
+      ...inviteDetails,
+      [name]: value
+    })
+  }
   const fetchEvent = async () => {
     const result = await userServices.getEventsById(id);
     setData(result);
-    console.log(result)
   };
   fetchEvent();
+
+
+  const declineInvite = () => {
+    setDeclinedInvite(true);
+    setTimeout(() => {
+      navigate('/')
+    }, 2000)
+  }
+  const addParticipant = (e) => {
+    e.preventDefault();
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({...inviteDetails, event_id: id})
+    }
+    fetch('https://prybar.onrender.com/api/v1/participant/addpart', requestOptions)
+    .then(response => response.json())
+    .then((result) => {
+      if(result.status === "success"){
+        setTimeout(() => {
+          navigate('/event_invite/event_invite_response')
+        }, 2000)
+      }
+      console.log(result)
+    })
+  }
   return (
     <div>
       <Navbar />
@@ -77,7 +116,7 @@ const Invitee = () => {
             </div>
           </div>
           <div className="md:w-1/2 md:px-8">
-            <form className=" my-10 md:mt-0 text-[#4B4B4C] font-normal [&>input]:mt-2 [&>input]:w-full [&>input]:mb-3.5">
+            <form onSubmit={addParticipant} className=" my-10 md:mt-0 text-[#4B4B4C] font-normal [&>input]:mt-2 [&>input]:w-full [&>input]:mb-3.5">
               <div className="relative w-full mb-4 ">
                 <label className="pb-0 mb-2 font-bold" htmlFor="email">
                   Full Name
@@ -86,6 +125,8 @@ const Invitee = () => {
                 <input
                   className="border border-gray-600 block w-full h-10 rounded-md px-3"
                   placeholder="John Doe"
+                  defaultValue={inviteDetails.fullname}
+                  onChange={changeInviteDetails}
                 />
               </div>
 
@@ -97,19 +138,37 @@ const Invitee = () => {
                 <input
                   className="border border-gray-600 block w-full h-10 rounded-md px-3"
                   placeholder="JohnDoe@gmail.com"
+                  defaultValue={inviteDetails.email}
+                  onChange={changeInviteDetails}
                 />
               </div>
-
+              <div className="my-4 grid">
+              <label className="text-base font-semibold mb-1">
+                Preferred Date & Time
+              </label>
+              <input
+                name="preferred_date_time"
+                type="datetime-local"
+                placeholder="17/11/2022 - 3pm"
+                defaultValue={inviteDetails.date}
+                onChange={changeInviteDetails}
+                className="outline-none border border-[#898989] rounded md:w-[477px] w-full px-3 py-3 text-base font-medium"
+                required
+              />
+            </div>
               <div className="flex">
                 <button
                   className="mr-4 transition ease-in duration-200 hover:bg-[#66A3FF] mt-4 text-white bg-[#0056D6] w-full h-11 rounded-lg"
                   type="submit"
+                  onClick={addParticipant}
                 >
+
                   Accept Invite
                 </button>
                 <button
                   className="ml-4 transition ease-in duration-200 hover:bg-[#66A3FF] mt-4 text-[#0056D6] border border-[#0056D6] w-full h-11 rounded-lg"
                   type="submit"
+                  onClick={() => declineInvite()}
                 >
                   Decline Invite
                 </button>
