@@ -2,10 +2,7 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import Navbar from "../../components/CreateEvent/CreateEventNavbar";
 import arrow from "../../assets/icons/arrow-down.svg";
-<<<<<<< HEAD
 import avatar from "../../assets/img/profile.svg";
-=======
->>>>>>> 4beed3743864abb318585567e2316f214e5f8c50
 import { CatchUpEventContextUse } from "../../context/CatchUpEventContext";
 import AddParticipantModal from "../../components/AddParticipantModal";
 import { BsPlus } from "react-icons/bs";
