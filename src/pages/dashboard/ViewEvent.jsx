@@ -26,23 +26,6 @@ const ViewEvent = () => {
 		}
 	};
 
-
-	// const getAgreedDate = () => {
-	// 	if (singleEvent && singleEvent.length !== 0) {
-	// 		const preferredTime = singleEvent?.host_prefered_time.split("-");
-	// 		const splitPreferredTime = preferredTime[0]?.split("/");
-	// 		const finalDate = new Date(
-	// 			splitPreferredTime[2],
-	// 			splitPreferredTime[1],
-	// 			splitPreferredTime[0]
-	// 		);
-	// 		const agreedDate = finalDate.toDateString();
-  //     console.log(agreedDate) 
-  //     return agreedDate;
-	// 	}
-	// };
-  // const agreed_date = getAgreedDate();
-
 	useEffect(() => {
 		const eArr = localStorage.getItem("eventsArr");
 		const events = JSON.parse(eArr);
@@ -169,9 +152,6 @@ const ViewEvent = () => {
 								</div>
 							))}
 						</div>
-						{/* <button className=' px-3 py-2 hover:bg- hover:text-white border-2 border-blue-500 rounded mx-auto mt-3 text-center text-blue-500 transition-all'>
-							Load more
-						</button> */}
 					</section>
 				</main>
 				<AddParticipantModal />
