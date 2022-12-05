@@ -26,6 +26,10 @@ const CreateEventForm = () => {
 	const [minimumDate, setMinimumDate] = useState("");
 	const [maximumDate, setMaximumDate] = useState("");
 
+	const [isSubmit, setIsSubmit] = useState(false);
+	const [isSuccess, setIsSuccess] = useState(false);
+	const [isFailure, setIsFailure] = useState(false);
+
 	useEffect(() => {
 		const start = dateTimeForCalender(startDate, "00:00");
 		const end = dateTimeForCalender(endDate, "00:00");
@@ -46,35 +50,43 @@ const CreateEventForm = () => {
 		host_prefered_time: "",
 	});
 
-	// {isSubmit ? <span>Loading...</span> : (isFailure ? <span> Try Again </span> : (isSuccess ? <span>Success</span> : <span>Next</span>))}
-
 	const handleSubmit = () => {
 		setErrors(formLogic(formValues));
 	};
 
 	const submitForm = async (data) => {
+		setIsSubmit(true);
 		const result = await userServices.createEvents(data);
+		if (result.status === "fail") {
+			setIsSubmit(false);
+			setIsFailure(true);
+		}
+
 		if (result.status === "success") {
-			setFormValues({
-				...formValues,
-				event_title: "",
-				event_description: "",
-				location: "",
-				event_type: "",
-				participant_number: "",
-			});
-			setStartDate("");
-			setEndDate("");
-			setPreferredDate("");
-			navigate("/event_summary", { state: result.data });
+			setIsSuccess(true);
+			setTimeout(() => {
+        setFormValues({
+          ...formValues,
+          event_title: "",
+          event_description: "",
+          location: "",
+          event_type: "",
+          participant_number: "",
+        });
+        setStartDate('')
+        setEndDate('')
+        setPreferredDate('')
+				navigate("/event_summary", { state: result.data });
+			}, 1000);
 		}
 	};
+
 	useEffect(() => {
 		if (Object.keys(errors).length === 0) {
 			submitForm(formValues);
 		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [errors]);
+	}, [errors, navigate]);
 
 	useEffect(() => {
 		setFormValues({
@@ -311,8 +323,16 @@ const CreateEventForm = () => {
 						children
 						type='submit'
 						onClick={handleSubmit}
-						className='flex items-center text-xs font-medium px-6 py-2 bg-[#1070FF] w-fit text-white rounded-[4px]'>
-						<span>Next</span>
+						className='flex items-center text-xs font-medium px-10 py-2 bg-[#1070FF] w-fit text-white rounded-[4px]'>
+						{isSubmit ? (
+							<span>Loading...</span>
+						) : isFailure ? (
+							<span> Try Again </span>
+						) : isSuccess ? (
+							<span>Success</span>
+						) : (
+							<span>Next</span>
+						)}
 						<span className='text-[8px] ml-2'>
 							<SlArrowRight />
 						</span>
