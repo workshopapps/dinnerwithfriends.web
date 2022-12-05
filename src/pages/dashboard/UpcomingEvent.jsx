@@ -9,10 +9,12 @@ import Footer from "../../components/Footer";
 import { Link } from "react-router-dom";
 import CreateEventNavbar from "../../components/CreateEvent/CreateEventNavbar";
 import { authenticate, loadClient } from "../../helpers/googleCalender";
+import CalenderSyncModal from "../../components/CalenderSyncModal";
 
 const UpcomingEvent = () => {
 	const [status, setStatus] = useState(false);
 	const { events, setEvents } = CatchUpEventContextUse();
+    const [modal, setModal] = useState(false);
 
 	useEffect(() => {
 		async function fetchData() {
@@ -59,8 +61,9 @@ const UpcomingEvent = () => {
 			)
 		);
 
-		const googleCalenderApi = () => {
-			authenticate().then(loadClient)
+		const googleCalenderApi = async () => {
+			await authenticate().then(loadClient)
+			setModal(true)
 		}
 
 	return (
@@ -160,6 +163,9 @@ const UpcomingEvent = () => {
 				</div>
 			</section>
 			<Footer />
+			{modal && (
+		      <CalenderSyncModal setModal={setModal}/>
+		    )}
 		</>
 	);
 };

@@ -11,7 +11,7 @@ export function authenticate() {
 export function loadClient() {
   gapi.client.setApiKey("AIzaSyA7G2ANAJI6rm_DpTW84lsKUJT-c8bmirI");
   return gapi.client.load("https://content.googleapis.com/discovery/v1/apis/calendar/v3/rest")
-      .then(function() { console.log("GAPI client loaded for API"); 
+      .then(function() { console.log("GAPI client loaded for API");
       execute()
     },
             function(err) { console.error("Error loading GAPI client for API", err); });
@@ -22,6 +22,7 @@ function execute() {
       .then(function(response) {
               // Handle the results here (response.result has the parsed body).
               console.log("Response", response);
+              localStorage.setItem('google', JSON.stringify(response.status))
             },
             function(err) { console.error("Execute error", err); });
 }
