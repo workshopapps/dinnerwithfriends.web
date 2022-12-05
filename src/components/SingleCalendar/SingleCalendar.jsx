@@ -9,13 +9,8 @@ const SingleCalendar = ({ minDate, maxDate, setShowCalendar, showCalendar, id, a
 	const [time, setTime] = useState("7:00");
 
 	const {
-		formValues,
-		setFormValues,
-		startDate,
 		setStartDate,
-		endDate,
 		setEndDate,
-		preferredDate,
 		setPreferredDate,
 	} = CatchUpEventContextUse();
 
@@ -31,12 +26,6 @@ const SingleCalendar = ({ minDate, maxDate, setShowCalendar, showCalendar, id, a
 		if (id === "preferredDate") {
 			setPreferredDate(`${date} - ${time}`);
 		}
-		setFormValues({
-			...formValues,
-			host_prefered_time: preferredDate,
-			end_date: endDate,
-			start_date: startDate,
-		});
 	};
 
 
