@@ -3,9 +3,6 @@ import { useState } from "react";
 import Navbar from "../../components/CreateEvent/CreateEventNavbar";
 import arrow from "../../assets/icons/arrow-down.svg";
 import inviteeImg1 from "../../assets/img/inviteeImg1.png";
-import inviteeImg2 from "../../assets/img/inviteeImg2.png";
-import inviteeImg3 from "../../assets/img/inviteeImg3.png";
-import inviteeImg4 from "../../assets/img/inviteeImg4.png";
 import { CatchUpEventContextUse } from "../../context/CatchUpEventContext";
 import AddParticipantModal from "../../components/AddParticipantModal";
 import { BsPlus } from "react-icons/bs";
@@ -55,7 +52,7 @@ const ViewEvent = () => {
 							<h1 className='text-[#0056D6] font-semibold text-[1.4rem] lg:text-3xl'>
 								{singleEvent?.event_title}
 							</h1>
-							
+
 						</div>
 						<p className='text-gray-600 mx-auto text-xs md:text-sm my-2'>
 								{singleEvent?.event_description}
@@ -76,15 +73,15 @@ const ViewEvent = () => {
 							<p className='mr-2 text-sm'>Add participant</p>
 							<BsPlus />
 						</button>
-						
+
 							<aside className='font-medium text-sm  md:mt-0'>
 								Agreed Date
-							{singleEvent?.final_event_date === !null ? 		
+							{singleEvent?.final_event_date === !null ?
 									<span className='bg-[#E7F0FF] text-[#003585] text-xs px-2 py-1 font-semibold rounded ml-1'>
-										{singleEvent?.final_event_date}					
-									</span> 
-								
-								: <span className='bg-[#E7F0FF] text-[#003585] text-xs px-2 py-1 font-semibold rounded ml-1'>				
+										{singleEvent?.final_event_date}
+									</span>
+
+								: <span className='bg-[#E7F0FF] text-[#003585] text-xs px-2 py-1 font-semibold rounded ml-1'>
 								Not Decided
 								</span>
 							}
