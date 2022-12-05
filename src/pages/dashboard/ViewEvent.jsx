@@ -25,62 +25,6 @@ const ViewEvent = () => {
 			dateNdTime: "Friday, 21 November 2022 - 4pm",
 			status: "Accepted",
 		},
-		{
-			id: 2,
-			image: inviteeImg2,
-			position: "2nd Invitee",
-			name: "John Maklinscout",
-			dateNdTime: "Friday, 21 November 2022 - 4pm",
-			status: "Accepted",
-		},
-		{
-			id: 3,
-			image: inviteeImg3,
-			position: "3rd Invitee",
-			name: "Felix Sydney",
-			dateNdTime: "Friday, 21 November 2022 - 4pm",
-			status: "Accepted",
-		},
-		{
-			id: 4,
-			image: inviteeImg4,
-			position: "4th Invitee",
-			name: "Felicia Scout",
-			dateNdTime: "Friday, 21 November 2022 - 4pm",
-			status: "Accepted",
-		},
-		{
-			id: 5,
-			image: inviteeImg3,
-			position: "5th Invitee",
-			name: "Johnson Joshua",
-			dateNdTime: "Friday, 21 November 2022 - 4pm",
-			status: "Accepted",
-		},
-		{
-			id: 6,
-			image: inviteeImg2,
-			position: "6th Invitee",
-			name: "Felix Sydney",
-			dateNdTime: "Friday, 21 November 2022 - 4pm",
-			status: "Accepted",
-		},
-		{
-			id: 7,
-			image: inviteeImg1,
-			position: "7th Invitee",
-			name: "Johnson Joshua",
-			dateNdTime: "Friday, 21 November 2022 - 4pm",
-			status: "Accepted",
-		},
-		{
-			id: 8,
-			image: inviteeImg4,
-			position: "8th Invitee",
-			name: "Felicia Scout",
-			dateNdTime: "Friday, 21 November 2022 - 4pm",
-			status: "Accepted",
-		},
 	];
 	const toggleShowAccordion = (id) => {
 		if (isActive === id) {
@@ -89,23 +33,6 @@ const ViewEvent = () => {
 			setIsActive(id);
 		}
 	};
-
-
-	// const getAgreedDate = () => {
-	// 	if (singleEvent && singleEvent.length !== 0) {
-	// 		const preferredTime = singleEvent?.host_prefered_time.split("-");
-	// 		const splitPreferredTime = preferredTime[0]?.split("/");
-	// 		const finalDate = new Date(
-	// 			splitPreferredTime[2],
-	// 			splitPreferredTime[1],
-	// 			splitPreferredTime[0]
-	// 		);
-	// 		const agreedDate = finalDate.toDateString();
-  //     console.log(agreedDate) 
-  //     return agreedDate;
-	// 	}
-	// };
-  // const agreed_date = getAgreedDate();
 
 	useEffect(() => {
 		const eArr = localStorage.getItem("eventsArr");
@@ -149,17 +76,19 @@ const ViewEvent = () => {
 							<p className='mr-2 text-sm'>Add participant</p>
 							<BsPlus />
 						</button>
-						{singleEvent?.final_event_date === null ? 
+						
 							<aside className='font-medium text-sm  md:mt-0'>
 								Agreed Date
-								<span className='bg-[#E7F0FF] text-[#003585] text-xs px-2 py-1 font-semibold rounded ml-1'>
-									{singleEvent?.final_event_date}
-									{/* {agreed_date} */}
-									
-								</span> 
+							{singleEvent?.final_event_date === !null ? 		
+									<span className='bg-[#E7F0FF] text-[#003585] text-xs px-2 py-1 font-semibold rounded ml-1'>
+										{singleEvent?.final_event_date}					
+									</span> 
+								
+								: <span className='bg-[#E7F0FF] text-[#003585] text-xs px-2 py-1 font-semibold rounded ml-1'>				
+								Not Decided
+								</span>
+							}
 							</aside>
-							: null
-						}
 					</div>
 
 					<section className='flex flex-col justify-center'>
@@ -214,9 +143,6 @@ const ViewEvent = () => {
 								</div>
 							))}
 						</div>
-						{/* <button className=' px-3 py-2 hover:bg- hover:text-white border-2 border-blue-500 rounded mx-auto mt-3 text-center text-blue-500 transition-all'>
-							Load more
-						</button> */}
 					</section>
 				</main>
 				<AddParticipantModal />

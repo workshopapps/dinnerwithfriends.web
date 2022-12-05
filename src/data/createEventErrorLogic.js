@@ -33,6 +33,10 @@ export const formLogic = (values) => {
 	if (!values.host_prefered_time) {
 		error.host_prefered_time = "Please select a preferred date";
 	}
+	
+       if (!values.host_prefered_time) {
+		error.host_prefered_time = "Please select a preferred date";
+	}
 
 	return error;
 };
