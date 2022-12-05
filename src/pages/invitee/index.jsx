@@ -10,11 +10,11 @@ import userServices from "../../services/userServices";
 const Invitee = () => {
   const navigate = useNavigate();
   const [data, setData] = useState([]);
-  const [declinedInvite, setDeclinedInvite] = useState(false);
+  const [setDeclinedInvite] = useState(false);
   let { id } = useParams();
-  
+
   const [inviteDetails, setInviteDetails] = useState({});
-  
+
   const changeInviteDetails = (e) => {
     const {value, name} = e.target;
 
@@ -37,7 +37,7 @@ const Invitee = () => {
     }, 2000)
   }
   const addParticipant = (e) => {
-    
+
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -89,7 +89,7 @@ const Invitee = () => {
                 {" "}
                 <CiCalendar className="mr-4 text-[25px]" />
                 Agreed Date:
-                {data.final_event_date === !null ? 
+                {data.final_event_date === !null ?
                 <span className="font-bold"> &#160; {data.final_event_date}</span>
                 : <span className="font-bold"> &#160; Not Available</span>}
               </span>
@@ -97,7 +97,7 @@ const Invitee = () => {
               <span className="flex mt-3">
                 {" "}
                 <CiStopwatch className="mr-4 text-[25px]" />
-                Host Selected Time: 
+                Host Selected Time:
                 <span className="font-bold">&#160; {data.host_prefered_time}</span>{" "}
               </span>
 
@@ -167,7 +167,7 @@ const Invitee = () => {
                 </button>
                 <button
                   className="ml-4 transition ease-in duration-200 hover:bg-[#66A3FF] mt-4 text-[#0056D6] border border-[#0056D6] w-full h-11 rounded-lg"
-                  
+
                   onClick={() => declineInvite()}
                 >
                   Decline Invite
