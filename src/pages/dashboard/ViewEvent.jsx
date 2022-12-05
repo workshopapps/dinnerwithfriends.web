@@ -13,6 +13,7 @@ const ViewEvent = () => {
 	const [isActive, setIsActive] = useState(false);
 	const { setShowModal } = CatchUpEventContextUse();
 	const [singleEvent, setSingleEvent] = useState({});
+	const [event, setEvent] = useState({})
 	const [participants, setParticipants] = useState([]);
 
 	const toggleShowAccordion = (id) => {
@@ -37,10 +38,16 @@ const ViewEvent = () => {
 		const getParticipants = async () => {
 			const data = await userServices.getParticipants(id);
 			setParticipants(data);
+			// console.log(data)
 		};
 		getParticipants();
-
-
+		const getEvent = async () => {
+			const data = await userServices.getEventsById(id);
+			setEvent(data);
+			console.log(data)
+		};
+		getEvent();
+		console.log(event?.final_event_date)
 	}, [id])
 
 	return (
@@ -77,9 +84,9 @@ const ViewEvent = () => {
 
 							<aside className='font-medium text-sm  md:mt-0'>
 								Agreed Date
-							{singleEvent?.final_event_date === !null ?
+							{event?.final_event_date === null ?
 									<span className='bg-[#E7F0FF] text-[#003585] text-xs px-2 py-1 font-semibold rounded ml-1'>
-										{singleEvent?.final_event_date}
+										{event?.final_event_date}
 									</span>
 
 								: <span className='bg-[#E7F0FF] text-[#003585] text-xs px-2 py-1 font-semibold rounded ml-1'>
