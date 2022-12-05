@@ -1,12 +1,59 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
-
 import { CiLocationOn, CiStopwatch, CiCalendar } from "react-icons/ci";
 import { HiOutlineMenuAlt1 } from "react-icons/hi";
+import { useNavigate, useParams } from "react-router-dom/dist";
+import userServices from "../../services/userServices";
 
 const Invitee = () => {
+  const navigate = useNavigate();
+  const [data, setData] = useState([]);
+  const [declinedInvite, setDeclinedInvite] = useState(false);
+  let { id } = useParams();
+  
+  const [inviteDetails, setInviteDetails] = useState({});
+  
+  const changeInviteDetails = (e) => {
+    const {value, name} = e.target;
+
+    setInviteDetails({
+      ...inviteDetails,
+      [name]: value
+    })
+  }
+  const fetchEvent = async () => {
+    const result = await userServices.getEventsById(id);
+    setData(result);
+  };
+  fetchEvent();
+
+
+  const declineInvite = () => {
+    setDeclinedInvite(true);
+    setTimeout(() => {
+      navigate('/')
+    }, 2000)
+  }
+  const addParticipant = (e) => {
+    
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({...inviteDetails, event_id: id})
+    }
+    fetch('https://prybar.onrender.com/api/v1/participant/addpart', requestOptions)
+    .then(response => response.json())
+    .then((result) => {
+      if(result.status === "success"){
+        setTimeout(() => {
+          navigate('/event_invite/event_invite_response')
+        }, 2000)
+      }
+      console.log(result)
+    })
+  }
   return (
     <div>
       <Navbar />
@@ -16,7 +63,7 @@ const Invitee = () => {
             Hello, there.
           </h1>
           <p className="leading-6 text-gray-600 font-sm">
-            You have been invited to dinner by{" "}
+            You have been invited to {data.event_title} by{" "}
             <span className="text-[#0056D6] font-bold"> Mathew Mathais.</span>
             <br /> You can view the details below..
           </p>
@@ -31,25 +78,27 @@ const Invitee = () => {
               <span className="flex mt-3">
                 {" "}
                 <CiLocationOn className="mr-4 text-[25px]" />
-                Location:
+                Location:{" "}
                 <span className="font-bold">
-                  {" "}
-                  Raddison blues, 21 Tunji Street, Ikeja, Lagos
-                </span>{" "}
+                  {" "}&#160;
+                  {data.location}
+                </span>
               </span>
 
               <span className="flex mt-3">
                 {" "}
                 <CiCalendar className="mr-4 text-[25px]" />
                 Agreed Date:
-                <span className="font-bold"> November 20, 2022</span>{" "}
+                {data.final_event_date === !null ? 
+                <span className="font-bold"> &#160; {data.final_event_date}</span>
+                : <span className="font-bold"> &#160; Not Available</span>}
               </span>
 
               <span className="flex mt-3">
                 {" "}
                 <CiStopwatch className="mr-4 text-[25px]" />
-                Host Selected Time:
-                <span className="font-bold"> 6:00 pm - 10:00 pm</span>{" "}
+                Host Selected Time: 
+                <span className="font-bold">&#160; {data.host_prefered_time}</span>{" "}
               </span>
 
               <span className="flex mt-3">
@@ -57,14 +106,14 @@ const Invitee = () => {
                 <HiOutlineMenuAlt1 className="mr-4 text-[25px]" />
                 Dinner with
                 <span className="font-bold">
-                  {" "}
-                  Kolavic and few of his friends
+                  {" "}&#160;
+                  {data.event_description}
                 </span>{" "}
               </span>
             </div>
           </div>
           <div className="md:w-1/2 md:px-8">
-            <form className=" my-10 md:mt-0 text-[#4B4B4C] font-normal [&>input]:mt-2 [&>input]:w-full [&>input]:mb-3.5">
+            <form onSubmit={addParticipant} className=" my-10 md:mt-0 text-[#4B4B4C] font-normal [&>input]:mt-2 [&>input]:w-full [&>input]:mb-3.5">
               <div className="relative w-full mb-4 ">
                 <label className="pb-0 mb-2 font-bold" htmlFor="email">
                   Full Name
@@ -73,6 +122,9 @@ const Invitee = () => {
                 <input
                   className="border border-gray-600 block w-full h-10 rounded-md px-3"
                   placeholder="John Doe"
+                  onChange={changeInviteDetails}
+                  required
+                  type="text"
                 />
               </div>
 
@@ -84,19 +136,39 @@ const Invitee = () => {
                 <input
                   className="border border-gray-600 block w-full h-10 rounded-md px-3"
                   placeholder="JohnDoe@gmail.com"
+                  onChange={changeInviteDetails}
+                  required
+                  type="email"
                 />
               </div>
-
+            {data.published === false ?
+            <div className="relative w-full mb-4">
+              <label className="text-base font-semibold mb-1">
+                Preferred Date & Time
+              </label>
+              <input
+                name="preferred_date_time"
+                type="datetime-local"
+                placeholder="17/11/2022 - 3pm"
+                onChange={changeInviteDetails}
+                className="border border-gray-600 block w-full h-10 rounded-md px-3"
+                required
+              />
+            </div>
+            : null}
               <div className="flex">
                 <button
                   className="mr-4 transition ease-in duration-200 hover:bg-[#66A3FF] mt-4 text-white bg-[#0056D6] w-full h-11 rounded-lg"
                   type="submit"
+                  onClick={addParticipant}
                 >
+
                   Accept Invite
                 </button>
                 <button
                   className="ml-4 transition ease-in duration-200 hover:bg-[#66A3FF] mt-4 text-[#0056D6] border border-[#0056D6] w-full h-11 rounded-lg"
-                  type="submit"
+                  
+                  onClick={() => declineInvite()}
                 >
                   Decline Invite
                 </button>
