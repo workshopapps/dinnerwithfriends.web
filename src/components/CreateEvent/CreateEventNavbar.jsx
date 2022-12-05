@@ -50,10 +50,10 @@ const CreateEventNavbar = () => {
         </div>
       </div>
 
-      <div class="text-left hidden md:block items-center">
+      <div className="text-left hidden md:block items-center">
         {open && 
-          <div class="absolute items-center right-6 z-10 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
-            <div class={`${menuStyles.goTo} py-3 px-2`} role="none">
+          <div className="absolute items-center right-6 z-10 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+            <div className={`${menuStyles.goTo} py-3 px-2`} role="none">
               <ul>
                 <li to="/profile">
                   <BsPerson />
@@ -91,10 +91,10 @@ const CreateEventNavbar = () => {
         }
       </div>
 
-      <div class="text-left md:hidden block">
+      <div className="text-left md:hidden block">
         {showNav && 
-          <div class="absolute right-6 z-10 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
-            <div class={`${menuStyles.goTo} py-3 px-2`} role="none">
+          <div className="absolute right-6 z-10 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+            <div className={`${menuStyles.goTo} py-3 px-2`} role="none">
               <ul>
                 <li to="/profile">
                   <BsPerson />

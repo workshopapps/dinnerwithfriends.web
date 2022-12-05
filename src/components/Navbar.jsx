@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Logo from "./Logo";
 
 const Navbar = () => {
   const [display, setDisplay] = useState(false)
@@ -13,22 +14,15 @@ const Navbar = () => {
      }
 
   return (
-    <nav className={`transition ease-in duration-400 bg-white md:px-10 px-2.5 md:h-[85px] md:pb-2 fixed w-full z-20 top-0 left-0 border-b border-white ${display ? 'h-[300px]' : 'h-[59px]'}`}>
+    <nav className={`transition ease-in duration-400 bg-white md:px-10 px-2.5 md:h-[85px] md:pb-2 fixed w-full z-20 top-0 left-0 border-b border-white`}>
       <div className="h-[45px] md:h-[76px] py-4 md:py-0 bg-transparent container flex flex-wrap items-center justify-between mx-auto">
-        <Link to="/" className="flex items-center">
-          <span className="self-center text-[#0056D6] text-3xl font-semibold whitespace-nowrap ">
-            Catch
-          </span>
-          <span className="self-center text-black text-3xl font-semibold whitespace-nowrap">
-            Up
-          </span>
-        </Link>
+        <Logo />
         <div className="flex md:order-2">
             <Link
               
               to="/sign_in"
               dev
-              className="hidden md:block block py-3 mr-8 md:py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 "
+              className="hidden md:block py-3 mr-8 md:py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 "
             >
               Sign In
             </Link>
@@ -51,7 +45,7 @@ const Navbar = () => {
           className="transition linear duration-300 items-center justify-between  w-full md:flex md:w-auto md:order-1"
           id="navbar-sticky"
         >
-          <ul  className="bg-green-500 w-full flex flex-col p-4 mt-0 md:mt-4 border border-white rounded-lg bg-white md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white ">
+          <ul  className="w-full flex flex-col p-4 mt-0 border border-white rounded-lg bg-white md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white">
             <li>
               <Link
                 to="/howItWorks"
@@ -87,7 +81,7 @@ const Navbar = () => {
 
                 to="/sign_in"
                 dev
-                className="w-full block mt-4 py-2 pl-3 pr-4 text-white text-center bg-white h-[44px] text-[#0056D6] border-[1.5px] border-[#0056D6] rounded hover:bg-blue-800 md:p-0 "
+                className="w-full block mt-4 py-2 pl-3 pr-4 text-center bg-white h-[44px] text-[#0056D6] border-[1.5px] border-[#0056D6] rounded hover:bg-blue-800 md:p-0 "
               >
                 Sign In
               </Link>
