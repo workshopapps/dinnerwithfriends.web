@@ -2,10 +2,7 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import Navbar from "../../components/CreateEvent/CreateEventNavbar";
 import arrow from "../../assets/icons/arrow-down.svg";
-import inviteeImg1 from "../../assets/img/inviteeImg1.png";
-import inviteeImg2 from "../../assets/img/inviteeImg2.png";
-import inviteeImg3 from "../../assets/img/inviteeImg3.png";
-import inviteeImg4 from "../../assets/img/inviteeImg4.png";
+import avatar from "../../assets/img/profile.svg";
 import { CatchUpEventContextUse } from "../../context/CatchUpEventContext";
 import AddParticipantModal from "../../components/AddParticipantModal";
 import { BsPlus } from "react-icons/bs";
@@ -104,14 +101,19 @@ const ViewEvent = () => {
 									<div className='flex justify-between items-center transition-all'>
 										<div className='flex items-center'>
 											<img
-												className='h-fit w-8 lg:w-10 mr-3'
-												src={invitee.image}
+												className='h-fit w-8 rounded-full lg:w-10 mr-3'
+												src={avatar}
 												alt=''
 											/>
 											<div className='space-y-[-3px]'>
 												<h4 className='font-semibold text-sm'>
 													{participants.indexOf(invitee) + 1}	
-													{(participants.indexOf(invitee) + 1) % 10 === 1 ? <span>st</span> : (participants.indexOf(invitee) + 1) % 10 === 2 ? <span>nd</span> : (participants.indexOf(invitee) + 1) % 10 === 3 ? <span>rd</span> : <span>th</span>}	
+													{
+														(participants.indexOf(invitee) + 1) % 10 === 1 ? <span>st</span>
+														: (participants.indexOf(invitee) + 1) % 10 === 2 ? <span>nd</span> 
+														: (participants.indexOf(invitee) + 1) % 10 === 3 ? <span>rd</span> 
+														: <span>th</span>
+													}	
 													&#160;
 													{""}
 													Invitee
