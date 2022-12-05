@@ -10,7 +10,7 @@ import userServices from "../../services/userServices";
 const Invitee = () => {
   const navigate = useNavigate();
   const [data, setData] = useState([]);
-  const [declinedInvite, setDeclinedInvite] = useState(false);
+  const [setDeclinedInvite] = useState(false);
   let { id } = useParams();
   
   const [inviteDetails, setInviteDetails] = useState({});
