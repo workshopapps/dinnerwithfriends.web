@@ -14,9 +14,6 @@ const Invitee = () => {
   let { id } = useParams();
   
   const [inviteDetails, setInviteDetails] = useState({});
-  // const [fullname, setFullname] = useState()
-  // const [email, setEmail] = useState()
-  // const [preferred_date_time, setPreferredDateTime] = useState()
   
   const changeInviteDetails = (e) => {
     const {value, name} = e.target;
