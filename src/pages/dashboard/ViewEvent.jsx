@@ -10,78 +10,14 @@ import { CatchUpEventContextUse } from "../../context/CatchUpEventContext";
 import AddParticipantModal from "../../components/AddParticipantModal";
 import { BsPlus } from "react-icons/bs";
 import { useParams } from "react-router-dom";
+import userServices from "../../services/userServices";
 
 const ViewEvent = () => {
 	const [isActive, setIsActive] = useState(false);
 	const { setShowModal } = CatchUpEventContextUse();
 	const [singleEvent, setSingleEvent] = useState({});
-
-	const invitees = [
-		{
-			id: 1,
-			image: inviteeImg1,
-			position: "1st Invitee",
-			name: "Johnson Joshua",
-			dateNdTime: "Friday, 21 November 2022 - 4pm",
-			status: "Accepted",
-		},
-		{
-			id: 2,
-			image: inviteeImg2,
-			position: "2nd Invitee",
-			name: "John Maklinscout",
-			dateNdTime: "Friday, 21 November 2022 - 4pm",
-			status: "Accepted",
-		},
-		{
-			id: 3,
-			image: inviteeImg3,
-			position: "3rd Invitee",
-			name: "Felix Sydney",
-			dateNdTime: "Friday, 21 November 2022 - 4pm",
-			status: "Accepted",
-		},
-		{
-			id: 4,
-			image: inviteeImg4,
-			position: "4th Invitee",
-			name: "Felicia Scout",
-			dateNdTime: "Friday, 21 November 2022 - 4pm",
-			status: "Accepted",
-		},
-		{
-			id: 5,
-			image: inviteeImg3,
-			position: "5th Invitee",
-			name: "Johnson Joshua",
-			dateNdTime: "Friday, 21 November 2022 - 4pm",
-			status: "Accepted",
-		},
-		{
-			id: 6,
-			image: inviteeImg2,
-			position: "6th Invitee",
-			name: "Felix Sydney",
-			dateNdTime: "Friday, 21 November 2022 - 4pm",
-			status: "Accepted",
-		},
-		{
-			id: 7,
-			image: inviteeImg1,
-			position: "7th Invitee",
-			name: "Johnson Joshua",
-			dateNdTime: "Friday, 21 November 2022 - 4pm",
-			status: "Accepted",
-		},
-		{
-			id: 8,
-			image: inviteeImg4,
-			position: "8th Invitee",
-			name: "Felicia Scout",
-			dateNdTime: "Friday, 21 November 2022 - 4pm",
-			status: "Accepted",
-		},
-	];
+	const [participants, setParticipants] = useState([]);
+	
 	const toggleShowAccordion = (id) => {
 		if (isActive === id) {
 			setIsActive();
@@ -89,23 +25,6 @@ const ViewEvent = () => {
 			setIsActive(id);
 		}
 	};
-
-
-	// const getAgreedDate = () => {
-	// 	if (singleEvent && singleEvent.length !== 0) {
-	// 		const preferredTime = singleEvent?.host_prefered_time.split("-");
-	// 		const splitPreferredTime = preferredTime[0]?.split("/");
-	// 		const finalDate = new Date(
-	// 			splitPreferredTime[2],
-	// 			splitPreferredTime[1],
-	// 			splitPreferredTime[0]
-	// 		);
-	// 		const agreedDate = finalDate.toDateString();
-  //     console.log(agreedDate) 
-  //     return agreedDate;
-	// 	}
-	// };
-  // const agreed_date = getAgreedDate();
 
 	useEffect(() => {
 		const eArr = localStorage.getItem("eventsArr");
@@ -117,6 +36,16 @@ const ViewEvent = () => {
 	}, []);
 
 	const { id } = useParams();
+	console.log(id)
+	useEffect(() => {
+		const getParticipants = async () => {
+			const data = await userServices.getParticipants(id);
+			setParticipants(data);
+		};
+		getParticipants();
+	
+	  
+	}, [id])
 
 	return (
 		<>
@@ -165,11 +94,12 @@ const ViewEvent = () => {
 					</div>
 
 					<section className='flex flex-col justify-center'>
-						<div className='max-h-[17em] overflow-y-scroll scroll-blue-500 pr-4'>
-							{invitees.map((invitee) => (
+						<div className='max-h-[17em] overflow-y-auto scroll-blue-500 pr-4'>
+							{participants.map((invitee, index) => (
+								
 								<div
 									onClick={() => toggleShowAccordion(invitee.id)}
-									key={invitee.id}
+									key={invitee.index}
 									className='py-3 border-b border-gray-200 transition-all'>
 									<div className='flex justify-between items-center transition-all'>
 										<div className='flex items-center'>
@@ -180,10 +110,15 @@ const ViewEvent = () => {
 											/>
 											<div className='space-y-[-3px]'>
 												<h4 className='font-semibold text-sm'>
-													{invitee.position}
+													{participants.indexOf(invitee) + 1}	
+													{(participants.indexOf(invitee) + 1) % 10 === 1 ? <span>st</span> : (participants.indexOf(invitee) + 1) % 10 === 2 ? <span>nd</span> : (participants.indexOf(invitee) + 1) % 10 === 3 ? <span>rd</span> : <span>th</span>}	
+													&#160;
+													{""}
+													Invitee
 												</h4>
+												
 												<p className='text-gray-600 text-xs md:text-sm'>
-													{invitee.name}
+													{invitee.fullname}
 												</p>
 											</div>
 										</div>
@@ -202,13 +137,14 @@ const ViewEvent = () => {
 											<h5 className='font-medium text-xs mb-3'>
 												Selected Date/Time:{" "}
 												<span className='font-normal'>
-													{invitee.dateNdTime}
+													{invitee.preferred_date_time}
 												</span>{" "}
 											</h5>
 											<p className='text-gray-500 text-xs font-medium '>
 												Status of Attendance:{" "}
-												<span className='bg-green-200 text-green-900 text-[10px] p-1 rounded ml-1'>
-													{invitee.status}
+												<span className='bg-[#D0FFD0] text-[#006600] text-[10px] p-1 rounded ml-1'>
+													{/* {invitee.status} */}
+													Accepted
 												</span>
 											</p>
 										</div>
@@ -216,9 +152,6 @@ const ViewEvent = () => {
 								</div>
 							))}
 						</div>
-						{/* <button className=' px-3 py-2 hover:bg- hover:text-white border-2 border-blue-500 rounded mx-auto mt-3 text-center text-blue-500 transition-all'>
-							Load more
-						</button> */}
 					</section>
 				</main>
 				<AddParticipantModal />

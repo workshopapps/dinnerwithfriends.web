@@ -6,6 +6,7 @@ import {
   LOGIN_URL,
   CREATE_EVENT,
   GET_EVENTS,
+  GET_PARTICIPANTS,
   PASSWORD_RECOVERY_URL,
   RESET_PASSWORD_URL,
   GOOGLE_CALENDER,
@@ -75,6 +76,16 @@ const getEventsById = async (id) => {
   }
 };
 
+const getParticipants = async (id) => {
+  try {
+    const dataObj = await fetchApi.get(`${BASE_URL}/${GET_PARTICIPANTS}/${id}`);
+    const datas = await dataObj.data;
+    return datas;
+  } catch (err) {
+    return err;
+  }
+};
+
 const addToGoogleCalender = async (params) => {
   try {
     const result = await fetchApi.post(`${BASE_URL}/${GOOGLE_CALENDER}`, params);
@@ -90,6 +101,7 @@ const userServices = {
   createEvents,
   getAllEvents,
   getEventsById,
+  getParticipants,
   recoverPassword,
   resetPassword,
   addToGoogleCalender
