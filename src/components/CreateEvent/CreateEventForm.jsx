@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { IoCalendarOutline } from "react-icons/io5";
 import { SlArrowRight } from "react-icons/sl";
 import { useNavigate } from "react-router";
@@ -8,8 +8,6 @@ import userServices from "../../services/userServices";
 import Button from "../Button";
 import SingleCalendar from "../SingleCalendar/SingleCalendar";
 import dateTimeForCalender from "../../helpers/DateTimeConverter";
-import emailjs from "@emailjs/browser";
-
 const CreateEventForm = () => {
   const [showCalendar, setShowCalendar] = useState(false);
   const [showCalendar2, setShowCalendar2] = useState(false);
@@ -21,8 +19,8 @@ const CreateEventForm = () => {
   const [maximumDate, setMaximumDate] = useState("");
 
   useEffect(() => {
-    const end = dateTimeForCalender(endDate, "00:00");
     const start = dateTimeForCalender(startDate, "00:00");
+    const end = dateTimeForCalender(endDate, "00:00");
     setMinimumDate(start);
     setMaximumDate(end);
   }, [startDate, endDate]);
@@ -40,6 +38,9 @@ const CreateEventForm = () => {
     end_date: "",
     host_prefered_time: "",
   });
+
+  // {isSubmit ? <span>Loading...</span> : (isFailure ? <span> Try Again </span> : (isSuccess ? <span>Success</span> : <span>Next</span>))}
+
 
   const handleSubmit = () => {
     setErrors(formLogic(formValues));
@@ -64,36 +65,10 @@ const CreateEventForm = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [errors, navigate]);
 
-  // email form function action
-  const form = useRef();
-
-  const sendEmail = (e) => {
-    e.preventDefault();
-
-    emailjs
-      .sendForm(
-        "service_pjlxcmc",
-        "template_1m1x1gi",
-        form.current,
-        "rStd_ISJ-0bUuf2rX"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          e.target.reset()
-          console.log("Message sent")
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
-  };
-
   return (
     <div className="w-full py-8">
-      <h1 className="text-xl font-bold text-center">Create Event</h1>
-
-      <form ref={form} onSubmit={sendEmail} className="mt-6">
+      <h1 className="text-xl font-bold text-center">Create Catchup Event</h1>
+      <div className="mt-6">
         <div className="flex flex-col mb-4">
           <label htmlFor="title" className="text-sm font-semibold">
             Event Invite
@@ -107,7 +82,7 @@ const CreateEventForm = () => {
               setFormValues({ ...formValues, event_title: e.target.value })
             }
             placeholder="Time out with friends"
-            className="p-3 bg-white border border-[#0000004D] text-[#151517] placeholder:text-gray-400 rounded-[4px] text-sm mt-3 outline-none"
+            className="p-3 bg-white border border-[#0000004D] text-[#151517] placeholder:text-[#151517] rounded-[4px] text-sm mt-3 outline-none"
           />
           <small className="text-red-600 text-[10px] mt-2">
             {errors?.event_title}
@@ -128,7 +103,7 @@ const CreateEventForm = () => {
               })
             }
             placeholder="This Event should be a wonderful hangout. I will want everyone to be available for this event. Let me know when you will be free from the link I will send to you."
-            className="p-3 bg-white border border-[#0000004D] text-[#151517] placeholder:text-gray-400  rounded-[4px] text-sm mt-3 outline-none h-[120px]"
+            className="p-3 bg-white border border-[#0000004D] text-[#151517] placeholder:text-[#151517]  rounded-[4px] text-sm mt-3 outline-none h-[120px]"
           />
           <small className="text-red-600 text-[10px] mt-2">
             {errors?.event_description}{" "}
@@ -140,7 +115,6 @@ const CreateEventForm = () => {
           </label>
           <input
             required
-            name="location"
             value={formValues.location}
             onChange={(e) =>
               setFormValues({ ...formValues, location: e.target.value })
@@ -149,13 +123,12 @@ const CreateEventForm = () => {
             pattern="[A-Za-z][A-Za-z ]{2,30}$"
             type="text"
             placeholder="Sheraton Hotels"
-            className="p-3 bg-white border border-[#0000004D] text-[#151517] placeholder:text-gray-400 rounded-[4px] text-sm mt-3 outline-none"
+            className="p-3 bg-white border border-[#0000004D] text-[#151517] placeholder:text-[#151517] rounded-[4px] text-sm mt-3 outline-none"
           />
           <small className="text-red-600 text-[10px] mt-2">
             {errors?.location}
           </small>
         </div>
-
         <div className="flex flex-col mb-4">
           <label htmlFor="eventType" className="text-sm font-semibold">
             Event Type
@@ -169,7 +142,7 @@ const CreateEventForm = () => {
             id="eventType"
             type="text"
             placeholder="Dinner"
-            className="p-3 bg-white border border-[#0000004D] text-[#151517] placeholder:text-gray-400 rounded-[4px] text-sm mt-3 outline-none"
+            className="p-3 bg-white border border-[#0000004D] text-[#151517] placeholder:text-[#151517] rounded-[4px] text-sm mt-3 outline-none"
           />
           <small className="text-red-600 text-[10px] mt-2">
             {errors?.event_type}{" "}
@@ -191,7 +164,7 @@ const CreateEventForm = () => {
             }
             type="number"
             placeholder="5"
-            className="p-3 bg-white border border-[#0000004D] text-[#151517] placeholder:text-gray-400 rounded-[4px] text-sm mt-3 outline-none w-fit"
+            className="p-3 bg-white border border-[#0000004D] text-[#151517] placeholder:text-[#151517] rounded-[4px] text-sm mt-3 outline-none w-fit"
           />
           <small className="text-red-600 text-[10px] mt-2">
             {errors?.participant_number}{" "}
@@ -205,13 +178,12 @@ const CreateEventForm = () => {
             <div className="flex mt-3 items-center bg-white relative p-3 border border-[#0000004D] rounded-[4px] w-full">
               <input
                 required
-                name="start_date"
                 id="startDate"
                 type="text"
                 disabled
                 value={startDate}
                 placeholder="17/11/2022"
-                className="flex-[5] bg-transparent  text-[#151517] placeholder:text-gray-400  text-sm outline-none"
+                className="flex-[5] bg-transparent  text-[#151517] placeholder:text-[#151517]  text-sm outline-none"
               />
               <span
                 onClick={() => setShowCalendar(!showCalendar)}
@@ -244,13 +216,12 @@ const CreateEventForm = () => {
             <div className="flex mt-3 items-center bg-white relative p-3 border border-[#0000004D] rounded-[4px] w-full">
               <input
                 required
-                name="end_date"
                 id="endDate"
                 type="text"
                 disabled
                 value={endDate}
                 placeholder="23/11/2022"
-                className="flex-[5] bg-transparent  text-[#151517] placeholder:text-gray-400  text-sm outline-none"
+                className="flex-[5] bg-transparent  text-[#151517] placeholder:text-[#151517]  text-sm outline-none"
               />
               <span
                 onClick={() => setShowCalendar2(!showCalendar2)}
@@ -290,7 +261,7 @@ const CreateEventForm = () => {
               disabled
               value={preferredDate}
               placeholder="17/11/2022 - 3:00"
-              className="flex-[5] bg-transparent  text-[#151517] placeholder:text-gray-400  text-sm outline-none"
+              className="flex-[5] bg-transparent  text-[#151517] placeholder:text-[#151517]  text-sm outline-none"
             />
             <span
               onClick={() => setShowCalendar3(!showCalendar3)}
@@ -333,7 +304,7 @@ const CreateEventForm = () => {
             </span>
           </Button>
         </div>
-      </form>
+      </div>
     </div>
   );
 };
