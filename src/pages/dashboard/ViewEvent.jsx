@@ -13,7 +13,7 @@ const ViewEvent = () => {
 	const { setShowModal } = CatchUpEventContextUse();
 	const [singleEvent, setSingleEvent] = useState({});
 	const [participants, setParticipants] = useState([]);
-	
+
 	const toggleShowAccordion = (id) => {
 		if (isActive === id) {
 			setIsActive();
@@ -38,8 +38,8 @@ const ViewEvent = () => {
 			setParticipants(data);
 		};
 		getParticipants();
-	
-	  
+
+
 	}, [id])
 
 	return (
@@ -52,7 +52,7 @@ const ViewEvent = () => {
 							<h1 className='text-[#0056D6] font-semibold text-[1.4rem] lg:text-3xl'>
 								{singleEvent?.event_title}
 							</h1>
-							
+
 						</div>
 						<p className='text-gray-600 mx-auto text-xs md:text-sm my-2'>
 								{singleEvent?.event_description}
@@ -73,15 +73,15 @@ const ViewEvent = () => {
 							<p className='mr-2 text-sm'>Add participant</p>
 							<BsPlus />
 						</button>
-						
+
 							<aside className='font-medium text-sm  md:mt-0'>
 								Agreed Date
-							{singleEvent?.final_event_date === !null ? 		
+							{singleEvent?.final_event_date === !null ?
 									<span className='bg-[#E7F0FF] text-[#003585] text-xs px-2 py-1 font-semibold rounded ml-1'>
-										{singleEvent?.final_event_date}					
-									</span> 
-								
-								: <span className='bg-[#E7F0FF] text-[#003585] text-xs px-2 py-1 font-semibold rounded ml-1'>				
+										{singleEvent?.final_event_date}
+									</span>
+
+								: <span className='bg-[#E7F0FF] text-[#003585] text-xs px-2 py-1 font-semibold rounded ml-1'>
 								Not Decided
 								</span>
 							}
@@ -91,7 +91,7 @@ const ViewEvent = () => {
 					<section className='flex flex-col justify-center'>
 						<div className='max-h-[17em] overflow-y-auto scroll-blue-500 pr-4'>
 							{participants.map((invitee, index) => (
-								
+
 								<div
 									onClick={() => toggleShowAccordion(invitee.id)}
 									key={invitee.index}
@@ -105,13 +105,13 @@ const ViewEvent = () => {
 											/>
 											<div className='space-y-[-3px]'>
 												<h4 className='font-semibold text-sm'>
-													{participants.indexOf(invitee) + 1}	
-													{(participants.indexOf(invitee) + 1) % 10 === 1 ? <span>st</span> : (participants.indexOf(invitee) + 1) % 10 === 2 ? <span>nd</span> : (participants.indexOf(invitee) + 1) % 10 === 3 ? <span>rd</span> : <span>th</span>}	
+													{participants.indexOf(invitee) + 1}
+													{(participants.indexOf(invitee) + 1) % 10 === 1 ? <span>st</span> : (participants.indexOf(invitee) + 1) % 10 === 2 ? <span>nd</span> : (participants.indexOf(invitee) + 1) % 10 === 3 ? <span>rd</span> : <span>th</span>}
 													&#160;
 													{""}
 													Invitee
 												</h4>
-												
+
 												<p className='text-gray-600 text-xs md:text-sm'>
 													{invitee.fullname}
 												</p>
