@@ -2,10 +2,6 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import Navbar from "../../components/CreateEvent/CreateEventNavbar";
 import arrow from "../../assets/icons/arrow-down.svg";
-import inviteeImg1 from "../../assets/img/inviteeImg1.png";
-import inviteeImg2 from "../../assets/img/inviteeImg2.png";
-import inviteeImg3 from "../../assets/img/inviteeImg3.png";
-import inviteeImg4 from "../../assets/img/inviteeImg4.png";
 import { CatchUpEventContextUse } from "../../context/CatchUpEventContext";
 import AddParticipantModal from "../../components/AddParticipantModal";
 import { BsPlus } from "react-icons/bs";
@@ -31,7 +27,6 @@ const ViewEvent = () => {
 		const events = JSON.parse(eArr);
 		const sEvent = events.find((event) => event._id === id);
 		setSingleEvent(sEvent);
-
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 

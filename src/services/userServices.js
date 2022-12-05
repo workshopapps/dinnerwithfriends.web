@@ -66,6 +66,16 @@ const getAllEvents = async () => {
     return err;
   }
 };
+const getEventsById = async (id) => {
+  try {
+    const dataObj = await fetchApi.get(`${BASE_URL}/${GET_EVENTS}/${id}`);
+    const datas = await dataObj.data;
+    return datas;
+  } catch (err) {
+    return err;
+  }
+};
+
 const getParticipants = async (id) => {
   try {
     const dataObj = await fetchApi.get(`${BASE_URL}/${GET_PARTICIPANTS}/${id}`);
@@ -90,6 +100,7 @@ const userServices = {
   login,
   createEvents,
   getAllEvents,
+  getEventsById,
   getParticipants,
   recoverPassword,
   resetPassword,
