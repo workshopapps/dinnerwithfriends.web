@@ -15,8 +15,8 @@ const EMAIL_REGEX = /^[a-zA-Z][a-zA-Z0-9-_](?=.*[.]).{3,23}$/;
 
 const EventSummary = () => {
   const [email, setEmail] = useState("");
-  const [validEmail, setValidEmail] = useState(false)
-  const [emailFocus, setEmailFocus] = useState(false)
+  const [validEmail, setValidEmail] = useState(false);
+  const [emailFocus, setEmailFocus] = useState(false);
 
   const [popup, setPopup] = useState(false);
   const [copied, setCopied] = useState(false);
@@ -176,17 +176,23 @@ const EventSummary = () => {
             className="outline-none border-none h-full bg-transparent py-3 md:px-4 px-2 w-11/12 text-[#7A6F6F] md:text-base text-sm md:placeholder:text-base placeholder:text-sm"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            aria-invalid={validEmail ? 'false' : 'true'}
-                  aria-describedby="emailconfirm" // matches the error paragraph id
-                  onFocus={() => setEmailFocus(true)}
-                  onBlur={() => setEmailFocus(false)}
+            aria-invalid={validEmail ? "false" : "true"}
+            aria-describedby="emailconfirm" // matches the error paragraph id
+            onFocus={() => setEmailFocus(true)}
+            onBlur={() => setEmailFocus(false)}
           />
-          <button
-            className="bg-[#0056D6] md:px-12 md:py-4 py-2.5 px-5 text-white rounded-lg"
-            onClick={handleSubmit}
-          >
-            Done
-          </button>
+          {validEmail ? (
+            <button
+              className="bg-[#0056D6] md:px-12 md:py-4 py-2.5 px-5 text-white rounded-lg"
+              onClick={handleSubmit}
+            >
+              Done
+            </button>
+          ) : (
+            <button className="bg-[#0056D6] md:px-12 md:py-4 py-2.5 px-5 text-white rounded-lg">
+              Done
+            </button>
+          )}
         </div>
         <div className="text-sm text-red-600 mt-2 mb-5">
           <p
