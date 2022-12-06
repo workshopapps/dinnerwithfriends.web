@@ -5,6 +5,8 @@
   "dependencies": {
     "@emailjs/browser": "^3.10.0",
     "@material-tailwind/react": "^1.2.4",
+    "@sentry/react": "^7.23.0",
+    "@sentry/tracing": "^7.23.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
