@@ -8,7 +8,7 @@ import userServices from "../../services/userServices";
 import Button from "../Button";
 import SingleCalendar from "../SingleCalendar/SingleCalendar";
 import dateTimeForCalender from "../../helpers/DateTimeConverter";
-import emailjs from "@emailjs/browser";
+// import emailjs from "@emailjs/browser";
 
 const CreateEventForm = () => {
   const [showCalendar, setShowCalendar] = useState(false);
