@@ -3,9 +3,12 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import { useNavigate, useParams } from "react-router-dom/dist";
 import moment from "moment/moment";
+import fetchApi from "../../services/fetchApi";
+import { BASE_URL, EVENT_BY_TOKEN, ADD_PARTICIPANTS } from "../../services/rootEndPoints";
 
 const EventInvite = () => {
   const [eventData, setEventData] = useState(null);
+  const { get } = fetchApi;
   const preferredDate = eventData ? eventData.data.host_prefered_time.replace("-", "") : "";
   const preferredTime = eventData ? moment(preferredDate, "DD-MM-YYYY HH:mm").format("YYYY-MM-DDTHH:mm") : "";
   const [inviteDetails, setInviteDetails] = useState({
@@ -19,6 +22,7 @@ const EventInvite = () => {
   let { eventToken } = useParams();
   const startDate = eventData ? moment(eventData.data.start_date, "DD-MM-YYYY").format("YYYY-MM-DDTHH:mm") : "";
   const endDate = eventData ? moment(eventData.data.end_date, "DD-MM-YYYY").format("YYYY-MM-DDTHH:mm") : "";
+  const emailRegex = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
   const changeInviteDetails = (e) => {
     const {value, name} = e.target;
@@ -29,29 +33,20 @@ const EventInvite = () => {
     })
   };
 
-  const getEventDetails =  async () => {
-    const token = localStorage.getItem("jwt-token");
-    const requestEventDetails = {
-      headers: { 
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
-      },
-    }
-
-    fetch(`https://prybar.onrender.com/api/v1/event/token/${eventToken}`, requestEventDetails)
-    .then(response => response.json())
-    .then(result => setEventData(result))
+  const getEventDetails =  () => {
+    get(`${BASE_URL}/${EVENT_BY_TOKEN}/${eventToken}`).then(res => setEventData(res));
   };
 
   const addParticipant = (e) => {
     e.preventDefault();
+
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({...inviteDetails, event_id: eventData.data._id})
     }
 
-    fetch('https://prybar.onrender.com/api/v1/participant/addpart', requestOptions)
+    fetch(`${BASE_URL}/${ADD_PARTICIPANTS}`, requestOptions)
     .then(response => console.log(response.json()))
     .then((result) => {
       if(result.status === "success"){
@@ -110,13 +105,14 @@ const EventInvite = () => {
             </div>
             <div className="my-4 grid">
               <label className="text-base font-semibold mb-1">Email</label>
+              <p className="text-sm text-red-500">{emailRegex.test(inviteDetails.email) || inviteDetails.email === "" ? "" : "Please input a valid email"}</p>
               <input
                 name="email"
                 type="email"
                 placeholder="JohnDoe@gmail.com"
                 value={inviteDetails.email}
                 onChange={changeInviteDetails}
-                className="outline-none border border-[#898989] rounded md:w-[477px] w-full px-3 py-3 text-base font-medium"
+                className={emailRegex.test(inviteDetails.email) || inviteDetails.email === "" ? "outline-none border border-[#898989] rounded md:w-[477px] w-full px-3 py-3 text-base font-medium" : "border border-red-600 rounded outline-none md:w-[477px] w-full px-3 py-3 text-base font-medium"}
                 required
                 autoComplete="true"
               />

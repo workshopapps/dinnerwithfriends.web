@@ -7,4 +7,5 @@ export const CREATE_EVENT = 'event'
 export const GET_EVENTS = 'event'
 export const GET_PARTICIPANTS = 'event/participants'
 export const GOOGLE_CALENDER = 'calender'
-
+export const ADD_PARTICIPANTS = 'participant/addpart'
+export const EVENT_BY_TOKEN = 'event/token'
