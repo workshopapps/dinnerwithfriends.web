@@ -32,7 +32,10 @@ import HelpRoutes from "./pages/helpCenter/helpRoutes";
 import AboutUsPage from "./pages/aboutUs";
 import { googleCalender } from "./helpers/googleCalender";
 import EventInvite from "./pages/invitee/EventInvite";
+import * as Sentry from "@sentry/react";
 googleCalender();
+
+
 function App() {
   return (
     <div className="App">
@@ -77,4 +80,4 @@ function App() {
   );
 }
 
-export default App;
+export default Sentry.withProfiler(App);
