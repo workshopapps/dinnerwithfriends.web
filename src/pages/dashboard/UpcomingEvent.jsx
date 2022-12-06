@@ -8,9 +8,8 @@ import add from "../../assets/img/add.png";
 import Footer from "../../components/Footer";
 import { Link } from "react-router-dom";
 import CreateEventNavbar from "../../components/CreateEvent/CreateEventNavbar";
-import { authenticate, loadClient } from "../../helpers/googleCalender";
 import CalenderSyncModal from "../../components/CalenderSyncModal";
-
+/* global gapi */
 const UpcomingEvent = () => {
 	const [status, setStatus] = useState(false);
 	const { events, setEvents } = CatchUpEventContextUse();
@@ -61,9 +60,40 @@ const UpcomingEvent = () => {
 			)
 		);
 
+        function authenticate() {
+			return gapi.auth2.getAuthInstance()
+				.signIn({scope: "https://www.googleapis.com/auth/calendar https://www.googleapis.com/auth/calendar.readonly", plugin_name: 'dinnerwithfriends'})
+				.then(function() { console.log("Sign-in successful"); },
+					  function(err) { console.error("Error signing in", err); });
+		  }
+
+		function loadClient() {
+			gapi.client.setApiKey("AIzaSyA7G2ANAJI6rm_DpTW84lsKUJT-c8bmirI");
+			return gapi.client.load("https://content.googleapis.com/discovery/v1/apis/calendar/v3/rest")
+				.then(function() { console.log("GAPI client loaded for API");
+				execute()
+			  },
+					  function(err) { console.error("Error loading GAPI client for API", err); });
+					}
+		  // Make sure the client is loaded and sign-in is complete before calling this method.
+		  function execute() {
+			return gapi.client.calendar.calendarList.list({})
+				.then(function(response) {
+						// Handle the results here (response.result has the parsed body).
+						console.log("Response", response);
+
+	                   if (response.status === 200) {
+                          setModal(true)
+					   }
+					  },
+					  function(err) { console.error("Execute error", err); });
+		  }
+		  gapi.load("client:auth2", function() {
+			gapi.auth2.init({client_id: "102076896830-4il8ncmrd6qfoippk2ut4uujb8cci54v.apps.googleusercontent.com"});
+		  });
+
 		const googleCalenderApi = async () => {
 			await authenticate().then(loadClient)
-			setModal(true)
 		}
 
 	return (
