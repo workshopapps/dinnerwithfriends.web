@@ -52,7 +52,7 @@ function App() {
         <Route path="/faq" element={<Faq />} />
         <Route path="/terms-of-use" element={<TermsOfUse />} />
         <Route path="/terms" element={<Terms />} />
-        <Route path="/event_invite/:eventId" element={<EventInvite />}/>
+        <Route path="/event_invite/:eventToken" element={<EventInvite />}/>
         <Route path="/event_summary" element={<EventSummary />} />
         <Route
           path="/event_invite/event_invite_response"
