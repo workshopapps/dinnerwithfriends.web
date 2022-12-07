@@ -1,37 +1,38 @@
-import React, {useState} from 'react'
-import { useNavigate, Link } from 'react-router-dom'
-import { FiEye, FiEyeOff } from 'react-icons/fi'
-import { useForm } from "react-hook-form"
-import image from './signup_image.webp'
-import google from './google.svg'
-import Logo from '../../components/Logo'
+import React, { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
+import { FiEye, FiEyeOff } from "react-icons/fi";
+import { useForm } from "react-hook-form";
+import image from "./signup_image.webp";
+import google from "./google.svg";
+import Logo from "../../components/Logo";
+import userServices from "../../services/userServices";
 
 const SignUp = () => {
-  const { register, handleSubmit, reset, formState: { errors } } = useForm()
-  const [existingUser, setExistingUser] = useState(false)
-  const [submitting, setSubmitting] = useState(false)
-  const [accountCreated, setAccountCreated] = useState(false)
-  const nav = useNavigate()
-  const [passwordShown, setPasswordShown] = useState(false);
+	const {
+		register,
+		handleSubmit,
+		reset,
+		formState: { errors },
+	} = useForm();
+	const [existingUser, setExistingUser] = useState(false);
+	const [submitting, setSubmitting] = useState(false);
+	const [accountCreated, setAccountCreated] = useState(false);
+	const nav = useNavigate();
+	const [passwordShown, setPasswordShown] = useState(false);
+	const navigate = useNavigate();
 
-  const togglePassword = () => {
-    setPasswordShown(!passwordShown);
-  };
+	const togglePassword = () => {
+		setPasswordShown(!passwordShown);
+	};
 
-	/*const googleSubmit = () => {
-    fetch('https://catchup.hng.tech/api/v1/auth/google/url')
-    .then(response => {
-      if (!response.ok) {
-          throw Error(response.status);
-      }
-      return response})
-    .then(result => console.log(result.text()))
-    .catch(err => {
-        console.log(err)
-        setSubmitting(false)
-    })
-
-  }*/
+	const googleSignUpAuth = async () => {
+		const result = await userServices.googleAuthSignUp();
+		console.log("Results", { result });
+		if (result.status === "success") {
+			console.log("I'm navigating to", result.data.signInURL.slice(6,))
+			navigate(result.data.signInURL.slice(6,));
+		}
+	};
 
 	const onSubmit = async (data) => {
 		reset();
@@ -65,7 +66,7 @@ const SignUp = () => {
 					setAccountCreated(true);
 					localStorage.setItem("jwt-token", result.accessToken);
 					setTimeout(() => {
-						nav('/dashboard/upcoming_events');
+						nav("/dashboard/upcoming_events");
 					}, 2000);
 				}
 			})
@@ -195,35 +196,52 @@ const SignUp = () => {
 								Password
 							</label>
 
-				<input
-				style={{border: errors.password ? '1px solid red': '1px solid #D0D5DD'}}
-				className=
-					{`relative focus:outline-none ${!errors.password? 'focus:shadow-[0px_0px_0px_4px_rgba(74,74,104,0.1)]' : 'focus:shadow-[0px_0px_0px_4px_rgba(249,50,50,0.1)]'} mt-2 w-full h-11 p-3.5 rounded-lg`}
-				type={passwordShown ? "text" : "password"}
-				name="password"
-				placeholder="Please enter your unique password"
-				{...register("password",
-				{required: "Password cannot be empty",
-					minLength: {
-					value: 9,
-					message: "Password must be at least 9 characters"
-				},
-				maxLength: {
-					value: 30,
-					message: "Password must not be more than 30 characters"
-				},
-				pattern: {
-					value: secondPattern,
-					message: "Password has to start with a letter, can contain numbers. No spaces and special characters allowed"
-				}
-				})}/>
-				<span
-					className={`absolute ${errors.password ? 'bottom-11' : 'bottom-3.5'} right-3 cursor-pointer`}
-					onClick={togglePassword}>
-					{passwordShown ?  <FiEyeOff /> : <FiEye />}
-				</span>
-				{errors.password && <p className='right-0 bottom-[-37px] italic text-sm mt-2' style={{color: 'red'}}>{errors.password?.message}</p>}
-            </div>
+							<input
+								style={{
+									border: errors.password
+										? "1px solid red"
+										: "1px solid #D0D5DD",
+								}}
+								className={`relative focus:outline-none ${
+									!errors.password
+										? "focus:shadow-[0px_0px_0px_4px_rgba(74,74,104,0.1)]"
+										: "focus:shadow-[0px_0px_0px_4px_rgba(249,50,50,0.1)]"
+								} mt-2 w-full h-11 p-3.5 rounded-lg`}
+								type={passwordShown ? "text" : "password"}
+								name='password'
+								placeholder='Please enter your unique password'
+								{...register("password", {
+									required: "Password cannot be empty",
+									minLength: {
+										value: 9,
+										message: "Password must be at least 9 characters",
+									},
+									maxLength: {
+										value: 30,
+										message: "Password must not be more than 30 characters",
+									},
+									pattern: {
+										value: secondPattern,
+										message:
+											"Password has to start with a letter, can contain numbers. No spaces and special characters allowed",
+									},
+								})}
+							/>
+							<span
+								className={`absolute ${
+									errors.password ? "bottom-11" : "bottom-3.5"
+								} right-3 cursor-pointer`}
+								onClick={togglePassword}>
+								{passwordShown ? <FiEyeOff /> : <FiEye />}
+							</span>
+							{errors.password && (
+								<p
+									className='right-0 bottom-[-37px] italic text-sm mt-2'
+									style={{ color: "red" }}>
+									{errors.password?.message}
+								</p>
+							)}
+						</div>
 
 						<button
 							className=' transition ease-in duration-200 hover:bg-blue-400 mt-4 text-white bg-[#0056D6] w-full h-11 rounded-lg'
@@ -234,12 +252,12 @@ const SignUp = () => {
 
 					<p className='my-2.5 text-center text-[#0056D6]'>Or</p>
 
-					<a
-						href='https://catchup.hng.tech/api/v1/auth/google/url'
-						className='flex justify-center items-center font-medium text-[#344054] w-full  border border-[#D0D5DD] h-11 p-2 rounded-lg'>
+					<button
+						onClick={googleSignUpAuth}
+						className='cursor-pointer flex justify-center items-center font-medium text-[#344054] w-full  border border-[#D0D5DD] h-11 p-2 rounded-lg'>
 						<img className='mr-2 w-6' src={google} alt='google logo' />
 						Sign Up with Google
-					</a>
+					</button>
 
 					<Link to='/sign_in'>
 						{" "}

@@ -31,7 +31,6 @@ const ViewEvent = () => {
 	}, []);
 
 	const { id } = useParams();
-	console.log(id)
 	useEffect(() => {
 		const getParticipants = async () => {
 			const data = await userServices.getParticipants(id);
@@ -90,7 +89,7 @@ const ViewEvent = () => {
 
 					<section className='flex flex-col justify-center'>
 						<div className='max-h-[17em] overflow-y-auto scroll-blue-500 pr-4'>
-							{participants.map((invitee, index) => (
+							{participants?.map((invitee, index) => (
 
 								<div
 									onClick={() => toggleShowAccordion(invitee.id)}
