@@ -5,7 +5,8 @@ import { CgMenuLeftAlt } from "react-icons/cg";
 import { AiOutlineUser } from "react-icons/ai";
 import { BsPlus } from "react-icons/bs";
 import { Link, useLocation } from "react-router-dom";
-import { IoTrashBin } from "react-icons/io5";
+import { MdOutlineCancel } from "react-icons/md";
+
 
 import CreateEventNavbar from "../../components/CreateEvent/CreateEventNavbar";
 import clipboard from "./icons/clipboard.svg";
@@ -46,7 +47,6 @@ const EventSummary = () => {
       {
         email,
         value: "Remove",
-        // id: Date.now(),
       },
     ];
     setParticipant(newParticipant);
@@ -56,6 +56,8 @@ const EventSummary = () => {
     if (!email) return;
     addParticipant(email);
     setEmail("");
+    setEmailFocus(true)
+    setValidEmail(false)
   };
 
   const copyLink = () => {
@@ -68,8 +70,11 @@ const EventSummary = () => {
     }, 3000);
   };
 
-  const handleDelete = (id) => {
-    setParticipant(participant.filter((participant) => participant.id !== id));
+  const handleDelete = (index) => {
+    // setParticipant(participant.filter((participant) => participant.id !== id));
+    const deletefromList = participant;
+    deletefromList.splice(index, 1);
+    setParticipant([...deletefromList]);
   };
 
   return (
@@ -163,10 +168,7 @@ const EventSummary = () => {
           <p className="text-lg font-bold md:mr-7">
             Participant({participant.length})
           </p>
-          <button className="bg-transparent flex items-center text-[#0056D6]">
-            <p className="mr-2 md:text-base text-sm">Add participant</p>
-            <BsPlus />
-          </button>
+          
         </div>
 
         <div className="w-full mt-5 bg-[#E7F0FF] flex justify-between py-2 md:px-3 px-1">
@@ -214,16 +216,12 @@ const EventSummary = () => {
               </div>
               <div className="flex items-center md:mr-8">
                 <p className="text-xs ml-1.5">{invite.value}</p>
-                {/* {invite.value === "Remove" ? (
-                  <IoTrashBin className="text-2xl text-[#CC0000]"/>
-                ) : (
-                  <AiOutlineDislike className="text-2xl text-[#006600]"/>
-                )} */}
+
                 <span
                   className="cursor-pointer"
                   onClick={() => handleDelete(participant.id)}
                 >
-                  <IoTrashBin className="text-2xl text-red-700" />
+                  <MdOutlineCancel className="text-2xl" />
                 </span>
               </div>
             </div>
