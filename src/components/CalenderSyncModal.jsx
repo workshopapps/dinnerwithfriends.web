@@ -6,7 +6,7 @@ const CalenderSyncModal = ({setModal}) => {
 
     return (
 
-        <div className={`${setModal ?'fixed top-0 right-0 left-0 bottom-0 w-screen w-screen z-20  bg-black bg-opacity-50': 'hidden'}`}>
+        <div className={`${setModal ?'fixed top-0 right-0 z-[1000px] left-0 bottom-0 w-screen w-screen z-20  bg-black bg-opacity-50': 'hidden'}`}>
         <div className='w-11/12 lg:w-2/5 ml-auto mr-auto relative mt-44 flex flex-col bg-white py-6 rounded-2xl'>
         <div
               onClick={() => setModal(false)}
