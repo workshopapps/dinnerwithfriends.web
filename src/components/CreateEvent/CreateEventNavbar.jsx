@@ -5,6 +5,7 @@ import { FiSettings, FiLogIn } from "react-icons/fi"
 import menuStyles from "./createEvent.module.css";
 import { Link } from "react-router-dom";
 import avatar from "../../assets/img/Avatar.png"
+import Logo from "../Logo";
 
 const CreateEventNavbar = () => {
 	const [open, setOpen] = useState(false);
@@ -29,14 +30,7 @@ const CreateEventNavbar = () => {
 	return (
     <nav className={`transition ease-in duration-400 bg-white md:px-10 px-2.5 md:h-[85px] md:pb-2 fixed w-full z-20 top-0 left-0 border-b border-white ${display ? 'h-[300px]' : 'h-[59px]'}`}>
       <div className="h-[45px] md:h-[76px] py-4 md:py-0 bg-transparent container flex flex-wrap items-center justify-between mx-auto">
-        <Link to="/" className="flex items-center">
-          <span className="self-center text-[#0056D6] text-3xl font-semibold whitespace-nowrap ">
-            Catch
-          </span>
-          <span className="self-center text-black text-3xl font-semibold whitespace-nowrap">
-            Up
-          </span>
-        </Link>
+        <Logo />
         <div className="flex md:order-2">
           <div  onClick={toggleOpen} className="hidden md:block cursor-pointer">
             <span>
