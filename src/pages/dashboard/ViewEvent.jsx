@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import Navbar from "../../components/CreateEvent/CreateEventNavbar";
 import arrow from "../../assets/icons/arrow-down.svg";
+import avatar from "../../assets/img/profile.svg";
 import { CatchUpEventContextUse } from "../../context/CatchUpEventContext";
 import AddParticipantModal from "../../components/AddParticipantModal";
 import { BsPlus } from "react-icons/bs";
@@ -12,6 +13,7 @@ const ViewEvent = () => {
 	const [isActive, setIsActive] = useState(false);
 	const { setShowModal } = CatchUpEventContextUse();
 	const [singleEvent, setSingleEvent] = useState({});
+	const [event, setEvent] = useState({})
 	const [participants, setParticipants] = useState([]);
 
 	const toggleShowAccordion = (id) => {
@@ -35,10 +37,16 @@ const ViewEvent = () => {
 		const getParticipants = async () => {
 			const data = await userServices.getParticipants(id);
 			setParticipants(data);
+			// console.log(data)
 		};
 		getParticipants();
-
-
+		const getEvent = async () => {
+			const data = await userServices.getEventsById(id);
+			setEvent(data);
+			console.log(data)
+		};
+		getEvent();
+		console.log(event?.final_event_date)
 	}, [id])
 
 	return (
@@ -75,9 +83,9 @@ const ViewEvent = () => {
 
 							<aside className='font-medium text-sm  md:mt-0'>
 								Agreed Date
-							{singleEvent?.final_event_date === !null ?
+							{event?.final_event_date === null ?
 									<span className='bg-[#E7F0FF] text-[#003585] text-xs px-2 py-1 font-semibold rounded ml-1'>
-										{singleEvent?.final_event_date}
+										{event?.final_event_date}
 									</span>
 
 								: <span className='bg-[#E7F0FF] text-[#003585] text-xs px-2 py-1 font-semibold rounded ml-1'>
@@ -98,14 +106,19 @@ const ViewEvent = () => {
 									<div className='flex justify-between items-center transition-all'>
 										<div className='flex items-center'>
 											<img
-												className='h-fit w-8 lg:w-10 mr-3'
-												src={invitee.image}
+												className='h-fit w-8 rounded-full lg:w-10 mr-3'
+												src={avatar}
 												alt=''
 											/>
 											<div className='space-y-[-3px]'>
 												<h4 className='font-semibold text-sm'>
-													{participants.indexOf(invitee) + 1}
-													{(participants.indexOf(invitee) + 1) % 10 === 1 ? <span>st</span> : (participants.indexOf(invitee) + 1) % 10 === 2 ? <span>nd</span> : (participants.indexOf(invitee) + 1) % 10 === 3 ? <span>rd</span> : <span>th</span>}
+													{participants.indexOf(invitee) + 1}	
+													{
+														(participants.indexOf(invitee) + 1) % 10 === 1 ? <span>st</span>
+														: (participants.indexOf(invitee) + 1) % 10 === 2 ? <span>nd</span> 
+														: (participants.indexOf(invitee) + 1) % 10 === 3 ? <span>rd</span> 
+														: <span>th</span>
+													}	
 													&#160;
 													{""}
 													Invitee
