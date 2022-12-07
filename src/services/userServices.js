@@ -9,6 +9,7 @@ import {
   PASSWORD_RECOVERY_URL,
   RESET_PASSWORD_URL,
   GOOGLE_CALENDER,
+  ADD_PARTICIPANT,
 } from "./rootEndPoints.js";
 
 const register = async (params) => {
@@ -31,7 +32,10 @@ const login = async (params) => {
 
 const recoverPassword = async (params) => {
   try {
-    const result = await fetchApi.post(`${BASE_URL}/${PASSWORD_RECOVERY_URL}`, params);
+    const result = await fetchApi.post(
+      `${BASE_URL}/${PASSWORD_RECOVERY_URL}`,
+      params
+    );
     return result;
   } catch (err) {
     return err;
@@ -40,7 +44,10 @@ const recoverPassword = async (params) => {
 
 const resetPassword = async (params) => {
   try {
-    const result = await fetchApi.post(`${BASE_URL}/${RESET_PASSWORD_URL}`, params);
+    const result = await fetchApi.post(
+      `${BASE_URL}/${RESET_PASSWORD_URL}`,
+      params
+    );
     return result;
   } catch (err) {
     return err;
@@ -68,13 +75,27 @@ const getAllEvents = async () => {
 
 const addToGoogleCalender = async (params) => {
   try {
-    const result = await fetchApi.post(`${BASE_URL}/${GOOGLE_CALENDER}`, params);
+    const result = await fetchApi.post(
+      `${BASE_URL}/${GOOGLE_CALENDER}`,
+      params
+    );
     return result;
   } catch (err) {
     return err;
   }
 };
 
+const addParticipant = async (params) => {
+  try {
+    const result = await fetchApi.post(
+      `${BASE_URL}/${ADD_PARTICIPANT}`,
+      params
+    );
+    return result;
+  } catch (err) {
+    return err;
+  }
+};
 const userServices = {
   register,
   login,
@@ -82,7 +103,8 @@ const userServices = {
   getAllEvents,
   recoverPassword,
   resetPassword,
-  addToGoogleCalender
+  addToGoogleCalender,
+  addParticipant,
 };
 
 export default userServices;

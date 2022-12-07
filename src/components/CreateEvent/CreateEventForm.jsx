@@ -80,8 +80,8 @@ const CreateEventForm = () => {
       .then(
         (result) => {
           console.log(result.text);
-          e.target.reset()
-          console.log("Message sent")
+          e.target.reset();
+          console.log("Message sent");
         },
         (error) => {
           console.log(error.text);

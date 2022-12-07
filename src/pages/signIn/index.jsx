@@ -103,7 +103,7 @@ const SignIn = () => {
                       ? "shadow-[0px_0px_0px_4px_rgba(74,74,104,0.1)]"
                       : "shadow-[0px_0px_0px_4px_rgba(249,50,50,0.1)]"
                   }  mt-2 w-full h-11 p-3.5 rounded-lg`}
-                  type="text"
+                  type="email"
                   name="email"
                   id="email"
                   placeholder="Enter your email"
