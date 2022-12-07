@@ -5,7 +5,6 @@ import { useForm } from "react-hook-form";
 import image from "./signup_image.webp";
 import google from "./google.svg";
 import Logo from "../../components/Logo";
-import userServices from "../../services/userServices";
 
 const SignUp = () => {
 	const {
@@ -17,7 +16,6 @@ const SignUp = () => {
 	const [existingUser, setExistingUser] = useState(false);
 	const [submitting, setSubmitting] = useState(false);
 	const [accountCreated, setAccountCreated] = useState(false);
-	const nav = useNavigate();
 	const [passwordShown, setPasswordShown] = useState(false);
 	const navigate = useNavigate();
 
@@ -25,13 +23,9 @@ const SignUp = () => {
 		setPasswordShown(!passwordShown);
 	};
 
-	const googleSignUpAuth = async () => {
-		const result = await userServices.googleAuthSignUp();
-		console.log("Results", { result });
-		if (result.status === "success") {
-			console.log("I'm navigating to", result.data.signInURL.slice(6,))
-			navigate(result.data.signInURL.slice(6,));
-		}
+	const googleSignUpAuth = () => {
+		const gLink = "https://prybar.onrender.com/api/v1/auth/google/auth";
+		navigate(gLink.slice(6));
 	};
 
 	const onSubmit = async (data) => {
@@ -66,7 +60,7 @@ const SignUp = () => {
 					setAccountCreated(true);
 					localStorage.setItem("jwt-token", result.accessToken);
 					setTimeout(() => {
-						nav("/dashboard/upcoming_events");
+						navigate("/dashboard/upcoming_events");
 					}, 2000);
 				}
 			})
