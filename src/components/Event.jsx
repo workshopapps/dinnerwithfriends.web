@@ -7,7 +7,8 @@ import people from '../assets/img/people.png'
 import calendery from '../assets/img/calendery.png'
 
 const Event = ({id, status, event_title, event_description, final_event_date, participant_number, filteredEvents }) => {
-
+  console.log(id, event_title, event_description, final_event_date, participant_number, 'upcoming')
+  console.log(filteredEvents, 'filteredEvents')
   return (
     <>
     {filteredEvents.length === 0 ? (

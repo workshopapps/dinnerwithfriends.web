@@ -33,6 +33,7 @@ const ViewEvent = () => {
 	}, []);
 
 	const { id } = useParams();
+
 	console.log(id)
 	useEffect(() => {
 		const getParticipants = async () => {
@@ -49,7 +50,10 @@ const ViewEvent = () => {
 		getEvent();
 		console.log(event?.final_event_date)
 	}, [id])
-
+	const handleClick = () => {
+		console.log('clicked')
+		
+	};
 	return (
 		<>
 			<Navbar />
@@ -76,7 +80,7 @@ const ViewEvent = () => {
 					</section>
 					<div className='flex flex-row justify-between md:items-center my-10'>
 						<button
-							onClick={() => setShowModal(true)}
+							onClick={() => handleClick}
 							className='bg-transparent flex items-center text-[#0056D6]'>
 							<p className='mr-2 text-sm'>Add participant</p>
 							<BsPlus />
@@ -102,7 +106,7 @@ const ViewEvent = () => {
 
 								<div
 									onClick={() => toggleShowAccordion(invitee.id)}
-									key={invitee.index}
+									key={invitee.id}
 									className='py-3 border-b border-gray-200 transition-all'>
 									<div className='flex justify-between items-center transition-all'>
 										<div className='flex items-center'>
