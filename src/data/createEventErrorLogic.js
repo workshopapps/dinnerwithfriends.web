@@ -23,11 +23,19 @@ export const formLogic = (values) => {
 	}
 
 	if (!values.start_date) {
-		error.start_date = "Please select a startDate";
+		error.start_date = "Please select a start date";
 	}
 
-	if (!values.end_date) {
-		error.end_date = "Please select an endDate";
+	if (values.end_date === "") {
+		error.end_date = "Please select an end date";
+	}
+
+	if (!values.host_prefered_time) {
+		error.host_prefered_time = "Please select a preferred date";
+	}
+	
+       if (!values.host_prefered_time) {
+		error.host_prefered_time = "Please select a preferred date";
 	}
 
 	return error;

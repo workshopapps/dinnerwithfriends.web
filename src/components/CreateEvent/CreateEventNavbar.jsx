@@ -8,7 +8,7 @@ import avatar from "../../assets/img/Avatar.png"
 
 const CreateEventNavbar = () => {
 	const [open, setOpen] = useState(false);
-  const [showNav, setShowNav] = useState(false);
+  const [showNav, setShowNav] = useState(true);
   const [display, setDisplay] = useState(false);
 
   const toggleOpen = () => {
@@ -16,11 +16,11 @@ const CreateEventNavbar = () => {
     setShowNav(false);
   }
   
-    function hamburger() {
-      setShowNav(true)
-      setDisplay(!display)
-      setOpen(false)
-    }
+  const hamburger = () => {
+    setShowNav(true)
+    setDisplay(!display)
+    setOpen(false)
+  }
 
     const nav = {
       transform: window.matchMedia("(max-width: 767px)").matches && !display ? "translateY(-150%)" : "translateY(0)"
@@ -49,66 +49,61 @@ const CreateEventNavbar = () => {
             <div style={{transform: display? "translateY(-5.5px) rotate(-45deg)" : "rotate(0)"}} className="transition ease-in duration-200 bg-black w-[20px] h-[1.5px] mt-1"></div>
           </div>
         </div>
-        <div class="text-left hidden md:block items-center">
-          {open && 
-            <div 
-              class="mt-6 absolute items-center right-6 z-10 w-72 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" 
-              role="menu" aria-orientation="vertical" 
-              aria-labelledby="menu-button" tabindex="-1">
-              <div 
-                className="transition linear duration-300 items-center justify-between w-full md:w-auto md:order-1"
-                style={nav} id="navbar-sticky">
-                <ul className="w-full flex flex-col p-4 mt-0 border border-white rounded-lg bg-white md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white ">
-                  <li className="items-center flex py-3 md:py-2 pl-3 pr-4 text-black hover:text-white hover:bg-blue-700 md:hover:bg-transparent md:hover:text-blue-700 rounded md:bg-transparent md:p-0 dark:text-white"
-                    aria-current="page">
-                    <MdSpaceDashboard />
-                    <Link to="/dashboard/upcoming_events" className="block px-2 py-2 text-sm w-full">
-                      Dashboard
-                    </Link>
-                  </li>
-                  <li className="items-center flex py-3 md:py-2 pl-3 pr-4 text-black hover:text-white hover:bg-blue-700 md:hover:bg-transparent md:hover:text-blue-700 rounded md:bg-transparent md:p-0 dark:text-white"
-                    aria-current="page">
-                    <FiSettings />
-                    <Link to="/profile" className="block px-2 py-2 text-sm w-full">
-                      Account Setting
-                    </Link>
-                  </li>
-                  <li
-                  className="items-center flex py-3 md:py-2 pl-3 pr-4 text-black hover:text-white hover:bg-blue-700 md:hover:bg-transparent md:hover:text-blue-700 rounded md:bg-transparent md:p-0 dark:text-white"
-                  aria-current="page">
-                    <img src={googleCalendar} alt="" />
-                    <Link to="/error404" className="block px-2 py-2 text-sm w-full">
-                      Sync With Google Calender
-                    </Link>
-                  </li>
-                  <span className={`${menuStyles.theUserDetail} my-4`}>
-                    <div className="w-[35px] h-[35px] border border-[#0056D6] text-[#717172] rounded-full flex justify-center items-center object-cover text-xs">
-                      <span>M</span>
+      </div>
+
+      <div class="text-left hidden md:block items-center">
+        {open && 
+          <div class="absolute items-center right-6 z-10 w-fit origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+            <div class={`${menuStyles.goTo} py-3 px-2`} role="none">
+              <ul>
+                <li>
+                  <MdSpaceDashboard />
+                  <Link to="/dashboard/upcoming_events" className="block px-2 py-2 text-sm w-full">
+                    Dashboard
+                  </Link>
+                </li>
+                <li>
+                  <FiSettings />
+                  <Link to="/profile" className="block px-2 py-2 text-sm w-full">
+                    Account Setting
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/error404" className="flex py-2">
+                    <img src={googleCalendar} alt="" className="mr-2 w-4" />
+                    Sync with Google Calender
+                  </Link>
+                </li>
+                <span className="text-black rounded hover:bg-inherit hover:text-color">
+                  <span className="flex py-2">
+                    <div className="w-[35px] h-[35px] border border-[#66A3FF] text-[#717172] mr-2 rounded-full flex justify-center items-center object-cover text-xs">
+                      <img src={avatar} alt="" className="w-8" />
                     </div>
                     <span className={menuStyles.theUsersName}>
                       <span>Mbulu Benita</span>
                       <span>beniottabenita@gmail.com</span>
                     </span>
                   </span>
-                  <li
-                    className="items-center flex py-3 md:py-2 pl-3 pr-4 text-black hover:text-red-700 hover:bg-blue-700 md:hover:bg-transparent md:hover:text-red-700 rounded md:bg-transparent md:p-0 dark:text-white"
-                    aria-current="page">
-                    <FiLogIn />
-                    <Link to="/error404" className="block px-2 py-2 text-sm w-full">
-                      Log Out
-                    </Link>
-                  </li>
-                </ul>
-              </div>
+                </span>
+                <li>
+                  <FiLogIn />
+                  <Link to="/" className="block px-2 py-2 text-sm w-full">
+                    Log Out
+                  </Link>
+                </li>
+              </ul>
             </div>
-          }
-        </div>
+          </div>
+        }
+      </div>
 
-        {showNav && <div style={nav}
-          className="transition linear duration-300 items-center justify-between w-full md:hidden md:w-auto md:order-1"
+      <div class="text-left md:hidden block">
+        {showNav && 
+          <div style={nav}
+          className="transition linear duration-300 items-center justify-between  w-full md:flex md:w-auto md:order-1"
           id="navbar-sticky"
         >
-          <ul  className="bg-green-500 w-full flex flex-col p-4 mt-0 md:mt-4 border border-white rounded-lg bg-white md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white ">
+          <ul  className="w-full flex flex-col p-4 mt-0 border border-white rounded-lg bg-white md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white">
             <li>
               <Link
                 to="/dashboard/upcoming_events"
@@ -118,47 +113,49 @@ const CreateEventNavbar = () => {
                 Dashboard
               </Link>
             </li>
+
             <li>
               <Link
+                fro-17-features-page
                 to="/profile"
-                className="block py-3 md:py-2 pl-3 pr-4 text-black hover:text-white hover:bg-blue-700 md:hover:bg-transparent md:hover:text-blue-700 rounded md:bg-transparent md:p-0 dark:text-white"
-                aria-current="page"
+                dev
+                className="block py-3 md:py-2 pl-3 pr-4 text-black rounded hover:bg-blue-700 hover:text-white"
               >
-                Account Setting
+                Account Settings
               </Link>
             </li>
             <li>
-              <span className="flex">
-                <img src={googleCalendar} alt="" className="pl-3" />
-                <Link
-                  to="/error404"
-                  className="block py-3 md:py-2 pl-3 pr-4 text-black hover:text-white hover:bg-blue-700 md:hover:bg-transparent md:hover:text-blue-700 rounded md:bg-transparent md:p-0 dark:text-white"
-                  aria-current="page"
-                >
-                  Sync With Google Calender
-                </Link>
+              <Link 
+                to="/error404" 
+                className="flex py-2 pl-4 text-black rounded hover:bg-blue-700 hover:text-white"
+              >
+                <img src={googleCalendar} alt="" className="mr-2 w-4" />
+                Sync with Google Calender
+              </Link>
+            </li>
+            <li>
+              <span className="flex py-2 pl-4">
+                <div className="w-[35px] h-[35px] border border-[#66A3FF] text-[#717172] mr-2 rounded-full flex justify-center items-center object-cover text-xs">
+                  <img src={avatar} alt="" className="w-8" />
+                </div>
+                <span className={menuStyles.theUsersName}>
+                  <span>Mbulu Benita</span>
+                  <span>beniottabenita@gmail.com</span>
+                </span>
               </span>
             </li>
-            <span className={`${menuStyles.theUserDetail} my-4 pl-3`}>
-              <div className="w-[35px] h-[35px] border border-[#0056D6] text-[#717172] rounded-full flex justify-center items-center object-cover text-xs">
-                <span>M</span>
-              </div>
-              <span className={menuStyles.theUsersName}>
-                <span>Mbulu Benita</span>
-                <span>beniottabenita@gmail.com</span>
-              </span>
-            </span>
             <li>
               <Link
-                to="/error404"
-                className="block py-3 md:py-2 pl-3 pr-4 text-red-700 hover:text-white hover:bg-red-700 border-red-700 border-2 rounded dark:text-white"
-                aria-current="page"
+                to="/"
+                dev
+                className="w-full block mt-4 py-2 pl-3 pr-4 text-center bg-white h-[44px] text-[#d60000] border-[1.5px] border-[#d60000] rounded hover:bg-red-900 hover:text-white"
               >
                 Log Out
               </Link>
-            </li> 
+            </li>
           </ul>
-        </div>}
+        </div>
+        }
       </div>
     </nav>
 	);
