@@ -11,7 +11,7 @@ import CreateEventNavbar from "../../components/CreateEvent/CreateEventNavbar";
 import CalenderSyncModal from "../../components/CalenderSyncModal";
 /* global gapi */
 const UpcomingEvent = () => {
-	const [status, setStatus] = useState(false);
+	const [status, setStatus] = useState("false");
 	const { events, setEvents } = CatchUpEventContextUse();
     const [modal, setModal] = useState(false);
 
@@ -27,15 +27,15 @@ const UpcomingEvent = () => {
 	}, []);
 
 	const filteredEvents =
-		events.length === 0
-			? events
-			: events.filter((event) => event.published === status);
+	events.length === 0
+	? events
+	: events.filter((event) => event.published === status);
 
 	const userEvents =
 		filteredEvents.length === 0 ? (
 			<Event
 				filteredEvents={filteredEvents}
-				status={status === false ? "upcoming" : "Rsvp"}
+				status={status === "false" ? "upcoming" : "Rsvp"}
 			/>
 		) : (
 			filteredEvents.map(
@@ -99,7 +99,7 @@ const UpcomingEvent = () => {
 	return (
 		<>
 			<CreateEventNavbar />
-			<section className='px-[22px] lg:px-20 pt-20 lg:pt-16 mb-16'>
+			<section className='px-[22px] lg:px-20 pt-[6rem] lg:pt-[7rem] mb-16'>
 				<div className='flex flex-col lg:flex-row justify-center lg:justify-between gap-x-4 mb-4 lg:mb-8'>
 					<div className='flex flex-col justify-center items-center lg:justify-start lg:items-start gap-y-4'>
 						<h2 className='text-[#151517] text-2xl font-bold lg:text-[40px]'>
@@ -149,9 +149,9 @@ const UpcomingEvent = () => {
 						<li>
 							<Button
 								className={`${
-									status === false ? "pb-3 border-[#0056D6] border-b-4 " : ""
+									status === "false" ? "pb-3 border-[#0056D6] border-b-4 " : ""
 								}'pb-3 outline-0 border-0 text-[#717172] bg-inherit lg:text-lg'`}
-								onClick={() => setStatus(false)}>
+								onClick={() => setStatus("false")}>
 								Upcoming Event
 							</Button>
 						</li>
@@ -160,7 +160,7 @@ const UpcomingEvent = () => {
 								className={`${
 									status === true ? "pb-3 border-[#0056D6] border-b-4 " : ""
 								}' pb-3 outline-0 border-0 text-[#717172] bg-inherit lg:text-lg'`}
-								onClick={() => setStatus(true)}>
+								onClick={() => setStatus("true")}>
 								Reserved Event
 							</Button>
 						</li>
@@ -170,7 +170,7 @@ const UpcomingEvent = () => {
 					className={`${
 						filteredEvents.length === 0 ? "pt-12" : "pt-[10px]"
 					} "flex flex-col justify-center items-center gap-y-8 lg:border border-solid border-[#CDCDCD] lg:pb-[200px] lg:px-[20px] max-h-[30rem] overflow-y-scroll "`}>
-					{status === false && (
+					{status === "false" && (
 						<div
 							className={`${
 								filteredEvents.length === 0
@@ -180,7 +180,7 @@ const UpcomingEvent = () => {
 							{userEvents}
 						</div>
 					)}
-					{status === true && (
+					{status === 'true' && (
 						<div
 							className={`${
 								filteredEvents.length === 0

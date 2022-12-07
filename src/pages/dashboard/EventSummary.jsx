@@ -30,7 +30,6 @@ const EventSummary = () => {
     } else if (!popup) {
       document.body.style.overflowY = "scroll";
     }
-    console.log(popup);
   }, [popup]);
 
   // an effect that tests if the email matches the regex requirements
@@ -80,7 +79,7 @@ const EventSummary = () => {
   return (
     <div>
       {popup && (
-        <div className=" w-full h-full bg-black bg-opacity-50 fixed">
+        <div className="z-[1000px] w-full h-full bg-black bg-opacity-50 fixed">
           <div className=" p-6 flex flex-col  justify-center items-center rounded-2xl w-[92%] max-w-[550px] absolute bg-white left-2/4 top-[50%] -translate-y-2/4 -translate-x-2/4">
             <div
               onClick={() => setPopup(false)}
@@ -138,7 +137,7 @@ const EventSummary = () => {
         </div>
       )}
       <CreateEventNavbar />
-      <div className="mt-2 md:mx-14 mx-5 my-10">
+      <div className="mt-[100px] md:mx-14 mx-5 my-10">
         <h2 className="mt-10 text-3xl font-bold">Event Summary</h2>
         <div className="mt-4 border w-full p-5 rounded-lg shadow text-[#59595B]">
           <h5 className="text-2xl font-bold">{location.state.event_title}</h5>
@@ -168,7 +167,7 @@ const EventSummary = () => {
           <p className="text-lg font-bold md:mr-7">
             Participant({participant.length})
           </p>
-          
+
         </div>
 
         <div className="w-full mt-5 bg-[#E7F0FF] flex justify-between py-2 md:px-3 px-1">
