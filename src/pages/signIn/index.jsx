@@ -22,6 +22,15 @@ const SignIn = () => {
     setPasswordShown(!passwordShown);
   };
 
+  const googleSignInAuth = async () => {
+		const result = await userServices.googleAuthSignUp();
+		console.log("Results", { result });
+		if (result.status === "success") {
+			console.log("I'm navigating to", result.data.signInURL.slice(6,))
+			navigate(result.data.signInURL.slice(6,));
+		}
+	};
+
   const onSubmit = async (data) => {
     setIsSubmit(true);
     const result = await userServices.login(data);
@@ -193,8 +202,7 @@ const SignIn = () => {
 
               <p className="my-2.5 text-center text-[#0056D6]">Or</p>
 
-              <a href=" ">
-                <button className="flex justify-center items-center font-medium text-[#344054] w-full  border border-[#D0D5DD] h-11 p-2 rounded-lg">
+                <button onClick={googleSignInAuth} className="flex justify-center items-center font-medium text-[#344054] w-full  border border-[#D0D5DD] h-11 p-2 rounded-lg">
                   <svg
                     className="mr-3"
                     xmlns="http://www.w3.org/2000/svg"
@@ -220,7 +228,6 @@ const SignIn = () => {
                   </svg>
                   Sign in with Google
                 </button>
-              </a>
               <div className="text-center text-[#0056D6] text-base mt-6">
                 <Link to="/sign_up">
                   <span>Dont have an account yet?</span>
