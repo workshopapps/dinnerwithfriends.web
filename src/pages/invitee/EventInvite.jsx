@@ -3,13 +3,11 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import { useNavigate, useParams } from "react-router-dom/dist";
 import moment from "moment/moment";
-import fetchApi from "../../services/fetchApi";
-import { BASE_URL, EVENT_BY_TOKEN, ADD_PARTICIPANTS } from "../../services/rootEndPoints";
+import userServices from "../../services/userServices";
 
 const EventInvite = () => {
   const [eventData, setEventData] = useState(null);
-  const { get } = fetchApi;
-  const preferredDate = eventData ? eventData.data.host_prefered_time.replace("-", "") : "";
+  const preferredDate = eventData ? eventData.host_prefered_time.replace("-", "") : "";
   const preferredTime = eventData ? moment(preferredDate, "DD-MM-YYYY HH:mm").format("YYYY-MM-DDTHH:mm") : "";
   const [inviteDetails, setInviteDetails] = useState({
     fullname: "",
@@ -18,11 +16,14 @@ const EventInvite = () => {
   });
   const navigate = useNavigate();
   const [declinedInvite, setDeclinedInvite] = useState(false);
-  const [resultMsg, setResultMsg] = useState("")
-  let { eventToken } = useParams();
-  const startDate = eventData ? moment(eventData.data.start_date, "DD-MM-YYYY").format("YYYY-MM-DDTHH:mm") : "";
-  const endDate = eventData ? moment(eventData.data.end_date, "DD-MM-YYYY").format("YYYY-MM-DDTHH:mm") : "";
+  const [resultMsg, setResultMsg] = useState("");
+  let { eventId } = useParams();
+  const startDate = eventData ? moment(eventData.start_date, "DD-MM-YYYY").format("YYYY-MM-DDTHH:mm") : "";
+  const endDate = eventData ? moment(eventData.end_date, "DD-MM-YYYY").format("YYYY-MM-DDTHH:mm") : "";
   const emailRegex = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+  const decidedEvent = eventData ? moment(eventData.final_event_date).format("MMMM DD YYYY HH:mm") : "";
+  const currentDate = moment(Date.now()).format("YYYY-MM-DDTHH:mm");
+  const hasPassed = eventData && moment(currentDate).isAfter(endDate);
 
   const changeInviteDetails = (e) => {
     const {value, name} = e.target;
@@ -34,33 +35,33 @@ const EventInvite = () => {
   };
 
   const getEventDetails =  () => {
-    get(`${BASE_URL}/${EVENT_BY_TOKEN}/${eventToken}`).then(res => setEventData(res));
+    userServices.getEventsById(`${eventId}`).then(res => setEventData(res));
+    if(eventData?.final_event_date) {
+      setInviteDetails({
+        ...inviteDetails,
+        preferred_date_time: eventData.final_event_date
+      })
+    }
   };
 
   const addParticipant = (e) => {
     e.preventDefault();
 
-    const requestOptions = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({...inviteDetails, event_id: eventData.data._id})
-    }
+    const participantsData = { ...inviteDetails, event_id: eventData._id };
 
-    fetch(`${BASE_URL}/${ADD_PARTICIPANTS}`, requestOptions)
-    .then(response => console.log(response.json()))
-    .then((result) => {
-      if(result.status === "success"){
+    userServices.addParticipants(participantsData)
+    .then(response => {
+      if(response.status === "success"){
         setTimeout(() => {
-          setResultMsg(result?.message)
+          setResultMsg({ message: "Successful!"})
           navigate('/event_invite/event_invite_response')
         }, 2000)
       } else {
-        setResultMsg(result?.message)
+        setResultMsg(response)
       }
     })
     .catch(error => {
-      console.log(error.message);
-      setResultMsg("An error has occured.")
+      setResultMsg("An error has occured")
     })
   }
 
@@ -73,7 +74,11 @@ const EventInvite = () => {
 
   useEffect(() => {
     getEventDetails();
-  }, []);
+
+    if(hasPassed) {
+      navigate("/closed_event")
+    }
+  }, [hasPassed]);
 
   return (
     <div>
@@ -82,12 +87,12 @@ const EventInvite = () => {
         <div className="mx-2 md:mx-0 text-center w-full">
           <h1 className="text-2xl font-bold md:text-3xl">Hello, there.</h1>
           <p className="leading-6 text-gray-600 font-sm">
-            You have been invited to {eventData ? eventData.data.event_type : ""} at
-            <span className="text-blue-700 font-bold"> {eventData ? eventData.data.location : ""}</span>
+            You have been invited to {eventData ? eventData.event_type : ""} by
+            <span className="text-blue-700 font-bold"> {eventData ? eventData.host_info[0].name : ""}</span>
             <br /> You can view the details below..
           </p>
           {declinedInvite ? <p className="font-bold text-red-900">You have succesfully declined this invite... Redirecting to your homepage soon</p> : null}
-          {resultMsg ? <p className="text-red-500">{resultMsg}</p> : ""}
+          {resultMsg ? <p className="text-red-500">{resultMsg.message}</p> : ""}
         </div>
         <div className="my-8 border py-5 rounded-lg flex justify-center items-center ">
           <form onSubmit={addParticipant}>
@@ -117,6 +122,8 @@ const EventInvite = () => {
                 autoComplete="true"
               />
             </div>
+            { eventData?.final_event_date ? 
+            <p className="text-blue-500 font-semibold text-center w-[200px] md:w-[450px]">An event date has been chosen. Event to be hosted by {decidedEvent}</p> :
             <div className="my-4 grid">
               <label className="text-base font-semibold mb-1">
                 Preferred Date & Time
@@ -132,6 +139,7 @@ const EventInvite = () => {
                 required
               />
             </div>
+            }
             <div className="my-7 flex gap-8 md:justify-between">
               <button
                 type="submit"

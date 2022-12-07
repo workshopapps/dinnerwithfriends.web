@@ -10,6 +10,7 @@ import {
   PASSWORD_RECOVERY_URL,
   RESET_PASSWORD_URL,
   GOOGLE_CALENDER,
+  ADD_PARTICIPANTS,
 } from "./rootEndPoints.js";
 
 const register = async (params) => {
@@ -95,6 +96,15 @@ const addToGoogleCalender = async (params) => {
   }
 };
 
+const addParticipants = async (params) => {
+  try {
+    const result = await fetchApi.post(`${BASE_URL}/${ADD_PARTICIPANTS}`, params);
+    return result;
+  } catch (err) {
+    return err;
+  }
+}
+
 const userServices = {
   register,
   login,
@@ -104,7 +114,8 @@ const userServices = {
   getParticipants,
   recoverPassword,
   resetPassword,
-  addToGoogleCalender
+  addToGoogleCalender,
+  addParticipants
 };
 
 export default userServices;
