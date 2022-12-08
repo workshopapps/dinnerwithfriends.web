@@ -39,6 +39,7 @@ const ViewEvent = () => {
     };
     console.log(participants);
     getParticipants();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
