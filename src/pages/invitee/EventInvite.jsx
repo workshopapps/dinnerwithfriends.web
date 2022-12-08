@@ -12,7 +12,7 @@ const EventInvite = () => {
   const [inviteDetails, setInviteDetails] = useState({
     fullname: "",
     email: "",
-    preferred_date_time: ""
+    preferred_date_time: "",
   });
   const navigate = useNavigate();
   const [declinedInvite, setDeclinedInvite] = useState(false);
@@ -26,7 +26,7 @@ const EventInvite = () => {
   const hasPassed = eventData && moment(currentDate).isAfter(endDate);
 
   const changeInviteDetails = (e) => {
-    const {value, name} = e.target;
+    const { value, name } = e.target;
 
     setInviteDetails({
       ...inviteDetails,
@@ -68,9 +68,9 @@ const EventInvite = () => {
   const declineInvite = () => {
     setDeclinedInvite(true);
     setTimeout(() => {
-      navigate('/')
-    }, 2000)
-  }
+      navigate("/");
+    }, 2000);
+  };
 
   useEffect(() => {
     getEventDetails();
