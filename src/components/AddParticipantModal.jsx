@@ -33,7 +33,7 @@ function AddParticipantModal({ eventId }) {
 	if (values.length === 0) {
 		errors.email = "Please type in an email";
 	}
-	
+
     return errors;
   };
 

@@ -5,6 +5,7 @@ import { FiSettings, FiLogIn } from "react-icons/fi";
 import menuStyles from "./createEvent.module.css";
 import { Link } from "react-router-dom";
 import avatar from "../../assets/img/Avatar.png";
+import { FaAngleDown } from 'react-icons/fa';
 import Logo from "../Logo";
 import Button from "../Button";
 import jwt_decode from "jwt-decode";
@@ -101,9 +102,12 @@ const CreateEventNavbar = ({setModal}) => {
 			<div className='h-[45px] md:h-[76px] py-4 md:py-0 bg-transparent container flex flex-wrap items-center justify-between mx-auto'>
 				<Logo />
 				<div className='flex md:order-2'>
-					<div onClick={toggleOpen} className='hidden md:block cursor-pointer'>
+					<div onClick={toggleOpen} className='hidden md:flex items-center gap-[5px] cursor-pointer'>
 						<span>
-							<img src={avatar} alt='' className='w-10' />
+              <FaAngleDown />
+						</span>
+						<span>
+							<img src={avatar} alt='' className='w-[30px]' />
 						</span>
 					</div>
 					<div
