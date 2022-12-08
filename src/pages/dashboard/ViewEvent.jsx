@@ -27,7 +27,7 @@ const ViewEvent = () => {
     const events = JSON.parse(eArr);
     const sEvent = events.find((event) => event._id === id);
     setSingleEvent(sEvent);
-
+    console.log(sEvent)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -105,7 +105,6 @@ const ViewEvent = () => {
                       />
                       <div className="space-y-[-3px]">
                         <h4 className="font-semibold text-sm">
-                          {invitee.position}
                           {participants.indexOf(invitee) + 1}
                           {(participants.indexOf(invitee) + 1) % 10 === 1 ? (
                             <span>st</span>

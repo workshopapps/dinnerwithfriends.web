@@ -1,19 +1,21 @@
 import React, { useState } from "react";
+import { useEffect } from "react";
 import { AiOutlineUser, AiOutlineCloseCircle } from "react-icons/ai";
 import { IoMdClose } from "react-icons/io";
 import { CatchUpEventContextUse } from "../context/CatchUpEventContext";
 import userServices from "../services/userServices";
 
 function AddParticipantModal({ eventId }) {
-  const [email, setEmail] = useState("");
-  const [participants, setParticipants] = useState([]);
+	const [email, setEmail] = useState("");
+	const [participants, setParticipants] = useState([]);
 
-  const [isSubmit, setIsSubmit] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
-  const [isFailure, setIsFailure] = useState(false);
+	const [isSubmit, setIsSubmit] = useState(false);
+	const [isSuccess, setIsSuccess] = useState(false);
+	const [isFailure, setIsFailure] = useState(false);
 
-  const [formError, setFormError] = useState({});
-  const [validEmail, setValidEmail] = useState(true);
+	const [formError, setFormError] = useState({});
+	const [validEmail, setValidEmail] = useState(false);
+	const [usedEmail, setUsedEmail] = useState(false);
 
   const { showModal, setShowModal } = CatchUpEventContextUse();
 
@@ -27,21 +29,32 @@ function AddParticipantModal({ eventId }) {
     } else {
       setValidEmail(true);
     }
+
+	if (values.length === 0) {
+		errors.email = "Please type in an email";
+	}
+	
     return errors;
   };
 
-  const handleChange = (e) => {
-    setEmail(e.target.value);
-    setFormError(validate(email));
-  };
+	useEffect(() => {
+		participants.map((item) =>
+			item === email ? setUsedEmail(true) : setUsedEmail(false)
+		);
+		// eslint-disable-next-line
+	}, [email]);
 
-  const addParticipant = (e) => {
-    e.preventDefault();
+    useEffect(() => {
+		if (Object.keys(formError).length === 0) {
+			setValidEmail(true);
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [formError]);
 
-    if (validEmail) {
-      setParticipants([...participants, email]);
-    }
-  };
+	const handleChange = (e) => {
+		setEmail(e.target.value);
+		setFormError(validate(email));
+	};
 
   const saveValidEmail = async () => {
     setIsSubmit(true);
@@ -67,23 +80,34 @@ function AddParticipantModal({ eventId }) {
     }
   };
 
-  const errorMsg = () => {
-    let element;
-    if (isSuccess) {
-      element = (
-        <p className="mt-4 text-xl text-green-600 text-center">
-          An invite email successfully sent!
-        </p>
-      );
-    } else if (isFailure) {
-      element = (
-        <p className="mt-4 text-xl text-red-600 text-center">
-          Invite email was not sent, please try again...
-        </p>
-      );
-    }
-    return element;
-  };
+	const addParticipant = (e) => {
+		e.preventDefault();
+
+		if (validEmail) {
+			setParticipants([...participants, email]);
+		}
+		setEmail("");
+		setValidEmail(false);
+	};
+
+	const errorMsg = () => {
+		let element;
+		if (isSuccess) {
+			element = (
+				<p className='mt-4 text-xl text-green-600 text-center'>
+					An invite email successfully sent!
+				</p>
+			);
+		} else if (isFailure) {
+			element = (
+				<p className='mt-4 text-xl text-red-600 text-center'>
+					Invite email was not sent, please try again...
+				</p>
+			);
+		}
+		return element;
+	};
+
 
   const closeModal = () => {
     setIsFailure(false)
@@ -129,14 +153,35 @@ function AddParticipantModal({ eventId }) {
                     onChange={handleChange}
                     required
                   />
-                  <button
+				  {
+					validEmail && !usedEmail ? (
+                        <button
                     type="submit"
                     className="bg-[#0056D6] md:px-12 md:py-4 py-2.5 px-5 text-white rounded-lg"
                   >
                     Add
                   </button>
+					) : (
+						<button
+						disabled
+						type="submit"
+						className="bg-[#0056D6] md:px-12 md:py-4 py-2.5 px-5 text-white rounded-lg"
+					  >
+						Add
+					  </button>
+					)
+				  }
+
                 </div>
                 <small className="text-red-500">{formError.email}</small>
+				{participants?.map(
+					(item) =>
+						item === email && (
+							<small className='text-red-500'>
+								This participant has already been added
+							</small>
+						)
+				)}
               </form>
               <div className=" h-[300px] overflow-y-scroll my-12">
                 {participants.map((participant, index) => (

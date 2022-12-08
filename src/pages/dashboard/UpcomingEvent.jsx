@@ -35,7 +35,7 @@ const UpcomingEvent = () => {
 		filteredEvents.length === 0 ? (
 			<Event
 				filteredEvents={filteredEvents}
-				status={status === "not-decided" ? "upcoming" : "Rsvp"}
+				status={status === 'not-decided' ? "upcoming" : "Rsvp"}
 			/>
 		) : (
 			filteredEvents.map(
@@ -45,9 +45,11 @@ const UpcomingEvent = () => {
 					event_description,
 					final_event_date,
 					participant_number,
-				}) => (
+				}) => {
+					
+					return (
 					<Event
-						status={status}
+					status={status}
 						key={_id}
 						id={_id}
 						event_title={event_title}
@@ -55,8 +57,8 @@ const UpcomingEvent = () => {
 						final_event_date={final_event_date}
 						participant_number={participant_number}
 						filteredEvents={filteredEvents}
-					/>
-				)
+					/>)
+				}
 			)
 		);
 
@@ -172,18 +174,18 @@ const UpcomingEvent = () => {
 						<li>
 							<Button
 								className={`${
-									status === "not-decided" ? "pb-3 border-[#0056D6] border-b-4 " : ""
+									status === 'not-decided' ? "pb-3 border-[#0056D6] border-b-4 " : ""
 								}'pb-3 outline-0 border-0 text-[#717172] bg-inherit lg:text-lg'`}
-								onClick={() => setStatus("not-decided")}>
+								onClick={() => setStatus('not-decided')}>
 								Upcoming Event
 							</Button>
 						</li>
 						<li>
 							<Button
 								className={`${
-									status === "decided" ? "pb-3 border-[#0056D6] border-b-4 " : ""
+									status === 'decided' ? "pb-3 border-[#0056D6] border-b-4 " : ""
 								}' pb-3 outline-0 border-0 text-[#717172] bg-inherit lg:text-lg'`}
-								onClick={() => setStatus("decided")}>
+								onClick={() => setStatus('decided')}>
 								Reserved Event
 							</Button>
 						</li>
@@ -193,7 +195,7 @@ const UpcomingEvent = () => {
 					className={`${
 						filteredEvents.length === 0 ? "pt-12" : "pt-[10px]"
 					} "flex flex-col justify-center items-center gap-y-8 lg:border border-solid border-[#CDCDCD] lg:pb-[200px] lg:px-[20px] max-h-[30rem] overflow-y-scroll "`}>
-					{status === "not-decided" && (
+					{status === 'not-decided' && (
 						<div
 							className={`${
 								filteredEvents.length === 0
@@ -203,7 +205,7 @@ const UpcomingEvent = () => {
 							{userEvents}
 						</div>
 					)}
-					{status === "decided" && (
+					{status === 'decided' && (
 						<div
 							className={`${
 								filteredEvents.length === 0
