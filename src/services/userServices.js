@@ -87,6 +87,7 @@ const getParticipants = async (id) => {
   try {
     const dataObj = await fetchApi.get(`${BASE_URL}/${GET_PARTICIPANTS}/${id}`);
     const datas = await dataObj.data;
+    console.log(datas);
     return datas;
   } catch (err) {
     return err;
