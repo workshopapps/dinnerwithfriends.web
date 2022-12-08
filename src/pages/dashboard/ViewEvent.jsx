@@ -46,7 +46,7 @@ const ViewEvent = () => {
   return (
     <>
       <Navbar />
-      <div className="font-['DM_Sans'] w-[90%] lg:w-4/5 mx-auto my-4 sm:max-w-xl md:max-w-2xl sm:border sm:border-slate-300 sm:rounded-md">
+      <div className="font-['DM_Sans'] w-[90%] lg:w-4/5 mx-auto mt-[100px] my-4 sm:max-w-xl md:max-w-2xl sm:border sm:border-slate-300 sm:rounded-md">
         <main className="sm:p-8 mx-auto">
           <section className="text-center py-5 md:py-0">
             <div className="sm:border-b-2 sm:border-dashed sm:border-slate-300 py-5">

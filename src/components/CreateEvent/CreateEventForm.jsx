@@ -99,7 +99,7 @@ const CreateEventForm = () => {
 	}, [preferredDate, endDate, startDate]);
 
 	return (
-		<div className='w-full py-8'>
+		<div className='w-full py-8 pt-[6rem] lg:pt-[7rem]'>
 			<h1 className='text-xl font-bold text-center'>Create Catchup Event</h1>
 			<div className='mt-6'>
 				<div className='flex flex-col mb-4'>
