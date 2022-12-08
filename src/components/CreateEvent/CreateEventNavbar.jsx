@@ -1,10 +1,10 @@
-import React, { useState }  from "react";
-import googleCalendar from "../../assets/img/g-calendar.svg"
-import { MdSpaceDashboard } from "react-icons/md"
-import { FiSettings, FiLogIn } from "react-icons/fi"
+import React, { useState } from "react";
+import googleCalendar from "../../assets/img/g-calendar.svg";
+import { MdSpaceDashboard } from "react-icons/md";
+import { FiSettings, FiLogIn } from "react-icons/fi";
 import menuStyles from "./createEvent.module.css";
 import { Link } from "react-router-dom";
-import avatar from "../../assets/img/Avatar.png"
+import avatar from "../../assets/img/Avatar.png";
 import Logo from "../Logo";
 import Button from "../Button";
 /* global gapi */
@@ -89,22 +89,41 @@ const CreateEventNavbar = ({setModal}) => {
     };
 
 	return (
-    <nav className={`transition ease-in duration-400 bg-white md:px-10 px-2.5 md:h-[85px] md:pb-2 fixed w-full z-20 top-0 left-0 border-b border-white ${display ? 'h-[300px]' : 'h-[59px]'}`}>
-      <div className="h-[45px] md:h-[76px] py-4 md:py-0 bg-transparent container flex flex-wrap items-center justify-between mx-auto">
-        <Logo />
-        <div className="flex md:order-2">
-          <div  onClick={toggleOpen} className="hidden md:block cursor-pointer">
-            <span>
-              <img src={avatar} alt="" className="w-10" />
-            </span>
-          </div>
-          <div onClick={hamburger} className=" z-[100] w-[30px] h-[30px] px-1 py-1 text-gray-500 rounded-lg md:hidden cursor-pointer">
-            <div style={{transform: display? "translateY(5.5px) rotate(45deg)" : "rotate(0)"}} className="transition ease-in duration-200 bg-black w-[20px] h-[1.5px] mt-1"></div>
-            <div style={{opacity: display? 0 : 1}} className="transition ease-in duration-200 bg-black w-[20px] h-[1.5px] mt-1"></div>
-            <div style={{transform: display? "translateY(-5.5px) rotate(-45deg)" : "rotate(0)"}} className="transition ease-in duration-200 bg-black w-[20px] h-[1.5px] mt-1"></div>
-          </div>
-        </div>
-      </div>
+		<nav
+			className={`transition ease-in duration-400 bg-white md:px-10 px-2.5 md:h-[85px] md:pb-2 fixed w-full z-20 top-0 left-0 border-b border-white ${
+				display ? "h-[300px]" : "h-[59px]"
+			}`}>
+			<div className='h-[45px] md:h-[76px] py-4 md:py-0 bg-transparent container flex flex-wrap items-center justify-between mx-auto'>
+				<Logo />
+				<div className='flex md:order-2'>
+					<div onClick={toggleOpen} className='hidden md:block cursor-pointer'>
+						<span>
+							<img src={avatar} alt='' className='w-10' />
+						</span>
+					</div>
+					<div
+						onClick={hamburger}
+						className=' z-[100] w-[30px] h-[30px] px-1 py-1 text-gray-500 rounded-lg md:hidden cursor-pointer'>
+						<div
+							style={{
+								transform: display
+									? "translateY(5.5px) rotate(45deg)"
+									: "rotate(0)",
+							}}
+							className='transition ease-in duration-200 bg-black w-[20px] h-[1.5px] mt-1'></div>
+						<div
+							style={{ opacity: display ? 0 : 1 }}
+							className='transition ease-in duration-200 bg-black w-[20px] h-[1.5px] mt-1'></div>
+						<div
+							style={{
+								transform: display
+									? "translateY(-5.5px) rotate(-45deg)"
+									: "rotate(0)",
+							}}
+							className='transition ease-in duration-200 bg-black w-[20px] h-[1.5px] mt-1'></div>
+					</div>
+				</div>
+			</div>
 
       <div class="text-left  md:block items-center">
         {open &&

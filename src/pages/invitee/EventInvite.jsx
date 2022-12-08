@@ -7,45 +7,48 @@ const EventInvite = () => {
   const [inviteDetails, setInviteDetails] = useState({
     fullname: "",
     email: "",
-    preferred_date_time: ""
+    preferred_date_time: "",
   });
   const navigate = useNavigate();
   const [declinedInvite, setDeclinedInvite] = useState(false);
   let { eventId } = useParams();
 
   const changeInviteDetails = (e) => {
-    const {value, name} = e.target;
+    const { value, name } = e.target;
 
     setInviteDetails({
       ...inviteDetails,
-      [name]: value
-    })
-  }
+      [name]: value,
+    });
+  };
 
   const addParticipant = (e) => {
     e.preventDefault();
     const requestOptions = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({...inviteDetails, event_id: eventId})
-    }
-    fetch('https://prybar.onrender.com/api/v1/participant/addpart', requestOptions)
-    .then(response => response.json())
-    .then((result) => {
-      if(result.status === "success"){
-        setTimeout(() => {
-          navigate('/event_invite/event_invite_response')
-        }, 2000)
-      }
-    })
-  }
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ ...inviteDetails, event_id: eventId }),
+    };
+    fetch(
+      "https://prybar.onrender.com/api/v1/participant/addpart",
+      requestOptions
+    )
+      .then((response) => response.json())
+      .then((result) => {
+        if (result.status === "success") {
+          setTimeout(() => {
+            navigate("/event_invite/event_invite_response");
+          }, 2000);
+        }
+      });
+  };
 
   const declineInvite = () => {
     setDeclinedInvite(true);
     setTimeout(() => {
-      navigate('/')
-    }, 2000)
-  }
+      navigate("/");
+    }, 2000);
+  };
 
   return (
     <div>
@@ -58,7 +61,12 @@ const EventInvite = () => {
             <span className="text-blue-700 font-bold"> Mathew Mathais.</span>
             <br /> You can view the details below..
           </p>
-          {declinedInvite ? <p className="font-bold text-red-900">You have succesfully declined this invite... Redirecting to your homepage soon</p> : null}
+          {declinedInvite ? (
+            <p className="font-bold text-red-900">
+              You have succesfully declined this invite... Redirecting to your
+              homepage soon
+            </p>
+          ) : null}
         </div>
         <div className="my-8 border py-5 rounded-lg flex justify-center items-center ">
           <form onSubmit={addParticipant}>

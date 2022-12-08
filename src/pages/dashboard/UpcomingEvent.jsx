@@ -15,21 +15,21 @@ const UpcomingEvent = () => {
 	const { events, setEvents } = CatchUpEventContextUse();
 	const [modal, setModal] = useState(false);
 
-	useEffect(() => {
-		async function fetchData() {
-			const data = await userServices.getAllEvents();
-			setEvents(data);
-			const eventsJson = JSON.stringify(data);
-			localStorage.setItem("eventsArr", eventsJson);
-		}
-		fetchData();
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []);
+  useEffect(() => {
+    async function fetchData() {
+      const data = await userServices.getAllEvents();
+      setEvents(data);
+      const eventsJson = JSON.stringify(data);
+      localStorage.setItem("eventsArr", eventsJson);
+    }
+    fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-	const filteredEvents =
-	events.length === 0
-	? events
-	: events.filter((event) => event.published === status);
+  const filteredEvents =
+    events.length === 0
+      ? events
+      : events.filter((event) => event.published === status);
 
 	const userEvents =
 		filteredEvents.length === 0 ? (
@@ -60,44 +60,44 @@ const UpcomingEvent = () => {
 			)
 		);
 
-	function authenticate() {
-		return gapi.auth2
-			.getAuthInstance()
-			.signIn({
-				scope:
-					"https://www.googleapis.com/auth/calendar https://www.googleapis.com/auth/calendar.readonly",
-				plugin_name: "dinnerwithfriends",
-			})
-			.then(
-				function () {
-					console.log("Sign-in successful");
-				},
-				function (err) {
-					console.error("Error signing in", err);
-				}
-			);
-	}
+  function authenticate() {
+    return gapi.auth2
+      .getAuthInstance()
+      .signIn({
+        scope:
+          "https://www.googleapis.com/auth/calendar https://www.googleapis.com/auth/calendar.readonly",
+        plugin_name: "dinnerwithfriends",
+      })
+      .then(
+        function () {
+          console.log("Sign-in successful");
+        },
+        function (err) {
+          console.error("Error signing in", err);
+        }
+      );
+  }
 
-	function loadClient() {
-		gapi.client.setApiKey(`${process.env.REACT_APP_SECRET_CODE}`);
-		return gapi.client
-			.load("https://content.googleapis.com/discovery/v1/apis/calendar/v3/rest")
-			.then(
-				function () {
-					console.log("GAPI client loaded for API");
-					execute();
-				},
-				function (err) {
-					console.error("Error loading GAPI client for API", err);
-				}
-			);
-	}
-	// Make sure the client is loaded and sign-in is complete before calling this method.
-	function execute() {
-		return gapi.client.calendar.calendarList.list({}).then(
-			function (response) {
-				// Handle the results here (response.result has the parsed body).
-				console.log("Response", response);
+  function loadClient() {
+    gapi.client.setApiKey(`${process.env.REACT_APP_SECRET_CODE}`);
+    return gapi.client
+      .load("https://content.googleapis.com/discovery/v1/apis/calendar/v3/rest")
+      .then(
+        function () {
+          console.log("GAPI client loaded for API");
+          execute();
+        },
+        function (err) {
+          console.error("Error loading GAPI client for API", err);
+        }
+      );
+  }
+  // Make sure the client is loaded and sign-in is complete before calling this method.
+  function execute() {
+    return gapi.client.calendar.calendarList.list({}).then(
+      function (response) {
+        // Handle the results here (response.result has the parsed body).
+        console.log("Response", response);
 
 				if (response.status === 200) {
 					setModal(true);
@@ -115,9 +115,9 @@ const UpcomingEvent = () => {
 		});
 	});
 
-	const googleCalenderApi = async () => {
-		await authenticate().then(loadClient);
-	};
+  const googleCalenderApi = async () => {
+    await authenticate().then(loadClient);
+  };
 
 	return (
 		<>
