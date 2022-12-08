@@ -7,4 +7,4 @@ export const CREATE_EVENT = "event";
 export const GET_EVENTS = "event";
 export const GOOGLE_CALENDER = "calender";
 export const SEND_INVITE = "invitation";
-export const GET_PARTICIPANTS = "participant";
+export const GET_PARTICIPANTS = "event/participants";
