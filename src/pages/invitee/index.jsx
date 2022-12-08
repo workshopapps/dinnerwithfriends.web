@@ -51,7 +51,6 @@ const Invitee = () => {
           navigate('/event_invite/event_invite_response')
         }, 2000)
       }
-      console.log(result)
     })
   }
   return (

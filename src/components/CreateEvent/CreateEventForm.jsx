@@ -158,6 +158,7 @@ const CreateEventForm = () => {
           </small>
         </div>
 
+ fec-108-notification-preference-settings-page
         <div className="flex flex-col mb-4">
           <label htmlFor="eventType" className="text-sm font-semibold">
             Event Type
@@ -264,6 +265,172 @@ const CreateEventForm = () => {
             <small className="text-red-600 text-[10px] mt-2">
               {errors?.end_date}
             </small>
+	return (
+		<div className='w-full py-8 pt-[6rem] lg:pt-[7rem]'>
+			<h1 className='text-xl font-bold text-center'>Create Catchup Event</h1>
+			<div className='mt-6'>
+				<div className='flex flex-col mb-4'>
+					<label htmlFor='title' className='text-sm font-semibold'>
+						Event Invite
+					</label>
+					<input
+						required
+						id='title'
+						type='text'
+						value={formValues.event_title}
+						onChange={(e) =>
+							setFormValues({ ...formValues, event_title: e.target.value })
+						}
+						placeholder='Time out with friends'
+						className='p-3 bg-white border border-[#0000004D] text-[#151517] rounded-[4px] text-sm mt-3 outline-none'
+					/>
+					<small className='text-red-600 text-[10px] mt-2'>
+						{errors?.event_title}
+					</small>
+				</div>
+				<div className='flex flex-col mb-4'>
+					<label htmlFor='desc' className='text-sm font-semibold'>
+						Description
+					</label>
+					<textarea
+						required
+						id='desc'
+						value={formValues.event_description}
+						onChange={(e) =>
+							setFormValues({
+								...formValues,
+								event_description: e.target.value,
+							})
+						}
+						placeholder='This Event should be a wonderful hangout. I will want everyone to be available for this event. Let me know when you will be free from the link I will send to you.'
+						className='p-3 bg-white border border-[#0000004D] text-[#151517]  rounded-[4px] text-sm mt-3 outline-none h-[120px]'
+					/>
+					<small className='text-red-600 text-[10px] mt-2'>
+						{errors?.event_description}{" "}
+					</small>
+				</div>
+				<div className='flex flex-col mb-4'>
+					<label htmlFor='location' className='text-sm font-semibold'>
+						Location
+					</label>
+					<input
+						required
+						value={formValues.location}
+						onChange={(e) =>
+							setFormValues({ ...formValues, location: e.target.value })
+						}
+						id='location'
+						pattern='[A-Za-z][A-Za-z ]{2,30}$'
+						type='text'
+						placeholder='Sheraton Hotels'
+						className='p-3 bg-white border border-[#0000004D] text-[#151517] rounded-[4px] text-sm mt-3 outline-none'
+					/>
+					<small className='text-red-600 text-[10px] mt-2'>
+						{errors?.location}
+					</small>
+				</div>
+				<div className='flex flex-col mb-4'>
+					<label htmlFor='eventType' className='text-sm font-semibold'>
+						Event Type
+					</label>
+					<input
+						required
+						value={formValues.event_type}
+						onChange={(e) =>
+							setFormValues({ ...formValues, event_type: e.target.value })
+						}
+						id='eventType'
+						type='text'
+						placeholder='Dinner'
+						className='p-3 bg-white border border-[#0000004D] text-[#151517] rounded-[4px] text-sm mt-3 outline-none'
+					/>
+					<small className='text-red-600 text-[10px] mt-2'>
+						{errors?.event_type}{" "}
+					</small>
+				</div>
+				<div className='flex flex-col mb-4'>
+					<label htmlFor='noOfParticipants' className='text-sm font-semibold'>
+						Number of Participants
+					</label>
+					<input
+						required
+						id='noOfParticipants'
+						value={formValues.participant_number}
+						onChange={(e) =>
+							setFormValues({
+								...formValues,
+								participant_number: e.target.value,
+							})
+						}
+						type='number'
+						placeholder='5'
+						className='p-3 bg-white border border-[#0000004D] text-[#151517] rounded-[4px] text-sm mt-3 outline-none w-fit'
+					/>
+					<small className='text-red-600 text-[10px] mt-2'>
+						{errors?.participant_number}{" "}
+					</small>
+				</div>
+				<div className='flex flex-col md:flex-row md:gap-[1.25rem]  w-full'>
+					<div className='flex flex-col mb-4 flex-[1] relative'>
+						<label htmlFor='startDate' className='text-sm font-semibold'>
+							Start Date
+						</label>
+						<div className='flex mt-3 items-center bg-white relative p-3 border border-[#0000004D] rounded-[4px] w-full'>
+							<input
+								required
+								id='startDate'
+								type='text'
+								disabled
+								value={startDate}
+								placeholder='17/11/2022'
+								className='flex-[5] bg-transparent  text-[#151517]  text-sm outline-none'
+							/>
+							<span
+								onClick={() => setShowCalendar(!showCalendar)}
+								className='relative flex-[.5] justify-center flex cursor-pointer'>
+								<IoCalendarOutline />
+							</span>
+						</div>
+						<small className='text-red-600 text-[10px] mt-2'>
+							{errors?.start_date}
+						</small>
+						<div
+							className={`w-full transition-all duration-150 ${
+								showCalendar
+									? "flex absolute top-[75px] left-0 right-0 z-10"
+									: "hidden"
+							}`}>
+							<SingleCalendar
+								id='startDate'
+								setShowCalendar={setShowCalendar}
+								showCalendar={showCalendar}
+							/>
+						</div>
+					</div>
+					<div className='flex flex-col mb-4 flex-[1] relative'>
+						<label htmlFor='endDate' className='text-sm font-semibold'>
+							End Date
+						</label>
+						<div className='flex mt-3 items-center bg-white relative p-3 border border-[#0000004D] rounded-[4px] w-full'>
+							<input
+								required
+								id='endDate'
+								type='text'
+								disabled
+								value={endDate}
+								placeholder='23/11/2022'
+								className='flex-[5] bg-transparent  text-[#151517]  text-sm outline-none'
+							/>
+							<span
+								onClick={() => setShowCalendar2(!showCalendar2)}
+								className='relative flex-[.5] justify-center flex cursor-pointer'>
+								<IoCalendarOutline />
+							</span>
+						</div>
+						<small className='text-red-600 text-[10px] mt-2'>
+							{errors?.end_date}
+						</small>
+ dev
 
             <div
               className={`w-full transition-all duration-150 ${

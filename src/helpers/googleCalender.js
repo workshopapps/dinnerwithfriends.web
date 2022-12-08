@@ -22,7 +22,6 @@ export const googleCalender = async() => {
             }
         )
       );
-    //   console.log(...userEvents)
       return userEvents
 }
 

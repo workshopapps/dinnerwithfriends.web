@@ -7,12 +7,11 @@ import { BsPlus } from "react-icons/bs";
 import { Link, useLocation } from "react-router-dom";
 import { MdOutlineCancel } from "react-icons/md";
 
-
 import CreateEventNavbar from "../../components/CreateEvent/CreateEventNavbar";
 import clipboard from "./icons/clipboard.svg";
 import checkmark from "./icons/checkmark.svg";
 
-const EMAIL_REGEX = /^[a-zA-Z][a-zA-Z0-9-_](?=.*[.]).{3,23}$/;
+const EMAIL_REGEX = /^[a-zA-Z][a-zA-Z0-9-_](?=.*[.]).{3,100}$/;
 
 const EventSummary = () => {
   const [email, setEmail] = useState("");
@@ -22,6 +21,8 @@ const EventSummary = () => {
   const [popup, setPopup] = useState(false);
   const [copied, setCopied] = useState(false);
 
+  const [participant, setParticipant] = useState([]);
+
   const location = useLocation();
 
   useEffect(() => {
@@ -30,7 +31,6 @@ const EventSummary = () => {
     } else if (!popup) {
       document.body.style.overflowY = "scroll";
     }
-    console.log(popup);
   }, [popup]);
 
   // an effect that tests if the email matches the regex requirements
@@ -38,8 +38,6 @@ const EventSummary = () => {
     const result = EMAIL_REGEX.test(email);
     setValidEmail(result);
   }, [email]);
-
-  const [participant, setParticipant] = useState([]);
 
   const addParticipant = (email) => {
     const newParticipant = [
@@ -51,13 +49,13 @@ const EventSummary = () => {
     ];
     setParticipant(newParticipant);
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!email) return;
     addParticipant(email);
     setEmail("");
-    setEmailFocus(true)
-    setValidEmail(false)
+    setValidEmail(false);
   };
 
   const copyLink = () => {
@@ -80,7 +78,7 @@ const EventSummary = () => {
   return (
     <div>
       {popup && (
-        <div className=" w-full h-full bg-black bg-opacity-50 fixed">
+        <div className="z-[1000px] w-full h-full bg-black bg-opacity-50 fixed">
           <div className=" p-6 flex flex-col  justify-center items-center rounded-2xl w-[92%] max-w-[550px] absolute bg-white left-2/4 top-[50%] -translate-y-2/4 -translate-x-2/4">
             <div
               onClick={() => setPopup(false)}
@@ -138,7 +136,7 @@ const EventSummary = () => {
         </div>
       )}
       <CreateEventNavbar />
-      <div className="mt-2 md:mx-14 mx-5 my-10">
+      <div className="mt-[100px] md:mx-14 mx-5 my-10">
         <h2 className="mt-10 text-3xl font-bold">Event Summary</h2>
         <div className="mt-4 border w-full p-5 rounded-lg shadow text-[#59595B]">
           <h5 className="text-2xl font-bold">{location.state.event_title}</h5>
@@ -168,7 +166,6 @@ const EventSummary = () => {
           <p className="text-lg font-bold md:mr-7">
             Participant({participant.length})
           </p>
-          
         </div>
 
         <div className="w-full mt-5 bg-[#E7F0FF] flex justify-between py-2 md:px-3 px-1">
@@ -183,7 +180,7 @@ const EventSummary = () => {
             onFocus={() => setEmailFocus(true)}
             onBlur={() => setEmailFocus(false)}
           />
-          {validEmail ? (
+          {validEmail   ? (
             <button
               className="bg-[#0056D6] md:px-12 md:py-4 py-2.5 px-5 text-white rounded-lg"
               onClick={handleSubmit}
@@ -191,7 +188,7 @@ const EventSummary = () => {
               Done
             </button>
           ) : (
-            <button className="bg-[#0056D6] md:px-12 md:py-4 py-2.5 px-5 text-white rounded-lg">
+            <button disabled className="bg-blue-600 md:px-12 md:py-4 py-2.5 px-5 text-white rounded-lg">
               Done
             </button>
           )}
@@ -203,6 +200,7 @@ const EventSummary = () => {
           >
             Enter a valid email address
           </p>
+          
         </div>
 
         <div className="my-12">
