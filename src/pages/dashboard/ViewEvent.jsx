@@ -34,13 +34,12 @@ const ViewEvent = () => {
   const { id } = useParams();
   useEffect(() => {
     const getParticipants = async () => {
-    const data = await userServices.getParticipants(id);
+      const data = await userServices.getParticipants(id);
       setParticipants(data);
-};
-console.log(participants);
-getParticipants();
-
-}, [id]);
+    };
+    console.log(participants);
+    getParticipants();
+  }, []);
 
   return (
     <>
@@ -78,11 +77,11 @@ getParticipants();
               Agreed Date
               {singleEvent?.final_event_date === null ? (
                 <span className="bg-[#E7F0FF] text-[#003585] text-xs px-2 py-1 font-semibold rounded ml-1">
-                 Not Decided
+                  Not Decided
                 </span>
               ) : (
                 <span className="bg-[#E7F0FF] text-[#003585] text-xs px-2 py-1 font-semibold rounded ml-1">
-                   {singleEvent?.final_event_date}
+                  {singleEvent?.final_event_date}
                 </span>
               )}
             </aside>
@@ -105,12 +104,20 @@ getParticipants();
                       />
                       <div className="space-y-[-3px]">
                         <h4 className="font-semibold text-sm">
-                        {invitee.position}
-													{participants.indexOf(invitee) + 1}	
-													{(participants.indexOf(invitee) + 1) % 10 === 1 ? <span>st</span> : (participants.indexOf(invitee) + 1) % 10 === 2 ? <span>nd</span> : (participants.indexOf(invitee) + 1) % 10 === 3 ? <span>rd</span> : <span>th</span>}	
-													&#160;
-													{""}
-													Invitee
+                          {invitee.position}
+                          {participants.indexOf(invitee) + 1}
+                          {(participants.indexOf(invitee) + 1) % 10 === 1 ? (
+                            <span>st</span>
+                          ) : (participants.indexOf(invitee) + 1) % 10 === 2 ? (
+                            <span>nd</span>
+                          ) : (participants.indexOf(invitee) + 1) % 10 === 3 ? (
+                            <span>rd</span>
+                          ) : (
+                            <span>th</span>
+                          )}
+                          &#160;
+                          {""}
+                          Invitee
                         </h4>
                         <p className="text-gray-600 text-xs md:text-sm">
                           {invitee.fullname}
