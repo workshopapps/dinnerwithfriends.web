@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-
 import { CiLocationOn, CiCalendar } from "react-icons/ci";
 import { CgMenuLeftAlt } from "react-icons/cg";
 import { AiOutlineCloseCircle, AiOutlineUser } from "react-icons/ai";
@@ -8,10 +7,12 @@ import { Link, useLocation } from "react-router-dom";
 
 import CreateEventNavbar from "../../components/CreateEvent/CreateEventNavbar";
 import EventSummaryModal from "../../components/EventSummaryModal";
+import userServices from "../../services/userServices";
 
 const EventSummary = () => {
 	const [email, setEmail] = useState("");
 	const [participant, setParticipant] = useState([]);
+  const [isSubmit, setIsSubmit] = useState(false);
 
 	const [formError, setFormError] = useState({});
 	const [validEmail, setValidEmail] = useState(false);
@@ -55,9 +56,10 @@ const EventSummary = () => {
 		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [formError]);
-
+  
 	useEffect(() => {
-		participant?.map((item) => item === email && setUsedEmail(true));
+    participant?.map((item) => item === email && setUsedEmail(true));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [email]);
 
 	const handleChange = (e) => {
@@ -73,6 +75,7 @@ const EventSummary = () => {
 		setValidEmail(false);
 	};
 
+
 	const copyLink = () => {
 		setCopied(true);
 		navigator.clipboard.writeText(
@@ -87,6 +90,23 @@ const EventSummary = () => {
 		const deletefromList = participant;
 		deletefromList.splice(index, 1);
 		setParticipant([...deletefromList]);
+	};
+
+  const saveValidEmail = async () => {
+		const invitees = {
+			email_list: participant,
+			event_id: location.state.id,
+		};
+		setIsSubmit(true);
+		const result = await userServices.sendInvite(invitees);
+		if (result.status === "fail") {
+			setIsSubmit(false);
+		}
+
+		if (result.status === "success") {
+			setParticipant([]);
+			setEmail("");
+		}
 	};
 
 	return (
@@ -107,7 +127,6 @@ const EventSummary = () => {
 						<div className='flex items-center'>
 							<CiCalendar className='text-xl' />
 							<p className='text-base font-normal ml-2'>
-								{/* {location.state.start_date} - {location.state.end_date}  */}
 								{location.state.host_prefered_time}
 							</p>
 						</div>
@@ -121,7 +140,7 @@ const EventSummary = () => {
 				</div>
 				<div className='flex md:justify-start justify-between my-5'>
 					<p className='text-lg font-bold md:mr-7'>
-						Participant({participant.length})
+						Participants({participant.length})
 					</p>
 				</div>
 
@@ -186,10 +205,10 @@ const EventSummary = () => {
 						Back
 					</Link>
 					<div
-						onClick={() => setPopup(true)}
+						 onClick={saveValidEmail}
 						className='rounded flex md:px-6 px-4 py-2.5 bg-[#0056D6] text-white items-center cursor-pointer'>
 						<p className='md:text-xl text-base font-medium md:mr-2'>
-							Send invite
+            {isSubmit ? "Loading..." : "Send Invite"}
 						</p>
 						<BsPlus className='text-xl' />
 					</div>

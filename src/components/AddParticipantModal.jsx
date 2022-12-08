@@ -43,10 +43,6 @@ function AddParticipantModal({ eventId }) {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [formError]);
 
-  useEffect(() => {
-		participants?.map((item) => item === email && setUsedEmail(true));
-	}, [email]);
-
 	const handleChange = (e) => {
 		setEmail(e.target.value);
 		setFormError(validate(email));
