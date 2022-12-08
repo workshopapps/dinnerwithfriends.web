@@ -11,25 +11,26 @@ import CreateEventNavbar from "../../components/CreateEvent/CreateEventNavbar";
 import CalenderSyncModal from "../../components/CalenderSyncModal";
 /* global gapi */
 const UpcomingEvent = () => {
-	const [status, setStatus] = useState('not-decided');
+	const [status, setStatus] = useState("not-decided");
 	const { events, setEvents } = CatchUpEventContextUse();
 	const [modal, setModal] = useState(false);
 
-	useEffect(() => {
-		
-		fetchData();
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []);
-	async function fetchData() {
-				const data = await userServices.getAllEvents();
-				setEvents(data);
-		const eventsJson = JSON.stringify(data)
-		localStorage.setItem('eventsArr', eventsJson)
-			}
-	const filteredEvents =
-		events.length === 0
-			? events
-			: events.filter((event) => event.published === status);
+  useEffect(() => {
+    async function fetchData() {
+      const data = await userServices.getAllEvents();
+      setEvents(data);
+      const eventsJson = JSON.stringify(data);
+      localStorage.setItem("eventsArr", eventsJson);
+    }
+    fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const filteredEvents =
+    events.length === 0
+      ? events
+      : events.filter((event) => event.published === status);
+
 	const userEvents =
 		filteredEvents.length === 0 ? (
 			<Event
@@ -61,44 +62,44 @@ const UpcomingEvent = () => {
 			)
 		);
 
-	function authenticate() {
-		return gapi.auth2
-			.getAuthInstance()
-			.signIn({
-				scope:
-					"https://www.googleapis.com/auth/calendar https://www.googleapis.com/auth/calendar.readonly",
-				plugin_name: "dinnerwithfriends",
-			})
-			.then(
-				function () {
-					console.log("Sign-in successful");
-				},
-				function (err) {
-					console.error("Error signing in", err);
-				}
-			);
-	}
+  function authenticate() {
+    return gapi.auth2
+      .getAuthInstance()
+      .signIn({
+        scope:
+          "https://www.googleapis.com/auth/calendar https://www.googleapis.com/auth/calendar.readonly",
+        plugin_name: "dinnerwithfriends",
+      })
+      .then(
+        function () {
+          console.log("Sign-in successful");
+        },
+        function (err) {
+          console.error("Error signing in", err);
+        }
+      );
+  }
 
-	function loadClient() {
-		gapi.client.setApiKey(`${process.env.REACT_APP_SECRET_CODE}`);
-		return gapi.client
-			.load("https://content.googleapis.com/discovery/v1/apis/calendar/v3/rest")
-			.then(
-				function () {
-					console.log("GAPI client loaded for API");
-					execute();
-				},
-				function (err) {
-					console.error("Error loading GAPI client for API", err);
-				}
-			);
-	}
-	// Make sure the client is loaded and sign-in is complete before calling this method.
-	function execute() {
-		return gapi.client.calendar.calendarList.list({}).then(
-			function (response) {
-				// Handle the results here (response.result has the parsed body).
-				console.log("Response", response);
+  function loadClient() {
+    gapi.client.setApiKey(`${process.env.REACT_APP_SECRET_CODE}`);
+    return gapi.client
+      .load("https://content.googleapis.com/discovery/v1/apis/calendar/v3/rest")
+      .then(
+        function () {
+          console.log("GAPI client loaded for API");
+          execute();
+        },
+        function (err) {
+          console.error("Error loading GAPI client for API", err);
+        }
+      );
+  }
+  // Make sure the client is loaded and sign-in is complete before calling this method.
+  function execute() {
+    return gapi.client.calendar.calendarList.list({}).then(
+      function (response) {
+        // Handle the results here (response.result has the parsed body).
+        console.log("Response", response);
 
 				if (response.status === 200) {
 					setModal(true);
@@ -112,17 +113,17 @@ const UpcomingEvent = () => {
 	gapi.load("client:auth2", function () {
 		gapi.auth2.init({
 			client_id:
-				"102076896830-4il8ncmrd6qfoippk2ut4uujb8cci54v.apps.googleusercontent.com",
+			`${process.env.REACT_APP_CLIENT_ID}`,
 		});
 	});
 
-	const googleCalenderApi = async () => {
-		await authenticate().then(loadClient);
-	};
+  const googleCalenderApi = async () => {
+    await authenticate().then(loadClient);
+  };
 
 	return (
 		<>
-			<CreateEventNavbar />
+			<CreateEventNavbar setModal={setModal}/>
 			<section className='px-[22px] lg:px-20 pt-[6rem] lg:pt-[7rem] mb-16'>
 				<div className='flex flex-col lg:flex-row justify-center lg:justify-between gap-x-4 mb-4 lg:mb-8'>
 					<div className='flex flex-col justify-center items-center lg:justify-start lg:items-start gap-y-4'>

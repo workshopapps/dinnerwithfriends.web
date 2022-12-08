@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { CatchUpEventContextUse } from "../context/CatchUpEventContext";
 import { IoMdClose } from "react-icons/io";
 import { MdDone } from "react-icons/md";
