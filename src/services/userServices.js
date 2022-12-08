@@ -108,6 +108,7 @@ const addToGoogleCalender = async (params) => {
 const sendInvite = async (params) => {
   try {
     const result = await fetchApi.post(`${BASE_URL}/${SEND_INVITE}`, params);
+    console.log(result)
     return result;
   } catch (err) {
     return err;

@@ -48,7 +48,7 @@ const CreateEventNavbar = ({setModal}) => {
     }
 
     function loadClient() {
-      gapi.client.setApiKey(`${process.env.REACT_APP_SECRET_CODE}`);
+      gapi.client.setApiKey("AIzaSyA7G2ANAJI6rm_DpTW84lsKUJT-c8bmirI");
       return gapi.client
         .load("https://content.googleapis.com/discovery/v1/apis/calendar/v3/rest")
         .then(
@@ -80,7 +80,7 @@ const CreateEventNavbar = ({setModal}) => {
     gapi.load("client:auth2", function () {
       gapi.auth2.init({
         client_id:
-        `${process.env.REACT_APP_CLIENT_ID}`,
+        "102076896830-4il8ncmrd6qfoippk2ut4uujb8cci54v.apps.googleusercontent.com",
       });
     });
 
