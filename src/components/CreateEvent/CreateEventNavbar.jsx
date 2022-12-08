@@ -33,7 +33,7 @@ const CreateEventNavbar = () => {
           <span className="self-center text-[#0056D6] text-3xl font-semibold whitespace-nowrap ">
             Catch
           </span>
-          <span className="self-center text-black text-3xl font-semibold whitespace-nowrap">
+          <span className='self-center text-black text-[1.2rem] md:text-2xl font-semibold whitespace-nowrap'>
             Up
           </span>
         </Link>

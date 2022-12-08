@@ -24,7 +24,7 @@ const profileTwo = () => {
           </div></Link>
           <div className="body_subtitles">
             <h5>Profile</h5>
-            <span className="notification_tab">Notifications</span>
+            <Link to='/notification'><span className="notification_tab">Notifications</span></Link>
           </div>
         </div>
 
