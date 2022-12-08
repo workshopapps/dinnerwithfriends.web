@@ -94,8 +94,8 @@ function AddParticipantModal({ eventId }) {
             className="fixed inset-0 w-full h-full bg-black opacity-60"
             onClick={() => setShowModal(false)}
           ></div>
-          <div className="relative my-6 mx-auto w-full">
-            <div className="w-[90%] lg:w-[40%] max-w-[500px] px-6 mx-auto border-0 rounded-lg shadow-lg relative flex flex-col bg-white outline-none focus:outline-none">
+          <div className="relative my-6 mx-auto w-full h-screen">
+            <div className="w-[90%] h-[500px] mt-12 lg:w-[40%] max-w-[500px] px-6 mx-auto border-0 rounded-lg shadow-lg relative flex flex-col bg-white outline-none focus:outline-none">
               <div className="flex justify-end my-5">
                 <div>
                   <span
@@ -125,7 +125,7 @@ function AddParticipantModal({ eventId }) {
                 </div>
                 <small className="text-red-500">{formError.email}</small>
               </form>
-              <div className="my-12">
+              <div className=" h-[300px] overflow-y-scroll my-12">
                 {participants.map((participant, index) => (
                   <div className="flex justify-between mb-4" key={index}>
                     <div className="flex text-[#59595B] items-center">
@@ -145,10 +145,10 @@ function AddParticipantModal({ eventId }) {
                   </div>
                 ))}
               </div>
-              <div>
+              <div className="flex justify-end">
                 {participants[0] && (
                   <button
-                    className=" w-full bg-[#0056D6] md:px-12 md:py-4 py-2.5 px-5 text-white rounded-lg"
+                    className=" w-[150px] mb-8 bg-[#0056D6] md:px-12 md:py-4 py-2.5 px-5 text-white rounded-lg"
                     onClick={saveValidEmail}
                   >
                     {isSubmit ? "Done" : " Loading..."}
