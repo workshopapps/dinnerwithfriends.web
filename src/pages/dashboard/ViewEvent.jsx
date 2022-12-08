@@ -6,22 +6,24 @@ import { CatchUpEventContextUse } from "../../context/CatchUpEventContext";
 import AddParticipantModal from "../../components/AddParticipantModal";
 import { BsPlus } from "react-icons/bs";
 import { useParams } from "react-router-dom";
+import userServices from "../../services/userServices";
 
 const ViewEvent = () => {
   const [isActive, setIsActive] = useState(false);
   const { setShowModal } = CatchUpEventContextUse();
   const [singleEvent, setSingleEvent] = useState({});
+  
 
-  const invitees = [
-    {
-      id: 1,
-      //   image: inviteeImg1,
-      position: "1st Invitee",
-      name: "Johnson Joshua",
-      dateNdTime: "Friday, 21 November 2022 - 4pm",
-      status: "Accepted",
-    },
-  ];
+  const participants = [
+		{
+			id: 1,
+
+			name: "Johnson Joshua",
+			dateNdTime: "Friday, 21 November 2022 - 4pm",
+			status: "Accepted",
+		},
+	];
+
   const toggleShowAccordion = (id) => {
     if (isActive === id) {
       setIsActive();
@@ -35,12 +37,13 @@ const ViewEvent = () => {
     const events = JSON.parse(eArr);
     const sEvent = events.find((event) => event._id === id);
     setSingleEvent(sEvent);
-
+    console.log(sEvent)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const { id } = useParams();
-
+    console.log(id);
+   
   return (
     <>
       <Navbar />
@@ -75,13 +78,13 @@ const ViewEvent = () => {
 
             <aside className="font-medium text-sm  md:mt-0">
               Agreed Date
-              {singleEvent?.final_event_date === !null ? (
+              {singleEvent?.final_event_date === null ? (
                 <span className="bg-[#E7F0FF] text-[#003585] text-xs px-2 py-1 font-semibold rounded ml-1">
-                  {singleEvent?.final_event_date}
+                  Not Decided
                 </span>
               ) : (
                 <span className="bg-[#E7F0FF] text-[#003585] text-xs px-2 py-1 font-semibold rounded ml-1">
-                  Not Decided
+                  {singleEvent?.final_event_date}
                 </span>
               )}
             </aside>
@@ -89,7 +92,7 @@ const ViewEvent = () => {
 
           <section className="flex flex-col justify-center">
             <div className="max-h-[17em] overflow-y-scroll scroll-blue-500 pr-4">
-              {invitees.map((invitee) => (
+              {participants.map((invitee) => (
                 <div
                   onClick={() => toggleShowAccordion(invitee.id)}
                   key={invitee.id}
@@ -103,11 +106,16 @@ const ViewEvent = () => {
                         alt=""
                       />
                       <div className="space-y-[-3px]">
-                        <h4 className="font-semibold text-sm">
-                          {invitee.position}
-                        </h4>
+                      <h4 className='font-semibold text-sm'>
+													{invitee.position}
+													{participants.indexOf(invitee) + 1}	
+													{(participants.indexOf(invitee) + 1) % 10 === 1 ? <span>st</span> : (participants.indexOf(invitee) + 1) % 10 === 2 ? <span>nd</span> : (participants.indexOf(invitee) + 1) % 10 === 3 ? <span>rd</span> : <span>th</span>}	
+													&#160;
+													{""}
+													Invitee
+												</h4>
                         <p className="text-gray-600 text-xs md:text-sm">
-                          {invitee.name}
+                          {invitee.fullname}
                         </p>
                       </div>
                     </div>
@@ -126,13 +134,13 @@ const ViewEvent = () => {
                       <h5 className="font-medium text-xs mb-3">
                         Selected Date/Time:{" "}
                         <span className="font-normal">
-                          {invitee.dateNdTime}
+                          {invitee.prefered_date_time}
                         </span>{" "}
                       </h5>
                       <p className="text-gray-500 text-xs font-medium ">
                         Status of Attendance:{" "}
                         <span className="bg-green-200 text-green-900 text-[10px] p-1 rounded ml-1">
-                          {invitee.status}
+                          Accepted
                         </span>
                       </p>
                     </div>
