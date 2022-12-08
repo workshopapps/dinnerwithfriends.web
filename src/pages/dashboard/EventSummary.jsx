@@ -5,21 +5,23 @@ import { CgMenuLeftAlt } from "react-icons/cg";
 import { AiOutlineUser } from "react-icons/ai";
 import { BsPlus } from "react-icons/bs";
 import { Link, useLocation } from "react-router-dom";
-import { IoTrashBin } from "react-icons/io5";
+import { MdOutlineCancel } from "react-icons/md";
 
 import CreateEventNavbar from "../../components/CreateEvent/CreateEventNavbar";
 import clipboard from "./icons/clipboard.svg";
 import checkmark from "./icons/checkmark.svg";
 
-const EMAIL_REGEX = /^[a-zA-Z][a-zA-Z0-9-_](?=.*[.]).{3,23}$/;
+const EMAIL_REGEX = /^[a-zA-Z][a-zA-Z0-9-_](?=.*[.]).{3,100}$/;
 
 const EventSummary = () => {
   const [email, setEmail] = useState("");
-  const [validEmail, setValidEmail] = useState(false)
-  const [emailFocus, setEmailFocus] = useState(false)
+  const [validEmail, setValidEmail] = useState(false);
+  const [emailFocus, setEmailFocus] = useState(false);
 
   const [popup, setPopup] = useState(false);
   const [copied, setCopied] = useState(false);
+
+  const [participant, setParticipant] = useState([]);
 
   const location = useLocation();
 
@@ -38,24 +40,23 @@ const EventSummary = () => {
     setValidEmail(result);
   }, [email]);
 
-  const [participant, setParticipant] = useState([]);
-
   const addParticipant = (email) => {
     const newParticipant = [
       ...participant,
       {
         email,
         value: "Remove",
-        // id: Date.now(),
       },
     ];
     setParticipant(newParticipant);
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!email) return;
     addParticipant(email);
     setEmail("");
+    setValidEmail(false);
   };
 
   const copyLink = () => {
@@ -68,8 +69,11 @@ const EventSummary = () => {
     }, 3000);
   };
 
-  const handleDelete = (id) => {
-    setParticipant(participant.filter((participant) => participant.id !== id));
+  const handleDelete = (index) => {
+    // setParticipant(participant.filter((participant) => participant.id !== id));
+    const deletefromList = participant;
+    deletefromList.splice(index, 1);
+    setParticipant([...deletefromList]);
   };
 
   return (
@@ -163,10 +167,6 @@ const EventSummary = () => {
           <p className="text-lg font-bold md:mr-7">
             Participant({participant.length})
           </p>
-          <button className="bg-transparent flex items-center text-[#0056D6]">
-            <p className="mr-2 md:text-base text-sm">Add participant</p>
-            <BsPlus />
-          </button>
         </div>
 
         <div className="w-full mt-5 bg-[#E7F0FF] flex justify-between py-2 md:px-3 px-1">
@@ -176,17 +176,23 @@ const EventSummary = () => {
             className="outline-none border-none h-full bg-transparent py-3 md:px-4 px-2 w-11/12 text-[#7A6F6F] md:text-base text-sm md:placeholder:text-base placeholder:text-sm"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            aria-invalid={validEmail ? 'false' : 'true'}
-                  aria-describedby="emailconfirm" // matches the error paragraph id
-                  onFocus={() => setEmailFocus(true)}
-                  onBlur={() => setEmailFocus(false)}
+            aria-invalid={validEmail ? "false" : "true"}
+            aria-describedby="emailconfirm" // matches the error paragraph id
+            onFocus={() => setEmailFocus(true)}
+            onBlur={() => setEmailFocus(false)}
           />
-          <button
-            className="bg-[#0056D6] md:px-12 md:py-4 py-2.5 px-5 text-white rounded-lg"
-            onClick={handleSubmit}
-          >
-            Done
-          </button>
+          {validEmail   ? (
+            <button
+              className="bg-[#0056D6] md:px-12 md:py-4 py-2.5 px-5 text-white rounded-lg"
+              onClick={handleSubmit}
+            >
+              Done
+            </button>
+          ) : (
+            <button disabled className="bg-blue-600 md:px-12 md:py-4 py-2.5 px-5 text-white rounded-lg">
+              Done
+            </button>
+          )}
         </div>
         <div className="text-sm text-red-600 mt-2 mb-5">
           <p
@@ -195,6 +201,7 @@ const EventSummary = () => {
           >
             Enter a valid email address
           </p>
+          
         </div>
 
         <div className="my-12">
@@ -208,16 +215,12 @@ const EventSummary = () => {
               </div>
               <div className="flex items-center md:mr-8">
                 <p className="text-xs ml-1.5">{invite.value}</p>
-                {/* {invite.value === "Remove" ? (
-                  <IoTrashBin className="text-2xl text-[#CC0000]"/>
-                ) : (
-                  <AiOutlineDislike className="text-2xl text-[#006600]"/>
-                )} */}
+
                 <span
                   className="cursor-pointer"
                   onClick={() => handleDelete(participant.id)}
                 >
-                  <IoTrashBin className="text-2xl text-red-700" />
+                  <MdOutlineCancel className="text-2xl" />
                 </span>
               </div>
             </div>
