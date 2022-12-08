@@ -30,7 +30,18 @@ const CreateEventNavbar = () => {
 	return (
     <nav className={`transition ease-in duration-400 bg-white md:px-10 px-2.5 md:h-[85px] md:pb-2 fixed w-full z-20 top-0 left-0 border-b border-white ${display ? 'h-[300px]' : 'h-[59px]'}`}>
       <div className="h-[45px] md:h-[76px] py-4 md:py-0 bg-transparent container flex flex-wrap items-center justify-between mx-auto">
+ fec-108-notification-preference-settings-page
+        <Link to="/" className="flex items-center">
+          <span className="self-center text-[#0056D6] text-3xl font-semibold whitespace-nowrap ">
+            Catch
+          </span>
+          <span className='self-center text-black text-[1.2rem] md:text-2xl font-semibold whitespace-nowrap'>
+            Up
+          </span>
+        </Link>
+
         <Logo />
+ dev
         <div className="flex md:order-2">
           <div  onClick={toggleOpen} className="hidden md:block cursor-pointer">
             <span>

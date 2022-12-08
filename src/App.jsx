@@ -32,6 +32,7 @@ import HelpRoutes from "./pages/helpCenter/helpRoutes";
 import AboutUsPage from "./pages/aboutUs";
 import { googleCalender } from "./helpers/googleCalender";
 import EventInvite from "./pages/invitee/EventInvite";
+import Notification from "./pages/notifications/notification";
 googleCalender();
 
 
@@ -74,6 +75,7 @@ function App() {
         <Route path="/help/*" element={<HelpRoutes />} />
         <Route path="/aboutUs" element={<AboutUsPage />} />
         <Route path="*" element={<Error404 />} />
+        <Route path="/notification" element={<Notification />} />
       </Routes>
     </div>
   );
