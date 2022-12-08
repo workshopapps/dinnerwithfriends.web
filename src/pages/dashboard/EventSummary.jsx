@@ -1,30 +1,100 @@
 import React, { useState, useEffect } from "react";
-
 import { CiLocationOn, CiCalendar } from "react-icons/ci";
 import { CgMenuLeftAlt } from "react-icons/cg";
 import { AiOutlineUser } from "react-icons/ai";
 import { BsPlus } from "react-icons/bs";
 import { Link, useLocation } from "react-router-dom";
 import { MdOutlineCancel } from "react-icons/md";
-
 import CreateEventNavbar from "../../components/CreateEvent/CreateEventNavbar";
 import clipboard from "./icons/clipboard.svg";
 import checkmark from "./icons/checkmark.svg";
+import userServices from "../../services/userServices";
 
-const EMAIL_REGEX = /^[a-zA-Z][a-zA-Z0-9-_](?=.*[.]).{3,100}$/;
-
-const EventSummary = () => {
-	const [email, setEmail] = useState("");
-	const [validEmail, setValidEmail] = useState(false);
-	const [emailFocus, setEmailFocus] = useState(false);
-
+const EventSummary = () => {;
 	const [popup, setPopup] = useState(false);
 	const [copied, setCopied] = useState(false);
 
-	const [participant, setParticipant] = useState([]);
-	const [usedEmail, setUsedEmail] = useState(false);
+  const [email, setEmail] = useState("");
+  const [participants, setParticipants] = useState([]);
 
-	const location = useLocation();
+  const [isSubmit, setIsSubmit] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [isFailure, setIsFailure] = useState(false);
+
+  const [formError, setFormError] = useState({});
+  const [validEmail, setValidEmail] = useState(true);
+
+  const location = useLocation();
+
+  console.log(location.state);
+  const validate = (values) => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+    const errors = {};
+    if (!regex.test(values)) {
+      errors.email = "This is not a valid email format!";
+      setValidEmail(false);
+    } else {
+      setValidEmail(true);
+    }
+    return errors;
+  };
+
+  const handleChange = (e) => {
+    setEmail(e.target.value);
+    setFormError(validate(email));
+  };
+
+  const addParticipant = (e) => {
+    e.preventDefault();
+
+    if (validEmail) {
+      setParticipants([...participants, email]);
+    }
+  };
+
+  const saveValidEmail = async () => {
+    const invitees = {
+      email_list: participants,
+      event_id: location.state.id,
+    };
+    setIsSubmit(true);
+    const result = await userServices.sendInvite(invitees);
+    if (result.status === "fail") {
+      setIsSubmit(false);
+      setIsFailure(true);
+    }
+
+    if (result.status === "success") {
+      setIsSuccess(true);
+      setPopup(true)
+      setParticipants([]);
+      setEmail("")
+    }
+  };
+
+  const errorMsg = () => {
+    let element;
+    if (isSuccess) {
+      element = (
+        <p className="mt-4 text-xl text-green-600 text-center">
+          An invite email successfully sent!
+        </p>
+      );
+    } else if (isFailure) {
+      element = (
+        <p className="mt-4 text-xl text-red-600 text-center">
+          Invite email was not sent, please try again...
+        </p>
+      );
+    }
+    return element;
+  };
+
+  const deleteParticipant = (index) => {
+    const deletefromList = participants;
+    deletefromList.splice(index, 1);
+    setParticipants([...deletefromList]);
+  };
 
 	useEffect(() => {
 		if (popup) {
@@ -34,37 +104,6 @@ const EventSummary = () => {
 		}
 	}, [popup]);
 
-	useEffect(() => {
-    participant.map((item) =>
-    item.email === email ? setUsedEmail(true) : setUsedEmail(false)
-		);
-    // eslint-disable-next-line
-	}, [email]);
-  
-  // an effect that tests if the email matches the regex requirements
-	useEffect(() => {
-		const result = EMAIL_REGEX.test(email);
-		setValidEmail(result);
-	}, [email]);
-
-	const addParticipant = (email) => {
-		const newParticipant = [
-			...participant,
-			{
-				email,
-				value: "Remove",
-			},
-		];
-		setParticipant(newParticipant);
-	};
-
-	const handleSubmit = (e) => {
-		e.preventDefault();
-		if (!email) return;
-		addParticipant(email);
-		setEmail("");
-		setValidEmail(false);
-	};
 
 	const copyLink = () => {
 		setCopied(true);
@@ -74,13 +113,6 @@ const EventSummary = () => {
 		setTimeout(() => {
 			setCopied(false);
 		}, 3000);
-	};
-
-	const handleDelete = (index) => {
-		// setParticipant(participant.filter((participant) => participant.id !== id));
-		const deletefromList = participant;
-		deletefromList.splice(index, 1);
-		setParticipant([...deletefromList]);
 	};
 
 	return (
@@ -152,7 +184,6 @@ const EventSummary = () => {
 						<div className='flex items-center'>
 							<CiCalendar className='text-xl' />
 							<p className='text-base font-normal ml-2'>
-								{/* {location.state.start_date} - {location.state.end_date}  */}
 								{location.state.host_prefered_time}
 							</p>
 						</div>
@@ -166,67 +197,44 @@ const EventSummary = () => {
 				</div>
 				<div className='flex md:justify-start justify-between my-5'>
 					<p className='text-lg font-bold md:mr-7'>
-						Participant({participant.length})
+						Participants({participants.length})
 					</p>
 				</div>
-
-				<div className='w-full mt-5 bg-[#E7F0FF] flex justify-between py-2 md:px-3 px-1'>
-					<input
-						type='email'
-						placeholder='Add a participant email'
-						className='outline-none border-none h-full bg-transparent py-3 md:px-4 px-2 w-11/12 text-[#7A6F6F] md:text-base text-sm md:placeholder:text-base placeholder:text-sm'
-						value={email}
-						onChange={(e) => setEmail(e.target.value)}
-						aria-invalid={validEmail ? "false" : "true"}
-						aria-describedby='emailconfirm' // matches the error paragraph id
-						onFocus={() => setEmailFocus(true)}
-						onBlur={() => setEmailFocus(false)}
-					/>
-					{validEmail && !usedEmail ? (
-						<button
-							className='bg-[#0056D6] md:px-12 md:py-4 py-2.5 px-5 text-white rounded-lg'
-							onClick={handleSubmit}>
-							Done
-						</button>
-					) : (
-						<button
-							disabled
-							className='bg-blue-600 md:px-12 md:py-4 py-2.5 px-5 text-white rounded-lg'>
-							Done
-						</button>
-					)}
-				</div>
-				<div className='text-sm text-red-600 mt-2 mb-5'>
-					<p
-						id='emailconfirm'
-						className={emailFocus && !validEmail ? "block" : "hidden"}>
-						Enter a valid email address
-					</p>
-					{participant.map(
-						(item) =>
-							item.email === email && (
-								<p id='emailconfirm' className='block'>
-									This email is already in use
-								</p>
-							)
-					)}
-				</div>
-
+        {errorMsg()}
+        <form onSubmit={addParticipant}>
+          <div className="w-full my-5 bg-[#E7F0FF] flex justify-between items-center gap-x-4 py-2 md:px-3 px-5">
+            <input
+              className="focus:outline-none h-full bg-transparent py-3 md:px-4 px-2 w-11/12 text-black md:text-base text-sm md:placeholder:text-base placeholder:text-sm"
+              type="email"
+              placeholder="Add a participant email"
+              value={email}
+              onChange={handleChange}
+            />
+            <button
+              type="submit"
+              className="bg-[#0056D6] md:px-12 md:py-4 py-2.5 px-5 text-white rounded-lg"
+            >
+              Add
+            </button>
+          </div>
+          <small className="text-red-500">{formError.email}</small>
+        </form>
 				<div className='my-12'>
-					{participant.map((invite, index) => (
+					{participants.map((invite, index) => (
 						<div className='flex justify-between mb-4' key={index}>
 							<div className='flex text-[#59595B] items-center'>
 								<AiOutlineUser className='text-xl' />
 								<p className='font-normal md:text-base text-sm md:ml-3 ml-2'>
-									{invite.email}
+									{invite}
 								</p>
 							</div>
 							<div className='flex items-center md:mr-8'>
-								<p className='text-xs ml-1.5'>{invite.value}</p>
+
 
 								<span
 									className='cursor-pointer'
-									onClick={() => handleDelete(participant.id)}>
+                  onClick={() => deleteParticipant(index)}
+                  >
 									<MdOutlineCancel className='text-2xl' />
 								</span>
 							</div>
@@ -241,10 +249,10 @@ const EventSummary = () => {
 						Back
 					</Link>
 					<div
-						onClick={() => setPopup(true)}
+						 onClick={saveValidEmail}
 						className='rounded flex md:px-6 px-4 py-2.5 bg-[#0056D6] text-white items-center cursor-pointer'>
 						<p className='md:text-xl text-base font-medium md:mr-2'>
-							Send invite
+            {isSubmit ? "Loading..." : "Send Invite"}
 						</p>
 						<BsPlus className='text-xl' />
 					</div>
