@@ -76,13 +76,13 @@ getParticipants();
 
             <aside className="font-medium text-sm  md:mt-0">
               Agreed Date
-              {singleEvent?.final_event_date === !null ? (
+              {singleEvent?.final_event_date === null ? (
                 <span className="bg-[#E7F0FF] text-[#003585] text-xs px-2 py-1 font-semibold rounded ml-1">
-                  {singleEvent?.final_event_date}
+                 Not Decided
                 </span>
               ) : (
                 <span className="bg-[#E7F0FF] text-[#003585] text-xs px-2 py-1 font-semibold rounded ml-1">
-                  Not Decided
+                   {singleEvent?.final_event_date}
                 </span>
               )}
             </aside>
