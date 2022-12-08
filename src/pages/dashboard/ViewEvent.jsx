@@ -17,7 +17,7 @@ const ViewEvent = () => {
   const invitees = [
     {
       id: 1,
-      image: inviteeImg1,
+      //   image: inviteeImg1,
       position: "1st Invitee",
       name: "Johnson Joshua",
       dateNdTime: "Friday, 21 November 2022 - 4pm",

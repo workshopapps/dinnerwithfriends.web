@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { AiOutlineUser, AiOutlineCloseCircle } from "react-icons/ai";
 import { IoMdClose } from "react-icons/io";
 import { CatchUpEventContextUse } from "../context/CatchUpEventContext";
@@ -8,22 +8,38 @@ function AddParticipantModal({ eventId }) {
   const [email, setEmail] = useState("");
   const [participants, setParticipants] = useState([]);
 
-  const [error, setError] = useState();
-  const emailRef = useRef();
+  const [isSubmit, setIsSubmit] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [isFailure, setIsFailure] = useState(false);
+
+  const [formError, setFormError] = useState({});
+  const [validEmail, setValidEmail] = useState(true);
   const validate = (values) => {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
     const errors = {};
     if (!regex.test(values)) {
       errors.email = "This is not a valid email format!";
-      emailRef.current.focus();
+      setValidEmail(false);
+    } else {
+      setValidEmail(true);
     }
     return errors;
   };
+  console.log(validEmail);
+  const handleChange = (e) => {
+    setEmail(e.target.value);
+    setFormError(validate(email));
+  };
   const addParticipant = (e) => {
     e.preventDefault();
-    setError(validate(email));
-    setParticipants([...participants, email]);
+
+    if (validEmail) {
+      setParticipants([...participants, email]);
+    }
+
+    console.log(formError.email);
   };
+
   console.log(participants);
 
   const saveValidEmail = async () => {
@@ -31,9 +47,35 @@ function AddParticipantModal({ eventId }) {
       email_list: participants,
       event_id: eventId,
     };
-    const result = await userServices.addParticipant(invitees);
+    setIsSubmit(true);
+    const result = await userServices.sendInvite(invitees);
     console.log(result);
-    setParticipants([]);
+    if (result.status === "fail") {
+      setIsSubmit(false);
+      setIsFailure(true);
+    }
+
+    if (result.status === "success") {
+      setIsSuccess(true);
+      setParticipants([]);
+    }
+  };
+  const errorMsg = () => {
+    let element;
+    if (isSuccess) {
+      element = (
+        <p className="mt-4 text-xl text-green-600 text-center">
+          An invite email successfully sent!
+        </p>
+      );
+    } else if (isFailure) {
+      element = (
+        <p className="mt-4 text-xl text-red-600 text-center">
+          Invite email was not sent, please try again...
+        </p>
+      );
+    }
+    return element;
   };
 
   const deleteParticipant = (index) => {
@@ -64,6 +106,7 @@ function AddParticipantModal({ eventId }) {
                   </span>
                 </div>
               </div>
+              {errorMsg()}
               <form onSubmit={addParticipant}>
                 <div className="w-full my-5 bg-[#E7F0FF] flex justify-between items-center gap-x-4 py-2 md:px-3 px-5">
                   <input
@@ -71,10 +114,8 @@ function AddParticipantModal({ eventId }) {
                     type="email"
                     placeholder="Add a participant email"
                     value={email}
-                    ref={emailRef}
-                    onChange={(e) => setEmail(e.target.value)}
+                    onChange={handleChange}
                   />
-                  <small>{error.email}</small>
                   <button
                     type="submit"
                     className="bg-[#0056D6] md:px-12 md:py-4 py-2.5 px-5 text-white rounded-lg"
@@ -82,6 +123,7 @@ function AddParticipantModal({ eventId }) {
                     Add
                   </button>
                 </div>
+                <small className="text-red-500">{formError.email}</small>
               </form>
               <div className="my-12">
                 {participants.map((participant, index) => (
@@ -109,7 +151,7 @@ function AddParticipantModal({ eventId }) {
                     className=" w-full bg-[#0056D6] md:px-12 md:py-4 py-2.5 px-5 text-white rounded-lg"
                     onClick={saveValidEmail}
                   >
-                    Done
+                    {isSubmit ? "Done" : " Loading..."}
                   </button>
                 )}
               </div>

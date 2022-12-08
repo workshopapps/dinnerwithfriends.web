@@ -6,4 +6,5 @@ export const RESET_PASSWORD_URL = "auth/recover/confirm";
 export const CREATE_EVENT = "event";
 export const GET_EVENTS = "event";
 export const GOOGLE_CALENDER = "calender";
-export const ADD_PARTICIPANT = "participant/addpart";
+export const SEND_INVITE = "invitation";
+export const GET_PARTICIPANTS = "participant";
