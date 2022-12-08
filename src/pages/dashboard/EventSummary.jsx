@@ -38,6 +38,7 @@ const EventSummary = () => {
     participant.map((item) =>
     item.email === email ? setUsedEmail(true) : setUsedEmail(false)
 		);
+    // eslint-disable-next-line
 	}, [email]);
   
   // an effect that tests if the email matches the regex requirements
@@ -241,7 +242,7 @@ const EventSummary = () => {
 					</Link>
 					<div
 						onClick={() => setPopup(true)}
-						className='rounded flex md:px-6 px-4 py-2.5 bg-[#0056D6] text-white items-center'>
+						className='rounded flex md:px-6 px-4 py-2.5 bg-[#0056D6] text-white items-center cursor-pointer'>
 						<p className='md:text-xl text-base font-medium md:mr-2'>
 							Send invite
 						</p>
