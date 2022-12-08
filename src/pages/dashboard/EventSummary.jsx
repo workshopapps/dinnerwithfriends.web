@@ -118,7 +118,7 @@ const EventSummary = () => {;
 	return (
 		<div>
 			{popup && (
-				<div className='z-[1000px] w-full h-full bg-black bg-opacity-50 fixed'>
+				<div className='z-50 w-full h-full bg-black bg-opacity-50 fixed'>
 					<div className=' p-6 flex flex-col  justify-center items-center rounded-2xl w-[92%] max-w-[550px] absolute bg-white left-2/4 top-[50%] -translate-y-2/4 -translate-x-2/4'>
 						<div
 							onClick={() => setPopup(false)}
