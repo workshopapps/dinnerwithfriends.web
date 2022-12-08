@@ -11,7 +11,7 @@ import CreateEventNavbar from "../../components/CreateEvent/CreateEventNavbar";
 import CalenderSyncModal from "../../components/CalenderSyncModal";
 /* global gapi */
 const UpcomingEvent = () => {
-	const [status, setStatus] = useState("false");
+	const [status, setStatus] = useState("not-decided");
 	const { events, setEvents } = CatchUpEventContextUse();
 	const [modal, setModal] = useState(false);
 
@@ -35,7 +35,7 @@ const UpcomingEvent = () => {
 		filteredEvents.length === 0 ? (
 			<Event
 				filteredEvents={filteredEvents}
-				status={status === "false" ? "upcoming" : "Rsvp"}
+				status={status === "not-decided" ? "upcoming" : "Rsvp"}
 			/>
 		) : (
 			filteredEvents.map(
@@ -111,7 +111,7 @@ const UpcomingEvent = () => {
 	gapi.load("client:auth2", function () {
 		gapi.auth2.init({
 			client_id:
-				"102076896830-4il8ncmrd6qfoippk2ut4uujb8cci54v.apps.googleusercontent.com",
+			`${process.env.REACT_APP_CLIENT_ID}`,
 		});
 	});
 
@@ -121,7 +121,7 @@ const UpcomingEvent = () => {
 
 	return (
 		<>
-			<CreateEventNavbar />
+			<CreateEventNavbar setModal={setModal}/>
 			<section className='px-[22px] lg:px-20 pt-[6rem] lg:pt-[7rem] mb-16'>
 				<div className='flex flex-col lg:flex-row justify-center lg:justify-between gap-x-4 mb-4 lg:mb-8'>
 					<div className='flex flex-col justify-center items-center lg:justify-start lg:items-start gap-y-4'>
@@ -172,18 +172,18 @@ const UpcomingEvent = () => {
 						<li>
 							<Button
 								className={`${
-									status === "false" ? "pb-3 border-[#0056D6] border-b-4 " : ""
+									status === "not-decided" ? "pb-3 border-[#0056D6] border-b-4 " : ""
 								}'pb-3 outline-0 border-0 text-[#717172] bg-inherit lg:text-lg'`}
-								onClick={() => setStatus("false")}>
+								onClick={() => setStatus("not-decided")}>
 								Upcoming Event
 							</Button>
 						</li>
 						<li>
 							<Button
 								className={`${
-									status === true ? "pb-3 border-[#0056D6] border-b-4 " : ""
+									status === "decided" ? "pb-3 border-[#0056D6] border-b-4 " : ""
 								}' pb-3 outline-0 border-0 text-[#717172] bg-inherit lg:text-lg'`}
-								onClick={() => setStatus("true")}>
+								onClick={() => setStatus("decided")}>
 								Reserved Event
 							</Button>
 						</li>
@@ -193,7 +193,7 @@ const UpcomingEvent = () => {
 					className={`${
 						filteredEvents.length === 0 ? "pt-12" : "pt-[10px]"
 					} "flex flex-col justify-center items-center gap-y-8 lg:border border-solid border-[#CDCDCD] lg:pb-[200px] lg:px-[20px] max-h-[30rem] overflow-y-scroll "`}>
-					{status === "false" && (
+					{status === "not-decided" && (
 						<div
 							className={`${
 								filteredEvents.length === 0
@@ -203,7 +203,7 @@ const UpcomingEvent = () => {
 							{userEvents}
 						</div>
 					)}
-					{status === 'true' && (
+					{status === "decided" && (
 						<div
 							className={`${
 								filteredEvents.length === 0
