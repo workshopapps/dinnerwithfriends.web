@@ -41,11 +41,12 @@
 .goTo ul li {
 	padding: 0.2rem 0;
 	margin: 0.1rem 0;
-	color: blue;
+	color: rgb(0, 0, 0);
 	transition: 150ms ease-in;
 	display: flex;
 	align-items: center;
 	padding-left: 0.2rem;
+	margin-bottom: 0.25rem;
 }
 .goTo ul li:hover {
 	background-color: blue;
