@@ -57,18 +57,17 @@ function AddParticipantModal({ eventId }) {
 		setFormError(validate(email));
 	};
 
-	const saveValidEmail = async () => {
-		setIsSubmit(true);
-		const invitees = {
-			email_list: participants,
-			event_id: eventId,
-		};
-		const result = await userServices.sendInvite(invitees);
-		console.log(result);
-		if (result.status === "fail") {
-			setIsSubmit(false);
-			setIsFailure(true);
-		}
+  const saveValidEmail = async () => {
+    setIsSubmit(true);
+    const invitees = {
+      email_list: participants,
+      event_id: eventId,
+    };
+    const result = await userServices.sendInvite(invitees);
+    if (result.status === "fail") {
+      setIsSubmit(false);
+      setIsFailure(true);
+    }
 
 		if (result.status === "success") {
 			setIsSuccess(true);
