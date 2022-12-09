@@ -78,6 +78,7 @@ const EventInvite = () => {
     if(hasPassed) {
       navigate("/closed_event")
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [hasPassed]);
 
   return (
@@ -122,7 +123,7 @@ const EventInvite = () => {
                 autoComplete="true"
               />
             </div>
-            { eventData?.final_event_date ? 
+            { eventData?.final_event_date ?
             <p className="text-blue-500 font-semibold text-center w-[200px] md:w-[450px]">An event date has been chosen. Event to be hosted by {decidedEvent}</p> :
             <div className="my-4 grid">
               <label className="text-base font-semibold mb-1">
