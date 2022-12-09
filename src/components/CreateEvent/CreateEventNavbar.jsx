@@ -181,7 +181,7 @@ const CreateEventNavbar = ({setModal}) => {
       </div>
         {showNav &&
           <div style={nav}
-          className="text-left block transition linear duration-300 items-center justify-between  w-full md:flex md:w-auto md:order-1 md:hidden"
+          className="text-left block transition linear duration-300 items-center justify-between  w-full md:w-auto md:order-1 md:hidden"
           id="navbar-sticky"
         >
           <ul  className="w-full flex flex-col p-4 mt-0 border border-white rounded-lg bg-white md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white">
@@ -208,7 +208,7 @@ const CreateEventNavbar = ({setModal}) => {
             <li>
               <Button
                 onClick={googleCalenderApi}
-                className="flex w-full justify-start items-center py-2 pl-4 py-[10px] text-black rounded hover:bg-blue-700 hover:text-white"
+                className="flex w-full justify-start items-center pl-4 py-[10px] text-black rounded hover:bg-blue-700 hover:text-white"
               >
                 <img src={googleCalendar} alt="" className="mr-2 w-4" />
                 Sync with Google Calender

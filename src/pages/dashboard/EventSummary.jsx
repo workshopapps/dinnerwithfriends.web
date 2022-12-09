@@ -20,7 +20,6 @@ const EventSummary = () => {
 	const [copied, setCopied] = useState(false);
 
 	const location = useLocation();
-    console.log(location.state)
 	useEffect(() => {
 		if (popup) {
 			document.body.style.overflowY = "hidden";

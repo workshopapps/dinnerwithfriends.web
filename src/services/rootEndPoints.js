@@ -5,6 +5,7 @@ export const PASSWORD_RECOVERY_URL ='auth/recover/generate'
 export const RESET_PASSWORD_URL = 'auth/recover/confirm'
 export const CREATE_EVENT = 'event'
 export const GET_EVENTS = 'event'
+export const DELETE_EVENT = 'event'
 export const GET_PARTICIPANTS = 'event/participants'
 export const GOOGLE_CALENDER = 'calender'
 export const SEND_INVITE = "invitation"
