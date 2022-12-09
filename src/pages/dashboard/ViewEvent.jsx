@@ -108,10 +108,10 @@ const ViewEvent = () => {
 								<MdKeyboardArrowDown />
 							</button>
 							{viewEventMenu && (
-								<div className='absolute top-5 left-0'>
+								<div className='absolute top-5 md:-left-5'>
 									<div className='shadow-md border border-[#e1e1e1] bg-[#fff] rounded-[20px]'>
 										<div className='p-4'>
-											<div className='flex justify-end w-[200px]'>
+											<div className='flex justify-end md:w-[200px] w-[180px]'>
 												<span
 													onClick={() => setViewEventMenu(false)}
 													className='bg-[#FAFAFA] cursor-pointer text-[#717172] flex justify-center items-center rounded-full h-[35px] w-[35px]'>
@@ -121,15 +121,15 @@ const ViewEvent = () => {
 											<div className='flex flex-col item-center justify-center w-fit md:w-[90%] mx-auto'>
 												<div
 													onClick={handleAdd}
-													className='bg-transparent hover:bg-[#0056D6] text-[#0056D6] hover:text-white transition-all duration-200 px-8 md:px-4 py-2 cursor-pointer w-full rounded-[4px] text-center text-xs'>
+													className='bg-transparent hover:bg-[#0056D6] text-[#0056D6] hover:text-white transition-all duration-200 px-8 md:px-4 py-2 cursor-pointer w-full rounded-[4px] text-left text-xs'>
 													Add Participant
 												</div>
-												<div className='bg-transparent hover:bg-[#0056D6] text-[#0056D6] hover:text-white transition-all duration-200 px-8 md:px-4 py-2 cursor-pointer w-full rounded-[4px] text-center text-xs'>
+												<div className='bg-transparent hover:bg-[#0056D6] text-[#0056D6] hover:text-white transition-all duration-200 px-8 md:px-4 py-2 cursor-pointer w-full rounded-[4px] text-left text-xs'>
 													Remove Participant
 												</div>
 												<div
 													onClick={handleDelete}
-													className='bg-transparent hover:bg-[#0056D6] text-[#0056D6] hover:text-white transition-all duration-200 px-8 md:px-4 py-2 cursor-pointer w-full rounded-[4px] text-center text-xs'>
+													className='bg-transparent hover:bg-[#0056D6] text-[#0056D6] hover:text-white transition-all duration-200 px-8 md:px-4 py-2 cursor-pointer w-full rounded-[4px] text-left text-xs'>
 													Delete Event
 												</div>
 											</div>
