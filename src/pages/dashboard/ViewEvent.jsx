@@ -4,20 +4,19 @@ import Navbar from "../../components/CreateEvent/CreateEventNavbar";
 import arrow from "../../assets/icons/arrow-down.svg";
 import profile from "../../assets/img/profile.svg";
 import AddParticipantModal from "../../components/AddParticipantModal";
-import { BsPlus } from "react-icons/bs";
 import { useParams } from "react-router-dom";
 import userServices from "../../services/userServices";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import ViewEventMenuModal from "../../components/ViewEventMenuModal";
+import DeleteEventModal from "../../components/DeleteEventModal";
 const ViewEvent = () => {
 	const [isActive, setIsActive] = useState(false);
 	const [singleEvent, setSingleEvent] = useState({});
 	const [participants, setParticipants] = useState([]);
-	const [viewEventMenu, setViewEventMenu] = useState(false);
-
+  
 	const toggleShowAccordion = (id) => {
 		if (isActive === id) {
-			setIsActive();
+      setIsActive();
 		} else {
 			setIsActive(id);
 		}
@@ -31,7 +30,7 @@ const ViewEvent = () => {
 		console.log(sEvent);
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
-
+  
 	const { id } = useParams();
 	useEffect(() => {
 		const getParticipants = async () => {
@@ -43,12 +42,16 @@ const ViewEvent = () => {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
+  const [showDeleteMenu, setShowDeleteMenu] = useState(false)
+  const [viewEventMenu, setViewEventMenu] = useState(false);
+
 	return (
 		<>
 			{viewEventMenu && (
-				<ViewEventMenuModal setViewEventMenu={setViewEventMenu} />
+				<ViewEventMenuModal setViewEventMenu={setViewEventMenu} setShowDeleteMenu={setShowDeleteMenu} />
 			)}
 			<AddParticipantModal eventId={id} />
+      {showDeleteMenu && <DeleteEventModal setShowDeleteMenu={setShowDeleteMenu} eventId={id} />}
 			<Navbar />
 			<div className="font-['DM_Sans'] w-[90%] lg:w-4/5 mx-auto mt-[100px] my-4 sm:max-w-xl md:max-w-2xl sm:border sm:border-slate-300 sm:rounded-md">
 				<main className='sm:p-8 mx-auto'>
@@ -71,13 +74,6 @@ const ViewEvent = () => {
 						</p>
 					</section>
 					<div className='flex flex-row justify-between md:items-center my-10'>
-						{/* <button
-              onClick={() => setShowModal(true)}
-              className="bg-transparent flex items-center text-[#0056D6]"
-            >
-              <p className="mr-2 text-sm">Add participant</p>
-              <BsPlus />
-            </button> */}
 						<button
 							onClick={() => setViewEventMenu(true)}
 							className='flex items-center text-sm text-[#0056D6]'>

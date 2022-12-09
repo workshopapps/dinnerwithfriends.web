@@ -40,9 +40,25 @@ const get = async (url) => {
     }
   };
 
+  const deleteE = async (url) => {
+    const config = {
+      method: 'DELETE',
+      headers: authHeader(),
+    };
+
+    try {
+      const response = await fetch(url, config);
+      const datas = await response.json();
+      return datas;
+    } catch (err) {
+      return err;
+    }
+  };
+
   const fetchApi = {
     post,
     get,
+    deleteE,
   };
 
   export default fetchApi;

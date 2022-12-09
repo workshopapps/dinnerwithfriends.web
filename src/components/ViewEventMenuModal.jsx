@@ -2,12 +2,17 @@ import React from "react";
 import { IoMdClose } from "react-icons/io";
 import { CatchUpEventContextUse } from "../context/CatchUpEventContext";
 
-const ViewEventMenuModal = ({setViewEventMenu}) => {
+const ViewEventMenuModal = ({setViewEventMenu, setShowDeleteMenu }) => {
     const { setShowModal } = CatchUpEventContextUse();
+	
 
     const handleAdd = () =>{
         setViewEventMenu(false)
         setShowModal(true)
+    }
+    const handleDelete = () =>{
+        setViewEventMenu(false)
+        setShowDeleteMenu(true)
     }
 
 	return (
@@ -35,7 +40,7 @@ const ViewEventMenuModal = ({setViewEventMenu}) => {
 									<div className='bg-transparent hover:bg-[#0056D6] text-[#0056D6] hover:text-white transition-all duration-200 px-3 py-2 cursor-pointer w-full rounded-[4px] text-center'>
 										Remove Participant
 									</div>
-									<div className='bg-transparent hover:bg-[#0056D6] text-[#0056D6] hover:text-white transition-all duration-200 px-3 py-2 cursor-pointer w-full rounded-[4px] text-center'>
+									<div onClick={handleDelete} className='bg-transparent hover:bg-[#0056D6] text-[#0056D6] hover:text-white transition-all duration-200 px-3 py-2 cursor-pointer w-full rounded-[4px] text-center'>
 										Delete Event
 									</div>
 								</div>
