@@ -33,14 +33,14 @@ const ViewEventMenuModal = ({setViewEventMenu, setShowDeleteMenu }) => {
 										<IoMdClose />
 									</span>
 								</div>
-								<div className='flex flex-col item-center justify-center w-[50%] mx-auto'>
-									<div onClick={handleAdd} className='bg-transparent hover:bg-[#0056D6] text-[#0056D6] hover:text-white transition-all duration-200 px-3 py-2 cursor-pointer w-full rounded-[4px] text-center'>
+								<div className='flex flex-col item-center justify-center w-fit md:w-[50%] mx-auto'>
+									<div onClick={handleAdd} className='bg-transparent hover:bg-[#0056D6] text-[#0056D6] hover:text-white transition-all duration-200 px-8 md:px-4 py-2 cursor-pointer w-full rounded-[4px] text-center'>
 										Add Participant
 									</div>
-									<div className='bg-transparent hover:bg-[#0056D6] text-[#0056D6] hover:text-white transition-all duration-200 px-3 py-2 cursor-pointer w-full rounded-[4px] text-center'>
+									<div className='bg-transparent hover:bg-[#0056D6] text-[#0056D6] hover:text-white transition-all duration-200 px-8 md:px-4 py-2 cursor-pointer w-full rounded-[4px] text-center'>
 										Remove Participant
 									</div>
-									<div onClick={handleDelete} className='bg-transparent hover:bg-[#0056D6] text-[#0056D6] hover:text-white transition-all duration-200 px-3 py-2 cursor-pointer w-full rounded-[4px] text-center'>
+									<div onClick={handleDelete} className='bg-transparent hover:bg-[#0056D6] text-[#0056D6] hover:text-white transition-all duration-200 px-8 md:px-4 py-2 cursor-pointer w-full rounded-[4px] text-center'>
 										Delete Event
 									</div>
 								</div>

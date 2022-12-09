@@ -58,7 +58,7 @@ const DeleteEventModal = ({ setShowDeleteMenu, eventId }) => {
 										This item will be deleted immediately you can’t undo this
 										action
 									</p>
-									<div className='mt-8 flex justify-between w-[70%] mx-auto'>
+									<div className='mt-8 flex justify-between w-[85%] md:w-[70%] mx-auto'>
 										<button
 											onClick={() => setShowDeleteMenu(false)}
 											className='py-[10px] px-6 rounded-[4px] bg-[#0056D6] border border-[#0056D6] text-white w-fit text-sm'>
