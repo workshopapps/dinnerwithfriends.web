@@ -15,7 +15,7 @@ const EventSummaryModal = ({ setPopup, copied, copyLink }) => {
 
 
 	return (
-		<div className={`${setPopup ?'fixed top-0 right-0 z-[1000px] left-0 bottom-0 w-screen w-screen z-20  bg-black bg-opacity-50': 'hidden'}`}>
+		<div className={`${setPopup ?'fixed top-0 right-0 left-0 bottom-0 w-screen z-20  bg-black bg-opacity-50': 'hidden'}`}>
             <div className='w-11/12 lg:w-2/5 ml-auto mr-auto relative mt-20 flex flex-col bg-white py-6 rounded-2xl'>
 		        <div className='relative mx-auto w-full'>
 							<div
