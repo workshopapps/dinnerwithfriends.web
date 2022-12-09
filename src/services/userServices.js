@@ -88,7 +88,6 @@ const getParticipants = async (id) => {
   try {
     const dataObj = await fetchApi.get(`${BASE_URL}/${GET_PARTICIPANTS}/${id}`);
     const datas = await dataObj.data;
-    console.log(datas);
     return datas;
   } catch (err) {
     return err;
@@ -110,7 +109,6 @@ const addToGoogleCalender = async (params) => {
 const sendInvite = async (params) => {
   try {
     const result = await fetchApi.post(`${BASE_URL}/${SEND_INVITE}`, params);
-    console.log(result)
     return result;
   } catch (err) {
     return err;

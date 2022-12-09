@@ -63,7 +63,6 @@ function AddParticipantModal({ eventId }) {
       event_id: eventId,
     };
     const result = await userServices.sendInvite(invitees);
-    console.log(result)
     if (result.status === "fail") {
       setIsSubmit(false);
       setIsFailure(true);
