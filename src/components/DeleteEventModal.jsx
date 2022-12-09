@@ -1,15 +1,14 @@
 import React, { useState } from "react";
 import { IoMdClose } from "react-icons/io";
 import { MdHelpOutline } from "react-icons/md";
-import { useNavigate } from "react-router";
 import userServices from "../services/userServices";
 
-const DeleteEventModal = ({ setShowDeleteMenu, eventId }) => {
+const DeleteEventModal = ({ setShowDeleteMenu, eventId, setShowDeleteSuccess }) => {
 	const [isSubmit, setIsSubmit] = useState(false);
 	const [isSuccess, setIsSuccess] = useState(false);
 	const [isFailure, setIsFailure] = useState(false);
 
-    const navigate = useNavigate()
+    
 
 	const deleteEvent = async (data) => {
 		setIsSubmit(true);
@@ -24,7 +23,7 @@ const DeleteEventModal = ({ setShowDeleteMenu, eventId }) => {
 			setIsSuccess(true);
 			setTimeout(() => {
                 setShowDeleteMenu(false)
-				navigate("/dashboard/upcoming_events");
+				setShowDeleteSuccess(true)
 			}, 1000);
 		}
 	};

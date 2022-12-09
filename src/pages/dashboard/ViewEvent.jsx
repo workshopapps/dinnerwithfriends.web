@@ -8,8 +8,10 @@ import { useParams } from "react-router-dom";
 import clipboard from "../dashboard/icons/clipboard.svg";
 import userServices from "../../services/userServices";
 import { MdKeyboardArrowDown } from "react-icons/md";
-import ViewEventMenuModal from "../../components/ViewEventMenuModal";
 import DeleteEventModal from "../../components/DeleteEventModal";
+import { IoMdClose } from "react-icons/io";
+import { CatchUpEventContextUse } from "../../context/CatchUpEventContext";
+import DeleteSuccessModal from "../../components/DeleteSuccessModal";
 const ViewEvent = () => {
 	const [isActive, setIsActive] = useState(false);
 	const [singleEvent, setSingleEvent] = useState({});
@@ -53,19 +55,28 @@ const ViewEvent = () => {
 	};
 
 	const [showDeleteMenu, setShowDeleteMenu] = useState(false);
+	const [showDeleteSucess, setShowDeleteSuccess] = useState(false);
 	const [viewEventMenu, setViewEventMenu] = useState(false);
+
+	const { setShowModal } = CatchUpEventContextUse();
+
+	const handleAdd = () => {
+		setViewEventMenu(false);
+		setShowModal(true);
+	};
+	const handleDelete = () => {
+		setViewEventMenu(false);
+		setShowDeleteMenu(true);
+	};
 
 	return (
 		<>
-			{viewEventMenu && (
-				<ViewEventMenuModal
-					setViewEventMenu={setViewEventMenu}
-					setShowDeleteMenu={setShowDeleteMenu}
-				/>
-			)}
 			<AddParticipantModal eventId={id} />
 			{showDeleteMenu && (
-				<DeleteEventModal setShowDeleteMenu={setShowDeleteMenu} eventId={id} />
+				<DeleteEventModal setShowDeleteMenu={setShowDeleteMenu} setShowDeleteSuccess={setShowDeleteSuccess} eventId={id} />
+			)}
+			{showDeleteSucess && (
+				<DeleteSuccessModal setShowDeleteSuccess={setShowDeleteSuccess} />
 			)}
 			<Navbar />
 			<div className="font-['DM_Sans'] w-[90%] lg:w-4/5 mx-auto mt-[100px] my-4 sm:max-w-xl md:max-w-2xl sm:border sm:border-slate-300 sm:rounded-md">
@@ -89,12 +100,44 @@ const ViewEvent = () => {
 						</p>
 					</section>
 					<div className='flex flex-row justify-between md:items-center my-10'>
-						<button
-							onClick={() => setViewEventMenu(true)}
-							className='flex items-center text-sm text-[#0056D6]'>
-							<span>Menu</span>
-							<MdKeyboardArrowDown />
-						</button>
+						<div className='relative'>
+							<button
+								onClick={() => setViewEventMenu(!viewEventMenu)}
+								className='flex items-center text-sm text-[#0056D6]'>
+								<span>Menu</span>
+								<MdKeyboardArrowDown />
+							</button>
+							{viewEventMenu && (
+								<div className='absolute top-5 left-0'>
+									<div className='shadow-md border border-[#e1e1e1] bg-[#fff] rounded-[20px]'>
+										<div className='p-4'>
+											<div className='flex justify-end w-[200px]'>
+												<span
+													onClick={() => setViewEventMenu(false)}
+													className='bg-[#FAFAFA] cursor-pointer text-[#717172] flex justify-center items-center rounded-full h-[35px] w-[35px]'>
+													<IoMdClose />
+												</span>
+											</div>
+											<div className='flex flex-col item-center justify-center w-fit md:w-[90%] mx-auto'>
+												<div
+													onClick={handleAdd}
+													className='bg-transparent hover:bg-[#0056D6] text-[#0056D6] hover:text-white transition-all duration-200 px-8 md:px-4 py-2 cursor-pointer w-full rounded-[4px] text-center text-xs'>
+													Add Participant
+												</div>
+												<div className='bg-transparent hover:bg-[#0056D6] text-[#0056D6] hover:text-white transition-all duration-200 px-8 md:px-4 py-2 cursor-pointer w-full rounded-[4px] text-center text-xs'>
+													Remove Participant
+												</div>
+												<div
+													onClick={handleDelete}
+													className='bg-transparent hover:bg-[#0056D6] text-[#0056D6] hover:text-white transition-all duration-200 px-8 md:px-4 py-2 cursor-pointer w-full rounded-[4px] text-center text-xs'>
+													Delete Event
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							)}
+						</div>
 
 						<aside className='font-medium text-sm  md:mt-0'>
 							Agreed Date
