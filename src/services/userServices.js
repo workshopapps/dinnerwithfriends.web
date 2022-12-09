@@ -125,7 +125,6 @@ const userServices = {
   recoverPassword,
   resetPassword,
   addToGoogleCalender,
-  sendInvite,
   addParticipants
 };
 

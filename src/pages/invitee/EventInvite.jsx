@@ -78,6 +78,7 @@ const EventInvite = () => {
     if(hasPassed) {
       navigate("/closed_event")
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [hasPassed]);
 
   return (
