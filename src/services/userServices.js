@@ -10,6 +10,7 @@ import {
   PASSWORD_RECOVERY_URL,
   RESET_PASSWORD_URL,
   GOOGLE_CALENDER,
+  ADD_PARTICIPANTS,
   SEND_INVITE,
 } from "./rootEndPoints.js";
 
@@ -87,7 +88,6 @@ const getParticipants = async (id) => {
   try {
     const dataObj = await fetchApi.get(`${BASE_URL}/${GET_PARTICIPANTS}/${id}`);
     const datas = await dataObj.data;
-    console.log(datas);
     return datas;
   } catch (err) {
     return err;
@@ -114,6 +114,16 @@ const sendInvite = async (params) => {
     return err;
   }
 };
+
+const addParticipants = async (params) => {
+  try {
+    const result = await fetchApi.post(`${BASE_URL}/${ADD_PARTICIPANTS}`, params);
+    return result;
+  } catch (err) {
+    return err;
+  }
+}
+
 const userServices = {
   register,
   login,
@@ -125,6 +135,7 @@ const userServices = {
   resetPassword,
   addToGoogleCalender,
   sendInvite,
+  addParticipants
 };
 
 export default userServices;

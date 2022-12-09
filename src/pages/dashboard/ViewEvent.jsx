@@ -7,12 +7,14 @@ import { CatchUpEventContextUse } from "../../context/CatchUpEventContext";
 import AddParticipantModal from "../../components/AddParticipantModal";
 import { BsPlus } from "react-icons/bs";
 import { useParams } from "react-router-dom";
+import clipboard from "../dashboard/icons/clipboard.svg";
 import userServices from "../../services/userServices";
 const ViewEvent = () => {
   const [isActive, setIsActive] = useState(false);
   const { setShowModal } = CatchUpEventContextUse();
   const [singleEvent, setSingleEvent] = useState({});
   const [participants, setParticipants] = useState([]);
+  const [copied, setCopied] = useState(false);
 
   const toggleShowAccordion = (id) => {
     if (isActive === id) {
@@ -27,7 +29,6 @@ const ViewEvent = () => {
     const events = JSON.parse(eArr);
     const sEvent = events.find((event) => event._id === id);
     setSingleEvent(sEvent);
-    console.log(sEvent)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -37,9 +38,20 @@ const ViewEvent = () => {
       const data = await userServices.getParticipants(id);
       setParticipants(data);
     };
-    console.log(participants);
+
     getParticipants();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  const copyLink = () => {
+		setCopied(true);
+		navigator.clipboard.writeText(
+			`https://catchup.hng.tech/event_invite/${id}`
+		);
+		setTimeout(() => {
+			setCopied(false);
+		}, 3000);
+	};
 
   return (
     <>
@@ -152,6 +164,26 @@ const ViewEvent = () => {
                 </div>
               ))}
             </div>
+            <div className="flex justify-center items-center mt-6">
+            <button className={`flex mt-4 md:mt items-center justify-center w-[127px] mx-4 rounded bg-white border-[1px] ${
+              copied
+              ? "border-green-500 text-green-500"
+              : "border-[#0056d6] text-[#0056d6]"
+            } h-[44px]`}
+            onClick={()=> copyLink()}>
+									<img
+                  className="mr-2"
+                  src={clipboard}
+                  alt="copy to clipboard" />
+									Copy link
+								</button>
+            </div>
+                <span className={`${
+                   copied ? "block" : "hidden"
+                   } absolute -top-10 left-6  p-2 text-green-500 bg-white border border-green-500 rounded transition text-xs`}>
+									https://catchup.hng.tech/ copied. You can share to
+									invite your friends
+								</span>
           </section>
         </main>
         <AddParticipantModal eventId={id} />

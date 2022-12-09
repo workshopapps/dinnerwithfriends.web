@@ -5,11 +5,17 @@ import { FiSettings, FiLogIn } from "react-icons/fi";
 import menuStyles from "./createEvent.module.css";
 import { Link } from "react-router-dom";
 import avatar from "../../assets/img/Avatar.png";
+import { FaAngleDown } from 'react-icons/fa';
 import Logo from "../Logo";
 import Button from "../Button";
+import jwt_decode from "jwt-decode";
+
 /* global gapi */
 
 const CreateEventNavbar = ({setModal}) => {
+  const token = localStorage.getItem("jwt-token")
+  const decoded = jwt_decode(token);
+
 	const [open, setOpen] = useState(false);
   const [showNav, setShowNav] = useState(false);
   const [display, setDisplay] = useState(false);
@@ -96,9 +102,12 @@ const CreateEventNavbar = ({setModal}) => {
 			<div className='h-[45px] md:h-[76px] py-4 md:py-0 bg-transparent container flex flex-wrap items-center justify-between mx-auto'>
 				<Logo />
 				<div className='flex md:order-2'>
-					<div onClick={toggleOpen} className='hidden md:block cursor-pointer'>
+					<div onClick={toggleOpen} className='hidden md:flex items-center gap-[5px] cursor-pointer'>
 						<span>
-							<img src={avatar} alt='' className='w-10' />
+              <FaAngleDown />
+						</span>
+						<span>
+							<img src={avatar} alt='' className='w-[30px]' />
 						</span>
 					</div>
 					<div
@@ -143,7 +152,7 @@ const CreateEventNavbar = ({setModal}) => {
                   </Link>
                 </li>
                 <li>
-                  <Button className="flex py-2" onClick={googleCalenderApi}>
+                  <Button className="flex items-center py-2" onClick={googleCalenderApi}>
                     <img src={googleCalendar} alt="" className="mr-2 w-4" />
                     Sync with Google Calender
                   </Button>
@@ -154,8 +163,8 @@ const CreateEventNavbar = ({setModal}) => {
                       <img src={avatar} alt="" className="w-8" />
                     </div>
                     <span className={menuStyles.theUsersName}>
-                      <span>Mbulu Benita</span>
-                      <span>beniottabenita@gmail.com</span>
+                      <span>{decoded.name}</span>
+                      <span>{decoded.email}</span>
                     </span>
                   </span>
                 </span>
@@ -172,7 +181,7 @@ const CreateEventNavbar = ({setModal}) => {
       </div>
         {showNav &&
           <div style={nav}
-          className="text-left block transition linear duration-300 items-center justify-between  w-full md:flex md:w-auto md:order-1"
+          className="text-left block transition linear duration-300 items-center justify-between  w-full md:flex md:w-auto md:order-1 md:hidden"
           id="navbar-sticky"
         >
           <ul  className="w-full flex flex-col p-4 mt-0 border border-white rounded-lg bg-white md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white">
@@ -211,8 +220,8 @@ const CreateEventNavbar = ({setModal}) => {
                   <img src={avatar} alt="" className="w-8" />
                 </div>
                 <span className={menuStyles.theUsersName}>
-                  <span>Mbulu Benita</span>
-                  <span>beniottabenita@gmail.com</span>
+                  <span>{decoded.name}</span>
+                  <span>{decoded.email}</span>
                 </span>
               </span>
             </li>
