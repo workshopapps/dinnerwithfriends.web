@@ -12,7 +12,8 @@ import {
   GOOGLE_CALENDER,
   ADD_PARTICIPANTS,
   SEND_INVITE,
-  DELETE_EVENT
+  DELETE_EVENT,
+  EVENT_BY_TOKEN
 } from "./rootEndPoints.js";
 
 const register = async (params) => {
@@ -85,6 +86,16 @@ const getEventsById = async (id) => {
   }
 };
 
+const getEventsByToken = async (token) => {
+  try {
+    const dataObj = await fetchApi.get(`${BASE_URL}/${EVENT_BY_TOKEN}/${token}`);
+    const datas = await dataObj.data;
+    return datas;
+  } catch (err) {
+    return err;
+  }
+}
+
 const getParticipants = async (id) => {
   try {
     const dataObj = await fetchApi.get(`${BASE_URL}/${GET_PARTICIPANTS}/${id}`);
@@ -145,7 +156,8 @@ const userServices = {
   addToGoogleCalender,
   addParticipants,
   deleteEvent,
-  sendInvite
+  sendInvite,
+  getEventsByToken
 };
 
 export default userServices;

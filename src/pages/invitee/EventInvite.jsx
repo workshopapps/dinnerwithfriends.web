@@ -6,7 +6,7 @@ import moment from "moment/moment";
 import userServices from "../../services/userServices";
 
 const EventInvite = () => {
-  const [eventData, setEventData] = useState(null);
+  const [eventData, setEventData] = useState("");
   const preferredDate = eventData ? eventData.host_prefered_time.replace("-", "") : "";
   const preferredTime = eventData ? moment(preferredDate, "DD-MM-YYYY HH:mm").format("YYYY-MM-DDTHH:mm") : "";
   const [inviteDetails, setInviteDetails] = useState({
@@ -17,7 +17,7 @@ const EventInvite = () => {
   const navigate = useNavigate();
   const [declinedInvite, setDeclinedInvite] = useState(false);
   const [resultMsg, setResultMsg] = useState("");
-  let { eventId } = useParams();
+  let { token } = useParams();
   const startDate = eventData ? moment(eventData.start_date, "DD-MM-YYYY").format("YYYY-MM-DDTHH:mm") : "";
   const endDate = eventData ? moment(eventData.end_date, "DD-MM-YYYY").format("YYYY-MM-DDTHH:mm") : "";
   const emailRegex = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -35,13 +35,12 @@ const EventInvite = () => {
   };
 
   const getEventDetails = async() => {
-  const result = await userServices.getEventsById(`${eventId}`)
-    setEventData(result)
-    console.log(result)
-    if(eventData?.final_event_date) {
+    const result = await userServices.getEventsByToken(`${token}`);
+    setEventData(result);
+    if(eventData?.host_prefered_time) {
       setInviteDetails({
         ...inviteDetails,
-        preferred_date_time: eventData.final_event_date
+        preferred_date_time: preferredTime
       })
     }
   };
@@ -80,6 +79,10 @@ const EventInvite = () => {
     if(hasPassed) {
       navigate("/closed_event")
     }
+
+    if(eventData === undefined) {
+      navigate("*")
+    }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [hasPassed]);
 
@@ -95,7 +98,7 @@ const EventInvite = () => {
             <br /> You can view the details below..
           </p>
           {declinedInvite ? <p className="font-bold text-red-900">You have succesfully declined this invite... Redirecting to your homepage soon</p> : null}
-          {resultMsg ? <p className="text-red-500">{resultMsg.message}</p> : ""}
+          {resultMsg ? <p className="text-red-500 font-bold">{resultMsg.message}</p> : ""}
         </div>
         <div className="my-8 border py-5 rounded-lg flex justify-center items-center ">
           <form onSubmit={addParticipant}>
