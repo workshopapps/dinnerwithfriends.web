@@ -6,11 +6,13 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ForgetPasswordImage from "../../assets/img/ForgetPasswordImage.png";
 import BackToSignIn from "../../assets/img/BackToSignIn.png";
+import { FiEye, FiEyeOff } from "react-icons/fi";
 
 const ResetPassword = () => {
   const [isSubmit, setIsSubmit] = useState(false);
   const [validCredentials, setValidCredentials] = useState(false);
   const [invalidCredentials, setInvalidCredentials] = useState(false);
+  const [passwordShown, setPasswordShown] = useState(false);
   const {
     register,
     handleSubmit,
@@ -18,6 +20,10 @@ const ResetPassword = () => {
   } = useForm();
 
   const navigate = useNavigate();
+
+  const togglePassword = () => {
+		setPasswordShown(!passwordShown);
+	};
 
   const onSubmit = async (data) => {
     setIsSubmit(true);
@@ -89,6 +95,7 @@ const ResetPassword = () => {
                   className="block w-60 md:w-96 p-3 border rounded-md mb-4"
                   {...register("token", { required: true})}
                 />
+
                 {errors.token && (
                   <p className="italic text-sm mt-2" style={{ color: "red" }}>
                     Please enter a valid code
@@ -114,7 +121,7 @@ const ResetPassword = () => {
                   {errors.email && <p className='italic text-sm mt-2' style={{color: 'red'}}>Please enter a valid email</p>}
               </div>
 
-              <div>
+              <div className="relative">
                 <label
                   className="block font-normal text-gray-600"
                   HtmlFor="password"
@@ -128,7 +135,7 @@ const ResetPassword = () => {
                       : "1px solid #D0D5DD",
                   }}
                   className="block w-60 md:w-96 p-3 border rounded-md mb-4"
-                  type="password"
+                  type={passwordShown ? "text" : "password"}
                   name="password"
                   placeholder="Please enter your unique password"
                   {...register("password", {
@@ -148,6 +155,13 @@ const ResetPassword = () => {
                     },
                   })}
                 />
+                	<span
+								className={`absolute ${
+									errors.password ? "bottom-11" : "bottom-3.5"
+								} right-3 cursor-pointer`}
+								onClick={togglePassword}>
+								{passwordShown ? <FiEyeOff /> : <FiEye />}
+							</span>
                 {errors.password && (
                   <p
                     className="right-0 bottom-[-37px] italic text-sm mt-2"
