@@ -10,3 +10,4 @@ export const GOOGLE_CALENDER = 'calender'
 export const SEND_INVITE = "invitation"
 export const ADD_PARTICIPANTS = 'participant/addpart'
 export const EVENT_BY_TOKEN = 'event/token'
+export const GET_USER = 'user/profile'

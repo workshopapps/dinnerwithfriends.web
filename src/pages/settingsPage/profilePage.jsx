@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 import "./profilePage.css";
 import CreateEventNavbar from "../../components/CreateEvent/CreateEventNavbar";
 
-const profilePage = () => {
+const ProfilePage = () => {
   return (
     <div>
       <div id="main_navbar">
@@ -119,4 +119,4 @@ const profilePage = () => {
   );
 };
 
-export default profilePage;
+export default ProfilePage;
