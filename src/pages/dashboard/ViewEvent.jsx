@@ -12,7 +12,7 @@ import DeleteEventModal from "../../components/DeleteEventModal";
 import { IoMdClose } from "react-icons/io";
 import { CatchUpEventContextUse } from "../../context/CatchUpEventContext";
 import DeleteSuccessModal from "../../components/DeleteSuccessModal";
-import moment from "moment/moment";
+
 
 const ViewEvent = () => {
 	const [isActive, setIsActive] = useState(false);
