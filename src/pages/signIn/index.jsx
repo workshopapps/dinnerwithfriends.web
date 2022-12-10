@@ -23,7 +23,7 @@ const SignIn = () => {
 	};
 
 	const googleSignInAuth = () => {
-		const gLink = "https://prybar.onrender.com/api/v1/auth/google/auth";
+		const gLink = "https://api.catchup.hng.tech/api/v1/auth/google/auth";
 		navigate(gLink.slice(6));
 	};
 
