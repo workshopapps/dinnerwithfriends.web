@@ -78,7 +78,7 @@ const EventSummary = () => {
 		setIsSubmit(true);
 		const invitees = {
 			email_list: participants,
-			event_id: location.state._doc._id,
+			event_id: location.state.event._id,
 		};
 
 		const result = await userServices.sendInvite(invitees);
@@ -98,7 +98,7 @@ const EventSummary = () => {
 	const copyLink = () => {
 		setCopied(true);
 		navigator.clipboard.writeText(
-			`https://catchup.hng.tech/invitee/${location.state._doc._id}`
+			`https://catchup.hng.tech/invitee/${location.state.event._id}`
 		);
 		setTimeout(() => {
 			setCopied(false);
@@ -119,24 +119,24 @@ const EventSummary = () => {
 			<div className='mt-[100px] md:mx-14 mx-5 my-10'>
 				<h2 className='mt-10 text-3xl font-bold'>Event Summary</h2>
 				<div className='mt-4 border w-full p-5 rounded-lg shadow text-[#59595B]'>
-					<h5 className='text-2xl font-bold'>{location.state._doc_event_title}</h5>
+					<h5 className='text-2xl font-bold'>{location.state.event_event_title}</h5>
 					<div className='grid gap-y-3 mt-4'>
 						<div className='flex items-center'>
 							<CiLocationOn className='text-xl' />
 							<p className='text-base font-normal ml-2'>
-								{location.state._doc.location}
+								{location.state.event.location}
 							</p>
 						</div>
 						<div className='flex items-center'>
 							<CiCalendar className='text-xl' />
 							<p className='text-base font-normal ml-2'>
-								{location.state._doc.host_prefered_time}
+								{location.state.event.host_prefered_time}
 							</p>
 						</div>
 						<div className='flex items-center'>
 							<CgMenuLeftAlt className='text-xl' />
 							<p className='text-base font-normal ml-2'>
-								{location.state._doc.event_description}
+								{location.state.event.event_description}
 							</p>
 						</div>
 					</div>
