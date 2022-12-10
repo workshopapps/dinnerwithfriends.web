@@ -34,8 +34,10 @@ const EventInvite = () => {
     })
   };
 
-  const getEventDetails =  () => {
-    userServices.getEventsById(`${eventId}`).then(res => setEventData(res));
+  const getEventDetails = async() => {
+  const result = await userServices.getEventsById(`${eventId}`)
+    setEventData(result)
+    console.log(result)
     if(eventData?.final_event_date) {
       setInviteDetails({
         ...inviteDetails,
@@ -47,7 +49,7 @@ const EventInvite = () => {
   const addParticipant = (e) => {
     e.preventDefault();
 
-    const participantsData = { ...inviteDetails, event_id: eventData._id };
+    const participantsData = { ...inviteDetails, event_id: eventData?._id };
 
     userServices.addParticipants(participantsData)
     .then(response => {
