@@ -93,7 +93,7 @@ export default function FirstComponent() {
           <h2 className="text-[#0056D6] text-2xl tracking-wide font-bold md:text-5xl lg:text-[3.25rem]">
             Instantly invite anyone on your contact list
           </h2>
-          <p className="text-xs tracking-[0.07em] md:text-xl lg:text-2xl text-justify">
+          <p className="text-sm md:text-xl lg:text-2xl ">
             When you create a get-together you can add as many people as you
             would like, as long as they are in your contact list. Whether you’re
             getting together with two friends or holding a large family reunion,
