@@ -34,6 +34,8 @@ const ViewEvent = () => {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
+
+
 	const { id } = useParams();
 	useEffect(() => {
 		const getParticipants = async () => {
@@ -47,7 +49,7 @@ const ViewEvent = () => {
 	const copyLink = () => {
 		setCopied(true);
 		navigator.clipboard.writeText(
-			`https://catchup.hng.tech/event_invite/${id}`
+			`https://catchup.hng.tech/invitee/${id}`
 		);
 		setTimeout(() => {
 			setCopied(false);

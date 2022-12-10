@@ -98,7 +98,7 @@ const EventSummary = () => {
 	const copyLink = () => {
 		setCopied(true);
 		navigator.clipboard.writeText(
-			`https://catchup.hng.tech/event_invite/${location.state._doc._id}`
+			`https://catchup.hng.tech/invitee/${location.state._doc._id}`
 		);
 		setTimeout(() => {
 			setCopied(false);

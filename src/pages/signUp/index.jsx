@@ -24,7 +24,7 @@ const SignUp = () => {
 	};
 
 	const googleSignUpAuth = () => {
-		const gLink = "https://prybar.onrender.com/api/v1/auth/google/auth";
+		const gLink = "https://api.catchup.hng.tech/api/v1/auth/google/auth";
 		navigate(gLink.slice(6));
 	};
 
@@ -44,7 +44,7 @@ const SignUp = () => {
 			}),
 		};
 
-		fetch("https://prybar.onrender.com/api/v1/auth/signup", options)
+		fetch("https://api.catchup.hng.tech/api/v1/auth/signup", options)
 			.then((response) => {
 				if (!response.ok) {
 					throw Error(response.status);
