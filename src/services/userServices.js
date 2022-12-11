@@ -181,7 +181,6 @@ const userServices = {
   deleteParticipants,
   deleteEvent,
   sendInvite,
-  addParticipants,
   getUser,
   updateUser
 };
