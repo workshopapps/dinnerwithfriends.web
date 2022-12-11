@@ -44,25 +44,25 @@ const profileTwo = () => {
             <div className="user-details">
               <div className="input-box">
                 <span className="details">Full Name</span>
-                <input type="name" placeholder="Femi Femo" required />
+                <input type="name" placeholder="Femi Femo" required className="bg-transparent" />
               </div>
               <div className="input-box">
                 <span className="details">Username/Nickname</span>
-                <input type="name" placeholder="Femi Femo 😎" />
+                <input type="name" placeholder="Femi Femo 😎" className="bg-transparent" />
               </div>
             </div>
             
             <div className="user-details">
               <div className="input-box">
                 <span className="details">Mobile Number</span>
-                <input type="tel" placeholder="+234 801 234 5678" required />
+                <input type="tel" placeholder="+234 801 234 5678" required className="bg-transparent" />
               </div>
               <div className="input-box">
                 <span className="details">Email</span>
                 <input
                   type="email"
                   placeholder="femiodeyinka@examplemail.com"
-                  required
+                  required className="bg-transparent"
                 />
               </div>
             </div>
@@ -82,7 +82,7 @@ const profileTwo = () => {
               <div className="input-box">
                 <span className="details">Birthday</span>
                 <div className="date_input">
-                  <input type="date" />
+                  <input type="date" className="bg-transparent" />
                 </div>
               </div>
             </div>
