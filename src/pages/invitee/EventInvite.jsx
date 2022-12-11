@@ -7,7 +7,7 @@ import userServices from "../../services/userServices";
 
 const EventInvite = () => {
   const [eventData, setEventData] = useState("");
-  const preferredDate = eventData ? eventData.host_prefered_time.replace("-", "") : "";
+  const preferredDate = eventData ? eventData.event.host_prefered_time.replace("-", "") : "";
   const preferredTime = eventData ? moment(preferredDate, "DD-MM-YYYY HH:mm").format("YYYY-MM-DDTHH:mm") : "";
   const [inviteDetails, setInviteDetails] = useState({
     fullname: "",
@@ -17,11 +17,11 @@ const EventInvite = () => {
   const navigate = useNavigate();
   const [declinedInvite, setDeclinedInvite] = useState(false);
   const [resultMsg, setResultMsg] = useState("");
-  let { token } = useParams();
-  const startDate = eventData ? moment(eventData.start_date, "DD-MM-YYYY").format("YYYY-MM-DDTHH:mm") : "";
-  const endDate = eventData ? moment(eventData.end_date, "DD-MM-YYYY").format("YYYY-MM-DDTHH:mm") : "";
+  const { token } = useParams();
+  const startDate = eventData ? moment(eventData.event.start_date, "DD-MM-YYYY").format("YYYY-MM-DDTHH:mm") : "";
+  const endDate = eventData ? moment(eventData.event.end_date, "DD-MM-YYYY").format("YYYY-MM-DDTHH:mm") : "";
   const emailRegex = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-  const decidedEvent = eventData ? moment(eventData.final_event_date).format("MMMM DD YYYY HH:mm") : "";
+  const decidedEvent = eventData ? moment(eventData.event.final_event_date).format("MMMM DD YYYY HH:mm") : "";
   const currentDate = moment(Date.now()).format("YYYY-MM-DDTHH:mm");
   const hasPassed = eventData && moment(currentDate).isAfter(endDate);
 
@@ -34,10 +34,10 @@ const EventInvite = () => {
     })
   };
 
-  const getEventDetails = async() => {
+  const getEventDetails = async () => {
     const result = await userServices.getEventsByToken(`${token}`);
     setEventData(result);
-    if(eventData?.host_prefered_time) {
+    if(eventData?.event?.host_prefered_time) {
       setInviteDetails({
         ...inviteDetails,
         preferred_date_time: preferredTime
@@ -48,7 +48,7 @@ const EventInvite = () => {
   const addParticipant = (e) => {
     e.preventDefault();
 
-    const participantsData = { ...inviteDetails, event_id: eventData?._id };
+    const participantsData = { ...inviteDetails, event_id: eventData?.event._id };
 
     userServices.addParticipants(participantsData)
     .then(response => {
@@ -93,8 +93,8 @@ const EventInvite = () => {
         <div className="mx-2 md:mx-0 text-center w-full">
           <h1 className="text-2xl font-bold md:text-3xl">Hello, there.</h1>
           <p className="leading-6 text-gray-600 font-sm">
-            You have been invited to {eventData ? eventData.event_type : ""} by
-            <span className="text-blue-700 font-bold"> {eventData ? eventData.host_info[0].name : ""}</span>
+            You have been invited to {eventData ? eventData.event.event_type : ""} by
+            <span className="text-blue-700 font-bold"> {eventData ? eventData.event.host_info[0].name : ""}</span>
             <br /> You can view the details below..
           </p>
           {declinedInvite ? <p className="font-bold text-red-900">You have succesfully declined this invite... Redirecting to your homepage soon</p> : null}
@@ -128,7 +128,7 @@ const EventInvite = () => {
                 autoComplete="true"
               />
             </div>
-            { eventData?.final_event_date ?
+            { eventData?.event?.final_event_date ?
             <p className="text-blue-500 font-semibold text-center w-[200px] md:w-[450px]">An event date has been chosen. Event to be hosted by {decidedEvent}</p> :
             <div className="my-4 grid">
               <label className="text-base font-semibold mb-1">
