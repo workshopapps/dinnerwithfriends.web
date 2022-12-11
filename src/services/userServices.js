@@ -147,7 +147,7 @@ const updateUser = async (params) => {
     return err;
   }
 };
-}
+
 const deleteParticipants = async (id) => {
   try {
     const result = await fetchApi.deleteE(`${BASE_URL}/${DELETE_PARTICIPANTS}/${id}`);
