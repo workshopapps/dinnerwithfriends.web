@@ -127,6 +127,15 @@ const addParticipants = async (params) => {
   }
 }
 
+const deleteEvent = async (id) => {
+  try {
+    const result = await fetchApi.deleteE(`${BASE_URL}/${DELETE_EVENT}/${id}`);
+    return result;
+  } catch (err) {
+    return err;
+  }
+}
+
 const getUser = async () => {
   try {
     const dataObj = await fetchApi.get(`${BASE_URL}/${GET_USER}`);
