@@ -3,7 +3,6 @@ import { MdOutlineArrowBack } from "react-icons/md";
 import avatar from "../../assets/img/Avatar.png";
 import SettingsFooter from "../../components/settingsPage/setFooter";
 import Footer from "../../components/Footer";
-import Navbar from "../../components/Navbar";
 import {Link, useNavigate} from "react-router-dom"
 import "./profileTwo.css";
 import CreateEventNavbar from "../../components/CreateEvent/CreateEventNavbar";
