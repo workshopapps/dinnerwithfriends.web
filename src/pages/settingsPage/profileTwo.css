@@ -240,7 +240,7 @@
       display: none;
     }
     #main-body{
-      margin: auto;
+      /* margin: auto; */
       max-width: 80%;
       padding: 1rem;
     }
