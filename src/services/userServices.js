@@ -14,6 +14,7 @@ import {
   DELETE_PARTICIPANTS,
   SEND_INVITE,
   GET_USER,
+  DELETE_EVENT,
 } from "./rootEndPoints.js";
 
 const register = async (params) => {
