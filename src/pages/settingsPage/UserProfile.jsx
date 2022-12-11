@@ -7,39 +7,51 @@ import Navbar from "../../components/Navbar";
 import {Link} from "react-router-dom"
 import "./profileTwo.css";
 import CreateEventNavbar from "../../components/CreateEvent/CreateEventNavbar";
-import userServices from "../../services/userServices";
+import userServices from "../../services/userServices.js";
 
 const UserProfile = () => {
+  const [isSubmit, setIsSubmit] = useState(false);
+	const [isSuccess, setIsSuccess] = useState(false);
+	const [isFailure, setIsFailure] = useState(false);
   const [user, setUser] = useState({
-		fullname: ' ',
-		username: '',
+		
+		name: '',
     email: '',
-    birthday: null,
-		gender: null,
-		mobileNumber: null,
+    birthday:'' ,
+		gender: '',
+		mobile: '',
 	});
 
 	const onChange = e => setUser({ ...user, [e.target.name]: e.target.value });
-
+  
+  const fetchData = async() => {
+    const data = await userServices.getUser()
+    
+    setUser(data)
+  }
   useEffect(() => {
-    async function fetchData() {
-      const result = await fetch("https://prybar.onrender.com/api/v1/user/profile")
-      const jsonResult = await result.json()
-      setUser(jsonResult)
-      console.log(user)
-      console.log(jsonResult)
-    }
+   
     fetchData(); 
   }, [])
   
-  // useEffect(() => {
-  //   async function fetchData() {
-  //     const result = await userServices.getUser() 
-  //     setUser(result)
-  //     console.log(result.json())
-  //   }
-  //   fetchData(); 
-  // }, [])
+  const updateAccount = async(e) => {
+    setIsSubmit(true)
+    fetchData()
+    e.preventDefault()
+    const data = await userServices.updateUser(user)
+    if (data.status === "fail") {
+      setIsSubmit(false);
+      setIsFailure(true);
+    }
+
+		if (data.status === "success") {
+      setUser(data)
+			setIsSuccess(true);
+	setIsSubmit(false)
+
+		}
+  }
+
   return (
     <div>
       <div id="main_navbar">
@@ -71,22 +83,18 @@ const UserProfile = () => {
         </div>
 
         <div className="the-container">
-          <form action="#">
+          <form action="#" onSubmit={updateAccount}>
             <div className="user-details">
               <div className="input-box">
                 <span className="details">Full Name</span>
-                <input  type="name" onChange={onChange} value={user.fullname} name="fullname" placeholder="Femi Femo" required />
+                <input  type="name" onChange={onChange} value={user.name} name="name" placeholder="Femi Femo" required />
               </div>
-              <div className="input-box">
-                <span className="details">Username/Nickname</span>
-                <input type="name" onChange={onChange} value={user.username} name="username" placeholder="Femi Femo 😎" />
               </div>
-            </div>
             
             <div className="user-details">
               <div className="input-box">
                 <span className="details">Mobile Number</span>
-                <input type="tel" onChange={onChange} value={user.mobileNumber} name="mobileNumber" placeholder="+234 801 234 5678" required />
+                <input type="tel" onChange={onChange} value={user.mobile} name="mobile" placeholder="+234 801 234 5678" required />
               </div>
               <div className="input-box">
                 <span className="details">Email</span>
@@ -106,8 +114,9 @@ const UserProfile = () => {
                   placeholder="Femi Femo"
                   className="select"
                 >
-                  <option required>Male</option>
-                  <option>Female</option>
+                  <option disabled value=''>Select gender</option>
+                  <option value='Male'>Male</option>
+                  <option value='Female'>Female</option>
                 </select>
               </div>
               <div className="input-box">
@@ -119,7 +128,10 @@ const UserProfile = () => {
             </div>
         
             <div className="edit-btn">
-              <input type="submit"  value="Save" className="edit_btn" />
+              <button type="submit" className="edit_btn" >
+                {isSubmit?'loading ...': 'Save'} 
+              </button>
+
             </div>
           </form>
         </div>

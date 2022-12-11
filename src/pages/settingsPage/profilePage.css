@@ -84,7 +84,7 @@
 .settings_body {
   max-width: 60%;
   margin: 5rem auto;
-  height: 70vh;
+  
 }
 .more_user_details {
   padding: 1rem;
@@ -199,7 +199,7 @@
   .settings_body {
     max-width: 100%;
     margin: 5rem auto;
-    height: 70vh;
+    
   }
   .body_title_container {
     display: flex;
@@ -264,7 +264,7 @@
   .settings_body {
     max-width: 100%;
     margin: 5rem auto;
-    height: 70vh;
+    
   }
 }
 @media (max-width: 486px) {

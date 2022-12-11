@@ -10,5 +10,5 @@ export const GET_PARTICIPANTS = 'event/participants'
 export const GOOGLE_CALENDER = 'calender'
 export const SEND_INVITE = "invitation"
 export const ADD_PARTICIPANTS = 'participant/addpart'
-export const EVENT_BY_TOKEN = 'event/token'
+export const EVENT_BY_TOKEN = 'invitation/event'
 export const GET_USER = 'user/profile'

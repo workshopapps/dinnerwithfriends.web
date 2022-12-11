@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
+import moment from "moment/moment";
 import Navbar from "../../components/CreateEvent/CreateEventNavbar";
 import arrow from "../../assets/icons/arrow-down.svg";
 import profile from "../../assets/img/profile.svg";
@@ -19,7 +20,7 @@ const ViewEvent = () => {
 	const [singleEvent, setSingleEvent] = useState({});
 	const [participants, setParticipants] = useState([]);
 	const [copied, setCopied] = useState(false);
-
+	const [agreedDate, setAgreedDate] = useState("")
 	const toggleShowAccordion = (id) => {
 		if (isActive === id) {
 			setIsActive();
@@ -33,6 +34,8 @@ const ViewEvent = () => {
 		const events = JSON.parse(eArr);
 		const sEvent = events.find((event) => event._id === id);
 		setSingleEvent(sEvent);
+		setAgreedDate(moment(singleEvent?.final_event_date, "YYYY-MM-DDTHH:mm").format('MMMM Do YYYY, h:mm:ss a'))
+		
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
@@ -151,7 +154,7 @@ const ViewEvent = () => {
 								</span>
 							) : (
 								<span className='bg-[#E7F0FF] text-[#003585] text-xs px-2 py-1 font-semibold rounded ml-1'>
-									{singleEvent?.final_event_date}
+									{agreedDate}
 								</span>
 							)}
 						</aside>

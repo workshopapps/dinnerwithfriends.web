@@ -82,7 +82,7 @@ const EventInvite = () => {
         if (response.status === "success") {
           setTimeout(() => {
             setResultMsg({ message: "Successful!" });
-            navigate("/event_invite/event_invite_response");
+            navigate("/invitee/event_invite_response");
           }, 2000);
         } else {
           setResultMsg(response);

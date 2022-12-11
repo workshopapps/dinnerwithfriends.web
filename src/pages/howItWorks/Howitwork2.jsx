@@ -27,7 +27,7 @@ export default function Howitwork2() {
            py-8 max-w[538px]  mx-auto text-center  lg:text-start lg:flex-row  lg:py-7"
             >
               <img src={google} className="p-6 w-40 h-40 " alt="img" />
-              <div className="flex flex-col w-80 ">
+              <div className="flex flex-col w-11/12">
                 <h1 className="text-lg text-[#0056D6] font-bold">
                   Sync with google calender
                 </h1>
@@ -40,7 +40,7 @@ export default function Howitwork2() {
             </div>
             <div className="flex flex-col  items-center border border-gray-300 px-4 py-8 max-w[538px]  mx-auto text-center lg:text-start lg:flex-row lg:py-7 ">
               <img src={elipse} className="p-6 w-40 h-40 " alt="img" />
-              <div className="flex flex-col w-80 ">
+              <div className="flex flex-col w-11/12">
                 <h1 className="text-lg text-[#0056D6] font-bold">
                   Create an account
                 </h1>
@@ -54,7 +54,7 @@ export default function Howitwork2() {
             </div>
             <div className="flex flex-col  items-center border border-gray-300 px-4 py-8 max-w[538px]  mx-auto text-center lg:text-start lg:flex-row  lg:py-7">
               <img src={HitIcon} className="p-6  w-40 h-40" alt="img" />
-              <div className="flex flex-col w-80 ">
+              <div className="flex flex-col w-11/12">
                 <h1 className="text-lg text-[#0056D6] font-bold">
                   Hit the “+” icon to start an invitation
                 </h1>
@@ -67,7 +67,7 @@ export default function Howitwork2() {
             </div>
             <div className="flex flex-col  items-center border border-gray-300 px-4 py-8 max-w[538px]  mx-auto text-center lg:text-start lg:flex-row  lg:py-7">
               <img src={elipse2} className="p-6 w-40 h-40 " alt="img" />
-              <div className="flex flex-col w-80 ">
+              <div className="flex flex-col w-11/12">
                 <h1 className="text-lg text-[#0056D6] font-bold">
                   Add invitees from your contacts
                 </h1>
