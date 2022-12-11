@@ -105,7 +105,7 @@ const SignIn = () => {
 										!errors.email
 											? "shadow-[0px_0px_0px_4px_rgba(74,74,104,0.1)]"
 											: "shadow-[0px_0px_0px_4px_rgba(249,50,50,0.1)]"
-									}  mt-2 w-full h-11 p-3.5 rounded-lg`}
+									}  mt-2 w-full h-11 p-3.5 rounded-lg bg-transparent`}
 									type='text'
 									name='email'
 									id='email'
@@ -132,7 +132,7 @@ const SignIn = () => {
 											!errors.password
 												? "shadow-[0px_0px_0px_4px_rgba(74,74,104,0.1)]"
 												: "shadow-[0px_0px_0px_4px_rgba(249,50,50,0.1)]"
-										}  mt-2 w-full h-11 p-3.5 rounded-lg`}
+										}  mt-2 w-full h-11 p-3.5 rounded-lg bg-transparent`}
 										type={passwordShown ? "text" : "password"}
 										name='password'
 										id='password'
@@ -185,7 +185,7 @@ const SignIn = () => {
 
 								<button
 									type='submit'
-									className='hover:bg-blue-400 transition ease-in duration-200 hover:bg-[#0056D6] mt-7 text-white bg-[#0056D6] w-full h-11 rounded-lg'>
+									className='transition ease-in duration-200 hover:bg-[#0056D6] mt-7 text-white bg-[#0056D6] w-full h-11 rounded-lg'>
 									{isSubmit ? "Loading..." : "Sign In"}
 								</button>
 							</form>
