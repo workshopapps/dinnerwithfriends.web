@@ -3,7 +3,6 @@ import { MdOutlineArrowBack } from "react-icons/md";
 import { BiEdit } from "react-icons/bi";
 import avatar from "../../assets/img/Avatar.png";
 import Footer from "../../components/Footer";
-import Navbar from "../../components/Navbar";
 import SettingsFooter from "../../components/settingsPage/setFooter";
 import { Link } from "react-router-dom";
 import userServices from "../../services/userServices";
@@ -13,7 +12,7 @@ import CreateEventNavbar from "../../components/CreateEvent/CreateEventNavbar";
 
 const ProfilePage = () => {
   const [user, setUser] = useState({
-		
+
 		name: '',
     email: '',
     birthday:'' ,
@@ -23,18 +22,15 @@ const ProfilePage = () => {
 
   const fetchData = async() => {
     const data = await userServices.getUser()
-    
+
     setUser(data)
   }
   useEffect(() => {
-   
-    fetchData(); 
+
+    fetchData();
   }, [])
   return (
     <div>
-      <div id="main_navbar">
-        <Navbar />
-      </div>
       <CreateEventNavbar />
 
       <div className="settings_body">

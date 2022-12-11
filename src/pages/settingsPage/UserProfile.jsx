@@ -13,9 +13,8 @@ const UserProfile = () => {
 	const [isSuccess, setIsSuccess] = useState(false);
 	const [isFailure, setIsFailure] = useState(false);
   const [formError, setFormError] = useState({});
-  const [validEmail, setValidEmail] = useState(false);
   const [user, setUser] = useState({
-		
+
 		name: '',
     email: '',
     birthday:'' ,
@@ -23,69 +22,44 @@ const UserProfile = () => {
 		mobile: '',
 	});
 
-	const onChange = e => setUser({ ...user, [e.target.name]: e.target.value });
-  
-  const navigate = useNavigate()
-
-  useEffect(() => {
-		if (Object.keys(formError).length === 0) {
-			setValidEmail(true);
-		}
-
-
-    if (Object.keys(formError).length !== 0) {
-			setIsSubmit(false);
-      
-		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [formError]);
-  useEffect(() => {
-		
-
-
-    if (Object.keys(formError).length !== 0) {
-			setIsSubmit(false);
-      
-		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [formError]);
   const validate = (values) => {
 		const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
 		const errors = {};
 
 		if (!regex.test(values)) {
 			errors.email = "This is not a valid email format!";
-			setValidEmail(false);
-		} else {
-			setValidEmail(true);
 		}
 		return errors;
 	};
 
+	const onChange = e => {
+    setUser({ ...user, [e.target.name]: e.target.value });
+    setFormError(validate(user.email));
+  }
+
+  const navigate = useNavigate()
+
   const fetchData = async() => {
     const data = await userServices.getUser()
-    
     setUser(data)
   }
+
   useEffect(() => {
-   
-    fetchData(); 
+    fetchData();
   }, [])
-  
+
   const updateAccount = async(e) => {
     setIsSubmit(true)
-    fetchData() 
+    fetchData()
     e.preventDefault()
-    setFormError(validate(user.email));
+    // setFormError(validate(user.email));
     const data = await userServices.updateUser(user)
     if (data.status === "fail") {
       setIsSubmit(false);
       setIsFailure(true);
     }
 
-   
-
-		if (data.status === "success" && validEmail === false ) {
+		if (data.status === "success") {
       setUser(data)
 			setIsSuccess(true);
 	    setIsSubmit(false)
@@ -135,7 +109,7 @@ const UserProfile = () => {
         </div>
         <p>{errorMsg()}</p>
         <div className="user_details_field">
-      
+
           <div className="avatar_fullName">
             <img src={avatar} alt="" className="avatar" />
             <div className="fullName">
@@ -156,14 +130,14 @@ const UserProfile = () => {
               <div className="input-box">
                 <span className="details">Email</span>
                 <input
-                  type="email" onChange={onChange} value={user.email} 
+                  type="email" onChange={onChange} value={user.email}
                   name="email" placeholder="femiodeyinka@examplemail.com"
                   required
                 />
                  <small className='text-red-500'>{formError.email}</small>
               </div>
             </div>
-            
+
             <div className="user-details">
               <div className="input-box">
                 <span className="details">Mobile Number</span>
@@ -175,9 +149,9 @@ const UserProfile = () => {
                   <input type="date" onChange={onChange} value={user.birthday} name="birthday" />
                 </div>
               </div>
-              
+
             </div>
-            
+
             <div className="user-details">
               <div className="input-box">
                 <span className="details">Gender</span>
@@ -186,24 +160,24 @@ const UserProfile = () => {
                   placeholder="Femi Femo"
                   className="select"
                 >
-                  <option disabled value=''>Select gender</option>
+                  <option value=''>Select gender</option>
                   <option value='Male'>Male</option>
                   <option value='Female'>Female</option>
                 </select>
               </div>
-             
+
             </div>
-        
+
             <div className="edit-btn">
               <button type="submit" className="edit_btn" >
-                {isSubmit?'loading ...': 'Save'} 
+                {isSubmit?'loading ...': 'Save'}
               </button>
 
             </div>
           </form>
         </div>
 
-        
+
       </div>
       <SettingsFooter className="settings-footer" />
       <div id="main_footer">
