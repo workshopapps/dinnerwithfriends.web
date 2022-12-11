@@ -8,7 +8,7 @@ import userServices from "../../services/userServices";
 const EventInvite = () => {
   const [eventData, setEventData] = useState("");
   const preferredDate = eventData ? eventData.event.host_prefered_time.replace("-", "") : "";
-  const preferredTime = eventData ? moment(preferredDate, "DD-MM-YYYY HH:mm").format("YYYY-MM-DDTHH:mm") : "";
+  const preferredTime = eventData ? moment(preferredDate, "MM-DD-YYYY HH:mm").format("YYYY-MM-DDTHH:mm") : "";
   const [inviteDetails, setInviteDetails] = useState({
     fullname: "",
     email: "",
@@ -18,8 +18,8 @@ const EventInvite = () => {
   const [declinedInvite, setDeclinedInvite] = useState(false);
   const [resultMsg, setResultMsg] = useState("");
   const { token } = useParams();
-  const startDate = eventData ? moment(eventData.event.start_date, "DD-MM-YYYY").format("YYYY-MM-DDTHH:mm") : "";
-  const endDate = eventData ? moment(eventData.event.end_date, "DD-MM-YYYY").format("YYYY-MM-DDTHH:mm") : "";
+  const startDate = eventData ? moment(eventData.event.start_date, "MM-DD-YYYY").format("YYYY-MM-DDTHH:mm") : "";
+  const endDate = eventData ? moment(eventData.event.end_date, "MM-DD-YYYY").format("YYYY-MM-DDTHH:mm") : "";
   const emailRegex = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
   const decidedEvent = eventData ? moment(eventData.event.final_event_date).format("MMMM DD YYYY HH:mm") : "";
   const currentDate = moment(Date.now()).format("YYYY-MM-DDTHH:mm");
