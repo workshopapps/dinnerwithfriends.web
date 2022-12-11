@@ -46,7 +46,7 @@ const UpcomingEvent = () => {
 					final_event_date,
 					participant_number,
 				}) => {
-					
+
 					return (
 					<Event
 					status={status}
