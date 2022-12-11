@@ -7,7 +7,7 @@ import userServices from "../../services/userServices";
 
 const EventInvite = () => {
   const [eventData, setEventData] = useState("");
-  const preferredDate = eventData ? eventData.event.host_prefered_time.replace("-", "") : "";
+  const preferredDate = eventData ? eventData?.event?.host_prefered_time.replace("-", "") : "";
   const preferredTime = eventData ? moment(preferredDate, "MM-DD-YYYY HH:mm").format("YYYY-MM-DDTHH:mm") : "";
   const [inviteDetails, setInviteDetails] = useState({
     fullname: "",
@@ -44,6 +44,7 @@ const EventInvite = () => {
       })
     }
   };
+  console.log(eventData)
 
   const addParticipant = (e) => {
     e.preventDefault();
