@@ -1,8 +1,6 @@
 import React, {useEffect, useState} from "react";
 import { MdOutlineArrowBack } from "react-icons/md";
-import { IoIosArrowDown } from "react-icons/io";
 import { BiEdit } from "react-icons/bi";
-import { AiOutlineCopyright } from "react-icons/ai";
 import avatar from "../../assets/img/Avatar.png";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
