@@ -33,8 +33,9 @@ import AboutUsPage from "./pages/aboutUs";
 import { googleCalender } from "./helpers/googleCalender";
 import EventInvite from "./pages/invitee/EventInvite";
 import Notification from "./pages/notifications/notification";
-googleCalender();
+import Verify from "./pages/verify";
 
+googleCalender();
 
 function App() {
   return (
@@ -55,7 +56,7 @@ function App() {
         <Route path="/faq" element={<Faq />} />
         <Route path="/terms-of-use" element={<TermsOfUse />} />
         <Route path="/terms" element={<Terms />} />
-        <Route path="/event_invite/:token" element={<EventInvite />}/>
+        <Route path="/event_invite/:token" element={<EventInvite />} />
         <Route path="/event_summary" element={<EventSummary />} />
         <Route
           path="/event_invite/event_invite_response"
@@ -76,6 +77,7 @@ function App() {
         <Route path="/aboutUs" element={<AboutUsPage />} />
         <Route path="*" element={<Error404 />} />
         <Route path="/notification" element={<Notification />} />
+        <Route path="/verify" element={<Verify />} />
       </Routes>
     </div>
   );
