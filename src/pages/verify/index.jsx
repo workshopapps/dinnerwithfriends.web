@@ -8,6 +8,7 @@ const Verify = () => {
   useEffect(() => {
     localStorage.setItem("jwt-token", cookies.accessToken);
     navigate("/dashboard/upcoming_events");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return;
