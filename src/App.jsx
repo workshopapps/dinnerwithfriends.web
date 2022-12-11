@@ -9,7 +9,7 @@ import SignIn from "./pages/signIn";
 import SignUp from "./pages/signUp";
 import ViewEvent from "./pages/dashboard/ViewEvent";
 import ContactUs from "./pages/contactUs";
-import ProfilePage from "./pages/settingsPage/profilePage";
+import ProfilePage from "./pages/settingsPage/ProfilePage";
 import ForgetPassword from "./pages/ForgetPassword/index";
 import ResetLink from "./pages/ForgetPassword/LinkReset";
 import ResetPassword from "./pages/ForgetPassword/ResetPassword";
@@ -19,8 +19,8 @@ import HowItWorks from "./pages/howItWorks/HowItWorks";
 import Terms from "./pages/t&c";
 import TermsOfUse from "./pages/termsOfUse";
 import Faq from "./pages/FAQ/Faq";
-import Settings from "./pages/settingsPage/profilePage";
-import AccountSettings from "./pages/settingsPage/profileTwo";
+import Settings from "./pages/settingsPage/ProfilePage";
+import AccountSettings from "./pages/settingsPage/UserProfile";
 import EventInviteResponse from "./pages/invitee/EventInviteResponse";
 import EventSummary from "./pages/dashboard/EventSummary";
 import UpcomingEvent from "./pages/dashboard/UpcomingEvent";
@@ -45,7 +45,7 @@ function App() {
         <Route path="/create_event" element={<CreateEvent />} />
         <Route path="/closed_event" element={<ClosedEvent />} />
         <Route path="/update_details" element={<AccountSettings />} />
-        <Route path="/settings" element={<Settings />} />
+       <Route path="/settings" element={<Settings />} />
         <Route path="/invitee/:id" element={<Invitee />} />
         <Route path="/sign_in" element={<SignIn />} />
         <Route path="/sign_up" element={<SignUp />} />

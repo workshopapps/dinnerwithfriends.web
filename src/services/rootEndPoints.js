@@ -12,3 +12,4 @@ export const SEND_INVITE = "invitation"
 export const ADD_PARTICIPANTS = 'participant/addpart'
 export const DELETE_PARTICIPANTS = 'participant/delete'
 export const EVENT_BY_TOKEN = 'invitation/event'
+export const GET_USER = 'user/profile'

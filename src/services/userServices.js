@@ -13,8 +13,7 @@ import {
   ADD_PARTICIPANTS,
   DELETE_PARTICIPANTS,
   SEND_INVITE,
-  DELETE_EVENT,
-  EVENT_BY_TOKEN
+  GET_USER,
 } from "./rootEndPoints.js";
 
 const register = async (params) => {
@@ -88,16 +87,6 @@ const getEventsById = async (id) => {
   }
 };
 
-const getEventsByToken = async (token) => {
-  try {
-    const dataObj = await fetchApi.get(`${BASE_URL}/${EVENT_BY_TOKEN}/${token}`);
-    const datas = await dataObj;
-    return datas;
-  } catch (err) {
-    return err;
-  }
-};
-
 const getParticipants = async (id) => {
   try {
     const dataObj = await fetchApi.get(`${BASE_URL}/${GET_PARTICIPANTS}/${id}`);
@@ -137,13 +126,27 @@ const addParticipants = async (params) => {
     return err;
   }
 }
-const deleteEvent = async (id) => {
+
+const getUser = async () => {
   try {
-    const result = await fetchApi.deleteE(`${BASE_URL}/${DELETE_EVENT}/${id}`);
+    const dataObj = await fetchApi.get(`${BASE_URL}/${GET_USER}`);
+    
+    const datas = await dataObj.data;
+    return datas;
+  } catch (err) {
+    return err;
+  }
+};
+
+const updateUser = async (params) => {
+  try {
+    const result = await fetchApi.patch(`${BASE_URL}/${GET_USER}`, params);
+    console.log(result)
     return result;
   } catch (err) {
     return err;
   }
+};
 }
 const deleteParticipants = async (id) => {
   try {
@@ -168,7 +171,9 @@ const userServices = {
   deleteParticipants,
   deleteEvent,
   sendInvite,
-  getEventsByToken
+  addParticipants,
+  getUser,
+  updateUser
 };
 
 export default userServices;
