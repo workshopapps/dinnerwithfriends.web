@@ -76,6 +76,7 @@ const getAllEvents = async () => {
     return err;
   }
 };
+
 const getEventsById = async (id) => {
   try {
     const dataObj = await fetchApi.get(`${BASE_URL}/${GET_EVENTS}/${id}`);
@@ -89,12 +90,12 @@ const getEventsById = async (id) => {
 const getEventsByToken = async (token) => {
   try {
     const dataObj = await fetchApi.get(`${BASE_URL}/${EVENT_BY_TOKEN}/${token}`);
-    const datas = await dataObj.data;
+    const datas = await dataObj;
     return datas;
   } catch (err) {
     return err;
   }
-}
+};
 
 const getParticipants = async (id) => {
   try {
