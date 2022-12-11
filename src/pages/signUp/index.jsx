@@ -122,7 +122,7 @@ const SignUp = () => {
 									!errors.name
 										? "shadow-[0px_0px_0px_4px_rgba(74,74,104,0.1)]"
 										: "shadow-[0px_0px_0px_4px_rgba(249,50,50,0.1)]"
-								}  mt-2 w-full h-11 p-3.5 rounded-lg`}
+								}  mt-2 w-full h-11 p-3.5 rounded-lg bg-transparent`}
 								type='text'
 								name='name'
 								placeholder='Enter your name'
@@ -166,7 +166,7 @@ const SignUp = () => {
 									!errors.email
 										? "shadow-[0px_0px_0px_4px_rgba(74,74,104,0.1)]"
 										: "shadow-[0px_0px_0px_4px_rgba(249,50,50,0.1)]"
-								}  mt-2 w-full h-11 p-3.5 rounded-lg`}
+								}  mt-2 w-full h-11 p-3.5 rounded-lg bg-transparent`}
 								type='email'
 								name='email'
 								placeholder='Enter your email'
@@ -200,7 +200,7 @@ const SignUp = () => {
 									!errors.password
 										? "focus:shadow-[0px_0px_0px_4px_rgba(74,74,104,0.1)]"
 										: "focus:shadow-[0px_0px_0px_4px_rgba(249,50,50,0.1)]"
-								} mt-2 w-full h-11 p-3.5 rounded-lg`}
+								} mt-2 w-full h-11 p-3.5 rounded-lg bg-transparent`}
 								type={passwordShown ? "text" : "password"}
 								name='password'
 								placeholder='Please enter your unique password'

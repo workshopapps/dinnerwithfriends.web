@@ -110,7 +110,7 @@ const EventInvite = () => {
                 placeholder="John Doe"
                 value={inviteDetails.fullname}
                 onChange={changeInviteDetails}
-                className="outline-none border border-[#898989] rounded md:w-[477px] w-full px-3 py-3 text-base font-medium"
+                className="outline-none border border-[#898989] bg-transparent rounded md:w-[477px] w-full px-3 py-3 text-base font-medium"
                 required
               />
             </div>
@@ -123,7 +123,7 @@ const EventInvite = () => {
                 placeholder="JohnDoe@gmail.com"
                 value={inviteDetails.email}
                 onChange={changeInviteDetails}
-                className={emailRegex.test(inviteDetails.email) || inviteDetails.email === "" ? "outline-none border border-[#898989] rounded md:w-[477px] w-full px-3 py-3 text-base font-medium" : "border border-red-600 rounded outline-none md:w-[477px] w-full px-3 py-3 text-base font-medium"}
+                className={emailRegex.test(inviteDetails.email) || inviteDetails.email === "" ? "outline-none border border-[#898989] bg-transparent rounded md:w-[477px] w-full px-3 py-3 text-base font-medium" : "border border-red-600 bg-transparent rounded outline-none md:w-[477px] w-full px-3 py-3 text-base font-medium"}
                 required
                 autoComplete="true"
               />
@@ -139,7 +139,7 @@ const EventInvite = () => {
                 type="datetime-local"
                 value={inviteDetails.preferred_date_time ? inviteDetails.preferred_date_time : preferredTime}
                 onChange={changeInviteDetails}
-                className="outline-none border border-[#898989] rounded md:w-[477px] w-full px-3 py-3 text-base font-medium"
+                className="outline-none border border-[#898989] bg-transparent rounded md:w-[477px] w-full px-3 py-3 text-base font-medium"
                 min={startDate}
                 max={endDate}
                 required

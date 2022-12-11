@@ -11,6 +11,7 @@ import {
   RESET_PASSWORD_URL,
   GOOGLE_CALENDER,
   ADD_PARTICIPANTS,
+  DELETE_PARTICIPANTS,
   SEND_INVITE,
   DELETE_EVENT,
   EVENT_BY_TOKEN
@@ -144,6 +145,14 @@ const deleteEvent = async (id) => {
     return err;
   }
 }
+const deleteParticipants = async (id) => {
+  try {
+    const result = await fetchApi.deleteE(`${BASE_URL}/${DELETE_PARTICIPANTS}/${id}`);
+    return result;
+  } catch (err) {
+    return err;
+  }
+}
 
 const userServices = {
   register,
@@ -156,6 +165,7 @@ const userServices = {
   resetPassword,
   addToGoogleCalender,
   addParticipants,
+  deleteParticipants,
   deleteEvent,
   sendInvite,
   getEventsByToken

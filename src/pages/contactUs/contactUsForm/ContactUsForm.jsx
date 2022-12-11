@@ -138,7 +138,7 @@ const ContactUsForm = () => {
             onChange={messageInputChangeHandler}
             onBlur={messageInputBlurHandler}
             maxLength={100}
-            className={` w-full border rounded-lg p-3 outline-none mt-2.5 placeholder:text-slate-400 placeholder:text-base placeholder:font-medium ${
+            className={` w-full border bg-transparent rounded-lg p-3 outline-none mt-2.5 placeholder:text-slate-400 placeholder:text-base placeholder:font-medium ${
               enteredMessageIsInValid
                 ? "border-red-500 focus:border-red-500 text-red-500"
                 : "border-gray-400 focus:border-blue-500"
