@@ -30,7 +30,7 @@ export default function FirstComponent() {
           Plan and organise every get-together, from dinner to a reunion.
         </h3>
         <section className="mt-10 py-[4.875rem] px-8 bg-[#e7f0ffcc] w-full grid gap-4 md:gap-12 lg:px-32 md:grid-cols-2 xl:grid-cols-4">
-          <div className="bg-white flex flex-col justify-center items-center gap-6 w-[20.375rem] h-[435px] lg:w-[15.81rem] mx-auto py-5 px-[1.125rem] shadow-md">
+          <div className="bg-white flex flex-col justify-center items-center gap-6  mx-auto py-5 px-[1.125rem] shadow-md">
             <img className="w-[72px] h-[72px]" src={icon1} alt="Icon 1" />
             <h4 className="text-[#0056D6] font-bold">Get RSVPs</h4>
             <p className="font-medium">
@@ -43,7 +43,7 @@ export default function FirstComponent() {
               people.
             </p>
           </div>
-          <div className="bg-white flex flex-col justify-center items-center gap-6 w-[20.375rem] h-[435px] lg:w-[15.81rem] mx-auto py-5 px-[1.125rem] shadow-md">
+          <div className="bg-white flex flex-col justify-center items-center gap-6  mx-auto py-5 px-[1.125rem] shadow-md">
             <img className="w-[72px] h-[72px]" src={icon2} alt="icon 2" />
             <h4 className="text-[#0056D6] font-bold">Interactive Features </h4>
             <p className="font-medium">
@@ -56,7 +56,7 @@ export default function FirstComponent() {
               everyone .
             </p>
           </div>
-          <div className="bg-white flex flex-col justify-center items-center gap-6 w-[20.375rem] h-[435px] lg:w-[15.81rem] mx-auto py-5 px-[1.125rem] shadow-md">
+          <div className="bg-white flex flex-col justify-center items-center gap-6  mx-auto py-5 px-[1.125rem] shadow-md">
             <img className="w-[72px] h-[72px]" src={icon3} alt="icon 3" />
             <h4 className="text-[#0056D6] font-bold">Keep Track of Events </h4>
             <p className="font-medium">
@@ -69,7 +69,7 @@ export default function FirstComponent() {
               share.
             </p>
           </div>
-          <div className="bg-white flex flex-col justify-center items-center gap-6 w-[20.375rem] h-[435px] lg:w-[15.81rem] mx-auto py-5 px-[1.125rem] shadow-md">
+          <div className="bg-white flex flex-col justify-center items-center gap-6  mx-auto py-5 px-[1.125rem] shadow-md">
             <img className="w-[72px] h-[72px]" src={icon4} alt="icon 4" />
             <h4 className="text-[#0056D6] font-bold">Live Location </h4>
             <p className="font-medium">
