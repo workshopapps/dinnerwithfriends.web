@@ -30,7 +30,7 @@ export default function FirstComponent() {
           Plan and organise every get-together, from dinner to a reunion.
         </h3>
         <section className="mt-10 py-[4.875rem] px-8 bg-[#e7f0ffcc] w-full grid gap-4 md:gap-12 lg:px-32 md:grid-cols-2 xl:grid-cols-4">
-          <div className="bg-white flex flex-col justify-center items-center gap-6 w-[20.375rem] h-[435px] lg:w-[15.81rem] mx-auto py-5 px-[1.125rem] shadow-md">
+          <div className="bg-white flex flex-col justify-center items-center gap-6  mx-auto py-5 px-[1.125rem] shadow-md">
             <img className="w-[72px] h-[72px]" src={icon1} alt="Icon 1" />
             <h4 className="text-[#0056D6] font-bold">Get RSVPs</h4>
             <p className="font-medium">
@@ -43,7 +43,7 @@ export default function FirstComponent() {
               people.
             </p>
           </div>
-          <div className="bg-white flex flex-col justify-center items-center gap-6 w-[20.375rem] h-[435px] lg:w-[15.81rem] mx-auto py-5 px-[1.125rem] shadow-md">
+          <div className="bg-white flex flex-col justify-center items-center gap-6  mx-auto py-5 px-[1.125rem] shadow-md">
             <img className="w-[72px] h-[72px]" src={icon2} alt="icon 2" />
             <h4 className="text-[#0056D6] font-bold">Interactive Features </h4>
             <p className="font-medium">
@@ -56,7 +56,7 @@ export default function FirstComponent() {
               everyone .
             </p>
           </div>
-          <div className="bg-white flex flex-col justify-center items-center gap-6 w-[20.375rem] h-[435px] lg:w-[15.81rem] mx-auto py-5 px-[1.125rem] shadow-md">
+          <div className="bg-white flex flex-col justify-center items-center gap-6  mx-auto py-5 px-[1.125rem] shadow-md">
             <img className="w-[72px] h-[72px]" src={icon3} alt="icon 3" />
             <h4 className="text-[#0056D6] font-bold">Keep Track of Events </h4>
             <p className="font-medium">
@@ -69,7 +69,7 @@ export default function FirstComponent() {
               share.
             </p>
           </div>
-          <div className="bg-white flex flex-col justify-center items-center gap-6 w-[20.375rem] h-[435px] lg:w-[15.81rem] mx-auto py-5 px-[1.125rem] shadow-md">
+          <div className="bg-white flex flex-col justify-center items-center gap-6  mx-auto py-5 px-[1.125rem] shadow-md">
             <img className="w-[72px] h-[72px]" src={icon4} alt="icon 4" />
             <h4 className="text-[#0056D6] font-bold">Live Location </h4>
             <p className="font-medium">
@@ -84,12 +84,12 @@ export default function FirstComponent() {
         </section>
       </div>
 
-      <div className="flex flex-col xl:flex-row-reverse pt-8 pb-24 gap-8 px-8 w-full mx-auto">
-        <div className="xl:w-[45%] md:w-full order-2 lg:order-1">
+      <div className=" flex flex-col xl:flex-row-reverse pt-8 pb-24 gap-8 px-8 w-full mx-auto">
+        <div className="mt-[20px] xl:w-[45%] md:w-full order-2 lg:order-1">
           <img className="w-full" src={image} alt="invite contacts preview" />
         </div>
 
-        <div className="xl:w-[55%] flex flex-col gap-6 items-start justify-center">
+        <div className="xl:w-[55%] flex flex-col gap-6 items-start justify-center ">
           <h2 className="text-[#0056D6] text-2xl tracking-wide font-bold md:text-5xl lg:text-[3.25rem]">
             Instantly invite anyone on your contact list
           </h2>
