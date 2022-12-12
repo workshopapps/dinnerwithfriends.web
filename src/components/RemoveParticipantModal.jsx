@@ -30,7 +30,7 @@ const RemoveParticipantModal = ({
 
 	const handleChange = (e) =>{
         setSearch(e.target.value)
-    }   
+    }
 
 	const filteredParticipants =  participants.filter((partic)=>
         partic.email.toLowerCase().includes(search.toLowerCase())
