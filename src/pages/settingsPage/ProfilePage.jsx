@@ -35,7 +35,7 @@ const ProfilePage = () => {
 
       <div className="settings_body">
         <div className="body_title_container">
-          <Link to="/">
+          <Link to="/dashboard/upcoming_events">
             <div className="body_title">
               <MdOutlineArrowBack />
               <h1>Account Settings</h1>
@@ -96,34 +96,6 @@ const ProfilePage = () => {
           </label>
         </section>
       </div>
-      {/* <div className="settings-footer">
-        <div className="footer_top">
-          <span>
-            <a href="/">Catch Up</a>
-            <a href="/">About Us</a>
-            <a href="/">Careers</a>
-            <a href="/">How it works</a>
-            <a href="/">Blog</a>
-            <a href="/">Privay policy</a>
-          </span>
-          <span>
-            <a href="/">Terms & Conditions</a>
-            <a href="/">Security</a>
-            <a href="/">FAQs</a>
-            <a href="/">Help Center</a>
-          </span>
-        </div>
-        <div className="footer_bottom">
-          <div className="footer_bottom_text">
-            <p>English</p>
-            <IoIosArrowDown />
-          </div>
-          <div className="footer_bottom_text">
-            <AiOutlineCopyright />
-            <p>2022 Team PryBar</p>
-          </div>
-        </div>
-      </div> */}
       <SettingsFooter className="settings-footer" />
       <div id="main_footer">
         <Footer />
