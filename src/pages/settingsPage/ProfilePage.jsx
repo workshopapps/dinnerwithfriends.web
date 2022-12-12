@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import userServices from "../../services/userServices";
 import "./profilePage.css";
 import CreateEventNavbar from "../../components/CreateEvent/CreateEventNavbar";
+import { getInitials } from "../../helpers/getInitials";
 
 const ProfilePage = () => {
   const [user, setUser] = useState({
@@ -28,6 +29,8 @@ const ProfilePage = () => {
 
     fetchData();
   }, [])
+
+
   return (
     <div>
       <CreateEventNavbar />
@@ -42,20 +45,12 @@ const ProfilePage = () => {
           </Link>
           <div className="body_subTitles">
             <h5>Profile</h5>
-            {/* <Link to='/notification'>
-              <span className="notification_tab">Notifications</span>
-              </Link> */}
           </div>
         </div>
 
         <div className="user_details_field">
           <div className="avatar_fullName">
-            <img src={avatar} alt="" className="avatar" />
-            <div className="fullName">
-              <h1>{user?.name}</h1>
-
-              <span>{user?.email}</span>
-            </div>
+          <h2>{getInitials(user?.name)}</h2>
           </div>
 
           <Link to="/update_details">
