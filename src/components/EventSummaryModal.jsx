@@ -67,7 +67,7 @@ const EventSummaryModal = ({ setPopup, copied, copyLink }) => {
 								<span
 									className={`${
 										copied ? "block" : "hidden"
-									} absolute -top-10 left-6 p-2 text-green-500 bg-white border border-green-500 rounded transition text-xs`}>
+									} absolute top-0 left-6 p-2 text-green-500 bg-white border border-green-500 rounded transition text-xs`}>
 									https://catchup.hng.tech/ copied. You can share to
 									invite your friends
 								</span>
