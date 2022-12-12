@@ -26,9 +26,7 @@ const ContactUsForm = () => {
   const {
     value: enteredLastName,
     valueIsValid: enteredLastNameIsValid,
-    valueHasError: enteredLastNameIsInValid,
-    valueInputChangeHandler: lastNameInputChangeHandler,
-    valueInputBlurHandler: lastNameInputBlurHandler,
+
     resetValue: lastNameInputReset,
   } = useInput((val) => val.trim() !== "");
   const {
@@ -92,9 +90,9 @@ const ContactUsForm = () => {
       <form onSubmit={contactUsFormSubmitHandler} className="w-full md:w-1/2">
         <InputComponent
           type={"text"}
-          id={"first_name"}
-          label={"First name"}
-          placeholder={"Eunice"}
+          id={"Name"}
+          label={"Name"}
+          placeholder={"Enter your name"}
           value={enteredFirstName}
           onChange={firstNameInputChangeHandler}
           onBlur={firstNameInputBlurHandler}
@@ -102,21 +100,10 @@ const ContactUsForm = () => {
           errorText={"Enter a name"}
         />
         <InputComponent
-          type={"text"}
-          id={"last_name"}
-          label={"Last name"}
-          placeholder={"David"}
-          value={enteredLastName}
-          onChange={lastNameInputChangeHandler}
-          onBlur={lastNameInputBlurHandler}
-          inputInvalid={enteredLastNameIsInValid}
-          errorText={"Enter a name"}
-        />
-        <InputComponent
           type={"email"}
           id={"email"}
           label={"Email"}
-          placeholder={"eunicedavid@gmail.com"}
+          placeholder={"Enter your email"}
           value={enteredEmail}
           onChange={emailInputChangeHandler}
           onBlur={emailInputBlurHandler}
