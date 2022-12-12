@@ -34,7 +34,6 @@ import { googleCalender } from "./helpers/googleCalender";
 import EventInvite from "./pages/invitee/EventInvite";
 import Notification from "./pages/notifications/notification";
 import Verify from "./pages/verify";
-import GoToTop from "./components/GoToTop";
 
 googleCalender();
 
@@ -80,7 +79,6 @@ function App() {
         <Route path="/notification" element={<Notification />} />
         <Route path="/verify" element={<Verify />} />
       </Routes>
-      <GoToTop />
     </div>
   );
 }
