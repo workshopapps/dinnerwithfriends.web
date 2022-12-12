@@ -93,22 +93,17 @@ export default function Howitwork2() {
           </div>
           <div>
             <form>
-              <div className="flex">
+
                 <input
-                  className=" border border-gray-300 p-3 mr-3 w-[50%] rounded-lg lg:mr-5 lg:p-4 "
+                  className=" border border-gray-300 p-4 w-full mt-6 rounded-lg "
                   type="text"
-                  placeholder="Firstname"
+                  placeholder="Enter your Name"
                 />
-                <input
-                  className=" border border-gray-300 p-3  w-[50%] rounded-lg  lg:p-4 "
-                  type="text"
-                  placeholder="Lastname"
-                />
-              </div>
+
               <input
                 className="border border-gray-300 p-4 w-full mt-6 rounded-lg "
                 type="email"
-                placeholder="olivia@untitledui.com"
+                placeholder="Enter your email"
               />
               <textarea
                 className=" border border-gray-300 pb-20 pl-3  pt-3 mt-5 w-full rounded-lg"
