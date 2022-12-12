@@ -104,9 +104,6 @@ const UserProfile = () => {
 					</Link>
 					<div className='body_subtitles'>
 						<h5>Profile</h5>
-						<Link to='/notification'>
-							<span className='notification_tab'>Notifications</span>
-						</Link>
 					</div>
 				</div>
 				<p>{errorMsg()}</p>
