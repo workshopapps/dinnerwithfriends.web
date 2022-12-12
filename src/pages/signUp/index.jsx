@@ -79,15 +79,6 @@ const SignUp = () => {
 			<div className=' w-full h-full bg-white tablet:w-6/12 tablet:p-3.5 mx-auto '>
 				<header className=' w-full flex justify-between items-center px-4 pt-4 mt-3.5 tablet:mt-0'>
 					<Logo />
-					<div className='px-1 rounded-[20px] w-29 tablet:w-35 tablet:h-10 h-[34px]  bg-[#BCD7FF] flex justify-around items-center'>
-						<select
-							className='language-select bg-[#BCD7FF] w-full font-semibold focus:outline-none text-xs tablet:text-sm'
-							name='language'
-							id='language'>
-							<option value='uk'>English (UK)</option>
-							<option value='us'>English (US)</option>
-						</select>
-					</div>
 				</header>
 				<div className='mt-10 tablet:mt-14 px-4 w-full max-w-md mx-auto'>
 					<h2 className='font-medium text-xl text-[#717172] tablet:text-4xl'>

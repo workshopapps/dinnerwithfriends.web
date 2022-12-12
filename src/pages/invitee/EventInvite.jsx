@@ -101,7 +101,7 @@ const EventInvite = () => {
             <div className="mt-28 mb-10 mx-auto md:mx-32">
               <div className="mx-2 md:mx-0 text-center w-full">
                 <h1 className="text-2xl font-bold md:text-3xl">Hello, there.</h1>
-                <p className="leading-6 text-gray-600 font-sm"> You have been invited to {eventData ? eventData?.   event?.event_type : ""} by <span className="text-blue-700 font-bold"> {eventData ? eventData?.event?.host_info[0].name : ""}</span>
+                <p className="leading-6 text-gray-600 font-sm"> You have been invited to {eventData ? eventData?.event?.event_type : ""} by <span className="text-blue-700 font-bold"> {eventData ? eventData?.event?.host_info[0].name : ""}</span>
                 <br /> You can view the details below..
                 </p>
                 {declinedInvite ? <p className="font-bold text-red-900">You have succesfully declined this invite... Redirecting to your homepage soon</p> : null}

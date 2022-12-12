@@ -27,13 +27,12 @@ import UpcomingEvent from "./pages/dashboard/UpcomingEvent";
 import Features from "./pages/Features-page/features";
 import Career from "./pages/career/Career";
 import JobDetails from "./pages/career/JobDetails";
-
 import HelpRoutes from "./pages/helpCenter/helpRoutes";
 import AboutUsPage from "./pages/aboutUs";
 import { googleCalender } from "./helpers/googleCalender";
 import EventInvite from "./pages/invitee/EventInvite";
-import Notification from "./pages/notifications/notification";
 import Verify from "./pages/verify";
+import GoToTop from "./components/GoToTop";
 
 googleCalender();
 
@@ -76,9 +75,9 @@ function App() {
         <Route path="/help/*" element={<HelpRoutes />} />
         <Route path="/aboutUs" element={<AboutUsPage />} />
         <Route path="*" element={<Error404 />} />
-        <Route path="/notification" element={<Notification />} />
         <Route path="/verify" element={<Verify />} />
       </Routes>
+      <GoToTop />
     </div>
   );
 }

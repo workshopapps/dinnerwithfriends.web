@@ -13,17 +13,17 @@ export default function Howitwork2() {
           {" "}
           Watch how easy it is to create your next get-together
         </h1>
-        <div className="w-full mb-4">
+        <div className="w-full mb-[88px] lg:mb-[144px]">
           <video
             controls
             className="w-full"
             src="https://player.vimeo.com/external/414291591.sd.mp4?s=0e5f7a63156c329e28a9c3edc3847e53825974e9&profile_id=164&oauth2_token_id=57447761"
           />
         </div>
-        <section className=" pb-10 max-md:py-20 max-md:flex max-md:flex-col ">
+        <section className="bg-[#E7F0FF] py-4 lg:p-10 max-md:py-20 max-md:flex max-md:flex-col ">
           <div className=" grid grid-cols-1 gap-5 px-2 max-md:px-8 lg:grid-cols-2">
             <div
-              className="flex flex-col  items-center border border-gray-300 px-4
+              className="flex flex-col bg-[#fff] items-center border border-gray-300 px-4
            py-8 max-w[538px]  mx-auto text-center  lg:text-start lg:flex-row  lg:py-7"
             >
               <img src={google} className="p-6 w-40 h-40 " alt="img" />
@@ -38,7 +38,7 @@ export default function Howitwork2() {
                 </p>
               </div>
             </div>
-            <div className="flex flex-col  items-center border border-gray-300 px-4 py-8 max-w[538px]  mx-auto text-center lg:text-start lg:flex-row lg:py-7 ">
+            <div className="flex bg-[#fff] flex-col  items-center border border-gray-300 px-4 py-8 max-w[538px]  mx-auto text-center lg:text-start lg:flex-row lg:py-7 ">
               <img src={elipse} className="p-6 w-40 h-40 " alt="img" />
               <div className="flex flex-col w-11/12">
                 <h1 className="text-lg text-[#0056D6] font-bold">
@@ -52,7 +52,7 @@ export default function Howitwork2() {
                 </p>
               </div>
             </div>
-            <div className="flex flex-col  items-center border border-gray-300 px-4 py-8 max-w[538px]  mx-auto text-center lg:text-start lg:flex-row  lg:py-7">
+            <div className="flex bg-[#fff] flex-col  items-center border border-gray-300 px-4 py-8 max-w[538px]  mx-auto text-center lg:text-start lg:flex-row  lg:py-7">
               <img src={HitIcon} className="p-6  w-40 h-40" alt="img" />
               <div className="flex flex-col w-11/12">
                 <h1 className="text-lg text-[#0056D6] font-bold">
@@ -65,7 +65,7 @@ export default function Howitwork2() {
                 </p>
               </div>
             </div>
-            <div className="flex flex-col  items-center border border-gray-300 px-4 py-8 max-w[538px]  mx-auto text-center lg:text-start lg:flex-row  lg:py-7">
+            <div className="flex bg-[#fff] flex-col  items-center border border-gray-300 px-4 py-8 max-w[538px]  mx-auto text-center lg:text-start lg:flex-row  lg:py-7">
               <img src={elipse2} className="p-6 w-40 h-40 " alt="img" />
               <div className="flex flex-col w-11/12">
                 <h1 className="text-lg text-[#0056D6] font-bold">
