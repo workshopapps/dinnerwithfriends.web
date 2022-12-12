@@ -35,7 +35,7 @@ const ProfilePage = () => {
 
       <div className="settings_body">
         <div className="body_title_container">
-          <Link to="/">
+          <Link to="/dashboard/upcoming_events">
             <div className="body_title">
               <MdOutlineArrowBack />
               <h1>Account Settings</h1>
