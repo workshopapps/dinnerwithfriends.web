@@ -72,15 +72,6 @@ const SignIn = () => {
 							<div>
 								<Logo />
 							</div>
-							<div className='px-1 rounded-[20px] w-29 tablet:w-35 tablet:h-10 h-[34px]  bg-[#BCD7FF] flex justify-around items-center'>
-								<select
-									className='language-select bg-[#BCD7FF] w-full font-semibold focus:outline-none text-xs tablet:text-sm'
-									name='language'
-									id='language'>
-									<option value='uk'>English (UK)</option>
-									<option value='us'>English (US)</option>
-								</select>
-							</div>
 						</div>
 						<div className='mt-10 tablet:mt-14 lg:px-4 w-full max-w-md mx-auto'>
 							<h3 className='font-medium text-xl lg:text-4xl text-gray-600 '>

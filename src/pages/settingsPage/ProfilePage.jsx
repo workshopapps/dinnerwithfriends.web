@@ -42,9 +42,9 @@ const ProfilePage = () => {
           </Link>
           <div className="body_subTitles">
             <h5>Profile</h5>
-            <Link to='/notification'>
+            {/* <Link to='/notification'>
               <span className="notification_tab">Notifications</span>
-              </Link>
+              </Link> */}
           </div>
         </div>
 
