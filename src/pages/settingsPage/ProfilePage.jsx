@@ -6,7 +6,6 @@ import Footer from "../../components/Footer";
 import SettingsFooter from "../../components/settingsPage/setFooter";
 import { Link } from "react-router-dom";
 import userServices from "../../services/userServices";
-
 import "./profilePage.css";
 import CreateEventNavbar from "../../components/CreateEvent/CreateEventNavbar";
 

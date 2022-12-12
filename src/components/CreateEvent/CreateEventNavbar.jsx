@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import googleCalendar from "../../assets/img/g-calendar.svg";
 import { MdSpaceDashboard } from "react-icons/md";
 import { FiSettings, FiLogIn } from "react-icons/fi";
@@ -8,13 +8,24 @@ import avatar from "../../assets/img/Avatar.png";
 import { FaAngleDown } from 'react-icons/fa';
 import Logo from "../Logo";
 import Button from "../Button";
-import jwt_decode from "jwt-decode";
+import userServices from "../../services/userServices";
 
 /* global gapi */
 
 const CreateEventNavbar = ({setModal}) => {
-  const token = localStorage.getItem("jwt-token")
-  const decoded = jwt_decode(token);
+  const [user, setUser] = useState({
+		name: '',
+    email: '',
+	});
+
+  const fetchData = async() => {
+    const data = await userServices.getUser()
+      setUser(data)
+    }
+
+  useEffect(() => {
+    fetchData();
+  }, [user.name, user.email])
 
 	const [open, setOpen] = useState(false);
   const [showNav, setShowNav] = useState(false);
@@ -163,8 +174,8 @@ const CreateEventNavbar = ({setModal}) => {
                       <img src={avatar} alt="" className="w-8" />
                     </div>
                     <span className={menuStyles.theUsersName}>
-                      <span>{decoded.name}</span>
-                      <span>{decoded.email}</span>
+                      <span>{user.name}</span>
+                      <span>{user.email}</span>
                     </span>
                   </span>
                 </span>
@@ -220,8 +231,8 @@ const CreateEventNavbar = ({setModal}) => {
                   <img src={avatar} alt="" className="w-8" />
                 </div>
                 <span className={menuStyles.theUsersName}>
-                  <span>{decoded.name}</span>
-                  <span>{decoded.email}</span>
+                  <span>{user.name}</span>
+                  <span>{user.email}</span>
                 </span>
               </span>
             </li>
