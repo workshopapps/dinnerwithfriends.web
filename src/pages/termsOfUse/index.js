@@ -14,7 +14,7 @@ const TermsOfUse = () => {
   return (
     <>
       <Navbar />
-      <div className="flex justify-end lg:flex-wrap flex-col mx-4 lg:flex-row lg:mx-8 m-5 pt-20">
+      <div className="flex justify-end lg:flex-wrap flex-col mx-4 lg:flex-row lg:mx-8 m-5 pt-20 mb-[100px]">
         <div className="lg:w-4/6 w-full m-2 lg:px-4">
           <p className="mb-5 font-bold text-3xl">Terms of Use</p>
           <p className="mt-2">

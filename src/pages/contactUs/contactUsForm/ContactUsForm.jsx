@@ -26,9 +26,7 @@ const ContactUsForm = () => {
   const {
     value: enteredLastName,
     valueIsValid: enteredLastNameIsValid,
-    valueHasError: enteredLastNameIsInValid,
-    valueInputChangeHandler: lastNameInputChangeHandler,
-    valueInputBlurHandler: lastNameInputBlurHandler,
+
     resetValue: lastNameInputReset,
   } = useInput((val) => val.trim() !== "");
   const {
