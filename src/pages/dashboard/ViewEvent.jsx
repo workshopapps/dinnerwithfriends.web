@@ -195,7 +195,7 @@ const ViewEvent = () => {
 					</div>
 
 					<section className='flex flex-col justify-center'>
-						<div className='max-h-[17em] overflow-y-scroll scroll-blue-500 pr-4'>
+						<div className='max-h-[17em] overflow-y-scroll pr-4'>
 							{participants.map((invitee) => (
 								<div
 									onClick={() => toggleShowAccordion(invitee.id)}

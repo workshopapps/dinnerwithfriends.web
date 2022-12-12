@@ -199,7 +199,7 @@ const CreateEventNavbar = ({setModal}) => {
             <li>
               <Link
                 to="/dashboard/upcoming_events"
-                className="block py-3 md:py-2 pl-3 pr-4 text-black hover:text-white hover:bg-blue-700 md:hover:bg-transparent md:hover:text-blue-700 rounded md:bg-transparent md:p-0 dark:text-white"
+                className="block py-3 md:py-2 pl-3 pr-4 text-black hover:text-white hover:bg-[#0056D6] md:hover:bg-transparent md:hover:text-blue-700 rounded md:bg-transparent md:p-0 dark:text-white"
                 aria-current="page"
               >
                 Dashboard
@@ -211,7 +211,7 @@ const CreateEventNavbar = ({setModal}) => {
                 fro-17-features-page
                 to="/profile"
                 dev
-                className="block py-3 md:py-2 pl-3 pr-4 text-black rounded hover:bg-blue-700 hover:text-white"
+                className="block py-3 md:py-2 pl-3 pr-4 text-black rounded hover:bg-[#0056D6] hover:text-white"
               >
                 Account Settings
               </Link>
@@ -219,7 +219,7 @@ const CreateEventNavbar = ({setModal}) => {
             <li>
               <Button
                 onClick={googleCalenderApi}
-                className="flex w-full justify-start items-center pl-4 py-[10px] text-black rounded hover:bg-blue-700 hover:text-white"
+                className="flex w-full justify-start items-center pl-4 py-[10px] text-black rounded hover:bg-[#0056D6] hover:text-white"
               >
                 <img src={googleCalendar} alt="" className="mr-2 w-4" />
                 Sync with Google Calender
