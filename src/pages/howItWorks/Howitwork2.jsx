@@ -13,7 +13,7 @@ export default function Howitwork2() {
           {" "}
           Watch how easy it is to create your next get-together
         </h1>
-        <div className="w-full mb-4">
+        <div className="w-full mb-[88px] lg:mb-[144px]">
           <video
             controls
             className="w-full"

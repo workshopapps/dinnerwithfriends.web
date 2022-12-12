@@ -84,12 +84,12 @@ export default function FirstComponent() {
         </section>
       </div>
 
-      <div className="flex flex-col xl:flex-row-reverse pt-8 pb-24 gap-8 px-8 w-full mx-auto">
-        <div className="xl:w-[45%] md:w-full order-2 lg:order-1">
+      <div className=" flex flex-col xl:flex-row-reverse pt-8 pb-24 gap-8 px-8 w-full mx-auto">
+        <div className="mt-[20px] xl:w-[45%] md:w-full order-2 lg:order-1">
           <img className="w-full" src={image} alt="invite contacts preview" />
         </div>
 
-        <div className="xl:w-[55%] flex flex-col gap-6 items-start justify-center">
+        <div className="xl:w-[55%] flex flex-col gap-6 items-start justify-center ">
           <h2 className="text-[#0056D6] text-2xl tracking-wide font-bold md:text-5xl lg:text-[3.25rem]">
             Instantly invite anyone on your contact list
           </h2>
