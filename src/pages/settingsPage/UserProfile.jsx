@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { MdOutlineArrowBack } from "react-icons/md";
-import avatar from "../../assets/img/Avatar.png";
 import SettingsFooter from "../../components/settingsPage/setFooter";
 import Footer from "../../components/Footer";
 import { Link, useNavigate } from "react-router-dom";
 import "./profileTwo.css";
 import CreateEventNavbar from "../../components/CreateEvent/CreateEventNavbar";
 import userServices from "../../services/userServices.js";
+import { getInitials } from "../../helpers/getInitials";
 
 const UserProfile = () => {
 	const [isSubmit, setIsSubmit] = useState(false);
@@ -109,12 +109,7 @@ const UserProfile = () => {
 				<p>{errorMsg()}</p>
 				<div className='user_details_field'>
 					<div className='avatar_fullName'>
-						<img src={avatar} alt='' className='avatar' />
-						<div className='fullName'>
-							<h1>Change Profile photo</h1>
-							<p>Recommended Square JPG,</p>
-							<p>PNG, at least 1000 x 1000 photo</p>
-						</div>
+					   <h2>{getInitials(user?.name)}</h2>
 					</div>
 				</div>
 
