@@ -6,7 +6,6 @@ import Footer from "../../components/Footer";
 import SettingsFooter from "../../components/settingsPage/setFooter";
 import { Link } from "react-router-dom";
 import userServices from "../../services/userServices";
-
 import "./profilePage.css";
 import CreateEventNavbar from "../../components/CreateEvent/CreateEventNavbar";
 
@@ -96,34 +95,6 @@ const ProfilePage = () => {
           </label>
         </section>
       </div>
-      {/* <div className="settings-footer">
-        <div className="footer_top">
-          <span>
-            <a href="/">Catch Up</a>
-            <a href="/">About Us</a>
-            <a href="/">Careers</a>
-            <a href="/">How it works</a>
-            <a href="/">Blog</a>
-            <a href="/">Privay policy</a>
-          </span>
-          <span>
-            <a href="/">Terms & Conditions</a>
-            <a href="/">Security</a>
-            <a href="/">FAQs</a>
-            <a href="/">Help Center</a>
-          </span>
-        </div>
-        <div className="footer_bottom">
-          <div className="footer_bottom_text">
-            <p>English</p>
-            <IoIosArrowDown />
-          </div>
-          <div className="footer_bottom_text">
-            <AiOutlineCopyright />
-            <p>2022 Team PryBar</p>
-          </div>
-        </div>
-      </div> */}
       <SettingsFooter className="settings-footer" />
       <div id="main_footer">
         <Footer />
