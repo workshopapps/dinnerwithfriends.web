@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { MdOutlineArrowBack } from "react-icons/md";
-import avatar from "../../assets/img/Avatar.png";
 import SettingsFooter from "../../components/settingsPage/setFooter";
 import Footer from "../../components/Footer";
 import { Link, useNavigate } from "react-router-dom";

@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from "react";
 import { MdOutlineArrowBack } from "react-icons/md";
 import { BiEdit } from "react-icons/bi";
-import avatar from "../../assets/img/Avatar.png";
 import Footer from "../../components/Footer";
 import SettingsFooter from "../../components/settingsPage/setFooter";
 import { Link } from "react-router-dom";
