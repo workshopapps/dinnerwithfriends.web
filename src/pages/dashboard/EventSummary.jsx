@@ -61,7 +61,9 @@ const EventSummary = () => {
 
 	const handleChange = (e) => {
 		setEmail(e.target.value);
-		setFormError(validate(email));
+		setFormError(validate(email.trim()));
+		console.log(email)
+		console.log(formError)
 	};
 
 	const addParticipant = (e) => {
