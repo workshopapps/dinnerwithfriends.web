@@ -22,7 +22,7 @@ const ForgetPassword = () => {
 	const onSubmit = async (data) => {
 		setIsSubmit(true)
 		const recovery = await userServices.recoverPassword(data);
-		console.log({ recovery });
+	
 
 		if (recovery.status === "fail") {
 			setIsSubmit(false);

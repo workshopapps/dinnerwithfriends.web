@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { AiOutlineUser, AiOutlineCloseCircle } from "react-icons/ai";
-import { BsPlus } from "react-icons/bs";
 import { IoMdClose } from "react-icons/io";
 import { CatchUpEventContextUse } from "../context/CatchUpEventContext";
 import userServices from "../services/userServices";
@@ -21,10 +20,10 @@ function AddParticipantModal({ eventId }) {
 	const { showModal, setShowModal } = CatchUpEventContextUse();
 
 	const validate = (values) => {
-		const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+		const regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 		const errors = {};
 
-		if (!regex.test(values)) {
+		if (!regex.test(values.trim()) && values.length !== 0) {
 			errors.email = "This is not a valid email format!";
 			setValidEmail(false);
 		} else {
@@ -40,7 +39,7 @@ function AddParticipantModal({ eventId }) {
 
 	useEffect(() => {
 		participants.map((item) =>
-			item === email ? setUsedEmail(true) : setUsedEmail(false)
+			item.toLowerCase() === email.toLowerCase() ? setUsedEmail(true) : setUsedEmail(false)
 		);
 		// eslint-disable-next-line
 	}, [email]);
@@ -51,6 +50,10 @@ function AddParticipantModal({ eventId }) {
 		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [formError]);
+
+	useEffect(() => {
+		setFormError(validate(email))
+	   }, [email])
 
 	const handleChange = (e) => {
 		setEmail(e.target.value);
@@ -131,11 +134,7 @@ function AddParticipantModal({ eventId }) {
 					<div className='relative my-6 mx-auto w-full h-screen'>
 						<div className='w-[90%] h-[500px] mt-12 lg:w-[40%] max-w-[500px] px-6 mx-auto border-0 rounded-lg shadow-lg relative flex flex-col bg-white outline-none focus:outline-none'>
 							<div className=' mt-5'>
-								<div className='flex justify-between items-center'>
-									<button className='flex items-center text-[#0056D6]'>
-										<p className='mr-2 text-sm'>Add participant</p>
-										<BsPlus />
-									</button>
+								<div className='flex justify-end items-end'>
 									<span
 										onClick={closeModal}
 										className='bg-[#FAFAFA] cursor-pointer text-[#717172] flex justify-center items-center rounded-full h-[35px] w-[35px]'>
@@ -172,7 +171,7 @@ function AddParticipantModal({ eventId }) {
 								<small className='text-red-500'>{formError.email}</small>
 								{participants?.map(
 									(item) =>
-										item === email && (
+										item.toLowerCase() === email.toLowerCase() && (
 											<small className='text-red-500'>
 												This participant has already been added
 											</small>

@@ -47,7 +47,6 @@ const EventInvite = () => {
     setMinDate(startDate);
     setMaxDate(endDate);
 
-    console.log(startDate, endDate);
   }, [eventData]);
 
   const changeInviteDetails = (e) => {
@@ -62,7 +61,6 @@ const EventInvite = () => {
   const getEventDetails = async () => {
     const result = await userServices.getEventsById(`${id}`);
     setEventData(result);
-    console.log(result);
     if (eventData?.final_event_date) {
       setInviteDetails({
         ...inviteDetails,
@@ -73,8 +71,12 @@ const EventInvite = () => {
 
   const addParticipant = (e) => {
     e.preventDefault();
-
-    const participantsData = { ...inviteDetails, event_id: eventData.id };
+    const { fullname, email, preferred_date_time } = inviteDetails;
+    if (!fullname || !email) {
+      setResultMsg("Please fill all fields");
+      return;
+    } 
+    const participantsData = { ...inviteDetails, event_id: eventData.id, preferred_date_time: eventData.final_event_date ? eventData.final_event_date : preferred_date_time };
 
     userServices
       .addParticipants(participantsData)
@@ -82,7 +84,6 @@ const EventInvite = () => {
         if (response.status === "success") {
           setTimeout(() => {
             setResultMsg({ message: "Successful!" });
-            navigate("/invitee/event_invite_response");
           }, 2000);
         } else {
           setResultMsg(response);
@@ -91,7 +92,15 @@ const EventInvite = () => {
       .catch((error) => {
         setResultMsg("An error has occured");
       });
+      
   };
+  useEffect(() => {
+    if (resultMsg.message === "Successful!") {
+      setTimeout(() => {
+        navigate("/invitee/event_invite_response");
+      }, 2000);
+    }
+  }, [navigate, resultMsg]);
 
   const declineInvite = () => {
     setDeclinedInvite(true);
@@ -193,7 +202,7 @@ const EventInvite = () => {
                   </div>
                 </div>
                 <form
-                  className="flex-1"
+                  className="flex-1 w-full"
                   onSubmit={addParticipant}
                 >
                   <div className="my-4 flex flex-col">

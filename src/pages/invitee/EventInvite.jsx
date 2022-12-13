@@ -100,7 +100,7 @@ const EventInvite = () => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [hasPassed]);
 
-  console.log(resultMsg)
+
   return (
     <div>
       {

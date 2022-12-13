@@ -3,7 +3,6 @@ import { useState } from "react";
 import moment from "moment/moment";
 import Navbar from "../../components/CreateEvent/CreateEventNavbar";
 import arrow from "../../assets/icons/arrow-down.svg";
-import profile from "../../assets/img/profile.svg";
 import AddParticipantModal from "../../components/AddParticipantModal";
 import { useParams } from "react-router-dom";
 import clipboard from "../dashboard/icons/clipboard.svg";
@@ -22,7 +21,6 @@ const ViewEvent = () => {
 	const [singleEvent, setSingleEvent] = useState({});
 	const [participants, setParticipants] = useState([]);
 	const [copied, setCopied] = useState(false);
-	const [agreedDate, setAgreedDate] = useState("");
 	const toggleShowAccordion = (id) => {
 		if (isActive === id) {
 			setIsActive();
@@ -36,22 +34,18 @@ const ViewEvent = () => {
 		const events = JSON.parse(eArr);
 		const sEvent = events.find((event) => event._id === id);
 		setSingleEvent(sEvent);
-		setAgreedDate(
-			moment(singleEvent?.final_event_date, "YYYY-MM-DDTHH:mm").format(
-				"MMMM Do YYYY, h:mm:ss a"
-			)
-		);
-
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
-
-	const { id } = useParams();
+	const newDate = singleEvent && moment(singleEvent.final_event_date).format("dddd, MMMM Do YYYY");
+	
+	let { id } = useParams();
+	const getParticipants = async (id) => {
+		const data = await userServices.getParticipants(id);
+		setParticipants(data);
+	};
 	useEffect(() => {
-		const getParticipants = async () => {
-			const data = await userServices.getParticipants(id);
-			setParticipants(data);
-		};
-		getParticipants();
+
+		getParticipants(id);
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
@@ -84,7 +78,6 @@ const ViewEvent = () => {
 		setViewEventMenu(false);
 		setShowDeleteMenu(true);
 	};
-
 	return (
 		<>
 			<AddParticipantModal eventId={id} />
@@ -188,7 +181,7 @@ const ViewEvent = () => {
 								</span>
 							) : (
 								<span className='bg-[#E7F0FF] text-[#003585] text-xs px-2 py-1 font-semibold rounded ml-1'>
-									{agreedDate}
+									{singleEvent && newDate}
 								</span>
 							)}
 						</aside>
@@ -196,18 +189,19 @@ const ViewEvent = () => {
 
 					<section className='flex flex-col justify-center'>
 						<div className='max-h-[17em] overflow-y-scroll pr-4'>
-							{participants.map((invitee) => (
+							{participants && participants.map((invitee) => (
 								<div
 									onClick={() => toggleShowAccordion(invitee.id)}
 									key={invitee.id}
 									className='py-3 border-b border-gray-200 transition-all'>
 									<div className='flex justify-between items-center transition-all'>
 										<div className='flex items-center'>
-											<img
+											{/* <img
 												className='rounded-full h-fit w-8 lg:w-10 mr-3'
 												src={profile}
 												alt=''
-											/>
+											/> */}
+											<div className="mr-3 w-10 h-10 flex justify-center items-center text-white bg-[#0056D6] rounded-full font-semibold">{invitee.fullname.slice(0,2)}</div>
 											<div className='space-y-[-3px]'>
 												<h4 className='font-semibold text-sm'>
 													{participants.indexOf(invitee) + 1}
