@@ -220,7 +220,11 @@ const CreateEventForm = () => {
 						{errors?.participant_number}{" "}
 					</small>
 				</div>
-				<div className='flex flex-col md:flex-row md:gap-[1.25rem]  w-full'>
+				<div className='flex flex-col md:flex-row md:gap-[1.25rem]  w-full'
+                  	onClick={e => {
+						e.stopPropagation();
+					   }}
+				  >
 					<div className='flex flex-col mb-4 flex-[1] relative'>
 						<label htmlFor='startDate' className='text-sm font-semibold'>
 							Start Date
