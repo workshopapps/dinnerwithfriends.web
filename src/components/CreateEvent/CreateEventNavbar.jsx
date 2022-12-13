@@ -9,6 +9,7 @@ import { FaAngleDown } from 'react-icons/fa';
 import Logo from "../Logo";
 import Button from "../Button";
 import userServices from "../../services/userServices";
+import { getInitials } from "../../helpers/getInitials";
 
 /* global gapi */
 
@@ -115,10 +116,10 @@ const CreateEventNavbar = ({setModal}) => {
 				<div className='flex md:order-2'>
 					<div onClick={toggleOpen} className='hidden md:flex items-center gap-[5px] cursor-pointer'>
 						<span>
-              <FaAngleDown />
+              <FaAngleDown className="text-[#0056d6]"/>
 						</span>
-						<span>
-							<img src={avatar} alt='' className='w-[30px]' />
+						<span className='w-[35px] h-[35px] p-[10px] flex justify-center items-center bg-[#0056D6] rounded-[100%]'>
+              <h2 className="text-[#fff] text-[20px] font-bold text-center">{getInitials(user?.name)}</h2>
 						</span>
 					</div>
 					<div
@@ -168,17 +169,15 @@ const CreateEventNavbar = ({setModal}) => {
                     Sync with Google Calender
                   </Button>
                 </li>
-                <span className="text-black rounded hover:bg-inherit hover:text-color">
-                  <span className="flex py-2">
-                    <div className="w-[35px] h-[35px] border border-[#66A3FF] text-[#717172] mr-2 rounded-full flex justify-center items-center object-cover text-xs">
-                      <img src={avatar} alt="" className="w-8" />
-                    </div>
+                <div className="flex justify-center items-center gap-x-2 text-black rounded hover:bg-inherit hover:text-color">
+                  <span className='w-[35px] h-[35px] p-[10px] flex justify-center items-center bg-[#0056D6] rounded-[100%]'>
+                    <h2 className="text-[#fff] text-[20px] font-bold text-center">{getInitials(user?.name)}</h2>
+						      </span>
                     <span className={menuStyles.theUsersName}>
-                      <span>{user.name}</span>
-                      <span>{user.email}</span>
+                      <span>{user?.name}</span>
+                      <span>{user?.email}</span>
                     </span>
-                  </span>
-                </span>
+                </div>
                 <li>
                   <FiLogIn />
                   <Link to="/" className="block px-2 py-2 text-sm w-full">
@@ -227,9 +226,9 @@ const CreateEventNavbar = ({setModal}) => {
             </li>
             <li>
               <span className="flex py-2 pl-4">
-                <div className="w-[35px] h-[35px] border border-[#66A3FF] text-[#717172] mr-2 rounded-full flex justify-center items-center object-cover text-xs">
-                  <img src={avatar} alt="" className="w-8" />
-                </div>
+                <span className='w-[35px] h-[35px] p-[10px] flex justify-center items-center bg-[#0056D6] rounded-[100%]'>
+                  <h2 className="text-[#fff] text-[20px] font-bold text-center">{getInitials(user?.name)}</h2>
+						    </span>
                 <span className={menuStyles.theUsersName}>
                   <span>{user.name}</span>
                   <span>{user.email}</span>
