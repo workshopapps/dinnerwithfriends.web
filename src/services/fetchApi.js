@@ -55,10 +55,30 @@ const get = async (url) => {
     }
   };
 
+  const patch = async (url, data) => {
+    const config = {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+        ...authHeader(),
+      },
+      body: JSON.stringify(data),
+    };
+  
+    try {
+      const response = await fetch(url, config);
+      const datas = await response.json();
+      return datas;
+    } catch (err) {
+      return err;
+    }
+  };
+
   const fetchApi = {
     post,
     get,
     deleteE,
+    patch,
   };
 
   export default fetchApi;

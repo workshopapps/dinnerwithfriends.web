@@ -14,7 +14,7 @@ const InputComponent = (props) => {
         value={props.value}
         onChange={props.onChange}
         onBlur={props.onBlur}
-        className={`w-full border rounded-lg p-3 outline-0 placeholder:text-slate-400 placeholder:text-base placeholder:font-medium  ${
+        className={`w-full border bg-transparent rounded-lg p-3 outline-0 placeholder:text-slate-400 placeholder:text-base placeholder:font-medium  ${
           props.inputInvalid
             ? "border-red-500 focus:border-red-500 text-red-500"
             : "border-gray-400 focus:border-blue-500"

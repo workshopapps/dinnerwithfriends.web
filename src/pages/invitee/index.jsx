@@ -82,7 +82,7 @@ const EventInvite = () => {
         if (response.status === "success") {
           setTimeout(() => {
             setResultMsg({ message: "Successful!" });
-            navigate("/event_invite/event_invite_response");
+            navigate("/invitee/event_invite_response");
           }, 2000);
         } else {
           setResultMsg(response);
@@ -206,7 +206,7 @@ const EventInvite = () => {
                       placeholder="John Doe"
                       value={inviteDetails.fullname}
                       onChange={changeInviteDetails}
-                      className="outline-none border border-[#898989] rounded px-3 py-3 text-base font-medium"
+                      className="outline-none border border-[#898989] bg-transparent rounded px-3 py-3 text-base font-medium"
                       required
                     />
                   </div>
@@ -229,8 +229,8 @@ const EventInvite = () => {
                       className={
                         emailRegex.test(inviteDetails.email) ||
                         inviteDetails.email === ""
-                          ? "outline-none border border-[#898989] rounded px-3 py-3 text-base font-medium"
-                          : "border border-red-600 rounded outline-none px-3 py-3 text-base font-medium"
+                          ? "outline-none border border-[#898989] bg-transparent rounded px-3 py-3 text-base font-medium"
+                          : "border border-red-600 rounded outline-none px-3 py-3 text-base font-medium bg-transparent"
                       }
                       required
                       autoComplete="true"
@@ -255,7 +255,7 @@ const EventInvite = () => {
                             : preferredTime
                         }
                         onChange={changeInviteDetails}
-                        className="outline-none border border-[#898989] rounded md:w-[477px] w-auto px-3 py-3 text-base font-medium"
+                        className="outline-none border border-[#898989] bg-transparent rounded md:w-[477px] w-auto px-3 py-3 text-base font-medium"
                         min={minDate}
                         max={maxDate}
                         required

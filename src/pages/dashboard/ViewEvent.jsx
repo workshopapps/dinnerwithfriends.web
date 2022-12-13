@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
+import moment from "moment/moment";
 import Navbar from "../../components/CreateEvent/CreateEventNavbar";
 import arrow from "../../assets/icons/arrow-down.svg";
 import profile from "../../assets/img/profile.svg";
@@ -12,12 +13,16 @@ import DeleteEventModal from "../../components/DeleteEventModal";
 import { IoMdClose } from "react-icons/io";
 import { CatchUpEventContextUse } from "../../context/CatchUpEventContext";
 import DeleteSuccessModal from "../../components/DeleteSuccessModal";
+import RemoveParticipantModal from "../../components/RemoveParticipantModal";
+import DeleteParticipantModal from "../../components/DeleteParticipantModal";
+import DeleteParticipantSuccessModal from "../../components/DeleteParticipantSuccessModal";
+
 const ViewEvent = () => {
 	const [isActive, setIsActive] = useState(false);
 	const [singleEvent, setSingleEvent] = useState({});
 	const [participants, setParticipants] = useState([]);
 	const [copied, setCopied] = useState(false);
-
+	const [agreedDate, setAgreedDate] = useState("");
 	const toggleShowAccordion = (id) => {
 		if (isActive === id) {
 			setIsActive();
@@ -31,6 +36,12 @@ const ViewEvent = () => {
 		const events = JSON.parse(eArr);
 		const sEvent = events.find((event) => event._id === id);
 		setSingleEvent(sEvent);
+		setAgreedDate(
+			moment(singleEvent?.final_event_date, "YYYY-MM-DDTHH:mm").format(
+				"MMMM Do YYYY, h:mm:ss a"
+			)
+		);
+
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
@@ -46,15 +57,16 @@ const ViewEvent = () => {
 
 	const copyLink = () => {
 		setCopied(true);
-		navigator.clipboard.writeText(
-			`https://catchup.hng.tech/event_invite/${id}`
-		);
+		navigator.clipboard.writeText(`https://catchup.hng.tech/invitee/${id}`);
 		setTimeout(() => {
 			setCopied(false);
 		}, 3000);
 	};
 
 	const [showDeleteMenu, setShowDeleteMenu] = useState(false);
+	const [showDeleteParticipant, setShowDeleteParticipant] = useState(false);
+	const [showDeleteParticipantSuccess, setShowDeleteParticipantSucess] = useState(false);
+	const [showRemoveMenu, setShowRemoveMenu] = useState(false);
 	const [showDeleteSucess, setShowDeleteSuccess] = useState(false);
 	const [viewEventMenu, setViewEventMenu] = useState(false);
 
@@ -63,6 +75,10 @@ const ViewEvent = () => {
 	const handleAdd = () => {
 		setViewEventMenu(false);
 		setShowModal(true);
+	};
+	const handleRemove = () => {
+		setViewEventMenu(false);
+		setShowRemoveMenu(true);
 	};
 	const handleDelete = () => {
 		setViewEventMenu(false);
@@ -73,10 +89,33 @@ const ViewEvent = () => {
 		<>
 			<AddParticipantModal eventId={id} />
 			{showDeleteMenu && (
-				<DeleteEventModal setShowDeleteMenu={setShowDeleteMenu} setShowDeleteSuccess={setShowDeleteSuccess} eventId={id} />
+				<DeleteEventModal
+					setShowDeleteMenu={setShowDeleteMenu}
+					setShowDeleteSuccess={setShowDeleteSuccess}
+					eventId={id}
+				/>
 			)}
 			{showDeleteSucess && (
 				<DeleteSuccessModal setShowDeleteSuccess={setShowDeleteSuccess} />
+			)}
+			{showRemoveMenu && (
+				<RemoveParticipantModal
+					participants={participants}
+					setShowRemoveMenu={setShowRemoveMenu}
+					setShowDeleteParticipant={setShowDeleteParticipant}
+				/>
+			)}
+			{showDeleteParticipant && (
+				<DeleteParticipantModal
+					setShowDeleteParticipant={setShowDeleteParticipant}
+					setShowDeleteParticipantSucess={setShowDeleteParticipantSucess}
+				/>
+			)}
+			{showDeleteParticipantSuccess && (
+				<DeleteParticipantSuccessModal
+				setShowDeleteParticipant={setShowDeleteParticipant}
+					setShowDeleteParticipantSucess={setShowDeleteParticipantSucess}
+				/>
 			)}
 			<Navbar />
 			<div className="font-['DM_Sans'] w-[90%] lg:w-4/5 mx-auto mt-[100px] my-4 sm:max-w-xl md:max-w-2xl sm:border sm:border-slate-300 sm:rounded-md">
@@ -124,7 +163,9 @@ const ViewEvent = () => {
 													className='bg-transparent hover:bg-[#0056D6] text-[#0056D6] hover:text-white transition-all duration-200 px-8 md:px-4 py-2 cursor-pointer w-full rounded-[4px] text-left text-xs'>
 													Add Participant
 												</div>
-												<div className='bg-transparent hover:bg-[#0056D6] text-[#0056D6] hover:text-white transition-all duration-200 px-8 md:px-4 py-2 cursor-pointer w-full rounded-[4px] text-left text-xs'>
+												<div
+													onClick={handleRemove}
+													className='bg-transparent hover:bg-[#0056D6] text-[#0056D6] hover:text-white transition-all duration-200 px-8 md:px-4 py-2 cursor-pointer w-full rounded-[4px] text-left text-xs'>
 													Remove Participant
 												</div>
 												<div
@@ -147,14 +188,14 @@ const ViewEvent = () => {
 								</span>
 							) : (
 								<span className='bg-[#E7F0FF] text-[#003585] text-xs px-2 py-1 font-semibold rounded ml-1'>
-									{singleEvent?.final_event_date}
+									{agreedDate}
 								</span>
 							)}
 						</aside>
 					</div>
 
 					<section className='flex flex-col justify-center'>
-						<div className='max-h-[17em] overflow-y-scroll scroll-blue-500 pr-4'>
+						<div className='max-h-[17em] overflow-y-scroll pr-4'>
 							{participants.map((invitee) => (
 								<div
 									onClick={() => toggleShowAccordion(invitee.id)}
@@ -232,7 +273,7 @@ const ViewEvent = () => {
 						<span
 							className={`${
 								copied ? "block" : "hidden"
-							} absolute -top-10 left-6  p-2 text-green-500 bg-white border border-green-500 rounded transition text-xs`}>
+							} absolute top-0 left-6  p-2 text-green-500 bg-white border border-green-500 rounded transition text-xs`}>
 							https://catchup.hng.tech/ copied. You can share to invite your
 							friends
 						</span>

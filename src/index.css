@@ -4,6 +4,12 @@
 @tailwind utilities;
 
 @layer utilities {
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #0056D6;
+  }
+
   ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
@@ -15,12 +21,12 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #048bfa;
+    background: #0056D6;
     border-radius: 100vh;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #0679d7;
+    background: #0056D6;
   }
 }
 
@@ -36,6 +42,7 @@ html {
   font-family: "DM Sans", sans-serif;
   font-size: 16px;
   font-weight: 400;
+  scroll-behavior: smooth;
 }
 
 body {

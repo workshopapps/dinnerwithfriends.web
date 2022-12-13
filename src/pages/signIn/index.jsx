@@ -23,7 +23,7 @@ const SignIn = () => {
 	};
 
 	const googleSignInAuth = () => {
-		const gLink = "https://prybar.onrender.com/api/v1/auth/google/auth";
+		const gLink = "https://api.catchup.hng.tech/api/v1/auth/google/auth";
 		navigate(gLink.slice(6));
 	};
 
@@ -72,15 +72,6 @@ const SignIn = () => {
 							<div>
 								<Logo />
 							</div>
-							<div className='px-1 rounded-[20px] w-29 tablet:w-35 tablet:h-10 h-[34px]  bg-[#BCD7FF] flex justify-around items-center'>
-								<select
-									className='language-select bg-[#BCD7FF] w-full font-semibold focus:outline-none text-xs tablet:text-sm'
-									name='language'
-									id='language'>
-									<option value='uk'>English (UK)</option>
-									<option value='us'>English (US)</option>
-								</select>
-							</div>
 						</div>
 						<div className='mt-10 tablet:mt-14 lg:px-4 w-full max-w-md mx-auto'>
 							<h3 className='font-medium text-xl lg:text-4xl text-gray-600 '>
@@ -105,7 +96,7 @@ const SignIn = () => {
 										!errors.email
 											? "shadow-[0px_0px_0px_4px_rgba(74,74,104,0.1)]"
 											: "shadow-[0px_0px_0px_4px_rgba(249,50,50,0.1)]"
-									}  mt-2 w-full h-11 p-3.5 rounded-lg`}
+									}  mt-2 w-full h-11 p-3.5 rounded-lg bg-transparent`}
 									type='text'
 									name='email'
 									id='email'
@@ -132,7 +123,7 @@ const SignIn = () => {
 											!errors.password
 												? "shadow-[0px_0px_0px_4px_rgba(74,74,104,0.1)]"
 												: "shadow-[0px_0px_0px_4px_rgba(249,50,50,0.1)]"
-										}  mt-2 w-full h-11 p-3.5 rounded-lg`}
+										}  mt-2 w-full h-11 p-3.5 rounded-lg bg-transparent`}
 										type={passwordShown ? "text" : "password"}
 										name='password'
 										id='password'
@@ -185,7 +176,7 @@ const SignIn = () => {
 
 								<button
 									type='submit'
-									className='hover:bg-blue-400 transition ease-in duration-200 hover:bg-[#0056D6] mt-7 text-white bg-[#0056D6] w-full h-11 rounded-lg'>
+									className='transition ease-in duration-200 hover:bg-[#0056D6] mt-7 text-white bg-[#0056D6] w-full h-11 rounded-lg'>
 									{isSubmit ? "Loading..." : "Sign In"}
 								</button>
 							</form>

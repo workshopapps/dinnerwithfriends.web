@@ -8,6 +8,7 @@ import userServices from "../../services/userServices";
 import Button from "../Button";
 import SingleCalendar from "../SingleCalendar/SingleCalendar";
 import dateTimeForCalender from "../../helpers/DateTimeConverter";
+
 const CreateEventForm = () => {
 	const [showCalendar, setShowCalendar] = useState(false);
 	const [showCalendar2, setShowCalendar2] = useState(false);
@@ -98,8 +99,24 @@ const CreateEventForm = () => {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [preferredDate, endDate, startDate]);
 
+	const calenderDisplay = () => {
+		if(showCalendar) {
+			setShowCalendar(false)
+		}
+
+		if(showCalendar2) {
+			setShowCalendar2(false)
+		}
+
+		if(showCalendar3) {
+			setShowCalendar3(false)
+		}
+	}
+
 	return (
-		<div className='w-full py-8 pt-[6rem] lg:pt-[7rem]'>
+	  <div onClick={calenderDisplay}>
+	   <div className="px-4 md:w-[75%] lg:w-[50%] mx-auto">
+		<div className='w-full py-8 pt-[6rem] lg:pt-[7rem]' >
 			<h1 className='text-xl font-bold text-center'>Create Catchup Event</h1>
 			<div className='mt-6'>
 				<div className='flex flex-col mb-4'>
@@ -183,7 +200,7 @@ const CreateEventForm = () => {
 				</div>
 				<div className='flex flex-col mb-4'>
 					<label htmlFor='noOfParticipants' className='text-sm font-semibold'>
-						Number of Participants
+						Minimum number of participants
 					</label>
 					<input
 						required
@@ -340,6 +357,8 @@ const CreateEventForm = () => {
 				</div>
 			</div>
 		</div>
+	  </div>
+	</div>
 	);
 };
 

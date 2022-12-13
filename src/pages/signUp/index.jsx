@@ -24,7 +24,7 @@ const SignUp = () => {
 	};
 
 	const googleSignUpAuth = () => {
-		const gLink = "https://prybar.onrender.com/api/v1/auth/google/auth";
+		const gLink = "https://api.catchup.hng.tech/api/v1/auth/google/auth";
 		navigate(gLink.slice(6));
 	};
 
@@ -44,7 +44,7 @@ const SignUp = () => {
 			}),
 		};
 
-		fetch("https://prybar.onrender.com/api/v1/auth/signup", options)
+		fetch("https://api.catchup.hng.tech/api/v1/auth/signup", options)
 			.then((response) => {
 				if (!response.ok) {
 					throw Error(response.status);
@@ -79,15 +79,6 @@ const SignUp = () => {
 			<div className=' w-full h-full bg-white tablet:w-6/12 tablet:p-3.5 mx-auto '>
 				<header className=' w-full flex justify-between items-center px-4 pt-4 mt-3.5 tablet:mt-0'>
 					<Logo />
-					<div className='px-1 rounded-[20px] w-29 tablet:w-35 tablet:h-10 h-[34px]  bg-[#BCD7FF] flex justify-around items-center'>
-						<select
-							className='language-select bg-[#BCD7FF] w-full font-semibold focus:outline-none text-xs tablet:text-sm'
-							name='language'
-							id='language'>
-							<option value='uk'>English (UK)</option>
-							<option value='us'>English (US)</option>
-						</select>
-					</div>
 				</header>
 				<div className='mt-10 tablet:mt-14 px-4 w-full max-w-md mx-auto'>
 					<h2 className='font-medium text-xl text-[#717172] tablet:text-4xl'>
@@ -122,7 +113,7 @@ const SignUp = () => {
 									!errors.name
 										? "shadow-[0px_0px_0px_4px_rgba(74,74,104,0.1)]"
 										: "shadow-[0px_0px_0px_4px_rgba(249,50,50,0.1)]"
-								}  mt-2 w-full h-11 p-3.5 rounded-lg`}
+								}  mt-2 w-full h-11 p-3.5 rounded-lg bg-transparent`}
 								type='text'
 								name='name'
 								placeholder='Enter your name'
@@ -166,7 +157,7 @@ const SignUp = () => {
 									!errors.email
 										? "shadow-[0px_0px_0px_4px_rgba(74,74,104,0.1)]"
 										: "shadow-[0px_0px_0px_4px_rgba(249,50,50,0.1)]"
-								}  mt-2 w-full h-11 p-3.5 rounded-lg`}
+								}  mt-2 w-full h-11 p-3.5 rounded-lg bg-transparent`}
 								type='email'
 								name='email'
 								placeholder='Enter your email'
@@ -200,7 +191,7 @@ const SignUp = () => {
 									!errors.password
 										? "focus:shadow-[0px_0px_0px_4px_rgba(74,74,104,0.1)]"
 										: "focus:shadow-[0px_0px_0px_4px_rgba(249,50,50,0.1)]"
-								} mt-2 w-full h-11 p-3.5 rounded-lg`}
+								} mt-2 w-full h-11 p-3.5 rounded-lg bg-transparent`}
 								type={passwordShown ? "text" : "password"}
 								name='password'
 								placeholder='Please enter your unique password'

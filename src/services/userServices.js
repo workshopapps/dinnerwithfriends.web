@@ -11,8 +11,11 @@ import {
   RESET_PASSWORD_URL,
   GOOGLE_CALENDER,
   ADD_PARTICIPANTS,
+  DELETE_PARTICIPANTS,
   SEND_INVITE,
-  DELETE_EVENT
+  GET_USER,
+  DELETE_EVENT,
+  EVENT_BY_TOKEN,
 } from "./rootEndPoints.js";
 
 const register = async (params) => {
@@ -75,6 +78,7 @@ const getAllEvents = async () => {
     return err;
   }
 };
+
 const getEventsById = async (id) => {
   try {
     const dataObj = await fetchApi.get(`${BASE_URL}/${GET_EVENTS}/${id}`);
@@ -84,6 +88,17 @@ const getEventsById = async (id) => {
     return err;
   }
 };
+
+const getEventsByToken = async (id) => {
+  try {
+    const dataObj = await fetchApi.get(`${BASE_URL}/${EVENT_BY_TOKEN}/${id}`);
+    const datas = await dataObj;
+    return datas;
+  } catch (err) {
+    return err;
+  }
+};
+
 
 const getParticipants = async (id) => {
   try {
@@ -124,9 +139,40 @@ const addParticipants = async (params) => {
     return err;
   }
 }
+
 const deleteEvent = async (id) => {
   try {
     const result = await fetchApi.deleteE(`${BASE_URL}/${DELETE_EVENT}/${id}`);
+    return result;
+  } catch (err) {
+    return err;
+  }
+}
+
+const getUser = async () => {
+  try {
+    const dataObj = await fetchApi.get(`${BASE_URL}/${GET_USER}`);
+    
+    const datas = await dataObj.data;
+    return datas;
+  } catch (err) {
+    return err;
+  }
+};
+
+const updateUser = async (params) => {
+  try {
+    const result = await fetchApi.patch(`${BASE_URL}/${GET_USER}`, params);
+    console.log(result)
+    return result;
+  } catch (err) {
+    return err;
+  }
+};
+
+const deleteParticipants = async (id) => {
+  try {
+    const result = await fetchApi.deleteE(`${BASE_URL}/${DELETE_PARTICIPANTS}/${id}`);
     return result;
   } catch (err) {
     return err;
@@ -144,8 +190,12 @@ const userServices = {
   resetPassword,
   addToGoogleCalender,
   addParticipants,
+  deleteParticipants,
   deleteEvent,
-  sendInvite
+  sendInvite,
+  getUser,
+  updateUser,
+  getEventsByToken
 };
 
 export default userServices;

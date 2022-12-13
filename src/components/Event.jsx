@@ -1,12 +1,23 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import calender from '../assets/img/calendar.png'
 import notification from '../assets/img/notification.png'
 import people from '../assets/img/people.png'
 import calendery from '../assets/img/calendery.png'
+import moment from "moment/moment";
 
 const Event = ({id, status, event_title, event_description, final_event_date, participant_number, filteredEvents }) => {
+
+  const [agreedDate, setAgreedDate] = useState("");
+
+  useEffect(() =>{
+     if(filteredEvents.length !== 0) {
+       setAgreedDate(moment(final_event_date, "YYYY-MM-DDTHH:mm").format("MM/DD/YYYY"))
+     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <>
     {filteredEvents.length === 0 ? (
@@ -32,7 +43,7 @@ const Event = ({id, status, event_title, event_description, final_event_date, pa
             <span className='w-4 h-4'>
               <img src={calendery} alt="calender" />
             </span>
-            <span className='font-medium text-[10px] text-[#0056D6] lg:font-bold text-sm'>{final_event_date === null ? "Not decided" : final_event_date }</span>
+            <span className='font-medium text-[10px] text-[#0056D6] lg:font-bold text-sm'>{final_event_date === null ? "Not decided" : agreedDate }</span>
           </div>
           <div className='flex items-center gap-x-2.5'>
             <span className='w-4 h-4'>
