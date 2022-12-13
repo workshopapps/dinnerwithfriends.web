@@ -27,6 +27,7 @@ const AboutUsPage = () => {
     <main className="font-DMSans">
         <Navbar />
         <AboutUs dimension={dimension}/>
+        {/* something random */}
         <Footer />
     </main>
 

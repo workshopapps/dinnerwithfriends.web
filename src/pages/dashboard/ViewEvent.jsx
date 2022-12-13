@@ -35,22 +35,18 @@ const ViewEvent = () => {
 		const events = JSON.parse(eArr);
 		const sEvent = events.find((event) => event._id === id);
 		setSingleEvent(sEvent);
-		setAgreedDate(
-			moment(singleEvent?.final_event_date, "YYYY-MM-DDTHH:mm").format(
-				"MMMM Do YYYY, h:mm:ss a"
-			)
-		);
-
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
-
-	const { id } = useParams();
+	const newDate = singleEvent && moment(singleEvent.final_event_date).format("dddd, MMMM Do YYYY");
+	
+	let { id } = useParams();
+	const getParticipants = async (id) => {
+		const data = await userServices.getParticipants(id);
+		setParticipants(data);
+	};
 	useEffect(() => {
-		const getParticipants = async () => {
-			const data = await userServices.getParticipants(id);
-			setParticipants(data);
-		};
-		getParticipants();
+
+		getParticipants(id);
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
@@ -83,7 +79,6 @@ const ViewEvent = () => {
 		setViewEventMenu(false);
 		setShowDeleteMenu(true);
 	};
-
 	return (
 		<>
 			<AddParticipantModal eventId={id} />
@@ -187,7 +182,7 @@ const ViewEvent = () => {
 								</span>
 							) : (
 								<span className='bg-[#E7F0FF] text-[#003585] text-xs px-2 py-1 font-semibold rounded ml-1'>
-									{agreedDate}
+									{singleEvent && newDate}
 								</span>
 							)}
 						</aside>
@@ -195,7 +190,7 @@ const ViewEvent = () => {
 
 					<section className='flex flex-col justify-center'>
 						<div className='max-h-[17em] overflow-y-scroll pr-4'>
-							{participants.map((invitee) => (
+							{participants && participants.map((invitee) => (
 								<div
 									onClick={() => toggleShowAccordion(invitee.id)}
 									key={invitee.id}
