@@ -8,7 +8,7 @@ const Schedule = () => {
   return (
     <section className="bg-[url('assets/img/VectorsHome.png')] bg-no-repeat bg-center ">
       <div className="">
-        <h1 className="px-6 mx-10 mb-4 my-8 text-4xl font-bold tracking-tight text-center leading-none md:text-5xl xl:text-6xl ">
+        <h1 className="md:px-6 mx-10 mb-4 my-8 text-4xl font-bold tracking-tight text-center leading-none md:text-5xl xl:text-6xl ">
           <span className="block mb-2 lg:mb-4">Stay connected with your </span>
           <span className="block mb-2 lg:mb-4">social cirlce.</span>
         </h1>
@@ -31,7 +31,7 @@ const Schedule = () => {
             </p>
             <Link
               to="/sign_up"
-              className="w-full border border-4 border-gray bg-white inline-flex items-center justify-center py-3 text-base font-medium text-center text-blue-700 rounded-lg hover:bg-gray-200 focus:ring-4 focus:ring-primary-300 lg:m-0 lg:w-1/3"
+              className="w-full border-2 border-gray bg-white inline-flex items-center justify-center py-3 text-base font-medium text-center text-blue-700 rounded-lg hover:bg-gray-200 focus:ring-4 focus:ring-primary-300 lg:m-0 lg:w-1/3"
             >
               Get started
               <svg
@@ -68,7 +68,7 @@ const Schedule = () => {
             </p>
             <Link
               to="/sign_up"
-              className="w-full border border-4 border-gray bg-white inline-flex items-center justify-center py-3 text-base font-medium text-center text-blue-700 rounded-lg hover:bg-gray-200 focus:ring-4 focus:ring-primary-300 lg:m-0 lg:w-1/3"
+              className="w-full border-2 border-gray bg-white inline-flex items-center justify-center py-3 text-base font-medium text-center text-blue-700 rounded-lg hover:bg-gray-200 focus:ring-4 focus:ring-primary-300 lg:m-0 lg:w-1/3"
             >
               Get started
               <svg
@@ -104,7 +104,7 @@ const Schedule = () => {
             </p>
             <Link
               to="/sign_up"
-              className="w-full border border-4 border-gray bg-white inline-flex items-center justify-center py-3 text-base font-medium text-center text-blue-700 rounded-lg hover:bg-gray-200 focus:ring-4 focus:ring-primary-300 lg:m-0 lg:w-1/3"
+              className="w-full border-2 border-gray bg-white inline-flex items-center justify-center py-3 text-base font-medium text-center text-blue-700 rounded-lg hover:bg-gray-200 focus:ring-4 focus:ring-primary-300 lg:m-0 lg:w-1/3"
             >
               Get started
               <svg
