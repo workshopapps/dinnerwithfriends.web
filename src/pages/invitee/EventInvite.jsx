@@ -8,22 +8,24 @@ import userServices from "../../services/userServices";
 const EventInvite = () => {
   const [eventData, setEventData] = useState("");
   const preferredDate = eventData ? eventData?.event?.host_prefered_time.replace("-", "") : "";
-  const preferredTime = eventData ? moment(preferredDate, "DD-MM-YYYY HH:mm").format("YYYY-MM-DDTHH:mm") : "";
+  const preferredTime = eventData ? moment(preferredDate, "MM-DD-YYYY HH:mm").format("YYYY-MM-DDTHH:mm") : "";
   const [inviteDetails, setInviteDetails] = useState({
     fullname: "",
     email: "",
     preferred_date_time: "",
   });
   const navigate = useNavigate();
-  const [declinedInvite, setDeclinedInvite] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
   const [resultMsg, setResultMsg] = useState("");
   const { token } = useParams();
-  const startDate = eventData ? moment(eventData?.event?.start_date, "DD-MM-YYYY").format("YYYY-MM-DDTHH:mm") : null;
-  const endDate = eventData ? moment(eventData?.event?.end_date, "DD-MM-YYYY").format("YYYY-MM-DDTHH:mm") : null;
+  const startDate = eventData ? moment(eventData?.event?.start_date, "MM-DD-YYYY").format("YYYY-MM-DDTHH:mm") : null;
+  const endDate = eventData ? moment(eventData?.event?.end_date, "MM-DD-YYYY").format("YYYY-MM-DDTHH:mm") : null;
   const emailRegex = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
   const decidedEvent = eventData ? moment(eventData?.event?.final_event_date).format("MMMM DD YYYY HH:mm") : "";
   const currentDate = moment(Date.now()).format("YYYY-MM-DDTHH:mm");
   const hasPassed = eventData && moment(currentDate).isAfter(endDate);
+  const [isLoading, setIsLoading] = useState(false);
+  const [decliningInvite, setDecliningInvite] = useState(false);
 
   const changeInviteDetails = (e) => {
     const { value, name } = e.target;
@@ -55,25 +57,31 @@ const EventInvite = () => {
 
   const addParticipant = (e) => {
     e.preventDefault();
+    setIsLoading(true);
 
     const participantsData = { ...inviteDetails, event_id: eventData?.event._id };
     userServices.addParticipants(participantsData)
     .then((result) => {
       if(result.status === "success"){
+        setSuccessMessage("Successful!");
+        setResultMsg("");
+        setIsLoading(false)
         setTimeout(() => {
-          setResultMsg({ message: "Successful!"})
           navigate('/event_invite/event_invite_response')
         }, 2000)
       } else if(result.status){
         setResultMsg(result.message)
+        setIsLoading(false)
       }})
       .catch(error => {
         setResultMsg("An error has occured")
+        setIsLoading(false)
       })
   }
 
   const declineInvite = () => {
-    setDeclinedInvite(true);
+    setDecliningInvite(true);
+    setResultMsg("You have succesfully declined this invite... Redirecting to your homepage soon")
     setTimeout(() => {
       navigate("/");
     }, 2000);
@@ -92,6 +100,7 @@ const EventInvite = () => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [hasPassed]);
 
+  console.log(resultMsg)
   return (
     <div>
       {
@@ -104,8 +113,8 @@ const EventInvite = () => {
                 <p className="leading-6 text-gray-600 font-sm"> You have been invited to {eventData ? eventData?.event?.event_type : ""} by <span className="text-blue-700 font-bold"> {eventData ? eventData?.event?.host_info[0].name : ""}</span>
                 <br /> You can view the details below..
                 </p>
-                {declinedInvite ? <p className="font-bold text-red-900">You have succesfully declined this invite... Redirecting to your homepage soon</p> : null}
                 {resultMsg ? <p className="text-red-500 font-bold">{resultMsg}</p> : ""}
+                {successMessage ? <p className="text-green-700 font-bold">{successMessage}</p> : ""}
               </div>
               <div className="my-8 border py-5 rounded-lg flex justify-center items-center ">
                 <form onSubmit={addParticipant}>
@@ -159,14 +168,14 @@ const EventInvite = () => {
                       className="rounded bg-[#0056D6] hover:bg-[#2563eb] text-white py-2.5 md:px-3 px-1.5 md:text-lg text-base"
                       onClick={addParticipant}
                     >
-                    Accept Invite
+                    {isLoading ? "Loading..." : "Accept Invite"}
                     </button>
                     <button
                       type="button"
                       className="rounded border border-[#0056D6] text-[#0056D6] py-2.5 md:px-3 px-1.5 md:text-lg text-base"
                       onClick={() => declineInvite()}
                     >
-                      Decline Invite
+                      {decliningInvite ? "Declining..." : "Decline Invite"}
                     </button>
                   </div>
                 </form>
