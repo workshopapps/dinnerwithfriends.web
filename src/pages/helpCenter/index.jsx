@@ -18,7 +18,7 @@ const HelpCenter = ({ data, setActiveLink }) => {
                     {
                         data.map(category => {
                             return (
-                                <div className="p-3 px-4 bg-[#E7F0FF] hover:bg-green-50 hover:border hover:border-l-primary-500 pb-8">
+                                <div className="p-3 px-4 bg-[#E7F0FF] hover:bg-green-50 pb-8 transition-all duration-150 cursor-pointer">
                                     <div className="flex justify-end">
                                         <img src={category.icon} alt={category.heading} />
                                     </div>

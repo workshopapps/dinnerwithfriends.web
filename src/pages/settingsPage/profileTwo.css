@@ -29,6 +29,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin-bottom: 1rem;
   }
   form .user-details .input-box{
     width: calc(100 / 2 - 20px);
@@ -75,7 +76,7 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    padding: 1rem;
+    padding: 1rem 0;
   }
   .body_title {
     display: flex;
@@ -249,7 +250,6 @@
     }
     #main-body{
       /* margin: auto; */
-      max-width: 80%;
       padding: 1rem;
     }
 
@@ -264,6 +264,10 @@
     }
     .edit-btn {
       margin-top: 5px;
+    }
+
+    .the-container form .user-details {
+      margin-bottom: 0
     }
   }
 

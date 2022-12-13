@@ -27,9 +27,16 @@ const Testimonials = () => {
       "p":"Finding time to see my friends has really been hard until i started using catch up which has ahd a positive impact in my life",
       "date": "3 days ago",
     },
+    {
+      "img": image1,
+      "name": "Adeyinka Adekola",
+      "job": "Account manager, UBA Bank",
+      "p":"I have always found it hard to balance both work and my personal life, coming across catch up it helped me schedule events where i can meet up weekly with my friends and have fun.",
+      "date": "3 days ago",
+    },
   ]
   return (
-    <section className="relative pt-24 pb-32 bg-white overflow-hidden">
+    <section className="relative pt-24 pb-32 lg:mx-28 bg-white overflow-hidden">
       <img
         className="absolute top-0 left-0"
         src="flaro-assets/images/testimonials/gradient.svg"
@@ -51,7 +58,7 @@ const Testimonials = () => {
         </p>
         <div className="flex flex-wrap -m-3">
           {testimonies.map((e, i) => (
-            <div className="w-full md:w-1/2 lg:w-1/3 p-3" key={i}>
+            <div className="w-full md:w-1/2 lg:w-1/2 p-3" key={i}>
             <div className="p-6 h-full bg-white bg-opacity-60 border rounded-5xl">
               <div className="flex flex-col justify-between h-full">
                 <div className="mb-5 block">
