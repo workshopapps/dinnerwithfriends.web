@@ -4,7 +4,6 @@ import { MdSpaceDashboard } from "react-icons/md";
 import { FiSettings, FiLogIn } from "react-icons/fi";
 import menuStyles from "./createEvent.module.css";
 import { Link } from "react-router-dom";
-import avatar from "../../assets/img/Avatar.png";
 import { FaAngleDown } from 'react-icons/fa';
 import Logo from "../Logo";
 import Button from "../Button";
