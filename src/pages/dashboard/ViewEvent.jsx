@@ -21,7 +21,6 @@ const ViewEvent = () => {
 	const [singleEvent, setSingleEvent] = useState({});
 	const [participants, setParticipants] = useState([]);
 	const [copied, setCopied] = useState(false);
-	const [agreedDate, setAgreedDate] = useState("");
 	const toggleShowAccordion = (id) => {
 		if (isActive === id) {
 			setIsActive();
