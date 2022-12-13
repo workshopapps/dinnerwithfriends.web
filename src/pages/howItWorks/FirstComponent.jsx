@@ -29,7 +29,7 @@ export default function FirstComponent() {
         <h3 className="font-bold mx-6 md:text-3xl lg:px-32 lg:text-5xl">
           Plan and organise every get-together, from dinner to a reunion.
         </h3>
-        <section className="mt-10 py-[4.875rem] px-8 bg-[#e7f0ffcc] w-full grid gap-4 md:gap-12 lg:px-32 md:grid-cols-2 xl:grid-cols-4">
+        <section className="mt-10 py-[4.875rem] px-8 bg-[#e7f0ffcc] w-full grid gap-4 md:gap-12 lg:px-20 md:grid-cols-2 xl:grid-cols-4">
           <div className="bg-white flex flex-col justify-center items-center gap-6  mx-auto py-5 px-[1.125rem] shadow-md">
             <img className="w-[72px] h-[72px]" src={icon1} alt="Icon 1" />
             <h4 className="text-[#0056D6] font-bold">Get RSVPs</h4>
