@@ -184,7 +184,7 @@ const CreateEventForm = () => {
 				</div>
 				<div className='flex flex-col mb-4'>
 					<label htmlFor='noOfParticipants' className='text-sm font-semibold'>
-						Number of Participants
+						Minimum number of participants
 					</label>
 					<input
 						required
