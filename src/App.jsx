@@ -61,6 +61,10 @@ function App() {
           path="/event_invite/event_invite_response"
           element={<EventInviteResponse />}
         />
+        <Route
+          path="/invitee/event_invite_response"
+          element={<EventInviteResponse />}
+        />
         <Route path="/dashboard/upcoming_events" element={<UpcomingEvent />} />
         <Route path="/features" element={<Features />} />
         <Route path="/profile" element={<ProfilePage />} />

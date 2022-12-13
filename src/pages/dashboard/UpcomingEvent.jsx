@@ -72,7 +72,7 @@ const UpcomingEvent = () => {
       })
       .then(
         function () {
-          console.log("Sign-in successful");
+           ("Sign-in successful");
         },
         function (err) {
           console.error("Error signing in", err);
@@ -86,7 +86,7 @@ const UpcomingEvent = () => {
       .load("https://content.googleapis.com/discovery/v1/apis/calendar/v3/rest")
       .then(
         function () {
-          console.log("GAPI client loaded for API");
+           ("GAPI client loaded for API");
           execute();
         },
         function (err) {
@@ -99,7 +99,6 @@ const UpcomingEvent = () => {
     return gapi.client.calendar.calendarList.list({}).then(
       function (response) {
         // Handle the results here (response.result has the parsed body).
-        console.log("Response", response);
 
 				if (response.status === 200) {
 					setModal(true);

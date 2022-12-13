@@ -25,7 +25,7 @@ const CreateEventNavbar = ({setModal}) => {
 
   useEffect(() => {
     fetchData();
-  }, [user.name, user.email])
+  }, [user])
 
 	const [open, setOpen] = useState(false);
   const [showNav, setShowNav] = useState(false);
@@ -56,7 +56,7 @@ const CreateEventNavbar = ({setModal}) => {
         })
         .then(
           function () {
-            console.log("Sign-in successful");
+             ("Sign-in successful");
           },
           function (err) {
             console.error("Error signing in", err);
@@ -70,7 +70,7 @@ const CreateEventNavbar = ({setModal}) => {
         .load("https://content.googleapis.com/discovery/v1/apis/calendar/v3/rest")
         .then(
           function () {
-            console.log("GAPI client loaded for API");
+             ("GAPI client loaded for API");
             execute();
           },
           function (err) {
@@ -83,7 +83,6 @@ const CreateEventNavbar = ({setModal}) => {
       return gapi.client.calendar.calendarList.list({}).then(
         function (response) {
           // Handle the results here (response.result has the parsed body).
-          console.log("Response", response);
 
           if (response.status === 200) {
             setModal(true);
