@@ -61,7 +61,9 @@ const EventSummary = () => {
 
 	const handleChange = (e) => {
 		setEmail(e.target.value);
-		setFormError(validate(email));
+		setFormError(validate(email.trim()));
+		console.log(email)
+		console.log(formError)
 	};
 
 	const addParticipant = (e) => {
@@ -206,7 +208,7 @@ const EventSummary = () => {
 
 				<div className='my-6 flex justify-between items-center'>
 					<Link
-						to='/dashboard/upcoming_events'
+						to='/create_event'
 						className='text-xl font-semibold'>
 						Back
 					</Link>

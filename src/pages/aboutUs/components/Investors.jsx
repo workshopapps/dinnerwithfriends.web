@@ -9,9 +9,9 @@ import { ReactComponent as CalendlyWeb } from "../assets/Calendly-web.svg";
 
 const Investors  = ({ dimension }) => {
     return (
-        <section className="grid mb-20">
-            <h4 className="font-bold text-2xl md:text-6xl justify-self-center">Our Investors</h4>
-            <div className="flex flex-wrap gap-4 justify-around md:gap-5 md:justify-around md:items-center pt-11 md:pt-16">
+        <section className="grid mb-20 w-[85%] mx-auto">
+            <h4 className="font-bold text-2xl md:text-5xl justify-self-center">Our Investors</h4>
+            <div className="flex flex-wrap gap-10 justify-around md:gap-5 md:justify-around items-center pt-11 md:pt-16">
                 {dimension.width <= 1280 ? <Abeg /> : <AbegWeb /> }
                 {dimension.width <= 1280 ? <AngelList /> : <AngelListWeb /> }
                 {dimension.width <= 1280 ? <YCombinator /> : <YCombinatorWeb /> }

@@ -131,11 +131,7 @@ function AddParticipantModal({ eventId }) {
 					<div className='relative my-6 mx-auto w-full h-screen'>
 						<div className='w-[90%] h-[500px] mt-12 lg:w-[40%] max-w-[500px] px-6 mx-auto border-0 rounded-lg shadow-lg relative flex flex-col bg-white outline-none focus:outline-none'>
 							<div className=' mt-5'>
-								<div className='flex justify-between items-center'>
-									<button className='flex items-center text-[#0056D6]'>
-										<p className='mr-2 text-sm'>Add participant</p>
-										<BsPlus />
-									</button>
+								<div className='flex justify-end items-end'>
 									<span
 										onClick={closeModal}
 										className='bg-[#FAFAFA] cursor-pointer text-[#717172] flex justify-center items-center rounded-full h-[35px] w-[35px]'>

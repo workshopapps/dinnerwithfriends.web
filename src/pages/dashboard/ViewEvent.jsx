@@ -3,7 +3,6 @@ import { useState } from "react";
 import moment from "moment/moment";
 import Navbar from "../../components/CreateEvent/CreateEventNavbar";
 import arrow from "../../assets/icons/arrow-down.svg";
-import profile from "../../assets/img/profile.svg";
 import AddParticipantModal from "../../components/AddParticipantModal";
 import { useParams } from "react-router-dom";
 import clipboard from "../dashboard/icons/clipboard.svg";
@@ -203,11 +202,12 @@ const ViewEvent = () => {
 									className='py-3 border-b border-gray-200 transition-all'>
 									<div className='flex justify-between items-center transition-all'>
 										<div className='flex items-center'>
-											<img
+											{/* <img
 												className='rounded-full h-fit w-8 lg:w-10 mr-3'
 												src={profile}
 												alt=''
-											/>
+											/> */}
+											<div className="mr-3 w-10 h-10 flex justify-center items-center text-white bg-[#0056D6] rounded-full font-semibold">{invitee.fullname.slice(0,2)}</div>
 											<div className='space-y-[-3px]'>
 												<h4 className='font-semibold text-sm'>
 													{participants.indexOf(invitee) + 1}
