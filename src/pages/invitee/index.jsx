@@ -193,7 +193,7 @@ const EventInvite = () => {
                   </div>
                 </div>
                 <form
-                  className="flex-1"
+                  className="flex-1 w-full"
                   onSubmit={addParticipant}
                 >
                   <div className="my-4 flex flex-col">
@@ -242,7 +242,7 @@ const EventInvite = () => {
                       {decidedEvent}
                     </p>
                   ) : (
-                    <div className="my-4">
+                    <div className="my-4 flex flex-col">
                       <label className="text-base font-semibold mb-1">
                         Preferred Date & Time
                       </label>
