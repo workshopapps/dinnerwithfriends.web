@@ -141,7 +141,7 @@ const EventInvite = () => {
               </p>
             ) : null}
             {resultMsg ? (
-              <p className="text-red-500">{resultMsg.message}</p>
+              <p className={resultMsg.message === "Successful!" ? "text-green-500" : "text-red-500"}>{resultMsg.message}</p>
             ) : (
               ""
             )}
