@@ -158,7 +158,7 @@ const UpcomingEvent = () => {
 						</Link>
 					</Button>
 					<div className='flex flex-col justify-center items-center gap-y-2'>
-						<span className='text-[#151517] font-bold lg:font-medium text-xl'>
+						<span className='text-[#151517] font-bold lg:font-medium text-xl text-center'>
 							New Catch Up Event
 						</span>
 						<span className='text-[#898989] font-bold lg:font-normal text-lg text-center'>
