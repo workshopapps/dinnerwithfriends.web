@@ -51,7 +51,7 @@ const Hero = () => {
       </div>
 
       <div className="flex flex-row-reverse mt-8 mb-8 lg:mx-20 lg:mt-0 text-gray-700">
-        <div className="mx-4">
+        {/* <div className="mx-4">
           <span className="block text-[12px] lg:text-sm">
             User retention rate
           </span>
@@ -64,7 +64,7 @@ const Hero = () => {
         <div className="mx-4">
           <span className="block text-[12px] lg:text-sm">Active users</span>
           <span className="text-xl font-bold lg:text-3xl">90k +</span>
-        </div>
+        </div> */}
       </div>
     </section>
   );
