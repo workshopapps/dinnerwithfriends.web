@@ -229,8 +229,8 @@ const CreateEventNavbar = ({setModal}) => {
                   <h2 className="text-[#fff] text-[20px] font-bold text-center">{getInitials(user?.name)}</h2>
 						    </span>
                 <span className={menuStyles.theUsersName}>
-                  <span>{user.name}</span>
-                  <span>{user.email}</span>
+                  <span>{user?.name}</span>
+                  <span>{user?.email}</span>
                 </span>
               </span>
             </li>
