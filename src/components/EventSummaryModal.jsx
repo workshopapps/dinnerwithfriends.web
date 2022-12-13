@@ -32,16 +32,16 @@ const EventSummaryModal = ({ setPopup, copied, copyLink }) => {
 									}}
 									className='bg-[#717172] w-[15px] rounded-lg h-[1.5px] mt-1'></div>
 							</div>
-						<div className='flex flex-col items-center justify-center'>
+						<div className='flex flex-col items-center justify-center px-[15px]'>
 							<img
 								className='mt-4 md:mt-8 mb-4'
 								src={checkmark}
 								alt='a checkmark'
 							/>
-							<h3 className='mb-4 text-2xl font-bold text-center'>
+							<h3 className='mb-4 text-xl lg:text-2xl font-bold text-center'>
 								Event Succesfully Created
 							</h3>
-							<p className=' w-full md:w-[340px] text-center text-base font-bold text-[#898989]'>
+							<p className=' w-full md:w-[340px] text-center text-[14xp] lg:text-base font-bold text-[#898989]'>
 								You've successfully created your event, you can check your
 								notifications to see your friends who have accepted your
 								invite
