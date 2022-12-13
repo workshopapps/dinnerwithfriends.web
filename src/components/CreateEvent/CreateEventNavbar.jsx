@@ -56,7 +56,7 @@ const CreateEventNavbar = ({setModal}) => {
         })
         .then(
           function () {
-             ("Sign-in successful");
+            console.log("Sign-in successful");
           },
           function (err) {
             console.error("Error signing in", err);
@@ -70,7 +70,7 @@ const CreateEventNavbar = ({setModal}) => {
         .load("https://content.googleapis.com/discovery/v1/apis/calendar/v3/rest")
         .then(
           function () {
-             ("GAPI client loaded for API");
+            console.log("GAPI client loaded for API");
             execute();
           },
           function (err) {
@@ -83,6 +83,7 @@ const CreateEventNavbar = ({setModal}) => {
       return gapi.client.calendar.calendarList.list({}).then(
         function (response) {
           // Handle the results here (response.result has the parsed body).
+          console.log("Response", response);
 
           if (response.status === 200) {
             setModal(true);
@@ -116,7 +117,7 @@ const CreateEventNavbar = ({setModal}) => {
 						<span>
               <FaAngleDown className="text-[#0056d6]"/>
 						</span>
-						<span className='w-[40px] h-[40px] p-[10px] flex justify-center items-center bg-[#0056D6] rounded-[100%]'>
+						<span className='w-[35px] h-[35px] p-[10px] flex justify-center items-center bg-[#0056D6] rounded-[100%]'>
               <h2 className="text-[#fff] text-[20px] font-bold text-center">{getInitials(user?.name)}</h2>
 						</span>
 					</div>
@@ -167,8 +168,8 @@ const CreateEventNavbar = ({setModal}) => {
                     Sync with Google Calender
                   </Button>
                 </li>
-                <div className="flex items-center gap-2 text-black rounded hover:bg-inherit hover:text-color">
-                  <span className='w-[35px] h-[35px] p-[10px] flex justify-center items-center bg-[#0056D6] rounded-[100%] mr-1'>
+                <div className="flex justify-center items-center gap-x-2 text-black rounded hover:bg-inherit hover:text-color">
+                  <span className='w-[35px] h-[35px] p-[10px] flex justify-center items-center bg-[#0056D6] rounded-[100%]'>
                     <h2 className="text-[#fff] text-[20px] font-bold text-center">{getInitials(user?.name)}</h2>
 						      </span>
                     <span className={menuStyles.theUsersName}>
@@ -224,8 +225,8 @@ const CreateEventNavbar = ({setModal}) => {
             </li>
             <li>
               <span className="flex py-2 pl-4">
-                <span className='w-[30px] h-[30px] p-[10px] flex justify-center items-center bg-[#0056D6] rounded-[100%] mr-2'>
-                  <h2 className="text-[#fff] text-[15px] font-bold text-center">{getInitials(user?.name)}</h2>
+                <span className='w-[35px] h-[35px] p-[10px] flex justify-center items-center bg-[#0056D6] rounded-[100%]'>
+                  <h2 className="text-[#fff] text-[20px] font-bold text-center">{getInitials(user?.name)}</h2>
 						    </span>
                 <span className={menuStyles.theUsersName}>
                   <span>{user.name}</span>

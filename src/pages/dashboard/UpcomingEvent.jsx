@@ -72,7 +72,7 @@ const UpcomingEvent = () => {
       })
       .then(
         function () {
-           ("Sign-in successful");
+          console.log("Sign-in successful");
         },
         function (err) {
           console.error("Error signing in", err);
@@ -86,7 +86,7 @@ const UpcomingEvent = () => {
       .load("https://content.googleapis.com/discovery/v1/apis/calendar/v3/rest")
       .then(
         function () {
-           ("GAPI client loaded for API");
+          console.log("GAPI client loaded for API");
           execute();
         },
         function (err) {
@@ -99,6 +99,7 @@ const UpcomingEvent = () => {
     return gapi.client.calendar.calendarList.list({}).then(
       function (response) {
         // Handle the results here (response.result has the parsed body).
+        console.log("Response", response);
 
 				if (response.status === 200) {
 					setModal(true);
@@ -157,7 +158,7 @@ const UpcomingEvent = () => {
 						</Link>
 					</Button>
 					<div className='flex flex-col justify-center items-center gap-y-2'>
-						<span className='text-[#151517] font-bold lg:font-medium text-xl text-center'>
+						<span className='text-[#151517] font-bold lg:font-medium text-xl'>
 							New Catch Up Event
 						</span>
 						<span className='text-[#898989] font-bold lg:font-normal text-lg text-center'>
