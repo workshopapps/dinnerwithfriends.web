@@ -209,7 +209,8 @@ const CreateEventForm = () => {
 						<label htmlFor='startDate' className='text-sm font-semibold'>
 							Start Date
 						</label>
-						<div className='flex mt-3 items-center bg-white relative p-3 border border-[#0000004D] rounded-[4px] w-full'>
+						<div className='flex mt-3 items-center bg-white relative p-3 border border-[#0000004D] rounded-[4px] w-full'
+						 >
 							<input
 								required
 								id='startDate'
