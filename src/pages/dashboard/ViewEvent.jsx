@@ -3,7 +3,6 @@ import { useState } from "react";
 import moment from "moment/moment";
 import Navbar from "../../components/CreateEvent/CreateEventNavbar";
 import arrow from "../../assets/icons/arrow-down.svg";
-import profile from "../../assets/img/profile.svg";
 import AddParticipantModal from "../../components/AddParticipantModal";
 import { useParams } from "react-router-dom";
 import clipboard from "../dashboard/icons/clipboard.svg";
