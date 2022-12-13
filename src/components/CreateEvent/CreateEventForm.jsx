@@ -229,7 +229,9 @@ const CreateEventForm = () => {
 						<label htmlFor='startDate' className='text-sm font-semibold'>
 							Start Date
 						</label>
-						<div className='flex mt-3 items-center bg-white relative p-3 border border-[#0000004D] rounded-[4px] w-full'>
+						<div className='flex mt-3 items-center bg-white relative p-3 border border-[#0000004D] rounded-[4px] w-full'
+						onClick={() => setShowCalendar(!showCalendar)}
+						>
 							<input
 								required
 								id='startDate'
@@ -240,7 +242,6 @@ const CreateEventForm = () => {
 								className='flex-[5] bg-transparent  text-[#151517]  text-sm outline-none'
 							/>
 							<span
-								onClick={() => setShowCalendar(!showCalendar)}
 								className='relative flex-[.5] justify-center flex cursor-pointer'>
 								<IoCalendarOutline />
 							</span>
@@ -265,7 +266,9 @@ const CreateEventForm = () => {
 						<label htmlFor='endDate' className='text-sm font-semibold'>
 							End Date
 						</label>
-						<div className='flex mt-3 items-center bg-white relative p-3 border border-[#0000004D] rounded-[4px] w-full'>
+						<div className='flex mt-3 items-center bg-white relative p-3 border border-[#0000004D] rounded-[4px] w-full'
+						onClick={() => setShowCalendar2(!showCalendar2)}
+						>
 							<input
 								required
 								id='endDate'
@@ -276,7 +279,6 @@ const CreateEventForm = () => {
 								className='flex-[5] bg-transparent  text-[#151517]  text-sm outline-none'
 							/>
 							<span
-								onClick={() => setShowCalendar2(!showCalendar2)}
 								className='relative flex-[.5] justify-center flex cursor-pointer'>
 								<IoCalendarOutline />
 							</span>
@@ -299,11 +301,14 @@ const CreateEventForm = () => {
 						</div>
 					</div>
 				</div>
-				<div className='flex flex-col mb-4 relative'>
+				<div className='flex flex-col mb-4 relative'
+				>
 					<label htmlFor='preferredDate' className='text-sm font-semibold'>
 						Preferred Date & Time
 					</label>
-					<div className='flex mt-3 items-center bg-white relative p-3 border border-[#0000004D] rounded-[4px] md:w-[50%]'>
+					<div className='flex mt-3 items-center bg-white relative p-3 border border-[#0000004D] rounded-[4px] md:w-[50%]'
+					onClick={() => setShowCalendar3(!showCalendar3)}
+					>
 						<input
 							required
 							id='preferredDate'
@@ -314,7 +319,6 @@ const CreateEventForm = () => {
 							className='flex-[5] bg-transparent  text-[#151517]  text-sm outline-none'
 						/>
 						<span
-							onClick={() => setShowCalendar3(!showCalendar3)}
 							className='relative flex-[.5] justify-center flex cursor-pointer'>
 							<IoCalendarOutline />
 						</span>
@@ -327,7 +331,12 @@ const CreateEventForm = () => {
 							showCalendar3
 								? "flex absolute top-[75px] left-0 right-0 z-10"
 								: "hidden"
-						}`}>
+						}`}
+
+						onClick={e => {
+							e.stopPropagation();
+						   }}
+						   >
 						<SingleCalendar
 							id='preferredDate'
 							addTime
