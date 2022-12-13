@@ -141,7 +141,7 @@ const EventInvite = () => {
               </p>
             ) : null}
             {resultMsg ? (
-              <p className="text-red-500">{resultMsg.message}</p>
+              <p className={resultMsg.message === "Successful!" ? "text-green-600" : "text-red-600"}>{resultMsg.message}</p>
             ) : (
               ""
             )}
@@ -192,7 +192,6 @@ const EventInvite = () => {
                     <span className="flex mt-3">
                       {" "}
                       <HiOutlineMenuAlt1 className="mr-4 text-[25px]" />
-                      Dinner with
                       <span className="font-bold">
                         {" "}
                         &#160;
@@ -246,7 +245,7 @@ const EventInvite = () => {
                     />
                   </div>
                   {eventData?.final_event_date ? (
-                    <p className="text-blue-500 font-semibold text-center w-4/5 mx-auto">
+                    <p className="text-blue-500 font-semibold text-center md:w-4/5 mx-auto">
                       An event date has been chosen. Event to be hosted by{" "}
                       {decidedEvent}
                     </p>
