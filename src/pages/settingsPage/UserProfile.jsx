@@ -107,9 +107,10 @@ const UserProfile = () => {
 					</div>
 				</div>
 				<p>{errorMsg()}</p>
-				<div className='user_details_field'>
-					<div className='avatar_fullName'>
-					   <h2>{getInitials(user?.name)}</h2>
+				<div className='flex justify-center mb-[1.5rem]'>
+					<div className='bg-[#0056D6] rounded-full h-[85px] w-[85px] flex justify-center items-center text-4xl text-white font-semibold'>
+						{/* <div className='avatar_fullName'> */}
+						<h2>{getInitials(user?.name)}</h2>
 					</div>
 				</div>
 

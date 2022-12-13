@@ -117,7 +117,7 @@ const CreateEventNavbar = ({setModal}) => {
 						<span>
               <FaAngleDown className="text-[#0056d6]"/>
 						</span>
-						<span className='w-[35px] h-[35px] p-[10px] flex justify-center items-center bg-[#0056D6] rounded-[100%]'>
+						<span className='w-[40px] h-[40px] p-[10px] flex justify-center items-center bg-[#0056D6] rounded-[100%]'>
               <h2 className="text-[#fff] text-[20px] font-bold text-center">{getInitials(user?.name)}</h2>
 						</span>
 					</div>
