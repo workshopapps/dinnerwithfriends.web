@@ -99,8 +99,24 @@ const CreateEventForm = () => {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [preferredDate, endDate, startDate]);
 
+	const calenderDisplay = () => {
+		if(showCalendar) {
+			setShowCalendar(false)
+		}
+
+		if(showCalendar2) {
+			setShowCalendar2(false)
+		}
+
+		if(showCalendar3) {
+			setShowCalendar3(false)
+		}
+	}
+
 	return (
-		<div className='w-full py-8 pt-[6rem] lg:pt-[7rem]'>
+	  <div onClick={calenderDisplay}>
+	   <div className="px-4 md:w-[75%] lg:w-[50%] mx-auto">
+		<div className='w-full py-8 pt-[6rem] lg:pt-[7rem]' >
 			<h1 className='text-xl font-bold text-center'>Create Catchup Event</h1>
 			<div className='mt-6'>
 				<div className='flex flex-col mb-4'>
@@ -341,6 +357,8 @@ const CreateEventForm = () => {
 				</div>
 			</div>
 		</div>
+	  </div>
+	</div>
 	);
 };
 
