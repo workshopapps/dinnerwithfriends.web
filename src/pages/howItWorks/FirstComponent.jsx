@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 
 export default function FirstComponent() {
   return (
-    <div className="mt-[7.5rem] lg:mt-40 text-base w-full flex flex-col items-center">
+    <div className="mt-[7.5rem] lg:mt-40 text-base flex flex-col items-center w-[85%] mx-auto">
       <h1 className="text-center text-2xl px-14 md:text-4xl lg:text-6xl lg:w-[825px]">
         <span className="font-bold text-[#0056D6]">Catch</span>{" "}
         <span className="font-bold">up</span> makes it easier to connect with
