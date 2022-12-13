@@ -187,7 +187,7 @@
     align-items: flex-start;
     padding: 1rem;
   }
-}
+}	
 @media (max-width: 568px) {
   #main_navbar,
   #main_footer {

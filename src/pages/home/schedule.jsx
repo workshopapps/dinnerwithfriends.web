@@ -8,7 +8,7 @@ const Schedule = () => {
   return (
     <section className="bg-[url('assets/img/VectorsHome.png')] bg-no-repeat bg-center ">
       <div className="">
-        <h1 className="px-6 mx-10 mb-4 my-8 text-4xl font-bold tracking-tight text-center leading-none md:text-5xl xl:text-6xl ">
+        <h1 className="md:px-6 mx-10 mb-4 my-8 text-4xl font-bold tracking-tight text-center leading-none md:text-5xl xl:text-6xl ">
           <span className="block mb-2 lg:mb-4">Stay connected with your </span>
           <span className="block mb-2 lg:mb-4">social cirlce.</span>
         </h1>

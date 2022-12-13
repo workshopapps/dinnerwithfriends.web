@@ -30,7 +30,7 @@ const HelpSearch = () => {
                 <input
                     type="text"
                     ref={inputRef}
-                    className="p-1 px-3 border border-none flex-1 focus:outline-none"
+                    className="p-1 px-3 border border-none flex-1 focus:outline-none bg-transparent"
                     placeholder="Search"
                     onFocus={() => {inputRef.current.placeholder = "What do you need help with?"; setActive(true)}}
                     onBlur={() => {inputRef.current.placeholder = "Search"; setActive(false)}}
