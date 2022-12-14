@@ -13,7 +13,6 @@ const DeleteEventModal = ({ setShowDeleteMenu, eventId, setShowDeleteSuccess }) 
 	const deleteEvent = async (data) => {
 		setIsSubmit(true);
 		const result = await userServices.deleteEvent(data);
-		console.log(result);
 		if (result.status === "fail") {
 			setIsSubmit(false);
 			setIsFailure(true);
