@@ -29,13 +29,6 @@ const EventSummary = () => {
 	}, [popup]);
 
 	useEffect(() => {
-		participants.map((item) =>
-			item.email === email ? setUsedEmail(true) : setUsedEmail(false)
-		);
-		// eslint-disable-next-line
-	}, [email]);
-
-	useEffect(() => {
 		if (Object.keys(formError).length === 0) {
 			setValidEmail(true);
 		}
@@ -43,9 +36,10 @@ const EventSummary = () => {
 	}, [formError]);
 
 	const validate = (values) => {
-		const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+		const regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 		const errors = {};
-		if (!regex.test(values)) {
+
+		if (!regex.test(values.trim()) && values.length !== 0) {
 			errors.email = "This is not a valid email format!";
 			setValidEmail(false);
 		} else {
@@ -55,14 +49,21 @@ const EventSummary = () => {
 	};
 
 	useEffect(() => {
-    participants?.map((item) => item === email && setUsedEmail(true));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+		participants.map((item) =>
+			item.toLowerCase() === email.toLowerCase() ? setUsedEmail(true) : setUsedEmail(false)
+		);
+		// eslint-disable-next-line
 	}, [email]);
 
 	const handleChange = (e) => {
 		setEmail(e.target.value);
 		setFormError(validate(email));
 	};
+
+	useEffect(() => {
+	 setFormError(validate(email))
+	}, [email])
+
 
 	const addParticipant = (e) => {
 		e.preventDefault();
@@ -177,7 +178,7 @@ const EventSummary = () => {
 					<small className='text-red-500'>{formError.email}</small>
 					{participants?.map(
 						(item) =>
-							item === email && (
+							item.toLowerCase() === email.toLowerCase() && (
 								<small className='text-red-500'>
 									This participant has already been added
 								</small>
@@ -206,7 +207,7 @@ const EventSummary = () => {
 
 				<div className='my-6 flex justify-between items-center'>
 					<Link
-						to='/dashboard/upcoming_events'
+						to='/create_event'
 						className='text-xl font-semibold'>
 						Back
 					</Link>

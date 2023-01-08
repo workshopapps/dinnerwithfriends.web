@@ -17,13 +17,13 @@ const TermsOfUse = () => {
       <div className="flex justify-end lg:flex-wrap flex-col mx-4 lg:flex-row lg:mx-8 m-5 pt-20 mb-[100px]">
         <div className="lg:w-4/6 w-full m-2 lg:px-4">
           <p className="mb-5 font-bold text-3xl">Terms of Use</p>
-          <p className="mt-2">
+          <p className="mt-2 text-sm font-medium">
             This document was last updated 15th of December, 2022. To start
             using our product, read this Terms and Conditions thoroughly.
           </p>
         </div>
 
-        <div className="lg:w-2/6 sm:w-auto lg:sticky h-screen top-0 static px-2 lg:-mt-24 mt-10 my-20">
+        <div className="lg:w-2/6 sm:w-auto lg:sticky h-full top-0 static px-2 lg:-mt-24 mt-10 my-20">
           <h3 className="text-xl font-bold">Content</h3>
           <ul>
             {termsData.map((term) => {
@@ -44,7 +44,7 @@ const TermsOfUse = () => {
           </ul>
         </div>
 
-        <div className="lg:w-4/6 w-auto p-2 lg:mt-auto mt-10">
+        <div className="lg:w-4/6 w-auto p-2 lg:pr-10 lg:mt-auto mt-10">
           {termsData.map((term) => {
             return (
               <div key={term.id} id={term.heading}>
@@ -53,7 +53,7 @@ const TermsOfUse = () => {
                 </h3>
                 {term.paragraphs.map((para, index) => {
                   return (
-                    <p key={index} className="pt-2 pb-4 text-medium">
+                    <p key={index} className="pt-2 pb-4 text-sm font-medium">
                       {para}
                       <a
                         className="text-[#0056D6]"
@@ -68,7 +68,7 @@ const TermsOfUse = () => {
                   {term.lists &&
                     term.lists.map((listItem, index) => {
                       return (
-                        <li key={index}>
+                        <li key={index} className="list-disc">
                           {listItem}{" "}
                           <a
                             href={

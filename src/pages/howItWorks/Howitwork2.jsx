@@ -10,13 +10,14 @@ export default function Howitwork2() {
     <div className="container max-w-full p-8 mx-auto relative">
       <div className="max-md:py-20 max-sm:py-20">
         <h1 className=" mb-8 text-4xl font-bold text-center">
-          {" "}
           Watch how easy it is to create your next get-together
         </h1>
         <div className="w-full mb-[88px] lg:mb-[144px]">
           <video
             controls
             className="w-full"
+            autoPlay
+            loop
             src="https://player.vimeo.com/external/414291591.sd.mp4?s=0e5f7a63156c329e28a9c3edc3847e53825974e9&profile_id=164&oauth2_token_id=57447761"
           />
         </div>
@@ -81,9 +82,9 @@ export default function Howitwork2() {
             </div>
           </div>
         </section>
-        <div className=" flex justify-between px-3 pb-10 py-20 flex-col lg:flex-row">
+        <div className=" flex justify-between px-3 pb-10 py-20 flex-col lg:flex-row gap-8">
           <div>
-            <h1 className="text-5xl text-[#0056D6] font-bold max-md:text-base">
+            <h1 className="text-2xl md:text-5xl text-[#0056D6] font-bold max-md:text-base">
               Still have questions ?
             </h1>
             <p className="text-base py-3 max-md:text-start max-md:text-base ">
@@ -95,21 +96,21 @@ export default function Howitwork2() {
             <form>
 
                 <input
-                  className=" border border-gray-300 p-4 w-full mt-6 rounded-lg "
+                  className=" border border-gray-300 p-4 w-full mt-6 rounded-lg  bg-transparent outline-none"
                   type="text"
                   placeholder="Enter your Name"
                 />
 
               <input
-                className="border border-gray-300 p-4 w-full mt-6 rounded-lg "
+                className="border border-gray-300 p-4 w-full mt-6 rounded-lg  bg-transparent outline-none"
                 type="email"
                 placeholder="Enter your email"
               />
               <textarea
-                className=" border border-gray-300 pb-20 pl-3  pt-3 mt-5 w-full rounded-lg"
+                className=" border border-gray-300 pb-20 pl-3  pt-3 mt-5 w-full rounded-lg bg-transparent outline-none"
                 placeholder="Enter a description..."
               />
-              <button className="w-full text-white bg-[#0056D6] rounded-lg p-3 ">
+              <button className="w-full text-white bg-[#0056D6] rounded-lg p-3 mt-6">
                 Send
               </button>
             </form>

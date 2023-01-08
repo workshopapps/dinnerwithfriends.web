@@ -47,7 +47,6 @@ const EventInvite = () => {
     setMinDate(startDate);
     setMaxDate(endDate);
 
-    console.log(startDate, endDate);
   }, [eventData]);
 
   const changeInviteDetails = (e) => {
@@ -62,7 +61,6 @@ const EventInvite = () => {
   const getEventDetails = async () => {
     const result = await userServices.getEventsById(`${id}`);
     setEventData(result);
-    console.log(result);
     if (eventData?.final_event_date) {
       setInviteDetails({
         ...inviteDetails,
@@ -73,8 +71,12 @@ const EventInvite = () => {
 
   const addParticipant = (e) => {
     e.preventDefault();
-
-    const participantsData = { ...inviteDetails, event_id: eventData.id };
+    const { fullname, email, preferred_date_time } = inviteDetails;
+    if (!fullname || !email) {
+      setResultMsg("Please fill all fields");
+      return;
+    } 
+    const participantsData = { ...inviteDetails, event_id: eventData.id, preferred_date_time: eventData.final_event_date ? eventData.final_event_date : preferred_date_time };
 
     userServices
       .addParticipants(participantsData)
@@ -82,7 +84,6 @@ const EventInvite = () => {
         if (response.status === "success") {
           setTimeout(() => {
             setResultMsg({ message: "Successful!" });
-            navigate("/invitee/event_invite_response");
           }, 2000);
         } else {
           setResultMsg(response);
@@ -91,7 +92,15 @@ const EventInvite = () => {
       .catch((error) => {
         setResultMsg("An error has occured");
       });
+      
   };
+  useEffect(() => {
+    if (resultMsg.message === "Successful!") {
+      setTimeout(() => {
+        navigate("/invitee/event_invite_response");
+      }, 2000);
+    }
+  }, [navigate, resultMsg]);
 
   const declineInvite = () => {
     setDeclinedInvite(true);
@@ -132,7 +141,7 @@ const EventInvite = () => {
               </p>
             ) : null}
             {resultMsg ? (
-              <p className="text-red-500">{resultMsg.message}</p>
+              <p className={resultMsg.message === "Successful!" ? "text-green-600" : "text-red-600"}>{resultMsg.message}</p>
             ) : (
               ""
             )}
@@ -183,7 +192,6 @@ const EventInvite = () => {
                     <span className="flex mt-3">
                       {" "}
                       <HiOutlineMenuAlt1 className="mr-4 text-[25px]" />
-                      Dinner with
                       <span className="font-bold">
                         {" "}
                         &#160;
@@ -193,7 +201,7 @@ const EventInvite = () => {
                   </div>
                 </div>
                 <form
-                  className="flex-1"
+                  className="flex-1 w-full"
                   onSubmit={addParticipant}
                 >
                   <div className="my-4 flex flex-col">
@@ -237,7 +245,7 @@ const EventInvite = () => {
                     />
                   </div>
                   {eventData?.final_event_date ? (
-                    <p className="text-blue-500 font-semibold text-center w-4/5 mx-auto">
+                    <p className="text-blue-500 font-semibold text-center md:w-4/5 mx-auto">
                       An event date has been chosen. Event to be hosted by{" "}
                       {decidedEvent}
                     </p>

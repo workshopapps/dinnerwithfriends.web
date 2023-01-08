@@ -9,17 +9,19 @@ import Testimonials from "./testimonials";
 import Banner from "./banner";
 
 const Home = () => {
-  return (
-    <div className="">
-      <Navbar />
-      <Hero />
-      <Schedule />
-      {/* <HeroDashboard /> */}
-      <Testimonials />
-      <Banner />
-      <Footer />
-    </div>
-  );
+	return (
+		<>
+			<Navbar />
+			<div className='w-[90%] mx-auto'>
+				<Hero />
+				<Schedule />
+				{/* <HeroDashboard /> */}
+				<Testimonials />
+			</div>
+			<Banner />
+			<Footer />
+		</>
+	);
 };
 
 export default Home;

@@ -24,7 +24,7 @@ const Policy = () => {
       href: "Cookies"
     },
     {
-      href: "Social Login"
+      href: "Google Login"
     },
     {
       href: "Advertising"
@@ -39,10 +39,10 @@ const Policy = () => {
       href: "Unauthorized Access"
     },
     {
-      href: "Invitation from Catch Up"
+      href: "Calendar Integration"
     },
     {
-      href: "Calendar Integration"
+      href: "Invitation from Catch Up"
     },
     {
       href: "For User Surveys and Market Research"
@@ -60,6 +60,9 @@ const Policy = () => {
       href: "Right of Erasure"
     },
     {
+      href: "Marketing"
+    },
+    {
       href: "Your Rights"
     },
     {
@@ -67,18 +70,16 @@ const Policy = () => {
     },
     {
       href: "Changes"
-    },
+    }, 
     {
       href: "Contact Us"
-    },
+    }
   ];
 
   const policies = [
     {
       heading: "Privacy Policy",
-      p: `We are serious about the security of the data on our servers and the protection of the privacy of our users. 
-      We continually take steps to protect your information against loss, misuse, unauthorized access, unauthorized disclosure, manipulation, or destruction. You can also find a link to the privacy settings in the footer of our digital products. This Privacy Policy describes how the data is handled at CatchUp. This privacy policy applies to current and former customers, suppliers and third-party customers and suppliers where personal information is processed to enable CatchUp provide its services. Please consult your rights and disclosure required by the General Data Protection Regulation and Nigerian Data Protection Regulation. In this Privacy Policy, 
-      references to "us", "our" or "we" are to CatchUp.`
+      p: `We are serious about the security of the data on our servers and the protection of the privacy of our users. We continually take steps to protect your information against loss, misuse, unauthorized access, unauthorized disclosure, manipulation, or destruction. You can also find a link to the privacy settings in the footer of our digital products. This Privacy Policy describes how the data is handled at CatchUp. This privacy policy applies to current and former customers, suppliers and third-party customers and suppliers where personal information is processed to enable CatchUp provide its services. Please consult your rights and disclosure required by the General Data Protection Regulation and Nigerian Data Protection Regulation. In this Privacy Policy, references to "us", "our" or "we" are to CatchUp. `
     },
     {
       heading: "Your Data with Catch Up",
@@ -115,8 +116,7 @@ const Policy = () => {
       `
     },
     {
-      heading: "Google Login",
-      
+      heading: "Google Login",    
       p: `CatchUp uses Google login to provide you with the convenience from elsewhere on the internet to sign in to CatchUp with one click  At CatchUp, 
       you can sign in with Google or your email/password. 
       Google can track your actions when you interact with them. Please refer to the terms of the respective providers for further guidance:
@@ -178,8 +178,7 @@ const Policy = () => {
     },
     {
       heading: "Data Retention",
-      p: `We shall only retain your data for as long as is legally necessary or following the purpose for which they were processed. If we carry out analysis, we shall store your data until the analysis has been concluded. If we store your data based on a contractual relationship with you, these data will remain stored for at least the duration of the contractual relationship and at most for the duration of the limitation periods within which any claims may be brought by or against us,
-       or for the duration of statutory or contractual duties of retention.`
+      p: `We shall only retain your data for as long as is legally necessary or following the purpose for which they were processed. If we carry out analysis, we shall store your data until the analysis has been concluded. If we store your data based on a contractual relationship with you, these data will remain stored for at least the duration of the contractual relationship and at most for the duration of the limitation periods within which any claims may be brought by or against us, or for the duration of statutory or contractual duties of retention.`
     },
     {
       heading: "Legal Basis",
@@ -200,10 +199,38 @@ const Policy = () => {
     {
       heading: "Marketing",
       p: `We would like to send you information about products and services of our and other associated companies which may be of interest to you. If you have opted-in to receive marketing information, you may opt-out at a later date.
-      You have a right at any time to stop us or any associated companies from contacting you for marketing purposes - if you no longer wish to be contacted for marketing purposes please contact us via the contact details below or click on the 'unsubscribe' link at the bottom of any marketing email received from us
+      You have a right at any time to stop us or any associated companies from contacting you for marketing purposes - if you no longer wish to be contacted for marketing purposes please contact us via the contact details below or click on the 'unsubscribe' link at the bottom of any marketing email received from us      
       `
     },
-    
+    {
+      heading: "Your Rights",
+      p: `Under data protection legislation, as an individual you have rights in relation to the Personal Data we process which relates to you. These rights include:
+      The right to access the Personal Data that we process about you; where our processing of your Personal Data is based on your consent, the right to withdraw your consent to such processing at any time;
+      The right to object to direct marketing – your preferences, including in relation to direct marketing, can be amended by contacting us via the contact details. 
+      The right to restriction of processing or to object to the processing of your Personal Data;
+      The right to request for us to transfer your Personal Data to a third party in a standardized machine-readable format;
+      The right to request the blocking and deletion of your Personal Data at any time in writing, enclosing appropriate proof of your identity, by email. We reserve the right to exchange correspondence with you in this regard. Please note that we may be required to retain your Personal Data in part even after a request for blocking or cancellation under the terms of our statutory or contractual retention requirements (such as for accounting purposes) and in such an eventuality will only block your Personal Data insofar as necessary for this purpose. In addition, the cancellation of your Personal Data may have the effect that you are no longer able to acquire or use the services registered by you
+      The right to request the rectification of your Personal Data; and
+      The right to lodge a complaint with competent supervisory authority.You can do this with the supervisory authority at your place of residence, at your place of work, or the place of the alleged data breach. Your privacy cockpit offers you further information on the various systems and providers that we use, as well as the option to change your privacy settings at any time.
+      You can exercise these rights by contacting our Data Protection Officer using the contact details below.
+      CatchUp is not intended for children under 18 years of age. We do not intentionally collect or use any information from children.      
+      `
+    }, 
+    {
+      heading: "Contact Person",
+      p: `If you would like to update the Personal Data we hold about you, update your marketing preferences, or exercise any of your rights under the data protection legislation, you can contact us at any time by writing to our data protection office via email.
+      `
+    },
+    {
+      heading: "Changes",
+      p: `CatchUp may change the content of the application without notice to improve, add new functionality and features to this app and improve and add to our existing products, services and promotions. Because of these ongoing changes, changes in the law and the changing nature of technology, our data practices and consequently our Privacy Policy will change from time to time. If and when our data practices change, we will post the changes on our website to notify you. We therefore encourage you to review our Privacy Policy when you visit the app from time to time to stay informed of how we are using your Personal Data.
+      `
+    },
+    {
+      heading: "Contact Us",
+      p: `If you have any questions about these Privacy policies, You can contact us: By visiting this page on our website at https://catchup.rsvp/contact-us or by sending us an email at contact@catchup.rsvp 
+      `
+    },
   ];
   return (
     <>

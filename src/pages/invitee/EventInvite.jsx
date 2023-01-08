@@ -8,7 +8,7 @@ import userServices from "../../services/userServices";
 const EventInvite = () => {
   const [eventData, setEventData] = useState("");
   const preferredDate = eventData ? eventData?.event?.host_prefered_time.replace("-", "") : "";
-  const preferredTime = eventData ? moment(preferredDate, "MM-DD-YYYY HH:mm").format("YYYY-MM-DDTHH:mm") : "";
+  const preferredTime = eventData ? moment(preferredDate, "DD-MM-YYYY HH:mm").format("YYYY-MM-DDTHH:mm") : "";
   const [inviteDetails, setInviteDetails] = useState({
     fullname: "",
     email: "",
@@ -18,9 +18,9 @@ const EventInvite = () => {
   const [successMessage, setSuccessMessage] = useState("");
   const [resultMsg, setResultMsg] = useState("");
   const { token } = useParams();
-  const startDate = eventData ? moment(eventData?.event?.start_date, "MM-DD-YYYY").format("YYYY-MM-DDTHH:mm") : null;
-  const endDate = eventData ? moment(eventData?.event?.end_date, "MM-DD-YYYY").format("YYYY-MM-DDTHH:mm") : null;
-  const emailRegex = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+  const startDate = eventData ? moment(eventData?.event?.start_date, "DD-MM-YYYY").format("YYYY-MM-DDTHH:mm") : null;
+  const endDate = eventData ? moment(eventData?.event?.end_date, "DD-MM-YYYY").format("YYYY-MM-DDTHH:mm") : null;
+  const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
   const decidedEvent = eventData ? moment(eventData?.event?.final_event_date).format("MMMM DD YYYY HH:mm") : "";
   const currentDate = moment(Date.now()).format("YYYY-MM-DDTHH:mm");
   const hasPassed = eventData && moment(currentDate).isAfter(endDate);
@@ -100,11 +100,10 @@ const EventInvite = () => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [hasPassed]);
 
-  console.log(resultMsg)
   return (
     <div>
       {
-        resultMsg === "jwt has expired" ? <p className="text-red-900 text-4xl font-bold">Email invite has expired. Please contact the host for more info.</p> : (
+        resultMsg === "jwt expired" ? <p className="text-red-900 text-4xl font-bold">Email invite has expired. Please contact the host for more info.</p> : (
           <>
             <Navbar />
             <div className="mt-28 mb-10 mx-auto md:mx-32">

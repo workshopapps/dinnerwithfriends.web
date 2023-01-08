@@ -163,7 +163,6 @@ const getUser = async () => {
 const updateUser = async (params) => {
   try {
     const result = await fetchApi.patch(`${BASE_URL}/${GET_USER}`, params);
-    console.log(result)
     return result;
   } catch (err) {
     return err;

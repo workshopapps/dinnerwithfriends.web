@@ -6,7 +6,7 @@ import Mobile from "../../assets/img/Mobile.png";
 
 const Hero = () => {
   return (
-    <section className="bg-[url('assets/img/VectorsHome.png')] bg-no-repeat bg-center mb-10">
+    <section className="bg-[url('assets/img/VectorsHome.png')] bg-no-repeat bg-center mb-20">
       <div className="flex flex-row-reverse mt-28 mx-auto w-[13rem] md:mx-32 md:w-[80%]">
         <img src={SubHome} alt="subHome" className="md:w-[13rem]" />
       </div>
@@ -49,7 +49,7 @@ const Hero = () => {
           </Link>
         </div>
       </div>
-
+{/* 
       <div className="flex flex-row-reverse mt-8 mb-8 lg:mx-20 lg:mt-0 text-gray-700">
         <div className="mx-4">
           <span className="block text-[12px] lg:text-sm">
@@ -65,7 +65,7 @@ const Hero = () => {
           <span className="block text-[12px] lg:text-sm">Active users</span>
           <span className="text-xl font-bold lg:text-3xl">90k +</span>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 };
