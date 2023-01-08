@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ScheduleImage from "../../assets/img/Schedule.png";
-import Dashboard1 from "../../assets/img/Dashboard1.png";
-import Dashboard2 from "../../assets/img/Dashboard2.png";
+import ScheduleImage from "../../assets/img/homepage1.png";
+import Dashboard1 from "../../assets/img/homepage2.png";
+import Dashboard2 from "../../assets/img/homepage3.png";
 
 const Schedule = () => {
   return (
@@ -13,15 +13,15 @@ const Schedule = () => {
           <span className="block mb-2 lg:mb-4">social cirlce.</span>
         </h1>
         <div className="justify-between max-w-screen-xl px-6 md:px-0 mx-auto lg:flex lg:flex-row-reverse my-10">
-          <div className=" hidden w-full lg:mt-0 md:flex lg:w-1/2 lg:mr-4">
+          <div className=" hidden w-full mx-16 px-auto lg:mt-0 md:flex lg:w-1/2 lg:mr-4">
             <img src={ScheduleImage} alt="Home" />
           </div>
           <div className="block w-full mt-20 lg:mt-0 md:hidden">
             <img src={ScheduleImage} alt="Home" />
           </div>
           <div className="mt-6 lg:w-1/2 lg:ml-4">
-            <h3 className="max-w-2xl mb-4 text-xl font-bold tracking-tight text-center leading-none md:text-2xl xl:text-2xl lg:text-left">
-              Stay connected with Friends
+            <h3 className="max-w-2xl mb-4 text-xl font-bold tracking-tight text-center leading-none md:mt-28 md:text-2xl xl:text-2xl lg:text-left">
+              Set your availability prefrence
             </h3>
             <p className="max-w-xl mb-6 font-light text-gray-500 text-center text-sm lg:leading-7 lg:mb-8 md:text-lg lg:text-left lg:text-base">
               Schedule your next sport hangout, dinner date, coffe date with
@@ -49,6 +49,7 @@ const Schedule = () => {
             </Link>
           </div>
         </div>
+
         <div className="justify-between max-w-screen-xl px-6 md:px-0 mx-auto lg:flex my-10">
           <div className=" hidden w-full mx-16 px-auto lg:mt-0 md:flex lg:w-1/2 lg:mr-4">
             <img src={Dashboard1} alt="Home" />
@@ -86,6 +87,7 @@ const Schedule = () => {
             </Link>
           </div>
         </div>
+
         <div className="justify-between max-w-screen-xl px-6 md:px-0 mx-auto lg:flex lg:flex-row-reverse my-10">
           <div className=" hidden w-full mx-16 px-auto lg:mt-0 md:flex lg:w-1/2 lg:mr-4">
             <img src={Dashboard2} alt="Home" />
