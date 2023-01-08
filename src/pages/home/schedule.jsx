@@ -8,7 +8,7 @@ const Schedule = () => {
   return (
     <section className="bg-[url('assets/img/VectorsHome.png')] bg-no-repeat bg-center ">
       <div className="">
-        <h1 className="md:px-6 mx-10 mb-4 my-8 text-4xl font-bold tracking-tight text-center leading-none md:text-5xl xl:text-6xl ">
+        <h1 className="md:px-6 text-[#0056D6] mx-10 mb-4 my-8 text-4xl font-bold tracking-tight text-center leading-none md:text-5xl xl:text-6xl ">
           <span className="block mb-2 lg:mb-4">Stay connected with your </span>
           <span className="block mb-2 lg:mb-4">social cirlce.</span>
         </h1>
@@ -20,7 +20,7 @@ const Schedule = () => {
             <img src={ScheduleImage} alt="Home" />
           </div>
           <div className="mt-6 lg:w-1/2 lg:ml-4">
-            <h3 className="max-w-2xl mb-4 text-xl font-bold tracking-tight text-center leading-none md:mt-28 md:text-2xl xl:text-2xl lg:text-left">
+            <h3 className="max-w-2xl text-[#0056D6] mb-4 text-xl font-bold tracking-tight text-center leading-none md:mt-28 md:text-2xl xl:text-2xl lg:text-left">
               Set your availability prefrence
             </h3>
             <p className="max-w-xl mb-6 font-light text-gray-500 text-center text-sm lg:leading-7 lg:mb-8 md:text-lg lg:text-left lg:text-base">
@@ -58,7 +58,7 @@ const Schedule = () => {
             <img src={Dashboard1} alt="Home" />
           </div>
           <div className="mt-6 lg:w-1/2 lg:ml-4">
-            <h3 className="max-w-2xl mb-4 text-xl font-bold tracking-tight text-center leading-none md:mt-28 md:text-2xl xl:text-2xl lg:text-left">
+            <h3 className="max-w-2xl text-[#0056D6] mb-4 text-xl font-bold tracking-tight text-center leading-none md:mt-28 md:text-2xl xl:text-2xl lg:text-left">
               Set your availability prefrence
             </h3>
             <p className="max-w-xl mb-6 font-light text-gray-500 text-center text-sm lg:leading-7 lg:mb-8 md:text-lg lg:text-left lg:text-base">
@@ -96,7 +96,7 @@ const Schedule = () => {
             <img src={Dashboard2} alt="Home" />
           </div>
           <div className="mt-6 lg:w-1/2 lg:ml-4">
-            <h3 className="max-w-2xl mb-4 text-xl font-bold tracking-tight text-center leading-none md:mt-28 md:text-2xl xl:text-2xl lg:text-left">
+            <h3 className="max-w-2xl text-[#0056D6] mb-4 text-xl font-bold tracking-tight text-center leading-none md:mt-28 md:text-2xl xl:text-2xl lg:text-left">
               Be in sync
             </h3>
             <p className="max-w-xl mb-6 font-light text-gray-500 text-center text-sm lg:leading-7 lg:mb-8 md:text-lg lg:text-left lg:text-base">

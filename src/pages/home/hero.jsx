@@ -19,7 +19,7 @@ const Hero = () => {
           <img src={Mobile} alt="Home" />
         </div>
         <div className="mt-6 lg:w-1/2 lg:ml-4">
-          <h1 className="max-w-2xl mb-4 text-4xl font-bold tracking-tight text-center leading-none md:text-5xl xl:text-6xl lg:text-left ">
+          <h1 className="max-w-2xl text-[#0056D6] mb-4 text-4xl font-bold tracking-tight text-center leading-none md:text-5xl xl:text-6xl lg:text-left ">
             <span className="block mb-2 lg:mb-4">Make time for</span>
             <span className="block mb-2 lg:mb-4">those that really</span>
             <span className="block mb-2 lg:mb-4">matter.</span>
@@ -49,7 +49,7 @@ const Hero = () => {
           </Link>
         </div>
       </div>
-{/* 
+      {/* 
       <div className="flex flex-row-reverse mt-8 mb-8 lg:mx-20 lg:mt-0 text-gray-700">
         <div className="mx-4">
           <span className="block text-[12px] lg:text-sm">
