@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 import CreateEventNavbar from "../../components/CreateEvent/CreateEventNavbar";
 import CalenderSyncModal from "../../components/CalenderSyncModal";
 /* global gapi */
-const UpcomingEvent = () => {
+const Dashboard = () => {
 	const [status, setStatus] = useState("not-decided");
 	const { events, setEvents } = CatchUpEventContextUse();
 	const [modal, setModal] = useState(false);
@@ -223,4 +223,4 @@ const UpcomingEvent = () => {
 	);
 };
 
-export default UpcomingEvent;
+export default Dashboard;

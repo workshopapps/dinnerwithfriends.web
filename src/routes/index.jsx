@@ -1,3 +1,5 @@
-import PublicRoutes from './public/publicRoutes'
+import PublicRoutes from './public'
+import ProtectedRoutes from './protected'
 
-export default PublicRoutes
+export {ProtectedRoutes}
+export {PublicRoutes}
