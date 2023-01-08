@@ -33,7 +33,7 @@ const ProfilePage = () => {
 
 			<div className='settings_body w-[95%] md:w-[85%] mx-auto'>
 				<div className='body_title_container'>
-					<Link to='/dashboard/upcoming_events'>
+					<Link to='/dashboard'>
 						<div className='body_title'>
 							<MdOutlineArrowBack />
 							<h1>Account Settings</h1>

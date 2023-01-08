@@ -25,87 +25,87 @@ const publicRoutesData = [
       title: "home"
     },
     {
-      path: "/sign_up",
+      path: "sign_up",
       element: <SignUp />,
       title: "home"
     },
     {
-      path: "/sign_in",
+      path: "sign_in",
       element: <SignIn />,
       title: "about"
     },
     {
-      path: "/forgot_password",
+      path: "forgot_password",
       element: <ForgetPassword />,
       title: "home"
     },
     {
-      path: "/reset_link",
+      path: "reset_link",
       element: <ResetLink />,
       title: "about"
     },
     {
-      path: "/reset_password",
+      path: "reset_password",
       element: <ResetPassword />,
       title: "about"
     },
     {
-      path: "/contact-us",
+      path: "contact-us",
       element: <ContactUs />,
       title: "about"
     },
     {
-      path: "/policy",
+      path: "policy",
       element: <Policy />,
       title: "home"
     },
     {
-      path: "/howItWorks",
+      path: "howItWorks",
       element: <HowItWorks />,
       title: "home"
     },
     {
-      path: "/terms",
+      path: "terms",
       element: <Terms />,
       title: "about"
     },
     {
-      path: "/terms-of-use",
+      path: "terms-of-use",
       element: <TermsOfUse />,
       title: "about"
     },
     {
-      path: "/faq",
+      path: "faq",
       element: <Faq />,
       title: "home"
     },
     {
-      path: "/features",
+      path: "features",
       element: <Features />,
       title: "about"
     },
     {
-      path: "/careers",
+      path: "careers",
       element: <Career />,
       title: "home"
     },
     {
-      path: "/careers/job-details",
+      path: "careers/job-details",
       element: <JobDetails />,
       title: "about"
     },
     {
-      path: "/help/*",
+      path: "help/*",
       element: <HelpRoutes />,
       title: "home"
     },
     {
-      path: "/aboutUs",
+      path: "aboutUs",
       element: <AboutUsPage />,
       title: "about"
     },
     {
-      path: "/verify",
+      path: "verify",
       element: <Verify />,
       title: "about"
     },

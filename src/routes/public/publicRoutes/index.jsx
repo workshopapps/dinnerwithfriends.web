@@ -1,12 +1,13 @@
 import React from 'react'
 import { Route, Routes } from 'react-router';
+import publicRoutesData from '../publicRoutesData';
 
-const publicRoutes = () => {
-    const publicRoutes = routesData.map(({ path, title, element }) => {
+const PublicRoutes = () => {
+    const publicRoutes = publicRoutesData.map(({ path, title, element }) => {
         return <Route key={title} path={`/${path}`} element={element} />;
       });
 
       return <Routes>{publicRoutes}</Routes>;
 }
 
-export default publicRoutes
+export default PublicRoutes
