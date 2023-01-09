@@ -142,7 +142,11 @@ export const contentsData = [
       heading: "Right of Erasure",
       p: `You can delete your account and the events you own from the system in the account section of Sites. It is however possible that another user invites, or informs, you about an event again in the future. If you don't want this either we can block your email address. Where your personal information is no longer required we will ensure it is securely deleted.`
     },
-
+    {
+      heading: "Marketing",
+      p: `We would like to send you information about products and services of our and other associated companies which may be of interest to you. If you have opted-in to receive marketing information, you may opt-out at a later date.
+         You have a right at any time to stop us or any associated companies from contacting you for marketing purposes - if you no longer wish to be contacted for marketing purposes please contact us via the contact details below or click on the 'unsubscribe' link at the bottom of any marketing email received from us`
+     },
     {
       heading: "Your Rights",
       p:   `<p className="leading-7 text-gray-600 font-sm my-4">
