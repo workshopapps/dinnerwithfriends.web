@@ -3,7 +3,7 @@ export const contentsData = [
       href: "Privacy Policy"
     },
     {
-      href: "Your Data with Catch Up"
+      href: "Your Data with CatchUp"
     },
     {
       href: "Log Data"
@@ -27,10 +27,10 @@ export const contentsData = [
       href: "Unauthorized Access"
     },
     {
-      href: "Calendar Integration"
+      href: "Invitation from CatchUp"
     },
     {
-      href: "Invitation from Catch Up"
+      href: "Calendar Integration"
     },
     {
       href: "For User Surveys and Market Research"
@@ -71,7 +71,7 @@ export const contentsData = [
       p: `We are serious about the security of the data on our servers and the protection of the privacy of our users. We continually take steps to protect your information against loss, misuse, unauthorized access, unauthorized disclosure, manipulation, or destruction. You can also find a link to the privacy settings in the footer of our digital products. This Privacy Policy describes how the data is handled at CatchUp. This privacy policy applies to current and former customers, suppliers and third-party customers and suppliers where personal information is processed to enable CatchUp provide its services. Please consult your rights and disclosure required by the General Data Protection Regulation and Nigerian Data Protection Regulation. In this Privacy Policy, references to "us", "our" or "we" are to CatchUp. `
     },
     {
-      heading: "Your Data with Catch Up",
+      heading: "Your Data with CatchUp",
       p: `When you use CatchUp, you send pieces of data to CatchUp; this can be a name, an e-mail address, or information relating to your appointment. Other data is generated implicitly by your use of CatchUp, e.g. log data. We use this information for internal analytical purposes to improve the product for you. Furthermore, we employ other companies to perform tasks on our behalf and may need to share this information with them to provide services to you. We do not sell your data to third parties.`
 
     },
@@ -109,7 +109,7 @@ export const contentsData = [
       p: `CatchUp implements several mechanisms to prevent unauthorized access to events, accounts, or other data. To access an event, you use the unique link that CatchUp provides and which contains a random access code. This link is an important element to prevent unauthorized access to an event. You should send this link only to authorized people, i.e., the people you wish to participate in your event. User accounts are protected by passwords. You should choose a secure password and ensure its confidentiality to prevent unauthorized access to your account.`
     },
     {
-      heading: "Inviting from Catch Up",
+      heading: "Inviting from CatchUp",
       p: `You can contact and invite people to participate in a poll from CatchUp. In this case, CatchUp needs to know the email addresses of the people to be contacted. You can enter these email addresses in the corresponding form. CatchUp stores these email addresses in your user account for your convenience; CatchUp will be able to offer you the same contacts again the next time you use the service. You can have CatchUp delete all stored email addresses at any time using the corresponding function in your user account. General remark: Like all other personal information, CatchUp will not share participants’ email addresses with third parties. CatchUp will not send any e-mail communication to participants’ e-mail addresses without a lawful ground.`
     },
     {
