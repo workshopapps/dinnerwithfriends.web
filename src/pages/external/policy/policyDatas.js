@@ -1,4 +1,4 @@
-export const contents = [
+export const contentsData = [
     {
       href: "Privacy Policy"
     },
@@ -65,7 +65,7 @@ export const contents = [
   ];
 
 
-  export const policies = [
+  export const policyData = [
     {
       heading: "Privacy Policy",
       p: `We are serious about the security of the data on our servers and the protection of the privacy of our users. We continually take steps to protect your information against loss, misuse, unauthorized access, unauthorized disclosure, manipulation, or destruction. You can also find a link to the privacy settings in the footer of our digital products. This Privacy Policy describes how the data is handled at CatchUp. This privacy policy applies to current and former customers, suppliers and third-party customers and suppliers where personal information is processed to enable CatchUp provide its services. Please consult your rights and disclosure required by the General Data Protection Regulation and Nigerian Data Protection Regulation. In this Privacy Policy, references to "us", "our" or "we" are to CatchUp. `
@@ -149,30 +149,30 @@ export const contents = [
                Under data protection legislation, as an individual you have rights in relation to the Personal Data we process which relates to you.
                These rights include:
             </p>
-           <ul className="leading-7 text-gray-600 font-sm my-4">
-              <li className="list-disc">The right to access the Personal Data that we process about you; where our processing of your Personal Data is based on your consent,
+           <ul className="leading-7 text-gray-600 font-sm my-4 ml-[10px]">
+              <li className="list-disc ">The right to access the Personal Data that we process about you; where our processing of your Personal Data is based on your consent,
                 the right to withdraw your consent to such processing at any time;
               </li>
-              <li className="list-disc">The right to object to direct marketing – your preferences, including in relation
+              <li className="list-disc ">The right to object to direct marketing – your preferences, including in relation
                 to direct marketing, can be amended by contacting us via the contact details.
               </li>
-              <li className="list-disc">
+              <li className="list-disc ">
                 The right to restriction of processing or to object to the processing of your Personal Data;
               </li>
-             <li className="list-disc">The right to request for us to transfer
+             <li className="list-disc ">The right to request for us to transfer
                 your Personal Data to a third party in a standardized machine-readable format;
              </li>
-             <li className="list-disc">The right to request the blocking and deletion of your Personal Data at any time in writing,
+             <li className="list-disc ">The right to request the blocking and deletion of your Personal Data at any time in writing,
                 enclosing appropriate proof of your identity, by email. We reserve the right to exchange correspondence
                 with you in this regard. Please note that we may be required to retain your Personal Data in part even
                 after a request for blocking or cancellation under the terms of our statutory or contractual retention
                 requirements (such as for accounting purposes) and in such an eventuality will only block your Personal Data insofar as necessary for this purpose. In addition, the cancellation of your Personal
                 Data may have the effect that you are no longer able to acquire or use the services registered by you.
              </li>
-             <li className="list-disc">
+             <li className="list-disc ">
                The right to request the rectification of your Personal Data; and
              </li>
-             <li className="list-disc">The right to lodge a complaint with competent supervisory authority.
+             <li className="list-disc ">The right to lodge a complaint with competent supervisory authority.
                You can do this with the supervisory authority at your place of residence, at your place of work, or
                the place of the alleged data breach. Your privacy cockpit offers you further
                information on the various systems and providers that we use,

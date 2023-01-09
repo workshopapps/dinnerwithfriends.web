@@ -5,7 +5,7 @@ import ForgetPassword from "../../pages/ForgetPassword/index";
 import ResetLink from "../../pages/ForgetPassword/LinkReset";
 import ResetPassword from "../../pages/ForgetPassword/ResetPassword";
 import ContactUs from '../../pages/contactUs';
-import Policy from "../../pages/policy";
+import Policy from "../../pages/external/policy";
 import HowItWorks from "../../pages/howItWorks/HowItWorks";
 import Terms from "../../pages/t&c";
 import TermsOfUse from "../../pages/termsOfUse";
