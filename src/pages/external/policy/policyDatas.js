@@ -88,12 +88,12 @@ export const contentsData = [
     },
     {
       heading: "Google Login",
-      p: `CatchUp uses Google login to provide you with the convenience from elsewhere on the internet to sign in to CatchUp with one click At CatchUp, you can sign in with Google or your email/password. Google can track your actions when you interact with them. Please refer to the terms of the respective providers for further guidance: Google https://policies.google.com/privacy
+      p: `CatchUp uses Google login to provide you with the convenience from elsewhere on the internet to sign in to CatchUp with one click At CatchUp, you can sign in with Google or your email/password. Google can track your actions when you interact with them. Please refer to the terms of the respective providers for further guidance: Google <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a>
       `
     },
     {
       heading: "Advertising",
-      p: `Advertising is one of CatchUp's revenue streams. Therefore, CatchUp displays advertisements on some of the services, e.g. on certain web pages or in e-mails. These advertisements can be targeted based on the information that is available to CatchUp, e.g. language, IP address, poll content, etc. This targeting is always an automated process; none of the information used for targeting is analyzed manually or made available to advertising customers. In some cases, CatchUp displays advertisements from Google's AdSense or AdExchange network. These advertisements can be targeted based on the poll content. Google does not disclose that information and only uses it for the intended purpose. You can review Google's Ads Privacy Policy here: http://www.google.com/policies/privacy/ads/. Furthermore, you can use Google's Ads Preferences Manager to configure the right ad settings for you. We also use other third-party advertising companies to serve ads when you visit our Web site. If you would like more information about this practice and to know your choices about not having this information used by these companies, please see http://www.networkadvertising.org/managing/opt_out.asp.
+      p: `Advertising is one of CatchUp's revenue streams. Therefore, CatchUp displays advertisements on some of the services, e.g. on certain web pages or in e-mails. These advertisements can be targeted based on the information that is available to CatchUp, e.g. language, IP address, poll content, etc. This targeting is always an automated process; none of the information used for targeting is analyzed manually or made available to advertising customers. In some cases, CatchUp displays advertisements from Google's AdSense or AdExchange network. These advertisements can be targeted based on the poll content. Google does not disclose that information and only uses it for the intended purpose. You can review Google's Ads Privacy Policy here: <a href="http://www.google.com/policies/privacy/ads/" target="_blank">http://www.google.com/policies/privacy/ads/</a>. Furthermore, you can use Google's Ads Preferences Manager to configure the right ad settings for you. We also use other third-party advertising companies to serve ads when you visit our Web site. If you would like more information about this practice and to know your choices about not having this information used by these companies, please see <a href="http://www.networkadvertising.org/managing/opt_out.asp" target="_blank">http://www.networkadvertising.org/managing/opt_out.asp</a>.
       `
     },
     {
@@ -197,7 +197,7 @@ export const contentsData = [
     },
     {
       heading: "Contact Us",
-      p: `If you have any questions about these Privacy policies, You can contact us: By visiting this page on our website at https://catchup.rsvp/contact-us or by sending us an email at usecatchup@gmail.com
+      p: `If you have any questions about these Privacy policies, You can contact us: By visiting this page on our website at <a href="https://catchup.rsvp/contact-us" target=></a> or by sending us an email at usecatchup@gmail.com
       `
     },
   ];

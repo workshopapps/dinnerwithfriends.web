@@ -37,7 +37,7 @@ console.log(refs);
   const policies = policyData.map((policy, i) => (
     <div key={i} id={policy.heading.replaceAll(" ", "-")} >
       <h2 className="mt-[24px] text-[#424245] text-[16px] lg:text-[20px] font-[500] lg:font-[700]" ref={refs}>{policy.heading} </h2>
-      <p className="leading-7 text-[#898989] text-[14px] lg:text-[16px] font-[500] lg:font-[400] my-4">{policy.heading === 'Your Rights' ? <div dangerouslySetInnerHTML={{__html: DOMPurity.sanitize(policy.p)}} /> : policy.p}
+      <p className="leading-7 text-[#898989] text-[14px] lg:text-[16px] font-[500] lg:font-[400] my-4">{<div dangerouslySetInnerHTML={{__html: DOMPurity.sanitize(policy.p)}} /> }
       </p>
     </div>
   ))
