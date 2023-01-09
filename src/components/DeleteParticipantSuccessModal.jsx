@@ -7,7 +7,7 @@ const DeleteParticipantSuccessModal = ({setShowDeleteParticipantSucess}) => {
 	const navigate = useNavigate();
 	const handleClose = () => {
 		setShowDeleteParticipantSucess(false);
-		navigate("/dashboard/upcoming_events");
+		navigate("/dashboard");
 	};
 	return (
 		<>

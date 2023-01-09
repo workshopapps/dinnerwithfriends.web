@@ -152,7 +152,7 @@ const CreateEventNavbar = ({setModal}) => {
               <ul>
                 <li>
                   <MdSpaceDashboard />
-                  <Link to="/dashboard/upcoming_events" className="block px-2 py-2 text-sm w-full">
+                  <Link to="/dashboard" className="block px-2 py-2 text-sm w-full">
                     Dashboard
                   </Link>
                 </li>
@@ -196,7 +196,7 @@ const CreateEventNavbar = ({setModal}) => {
           <ul  className="w-full flex flex-col p-4 mt-0 border border-white rounded-lg bg-white md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white">
             <li>
               <Link
-                to="/dashboard/upcoming_events"
+                to="/dashboard"
                 className="block py-3 md:py-2 pl-3 pr-4 text-black hover:text-white hover:bg-[#0056D6] md:hover:bg-transparent md:hover:text-blue-700 rounded md:bg-transparent md:p-0 dark:text-white"
                 aria-current="page"
               >

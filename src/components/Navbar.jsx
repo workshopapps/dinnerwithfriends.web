@@ -18,7 +18,7 @@ const Navbar = () => {
 
 	return (
 		<nav
-			className={`transition ease-in duration-400 bg-white md:px-10 px-2.5 md:h-[85px] md:pb-2 fixed w-full z-20 top-0 left-0 border-b border-white`}>
+			className={`transition ease-in duration-400 bg-white lg:px-[80px] px-2.5 md:h-[85px] md:pb-2 fixed w-full z-20 top-0 left-0 border-b border-[#E3E3E3]`}>
 			<div className='h-[45px] md:h-[76px] py-4 md:py-0 bg-transparent container flex flex-wrap items-center justify-between mx-auto'>
 				<Logo />
 				<div className='flex md:order-2'>
@@ -31,7 +31,7 @@ const Navbar = () => {
 					<Link className='hidden md:block' to='/sign_up'>
 						<button
 							type='button'
-							className='text-white bg-[#0056D6] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-[#0056D6] dark:focus:ring-blue-800'>
+							className='text-white bg-[#1070FF] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-[#1070FF] dark:focus:ring-blue-800'>
 							Sign up
 						</button>
 					</Link>
@@ -92,7 +92,7 @@ const Navbar = () => {
 							<Link
 								to='/sign_in'
 								dev
-								className='w-full block mt-4 py-2 pl-3 pr-4 text-center bg-white h-[44px] text-[#0056D6] border-[1.5px] border-[#0056D6] rounded hover:bg-[#004dc0] hover:text-white md:p-0 '>
+								className='w-full block mt-4 py-2 pl-3 pr-4 text-center bg-white h-[44px] text-[#1070FF] border-[1.5px] border-[#1070FF] rounded hover:bg-[#004dc0] hover:text-white md:p-0 '>
 								Sign In
 							</Link>
 						</li>
@@ -100,7 +100,7 @@ const Navbar = () => {
 							<Link
 								to='/sign_up'
 								dev
-								className='  w-full block mt-4 py-2 pl-3 pr-4 text-white text-center bg-[#0056D6] h-[44px]  rounded hover:bg-[#004dc0] md:p-0 '>
+								className='  w-full block mt-4 py-2 pl-3 pr-4 text-white text-center bg-[#1070FF] h-[44px]  rounded hover:bg-[#004dc0] md:p-0 '>
 								Sign Up
 							</Link>
 						</li>

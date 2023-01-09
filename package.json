@@ -11,6 +11,7 @@
     "atatus-js": "^4.5.0",
     "axios": "^1.2.0",
     "classnames": "^2.3.2",
+    "dompurify": "^2.4.3",
     "husky": "^8.0.2",
     "jwt-decode": "^3.1.2",
     "moment": "^2.29.4",
