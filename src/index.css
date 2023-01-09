@@ -61,6 +61,11 @@ a {
   list-style-type: disc;
 }
 
+#Contact-Us a,
+#Advertising a {
+  text-decoration: underline;
+}
+
 .form-image {
   display: block;
   /* width: 100%; */
