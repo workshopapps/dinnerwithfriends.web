@@ -62,7 +62,8 @@ a {
 }
 
 #Contact-Us a,
-#Advertising a {
+#Advertising a,
+#Google-Login a {
   text-decoration: underline;
 }
 
