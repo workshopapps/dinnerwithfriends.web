@@ -7,7 +7,7 @@ const Logo = ({ className, footer }) => {
 		<Link to='/' className={`flex items-center ${className}`}>
 			<span
 				className={`self-center ${
-					footer ? "text-white" : "text-[#0056D6]"
+					footer ? "text-white" : "text-[#1070FF]"
 				} text-[1.2rem] md:text-2xl font-semibold whitespace-nowrap `}>
 				Catch
 			</span>

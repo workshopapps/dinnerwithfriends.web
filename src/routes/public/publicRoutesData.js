@@ -27,77 +27,77 @@ const publicRoutesData = [
     {
       path: "sign_up",
       element: <SignUp />,
-      title: "home"
+      title: "signup"
     },
     {
       path: "sign_in",
       element: <SignIn />,
-      title: "about"
+      title: "login"
     },
     {
       path: "forgot_password",
       element: <ForgetPassword />,
-      title: "home"
+      title: "forgot password"
     },
     {
       path: "reset_link",
       element: <ResetLink />,
-      title: "about"
+      title: "reset link"
     },
     {
       path: "reset_password",
       element: <ResetPassword />,
-      title: "about"
+      title: "reset password"
     },
     {
       path: "contact-us",
       element: <ContactUs />,
-      title: "about"
+      title: "contact us"
     },
     {
       path: "policy",
       element: <Policy />,
-      title: "home"
+      title: "policy"
     },
     {
       path: "howItWorks",
       element: <HowItWorks />,
-      title: "home"
+      title: "how it works"
     },
     {
       path: "terms",
       element: <Terms />,
-      title: "about"
+      title: "terms"
     },
     {
       path: "terms-of-use",
       element: <TermsOfUse />,
-      title: "about"
+      title: "term of use"
     },
     {
       path: "faq",
       element: <Faq />,
-      title: "home"
+      title: "faq"
     },
     {
       path: "features",
       element: <Features />,
-      title: "about"
+      title: "features"
     },
     {
       path: "careers",
       element: <Career />,
-      title: "home"
+      title: "careers"
     },
     {
       path: "careers/job-details",
       element: <JobDetails />,
-      title: "about"
+      title: "job details"
     },
     {
       path: "help/*",
       element: <HelpRoutes />,
-      title: "home"
+      title: "help"
     },
     {
       path: "aboutUs",
@@ -107,12 +107,12 @@ const publicRoutesData = [
     {
       path: "verify",
       element: <Verify />,
-      title: "about"
+      title: "verify"
     },
     {
       path: "*",
       element: <Error404 />,
-      title: "about"
+      title: "error"
     },
   ];
 
