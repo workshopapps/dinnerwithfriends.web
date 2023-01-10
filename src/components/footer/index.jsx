@@ -5,19 +5,6 @@ import Logo from "./Logo";
 
 const Footer = () => {
 
-  const companyData = [
-    { title: "Feature", to: "/feature" },
-    { title: "Contact us", to: "/contact-us" },
-  ];
-  const helpData = [
-    { title: "FAQs", to: "/faq" },
-    { title: "How it Works", to: "/howitworks" },
-  ];
-  const legalData = [
-    { title: "Privacy Policy", to: "/policy" },
-    { title: "Terms & Conditions", to: "/terms-of-use" },
-  ];
-
   const company = companyData.map((item, i) => (
     <li className="mb-1 lg:mb-4" key={i}>
       <Link to={item.to} className=" hover:underline">
