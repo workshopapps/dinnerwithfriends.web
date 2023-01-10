@@ -112,7 +112,7 @@ export const contentsData = [
       p: `You can connect CatchUp with your calendar to make the scheduling process even easier and more efficient. There are two types of calendars: online and offline. Online calendars like Google calendar are constantly accessible via their respective interfaces. CatchUp can store certain calendar data to improve performance (caching) and personalize scheduling. In either case, calendar data on CatchUp can be deleted at any time.`
     },
     {
-      heading: "Inviting from CatchUp",
+      heading: "Invitation from CatchUp",
       p: `You can contact and invite people to participate in a poll from CatchUp. In this case, CatchUp needs to know the email addresses of the people to be contacted. You can enter these email addresses in the corresponding form. CatchUp stores these email addresses in your user account for your convenience; CatchUp will be able to offer you the same contacts again the next time you use the service. You can have CatchUp delete all stored email addresses at any time using the corresponding function in your user account. General remark: Like all other personal information, CatchUp will not share participants’ email addresses with third parties. CatchUp will not send any e-mail communication to participants’ e-mail addresses without a lawful ground.`
     },
     {
@@ -197,7 +197,7 @@ export const contentsData = [
     },
     {
       heading: "Contact Us",
-      p: `If you have any questions about these Privacy policies, You can contact us: By visiting this page on our website at <a href="https://catchup.rsvp/contact-us" target="_blank" rel="noopener noreferrer">https://catchup.rsvp/contact-us</a> or by sending us an email at <a href="mailto:catchup@catchup.rsvp" target="_blank" rel="noopener noreferrer">catchup@catchup.rsvp</a>
+      p: `If you have any questions about these Privacy policies, You can contact us: By visiting this page on our website at <a href="https://catchup.rsvp/contact-us" target="_blank" rel="noopener noreferrer">https://catchup.rsvp/contact-us</a> or by sending us an email at <a href="mailto:catchup@catchup.rsvp" target="_blank" rel="noopener noreferrer">contact@catchup.rsvp</a>
       `
     },
   ];
