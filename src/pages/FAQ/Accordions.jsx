@@ -34,11 +34,11 @@ const Accordions = () => {
       <Accordion open={open === 1} icon={<Icon id={1} open={open} />}>
         <AccordionHeader
           onClick={() => handleOpen(1)}
-          className="!font-bold !text-xs lg:!text-xl !text-[#151517] !border-0 !border-[#fff]"
+          className="!font-semibold !text-sm lg:!text-xl !text-[#151517] !border-0 !border-[#fff]"
         >
-          What is catch up?
+          What is CatchUp?
         </AccordionHeader>
-        <AccordionBody className="!text-[#616161] !text-[10px] lg:!text-sm">
+        <AccordionBody className="!text-[#616161] !text-[14px] lg:!text-sm">
           It is an invitation, gathering, hangout management tool. it enables
           you to easily send, manage, vote, and receive invitations seamlessly.
         </AccordionBody>
