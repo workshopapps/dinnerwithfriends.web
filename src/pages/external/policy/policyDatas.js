@@ -197,7 +197,7 @@ export const contentsData = [
     },
     {
       heading: "Contact Us",
-      p: `If you have any questions about these Privacy policies, You can contact us: By visiting this page on our website at <a href="https://catchup.rsvp/contact-us" target="_blank" rel="noopener noreferrer">https://catchup.rsvp/contact-us</a> or by sending us an email at <a href="mailto:catchup@catchup.rsvp" target="_blank" rel="noopener noreferrer">contact@catchup.rsvp</a>
+      p: `If you have any questions about these Privacy policies, You can contact us: By visiting this page on our website at <a href="https://catchup.rsvp/contact-us" target="_blank" rel="noopener noreferrer">https://catchup.rsvp/contact-us</a> or by sending us an email at <a href="mailto:contact@catchup.rsvp" target="_blank" rel="noopener noreferrer">contact@catchup.rsvp</a>
       `
     },
   ];
