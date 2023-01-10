@@ -113,7 +113,7 @@ const ContactUsForm = () => {
         <div>
           <label
             htmlFor="message"
-            className="mb-2 p-0 text-lg font-bold text-stone-900"
+            className="mb-2 p-0 text-lg font-medium text-[#424245]"
           >
             Type your message
           </label>
