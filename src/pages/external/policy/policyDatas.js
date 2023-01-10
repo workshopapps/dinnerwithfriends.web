@@ -27,10 +27,10 @@ export const contentsData = [
       href: "Unauthorized Access"
     },
     {
-      href: "Invitation from CatchUp"
+      href: "Calendar Integration"
     },
     {
-      href: "Calendar Integration"
+      href: "Invitation from CatchUp"
     },
     {
       href: "For User Surveys and Market Research"
@@ -77,23 +77,22 @@ export const contentsData = [
     },
     {
       heading: "Log Data",
-      p: `CatchUp records certain requests and transactions in log files. This log data is used for troubleshooting, statistics, analytics, quality assurance, and monitoring system security and can be analyzed to that end. CatchUp can publish anonymous statistics under the condition that no personally identifiable information can be derived from such statistics. CatchUp includes your IP address or any other information that could be used to identify you or your mobile device individually and does not include any other information from your devices. CatchUp is not using these messages or data other than to follow up on users' registered issues or inquiries. Your data will be processed and transmitted in accordance with the General Data Protection Regulations (GDPR) and the Nigerian Data protection Regulation (NDPR).`
+      p: `CatchUp records certain requests and transactions in log files. This log data is used for troubleshooting, statistics, analytics, quality assurance, and monitoring system security and can be analyzed to that end. CatchUp can publish anonymous statistics under the condition that no personally identifiable information can be derived from such statistics.  CatchUp includes your IP address or any other information that could be used to identify you or your mobile device individually and does not include any other information from your devices. CatchUp is not using these messages or data other than to follow up on users' registered issues or inquiries. Your data will be processed and transmitted in accordance with the General Data Protection Regulations (GDPR) and the  Nigerian Data protection Regulation (NDPR).`
 
     },
     {
       heading: "Cookies",
       p: `When you use CatchUp, the service can store cookies on your computer. Cookies are little pieces of information that can help identify your browser and that can store information for future visits, e.g. your language preferences. CatchUp uses cookies to track usage, improve ease of use and the overall user experience, and manage advertising inventories. Most Internet browsers automatically accept cookies. You may however configure your browser at any time in such a manner that no cookies are saved on your computer or that an indication always appears when you receive a new cookie. CatchUp's services may in principle be used without accepting cookies, although individual functions may thereby be limited. You can choose to disable cookies but this may limit your ability to use CatchUp's service.
-
       `
     },
     {
       heading: "Google Login",
-      p: `CatchUp uses Google login to provide you with the convenience from elsewhere on the internet to sign in to CatchUp with one click At CatchUp, you can sign in with Google or your email/password. Google can track your actions when you interact with them. Please refer to the terms of the respective providers for further guidance: Google <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a>
+      p: `CatchUp uses Google login to provide you with the convenience from elsewhere on the internet to sign in to CatchUp with one click At CatchUp, you can sign in with Google or your email/password. Google can track your actions when you interact with them. Please refer to the terms of the respective providers for further guidance: Google <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">https://policies.google.com/privacy</a>
       `
     },
     {
       heading: "Advertising",
-      p: `Advertising is one of CatchUp's revenue streams. Therefore, CatchUp displays advertisements on some of the services, e.g. on certain web pages or in e-mails. These advertisements can be targeted based on the information that is available to CatchUp, e.g. language, IP address, poll content, etc. This targeting is always an automated process; none of the information used for targeting is analyzed manually or made available to advertising customers. In some cases, CatchUp displays advertisements from Google's AdSense or AdExchange network. These advertisements can be targeted based on the poll content. Google does not disclose that information and only uses it for the intended purpose. You can review Google's Ads Privacy Policy here: <a href="http://www.google.com/policies/privacy/ads/" target="_blank">http://www.google.com/policies/privacy/ads/</a>. Furthermore, you can use Google's Ads Preferences Manager to configure the right ad settings for you. We also use other third-party advertising companies to serve ads when you visit our Web site. If you would like more information about this practice and to know your choices about not having this information used by these companies, please see <a href="http://www.networkadvertising.org/managing/opt_out.asp" target="_blank">http://www.networkadvertising.org/managing/opt_out.asp</a>.
+      p: `Advertising is one of CatchUp's revenue streams. Therefore, CatchUp displays advertisements on some of the services, e.g. on certain web pages or in e-mails. These advertisements can be targeted based on the information that is available to CatchUp, e.g. language, IP address, poll content, etc. This targeting is always an automated process; none of the information used for targeting is analyzed manually or made available to advertising customers. In some cases, CatchUp displays advertisements from Google's AdSense or AdExchange network. These advertisements can be targeted based on the poll content. Google does not disclose that information and only uses it for the intended purpose. You can review Google's Ads Privacy Policy here: <a href="http://www.google.com/policies/privacy/ads/" target="_blank" rel="noopener noreferrer">http://www.google.com/policies/privacy/ads/</a>. Furthermore, you can use Google's Ads Preferences Manager to configure the right ad settings for you. We also use other third-party advertising companies to serve ads when you visit our Web site. If you would like more information about this practice and to know your choices about not having this information used by these companies, please see <a href="http://www.networkadvertising.org/managing/opt_out.asp" target="_blank" rel="noopener noreferrer">http://www.networkadvertising.org/managing/opt_out.asp</a>.
       `
     },
     {
@@ -102,23 +101,23 @@ export const contentsData = [
     },
     {
       heading: "Inactive Accounts",
-      p: `CatchUp can delete inactive accounts if they remain inactive (i.e. not accessed) for 1 year or longer`
+      p: `CatchUp can delete inactive accounts if they remain inactive (i.e. not accessed) for 1 year or longer.`
     },
     {
       heading: "Unauthorized Access",
       p: `CatchUp implements several mechanisms to prevent unauthorized access to events, accounts, or other data. To access an event, you use the unique link that CatchUp provides and which contains a random access code. This link is an important element to prevent unauthorized access to an event. You should send this link only to authorized people, i.e., the people you wish to participate in your event. User accounts are protected by passwords. You should choose a secure password and ensure its confidentiality to prevent unauthorized access to your account.`
     },
     {
-      heading: "Inviting from CatchUp",
-      p: `You can contact and invite people to participate in a poll from CatchUp. In this case, CatchUp needs to know the email addresses of the people to be contacted. You can enter these email addresses in the corresponding form. CatchUp stores these email addresses in your user account for your convenience; CatchUp will be able to offer you the same contacts again the next time you use the service. You can have CatchUp delete all stored email addresses at any time using the corresponding function in your user account. General remark: Like all other personal information, CatchUp will not share participants’ email addresses with third parties. CatchUp will not send any e-mail communication to participants’ e-mail addresses without a lawful ground.`
-    },
-    {
       heading: "Calendar Integration",
       p: `You can connect CatchUp with your calendar to make the scheduling process even easier and more efficient. There are two types of calendars: online and offline. Online calendars like Google calendar are constantly accessible via their respective interfaces. CatchUp can store certain calendar data to improve performance (caching) and personalize scheduling. In either case, calendar data on CatchUp can be deleted at any time.`
     },
     {
+      heading: "Inviting from CatchUp",
+      p: `You can contact and invite people to participate in a poll from CatchUp. In this case, CatchUp needs to know the email addresses of the people to be contacted. You can enter these email addresses in the corresponding form. CatchUp stores these email addresses in your user account for your convenience; CatchUp will be able to offer you the same contacts again the next time you use the service. You can have CatchUp delete all stored email addresses at any time using the corresponding function in your user account. General remark: Like all other personal information, CatchUp will not share participants’ email addresses with third parties. CatchUp will not send any e-mail communication to participants’ e-mail addresses without a lawful ground.`
+    },
+    {
       heading: "For User Surveys and Market Research",
-      p: `We use the data you provide exclusively to improve the user experience and to further develop our products. The results consist solely of aggregated and anonymous data. If you have given your consent, you may also be contacted by other companies of the TX Group for example to participate in other user surveys.
+      p: `We use the data you provide exclusively to improve the user experience and to further develop our products. The results consist solely of aggregated and anonymous data. If you have given your consent, you may also be contacted by other companies to participate in other user surveys.
       `
     },
     {
@@ -127,16 +126,12 @@ export const contentsData = [
     },
     {
       heading: "Data Retention",
-      p: `We shall only retain your data for as long as is legally necessary or following the purpose for which they were processed. If we carry out analysis, we shall store your data until the analysis has been concluded. If we store your data based on a contractual relationship with you, these data will remain stored for at least the duration of the contractual relationship and at most for the duration of the limitation periods within which any claims may be brought by or against us, or for the duration of statutory or contractual duties of retention.`
+      p: `We shall only retain your data for as long as is legally necessary or following the purpose for which they were processed. If we carry out analysis, we shall store your data until the analysis has been concluded. If we store your data based on a contractual relationship with you, these data will remain stored for at least the duration of the contractual relationship and at most for the duration of the limitation periods within which any claims may be brought by or against us, or for the duration of statutory or contractual duties of retention.
+      `
     },
     {
       heading: "Legal Basis",
       p: `We shall only process your Data following the principles of data protection and if there is a legal basis to do so. If in furtherance of the establishment or implementation of our contract, it shall serve as the legal basis. Otherwise, we have an interest in continuously improving our Offers, adjusting our Offers in line with your needs, and showing you advertisements that may be of interest to you. This is necessary to develop our Offers further, as well as to be able to finance and guarantee the security of our Offers. We act on the presumption that our interests are predominant. If you have consented to data Processing, this consent will apply.`
-    },
-    {
-      heading: "Sharing Personal Information",
-      p: `CatchUp uses personal information according to the Terms of Service and this Privacy Policy. CatchUp may share personal information with other companies or individuals only in the following limited circumstances: (i) CatchUp has your consent; (ii) CatchUp has good faith that there is a legal obligation to share the data; (iii) CatchUp needs to access or share the data to protect the security of the service or others users' data; (iv) CatchUp needs to
-      access or share the data to protect CatchUp’s rights and property or to enforce the Terms of Service.`
     },
     {
       heading: "Right of Erasure",
@@ -145,7 +140,8 @@ export const contentsData = [
     {
       heading: "Marketing",
       p: `We would like to send you information about products and services of our and other associated companies which may be of interest to you. If you have opted-in to receive marketing information, you may opt-out at a later date.
-         You have a right at any time to stop us or any associated companies from contacting you for marketing purposes - if you no longer wish to be contacted for marketing purposes please contact us via the contact details below or click on the 'unsubscribe' link at the bottom of any marketing email received from us`
+      You have a right at any time to stop us or any associated companies from contacting you for marketing purposes - if you no longer wish to be contacted for marketing purposes please contact us via the contact details below or click on the 'unsubscribe' link at the bottom of any marketing email received from us.
+      `
      },
     {
       heading: "Your Rights",
@@ -201,7 +197,7 @@ export const contentsData = [
     },
     {
       heading: "Contact Us",
-      p: `If you have any questions about these Privacy policies, You can contact us: By visiting this page on our website at <a href="https://catchup.rsvp/contact-us" target="_blank">https://catchup.rsvp/contact-us</a> or by sending us an email at <a href="mailto:catchup@catchup.rsvp" target="_blank">catchup@catchup.rsvp</a>
+      p: `If you have any questions about these Privacy policies, You can contact us: By visiting this page on our website at <a href="https://catchup.rsvp/contact-us" target="_blank" rel="noopener noreferrer">https://catchup.rsvp/contact-us</a> or by sending us an email at <a href="mailto:catchup@catchup.rsvp" target="_blank" rel="noopener noreferrer">catchup@catchup.rsvp</a>
       `
     },
   ];
