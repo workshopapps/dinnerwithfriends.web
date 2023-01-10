@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useRef } from "react";
 import Footer from "../../../components/Footer";
 import Navbar from "../../../components/Navbar";
 import { contentsData,  policyData } from "./policyDatas";
@@ -7,19 +6,9 @@ import DOMPurity from 'dompurify'
 
 const Policy = () => {
   const [active, setActive] = useState("Privacy Policy");
-  let [refs, setRefs] = useState('Privacy');
-     console.log(refs)
-     refs = useRef(null)
-  const handleActive = (query, elementRef) => {
-    setRefs(elementRef)
+  const handleActive = (query) => {
     setActive(query);
-    window.scrollTo({
-      top: refs.current.offsetTop,
-      behavior: 'smooth'
-    })
   };
-
-console.log(refs);
 
   const contents = contentsData.map((content, i) => (
     <a
@@ -28,7 +17,7 @@ console.log(refs);
       className={`lg:mb-[24px] mb-[16px] block text-[#424245] font-[400] text-[12px] lg:text-[14px] hover:text-[#1070FF] ${
         active === content.href ? "text-[#1070FF]" : "text-[#424245]"
       }`}
-      onClick={() => handleActive(content.href, content.href.split(' ').slice(0, 1).join(' '))}
+      onClick={() => handleActive(content.href)}
     >
       {content.href}
     </a>
@@ -36,7 +25,7 @@ console.log(refs);
 
   const policies = policyData.map((policy, i) => (
     <div key={i} id={policy.heading.replaceAll(" ", "-")} >
-      <h2 className="mt-[24px] text-[#424245] text-[16px] lg:text-[20px] font-[500] lg:font-[700]" ref={refs}>{policy.heading} </h2>
+      <h2 className="mt-[24px] text-[#424245] text-[16px] lg:text-[20px] font-[500] lg:font-[700]">{policy.heading} </h2>
       <p className="leading-7 text-[#898989] text-[14px] lg:text-[16px] font-[500] lg:font-[400] my-4">{<div dangerouslySetInnerHTML={{__html: DOMPurity.sanitize(policy.p)}} /> }
       </p>
     </div>
@@ -76,7 +65,6 @@ console.log(refs);
             {policies}
           </div>
         </div>
-
     </section>
       <Footer />
       </>
