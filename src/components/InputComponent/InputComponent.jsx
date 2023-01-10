@@ -3,7 +3,7 @@ const InputComponent = (props) => {
     <div className={`${"w-full flex flex-col mb-6"}`}>
       <label
         htmlFor={props.id}
-        className="mb-2 p-0 text-lg font-bold text-stone-900"
+        className="mb-2 p-0 text-lg font-medium text-[#424245]"
       >
         {props.label}
       </label>

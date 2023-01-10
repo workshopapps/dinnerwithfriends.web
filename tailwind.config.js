@@ -25,7 +25,7 @@ module.exports = withMT({
       backgroundImage: {
         "line-pattern": "url('assets/img/VectorsHome.png')",
         "contact-us":
-          "linear-gradient(to right bottom, rgba(16, 112, 255, 0.23), rgba(16, 112, 255, 0.23)), url('/src/assets/img/contact-us.jpg')",
+          "linear-gradient(to right bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/src/assets/img/contact-us-new.png')",
       },
       screens: {
         tablet: "850px",
