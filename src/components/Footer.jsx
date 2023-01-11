@@ -72,13 +72,21 @@ const Footer = () => {
       </div>
       <div className="mx-auto lg:mx-24 py-6 px-4 text-center gap-4 flex flex-col-reverse  md:flex md:flex-row md:items-center md:justify-between">
         <span className="text-md text-gray-100 sm:text-center">
-          © 2022 <Link href="https://flowbite.com/">Team CatchUp™</Link>
+          © 2022 <Link href="/">Team CatchUp™</Link>
         </span>
         <div className="flex mt-1 text-md text-white text-center space-x-12 justify-center md:mt-0">
-          <BsFacebook />
-          <BsTwitter />
-          <BsLinkedin />
-          <BsYoutube />
+          <a href="https://www.facebook.com/profile.php?id=100088950369086&mibextid=LQQJ4d">
+            <BsFacebook />
+          </a>
+          <a href="https://twitter.com/justcatchup">
+            <BsTwitter />
+          </a>
+          <a href="https://www.linkedin.com/company/justcatchup/">
+            <BsLinkedin />
+          </a>
+          <a href="/">
+            <BsYoutube />
+          </a>
         </div>
       </div>
     </footer>
