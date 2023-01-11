@@ -4,7 +4,7 @@ import Navbar from "../../components/Navbar";
 import Accordions from "./Accordions";
 import people from "../../assets/img/faq-models.png";
 import Button from "../../components/Button";
-import Footer from "../../components/Footer";
+import {Footer} from "../../components";
 
 const Faq = () => {
   return (

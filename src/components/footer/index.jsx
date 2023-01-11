@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { companyData, helpData, legalData } from "./footerData";
 import { BsFacebook, BsTwitter, BsLinkedin, BsYoutube } from "react-icons/bs";
-import Logo from "./Logo";
+import Logo from "../Logo";
 
 const Footer = () => {
-
   const company = companyData.map((item, i) => (
     <li className="mb-1 lg:mb-4" key={i}>
       <Link to={item.to} className=" hover:underline">
@@ -31,10 +31,10 @@ const Footer = () => {
 
 
   return (
-    <footer className="bg-[#0056D6] overflow-hidden">
-      <div className="block md:flex justify-between ">
-        <Logo footer className="mx-auto lg:mx-20 py-8 px-6" />
-          <div className="mx-auto lg:mx-24 grid grid-cols-2 gap-8 md:gap-12 py-8 px-6 md:grid-cols-3">
+    <footer className="bg-[#1070FF] overflow-hidden px-[80px] pt-[56px] pb-[62px]">
+      <div className="block lg:flex justify-between ">
+        <Logo footer className="mx-auto" />
+          <div className="mx-auto grid grid-cols-2 gap-8 lg:gap-12 lg:grid-cols-3">
             <div>
               <h2 className="mb-3 lg:mb-6 text-sm font-semibold text-gray-100 uppercase">
                 Company
@@ -60,7 +60,6 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-
       </div>
       <div className="mx-auto lg:mx-24 py-6 px-4 text-center gap-4 flex flex-col-reverse  md:flex md:flex-row md:items-center md:justify-between">
         <span className="text-md text-gray-100 sm:text-center">
