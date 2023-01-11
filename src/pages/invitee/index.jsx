@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { CiLocationOn, CiStopwatch, CiCalendar } from "react-icons/ci";
 import { HiOutlineMenuAlt1 } from "react-icons/hi";
 import Navbar from "../../components/CreateEvent/CreateEventNavbar";
-import Footer from "../../components/Footer";
+import {Footer} from "../../components";
 import { useNavigate, useParams } from "react-router-dom/dist";
 import moment from "moment/moment";
 import userServices from "../../services/userServices";
@@ -75,7 +75,7 @@ const EventInvite = () => {
     if (!fullname || !email) {
       setResultMsg("Please fill all fields");
       return;
-    } 
+    }
     const participantsData = { ...inviteDetails, event_id: eventData.id, preferred_date_time: eventData.final_event_date ? eventData.final_event_date : preferred_date_time };
 
     userServices
@@ -92,7 +92,7 @@ const EventInvite = () => {
       .catch((error) => {
         setResultMsg("An error has occured");
       });
-      
+
   };
   useEffect(() => {
     if (resultMsg.message === "Successful!") {
@@ -170,11 +170,11 @@ const EventInvite = () => {
                     <span className="flex mt-3">
                       {" "}
                       <CiCalendar className="mr-4 text-[25px] font-bold" />
-                      Agreed Date: &#160; 
+                      Agreed Date: &#160;
                       {eventData?.final_event_date === null ? (
-                        
+
                          <span className="font-bold"> &#160; Not Available</span>
-                      
+
                       ) : (
                         agreedDate
                       )}
@@ -287,7 +287,7 @@ const EventInvite = () => {
                     </button>
                   </div>
                 </form>
-              </div>      
+              </div>
           </div>
         </div>
       </div>

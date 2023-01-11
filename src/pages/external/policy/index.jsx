@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Footer from "../../../components/Footer";
+import {Footer} from "../../../components";
 import Navbar from "../../../components/Navbar";
 import { contentsData,  policyData } from "./policyDatas";
 import DOMPurity from 'dompurify'

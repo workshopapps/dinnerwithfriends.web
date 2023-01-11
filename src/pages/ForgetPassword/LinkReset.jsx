@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
+import {Footer} from "../../components";
 import ForgetPasswordImage from "../../assets/img/ForgetPasswordImage.png";
 import BackToSignIn from "../../assets/img/BackToSignIn.png";
 const ResetLink = () => {

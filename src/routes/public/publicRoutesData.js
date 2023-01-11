@@ -10,7 +10,7 @@ import HowItWorks from "../../pages/howItWorks/HowItWorks";
 import Terms from "../../pages/t&c";
 import TermsOfUse from "../../pages/termsOfUse";
 import Faq from "../../pages/FAQ/Faq";
-import Error404 from "../../pages/error404";
+// import Error404 from "../../pages/error404";
 import Features from '../../pages/Features-page/features';
 import Career from '../../pages/career/Career';
 import JobDetails from '../../pages/career/JobDetails';
@@ -109,11 +109,11 @@ const publicRoutesData = [
       element: <Verify />,
       title: "verify"
     },
-    {
-      path: "*",
-      element: <Error404 />,
-      title: "error"
-    },
+    // {
+    //   path: "*",
+    //   element: <Error404 />,
+    //   title: "error"
+    // },
   ];
 
   export default publicRoutesData
