@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "../../components/Navbar";
-import {Footer} from "../../components";
+import Footer from "../../components/footer/index";
 
 const Terms = () => {
   const contents = [
@@ -274,11 +274,16 @@ const Terms = () => {
     {
       links: "Contact Us",
       p: `If you have any questions about these Terms of Use, You can contact us:
-      ${<ul>
-        <li className="list-disc">
-        By visiting this page on our website at www.catchup.com/contactus/ </li>
-        <li className="list-disc">By sending us an email at catchup@gmail.com</li>
-        </ul>}
+      ${(
+        <ul>
+          <li className="list-disc">
+            By visiting this page on our website at www.catchup.com/contactus/{" "}
+          </li>
+          <li className="list-disc">
+            By sending us an email at catchup@gmail.com
+          </li>
+        </ul>
+      )}
       `,
       href: "#",
     },

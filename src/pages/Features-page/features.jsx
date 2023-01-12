@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar";
-import {Footer} from "../../components";
+import Footer from "../../components/footer/index";
 import F1 from "../../pages/Features-page/F1.png";
 import F2 from "../../pages/Features-page/F2.png";
 import F3 from "../../pages/Features-page/F3.png";
@@ -9,14 +9,16 @@ import Arrow from "../../pages/Features-page/arrow.png";
 function Features() {
   return (
     <div>
-        <Navbar />
+      <Navbar />
       <article className=" flex flex-col items-center justify-center ">
         <section className=" flex flex-col px-10 py-32 space-y-20  md:flex-row md:items-center md:justify-center md:space-x-20  md:p-20">
           <div>
             <img className="w-80" src={F1} alt="" />
           </div>
           <div className="flex flex-col items-center justify-center md:items-start  md:w-96   ">
-            <h1 className="font-bold mb-5 text-1xl md:text-2xl text-center md:text-start">Availability Preferences</h1>
+            <h1 className="font-bold mb-5 text-1xl md:text-2xl text-center md:text-start">
+              Availability Preferences
+            </h1>
             <p className=" text-sm text-gray-700 text-center  md:text-start">
               One of our most important feautures at catch up, is the
               availability prefrences where your friends can notify you the host
@@ -35,7 +37,9 @@ flex flex-row items-center justify-between space-x-5 "
         </section>
         <section className="flex flex-col-reverse  px-10 pb-32 space-y-40 md:flex-row md:items-center md:space-x-32 md:px-52 md:justify-center md:py-0 bg-gray-200 ">
           <div className="flex flex-col items-center justify-center md:items-start md:w-96 ">
-            <h1 className="font-bold md:text-2xl text-1xl text-center md:text-start mb-5">Sync Calendar</h1>
+            <h1 className="font-bold md:text-2xl text-1xl text-center md:text-start mb-5">
+              Sync Calendar
+            </h1>
             <p className="text-gray-800 text-sm text-center md:text-start">
               We have made it easier for our users to sync there google calendar
               to our platform through the channel we have created , users can
@@ -60,7 +64,9 @@ flex flex-row items-center justify-between space-x-5 "
             <img className="w-80" src={F3} alt="" />
           </div>
           <div className="flex flex-col items-center justify-center md:items-start md:w-96 w-60">
-            <h1 className="font-bold md:text-2xl text-1xl text-center md:text-start mb-5">Event Scheduling</h1>
+            <h1 className="font-bold md:text-2xl text-1xl text-center md:text-start mb-5">
+              Event Scheduling
+            </h1>
             <p className="text-gray-700 text-center md:text-start text-sm md:w-56">
               Catch up enables you to schedule event for your friends, you set
               the preferred date and time, and send out invites to your friends,
@@ -72,7 +78,7 @@ flex flex-row items-center justify-between space-x-5 "
 flex flex-row items-center justify-between space-x-5 "
             >
               <p>Get Started</p>
-              <img className="w-3" src={Arrow} alt="arrow"/>{" "}
+              <img className="w-3" src={Arrow} alt="arrow" />{" "}
             </Link>
           </div>
         </section>

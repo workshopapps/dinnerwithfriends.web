@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import Navbar from "../../components/Navbar";
-import {Footer} from "../../components";
+import Footer from "../../components/footer/index";
 
 import SubHome from "../../assets/img/SubHome.png";
 import errorImg from "../../assets/img/errorImg.png";
