@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import Footer from "../../components/Footer";
+import Footer from "../../components/footer/index";
 import Navbar from "../../components/Navbar";
 import { termsData } from "./termsData";
 

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import Footer from "../../../components/Footer";
+import Footer from "../../../components/footer/index";
 import Navbar from "../../../components/Navbar";
-import { contentsData,  policyData } from "./policyDatas";
-import DOMPurity from 'dompurify'
+import { contentsData, policyData } from "./policyDatas";
+import DOMPurity from "dompurify";
 
 const Policy = () => {
   const [active, setActive] = useState("Privacy Policy");
@@ -21,15 +21,22 @@ const Policy = () => {
     >
       {content.href}
     </a>
-  ))
+  ));
 
   const policies = policyData.map((policy, i) => (
-    <div key={i} id={policy.heading.replaceAll(" ", "-")} >
-      <h2 className="mt-[24px] text-[#424245] text-[16px] lg:text-[20px] font-[500] lg:font-[700]">{policy.heading} </h2>
-      <p className="leading-7 text-[#898989] text-[14px] lg:text-[16px] font-[500] lg:font-[400] my-4">{<div dangerouslySetInnerHTML={{__html: DOMPurity.sanitize(policy.p)}} /> }
+    <div key={i} id={policy.heading.replaceAll(" ", "-")}>
+      <h2 className="mt-[24px] text-[#424245] text-[16px] lg:text-[20px] font-[500] lg:font-[700]">
+        {policy.heading}{" "}
+      </h2>
+      <p className="leading-7 text-[#898989] text-[14px] lg:text-[16px] font-[500] lg:font-[400] my-4">
+        {
+          <div
+            dangerouslySetInnerHTML={{ __html: DOMPurity.sanitize(policy.p) }}
+          />
+        }
       </p>
     </div>
-  ))
+  ));
 
   return (
     <>
@@ -46,7 +53,9 @@ const Policy = () => {
             </p>
           </div>
           <div className="md:sticky mb-[24px] lg:mb-[100px] top-[100px] bottom-0 min-h-min">
-            <h2 className="mb-[24px] font-[500] mt-[26px] lg:mt-[1px] text-[16px] md:text-2xl md:mx-0">Contents</h2>
+            <h2 className="mb-[24px] font-[500] mt-[26px] lg:mt-[1px] text-[16px] md:text-2xl md:mx-0">
+              Contents
+            </h2>
             {contents}
           </div>
         </div>
@@ -61,13 +70,11 @@ const Policy = () => {
               using our product, read this Privacy Policy thoroughly.
             </p>
           </div>
-          <div>
-            {policies}
-          </div>
+          <div>{policies}</div>
         </div>
-    </section>
+      </section>
       <Footer />
-      </>
+    </>
   );
 };
 
