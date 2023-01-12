@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Footer from "../../components/Footer";
+import {Footer} from "../../components";
 import Navbar from "../../components/Navbar";
 import people from "./assets/people.jpg";
 import blueArrow from "./assets/bluearrow.svg";
@@ -66,9 +66,9 @@ const AboutUsPage = () => {
                   <img className="w-full max-w-sm md:max-w-md" src={people} alt="" />
                 </div>
               </div>
-              
+
             </div>
-            
+
           </section>
           <section className="px-6 sm:px-10 md:px-16 flex flex-col items-center justify-center text-center h-[60vh] bg-[#E7F0FF]">
             <h1 className="text-3xl md:text-5xl w-2/3 font-bold my-8">Organize your next social gathering, on <span className="text-[#0056d6]">Catch</span>Up</h1>
