@@ -9,6 +9,7 @@ import Settings from "../../pages/settingsPage/ProfilePage";
 import AccountSettings from "../../pages/settingsPage/UserProfile";
 import Invitee from "../../pages/invitee";
 import ClosedEvent from "../../pages/closedEvent";
+// import Error404 from "../../pages/error404";
 
 const protectedRoutesData = [
     {
@@ -71,6 +72,11 @@ const protectedRoutesData = [
       element: <ClosedEvent />,
       title: "closed event"
     },
+    // {
+    //   path: "*",
+    //   element: <Error404 />,
+    //   title: "error"
+    // },
   ];
 
   export default protectedRoutesData

@@ -4,7 +4,7 @@ import Navbar from "../../components/Navbar";
 import Accordions from "./Accordions";
 import people from "../../assets/img/faq-models.png";
 import Button from "../../components/Button";
-import Footer from "../../components/Footer";
+import Footer from "../../components/footer/index";
 
 const Faq = () => {
   return (
@@ -39,7 +39,7 @@ const Faq = () => {
             </Button>
           </div>
         </div>
-        </section>
+      </section>
       <Footer />
     </>
   );

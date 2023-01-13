@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import userServices from "../../services/userServices";
 import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
+import Footer from "../../components/footer/index";
 import ForgetPasswordImage from "../../assets/img/ForgetPasswordImage.png";
 import BackToSignIn from "../../assets/img/BackToSignIn.png";
 import { FiEye, FiEyeOff } from "react-icons/fi";
@@ -22,8 +22,8 @@ const ResetPassword = () => {
   const navigate = useNavigate();
 
   const togglePassword = () => {
-		setPasswordShown(!passwordShown);
-	};
+    setPasswordShown(!passwordShown);
+  };
 
   const onSubmit = async (data) => {
     setIsSubmit(true);
@@ -37,8 +37,8 @@ const ResetPassword = () => {
     if (reset.status === "success") {
       setValidCredentials(true);
       setTimeout(() => {
-        navigate('/sign_in')
-        }, 3000)
+        navigate("/sign_in");
+      }, 3000);
     }
   };
 
@@ -59,10 +59,11 @@ const ResetPassword = () => {
     }
     return element;
   };
+  const pattern =
   /* eslint-disable-next-line */
-  const pattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   /* eslint-disable-next-line */
-  const secondPattern = /^[a-z][a-z0-9]+$/ig;
+  const secondPattern = /^[a-z][a-z0-9]+$/gi;
   return (
     <>
       <Navbar />
@@ -93,7 +94,7 @@ const ResetPassword = () => {
                   placeholder="Enter code"
                   name="code"
                   className="block w-60 md:w-96 p-3 border rounded-md mb-4"
-                  {...register("token", { required: true})}
+                  {...register("token", { required: true })}
                 />
 
                 {errors.token && (
@@ -115,10 +116,13 @@ const ResetPassword = () => {
                   id="email"
                   placeholder="Enter your email address"
                   className="block w-60 md:w-96 p-3 border rounded-md mb-4"
-                  {...register("email",
-                  {required: true, pattern: pattern })}
+                  {...register("email", { required: true, pattern: pattern })}
                 />
-                  {errors.email && <p className='italic text-sm mt-2' style={{color: 'red'}}>Please enter a valid email</p>}
+                {errors.email && (
+                  <p className="italic text-sm mt-2" style={{ color: "red" }}>
+                    Please enter a valid email
+                  </p>
+                )}
               </div>
 
               <div className="relative">
@@ -155,13 +159,14 @@ const ResetPassword = () => {
                     },
                   })}
                 />
-                	<span
-								className={`absolute ${
-									errors.password ? "bottom-11" : "bottom-3.5"
-								} right-3 cursor-pointer`}
-								onClick={togglePassword}>
-								{passwordShown ? <FiEyeOff /> : <FiEye />}
-							</span>
+                <span
+                  className={`absolute ${
+                    errors.password ? "bottom-11" : "bottom-3.5"
+                  } right-3 cursor-pointer`}
+                  onClick={togglePassword}
+                >
+                  {passwordShown ? <FiEyeOff /> : <FiEye />}
+                </span>
                 {errors.password && (
                   <p
                     className="right-0 bottom-[-37px] italic text-sm mt-2"
@@ -182,14 +187,14 @@ const ResetPassword = () => {
               </div>
 
               <p className="w-60 md:w-96 mt-5 text-sm xl:text-base">
-              Didn't receive the email yet?{" "}
-              <Link
-                to="/forgot_password"
-                className="text-[#0056D6] font-semi-bold"
-              >
-                Click here to resend
-              </Link>
-            </p>
+                Didn't receive the email yet?{" "}
+                <Link
+                  to="/forgot_password"
+                  className="text-[#0056D6] font-semi-bold"
+                >
+                  Click here to resend
+                </Link>
+              </p>
             </form>
           </div>
           <div className="hidden lg:flex">
