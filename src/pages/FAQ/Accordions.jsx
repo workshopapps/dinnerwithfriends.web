@@ -51,10 +51,8 @@ const Accordions = () => {
           How do i create an invitation?
         </AccordionHeader>
         <AccordionBody className="!text-[#616161] !text-[10px] lg:!text-sm">
-          Please click on the New (+) at the bottom of the screen to start a new
-          invitation or request a vote on time or location, fill all required
-          fileds, and make sure to have at least one person invited to complete
-          the process.
+        Please click on the "Create Event" button at the top of the screen. 
+        Fill in all the required fields, and make sure to have at least one person invited to complete the process.
         </AccordionBody>
       </Accordion>
       <Accordion open={open === 3} icon={<Icon id={3} open={open} />}>
@@ -65,9 +63,7 @@ const Accordions = () => {
           Can I change my mind about an invitation I received?
         </AccordionHeader>
         <AccordionBody className="!text-[#616161] !text-[10px] lg:!text-sm">
-          Yes, you can reselect another reply to your received invitations if
-          the event did not start yet. Once the event starts, you cannot change
-          your reply
+        Yes, you have the option to cancel, or you can inform the host to remove you.
         </AccordionBody>
       </Accordion>
       <Accordion open={open === 4} icon={<Icon id={4} open={open} />}>
@@ -78,9 +74,7 @@ const Accordions = () => {
           Who should use catchup?
         </AccordionHeader>
         <AccordionBody className="!text-[#616161] !text-[10px] lg:!text-sm">
-          Anyone struggling with their social life, trying to figure out what
-          works for them and their guest/friends. Now they can instantly find
-          out when their friends are all free and make plans on the spot.
+        Professionals from all walks of life that want to hang out with colleagues, friends, and family.
         </AccordionBody>
       </Accordion>
       <Accordion open={open === 5} icon={<Icon id={5} open={open} />}>
@@ -91,9 +85,7 @@ const Accordions = () => {
           How do I get help?
         </AccordionHeader>
         <AccordionBody className="!text-[#616161] !text-[10px] lg:!text-sm">
-          We have a live chat, offering support as fast as possible. Otherwise,
-          you can always email us at support@catchup.com, and will get back to
-          you within 24 hours.
+        You can reach out to us via email: <a className="underline text-[#1070FF]" href="mailto:contact@catchup.rsvp">contact@catchup.rsvp</a>
         </AccordionBody>
       </Accordion>
       <Accordion open={open === 6} icon={<Icon id={6} open={open} />}>
@@ -106,7 +98,7 @@ const Accordions = () => {
         <AccordionBody className="!text-[#616161] !text-[10px] lg:!text-sm">
           Catch up would ask to get permission to your calender, If you allowed
           access, then events will be added to your calendar using the time zone
-          of the location of the even
+          of the location of the event
         </AccordionBody>
       </Accordion>
       <Accordion open={open === 7} icon={<Icon id={7} open={open} />}>
@@ -117,9 +109,8 @@ const Accordions = () => {
           Do I need to download the app to create or receive invite?
         </AccordionHeader>
         <AccordionBody className="!text-[#616161] !text-[10px] lg:!text-sm">
-          No, you don’t need to download to create an invite. With access to
-          your mobile phone or desktop that has internet you can utilize all the
-          fuctions and features of the app.
+        You need to be a registered user to create an event. 
+        However, you can accept an invite whether you are registered or not.
         </AccordionBody>
       </Accordion>
       <Accordion open={open === 8} icon={<Icon id={8} open={open} />}>
@@ -130,8 +121,7 @@ const Accordions = () => {
           Can I invite friends from my contact list?
         </AccordionHeader>
         <AccordionBody className="!text-[#616161] !text-[10px] lg:!text-sm">
-          Catch up would ask to get permission from your contact list, if
-          contact is allowed access, then you can add your contact to catch up.
+        You cannot invite them with a click. However, you can send them an invite link.
         </AccordionBody>
       </Accordion>
     </Fragment>
