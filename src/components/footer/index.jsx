@@ -61,7 +61,7 @@ const Footer = () => {
       </div>
       <div className="mx-auto py-6 text-center gap-4 flex flex-col-reverse  md:flex md:flex-row md:items-center md:justify-between">
         <span className="text-md text-gray-100 sm:text-center">
-          © 2022 <Link href="/">Team CatchUp™</Link>
+          © 2023 <Link href="/">Team CatchUp™</Link>
         </span>
         <div className="flex mt-1 text-md text-white text-center space-x-8 justify-center md:mt-0">
           <a href="https://www.facebook.com/profile.php?id=100088950369086&mibextid=LQQJ4d">
