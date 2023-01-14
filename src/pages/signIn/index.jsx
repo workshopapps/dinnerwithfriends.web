@@ -40,7 +40,7 @@ const SignIn = () => {
 			setIsloggedIn(true);
 			localStorage.setItem("jwt-token", result.accessToken);
 			setTimeout(() => {
-				navigate("/dashboard/upcoming_events");
+				navigate("/dashboard");
 			}, 1000);
 		}
 	};

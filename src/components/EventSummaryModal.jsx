@@ -9,7 +9,7 @@ const EventSummaryModal = ({ setPopup, copied, copyLink }) => {
 	const handleClick = () => {
        setPopup(false)
 	   setTimeout(() => {
-		navigate('/dashboard/upcoming_events')
+		navigate('/dashboard')
 	   }, 2000);
 	}
 

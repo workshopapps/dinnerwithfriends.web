@@ -56,8 +56,16 @@ a {
   text-decoration: none;
 }
 
-li {
-  list-style-type: none;
+#Your-Rights ul {
+  margin-left: 20px;
+  list-style-type: disc;
+}
+
+#Contact-Us a,
+#Advertising a,
+#Google-Login a {
+  text-decoration: underline;
+  color: #1070FF;
 }
 
 .form-image {
