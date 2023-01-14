@@ -43,7 +43,7 @@ export const termsData = [
     },
     { 
         id: 8, 
-        heading: "Your Feedbact to Us",
+        heading: "Your Feedback to Us",
         paragraphs: ["You assign all rights, title and interest in any Feedback You provide the Company. If for any reason such assignment is ineffective, You agree to grant the Company a non-exclusive, perpetual, irrevocable, royalty free, worldwide right and license to use, reproduce, disclose, sub-license, distribute, modify and exploit such Feedback without restriction."]
     },
 

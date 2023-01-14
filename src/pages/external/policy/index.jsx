@@ -41,7 +41,7 @@ const Policy = () => {
   return (
     <>
       <Navbar />
-      <section className="mt-24 px-[20px] lg:px-[80px] md:flex lg:mt-32">
+      <section className="mt-24 px-[20px] lg:px-[80px] md:flex lg:mt-32 font-[Satoshi]">
         <div className="w-full md:w-[30%] mx-auto">
           <div className=" mb-4 md:hidden">
             <h2 className="text-[20px] mb-2 font-[500] md:text-3xl text-[#424245]">
