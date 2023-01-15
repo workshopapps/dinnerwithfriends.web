@@ -9,19 +9,19 @@ import userServices from "../../services/userServices";
 
 const EventInvite = () => {
   const [eventData, setEventData] = useState(null);
-  const preferredDate = eventData
-    ? eventData.host_prefered_time.replace("-", "")
-    : "";
-  const preferredTime = eventData
-    ? moment(preferredDate, "DD-MM-YYYY HH:mm").format("YYYY-MM-DDTHH:mm")
-    : "";
+  // const preferredDate = eventData
+  //   ? eventData.host_prefered_time.replace("-", "")
+  //   : "";
+  // const preferredTime = eventData
+  //   ? moment(preferredDate, "DD-MM-YYYY HH:mm").format("YYYY-MM-DDTHH:mm")
+  //   : "";
   const [inviteDetails, setInviteDetails] = useState({
     fullname: "",
     email: "",
     preferred_date_time: "",
   });
-  const [minDate, setMinDate] = useState("");
-  const [maxDate, setMaxDate] = useState("");
+  // const [minDate, setMinDate] = useState("");
+  // const [maxDate, setMaxDate] = useState("");
   const [agreedDate, setAgreedDate] = useState("");
   const navigate = useNavigate();
   const [declinedInvite, setDeclinedInvite] = useState(false);
@@ -30,26 +30,26 @@ const EventInvite = () => {
 
   const emailRegex =
     /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-  const decidedEvent = eventData
-    ? moment(eventData.final_event_date).format("MMMM DD YYYY HH:mm")
-    : "";
-  const currentDate = moment(Date.now()).format("YYYY-MM-DDTHH:mm");
-  const hasPassed = eventData && moment(currentDate).isAfter(maxDate);
+  // const decidedEvent = eventData
+  //   ? moment(eventData.final_event_date).format("MMMM DD YYYY HH:mm")
+  //   : "";
+  // const currentDate = moment(Date.now()).format("YYYY-MM-DDTHH:mm");
+  // const hasPassed = eventData && moment(currentDate).isAfter(maxDate);
 
   useEffect(() => {
-    const startDate = eventData
-      ? moment(eventData?.start_date, "MM-DD-YYYY").format("YYYY-MM-DDTHH:mm")
-      : "";
-    const endDate = eventData
-      ? moment(eventData?.end_date, "MM-DD-YYYY").format("YYYY-MM-DDTHH:mm")
-      : "";
+    // const startDate = eventData
+    //   ? moment(eventData?.start_date, "MM-DD-YYYY").format("YYYY-MM-DDTHH:mm")
+    //   : "";
+    // const endDate = eventData
+    //   ? moment(eventData?.end_date, "MM-DD-YYYY").format("YYYY-MM-DDTHH:mm")
+    //   : "";
     setAgreedDate(
       moment(eventData?.final_event_date, "YYYY-MM-DDTHH:mm").format(
         "MM/DD/YYYY"
       )
     );
-    setMinDate(startDate);
-    setMaxDate(endDate);
+    // setMinDate(startDate);
+    // setMaxDate(endDate);
   }, [eventData]);
 
   const changeInviteDetails = (e) => {
@@ -120,9 +120,9 @@ const EventInvite = () => {
   useEffect(() => {
     getEventDetails();
 
-    if (hasPassed) {
-      navigate("/closed_event");
-    }
+    // if (hasPassed) {
+    //   navigate("/closed_event");
+    // }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -132,8 +132,8 @@ const EventInvite = () => {
       <div>
         <div className="mt-28 mb-10 mx-auto lg:mx-12 px-6">
           <div className="mx-2 md:mx-0 text-center w-full">
-            <h1 className="text-2xl font-bold md:text-3xl">Hello, there.</h1>
-            <p className="leading-6 text-gray-600 font-sm">
+            <h1 className="text-2xl font-medium md:text-3xl">Hello, there.</h1>
+            <p className="leading-6 text-gray-600 text-sm">
               You have been invited to {eventData ? eventData.event_type : ""}{" "}
               by
               <span className="text-blue-700 font-bold">
@@ -162,61 +162,50 @@ const EventInvite = () => {
               ""
             )}
           </div>
-          <div className="my-8 w-fit mx-auto border px-6 lg:px-12 py-5 rounded-lg">
-            <div className="my-4 flex flex-col justify-start lg:justify-center items-start lg:items-center gap-[25px] lg:gap-[15px] lg:flex-row ">
-              <div className="md:mx-auto flex-1 self-start">
-                <h1 className="text-xl mb-2 font-bold md:text-2xl md:mb-4">
+          <div className="my-8 w-fit mx-auto px-6 lg:px-12 py-5">
+            <div className="my-4 flex flex-col justify-center lg:justify-center items-start lg:items-center gap-[25px] lg:gap-[15px] lg:flex-row">
+              <div className="md:mx-auto flex-2 self-center">
+                <h1 className="text-xl mb-2 font-medium md:text-2xl md:mb-4">
                   Event Summary
                 </h1>
-                <p className="leading-6 text-gray-600 font-bold font-sm">
+                <p className="leading-6 text-gray-600 font-medium font-sm">
                   Dinner
                 </p>
-                <div>
-                  <span className="flex mt-3">
-                    {" "}
+                <div className="font-thin">
+                  <span className="flex mt-3 md:gap-2 text-sm md:text-base">
                     <CiLocationOn className="mr-4 text-[25px]" />
-                    Location:{" "}
-                    <span className="font-bold">
-                      {" "}
-                      &#160;
+                    Location:
+                    <span className="text-sm md:text-base pl-2">
                       {eventData?.location}
                     </span>
                   </span>
-
-                  <span className="flex mt-3">
-                    {" "}
+                  <span className="flex mt-3 md:gap-2 text-sm md:text-base">
                     <CiCalendar className="mr-4 text-[25px] font-bold" />
-                    Agreed Date: &#160;
+                    Agreed Date:
                     {eventData?.final_event_date === null ? (
-                      <span className="font-bold"> &#160; Not Available</span>
+                      <span className="text-sm md:text-base pl-2">Not Available</span>
                     ) : (
                       agreedDate
                     )}
                   </span>
-
-                  <span className="flex mt-3">
-                    {" "}
+                  <span className="flex mt-3 md:gap-2 text-sm md:text-base">
                     <CiStopwatch className="mr-4 text-[25px]" />
                     Host Selected Time:
-                    <span className="font-bold">
-                      &#160; {eventData?.host_prefered_time}
-                    </span>{" "}
+                    <span className="text-sm md:text-base pl-2">
+                      {eventData?.host_prefered_time}
+                    </span>
                   </span>
-
-                  <span className="flex mt-3">
-                    {" "}
+                  <span className="flex mt-3 gap-2 md:text-sm md:text-base">
                     <HiOutlineMenuAlt1 className="mr-4 text-[25px]" />
-                    <span className="font-bold">
-                      {" "}
-                      &#160;
+                    <span className="text-sm md:text-base pl-2">
                       {eventData?.event_description}
-                    </span>{" "}
+                    </span>
                   </span>
                 </div>
               </div>
-              <form className="flex-1 w-full" onSubmit={addParticipant}>
+              <form className="flex-1 w-full md:border-l-2 md:pl-8" onSubmit={addParticipant}>
                 <div className="my-4 flex flex-col">
-                  <label className="text-base font-semibold mb-1">
+                  <label className="text-base font-semibold mb-1 text-[#424245]">
                     Full Name
                   </label>
                   <input
@@ -230,7 +219,7 @@ const EventInvite = () => {
                   />
                 </div>
                 <div className="my-4 flex flex-col">
-                  <label className="text-base font-semibold mb-1">Email</label>
+                  <label className="text-base font-semibold mb-1 text-[#424245]">Email(optional)</label>
                   <p className="text-sm text-red-500">
                     {emailRegex.test(inviteDetails.email) ||
                     inviteDetails.email === ""
@@ -253,7 +242,7 @@ const EventInvite = () => {
                     autoComplete="true"
                   />
                 </div>
-                {eventData?.final_event_date ? (
+                {/* {eventData?.final_event_date ? (
                   <p className="text-blue-500 font-semibold text-center md:w-4/5 mx-auto">
                     An event date has been chosen. Event to be hosted by{" "}
                     {decidedEvent}
@@ -278,18 +267,18 @@ const EventInvite = () => {
                       required
                     />
                   </div>
-                )}
+                    )} */}
                 <div className="my-7 flex w-full justify-center gap-8 md:justify-between">
                   <button
                     type="submit"
-                    className="rounded bg-[#0056D6] hover:bg-[#2563eb] text-white py-2.5 md:px-3 px-1.5 md:text-lg text-base"
+                    className="rounded font-semibold bg-[#0056D6] hover:bg-[#2563eb] text-white py-2.5 md:px-3 px-1.5 md:text-lg text-base"
                     onClick={addParticipant}
                   >
                     Accept Invite
                   </button>
                   <button
                     type="button"
-                    className="rounded border border-[#0056D6] text-[#0056D6] py-2.5 md:px-3 px-1.5 md:text-lg text-base"
+                    className="rounded font-semibold border border-[#0056D6] text-[#0056D6] py-2.5 md:px-3 px-1.5 md:text-lg text-base"
                     onClick={() => declineInvite()}
                   >
                     Decline Invite
