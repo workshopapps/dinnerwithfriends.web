@@ -2,11 +2,10 @@ import { FiPhoneCall } from "react-icons/fi";
 import { FaFacebook } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { AiFillTwitterCircle } from "react-icons/ai";
-//import { RiWechatLine } from "react-icons/ri";
 import { SlLocationPin } from "react-icons/sl";
 import { FaRegEnvelope } from 'react-icons/fa'
 
-const ContactUsDetails = () => {
+export const ContactUsDetails = () => {
   return (
     <div className="flex flex-col mt-12 md:mt-0  ">
       <div className="leading-10 flex items-start text-base font-bold text-primary-1100 mb-9">
@@ -38,7 +37,7 @@ const ContactUsDetails = () => {
         <FiPhoneCall className="w-6 h-6 text-primary-1000 mr-6" />
         <div>
           <p className="text-[#424245] font-medium mb-1">Phone</p>
-          
+
           <a
             href="tel:+234 703 184 24946"
             className="text-[#B1B1B1] block mt-1 not-italic "
@@ -62,4 +61,3 @@ const ContactUsDetails = () => {
   );
 };
 
-export default ContactUsDetails;

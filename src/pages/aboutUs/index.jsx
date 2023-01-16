@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Footer from "../../components/footer/index";
+import {Footer} from "../../components";
 import Navbar from "../../components/Navbar";
 import people from "./assets/people.jpg";
 import blueArrow from "./assets/bluearrow.svg";

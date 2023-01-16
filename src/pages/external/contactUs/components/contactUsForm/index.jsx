@@ -1,10 +1,10 @@
-import Button from "../../../components/Button";
-import { useState } from "react";
-import FormSuccessModal from "./FormSuccessModal";
-import useInput from "../../../hooks/user-input";
-import InputComponent from "../../../components/InputComponent/InputComponent";
+import React, { useState } from "react";
+import Button from "../../../../../components/Button";
+import FormSuccessModal from "../formSuccessModal";
+import useInput from "../../../../../hooks/user-input";
+import InputComponent from "../../../../../components/InputComponent/InputComponent";
 
-const ContactUsForm = () => {
+export const ContactUsForm = () => {
   const [formSubmittedSuccessfully, setFormSubmittedSuccessfully] =
     useState(false);
 
@@ -23,12 +23,14 @@ const ContactUsForm = () => {
     valueInputBlurHandler: firstNameInputBlurHandler,
     resetValue: firstNameInputReset,
   } = useInput((val) => val.trim() !== "");
+
   const {
     value: enteredLastName,
     valueIsValid: enteredLastNameIsValid,
 
     resetValue: lastNameInputReset,
   } = useInput((val) => val.trim() !== "");
+
   const {
     value: enteredEmail,
     valueIsValid: enteredEmailIsValid,
@@ -67,14 +69,6 @@ const ContactUsForm = () => {
       enteredEmailIsValid &&
       enteredMessageIsValid
     ) {
-      // use form data
-      // const data = {
-      //   firstName: enteredFirstName,
-      //   lastName: enteredLastName,
-      //   email: enteredEmail,
-      //   message: enteredMessage,
-      // };
-      // display message
       setFormSubmittedSuccessfully(true);
     }
 
@@ -155,4 +149,3 @@ const ContactUsForm = () => {
   );
 };
 
-export default ContactUsForm;

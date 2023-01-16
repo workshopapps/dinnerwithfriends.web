@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { MdOutlineArrowBack } from "react-icons/md";
 import { BiEdit } from "react-icons/bi";
-import Footer from "../../components/footer/index";
+import {Footer} from "../../components";
 import SettingsFooter from "../../components/settingsPage/setFooter";
 import { Link } from "react-router-dom";
 import userServices from "../../services/userServices";

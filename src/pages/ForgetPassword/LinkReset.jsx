@@ -1,14 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar";
-import Footer from "../../components/footer/index";
+import {Footer} from "../../components";
 import ForgetPasswordImage from "../../assets/img/ForgetPasswordImage.png";
 import BackToSignIn from "../../assets/img/BackToSignIn.png";
 const ResetLink = () => {
   return (
     <>
       <Navbar />
-      <div className="container mx-auto  mt-20 px-10 mt-20">
+      <div className="container mx-auto px-10 mt-20">
         <div className="md:flex items-center justify-center gap-20">
           <div className="grid items-center justify-center">
             <div className="md:hidden mb-5">

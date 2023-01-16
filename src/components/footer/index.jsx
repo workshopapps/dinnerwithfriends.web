@@ -4,7 +4,7 @@ import { companyData, helpData, legalData } from "./footerData";
 import { BsFacebook, BsTwitter, BsLinkedin, BsYoutube } from "react-icons/bs";
 import Logo from "../Logo";
 
-const Footer = () => {
+export const Footer = () => {
   const company = companyData.map((item, i) => (
     <li className="mb-1 lg:mb-4" key={i}>
       <Link to={item.to} className=" hover:underline">
@@ -81,5 +81,3 @@ const Footer = () => {
     </footer>
   );
 };
-
-export default Footer;

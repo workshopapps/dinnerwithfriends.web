@@ -1,11 +1,10 @@
-import Footer from "../../../components/footer/index";
-import Navbar from "../../../components/Navbar";
-import ContactUsDetails from "../contactDetails/ContactUsDetails";
-import ContactUsForm from "../contactUsForm/ContactUsForm";
-// import classes from "./ContactUsComp.module.css";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
+import { Footer } from "../../../../../components";
+import Navbar from "../../../../../components/Navbar";
+import { ContactUsDetails } from "../contactDetails";
+import { ContactUsForm } from "../contactUsForm";
 
-const ContactUsComp = () => {
+export const ContactUsComp = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -29,4 +28,3 @@ const ContactUsComp = () => {
   );
 };
 
-export default ContactUsComp;
