@@ -134,7 +134,7 @@ export const ContactUsForm = () => {
         </div>
         <Button
           type="submit"
-          className="w-full text-xl font-bold py-2.5 mt-24 mb-9 text-white bg-[#0056D6] rounded-lg"
+          className="w-full text-xl font-bold py-2.5 mt-24 mb-9 text-white bg-[#1070FF] rounded-lg"
         >
           Send
         </Button>
