@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import Footer from "../../../components/footer/index";
+import {Footer} from "../../../components";
 import Navbar from "../../../components/Navbar";
 import { contentsData, policyData } from "./policyDatas";
 import DOMPurity from "dompurify";
 
-const Policy = () => {
+export const Policy = () => {
   const [active, setActive] = useState("Privacy Policy");
   const handleActive = (query) => {
     setActive(query);
@@ -77,5 +77,3 @@ const Policy = () => {
     </>
   );
 };
-
-export default Policy;

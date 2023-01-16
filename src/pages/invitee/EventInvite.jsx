@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../../components/Navbar";
-import Footer from "../../components/footer/index";
+import {Footer} from "../../components";
 import { useNavigate, useParams } from "react-router-dom/dist";
 import moment from "moment/moment";
 import userServices from "../../services/userServices";

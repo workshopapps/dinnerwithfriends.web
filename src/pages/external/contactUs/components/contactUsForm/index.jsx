@@ -1,10 +1,10 @@
-import Button from "../../../components/Button";
-import { useState } from "react";
-import FormSuccessModal from "./FormSuccessModal";
-import useInput from "../../../hooks/user-input";
-import InputComponent from "../../../components/InputComponent/InputComponent";
+import React, { useState } from "react";
+import Button from "../../../../../components/Button";
+import FormSuccessModal from "../formSuccessModal";
+import useInput from "../../../../../hooks/user-input";
+import InputComponent from "../../../../../components/InputComponent/InputComponent";
 
-const ContactUsForm = () => {
+export const ContactUsForm = () => {
   const [formSubmittedSuccessfully, setFormSubmittedSuccessfully] =
     useState(false);
 
@@ -23,12 +23,14 @@ const ContactUsForm = () => {
     valueInputBlurHandler: firstNameInputBlurHandler,
     resetValue: firstNameInputReset,
   } = useInput((val) => val.trim() !== "");
+
   const {
     value: enteredLastName,
     valueIsValid: enteredLastNameIsValid,
 
     resetValue: lastNameInputReset,
   } = useInput((val) => val.trim() !== "");
+
   const {
     value: enteredEmail,
     valueIsValid: enteredEmailIsValid,
@@ -67,14 +69,6 @@ const ContactUsForm = () => {
       enteredEmailIsValid &&
       enteredMessageIsValid
     ) {
-      // use form data
-      // const data = {
-      //   firstName: enteredFirstName,
-      //   lastName: enteredLastName,
-      //   email: enteredEmail,
-      //   message: enteredMessage,
-      // };
-      // display message
       setFormSubmittedSuccessfully(true);
     }
 
@@ -113,7 +107,7 @@ const ContactUsForm = () => {
         <div>
           <label
             htmlFor="message"
-            className="mb-2 p-0 text-lg font-bold text-stone-900"
+            className="mb-2 p-0 text-lg font-medium text-[#424245]"
           >
             Type your message
           </label>
@@ -140,7 +134,7 @@ const ContactUsForm = () => {
         </div>
         <Button
           type="submit"
-          className="w-full text-xl font-bold py-2.5 mt-24 mb-9 text-white bg-[#0056D6] rounded-lg"
+          className="w-full text-xl font-bold py-2.5 mt-24 mb-9 text-white bg-[#1070FF] rounded-lg"
         >
           Send
         </Button>
@@ -155,4 +149,3 @@ const ContactUsForm = () => {
   );
 };
 
-export default ContactUsForm;

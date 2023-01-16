@@ -1,4 +1,4 @@
-import Footer from "../../components/footer/index";
+import {Footer} from "../../components";
 import Navbar from "../../components/Navbar";
 import FirstComponent from "./FirstComponent";
 import Howitwork2 from "./Howitwork2";

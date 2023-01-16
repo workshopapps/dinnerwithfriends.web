@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import HelpCenter from ".";
-import Footer from "../../components/footer/index";
+import {Footer} from "../../components";
 import Navbar from "../../components/Navbar";
 import BottomBar from "./components/bottomBar";
 import Category from "./components/category";

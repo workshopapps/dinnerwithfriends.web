@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar";
-import Footer from "../../components/footer/index";
+import {Footer} from "../../components";
 import F1 from "../../pages/Features-page/F1.png";
 import F2 from "../../pages/Features-page/F2.png";
 import F3 from "../../pages/Features-page/F3.png";

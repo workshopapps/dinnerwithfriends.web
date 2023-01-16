@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { CiLocationOn, CiStopwatch, CiCalendar } from "react-icons/ci";
 import { HiOutlineMenuAlt1 } from "react-icons/hi";
 import Navbar from "../../components/CreateEvent/CreateEventNavbar";
-import Footer from "../../components/footer/index";
+import {Footer} from "../../components";
 import { useNavigate, useParams } from "react-router-dom/dist";
 import moment from "moment/moment";
 import userServices from "../../services/userServices";

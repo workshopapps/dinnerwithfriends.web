@@ -1,5 +1,5 @@
-import successImg from "../../../assets/img/success-icon.svg";
-import Button from "../../../components/Button";
+import successImg from "../../../../../assets/img/success-icon.svg";
+import Button from "../../../../../components/Button";
 import { IoIosClose } from "react-icons/io";
 
 const FormSuccessModal = (props) => {

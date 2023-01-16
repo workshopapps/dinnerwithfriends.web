@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { MdOutlineArrowBack } from "react-icons/md";
 import SettingsFooter from "../../components/settingsPage/setFooter";
-import Footer from "../../components/footer/index";
+import {Footer} from "../../components";
 import { Link, useNavigate } from "react-router-dom";
 import "./profileTwo.css";
 import CreateEventNavbar from "../../components/CreateEvent/CreateEventNavbar";

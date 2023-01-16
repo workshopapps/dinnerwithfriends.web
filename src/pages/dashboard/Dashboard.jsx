@@ -5,7 +5,7 @@ import { CatchUpEventContextUse } from "../../context/CatchUpEventContext";
 import calender from "../../assets/img/g-calendar.png";
 import Event from "../../components/Event";
 import add from "../../assets/img/add.png";
-import Footer from "../../components/footer/index";
+import {Footer} from "../../components";
 import { Link } from "react-router-dom";
 import CreateEventNavbar from "../../components/CreateEvent/CreateEventNavbar";
 import CalenderSyncModal from "../../components/CalenderSyncModal";

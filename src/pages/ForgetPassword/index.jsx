@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import userServices from "../../services/userServices";
 import Navbar from "../../components/Navbar";
-import Footer from "../../components/footer/index";
+import {Footer} from "../../components";
 import ForgetPasswordImage from "../../assets/img/ForgetPasswordImage.png";
 import BackToSignIn from "../../assets/img/BackToSignIn.png";
 
