@@ -96,7 +96,7 @@ const Navbar = () => {
                 dev
                 className="block py-3 md:py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 "
               >
-                Contact Us
+                Contact us
               </Link>
             </li>
             <li className="md:hidden">
