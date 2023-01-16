@@ -13,3 +13,4 @@ describe('Faq page', () => {
     expect(faq).toMatchSnapshot();
   });
 });
+

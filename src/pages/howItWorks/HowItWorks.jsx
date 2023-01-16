@@ -1,4 +1,4 @@
-import Footer from "../../components/Footer";
+import Footer from "../../components/footer/index";
 import Navbar from "../../components/Navbar";
 import FirstComponent from "./FirstComponent";
 import Howitwork2 from "./Howitwork2";
@@ -9,7 +9,7 @@ export default function HowItWorks() {
       <Navbar />
       <section>
         <FirstComponent />
-        <Howitwork2/>
+        <Howitwork2 />
       </section>
       <Footer />
     </div>
