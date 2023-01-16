@@ -24,10 +24,10 @@ const Hero = () => {
             <span className="block mb-2 lg:mb-4">those that really</span>
             <span className="block mb-2 lg:mb-4">matter.</span>
           </h1>
-          <p className="max-w-xl mb-6 font-light text-gray-500 text-center text-sm lg:leading-7 lg:mb-8 md:text-lg lg:text-left lg:text-base">
-            What better way to have a scheduled hangout with your friends where
-            you can unwind after a busy week, this is why we built catch and all
-            in one platform that solves this problem.
+          <p className="max-w-xl mb-6 font-light text-gray-600 text-center text-sm lg:leading-7 lg:mb-8 md:text-lg lg:text-left lg:text-base">
+          Busy schedules should no longer be an excuse for not spending time with your family, 
+          friends, and loved ones. 
+          Relax after a long week and make lasting memories.
           </p>
           <Link
             to="/sign_up"

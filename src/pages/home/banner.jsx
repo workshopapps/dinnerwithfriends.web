@@ -5,15 +5,15 @@ const Banner = () => {
   return (
     <section className="bg-[#E7F0FF]">
       <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
-        <h1 className="hidden mb-8 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:block md:text-5xl lg:text-6xl">
-          <span className="block mb-2 lg:mb-4">Organize your next social</span>
-          <span className="mb-2 lg:mb-4">gathering, on </span>
+        <h1 className="hidden mb-8 text-4xl font-bold tracking-tight leading-none text-gray-900 md:block md:text-5xl lg:text-5xl">
+          <span className="block mb-2 lg:mb-4">Organize your next social gathering with</span>
+          {/*<span className="mb-2 lg:mb-4">gathering, on </span>*/}
           <span className="text-blue-600">Catch</span>
           <span>Up</span>
         </h1>
-        <h1 className="mb-8 text-4xl font-extrabold tracking-tight leading-8text-gray-900 md:hidden md:text-5xl lg:text-6xl">
-          <span className="block mb-2 ">Organize your next</span>
-          <span className="mb-2"> social gathering, on </span>
+        <h1 className="mb-8 text-4xl font-bold tracking-tight leading-8text-gray-900 md:hidden md:text-5xl lg:text-5xl">
+          <span className="block mb-2 ">Organize your next social gathering with</span>
+          {/*<span className="mb-2"> social gathering, on </span>*/}
           <span className="mb-2 text-blue-600">Catch</span>
           <span>Up</span>
         </h1>

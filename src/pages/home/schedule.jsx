@@ -10,7 +10,7 @@ const Schedule = () => {
       <div className="">
         <h1 className="md:px-6 text-[#0056D6] mx-10 mb-4 my-8 text-4xl font-bold tracking-tight text-center leading-none md:text-5xl xl:text-6xl ">
           <span className="block mb-2 lg:mb-4">Stay connected with your </span>
-          <span className="block mb-2 lg:mb-4">social cirlce.</span>
+          <span className="block mb-2 lg:mb-4">social circle.</span>
         </h1>
         <div className="justify-between max-w-screen-xl px-6 md:px-0 mx-auto lg:flex lg:flex-row-reverse my-10">
           <div className=" hidden w-full mx-16 px-auto lg:mt-0 md:flex lg:w-1/2 lg:mr-4">
@@ -21,13 +21,12 @@ const Schedule = () => {
           </div>
           <div className="mt-6 lg:w-1/2 lg:ml-4">
             <h3 className="max-w-2xl text-[#0056D6] mb-4 text-xl font-bold tracking-tight text-center leading-none md:mt-28 md:text-2xl xl:text-2xl lg:text-left">
-              Set your availability prefrence
+            Stay connected with your social circle 
             </h3>
-            <p className="max-w-xl mb-6 font-light text-gray-500 text-center text-sm lg:leading-7 lg:mb-8 md:text-lg lg:text-left lg:text-base">
-              Schedule your next sport hangout, dinner date, coffe date with
-              catchup. Meet with friends faster without your work or that of
-              your friends getting in the way, with dates that works best for
-              everyone, the best part is you get to decide together!
+            <p className="max-w-xl mb-6 font-light text-gray-600 text-center text-sm lg:leading-7 lg:mb-8 md:text-lg lg:text-left lg:text-base">
+            CatchUp allows you to plan your next hangout—sports hangouts, dinner dates, 
+            coffee dates, and so much more. Plan get-togethers with friends without letting 
+            your hectic schedule get in the way. Find the best dates for everyone and make a decision together!
             </p>
             <Link
               to="/sign_up"
@@ -59,13 +58,12 @@ const Schedule = () => {
           </div>
           <div className="mt-6 lg:w-1/2 lg:ml-4">
             <h3 className="max-w-2xl text-[#0056D6] mb-4 text-xl font-bold tracking-tight text-center leading-none md:mt-28 md:text-2xl xl:text-2xl lg:text-left">
-              Set your availability prefrence
+            Select your preferred date and time
             </h3>
-            <p className="max-w-xl mb-6 font-light text-gray-500 text-center text-sm lg:leading-7 lg:mb-8 md:text-lg lg:text-left lg:text-base">
-              One of our most important feautures at catch up, is the
-              availability prefrences where your friends can notify you the host
-              of there availabilty for the event you scheduled. You would get a
-              notification in real time on our platform and in your mail.
+            <p className="max-w-xl mb-6 font-light text-gray-600 text-center text-sm lg:leading-7 lg:mb-8 md:text-lg lg:text-left lg:text-base">
+            You have the freedom to choose your availability with CatchUp. 
+            Friends can let you know if they can attend your event, 
+            and you'll immediately be notified on our site and in your mail.
             </p>
             <Link
               to="/sign_up"
@@ -97,12 +95,11 @@ const Schedule = () => {
           </div>
           <div className="mt-6 lg:w-1/2 lg:ml-4">
             <h3 className="max-w-2xl text-[#0056D6] mb-4 text-xl font-bold tracking-tight text-center leading-none md:mt-28 md:text-2xl xl:text-2xl lg:text-left">
-              Be in sync
+              Stay in sync
             </h3>
-            <p className="max-w-xl mb-6 font-light text-gray-500 text-center text-sm lg:leading-7 lg:mb-8 md:text-lg lg:text-left lg:text-base">
-              It only get easier with catch up. Sync your calendars with our
-              platform and get your activities in one place at a glance. Set
-              reminders on and not miss out on events from there friends.
+            <p className="max-w-xl mb-6 font-light text-gray-600 text-center text-sm lg:leading-7 lg:mb-8 md:text-lg lg:text-left lg:text-base">
+            You can integrate your calendar on CatchUp with a single click. 
+            You also get notifications for all of your activities in one place.
             </p>
             <Link
               to="/sign_up"
