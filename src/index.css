@@ -3,6 +3,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "satoshi";
+  src: url("./assets/fonts/Satoshi_Complete/Satoshi-Regular.otf");
+}
+
 @layer utilities {
 
   * {
@@ -39,7 +44,7 @@
 }
 
 html {
-  font-family: "DM Sans", sans-serif;
+  font-family: satoshi;
   font-size: 16px;
   font-weight: 400;
   scroll-behavior: smooth;
