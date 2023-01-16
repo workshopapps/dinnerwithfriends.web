@@ -44,17 +44,7 @@ export const ContactUsDetails = () => {
           >
             +234-703-184-24946
           </a>
-          <div className="flex mt-6">
-            <a href="http://www.facebook.com" className="block mr-9">
-              <FaFacebook className="w-6 h-6 text-primary-1200" />
-            </a>
-            <a href="http://www.linkedIn.com" className="block mr-9">
-              <FaLinkedin className="w-6 h-6 text-primary-1200" />
-            </a>
-            <a href="http://www.twitter.com" className="block">
-              <AiFillTwitterCircle className="w-6 h-6 text-primary-1200" />
-            </a>
-          </div>
+          
         </div>
       </div>
     </div>
