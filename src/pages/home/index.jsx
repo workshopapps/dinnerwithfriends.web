@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "../../components/Navbar";
 import {Footer} from "../../components";
 
-import Hero from "./hero";
+import {Hero} from "./components";
 import Schedule from "./schedule";
 // import HeroDashboard from "./heroDashboard";
 import Testimonials from "./testimonials";
@@ -12,10 +12,9 @@ const Home = () => {
   return (
     <>
       <Navbar />
-      <div className="w-[90%] mx-auto">
+      <div className="">
         <Hero />
         <Schedule />
-        {/* <HeroDashboard /> */}
         <Testimonials />
       </div>
       <Banner />
