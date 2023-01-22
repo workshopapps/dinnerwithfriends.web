@@ -1,16 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import MobileImage from "../../../../assets/img/Home.png";
-import DesktopImage from "../../../../assets/img/Mobile.png";
+import DesktopImage from "../../../../assets/img/desktop.png";
 
 export const Hero = () => {
   return (
     <>
-      <section className="flex flex-col lg:flex-row justify-between gap-y-[40px] lg:gap-x-[46px] pt-[80px] lg:pt-[150px] px-[30px] lg:px-[45px]">
-        <div className="hidden lg:block">
+      <section className="flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:items-start gap-y-[40px] lg:gap-x-[46px] pt-[80px] lg:pt-[150px] px-[30px] lg:px-[45px]">
+        <div className="hidden lg:block basis-2/4 pt-[80px]">
           <img src={DesktopImage} alt="Home" />
         </div>
-        <div className="flex flex-col justify-center lg:justify-start items-center lg:items-start gap-y-[32px]">
+        <div className="flex flex-col justify-center lg:justify-start items-center lg:items-start gap-y-[32px] lg:basis-2/4">
           <h1 className="text-[#1070FF] text-center lg:text-start leading-[2.87rem] lg:leading-[5.5rem] font-bold text-[2.12rem] lg:text-[5rem]">
             Make time for those that really matter.
           </h1>
