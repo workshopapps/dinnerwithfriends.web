@@ -10,7 +10,7 @@ export const Schedule = () => {
            Stay connected with your social circle
         </h2>
         <div className="flex flex-col justify-between items-center gap-y-[48px] lg:gap-y-[72px] mt-[40px] lg:mt-[80px]">
-          <div className="flex justify-between items-start lg:gap-x-[8rem]">
+          <div className="flex justify-between lg:gap-x-[8rem]">
             <div className="flex flex-col justify-start items-start gap-y-[8px] lg:gap-y-[16px] lg:basis-2/4">
               <h3 className="text-[#1070FF] leading-[2rem] lg:leading-[2.5rem] font-medium lg:font-bold text-[1.5rem] lg:text-[2rem]">
                 Stay connected with your social circle
@@ -20,12 +20,12 @@ export const Schedule = () => {
               </p>
             </div>
             <div className="hidden lg:flex basis-2/4">
-              <img src={Dashboard2} alt="Home" />
+              <img src={Dashboard2} alt="Home" className="object-cover"/>
             </div>
           </div>
-          <div className="flex justify-between items-start lg:gap-x-[8rem]">
+          <div className="flex justify-between lg:gap-x-[8rem]">
             <div className="hidden lg:flex basis-2/4">
-              <img src={Dashboard1} alt="Home" />
+              <img src={Dashboard1} alt="Home" className="object-cover"/>
             </div>
             <div className="flex flex-col justify-start items-start gap-y-[8px] lg:gap-y-[16px] lg:basis-2/4">
               <h3 className="text-[#1070FF] leading-[2rem] lg:leading-[2.5rem] font-medium lg:font-bold text-[1.5rem] lg:text-[2rem]">
@@ -36,7 +36,7 @@ export const Schedule = () => {
               </p>
             </div>
           </div>
-          <div className="flex justify-between items-start lg:gap-x-[8rem]">
+          <div className="flex justify-between lg:gap-x-[8rem]">
             <div className="flex flex-col justify-start items-start gap-y-[8px] lg:gap-y-[16px] lg:basis-2/4">
               <h3 className="text-[#1070FF] leading-[2rem] lg:leading-[2.5rem] font-medium lg:font-bold text-[1.5rem] lg:text-[2rem]">
                 Stay in sync
@@ -46,7 +46,7 @@ export const Schedule = () => {
               </p>
             </div>
             <div className="hidden lg:flex basis-2/4">
-              <img src={ScheduleImage} alt="Home" />
+              <img src={ScheduleImage} alt="Home" className="object-cover"/>
             </div>
           </div>
         </div>

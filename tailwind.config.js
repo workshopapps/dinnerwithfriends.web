@@ -30,6 +30,13 @@ module.exports = withMT({
       screens: {
         tablet: "850px",
       },
+      boxShadow: {
+        'cardShadow': '2px 4px 4px rgba(0, 0, 0, 0.25)',
+        'cardShadowMobile': '0px 0px 2px rgba(0, 0, 0, 0.25)',
+      },
+        backgroundPosition: {
+          'top-4': '0 100px',
+        }
     },
   },
   plugins: [require("tailwind-scrollbar-hide")],
