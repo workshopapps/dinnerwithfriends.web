@@ -1,7 +1,4 @@
 import { FiPhoneCall } from "react-icons/fi";
-import { FaFacebook } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
-import { AiFillTwitterCircle } from "react-icons/ai";
 import { SlLocationPin } from "react-icons/sl";
 import { FaRegEnvelope } from 'react-icons/fa'
 
