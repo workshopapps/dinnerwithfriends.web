@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import MobileImage from "../../../../assets/img/Home.png";
-import DesktopImage from "../../../../assets/img/desktop.png";
+import MobileImage from "../../../../../assets/img/Home.png";
+import DesktopImage from "../../../../../assets/img/desktop.png";
 
 export const Hero = () => {
   return (

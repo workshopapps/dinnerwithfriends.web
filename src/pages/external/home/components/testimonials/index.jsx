@@ -1,9 +1,9 @@
 import React from "react";
 
-import image1 from "../../../../assets/img/test1.png";
-import image2 from "../../../../assets/img/test2.png";
-import image3 from "../../../../assets/img/test3.png";
-import image4 from "../../../../assets/img/test4.png";
+import image1 from "../../../../../assets/img/test1.png";
+import image2 from "../../../../../assets/img/test2.png";
+import image3 from "../../../../../assets/img/test3.png";
+import image4 from "../../../../../assets/img/test4.png";
 
 export const Testimonials = () => {
   const testimonies = [

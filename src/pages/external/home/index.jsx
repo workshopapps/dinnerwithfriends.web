@@ -1,9 +1,9 @@
 import React from "react";
-import Navbar from "../../components/Navbar";
-import {Footer} from "../../components";
+import Navbar from "../../../components/Navbar";
+import {Footer} from "../../../components";
 import {Hero, Schedule, Banner, Testimonials} from "./components";
 
-const Home = () => {
+export const Home = () => {
   return (
     <>
       <Navbar />
@@ -18,4 +18,3 @@ const Home = () => {
   );
 };
 
-export default Home;

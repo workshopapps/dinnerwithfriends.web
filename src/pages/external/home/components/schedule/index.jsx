@@ -1,7 +1,7 @@
 import React from "react";
-import ScheduleImage from "../../../../assets/img/homepage1.png";
-import Dashboard1 from "../../../../assets/img/homepage2.png";
-import Dashboard2 from "../../../../assets/img/homepage3.png";
+import ScheduleImage from "../../../../../assets/img/homepage1.png";
+import Dashboard1 from "../../../../../assets/img/homepage2.png";
+import Dashboard2 from "../../../../../assets/img/homepage3.png";
 
 export const Schedule = () => {
   return (

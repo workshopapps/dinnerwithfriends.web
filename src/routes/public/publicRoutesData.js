@@ -1,11 +1,9 @@
-import Home from '../../pages/home'
 import SignUp from "../../pages/signUp";
 import SignIn from "../../pages/signIn";
 import ForgetPassword from "../../pages/ForgetPassword/index";
 import ResetLink from "../../pages/ForgetPassword/LinkReset";
 import ResetPassword from "../../pages/ForgetPassword/ResetPassword";
-import { ContactUs } from '../../pages';
-import { Policy } from "../../pages";
+import { Home, Policy, ContactUs } from '../../pages';
 import HowItWorks from "../../pages/howItWorks/HowItWorks";
 import Terms from "../../pages/t&c";
 import TermsOfUse from "../../pages/termsOfUse";
