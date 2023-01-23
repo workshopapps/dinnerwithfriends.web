@@ -1,10 +1,7 @@
 import React from "react";
 import Navbar from "../../components/Navbar";
 import {Footer} from "../../components";
-
-import {Hero} from "./components";
-import Schedule from "./schedule";
-// import HeroDashboard from "./heroDashboard";
+import {Hero, Schedule} from "./components";
 import Testimonials from "./testimonials";
 import Banner from "./banner";
 
