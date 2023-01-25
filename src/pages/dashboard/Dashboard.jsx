@@ -139,8 +139,8 @@ const Dashboard = () => {
             onClick={googleCalenderApi}
             className="hidden lg:flex justify-between items-center gap-x-3.5 rounded-lg border border-solid border-[#344054] px-4 outline-0"
           >
-            <div className="w-[28px] h-[28px]">
-              <img src={calender} alt="google-calender" />
+            <div className="">
+              <img className="mt-0.5  " src={calender} alt="google-calender" />
             </div>
             <p className="text-[#344054] text-lg">Sync with Google Calendar</p>
           </Button>
