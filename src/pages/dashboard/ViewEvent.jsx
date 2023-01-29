@@ -257,7 +257,7 @@ const ViewEvent = () => {
 								</div>
 							))}
 						</div>
-						<div className='flex justify-center items-center mt-6'>
+						<div className='flex flex-col space-y-3 md:space-y-0 md:flex-row justify-center items-center mt-6'>
 							<button class="text-[#1070FF] border-[#1070FF] border px-5 py-2.5 rounded"
 								onClick={handleBack}
 							>
