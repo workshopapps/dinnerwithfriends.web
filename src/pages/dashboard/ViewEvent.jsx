@@ -4,7 +4,7 @@ import moment from "moment/moment";
 import Navbar from "../../components/CreateEvent/CreateEventNavbar";
 import arrow from "../../assets/icons/arrow-down.svg";
 import AddParticipantModal from "../../components/AddParticipantModal";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import clipboard from "../dashboard/icons/clipboard.svg";
 import userServices from "../../services/userServices";
 import { MdKeyboardArrowDown } from "react-icons/md";
@@ -57,6 +57,11 @@ const ViewEvent = () => {
 		}, 3000);
 	};
 
+	const navigate = useNavigate();
+	const handleBack = () => {
+		navigate("/dashboard");
+	};
+	
 	const [showDeleteMenu, setShowDeleteMenu] = useState(false);
 	const [showDeleteParticipant, setShowDeleteParticipant] = useState(false);
 	const [showDeleteParticipantSuccess, setShowDeleteParticipantSucess] = useState(false);
@@ -253,14 +258,24 @@ const ViewEvent = () => {
 							))}
 						</div>
 						<div className='flex justify-center items-center mt-6'>
+							<button class="text-[#1070FF] border-[#1070FF] border px-5 py-2.5 rounded"
+								onClick={handleBack}
+							>
+								Back to dashboard
+							</button>
 							<button
-								className={`flex mt-4 md:mt items-center justify-center w-[127px] mx-4 rounded bg-white border-[1px] ${
+								className={`flex items-center justify-center w-[127px] mx-4 rounded bg-white border-[1px] ${
 									copied
 										? "border-green-500 text-green-500"
-										: "border-[#0056d6] text-[#0056d6]"
+										: "border-[#1070FF] bg-[#1070FF] text-white"
 								} h-[44px]`}
 								onClick={() => copyLink()}>
-								<img className='mr-2' src={clipboard} alt='copy to clipboard' />
+								<img className={`mr-2 ${
+									copied 
+										? "filter invert"
+										: ""}
+								`}
+								src={clipboard} alt='copy to clipboard' />
 								Copy link
 							</button>
 						</div>
