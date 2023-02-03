@@ -50,9 +50,9 @@ const ProfilePage = () => {
           </div>
 
           <Link to="/update_details">
-            <div>
-              <button className="edit_btn">
-                <BiEdit />
+            <div className="">
+              <button className="edit_btn ">
+                <BiEdit className="mr-1" />
                 Edit
               </button>
             </div>
