@@ -1,4 +1,4 @@
-import successImg from "../../../../../assets/img/success-icon.svg";
+import successImg from "../../../../../assets/icons/success-icon.svg";
 import Button from "../../../../../components/Button";
 import { IoIosClose } from "react-icons/io";
 

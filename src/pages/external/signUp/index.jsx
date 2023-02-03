@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 import { useForm } from "react-hook-form";
-import image from "./signup_image.webp";
-import google from "./google.svg";
-import Logo from "../../components/Logo";
+import image from "../../../assets/img/signup_image.webp";
+import google from "../../../assets/icons/google.svg";
+import Logo from "../../../components/Logo";
 
-const SignUp = () => {
+export const SignUp = () => {
 	const {
 		register,
 		handleSubmit,
@@ -228,13 +228,13 @@ const SignUp = () => {
 						</div>
 
 						<button
-							className=' transition ease-in duration-200 hover:bg-blue-400 mt-4 text-white bg-[#0056D6] w-full h-11 rounded-lg'
+							className=' transition ease-in duration-200 hover:bg-blue-400 mt-4 text-white bg-[#1070ff] w-full h-11 rounded-lg'
 							type='submit'>
 							{submitting ? "Loading..." : "Create a free account"}
 						</button>
 					</form>
 
-					<p className='my-2.5 text-center text-[#0056D6]'>Or</p>
+					<p className='my-2.5 text-center text-[#1070ff]'>Or</p>
 
 					<button
 						onClick={googleSignUpAuth}
@@ -245,7 +245,7 @@ const SignUp = () => {
 
 					<Link to='/sign_in'>
 						{" "}
-						<p className=' my-8 font-normal text-center text-[#0056D6]'>
+						<p className=' my-8 font-normal text-center text-[#1070ff]'>
 							Have an account already? Sign in for free
 						</p>
 					</Link>
@@ -259,5 +259,3 @@ const SignUp = () => {
 		</div>
 	);
 };
-
-export default SignUp;

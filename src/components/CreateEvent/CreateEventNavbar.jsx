@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import googleCalendar from "../../assets/img/g-calendar.svg";
+import googleCalendar from "../../assets/icons/g-calendar.svg";
 import { MdSpaceDashboard } from "react-icons/md";
 import { FiSettings, FiLogIn } from "react-icons/fi";
 import menuStyles from "./createEvent.module.css";

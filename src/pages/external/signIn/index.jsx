@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 import { useForm } from "react-hook-form";
-import signInImage from "../../assets/img/Rectangle 254.png";
-import userServices from "../../services/userServices";
-import Logo from "../../components/Logo";
+import signInImage from "../../../assets/img/Rectangle 254.png";
+import userServices from "../../../services/userServices";
+import Logo from "../../../components/Logo";
 
-const SignIn = () => {
+export const SignIn = () => {
 	const {
 		register,
 		handleSubmit,
@@ -169,19 +169,19 @@ const SignIn = () => {
 											Remember for 30days
 										</label>
 									</div>
-									<div className='text-[#0056D6] text-xs lg:text-base'>
+									<div className='text-[#1070ff] text-xs lg:text-base'>
 										<Link to='/forgot_password'>Forgot password?</Link>
 									</div>
 								</div>
 
 								<button
 									type='submit'
-									className='transition ease-in duration-200 hover:bg-[#0056D6] mt-7 text-white bg-[#1070ff] w-full h-11 rounded-lg'>
+									className='transition ease-in duration-200 hover:bg-[#1070ff] mt-7 text-white bg-[#1070ff] w-full h-11 rounded-lg'>
 									{isSubmit ? "Loading..." : "Sign In"}
 								</button>
 							</form>
 
-							<p className='my-2.5 text-center text-[#0056D6]'>Or</p>
+							<p className='my-2.5 text-center text-[#1070ff]'>Or</p>
 
 							<button
 								onClick={googleSignInAuth}
@@ -210,7 +210,7 @@ const SignIn = () => {
 								</svg>
 								Sign in with Google
 							</button>
-							<div className='text-center text-[#0056D6] text-base mt-6'>
+							<div className='text-center text-[#1070ff] text-base mt-6'>
 								<Link to='/sign_up'>
 									<span>Dont have an account yet?</span>
 									<span className='ml-2'>Sign Up for free</span>
@@ -226,5 +226,3 @@ const SignIn = () => {
 		</div>
 	);
 };
-
-export default SignIn;
