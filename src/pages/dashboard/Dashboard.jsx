@@ -15,6 +15,8 @@ const Dashboard = () => {
   const { events, setEvents } = CatchUpEventContextUse();
   const [modal, setModal] = useState(false);
 
+  
+
   useEffect(() => {
     async function fetchData() {
       const data = await userServices.getAllEvents();
