@@ -176,7 +176,7 @@ const SignIn = () => {
 
 								<button
 									type='submit'
-									className='transition ease-in duration-200 hover:bg-[#0056D6] mt-7 text-white bg-[#0056D6] w-full h-11 rounded-lg'>
+									className='transition ease-in duration-200 hover:bg-[#0056D6] mt-7 text-white bg-[#1070ff] w-full h-11 rounded-lg'>
 									{isSubmit ? "Loading..." : "Sign In"}
 								</button>
 							</form>
