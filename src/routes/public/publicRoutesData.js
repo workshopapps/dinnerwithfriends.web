@@ -3,6 +3,7 @@ import {
   Policy,
   HowItWorks,
   ContactUs,
+  Features,
   SignUp,
   SignIn,
   ForgetPassword,
@@ -13,7 +14,6 @@ import Terms from "../../pages/t&c";
 import TermsOfUse from "../../pages/termsOfUse";
 import Faq from "../../pages/FAQ/Faq";
 // import Error404 from "../../pages/error404";
-import Features from '../../pages/Features-page/features';
 import Career from '../../pages/career/Career';
 import JobDetails from '../../pages/career/JobDetails';
 import HelpRoutes from '../../pages/helpCenter/helpRoutes';
