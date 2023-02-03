@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import userServices from "../../services/userServices";
-import Navbar from "../../components/Navbar";
-import {Footer} from "../../components";
-import ForgetPasswordImage from "../../assets/img/ForgetPasswordImage.png";
-import BackToSignIn from "../../assets/img/BackToSignIn.png";
+import userServices from "../../../services/userServices";
+import Navbar from "../../../components/Navbar";
+import {Footer} from "../../../components";
+import ForgetPasswordImage from "../../../assets/img/ForgetPasswordImage.png";
+import BackToSignIn from "../../../assets/img/BackToSignIn.png";
 
-const ForgetPassword = () => {
+export const ForgetPassword = () => {
   const [isSubmit, setIsSubmit] = useState(false);
   const [validCredentials, setValidCredentials] = useState(false);
   const [invalidCredentials, setInvalidCredentials] = useState(false);
@@ -98,7 +98,7 @@ const ForgetPassword = () => {
               <div className="mt-5">
                 <button
                   type="submit"
-                  className="w-60 md:w-96 text-white bg-[#0056D6] hover:bg-[#0056D6] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-[#0056D6] dark:hover:bg-[#0056D6] dark:focus:ring-blue-800"
+                  className="w-60 md:w-96 text-white bg-[#1070ff] hover:bg-[#1070ff] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-[#1070ff] dark:hover:bg-[#1070ff] dark:focus:ring-blue-800"
                 >
                   {isSubmit ? "Loading..." : "Submit"}
                 </button>
@@ -106,7 +106,7 @@ const ForgetPassword = () => {
 
               <p className="w-60 md:w-96 mt-5 text-sm xl:text-base">
                 Don’t have an account yet?{" "}
-                <Link to="/sign_up" className="text-[#0056D6] font-semi-bold">
+                <Link to="/sign_up" className="text-[#1070ff] font-semi-bold">
                   Sign Up for free
                 </Link>
               </p>
@@ -122,4 +122,3 @@ const ForgetPassword = () => {
   );
 };
 
-export default ForgetPassword;

@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Navbar from "../../components/Navbar";
-import {Footer} from "../../components";
-import ForgetPasswordImage from "../../assets/img/ForgetPasswordImage.png";
-import BackToSignIn from "../../assets/img/BackToSignIn.png";
-const ResetLink = () => {
+import Navbar from "../../../components/Navbar";
+import {Footer} from "../../../components";
+import ForgetPasswordImage from "../../../assets/img/ForgetPasswordImage.png";
+import BackToSignIn from "../../../assets/img/BackToSignIn.png";
+
+export const ResetLink = () => {
   return (
     <>
       <Navbar />
@@ -24,7 +25,7 @@ const ResetLink = () => {
             <div className="mt-5">
               <button
                 type="submit"
-                className="w-60 md:w-96 text-white bg-[#0056D6] hover:bg-[#0056D6] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-[#0056D6] dark:hover:bg-[#0056D6] dark:focus:ring-blue-800"
+                className="w-60 md:w-96 text-white bg-[#1070ff] hover:bg-[#1070ff] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-[#1070ff] dark:hover:bg-[#1070ff] dark:focus:ring-blue-800"
               >
                 <Link to="/reset_password">Click here to reset password</Link>
               </button>
@@ -34,7 +35,7 @@ const ResetLink = () => {
               Didn't receive the email yet?{" "}
               <Link
                 to="/forgot_password"
-                className="text-[#0056D6] font-semi-bold"
+                className="text-[#1070ff] font-semi-bold"
               >
                 Click here to resend
               </Link>
@@ -50,4 +51,3 @@ const ResetLink = () => {
   );
 };
 
-export default ResetLink;

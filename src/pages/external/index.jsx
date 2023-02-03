@@ -4,4 +4,6 @@ export * from './home'
 export * from './howItWorks'
 export * from './signIn'
 export * from './signUp'
-
+export * from './ForgetPassword'
+export * from './LinkReset'
+export * from './resetPassword'

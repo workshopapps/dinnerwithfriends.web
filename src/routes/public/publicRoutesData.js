@@ -1,7 +1,14 @@
-import ForgetPassword from "../../pages/ForgetPassword/index";
-import ResetLink from "../../pages/ForgetPassword/LinkReset";
-import ResetPassword from "../../pages/ForgetPassword/ResetPassword";
-import { Home, Policy, HowItWorks, ContactUs, SignIn, SignUp } from '../../pages';
+import {
+  Home,
+  Policy,
+  HowItWorks,
+  ContactUs,
+  SignUp,
+  SignIn,
+  ForgetPassword,
+  ResetLink,
+  ResetPassword
+} from '../../pages';
 import Terms from "../../pages/t&c";
 import TermsOfUse from "../../pages/termsOfUse";
 import Faq from "../../pages/FAQ/Faq";
