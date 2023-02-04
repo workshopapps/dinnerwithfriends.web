@@ -11,8 +11,8 @@ export const ContactUsDetails = () => {
           <p className="text-[#424245] font-medium mb-1">Leave us a message</p>
           <p className='text-[#898989] font-light'>Our team is always here to help</p>
           <a
-            href="http://hi@catchup.com"
-            className="text-[#B1B1B1] block mt-1 not-italic font-light"
+            href="mailto:contact@catchup.rsvp"
+            className="text-[#B1B1B1] block mt-1 not-italic font-light underline"
           >
             contact@catchup.rsvp
           </a>

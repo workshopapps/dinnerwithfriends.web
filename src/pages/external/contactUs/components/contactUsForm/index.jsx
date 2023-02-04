@@ -86,7 +86,7 @@ export const ContactUsForm = () => {
           type={"text"}
           id={"Name"}
           label={"Name"}
-          placeholder={"Enter your name"}
+          placeholder={"Name"}
           value={enteredFirstName}
           onChange={firstNameInputChangeHandler}
           onBlur={firstNameInputBlurHandler}
@@ -97,7 +97,7 @@ export const ContactUsForm = () => {
           type={"email"}
           id={"email"}
           label={"Email"}
-          placeholder={"Enter your email"}
+          placeholder={"example@mail.com"}
           value={enteredEmail}
           onChange={emailInputChangeHandler}
           onBlur={emailInputBlurHandler}
@@ -128,15 +128,15 @@ export const ContactUsForm = () => {
           {enteredMessageIsInValid && (
             <small className="text-red-500 text-xs">Enter a message</small>
           )}
-          <p className="text-base font-bold text-gray-800">
+          <p className="text-[#B1B1B1] font-bold text-gray-800">
             Maximum of 100 words
           </p>
         </div>
         <Button
           type="submit"
-          className="w-full text-xl font-bold py-2.5 mt-24 mb-9 text-white bg-[#1070FF] rounded-lg"
+          className="w-full text-xl font-bold py-3.5 mt-[1.5rem] mb-9 text-white bg-[#1070FF] rounded-lg"
         >
-          Send
+          Send message
         </Button>
       </form>
       {formSubmittedSuccessfully && (
