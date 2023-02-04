@@ -36,7 +36,7 @@ export const Accordions = () => {
           onClick={() => handleOpen(1)}
           className="!font-bold !text-[1rem] lg:!text-xl !text-[#151517] !border-0 !border-[#fff]"
         >
-          What is catch up?
+          What is catchUp?
         </AccordionHeader>
         <AccordionBody className="!text-[#616161] !text-[0.75rem] lg:!text-sm">
           It is an invitation, gathering, hangout management tool. it enables
@@ -75,7 +75,7 @@ export const Accordions = () => {
           onClick={() => handleOpen(4)}
           className="!font-bold !text-[1rem] lg:!text-xl !text-[#151517] !border-0 !border-[#fff]"
         >
-          Who should use catchup?
+          Who should use catchUp?
         </AccordionHeader>
         <AccordionBody className="!text-[#616161] !text-[0.75rem] lg:!text-sm">
           Anyone struggling with their social life, trying to figure out what
