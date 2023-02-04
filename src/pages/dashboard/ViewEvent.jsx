@@ -37,7 +37,7 @@ const ViewEvent = () => {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 	const newDate = singleEvent && moment(singleEvent.final_event_date).format("dddd, MMMM Do YYYY");
-	
+
 	let { id } = useParams();
 	const getParticipants = async (id) => {
 		const data = await userServices.getParticipants(id);
@@ -61,7 +61,7 @@ const ViewEvent = () => {
 	const handleBack = () => {
 		navigate("/dashboard");
 	};
-	
+
 	const [showDeleteMenu, setShowDeleteMenu] = useState(false);
 	const [showDeleteParticipant, setShowDeleteParticipant] = useState(false);
 	const [showDeleteParticipantSuccess, setShowDeleteParticipantSucess] = useState(false);
@@ -206,7 +206,7 @@ const ViewEvent = () => {
 												src={profile}
 												alt=''
 											/> */}
-											<div className="mr-3 w-10 h-10 flex justify-center items-center text-white bg-[#0056D6] rounded-full font-semibold">{invitee.fullname.slice(0,2)}</div>
+											<div className="mr-3 w-10 h-10 flex justify-center items-center text-white bg-[#0056D6] rounded-full font-semibold">{invitee.fullname.slice(0,1)}</div>
 											<div className='space-y-[-3px]'>
 												<h4 className='font-semibold text-sm'>
 													{participants.indexOf(invitee) + 1}
@@ -271,7 +271,7 @@ const ViewEvent = () => {
 								} h-[44px]`}
 								onClick={() => copyLink()}>
 								<img className={`mr-2 ${
-									copied 
+									copied
 										? "filter invert"
 										: ""}
 								`}

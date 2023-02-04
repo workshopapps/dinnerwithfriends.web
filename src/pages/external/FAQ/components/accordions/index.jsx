@@ -5,7 +5,7 @@ import {
   AccordionBody,
 } from "@material-tailwind/react";
 
-const Accordions = () => {
+export const Accordions = () => {
   const [open, setOpen] = useState(0);
 
   const handleOpen = (value) => {
@@ -137,5 +137,3 @@ const Accordions = () => {
     </Fragment>
   );
 };
-
-export default Accordions;
