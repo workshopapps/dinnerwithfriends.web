@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import googleCalendar from "../../assets/img/g-calendar.svg";
+import googleCalendar from "../../assets/icons/g-calendar.svg";
 import { MdSpaceDashboard } from "react-icons/md";
 import { FiSettings, FiLogIn } from "react-icons/fi";
 import menuStyles from "./createEvent.module.css";
@@ -149,27 +149,27 @@ const CreateEventNavbar = ({setModal}) => {
         {open &&
           <div class="absolute items-center right-6 z-10 w-fit origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
             <div class={`${menuStyles.goTo} py-3 px-2`} role="none">
-              <ul>
-                <li>
-                  <MdSpaceDashboard />
+              <ul className="space-y-2  ">
+                <li className="px-2 ">
+                  <MdSpaceDashboard className="mr-2.5 w-4 ml-0.5" />
                   <Link to="/dashboard" className="block px-2 py-2 text-sm w-full">
                     Dashboard
                   </Link>
                 </li>
-                <li>
-                  <FiSettings />
+                <li className="px-2 ">
+                  <FiSettings className="mr-2.5 w-4 ml-0.5" />
                   <Link to="/profile" className="block px-2 py-2 text-sm w-full">
                     Account Setting
                   </Link>
                 </li>
-                <li>
-                  <Button className="flex items-center py-2" onClick={googleCalenderApi}>
-                    <img src={googleCalendar} alt="" className="mr-2 w-4" />
+                <li className="px-2 ">
+                  <Button className="  flex items-center py-2" onClick={googleCalenderApi}>
+                    <img src={googleCalendar} alt="" className="mr-4 w-4 ml-0.5" />
                     Sync with Google Calender
                   </Button>
                 </li>
                 <div className="flex justify-center items-center gap-x-2 text-black rounded hover:bg-inherit hover:text-color">
-                  <span className='w-[35px] h-[35px] p-[10px] flex justify-center items-center bg-[#0056D6] rounded-[100%]'>
+                  <span className='mr-0.5 ml-0.5 w-[30px] h-[30px] p-[4px] flex justify-center items-center bg-[#0056D6] rounded-[100%]'>
                     <h2 className="text-[#fff] text-[20px] font-bold text-center">{getInitials(user?.name)}</h2>
 						      </span>
                     <span className={menuStyles.theUsersName}>
@@ -178,7 +178,7 @@ const CreateEventNavbar = ({setModal}) => {
                     </span>
                 </div>
                 <li>
-                  <FiLogIn />
+                  <FiLogIn className="mr-3 w-4 ml-2.5 " />
                   <Link to="/" className="block px-2 py-2 text-sm w-full">
                     Log Out
                   </Link>

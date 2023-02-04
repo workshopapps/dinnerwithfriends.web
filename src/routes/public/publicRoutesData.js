@@ -1,17 +1,19 @@
-import Home from '../../pages/home'
-import SignUp from "../../pages/signUp";
-import SignIn from "../../pages/signIn";
-import ForgetPassword from "../../pages/ForgetPassword/index";
-import ResetLink from "../../pages/ForgetPassword/LinkReset";
-import ResetPassword from "../../pages/ForgetPassword/ResetPassword";
-import ContactUs from '../../pages/contactUs';
-import Policy from "../../pages/external/policy";
-import HowItWorks from "../../pages/howItWorks/HowItWorks";
+import {
+  Home,
+  Policy,
+  HowItWorks,
+  ContactUs,
+  Features,
+  SignUp,
+  SignIn,
+  ForgetPassword,
+  ResetLink,
+  ResetPassword
+} from '../../pages';
 import Terms from "../../pages/t&c";
 import TermsOfUse from "../../pages/termsOfUse";
 import Faq from "../../pages/FAQ/Faq";
 // import Error404 from "../../pages/error404";
-import Features from '../../pages/Features-page/features';
 import Career from '../../pages/career/Career';
 import JobDetails from '../../pages/career/JobDetails';
 import HelpRoutes from '../../pages/helpCenter/helpRoutes';

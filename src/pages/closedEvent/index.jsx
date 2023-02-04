@@ -1,7 +1,7 @@
 import React from "react";
 
 import Navbar from "../../components/Navbar";
-import Footer from "../../components/footer/index";
+import {Footer} from "../../components";
 import ClosedEventModal from "../../components/ClosedEventModal";
 
 const index = () => {

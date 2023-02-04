@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import Footer from "../../components/footer/index";
+import {Footer} from "../../components";
 import Navbar from "../../components/Navbar";
 import { termsData } from "./termsData";
 
@@ -14,10 +14,10 @@ const TermsOfUse = () => {
   return (
     <>
       <Navbar />
-      <div className="flex justify-end lg:flex-wrap flex-col mx-4 lg:flex-row lg:mx-8 m-5 pt-20 mb-[100px]">
+      <div className="flex justify-end lg:flex-wrap flex-col mx-4 lg:flex-row lg:mx-8 m-5 pt-20 mb-[100px] font-[Satoshi]">
         <div className="lg:w-4/6 w-full m-2 lg:px-4">
           <p className="mb-5 font-bold text-3xl">Terms of Use</p>
-          <p className="mt-2 text-sm font-medium">
+          <p className="mt-2 text-[#59595B]">
             This document was last updated 15th of December, 2022. To start
             using our product, read this Terms and Conditions thoroughly.
           </p>
@@ -30,7 +30,7 @@ const TermsOfUse = () => {
               return (
                 <li className="my-5" key={term.id}>
                   <a
-                    className={`my-4 font-medium text-base hover:text-blue-800 ${
+                    className={`my-4 font-medium text-base hover:text-blue-800 text-[#424245] ${
                       active === term.heading ? "text-[#0056D6]" : ""
                     }`}
                     href={`#${term.heading}`}
@@ -53,7 +53,7 @@ const TermsOfUse = () => {
                 </h3>
                 {term.paragraphs.map((para, index) => {
                   return (
-                    <p key={index} className="pt-2 pb-4 text-sm font-medium">
+                    <p key={index} className="pt-2 pb-3 text-[#59595B] leading-relaxed ">
                       {para}
                       <a
                         className="text-[#0056D6]"
@@ -68,7 +68,7 @@ const TermsOfUse = () => {
                   {term.lists &&
                     term.lists.map((listItem, index) => {
                       return (
-                        <li key={index} className="list-disc">
+                        <li key={index} className="list-disc text-[#59595B]">
                           {listItem}{" "}
                           <a
                             href={

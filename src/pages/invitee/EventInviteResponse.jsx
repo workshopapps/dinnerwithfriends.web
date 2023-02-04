@@ -1,7 +1,7 @@
 import Navbar from "../../components/Navbar";
 import React from "react";
 import { IoCheckmark } from "react-icons/io5";
-import Footer from "../../components/footer/index";
+import {Footer} from "../../components";
 import { Link } from "react-router-dom";
 
 const EventInviteResponse = () => {

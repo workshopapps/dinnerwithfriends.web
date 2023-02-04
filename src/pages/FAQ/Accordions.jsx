@@ -34,11 +34,11 @@ const Accordions = () => {
       <Accordion open={open === 1} icon={<Icon id={1} open={open} />}>
         <AccordionHeader
           onClick={() => handleOpen(1)}
-          className="!font-semibold !text-sm lg:!text-xl !text-[#151517] !border-0 !border-[#fff]"
+          className="!font-bold !text-[1rem] lg:!text-xl !text-[#151517] !border-0 !border-[#fff]"
         >
-          What is CatchUp?
+          What is catch up?
         </AccordionHeader>
-        <AccordionBody className="!text-[#616161] !text-[14px] lg:!text-sm">
+        <AccordionBody className="!text-[#616161] !text-[0.75rem] lg:!text-sm">
           It is an invitation, gathering, hangout management tool. it enables
           you to easily send, manage, vote, and receive invitations seamlessly.
         </AccordionBody>
@@ -46,82 +46,92 @@ const Accordions = () => {
       <Accordion open={open === 2} icon={<Icon id={2} open={open} />}>
         <AccordionHeader
           onClick={() => handleOpen(2)}
-          className="!font-bold !text-xs lg:!text-xl !text-[#151517] !border-0 !border-[#fff]"
+          className="!font-bold !text-[1rem] lg:!text-xl !text-[#151517] !border-0 !border-[#fff]"
         >
           How do i create an invitation?
         </AccordionHeader>
-        <AccordionBody className="!text-[#616161] !text-[10px] lg:!text-sm">
-        Please click on the "Create Event" button at the top of the screen. 
-        Fill in all the required fields, and make sure to have at least one person invited to complete the process.
+        <AccordionBody className="!text-[#616161] !text-[0.75rem] lg:!text-sm">
+          Please click on the New (+) at the bottom of the screen to start a new
+          invitation or request a vote on time or location, fill all required
+          fileds, and make sure to have at least one person invited to complete
+          the process.
         </AccordionBody>
       </Accordion>
       <Accordion open={open === 3} icon={<Icon id={3} open={open} />}>
         <AccordionHeader
           onClick={() => handleOpen(3)}
-          className="!font-bold !text-xs lg:!text-xl !text-[#151517] !border-0 !border-[#fff] !text-left"
+          className="!font-bold !text-[1rem] lg:!text-xl !text-[#151517] !border-0 !border-[#fff] !text-left"
         >
           Can I change my mind about an invitation I received?
         </AccordionHeader>
-        <AccordionBody className="!text-[#616161] !text-[10px] lg:!text-sm">
-        Yes, you have the option to cancel, or you can inform the host to remove you.
+        <AccordionBody className="!text-[#616161] !text-[0.75rem] lg:!text-sm">
+          Yes, you can reselect another reply to your received invitations if
+          the event did not start yet. Once the event starts, you cannot change
+          your reply
         </AccordionBody>
       </Accordion>
       <Accordion open={open === 4} icon={<Icon id={4} open={open} />}>
         <AccordionHeader
           onClick={() => handleOpen(4)}
-          className="!font-bold !text-xs lg:!text-xl !text-[#151517] !border-0 !border-[#fff]"
+          className="!font-bold !text-[1rem] lg:!text-xl !text-[#151517] !border-0 !border-[#fff]"
         >
           Who should use catchup?
         </AccordionHeader>
-        <AccordionBody className="!text-[#616161] !text-[10px] lg:!text-sm">
-        Professionals from all walks of life that want to hang out with colleagues, friends, and family.
+        <AccordionBody className="!text-[#616161] !text-[0.75rem] lg:!text-sm">
+          Anyone struggling with their social life, trying to figure out what
+          works for them and their guest/friends. Now they can instantly find
+          out when their friends are all free and make plans on the spot.
         </AccordionBody>
       </Accordion>
       <Accordion open={open === 5} icon={<Icon id={5} open={open} />}>
         <AccordionHeader
           onClick={() => handleOpen(5)}
-          className="!font-bold !text-xs lg:!text-xl !text-[#151517] !border-0 !border-[#fff]"
+          className="!font-bold !text-[1rem] lg:!text-xl !text-[#151517] !border-0 !border-[#fff]"
         >
           How do I get help?
         </AccordionHeader>
-        <AccordionBody className="!text-[#616161] !text-[10px] lg:!text-sm">
-        You can reach out to us via email: <a className="underline text-[#1070FF]" href="mailto:contact@catchup.rsvp">contact@catchup.rsvp</a>
+        <AccordionBody className="!text-[#616161] !text-[0.75rem] lg:!text-sm">
+          We have a live chat, offering support as fast as possible. Otherwise,
+          you can always email us at support@catchup.com, and will get back to
+          you within 24 hours.
         </AccordionBody>
       </Accordion>
       <Accordion open={open === 6} icon={<Icon id={6} open={open} />}>
         <AccordionHeader
           onClick={() => handleOpen(6)}
-          className="!font-bold !text-xs lg:!text-xl !text-[#151517] !border-0 !border-[#fff]"
+          className="!font-bold !text-[1rem] lg:!text-xl !text-[#151517] !border-0 !border-[#fff]"
         >
           Can I add an event to my calendar?
         </AccordionHeader>
-        <AccordionBody className="!text-[#616161] !text-[10px] lg:!text-sm">
+        <AccordionBody className="!text-[#616161] !text-[0.75rem] lg:!text-sm">
           Catch up would ask to get permission to your calender, If you allowed
           access, then events will be added to your calendar using the time zone
-          of the location of the event
+          of the location of the even
         </AccordionBody>
       </Accordion>
       <Accordion open={open === 7} icon={<Icon id={7} open={open} />}>
         <AccordionHeader
           onClick={() => handleOpen(7)}
-          className="!font-bold !text-xs lg:!text-xl !text-[#151517] !border-0 !border-[#fff] !text-left"
+          className="!font-bold !text-[1rem] lg:!text-xl !text-[#151517] !border-0 !border-[#fff] !text-left"
         >
           Do I need to download the app to create or receive invite?
         </AccordionHeader>
-        <AccordionBody className="!text-[#616161] !text-[10px] lg:!text-sm">
-        You need to be a registered user to create an event. 
-        However, you can accept an invite whether you are registered or not.
+        <AccordionBody className="!text-[#616161] !text-[0.75rem] lg:!text-sm">
+          No, you don’t need to download to create an invite. With access to
+          your mobile phone or desktop that has internet you can utilize all the
+          fuctions and features of the app.
         </AccordionBody>
       </Accordion>
       <Accordion open={open === 8} icon={<Icon id={8} open={open} />}>
         <AccordionHeader
           onClick={() => handleOpen(8)}
-          className="!font-bold !text-xs lg:!text-xl !text-[#151517] !border-0 !border-[#fff]"
+          className="!font-bold !text-[1rem] lg:!text-xl !text-[#151517] !border-0 !border-[#fff] !text-left"
         >
           Can I invite friends from my contact list?
         </AccordionHeader>
-        <AccordionBody className="!text-[#616161] !text-[10px] lg:!text-sm">
-        You cannot invite them with a click. However, you can send them an invite link.
+        <AccordionBody className="!text-[#616161] !text-[0.75rem] lg:!text-sm">
+          Catch up would ask to get permission from your contact list, if
+          contact is allowed access, then you can add your contact to catch up.
         </AccordionBody>
       </Accordion>
     </Fragment>
