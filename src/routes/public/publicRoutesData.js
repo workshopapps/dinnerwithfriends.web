@@ -4,6 +4,7 @@ import {
   HowItWorks,
   ContactUs,
   Features,
+  Faq,
   SignUp,
   SignIn,
   ForgetPassword,
@@ -12,7 +13,6 @@ import {
 } from '../../pages';
 import Terms from "../../pages/t&c";
 import TermsOfUse from "../../pages/termsOfUse";
-import Faq from "../../pages/FAQ/Faq";
 // import Error404 from "../../pages/error404";
 import Career from '../../pages/career/Career';
 import JobDetails from '../../pages/career/JobDetails';

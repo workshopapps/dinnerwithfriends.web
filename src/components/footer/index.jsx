@@ -30,7 +30,7 @@ export const Footer = () => {
   ));
 
   return (
-    <footer className="bg-[#1070FF] overflow-hidden px-[64px] pt-[56px] pb-[62px]">
+    <footer className="bg-[#1070FF] overflow-hidden px-[28px] mb:px-[64px] pt-[56px] pb-[62px]">
       {/* <div className="block lg:flex justify-between "> */}
       <div className="block md:flex gap-8 justify-between ">
         <div>

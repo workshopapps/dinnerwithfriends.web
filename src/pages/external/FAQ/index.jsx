@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Navbar from "../../components/Navbar";
-import Accordions from "./Accordions";
-import people from "../../assets/img/faq-models.png";
-import Button from "../../components/Button";
-import {Footer} from "../../components";
+import Navbar from "../../../components/Navbar";
+import {Accordions} from "./components";
+import people from "../../../assets/img/faq-models.png";
+import Button from "../../../components/Button";
+import {Footer} from "../../../components";
 
-const Faq = () => {
+export const Faq = () => {
   return (
     <>
       <Navbar />
@@ -46,5 +46,3 @@ const Faq = () => {
     </>
   );
 };
-
-export default Faq;
