@@ -20,7 +20,7 @@ const Navbar = () => {
     <nav
       className={`transition ease-in duration-400 bg-white lg:px-[80px] px-2.5 md:h-[85px] md:pb-2 fixed w-full z-20 top-0 left-0 border-b border-[#E3E3E3]`}
     >
-      <div className="h-[45px] md:h-[76px] py-4 md:py-0 bg-transparent container flex flex-wrap items-center justify-between mx-auto">
+      <div className="h-[48px] md:h-[76px] py-4 md:py-0 bg-transparent container flex flex-wrap items-center justify-between mx-auto">
         <Logo />
         <div className="flex md:order-2">
           <Link
