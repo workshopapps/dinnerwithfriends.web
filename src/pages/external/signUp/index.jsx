@@ -71,7 +71,8 @@ export const SignUp = () => {
   const pattern =
     // eslint-disable-next-line no-useless-escape
     /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  const secondPattern = /^[a-z][a-z0-9]+$/gi;
+  // eslint-disable-next-line
+  const secondPattern = /^(?=.*[!@#\$%\^&\*])[a-zA-Z0-9!@#\$%\^&\*]+$/gi;
   const thirdPattern = /^[a-z][a-z0-9\s]+$/gi;
   return (
     <div className="w-full mx-auto tablet:flex tablet:justify-center">
@@ -209,7 +210,7 @@ export const SignUp = () => {
                   pattern: {
                     value: secondPattern,
                     message:
-                      "Password has to start with a letter, can contain numbers. No spaces and special characters allowed",
+                      "Password has to start with a letter, can contain numbers and special characters. No spaces allowed",
                   },
                 })}
               />
