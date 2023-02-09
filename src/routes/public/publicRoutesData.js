@@ -19,6 +19,8 @@ import JobDetails from '../../pages/career/JobDetails';
 import HelpRoutes from '../../pages/helpCenter/helpRoutes';
 import AboutUsPage from '../../pages/aboutUs';
 import Verify from '../../pages/verify';
+import EmailInvite from '../../pages/emailInvite'
+import Invited from '../../pages/invited'
 
 const publicRoutesData = [
     {
@@ -110,6 +112,16 @@ const publicRoutesData = [
       path: "verify",
       element: <Verify />,
       title: "verify"
+    },
+    {
+      path: "emailInvite",
+      element: <EmailInvite />,
+      title: "emailInvite"
+    },
+    {
+      path: "invited",
+      element: <Invited />,
+      title: "invited"
     },
     // {
     //   path: "*",
