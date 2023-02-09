@@ -1,9 +1,9 @@
-import HelpSearch from "./search";
+import HelpSearch from "../search";
 
 
-const Sidebar = ({ data, activeLink, setActiveLink }) => {
+export const Sidebar = ({ data, activeLink, setActiveLink }) => {
 
-    return (        
+    return (
         <div className="lg:w-80 sm:w-auto lg:sticky md:mr-8 lg:h-screen top-0 static px-2 mt-10 my-20">
             <div className="md:-mt-10">
                 <HelpSearch />
@@ -30,4 +30,3 @@ const Sidebar = ({ data, activeLink, setActiveLink }) => {
     )
 }
 
-export default Sidebar;

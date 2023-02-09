@@ -1,8 +1,8 @@
 import { useRef, useState } from "react";
 import { FiSearch } from "react-icons/fi";
-import { data } from "../helpData"
+import { data } from "../../helpData"
 
-const HelpSearch = () => {
+export const HelpSearch = () => {
     const [active, setActive] = useState(false);
     const [result, setResult] = useState([])
     const inputRef = useRef(null)
@@ -55,4 +55,3 @@ const HelpSearch = () => {
     )
 }
 
-export default HelpSearch;
