@@ -1,9 +1,9 @@
-import Sidebar from "./sideBar";
-import { Accordion, AccordionHeader, AccordionBody } from "@material-tailwind/react";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import { Accordion, AccordionHeader, AccordionBody } from "@material-tailwind/react";
+import { Sidebar } from "../sideBar";
 
-const Category = ({ data, activeLink, setActiveLink, activeCategory }) => {
+export const Category = ({ data, activeLink, setActiveLink, activeCategory }) => {
     const [open, setOpen] = useState(0)
     const location = useLocation();
     const searchQuery = location.search.slice(1) || "";
@@ -31,8 +31,8 @@ const Category = ({ data, activeLink, setActiveLink, activeCategory }) => {
 
                 <div className="md:p-8 p-4 bg-gray-100">
                     {
-                        activeCategory[0] && 
-                        
+                        activeCategory[0] &&
+
                         activeCategory[0].contents.filter(item => item.question.replaceAll(" ", "-").indexOf(searchQuery) !== -1)
                         .map((content, i) => {
                             return (
@@ -53,4 +53,3 @@ const Category = ({ data, activeLink, setActiveLink, activeCategory }) => {
     )
 }
 
-export default Category;

@@ -1,13 +1,11 @@
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import HelpCenter from ".";
-import {Footer} from "../../components";
-import Navbar from "../../components/Navbar";
-import BottomBar from "./components/bottomBar";
-import Category from "./components/category";
+import {Footer} from "../../../components";
+import Navbar from "../../../components/Navbar";
+import { BottomBar, Category, Help } from "./components";
 import { data } from "./helpData";
 
-const HelpRoutes = () => {
+export const HelpRoutes = () => {
   const [activeLink, setActiveLink] = useState("get_started");
 
   return (
@@ -17,7 +15,7 @@ const HelpRoutes = () => {
         <Route
           path=""
           exact
-          element={<HelpCenter data={data} activeLink={activeLink} />}
+          element={<Help data={data} activeLink={activeLink} />}
         />
         <Route
           path="/category"
@@ -43,5 +41,3 @@ const HelpRoutes = () => {
     </div>
   );
 };
-
-export default HelpRoutes;

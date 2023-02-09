@@ -1,4 +1,4 @@
-const BottomBar = () => {
+export const BottomBar = () => {
     return (
         <div className="p-12 py-10 bg-primary-900 text-white lg:mx-40 md:mx-12 m-4 -translate-y-32 mt-60 mb-0">
             <h1 className="md:w-1/2 text-5xl font-semibold">Couldn't get the help you need</h1>
@@ -9,5 +9,3 @@ const BottomBar = () => {
         </div>
     )
 }
-
-export default BottomBar;

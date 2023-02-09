@@ -8,23 +8,17 @@ export const formLogic = (values) => {
 		error.event_description = "Please type in a description";
 	}
 
-	if (!values.location) {
-		error.location = "Please type in a location";
-	} else if (!/^[A-Za-z][A-Za-z ]{2,30}$/.test(values.location)) {
-		error.location =
-			"Location is invalid. Please remove any special characters.";
-	}
-	// else if (
-	//   // eslint-disable-next-line
-	//   !/^(?=,;:.*[!@#\$%\^&\*])[a-zA-Z0-9!@#\$%\^&\*]{2,30}$/gi.test(
-	//     values.location
-	//   )
-	// ) {
-	//   error.location = "Location cannot be empty. Please type in a location";
-	// }
-	if (!values.event_type) {
-		error.event_type = "Please type in an event type";
-	}
+  if (!values.location) {
+    error.location = "Please type in a location";
+  }
+
+  else if(!/^[A-Za-z][A-Za-z ]{2,30}$/.test(values.location)){
+      error.location = "Location is invalid. Please remove any special characters."
+  }
+  
+  if (!values.event_type) {
+    error.event_type = "Please type in an event type";
+  }
 
 	if (!values.participant_number) {
 		error.participant_number = "Please type in a number for participants";
