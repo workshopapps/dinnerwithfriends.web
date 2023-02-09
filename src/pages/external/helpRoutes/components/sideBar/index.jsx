@@ -1,4 +1,4 @@
-import HelpSearch from "../search";
+import { HelpSearch } from "../helpSearch";
 
 
 export const Sidebar = ({ data, activeLink, setActiveLink }) => {

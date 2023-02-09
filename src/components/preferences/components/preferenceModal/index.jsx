@@ -12,7 +12,7 @@ export const PreferenceModal = ({popup, setPopup, setIsOpen}) => {
 
   return (
     <div className={`${popup ?'fixed top-0 right-0 left-0 bottom-0 w-screen overflow-y-scroll z-20 bg-black bg-opacity-30': 'hidden'}`}>
-      <div className='flex flex-col justify-start items-start bg-white my-[50px] w-[50%] m-auto rounded-[20px]'>
+      <div className='flex flex-col justify-start items-start bg-white my-[50px] w-[90%] md:w-[50%] m-auto rounded-[20px]'>
       <Button type='button' onClick={handleClose} className='flex justify-end items-center border-b border-[#ececec] w-full px-[20px] md:px-[40px] py-[15px] md:py-[25px] '>
         <FaTimes />
       </Button>
@@ -23,7 +23,7 @@ export const PreferenceModal = ({popup, setPopup, setIsOpen}) => {
         </p>
       </div>
       <div className='w-full px-[20px] md:px-[40px] mt-[10px]'>
-        <h2 className='text-black font-medium mb-[16px] text-[1.25rem]'>Manage Consent Preference</h2>
+        <h2 className='text-black font-medium mb-[16px] md:text-[1.25rem]'>Manage Consent Preference</h2>
         <div className="w-full">
           {preferenceData.map(({ title, content, status, index }) => (
             <PreferenceAccordion key={title} title={title} content={content} status={status} preferenceData={preferenceData} index={index}/>

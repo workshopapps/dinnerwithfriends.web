@@ -4,6 +4,7 @@ import {
   HowItWorks,
   ContactUs,
   Features,
+  HelpRoutes,
   Faq,
   SignUp,
   SignIn,
@@ -16,7 +17,6 @@ import TermsOfUse from "../../pages/termsOfUse";
 // import Error404 from "../../pages/error404";
 import Career from '../../pages/career/Career';
 import JobDetails from '../../pages/career/JobDetails';
-import HelpRoutes from '../../pages/helpCenter/helpRoutes';
 import AboutUsPage from '../../pages/aboutUs';
 import Verify from '../../pages/verify';
 

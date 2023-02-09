@@ -8,7 +8,7 @@ export const Preferences = ({isOpen, setIsOpen, setPopup}) => {
   }
 
   return (
-    <div className={`w-full fixed text-[14px] h-[180px] flex-flex-col justify-center items-center bottom-0 left-0 right-0 bg-[#1070FF] p-[20px] transition-height ease-in-out delay-150 ${isOpen ? 'h-[50px]' : ''}`}>
+    <div className={`w-full fixed text-[14px] flex-flex-col justify-center items-center h-[180px] left-0 right-0 bg-[#1070FF] p-[20px] ${isOpen ? 'bottom-0' : '-bottom-full'} transition-all duration-1000 ease-in delay-700`}>
       <p className='text-white mb-[25px] text-center'>We use cookies to optimize site functionality and give you the best possible experience</p>
       <div className='flex flex-col justify-center items-center'>
         <Button type='button' className='block mb-[20px] border-0 outline-0 focus:outline-0 bg-none text-white underline decoration-white' onClick={handlePopup}>

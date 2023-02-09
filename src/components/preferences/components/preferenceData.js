@@ -7,29 +7,20 @@ export const preferenceData = [
     },
     {
       index: 2,
-      title: 'performance',
+      title: 'Performance Cookies',
       status: false,
-      content: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia veniam
-      reprehenderit nam assumenda voluptatem ut. Ipsum eius dicta, officiis
-      quaerat iure quos dolorum accusantium ducimus in illum vero commodi
-      pariatur? Impedit autem esse nostrum quasi, fugiat a aut error cumque
-      quidem maiores doloremque est numquam praesentium eos voluptatem amet!
-      Repudiandae, mollitia id reprehenderit a ab odit!`
+      content: `These cookies allow us to analyze site usage, so we can measure and improve performance of our site. It allows us to count each visit and traffic on our website.`
     },
     {
       index: 3,
-      title: 'functional',
+      title: 'Functional Cookies',
       status: false,
-      content: `Sapiente expedita hic obcaecati, laboriosam similique omnis architecto ducimus magnam accusantium corrupti
-      quam sint dolore pariatur perspiciatis, necessitatibus rem vel dignissimos
-      dolor ut sequi minus iste? Quas?`
+      content: `These cookies ensure that the website functions properly. It enables optimized functionality and personalization and may be set by us or a third party.`
     },
     {
       index: 4,
-      title: 'targeting',
+      title: 'Targeting Cookies',
       status: false,
-      content: `Sapiente expedita hic obcaecati, laboriosam similique omnis architecto ducimus magnam accusantium corrupti
-      quam sint dolore pariatur perspiciatis, necessitatibus rem vel dignissimos
-      dolor ut sequi minus iste? Quas?`
+      content: `These cookies may be set through our site by our advertising partners. They may be used by those companies to build a profile of your interests and show you relevant adverts on other sites.`
     }
   ];

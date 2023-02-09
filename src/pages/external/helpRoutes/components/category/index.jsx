@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Accordion, AccordionHeader, AccordionBody } from "@material-tailwind/react";
-import Sidebar from "../sideBar";
+import { Sidebar } from "../sideBar";
 
 export const Category = ({ data, activeLink, setActiveLink, activeCategory }) => {
     const [open, setOpen] = useState(0)

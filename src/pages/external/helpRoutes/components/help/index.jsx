@@ -1,6 +1,6 @@
-import HelpSearch from "./components/search";
+import {HelpSearch} from "../helpSearch";
 
-const HelpCenter = ({ data, setActiveLink }) => {
+export const Help = ({ data, setActiveLink }) => {
 
     return (
         <div className="lg:mx-40 md:mx-12 mx-4 lg:py-24 py-12">
@@ -35,5 +35,3 @@ const HelpCenter = ({ data, setActiveLink }) => {
         </div>
     )
 }
-
-export default HelpCenter;
