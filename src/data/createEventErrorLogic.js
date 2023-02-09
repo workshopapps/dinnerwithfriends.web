@@ -11,15 +11,11 @@ export const formLogic = (values) => {
   if (!values.location) {
     error.location = "Please type in a location";
   }
-  
-  else if (
-    // eslint-disable-next-line
-    !/^(?=,;:.*[!@#\$%\^&\*])[a-zA-Z0-9!@#\$%\^&\*]{2,30}$/gi.test(
-      values.location
-    )
-  ) {
-    error.location = "Location cannot be empty. Please type in a location";
+
+  else if(!/^[A-Za-z][A-Za-z ]{2,30}$/.test(values.location)){
+      error.location = "Location is invalid. Please remove any special characters."
   }
+  
   if (!values.event_type) {
     error.event_type = "Please type in an event type";
   }

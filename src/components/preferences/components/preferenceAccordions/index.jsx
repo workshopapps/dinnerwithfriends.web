@@ -14,7 +14,7 @@ export const PreferenceAccordion = ({ title, content, status }) => {
     );
   }
 
-  console.log(data)
+  
   return (
     <div className="w-full border border-[#cdcdcd]">
       <div className="w-full p-[10px] flex justify-between items-center"  onClick={() => setIsActive(!isActive)}>
