@@ -1,9 +1,10 @@
 import React from "react";
 import Navbar from "../../../components/Navbar";
-import {Footer} from "../../../components";
-import {Hero, Schedule, Banner, Testimonials} from "./components";
+import {Footer, Preferences} from "../../../components";
+import { Hero, Schedule, Banner, Testimonials } from "./components";
 
 export const Home = () => {
+
   return (
     <>
       <Navbar />
