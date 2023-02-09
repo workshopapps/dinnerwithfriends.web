@@ -1,10 +1,10 @@
 //icons
-import magicpen from "./assets/magicpen.svg";
-import favorite from "./assets/favorite-chart.svg";
-import setting from "./assets/setting-2.svg";
-import menu from "./assets/menu-board.svg";
-import convert from "./assets/convert-3d-cube.svg";
-import key from "./assets/key.svg";
+import magicpen from "../../assets/icons/magicpen.svg";
+import favorite from "../../assets/icons/favorite-chart.svg";
+import setting from "../../assets/icons/setting-2.svg";
+import menu from "../../assets/icons/menu-board.svg";
+import convert from "../../assets/icons/convert-3d-cube.svg";
+import key from "../../assets/icons/key.svg";
 
 export const data = [
     {
