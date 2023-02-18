@@ -89,7 +89,7 @@ export const SignUp = () => {
           </p>
           {existingUser && (
             <p style={{ color: "red" }} className="mt-4 text-base text-center">
-              User already exists!
+              Sorry,something went wrong. Try again!
             </p>
           )}
           {accountCreated && (
