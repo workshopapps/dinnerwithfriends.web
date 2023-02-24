@@ -5,9 +5,11 @@ import { useNavigate } from "react-router-dom";
 
 const Verify = () => {
   const [cookies] = useCookies(["accessToken", "refreshToken"]);
+  console.log(cookies)
   const navigate = useNavigate();
   useEffect(() => {
-    localStorage.setItem("jwt-token", cookies.accessToken);
+    console.log(cookies)
+    localStorage.setItem("jwt-token", cookies["accessToken"]);
     navigate("/dashboard");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
