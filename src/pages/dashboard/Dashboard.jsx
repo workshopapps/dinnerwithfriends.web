@@ -17,18 +17,22 @@ const Dashboard = () => {
   
 
   useEffect(() => {
-    async function fetchData() {
-      const data = await userServices.getAllEvents();
-      setEvents(data);
-      const eventsJson = JSON.stringify(data);
-      localStorage.setItem("eventsArr", eventsJson);
-    }
     fetchData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  async function fetchData() {
+    const data = await userServices.getAllEvents();
+    if (data.length > 0){
+      setEvents(data);
+      const eventsJson = JSON.stringify(data);
+      localStorage.setItem("eventsArr", eventsJson);
+    }
+  }
+
+
   const filteredEvents =
-    events.length === 0
+    events.length < 1
       ? events
       : events.filter((event) => event.published === status);
 
@@ -100,8 +104,6 @@ const Dashboard = () => {
     return gapi.client.calendar.calendarList.list({}).then(
       function (response) {
         // Handle the results here (response.result has the parsed body).
-        console.log("Response", response);
-
         if (response.status === 200) {
           setModal(true);
         }

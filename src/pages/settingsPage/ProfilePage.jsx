@@ -20,7 +20,6 @@ const ProfilePage = () => {
 
   const fetchData = async () => {
     const data = await userServices.getUser();
-
     setUser(data);
   };
   useEffect(() => {
