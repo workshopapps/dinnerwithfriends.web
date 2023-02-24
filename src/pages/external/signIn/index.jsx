@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import signInImage from "../../../assets/img/Rectangle 254.png";
 import userServices from "../../../services/userServices";
 import Logo from "../../../components/Logo";
+import { BASE_URL } from "../../../services/rootEndPoints";
 
 export const SignIn = () => {
 	const {
@@ -23,7 +24,7 @@ export const SignIn = () => {
 	};
 
 	const googleSignInAuth = () => {
-		const gLink = "https://api.catchup.hng.tech/api/v1/auth/google/auth";
+		const gLink = `${BASE_URL}/auth/google`;
 		navigate(gLink.slice(6));
 	};
 

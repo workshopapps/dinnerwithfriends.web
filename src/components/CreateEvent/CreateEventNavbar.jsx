@@ -25,7 +25,7 @@ const CreateEventNavbar = ({setModal}) => {
 
   useEffect(() => {
     fetchData();
-  }, [user])
+  }, [])
 
 	const [open, setOpen] = useState(false);
   const [showNav, setShowNav] = useState(false);

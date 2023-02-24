@@ -40,6 +40,7 @@ export const CatchUpEventContextProvider = ({ children }) => {
 		setRemovedParticipants
 	};
 
+
 	return (
 		<CatchUpEventContext.Provider value={values}>
 			{children}

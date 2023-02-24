@@ -4,14 +4,14 @@ import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
 
 const Verify = () => {
-  const [cookies] = useCookies();
+  const [cookies] = useCookies(["accessToken", "refreshToken"]);
   const navigate = useNavigate();
   useEffect(() => {
     localStorage.setItem("jwt-token", cookies.accessToken);
     navigate("/dashboard");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
+  
   return;
 };
 
