@@ -45,7 +45,7 @@ export const SignUp = () => {
       }),
     };
 
-    fetch(`${BASE_URL}/auth/signup`, options)
+    fetch(`https://api.catchup.hng.tech/api/v1/auth/signup`, options)
       .then((response) => {
         if (!response.ok) {
           throw Error(response.status);
