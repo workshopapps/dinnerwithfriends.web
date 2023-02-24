@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import image from "../../../assets/img/signup_image.webp";
 import google from "../../../assets/icons/google.svg";
 import Logo from "../../../components/Logo";
+import { BASE_URL } from "../../../services/rootEndPoints";
 
 export const SignUp = () => {
   const {
@@ -24,7 +25,7 @@ export const SignUp = () => {
   };
 
   const googleSignUpAuth = () => {
-    const gLink = "https://api.catchup.hng.tech/api/v1/auth/google/auth";
+    const gLink = `${BASE_URL}/auth/google`
     navigate(gLink.slice(6));
   };
 
@@ -44,7 +45,7 @@ export const SignUp = () => {
       }),
     };
 
-    fetch("https://api.catchup.hng.tech/api/v1/auth/signup", options)
+    fetch(`${BASE_URL}/auth/signup`, options)
       .then((response) => {
         if (!response.ok) {
           throw Error(response.status);
