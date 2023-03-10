@@ -10,7 +10,8 @@ import {
   SignIn,
   ForgetPassword,
   ResetLink,
-  ResetPassword
+  ResetPassword,
+  Verify
 } from '../../pages';
 import Terms from "../../pages/t&c";
 import TermsOfUse from "../../pages/termsOfUse";
@@ -18,7 +19,6 @@ import TermsOfUse from "../../pages/termsOfUse";
 import Career from '../../pages/career/Career';
 import JobDetails from '../../pages/career/JobDetails';
 import AboutUsPage from '../../pages/aboutUs';
-import Verify from '../../pages/verify';
 import EmailInvite from '../../pages/emailInvite'
 import Invited from '../../pages/invited'
 

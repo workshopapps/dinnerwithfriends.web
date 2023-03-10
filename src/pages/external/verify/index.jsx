@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
 
-const Verify = () => {
+export const Verify = () => {
   const [cookies] = useCookies(["accessToken", "refreshToken"]);
   console.log(cookies)
   const navigate = useNavigate();
@@ -13,8 +13,7 @@ const Verify = () => {
     navigate("/dashboard");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  
+
   return;
 };
 
-export default Verify;
