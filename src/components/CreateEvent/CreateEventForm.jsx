@@ -39,6 +39,7 @@ const CreateEventForm = () => {
 		setMaximumDate(end);
 	}, [startDate, endDate]);
 
+	console.log(minimumDate, maximumDate)
 	const navigate = useNavigate();
 
 	const [errors, setErrors] = useState({
@@ -168,6 +169,7 @@ const CreateEventForm = () => {
 								required
 								id='desc'
 								value={formValues.event_description}
+								minLength="3"
 								onChange={(e) =>
 									setFormValues({
 										...formValues,

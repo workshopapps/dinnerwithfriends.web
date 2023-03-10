@@ -73,7 +73,7 @@ export const SignUp = () => {
     // eslint-disable-next-line no-useless-escape
     /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   // eslint-disable-next-line
-  const secondPattern = /^(?=.*[!@#\$%\^&\*])[a-zA-Z0-9!@#\$%\^&\*]+$/gi;
+  const secondPattern = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{9,20}$/;
   const thirdPattern = /^[a-z][a-z0-9\s]+$/gi;
   return (
     <div className="w-full mx-auto tablet:flex tablet:justify-center">
@@ -90,7 +90,7 @@ export const SignUp = () => {
           </p>
           {existingUser && (
             <p style={{ color: "red" }} className="mt-4 text-base text-center">
-              Sorry,something went wrong. Try again!
+              Sorry!, This email has already been registered.
             </p>
           )}
           {accountCreated && (
@@ -211,7 +211,7 @@ export const SignUp = () => {
                   pattern: {
                     value: secondPattern,
                     message:
-                      "Password has to start with a letter, can contain numbers and special characters. No spaces allowed",
+                      "Password must have at least 9 characters. It must include a letter, a number and a special character",
                   },
                 })}
               />

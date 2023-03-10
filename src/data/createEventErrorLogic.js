@@ -1,11 +1,12 @@
 export const formLogic = (values) => {
 	let error = {};
-	if (!values.event_title) {
-		error.event_title = "Please type in an event invite";
+
+	if (values.event_title?.length < 3 ) {
+		error.event_title = "Event title must have minimum of 3 characters";
 	}
 
-	if (!values.event_description) {
-		error.event_description = "Please type in a description";
+	if (values.event_description?.length < 3 ) {
+		error.event_description = "Event description must have minimum of 3 characters";
 	}
 
   if (!values.location) {
@@ -15,7 +16,7 @@ export const formLogic = (values) => {
   else if(!/^[A-Za-z][A-Za-z ]{2,30}$/.test(values.location)){
       error.location = "Location is invalid. Please remove any special characters."
   }
-  
+
   if (!values.event_type) {
     error.event_type = "Please type in an event type";
   }
