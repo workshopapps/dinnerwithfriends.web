@@ -15,10 +15,10 @@ export const SignIn = () => {
 	} = useForm();
 	const [isSubmit, setIsSubmit] = useState(false);
 	const [isLoggedIn, setIsloggedIn] = useState(false);
+	const [networkError, setNetworkError] = useState(false);
 	const [invalidCredentials, setInvalidCredentials] = useState(false);
 	const navigate = useNavigate();
 	const [passwordShown, setPasswordShown] = useState(false);
-
 	const togglePassword = () => {
 		setPasswordShown(!passwordShown);
 	};
@@ -35,6 +35,11 @@ export const SignIn = () => {
 		if (result.status === "fail") {
 			setIsSubmit(false);
 			setInvalidCredentials(true);
+		}
+
+		if (result.status === "error") {
+			setIsSubmit(false);
+			setNetworkError(true);
 		}
 
 		if (result.status === "success") {
@@ -58,6 +63,12 @@ export const SignIn = () => {
 			element = (
 				<p className='mt-4 text-xl text-red-600 text-center'>
 					Incorrect Email or Password
+				</p>
+			);
+		} else if (networkError) {
+			element = (
+				<p className='mt-4 text-xl text-red-600 text-center'>
+					Something went wrong. Please try again!
 				</p>
 			);
 		}
