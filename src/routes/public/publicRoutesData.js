@@ -11,7 +11,8 @@ import {
   ForgetPassword,
   ResetLink,
   ResetPassword,
-  Verify
+  Verify,
+  LinkInvitee
 } from '../../pages';
 import Terms from "../../pages/t&c";
 import TermsOfUse from "../../pages/termsOfUse";
@@ -112,6 +113,11 @@ const publicRoutesData = [
       path: "verify",
       element: <Verify />,
       title: "verify"
+    },
+    {
+      path: "invitee/:id",
+      element: <LinkInvitee />,
+      title: "invitee"
     },
     {
       path: "emailInvite",

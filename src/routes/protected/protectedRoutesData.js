@@ -7,7 +7,7 @@ import EventInvite from "../../pages/invitee/EventInvite";
 import ProfilePage from "../../pages/settingsPage/ProfilePage";
 import Settings from "../../pages/settingsPage/ProfilePage";
 import AccountSettings from "../../pages/settingsPage/UserProfile";
-import Invitee from "../../pages/invitee";
+import Invitee from "../../pages/external/linkInvitee";
 import ClosedEvent from "../../pages/closedEvent";
 // import Error404 from "../../pages/error404";
 
@@ -23,22 +23,17 @@ const protectedRoutesData = [
       title: "create events"
     },
     {
-      path: "view_event/:id",
-      element: <ViewEvent />,
-      title: "view event"
-    },
-    {
       path: "event_summary",
       element: <EventSummary />,
       title: "event summary"
     },
     {
-      path: "event_invite/event_invite_response",
-      element: <EventInviteResponse />,
-      title: "event response"
+      path: "view_event/:id",
+      element: <ViewEvent />,
+      title: "view event"
     },
     {
-      path: "invitee/event_invite_response",
+      path: "event_invite_response",
       element: <EventInviteResponse />,
       title: "event response"
     },
@@ -61,11 +56,6 @@ const protectedRoutesData = [
       path: "update_details",
       element: <AccountSettings />,
       title: "account settings"
-    },
-    {
-      path: "invitee/:id",
-      element: <Invitee />,
-      title: "invitee"
     },
     {
       path: "closed_event",

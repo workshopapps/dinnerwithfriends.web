@@ -8,6 +8,7 @@ import CreateEventNavbar from "../../components/CreateEvent/CreateEventNavbar";
 import EventSummaryModal from "../../components/EventSummaryModal";
 import userServices from "../../services/userServices";
 import moment from "moment";
+
 const EventSummary = () => {
 	const [email, setEmail] = useState("");
 	const [participants, setParticipants] = useState([]);
