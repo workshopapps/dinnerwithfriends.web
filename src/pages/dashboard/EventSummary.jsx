@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import { CiLocationOn, CiCalendar } from "react-icons/ci";
 import { CgMenuLeftAlt } from "react-icons/cg";
 import { AiOutlineCloseCircle, AiOutlineUser } from "react-icons/ai";
-import { BsPlus } from "react-icons/bs";
+import { BsClock } from "react-icons/bs";
 import { Link, useLocation } from "react-router-dom";
 import CreateEventNavbar from "../../components/CreateEvent/CreateEventNavbar";
 import EventSummaryModal from "../../components/EventSummaryModal";
 import userServices from "../../services/userServices";
-
+import moment from "moment";
 const EventSummary = () => {
 	const [email, setEmail] = useState("");
 	const [participants, setParticipants] = useState([]);
@@ -40,10 +40,11 @@ const EventSummary = () => {
 		const errors = {};
 
 		if (!regex.test(values.trim()) && values.length !== 0) {
-			errors.email = "This is not a valid email format!";
+			errors.email = "Keep typing a valid full email";
 			setValidEmail(false);
 		} else {
 			setValidEmail(true);
+		    errors.email = `invite ${values}`;
 		  }
 		return errors;
 	};
@@ -68,11 +69,12 @@ const EventSummary = () => {
 	const addParticipant = (e) => {
 		e.preventDefault();
 
-		if (validEmail) {
+		if (validEmail && !usedEmail) {
 			setParticipants([...participants, email]);
 		}
 		setEmail("");
 		setValidEmail(false);
+		setUsedEmail(false);
 	};
 
 	const saveValidEmail = async () => {
@@ -112,7 +114,6 @@ const EventSummary = () => {
 		setParticipants([...deletefromList]);
 	};
 
-
 	return (
 	  <>
 		<div>
@@ -120,7 +121,7 @@ const EventSummary = () => {
 			<div className='mt-[100px] md:mx-14 mx-5 my-10'>
 				<h2 className='mt-10 text-3xl font-bold'>Event Summary</h2>
 				<div className='mt-4 border w-full p-5 rounded-lg shadow text-[#59595B]'>
-					<h5 className='text-2xl font-bold'>{location.state.event_event_title}</h5>
+					<h5 className='text-2xl font-bold'>{location.state.event.event_title.toUpperCase()}</h5>
 					<div className='grid gap-y-3 mt-4'>
 						<div className='flex items-center'>
 							<CiLocationOn className='text-xl' />
@@ -131,7 +132,13 @@ const EventSummary = () => {
 						<div className='flex items-center'>
 							<CiCalendar className='text-xl' />
 							<p className='text-base font-normal ml-2'>
-								{location.state.event.host_prefered_time}
+								{moment(location.state.event.start_date, "DD-MM-YYYY").format('Do MMMM YYYY')} - {moment(location.state.event.end_date, "DD-MM-YYYY").format('Do MMMM YYYY')}
+							</p>
+						</div>
+						<div className='flex items-center'>
+						    <BsClock className='text-xl' />
+							<p className='text-base font-normal ml-2'>
+								{location.state.event.host_prefered_time.split('-')[1]}
 							</p>
 						</div>
 						<div className='flex items-center'>
@@ -144,46 +151,33 @@ const EventSummary = () => {
 				</div>
 				<div className='flex md:justify-start justify-between my-5'>
 					<p className='text-lg font-bold md:mr-7'>
-						Participants({participants.length})
+						Add Participants
 					</p>
 				</div>
 				<form onSubmit={ addParticipant }>
-				    <div className='w-full mt-5 bg-[#E7F0FF] flex justify-between py-2 md:px-3 px-1'>
+				    <div className='w-full mt-5  flex justify-between py-2'>
 					    <input
 							type='email'
-							placeholder='Add a participant email'
-							className='outline-none border-none h-full bg-transparent py-3 md:px-4 px-2 w-11/12 text-[#7A6F6F] md:text-base text-sm md:placeholder:text-base placeholder:text-sm'
+							placeholder='Ex: james@gmail.com'
+							className='rounded-[8px] outline-none border border-[#59595B] h-full bg-white py-3 md:py-[28px] md:px-[24px] px-2 w-full text-[#7A6F6F] md:text-base text-sm md:placeholder:text-base placeholder:text-sm'
 							value={email}
 							required
 							onChange={handleChange}
 							aria-invalid={validEmail ? "false" : "true"}
 							aria-describedby='emailconfirm' // matches the error paragraph id
 					    />
-					     {validEmail && !usedEmail ? (
-						   <button
-						    type="submit"
-							className='bg-[#0056D6] md:px-12 md:py-4 py-2.5 px-5 text-white rounded-lg'
-							>
-							Add
-						  </button>
-					    ) : (
-						<button
-							disabled
-							type="submit"
-							className='bg-[#0056D6] md:px-12 md:py-4 py-2.5 px-5 text-white rounded-lg'>
-							Add
-						</button>
-					   )}
+
 				   </div>
-					<small className='text-red-500'>{formError.email}</small>
-					{participants?.map(
+				   {
+					usedEmail ? (participants?.map(
 						(item) =>
 							item.toLowerCase() === email.toLowerCase() && (
-								<small className='text-red-500'>
+								<small className='shadow-errorShadow rounded-[4px] border border-[#B5BEC1] bg-white px-[16px] py-[8px] text-[#1E2122] pr-[2rem]'>
 									This participant has already been added
 								</small>
 							)
-					)}
+					)) : <small className={` ${validEmail ? 'bg-[#C3DFF7] shadow-errorShadow rounded-[4px] border border-[#B5BEC1] px-[16px] py-[8px] text-[#1E2122] pr-[2rem]' :  'shadow-errorShadow rounded-[4px] border border-[#B5BEC1] bg-white px-[16px] py-[8px] text-[#1E2122] pr-[2rem]'}`}>{formError.email}</small>
+				   }
 				</form>
 				<div className='my-12'>
 					{participants.map((participant, index) => (
@@ -208,13 +202,13 @@ const EventSummary = () => {
 				<div className='my-6 flex justify-between items-center'>
 					<Link
 						to='/create_event'
-						className='text-xl font-semibold'>
+						className='text-[#1070FF] text-xl md:text-[20px] font-bold rounded-[4px] border border-[#1070ff] px-[12px] md:px-[24px] py-[10px]'>
 						Back
 					</Link>
 					<button
 						 onClick={saveValidEmail}
-						className='rounded flex md:px-6 px-4 py-2.5 bg-[#0056D6] text-white items-center cursor-pointer'>
-						<p className='md:text-xl text-base font-medium md:mr-2'>
+						className='rounded-[4px] flex md:px-6 px-4 py-2.5 bg-[#868686] text-white items-center cursor-pointer'>
+						<p className='md:text-[20px] text-base font-medium md:mr-2'>
 						{isSubmit  ? (
 							<span>Loading...</span>
 						) : (
@@ -222,7 +216,6 @@ const EventSummary = () => {
 						)
 						}
 						</p>
-						<BsPlus className='text-xl' />
 					</button>
 				</div>
 			</div>

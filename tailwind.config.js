@@ -32,6 +32,7 @@ module.exports = withMT({
       },
       boxShadow: {
         'cardShadow': '2px 4px 4px rgba(0, 0, 0, 0.25)',
+        'errorShadow': '0px 2px 2px rgba(0, 0, 0, 0.25)',
         'cardShadowMobile': '0px 0px 2px rgba(0, 0, 0, 0.25)',
       },
         backgroundPosition: {
