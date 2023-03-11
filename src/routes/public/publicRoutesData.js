@@ -13,7 +13,9 @@ import {
   ResetPassword,
   Verify,
   LinkInvite,
-  EmailInvite
+  EmailInvite,
+  EventInvitation,
+  EventInviteResponse
 } from '../../pages';
 import Terms from "../../pages/t&c";
 import TermsOfUse from "../../pages/termsOfUse";
@@ -125,9 +127,19 @@ const publicRoutesData = [
       title: "emailInvite"
     },
     {
+      path: "event_invite_response",
+      element: <EventInviteResponse />,
+      title: "event response"
+    },
+    {
       path: "invited",
       element: <Invited />,
       title: "invited"
+    },
+    {
+      path: "event_invitation",
+      element: <EventInvitation />,
+      title: "eventInvitation"
     },
     // {
     //   path: "*",

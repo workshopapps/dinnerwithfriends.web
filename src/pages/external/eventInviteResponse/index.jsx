@@ -1,10 +1,10 @@
-import Navbar from "../../components/Navbar";
+import Navbar from "../../../components/Navbar";
 import React from "react";
 import { IoCheckmark } from "react-icons/io5";
-import {Footer} from "../../components";
+import {Footer} from "../../../components";
 import { Link } from "react-router-dom";
 
-const EventInviteResponse = () => {
+export const EventInviteResponse = () => {
   return (
     <div>
       <Navbar />
@@ -31,5 +31,3 @@ const EventInviteResponse = () => {
     </div>
   );
 };
-
-export default EventInviteResponse;

@@ -2,7 +2,6 @@ import Dashboard from "../../pages/dashboard/Dashboard";
 import CreateEvent from "../../pages/dashboard/createEvent/CreateEvent";
 import ViewEvent from "../../pages/dashboard/ViewEvent";
 import EventSummary from "../../pages/dashboard/EventSummary";
-import EventInviteResponse from "../../pages/invitee/EventInviteResponse";
 import ProfilePage from "../../pages/settingsPage/ProfilePage";
 import Settings from "../../pages/settingsPage/ProfilePage";
 import AccountSettings from "../../pages/settingsPage/UserProfile";
@@ -29,11 +28,6 @@ const protectedRoutesData = [
       path: "view_event/:id",
       element: <ViewEvent />,
       title: "view event"
-    },
-    {
-      path: "event_invite_response",
-      element: <EventInviteResponse />,
-      title: "event response"
     },
     {
       path: "profile",
