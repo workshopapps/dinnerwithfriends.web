@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "../../components/Navbar";
-import {Footer} from "../../components";
+import Navbar from "../../../components/Navbar";
+import {Footer} from "../../../components";
 import { useNavigate, useParams } from "react-router-dom/dist";
 import moment from "moment/moment";
-import userServices from "../../services/userServices";
+import userServices from "../../../services/userServices";
 
-const EventInvite = () => {
+export const EmailInvite = () => {
   const [eventData, setEventData] = useState("");
   const preferredDate = eventData
     ? eventData?.event?.host_prefered_time.replace("-", "")
@@ -247,4 +247,3 @@ const EventInvite = () => {
   );
 };
 
-export default EventInvite;

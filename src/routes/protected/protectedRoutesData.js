@@ -3,11 +3,9 @@ import CreateEvent from "../../pages/dashboard/createEvent/CreateEvent";
 import ViewEvent from "../../pages/dashboard/ViewEvent";
 import EventSummary from "../../pages/dashboard/EventSummary";
 import EventInviteResponse from "../../pages/invitee/EventInviteResponse";
-import EventInvite from "../../pages/invitee/EventInvite";
 import ProfilePage from "../../pages/settingsPage/ProfilePage";
 import Settings from "../../pages/settingsPage/ProfilePage";
 import AccountSettings from "../../pages/settingsPage/UserProfile";
-import Invitee from "../../pages/external/linkInvitee";
 import ClosedEvent from "../../pages/closedEvent";
 // import Error404 from "../../pages/error404";
 
@@ -36,11 +34,6 @@ const protectedRoutesData = [
       path: "event_invite_response",
       element: <EventInviteResponse />,
       title: "event response"
-    },
-    {
-      path: "reset_password",
-      element: <EventInvite />,
-      title: "event invite"
     },
     {
       path: "profile",

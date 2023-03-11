@@ -12,7 +12,8 @@ import {
   ResetLink,
   ResetPassword,
   Verify,
-  LinkInvitee
+  LinkInvite,
+  EmailInvite
 } from '../../pages';
 import Terms from "../../pages/t&c";
 import TermsOfUse from "../../pages/termsOfUse";
@@ -20,7 +21,6 @@ import TermsOfUse from "../../pages/termsOfUse";
 import Career from '../../pages/career/Career';
 import JobDetails from '../../pages/career/JobDetails';
 import AboutUsPage from '../../pages/aboutUs';
-import EmailInvite from '../../pages/emailInvite'
 import Invited from '../../pages/invited'
 
 const publicRoutesData = [
@@ -116,11 +116,11 @@ const publicRoutesData = [
     },
     {
       path: "invitee/:id",
-      element: <LinkInvitee />,
+      element: <LinkInvite />,
       title: "invitee"
     },
     {
-      path: "emailInvite",
+      path: "event_invite/:token",
       element: <EmailInvite />,
       title: "emailInvite"
     },

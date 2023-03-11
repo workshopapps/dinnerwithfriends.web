@@ -7,7 +7,7 @@ import { useNavigate, useParams } from "react-router-dom/dist";
 import moment from "moment/moment";
 import userServices from "../../../services/userServices";
 
-export const LinkInvitee = () => {
+export const LinkInvite = () => {
   const [eventData, setEventData] = useState(null);
   const preferredDate = eventData
     ? eventData.host_prefered_time.replace("-", "")
