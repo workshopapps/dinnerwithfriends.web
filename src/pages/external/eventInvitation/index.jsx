@@ -1,10 +1,10 @@
 import React from "react";
-import Logo from "../../components/Logo";
-import Balloon from "../../assets/img/balloon.svg";
-import Button from "../../components/Button";
+import Logo from "../../../components/Logo";
+import Balloon from "../../../assets/img/balloon.svg";
+import Button from "../../../components/Button";
 import { Link } from "react-router-dom";
 
-const index = () => {
+export const EventInvitation = () => {
 	return (
 		<div>
 			<div className='relative bg-[#1070FF] h-[40vh] flex flex-col items-center py-4 px-2'>
@@ -28,5 +28,3 @@ const index = () => {
 		</div>
 	);
 };
-
-export default index;

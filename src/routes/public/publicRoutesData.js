@@ -11,7 +11,11 @@ import {
   ForgetPassword,
   ResetLink,
   ResetPassword,
-  Verify
+  Verify,
+  LinkInvite,
+  EmailInvite,
+  EventInvitation,
+  EventInviteResponse
 } from '../../pages';
 import Terms from "../../pages/t&c";
 import TermsOfUse from "../../pages/termsOfUse";
@@ -19,7 +23,6 @@ import TermsOfUse from "../../pages/termsOfUse";
 import Career from '../../pages/career/Career';
 import JobDetails from '../../pages/career/JobDetails';
 import AboutUsPage from '../../pages/aboutUs';
-import EmailInvite from '../../pages/emailInvite'
 import Invited from '../../pages/invited'
 
 const publicRoutesData = [
@@ -114,14 +117,29 @@ const publicRoutesData = [
       title: "verify"
     },
     {
-      path: "emailInvite",
+      path: "invitee/:id",
+      element: <LinkInvite />,
+      title: "invitee"
+    },
+    {
+      path: "event_invite/:token",
       element: <EmailInvite />,
       title: "emailInvite"
+    },
+    {
+      path: "event_invite_response",
+      element: <EventInviteResponse />,
+      title: "event response"
     },
     {
       path: "invited",
       element: <Invited />,
       title: "invited"
+    },
+    {
+      path: "event_invitation",
+      element: <EventInvitation />,
+      title: "eventInvitation"
     },
     // {
     //   path: "*",

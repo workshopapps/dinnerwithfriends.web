@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { CiLocationOn, CiStopwatch, CiCalendar } from "react-icons/ci";
 import { HiOutlineMenuAlt1 } from "react-icons/hi";
-import Navbar from "../../components/CreateEvent/CreateEventNavbar";
-import {Footer} from "../../components";
+import Navbar from "../../../components/CreateEvent/CreateEventNavbar";
+import {Footer} from "../../../components";
 import { useNavigate, useParams } from "react-router-dom/dist";
 import moment from "moment/moment";
-import userServices from "../../services/userServices";
+import userServices from "../../../services/userServices";
 
-const EventInvite = () => {
+export const LinkInvite = () => {
   const [eventData, setEventData] = useState(null);
   const preferredDate = eventData
     ? eventData.host_prefered_time.replace("-", "")
@@ -105,7 +105,7 @@ const EventInvite = () => {
   useEffect(() => {
     if (resultMsg.message === "Successful!") {
       setTimeout(() => {
-        navigate("/invitee/event_invite_response");
+        navigate("/event_invite_response");
       }, 2000);
     }
   }, [navigate, resultMsg]);
@@ -304,5 +304,3 @@ const EventInvite = () => {
     </div>
   );
 };
-
-export default EventInvite;
