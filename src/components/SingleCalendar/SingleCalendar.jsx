@@ -6,7 +6,7 @@ import "./SingleCalendar.css";
 
 const SingleCalendar = ({ minDate, maxDate, setShowCalendar, showCalendar, id, addTime }) => {
 	const [dateValue, setDateValue] = useState(new Date());
-	const [time, setTime] = useState("7:00");
+	const [time, setTime] = useState("00:00");
 
 	const {
 		setStartDate,

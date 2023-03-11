@@ -2,7 +2,7 @@ export const formLogic = (values) => {
 	let error = {};
 
 	if (values.event_title?.length < 3 ) {
-		error.event_title = "Event title must have minimum of 3 characters";
+		error.event_title = "Event name must have minimum of 3 characters";
 	}
 
 	if (values.event_description?.length < 3 ) {
@@ -10,7 +10,7 @@ export const formLogic = (values) => {
 	}
 
   if (!values.location) {
-    error.location = "Please type in a location";
+    error.location = "Please type in a correct location";
   }
 
   else if(!/^[A-Za-z][A-Za-z ]{2,30}$/.test(values.location)){

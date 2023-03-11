@@ -120,7 +120,7 @@ const CreateEventForm = () => {
 			<div className='px-4 md:w-[75%] lg:w-[50%] mx-auto'>
 				<div className='w-full py-8 pt-[6rem] lg:pt-[7rem]'>
 					<h1 className='text-xl font-bold text-center'>
-						Create Catchup Event
+						Create CatchUp Event
 					</h1>
 					<div className='mt-6'>
 						<div className='flex flex-col mb-4'>
