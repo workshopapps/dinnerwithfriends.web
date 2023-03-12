@@ -15,7 +15,7 @@ export const SignIn = () => {
 	} = useForm();
 	const [isSubmit, setIsSubmit] = useState(false);
 	const [isLoggedIn, setIsloggedIn] = useState(false);
-	const [networkError, setNetworkError] = useState(false);
+	// const [networkError, setNetworkError] = useState(false);
 	const [invalidCredentials, setInvalidCredentials] = useState(false);
 	const navigate = useNavigate();
 	const [passwordShown, setPasswordShown] = useState(false);
@@ -32,15 +32,15 @@ export const SignIn = () => {
 		setIsSubmit(true);
 		const result = await userServices.login(data);
 
-		if (result.status === "fail") {
+		if (result.status === "error" || result.status === 'fail') {
 			setIsSubmit(false);
 			setInvalidCredentials(true);
 		}
 
-		if (result.status === "error") {
-			setIsSubmit(false);
-			setNetworkError(true);
-		}
+		// if (result.status === "error") {
+		// 	setIsSubmit(false);
+		// 	setNetworkError(true);
+		// }
 
 		if (result.status === "success") {
 			setIsloggedIn(true);
@@ -65,13 +65,14 @@ export const SignIn = () => {
 					Incorrect Email or Password
 				</p>
 			);
-		} else if (networkError) {
-			element = (
-				<p className='mt-4 text-xl text-red-600 text-center'>
-					Something went wrong. Please try again!
-				</p>
-			);
 		}
+		// else if (networkError) {
+		// 	element = (
+		// 		<p className='mt-4 text-xl text-red-600 text-center'>
+		// 			Something went wrong. Please try again!
+		// 		</p>
+		// 	);
+		// }
 		return element;
 	};
 

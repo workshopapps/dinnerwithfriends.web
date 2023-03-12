@@ -14,7 +14,7 @@ const Dashboard = () => {
   const { events, setEvents } = CatchUpEventContextUse();
   const [modal, setModal] = useState(false);
 
-  
+
 
   useEffect(() => {
     fetchData();
@@ -40,7 +40,7 @@ const Dashboard = () => {
     filteredEvents.length === 0 ? (
       <Event
         filteredEvents={filteredEvents}
-        status={status === "not-decided" ? "upcoming" : "Rsvp"}
+        status={status === "not-decided" ? "created" : "upcoming"}
       />
     ) : (
       filteredEvents.map(
@@ -160,7 +160,7 @@ const Dashboard = () => {
               <span>
                 <img src={add} alt="add" />
               </span>
-              <span>Create Event</span>
+              <span>Create Events</span>
             </Link>
           </Button>
           <div className="flex flex-col justify-center items-center gap-y-2">
@@ -186,7 +186,7 @@ const Dashboard = () => {
                 }'pb-3 outline-0 border-0 text-[#717172] bg-inherit lg:text-lg'`}
                 onClick={() => setStatus("not-decided")}
               >
-                Upcoming Event
+                Created Events
               </Button>
             </li>
             <li>
@@ -198,7 +198,7 @@ const Dashboard = () => {
                 }' pb-3 outline-0 border-0 text-[#717172] bg-inherit lg:text-lg'`}
                 onClick={() => setStatus("decided")}
               >
-                Reserved Event
+                Upcoming Events
               </Button>
             </li>
           </ul>

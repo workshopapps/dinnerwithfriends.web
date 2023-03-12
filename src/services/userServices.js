@@ -6,6 +6,7 @@ import {
   LOGIN_URL,
   CREATE_EVENT,
   GET_EVENTS,
+  GET_EVENT_BY_ID,
   GET_PARTICIPANTS,
   PASSWORD_RECOVERY_URL,
   RESET_PASSWORD_URL,
@@ -81,7 +82,7 @@ const getAllEvents = async () => {
 
 const getEventsById = async (id) => {
   try {
-    const dataObj = await fetchApi.get(`${BASE_URL}/${GET_EVENTS}/${id}`);
+    const dataObj = await fetchApi.get(`${BASE_URL}/${GET_EVENT_BY_ID}/${id}`);
     const datas = await dataObj.data;
     return datas;
   } catch (err) {
@@ -152,7 +153,7 @@ const deleteEvent = async (id) => {
 const getUser = async () => {
   try {
     const dataObj = await fetchApi.get(`${BASE_URL}/${GET_USER}`);
-    
+
     const datas = await dataObj.data;
     return datas;
   } catch (err) {

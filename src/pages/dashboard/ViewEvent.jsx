@@ -277,9 +277,9 @@ const ViewEvent = () => {
 						<span
 							className={`${
 								copied ? "block" : "hidden"
-							} absolute top-0 left-6  p-2 text-green-500 bg-white border border-green-500 rounded transition text-xs`}>
-							https://catchup.hng.tech/ copied. You can share to invite your
-							friends
+							} absolute top-0 left-0 w-full md:w-[50%] md:m-auto flex justify-center items-start  p-2 text-green-500 bg-white border border-green-500 rounded transition text-xs`}>
+						    <span>	https://catchup.hng.tech/ copied. You can share to invite your
+							friends </span>
 						</span>
 					</section>
 				</main>
