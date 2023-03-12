@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { CiLocationOn, CiStopwatch, CiCalendar } from "react-icons/ci";
 import { HiOutlineMenuAlt1 } from "react-icons/hi";
+import { AiOutlineCrown } from "react-icons/ai";
 import Navbar from "../../../components/CreateEvent/CreateEventNavbar";
 import {Footer} from "../../../components";
+import moment from "moment";
 import { useNavigate, useParams } from "react-router-dom/dist";
-import moment from "moment/moment";
 import userServices from "../../../services/userServices";
 
 export const LinkInvite = () => {
@@ -22,7 +23,7 @@ export const LinkInvite = () => {
   });
   const [minDate, setMinDate] = useState("");
   const [maxDate, setMaxDate] = useState("");
-  const [agreedDate, setAgreedDate] = useState("");
+  // const [agreedDate, setAgreedDate] = useState("");
   const navigate = useNavigate();
   const [declinedInvite, setDeclinedInvite] = useState(false);
   const [resultMsg, setResultMsg] = useState("");
@@ -31,7 +32,7 @@ export const LinkInvite = () => {
   const emailRegex =
     /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
   const decidedEvent = eventData
-    ? moment(eventData.final_event_date).format("MMMM DD YYYY HH:mm")
+    ? moment(eventData?.final_event_date).format("MMMM DD YYYY HH:mm")
     : "";
   const currentDate = moment(Date.now()).format("YYYY-MM-DDTHH:mm");
   const hasPassed = eventData && moment(currentDate).isAfter(maxDate);
@@ -43,11 +44,11 @@ export const LinkInvite = () => {
     const endDate = eventData
       ? moment(eventData?.end_date, "MM-DD-YYYY").format("YYYY-MM-DDTHH:mm")
       : "";
-    setAgreedDate(
-      moment(eventData?.final_event_date, "YYYY-MM-DDTHH:mm").format(
-        "MM/DD/YYYY"
-      )
-    );
+    // setAgreedDate(
+    //   moment(eventData?.final_event_date, "YYYY-MM-DDTHH:mm").format(
+    //     "MM/DD/YYYY"
+    //   )
+    // );
     setMinDate(startDate);
     setMaxDate(endDate);
   }, [eventData]);
@@ -68,6 +69,11 @@ export const LinkInvite = () => {
       setInviteDetails({
         ...inviteDetails,
         preferred_date_time: eventData.final_event_date,
+      });
+    } else if(eventData?.host_prefered_time) {
+       setInviteDetails({
+        ...inviteDetails,
+        preferred_date_time: eventData.host_prefered_time,
       });
     }
   };
@@ -114,7 +120,7 @@ export const LinkInvite = () => {
     setDeclinedInvite(true);
     setTimeout(() => {
       navigate("/");
-    }, 2000);
+    }, 3000);
   };
 
   useEffect(() => {
@@ -165,12 +171,9 @@ export const LinkInvite = () => {
           <div className="my-8 w-fit mx-auto border px-6 lg:px-12 py-5 rounded-lg">
             <div className="my-4 flex flex-col justify-start lg:justify-center items-start lg:items-center gap-[25px] lg:gap-[15px] lg:flex-row ">
               <div className="md:mx-auto flex-1 self-start">
-                <h1 className="text-xl mb-2 font-bold md:text-2xl md:mb-4">
-                  Event Summary
-                </h1>
-                <p className="leading-6 text-gray-600 font-bold font-sm">
-                  Dinner
-                </p>
+              <h1 className="mb-2 font-medium text-[#151517] md:text-[24px] md:mb-4">
+                {eventData?.event_type} with friends
+              </h1>
                 <div>
                   <span className="flex mt-3">
                     {" "}
@@ -184,33 +187,24 @@ export const LinkInvite = () => {
                   </span>
 
                   <span className="flex mt-3">
-                    {" "}
                     <CiCalendar className="mr-4 text-[25px] font-bold" />
-                    Agreed Date: &#160;
-                    {eventData?.final_event_date === null ? (
-                      <span className="font-bold"> &#160; Not Available</span>
-                    ) : (
-                      agreedDate
-                    )}
+                    Preferred Date: { " "}
+                    {moment(eventData?.host_prefered_time.split(" - ")[0], "DD-MM-YYYY").format('Do MMMM YYYY')}
                   </span>
 
                   <span className="flex mt-3">
-                    {" "}
-                    <CiStopwatch className="mr-4 text-[25px]" />
-                    Host Selected Time:
-                    <span className="font-bold">
-                      &#160; {eventData?.host_prefered_time}
-                    </span>{" "}
+                    <CiStopwatch className="mr-4 text-[25px] font-bold" />
+                    Preferred Time: { " "}
+                    {eventData?.host_prefered_time.split(" - ")[1]}
                   </span>
-
                   <span className="flex mt-3">
-                    {" "}
+                    <AiOutlineCrown className="mr-4 text-[25px]" />
+                    Event type:{" "}
+                    {eventData?.event_type}
+                  </span>
+                  <span className="flex mt-3">
                     <HiOutlineMenuAlt1 className="mr-4 text-[25px]" />
-                    <span className="font-bold">
-                      {" "}
-                      &#160;
-                      {eventData?.event_description}
-                    </span>{" "}
+                    {eventData?.event_description}
                   </span>
                 </div>
               </div>
@@ -267,7 +261,7 @@ export const LinkInvite = () => {
                       name="preferred_date_time"
                       type="datetime-local"
                       value={
-                        inviteDetails.preferred_date_time
+                        inviteDetails?.preferred_date_time
                           ? inviteDetails.preferred_date_time
                           : preferredTime
                       }
