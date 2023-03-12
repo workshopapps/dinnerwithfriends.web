@@ -18,6 +18,7 @@ export const EmailInvite = () => {
     email: "",
     preferred_date_time: "",
   });
+
   const navigate = useNavigate();
   const [successMessage, setSuccessMessage] = useState("");
   const [resultMsg, setResultMsg] = useState("");
@@ -63,7 +64,7 @@ export const EmailInvite = () => {
     if (result.status === "success") {
       setTimeout(() => {
         setResultMsg({ message: "Successful!" });
-        navigate("/event_invite/event_invite_response");
+        // navigate("/event_invite_response");
       }, 2000);
     } else if (result.status) {
       setResultMsg(result.message);
@@ -86,7 +87,7 @@ export const EmailInvite = () => {
           setResultMsg("");
           setIsLoading(false);
           setTimeout(() => {
-            navigate("/event_invite/event_invite_response");
+            navigate("event_invite_response");
           }, 2000);
         } else if (result.status) {
           setResultMsg(result.message);
@@ -114,10 +115,6 @@ export const EmailInvite = () => {
 
     if (hasPassed) {
       navigate("/closed_event");
-    }
-
-    if (eventData === undefined) {
-      navigate("*");
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [hasPassed]);

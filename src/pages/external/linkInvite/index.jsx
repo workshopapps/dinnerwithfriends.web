@@ -9,9 +9,9 @@ import { useNavigate, useParams } from "react-router-dom/dist";
 import userServices from "../../../services/userServices";
 
 export const LinkInvite = () => {
-  const [eventData, setEventData] = useState(null);
+  const [eventData, setEventData] = useState("");
   const preferredDate = eventData
-    ? eventData.host_prefered_time.replace("-", "")
+    ? eventData?.host_prefered_time.replace("-", "")
     : "";
   const preferredTime = eventData
     ? moment(preferredDate, "DD-MM-YYYY HH:mm").format("YYYY-MM-DDTHH:mm")
@@ -21,12 +21,14 @@ export const LinkInvite = () => {
     email: "",
     preferred_date_time: "",
   });
-  const [minDate, setMinDate] = useState("");
-  const [maxDate, setMaxDate] = useState("");
-  // const [agreedDate, setAgreedDate] = useState("");
+
   const navigate = useNavigate();
   const [declinedInvite, setDeclinedInvite] = useState(false);
   const [resultMsg, setResultMsg] = useState("");
+
+  const [minDate, setMinDate] = useState("");
+  const [maxDate, setMaxDate] = useState("");
+  // const [agreedDate, setAgreedDate] = useState("");
   let { id } = useParams();
 
   const emailRegex =
@@ -39,10 +41,10 @@ export const LinkInvite = () => {
 
   useEffect(() => {
     const startDate = eventData
-      ? moment(eventData?.start_date, "MM-DD-YYYY").format("YYYY-MM-DDTHH:mm")
+      ? moment(eventData?.start_date, "DD-MM-YYYY").format("YYYY-MM-DDTHH:mm")
       : "";
     const endDate = eventData
-      ? moment(eventData?.end_date, "MM-DD-YYYY").format("YYYY-MM-DDTHH:mm")
+      ? moment(eventData?.end_date, "DD-MM-YYYY").format("YYYY-MM-DDTHH:mm")
       : "";
     // setAgreedDate(
     //   moment(eventData?.final_event_date, "YYYY-MM-DDTHH:mm").format(
@@ -64,23 +66,25 @@ export const LinkInvite = () => {
 
   const getEventDetails = async () => {
     const result = await userServices.getEventsById(`${id}`);
-    setEventData(result);
-    if (eventData?.final_event_date) {
+    setEventData(result?.data);
+    if (eventData?.host_prefered_time) {
       setInviteDetails({
         ...inviteDetails,
-        preferred_date_time: eventData.final_event_date,
+        preferred_date_time: preferredTime,
       });
-    } else if(eventData?.host_prefered_time) {
-       setInviteDetails({
-        ...inviteDetails,
-        preferred_date_time: eventData.host_prefered_time,
-      });
+    }
+
+    if(result?.status === "fail") {
+      setResultMsg({message: "This event does not exist"})
+      setTimeout(() => {
+        navigate("/");
+      }, 2000);
     }
   };
 
   const addParticipant = (e) => {
     e.preventDefault();
-    const { fullname, email, preferred_date_time } = inviteDetails;
+    const { fullname, email } = inviteDetails;
     if (!fullname || !email) {
       setResultMsg("Please fill all fields");
       return;
@@ -90,7 +94,7 @@ export const LinkInvite = () => {
       event_id: eventData.id,
       preferred_date_time: eventData.final_event_date
         ? eventData.final_event_date
-        : preferred_date_time,
+        : preferredTime,
     };
 
     userServices
@@ -101,7 +105,7 @@ export const LinkInvite = () => {
             setResultMsg({ message: "Successful!" });
           }, 2000);
         } else {
-          setResultMsg(response);
+          setResultMsg(response.message);
         }
       })
       .catch((error) => {
@@ -154,19 +158,6 @@ export const LinkInvite = () => {
                 homepage soon
               </p>
             ) : null}
-            {resultMsg ? (
-              <p
-                className={
-                  resultMsg.message === "Successful!"
-                    ? "text-green-600"
-                    : "text-red-600"
-                }
-              >
-                {resultMsg.message}
-              </p>
-            ) : (
-              ""
-            )}
           </div>
           <div className="my-8 w-fit mx-auto border px-6 lg:px-12 py-5 rounded-lg">
             <div className="my-4 flex flex-col justify-start lg:justify-center items-start lg:items-center gap-[25px] lg:gap-[15px] lg:flex-row ">
@@ -189,13 +180,13 @@ export const LinkInvite = () => {
                   <span className="flex mt-3">
                     <CiCalendar className="mr-4 text-[25px] font-bold" />
                     Preferred Date: { " "}
-                    {moment(eventData?.host_prefered_time.split(" - ")[0], "DD-MM-YYYY").format('Do MMMM YYYY')}
+                    {moment(eventData?.host_prefered_time?.split(" - ")[0], "DD-MM-YYYY").format('Do MMMM YYYY')}
                   </span>
 
                   <span className="flex mt-3">
                     <CiStopwatch className="mr-4 text-[25px] font-bold" />
                     Preferred Time: { " "}
-                    {eventData?.host_prefered_time.split(" - ")[1]}
+                    {moment(eventData?.host_prefered_time?.split(" - ")[1].replace(":", ""), "hmm").format('HH:mm a')}
                   </span>
                   <span className="flex mt-3">
                     <AiOutlineCrown className="mr-4 text-[25px]" />
@@ -208,6 +199,19 @@ export const LinkInvite = () => {
                   </span>
                 </div>
               </div>
+              {resultMsg ? (
+                <p
+                  className={
+                    resultMsg.message === "Successful!"
+                      ? "text-green-600"
+                      : "text-red-600"
+                  }
+                >
+                  {resultMsg.message}
+                </p>
+              ) : (
+                ""
+              )}
               <form className="flex-1 w-full" onSubmit={addParticipant}>
                 <div className="my-4 flex flex-col">
                   <label className="text-base font-semibold mb-1">
