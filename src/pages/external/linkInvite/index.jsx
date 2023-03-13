@@ -289,7 +289,7 @@ export const LinkInvite = () => {
             <div className="my-[50px] md:mt-[70px] flex w-full md:w-[50%] md:mx-auto justify-center gap-8 md:justify-between">
             <button
               type="submit"
-              className="font-medium rounded-[4px] bg-[#B1B1B1] text-white py-[12px] md:px-[32px] px-1.5 md:text-[20px] text-base"
+              className="font-medium rounded-[4px] bg-[#1070ff] text-white py-[12px] md:px-[32px] px-1.5 md:text-[20px] text-base"
               onClick={addParticipant}
             >
               Accept Invite

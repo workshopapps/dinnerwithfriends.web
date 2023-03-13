@@ -218,7 +218,7 @@ export const EmailInvite = () => {
                 <div className="my-7 flex gap-8 md:justify-between">
                   <button
                     type="submit"
-                    className="rounded bg-[#0056D6] hover:bg-[#2563eb] text-white py-2.5 md:px-3 px-1.5 md:text-lg text-base"
+                    className="rounded bg-[#1070ff] hover:bg-[#2563eb] text-white py-2.5 md:px-3 px-1.5 md:text-lg text-base"
                     onClick={addParticipant}
                   >
                     {isLoading ? "Loading..." : "Accept Invite"}

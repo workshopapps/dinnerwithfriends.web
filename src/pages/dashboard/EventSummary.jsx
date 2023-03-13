@@ -206,18 +206,28 @@ const EventSummary = () => {
 						className='text-[#1070FF] text-xl md:text-[20px] font-bold rounded-[4px] border border-[#1070ff] px-[12px] md:px-[24px] py-[10px]'>
 						Back
 					</Link>
-					<button
-						 onClick={saveValidEmail}
-						className='rounded-[4px] flex md:px-6 px-4 py-2.5 bg-[#868686] text-white items-center cursor-pointer'>
-						<p className='md:text-[20px] text-base font-medium md:mr-2'>
-						{isSubmit  ? (
-							<span>Loading...</span>
+					{
+						participants.length < 1 ?
+						(<button disabled className='rounded-[4px] flex md:px-6 px-4 py-2.5 bg-[#868686] text-white items-center cursor-pointer'>
+						  <p className='md:text-[20px] text-base font-medium md:mr-2'>
+						     Send Invite
+						  </p>
+						</button>
 						) : (
-							<span>Send Invite</span>
+								<button
+								onClick={saveValidEmail}
+							    className='rounded-[4px] flex md:px-6 px-4 py-2.5 bg-[#1070ff] text-white items-center cursor-pointer'>
+							      <p className='md:text-[20px] text-base font-medium md:mr-2'>
+							{isSubmit  ? (
+								<span>Loading...</span>
+							) : (
+								<span>Send Invite</span>
+							)
+							}
+							</p>
+						</button>
 						)
-						}
-						</p>
-					</button>
+					}
 				</div>
 			</div>
 		</div>
