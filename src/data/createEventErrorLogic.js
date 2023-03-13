@@ -9,7 +9,7 @@ export const formLogic = (values) => {
 		error.event_description = "Event description must have minimum of 3 characters";
 	}
 
-  if (!values.location) {
+  if (values.location?.length < 3) {
     error.location = "Please type in a correct location";
   }
 
