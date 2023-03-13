@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "../../../components/Navbar";
-import { EventInviteResponse, Footer } from "../../../components";
+import { EventInviteResponse } from "../../../components";
 import { useNavigate, useParams } from "react-router-dom/dist";
 import moment from "moment/moment";
 import userServices from "../../../services/userServices";
@@ -126,7 +125,6 @@ export const EmailInvite = () => {
         </p>
       ) : (
         <>
-          <Navbar />
           <div className="mt-28 mb-10 mx-auto md:mx-32">
             <div className="mx-2 md:mx-0 text-center w-full">
               <h1 className="text-2xl font-bold md:text-3xl">Hello, there.</h1>
@@ -236,7 +234,6 @@ export const EmailInvite = () => {
               </form>
             </div>
           </div>
-          <Footer />
           {modal && <EventInviteResponse modal ={modal} />}
         </>
       )}

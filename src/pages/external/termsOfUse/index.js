@@ -1,10 +1,10 @@
 import React from "react";
 import { useState } from "react";
-import {Footer} from "../../components";
-import Navbar from "../../components/Navbar";
+import {Footer} from "../../../components";
+import Navbar from "../../../components/Navbar";
 import { termsData } from "./termsData";
 
-const TermsOfUse = () => {
+export const TermsOfUse = () => {
   const [active, setActive] = useState("The Agreement");
 
   const handleActive = (query) => {
@@ -93,5 +93,3 @@ const TermsOfUse = () => {
     </>
   );
 };
-
-export default TermsOfUse;
