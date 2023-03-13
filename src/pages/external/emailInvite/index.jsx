@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "../../../components/Navbar";
-import {Footer} from "../../../components";
+import { EventInviteResponse } from "../../../components";
 import { useNavigate, useParams } from "react-router-dom/dist";
 import moment from "moment/moment";
 import userServices from "../../../services/userServices";
 
 export const EmailInvite = () => {
+  const [modal, setModal] = useState(false);
   const [eventData, setEventData] = useState("");
   const preferredDate = eventData
     ? eventData?.event?.host_prefered_time.replace("-", "")
@@ -38,8 +38,8 @@ export const EmailInvite = () => {
   const decidedEvent = eventData
     ? moment(eventData?.event?.final_event_date).format("MMMM DD YYYY HH:mm")
     : "";
-  const currentDate = moment(Date.now()).format("YYYY-MM-DDTHH:mm");
-  const hasPassed = eventData && moment(currentDate).isAfter(endDate);
+  // const currentDate = moment(Date.now()).format("YYYY-MM-DDTHH:mm");
+  // const hasPassed = eventData && moment(currentDate).isAfter(endDate);
   const [isLoading, setIsLoading] = useState(false);
   const [decliningInvite, setDecliningInvite] = useState(false);
 
@@ -86,9 +86,7 @@ export const EmailInvite = () => {
           setSuccessMessage("Successful!");
           setResultMsg("");
           setIsLoading(false);
-          setTimeout(() => {
-            navigate("event_invite_response");
-          }, 2000);
+          setModal(true)
         } else if (result.status) {
           setResultMsg(result.message);
           setIsLoading(false);
@@ -113,11 +111,11 @@ export const EmailInvite = () => {
   useEffect(() => {
     getEventDetails();
 
-    if (hasPassed) {
-      navigate("/closed_event");
-    }
+    // if (hasPassed) {
+    //   navigate("/closed_event");
+    // }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [hasPassed]);
+  }, []);
 
   return (
     <div>
@@ -127,7 +125,6 @@ export const EmailInvite = () => {
         </p>
       ) : (
         <>
-          <Navbar />
           <div className="mt-28 mb-10 mx-auto md:mx-32">
             <div className="mx-2 md:mx-0 text-center w-full">
               <h1 className="text-2xl font-bold md:text-3xl">Hello, there.</h1>
@@ -237,7 +234,7 @@ export const EmailInvite = () => {
               </form>
             </div>
           </div>
-          <Footer />
+          {modal && <EventInviteResponse modal ={modal} />}
         </>
       )}
     </div>

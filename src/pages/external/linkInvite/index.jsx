@@ -2,14 +2,15 @@ import React, { useEffect, useState } from "react";
 import { CiLocationOn, CiStopwatch, CiCalendar } from "react-icons/ci";
 import { HiOutlineMenuAlt1 } from "react-icons/hi";
 import { AiOutlineCrown } from "react-icons/ai";
-import Navbar from "../../../components/CreateEvent/CreateEventNavbar";
-import {Footer} from "../../../components";
+import { EventInviteResponse } from "../../../components";
 import moment from "moment";
 import { useNavigate, useParams } from "react-router-dom/dist";
 import userServices from "../../../services/userServices";
 
 export const LinkInvite = () => {
   const [eventData, setEventData] = useState("");
+  const [modal, setModal] = useState(false);
+
   const preferredDate = eventData
     ? eventData?.host_prefered_time.replace("-", "")
     : "";
@@ -36,8 +37,8 @@ export const LinkInvite = () => {
   const decidedEvent = eventData
     ? moment(eventData?.final_event_date).format("MMMM DD YYYY HH:mm")
     : "";
-  const currentDate = moment(Date.now()).format("YYYY-MM-DDTHH:mm");
-  const hasPassed = eventData && moment(currentDate).isAfter(maxDate);
+  // const currentDate = moment(Date.now()).format("YYYY-MM-DDTHH:mm");
+  // const hasPassed = eventData && moment(currentDate).isAfter(maxDate);
 
   useEffect(() => {
     const startDate = eventData
@@ -114,9 +115,7 @@ export const LinkInvite = () => {
   };
   useEffect(() => {
     if (resultMsg.message === "Successful!") {
-      setTimeout(() => {
-        navigate("/event_invite_response");
-      }, 2000);
+        setModal(true)
     }
   }, [navigate, resultMsg]);
 
@@ -130,17 +129,17 @@ export const LinkInvite = () => {
   useEffect(() => {
     getEventDetails();
 
-    if (hasPassed) {
-      navigate("/closed_event");
-    }
+    // if (hasPassed) {
+    //   navigate("/closed_event");
+    // }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
+    <>
     <div>
-      <Navbar />
       <div>
-        <div className="mt-28 mb-10 mx-auto lg:mx-12 px-6">
+        <div className="mt-28 mb-10 mx-auto">
           <div className="mx-2 md:mx-0 text-center w-full">
             <h1 className="text-2xl font-bold md:text-3xl">Hello, there.</h1>
             <p className="leading-6 text-gray-600 font-sm">
@@ -159,8 +158,8 @@ export const LinkInvite = () => {
               </p>
             ) : null}
           </div>
-          <div className="my-8 w-fit mx-auto border px-6 lg:px-12 py-5 rounded-lg">
-            <div className="my-4 flex flex-col justify-start lg:justify-center items-start lg:items-center gap-[25px] lg:gap-[15px] lg:flex-row ">
+          <div className="my-8 w-fit md:w-[70%] mx-auto py-5 ">
+            <div className="my-4 flex flex-col justify-start lg:justify-center items-start lg:items-center gap-[25px] lg:flex-row ">
               <div className="md:mx-auto flex-1 self-start">
               <h1 className="mb-2 font-medium text-[#151517] md:text-[24px] md:mb-4">
                 {eventData?.event_type} with friends
@@ -176,16 +175,24 @@ export const LinkInvite = () => {
                       {eventData?.location}
                     </span>
                   </span>
-
-                  <span className="flex mt-3">
-                    <CiCalendar className="mr-4 text-[25px] font-bold" />
-                    Preferred Date: { " "}
-                    {moment(eventData?.host_prefered_time?.split(" - ")[0], "DD-MM-YYYY").format('Do MMMM YYYY')}
-                  </span>
-
+                   {
+                    eventData.final_event_date ? (
+                      <span className="flex mt-3">
+                        <CiCalendar className="mr-4 text-[25px] font-bold" />
+                          Agreed Date: { " "}
+                           {moment(eventData?.final_event_date?.split(" - ")[0], "DD-MM-YYYY").format('Do MMMM YYYY')}
+                        </span>
+                       ) : (
+                        <span className="flex mt-3">
+                        <CiCalendar className="mr-4 text-[25px] font-bold" />
+                        Host's preferred Date: { " "}
+                        {moment(eventData?.host_prefered_time?.split(" - ")[0], "DD-MM-YYYY").format('Do MMMM YYYY')}
+                      </span>
+                       )
+                   }
                   <span className="flex mt-3">
                     <CiStopwatch className="mr-4 text-[25px] font-bold" />
-                    Preferred Time: { " "}
+                    Host's Preferred time: { " "}
                     {moment(eventData?.host_prefered_time?.split(" - ")[1].replace(":", ""), "hmm").format('HH:mm a')}
                   </span>
                   <span className="flex mt-3">
@@ -277,28 +284,29 @@ export const LinkInvite = () => {
                     />
                   </div>
                 )}
-                <div className="my-7 flex w-full justify-center gap-8 md:justify-between">
-                  <button
-                    type="submit"
-                    className="rounded bg-[#0056D6] hover:bg-[#2563eb] text-white py-2.5 md:px-3 px-1.5 md:text-lg text-base"
-                    onClick={addParticipant}
-                  >
-                    Accept Invite
-                  </button>
-                  <button
-                    type="button"
-                    className="rounded border border-[#0056D6] text-[#0056D6] py-2.5 md:px-3 px-1.5 md:text-lg text-base"
-                    onClick={() => declineInvite()}
-                  >
-                    Decline Invite
-                  </button>
-                </div>
               </form>
             </div>
+            <div className="my-[50px] md:mt-[70px] flex w-full md:w-[50%] md:mx-auto justify-center gap-8 md:justify-between">
+            <button
+              type="submit"
+              className="font-medium rounded-[4px] bg-[#B1B1B1] text-white py-[12px] md:px-[32px] px-1.5 md:text-[20px] text-base"
+              onClick={addParticipant}
+            >
+              Accept Invite
+            </button>
+            <button
+              type="button"
+              className="rounded-[4px] border border-[#1070FF] text-[#1070FF] py-[12px] md:px-[32px] px-1.5 md:text-lg text-base"
+              onClick={() => declineInvite()}
+            >
+              Decline Invite
+            </button>
+          </div>
           </div>
         </div>
       </div>
-      <Footer />
     </div>
+    {modal && <EventInviteResponse modal ={modal} />}
+    </>
   );
 };

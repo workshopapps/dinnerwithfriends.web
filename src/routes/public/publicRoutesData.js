@@ -15,10 +15,9 @@ import {
   LinkInvite,
   EmailInvite,
   EventInvitation,
-  EventInviteResponse
+  TermsOfUse
 } from '../../pages';
 import Terms from "../../pages/t&c";
-import TermsOfUse from "../../pages/termsOfUse";
 // import Error404 from "../../pages/error404";
 import Career from '../../pages/career/Career';
 import JobDetails from '../../pages/career/JobDetails';
@@ -125,11 +124,6 @@ const publicRoutesData = [
       path: "event_invite/:token",
       element: <EmailInvite />,
       title: "emailInvite"
-    },
-    {
-      path: "event_invite_response",
-      element: <EventInviteResponse />,
-      title: "event response"
     },
     {
       path: "invited",
