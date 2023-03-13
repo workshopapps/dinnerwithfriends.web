@@ -3,13 +3,15 @@ import { CiLocationOn, CiStopwatch, CiCalendar } from "react-icons/ci";
 import { HiOutlineMenuAlt1 } from "react-icons/hi";
 import { AiOutlineCrown } from "react-icons/ai";
 import Navbar from "../../../components/CreateEvent/CreateEventNavbar";
-import {Footer} from "../../../components";
+import {EventInviteResponse, Footer} from "../../../components";
 import moment from "moment";
 import { useNavigate, useParams } from "react-router-dom/dist";
 import userServices from "../../../services/userServices";
 
 export const LinkInvite = () => {
   const [eventData, setEventData] = useState("");
+  const [modal, setModal] = useState(false);
+
   const preferredDate = eventData
     ? eventData?.host_prefered_time.replace("-", "")
     : "";
@@ -36,8 +38,8 @@ export const LinkInvite = () => {
   const decidedEvent = eventData
     ? moment(eventData?.final_event_date).format("MMMM DD YYYY HH:mm")
     : "";
-  const currentDate = moment(Date.now()).format("YYYY-MM-DDTHH:mm");
-  const hasPassed = eventData && moment(currentDate).isAfter(maxDate);
+  // const currentDate = moment(Date.now()).format("YYYY-MM-DDTHH:mm");
+  // const hasPassed = eventData && moment(currentDate).isAfter(maxDate);
 
   useEffect(() => {
     const startDate = eventData
@@ -114,9 +116,7 @@ export const LinkInvite = () => {
   };
   useEffect(() => {
     if (resultMsg.message === "Successful!") {
-      setTimeout(() => {
-        navigate("/event_invite_response");
-      }, 2000);
+        setModal(true)
     }
   }, [navigate, resultMsg]);
 
@@ -130,13 +130,14 @@ export const LinkInvite = () => {
   useEffect(() => {
     getEventDetails();
 
-    if (hasPassed) {
-      navigate("/closed_event");
-    }
+    // if (hasPassed) {
+    //   navigate("/closed_event");
+    // }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
+    <>
     <div>
       <Navbar />
       <div>
@@ -300,5 +301,7 @@ export const LinkInvite = () => {
       </div>
       <Footer />
     </div>
+    {modal && <EventInviteResponse modal ={modal} />}
+    </>
   );
 };

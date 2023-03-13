@@ -15,7 +15,6 @@ import {
   LinkInvite,
   EmailInvite,
   EventInvitation,
-  EventInviteResponse
 } from '../../pages';
 import Terms from "../../pages/t&c";
 import TermsOfUse from "../../pages/termsOfUse";
@@ -125,11 +124,6 @@ const publicRoutesData = [
       path: "event_invite/:token",
       element: <EmailInvite />,
       title: "emailInvite"
-    },
-    {
-      path: "event_invite_response",
-      element: <EventInviteResponse />,
-      title: "event response"
     },
     {
       path: "invited",
