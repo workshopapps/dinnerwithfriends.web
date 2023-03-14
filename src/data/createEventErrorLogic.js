@@ -13,9 +13,9 @@ export const formLogic = (values) => {
     error.location = "Please type in a correct location";
   }
 
-//   else if(!/^[A-Za-z][A-Za-z ]{2,30}$/.test(values.location)){
-//       error.location = "Location is invalid. Please remove any special characters."
-//   }
+  else if(!/^[A-Za-z][A-Za-z ]{2,30}$/.test(values.location)){
+      error.location = "Location is invalid. Please remove any special characters."
+  }
 
   if (!values.event_type) {
     error.event_type = "Please type in an event type";
