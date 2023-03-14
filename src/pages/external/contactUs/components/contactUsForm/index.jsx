@@ -1,27 +1,48 @@
+/* eslint-disable no-useless-escape */
 import React, { useState } from "react";
 import Button from "../../../../../components/Button";
-import FormSuccessModal from "../formSuccessModal";
+import { ContactFormSuccessModal } from "../../../../../components";
 import InputComponent from "../../../../../components/InputComponent/InputComponent";
 import userServices from '../../../../../services/userServices'
 
 export const ContactUsForm = () => {
 const [isSubmit, setIsSubmit] = useState(false)
 const [modal, setModal] = useState(false)
+const [error, setError] = useState(null)
 const [data, setData] = useState({
   name: '',
   email: '',
   text: '',
 })
 
+const emailValidation = () => {
+  const regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+  if(regex.test(data.email) === false){
+      setError("Email is not valid");
+      return false;
+  }
+  return true;
+}
+
 const onChange = (e) => setData({...data, [e.target.name]: e.target.value})
 const handleSubmit = async (e) => {
-  setIsSubmit(true)
   e.preventDefault()
-  const result = await userServices.contact(data)
-  if(result.status === 'success') {
-     setIsSubmit(false)
-     setModal(true)
+  if(emailValidation()) {
+    setIsSubmit(true)
+    const result = await userServices.contact(data)
+    if(result.status === 'success') {
+       setIsSubmit(false)
+       setModal(true)
+       setData({
+        ...data,
+        name: '',
+        email: '',
+        text: ''
+       })
+       setError(null)
+    }
   }
+
 }
   return (
     <>
@@ -31,7 +52,8 @@ const handleSubmit = async (e) => {
           id='name'
           name="name"
           onChange={onChange}
-          label='name'
+          label='Name'
+          value={data.name}
           placeholder="Name"
           errorText="Enter a name"
         />
@@ -41,8 +63,10 @@ const handleSubmit = async (e) => {
           onChange={onChange}
           name="email"
           label="Email"
+          value={data.email}
+          inputInvalid={() => emailValidation()}
           placeholder="example@mail.com"
-          errorText="Email is invalid"
+          errorText={error}
         />
         <div>
           <label
@@ -55,6 +79,7 @@ const handleSubmit = async (e) => {
             rows={"10"}
             id="message"
             name="text"
+            value={data.text}
             onChange={onChange}
             placeholder="Hello..."
             maxLength={100}
@@ -73,7 +98,7 @@ const handleSubmit = async (e) => {
           {isSubmit ? 'Loading...' : 'Send message'}
         </Button>
       </form>
-      {modal && <FormSuccessModal modal={modal} setModal={setModal}/>}
+      {modal && <ContactFormSuccessModal modal={modal} setModal={setModal}/>}
     </>
   );
 };
