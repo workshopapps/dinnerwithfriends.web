@@ -17,6 +17,7 @@ import {
   GET_USER,
   DELETE_EVENT,
   EVENT_BY_TOKEN,
+  CONTACT
 } from "./rootEndPoints.js";
 
 const register = async (params) => {
@@ -140,6 +141,15 @@ const addParticipants = async (params) => {
   }
 }
 
+const contact = async (params) => {
+  try {
+    const result = await fetchApi.post(`${BASE_URL}/${CONTACT}`, params);
+    return result;
+  } catch (err) {
+    return err;
+  }
+}
+
 const deleteEvent = async (id) => {
   try {
     const result = await fetchApi.deleteE(`${BASE_URL}/${DELETE_EVENT}/${id}`);
@@ -194,7 +204,8 @@ const userServices = {
   sendInvite,
   getUser,
   updateUser,
-  getEventsByToken
+  getEventsByToken,
+  contact
 };
 
 export default userServices;

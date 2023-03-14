@@ -9,11 +9,12 @@ const InputComponent = (props) => {
       </label>
       <input
         type={props.type}
+        name={props.name}
         id={props.id}
         placeholder={props.placeholder}
         value={props.value}
         onChange={props.onChange}
-        onBlur={props.onBlur}
+        required
         className={`w-full border bg-transparent rounded-lg p-3 outline-0 placeholder:text-slate-400 placeholder:text-base placeholder:font-medium  ${
           props.inputInvalid
             ? "border-red-500 focus:border-red-500 text-red-500"
