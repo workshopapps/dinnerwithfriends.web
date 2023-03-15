@@ -139,7 +139,7 @@ const EventSummary = () => {
 						<div className='flex items-center'>
 						    <BsClock className='text-xl' />
 							<p className='text-base font-normal ml-2'>
-								{location.state.event.host_prefered_time.split('-')[1]}
+								{moment(location.state.event.host_prefered_time.split('-')[1].replace(":", ""), "hmm").format("HH:mm a")}
 							</p>
 						</div>
 						<div className='flex items-center'>
