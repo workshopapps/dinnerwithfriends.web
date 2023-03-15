@@ -10,6 +10,7 @@ import userServices from "../../../services/userServices";
 export const LinkInvite = () => {
   const [eventData, setEventData] = useState("");
   const [modal, setModal] = useState(false);
+  const [isSubmit, setIsSubmit] = useState(false)
 
   const preferredDate = eventData
     ? eventData?.host_prefered_time.replace("-", "")
@@ -84,12 +85,15 @@ export const LinkInvite = () => {
   };
 
   const addParticipant = (e) => {
+    setIsSubmit(true)
     e.preventDefault();
     const { fullname, email } = inviteDetails;
     if (!fullname || !email) {
       setResultMsg("Please fill all fields");
+      setIsSubmit(false)
       return;
     }
+    
     const participantsData = {
       ...inviteDetails,
       event_id: eventData.id,
@@ -101,10 +105,19 @@ export const LinkInvite = () => {
     userServices
       .addParticipants(participantsData)
       .then((response) => {
-        if (response.status === "success") {
+        if (response.status === "error") {
+          setIsSubmit(false)
           setTimeout(() => {
             setResultMsg({ message: "Successful!" });
           }, 2000);
+        } else if(response.status === "success") {
+          setIsSubmit(false)
+          setTimeout(() => {
+            setResultMsg({ message: "Successful!" });
+          }, 2000);
+        } else if(response.status === 'fail') {
+          setIsSubmit(false)
+          setResultMsg({ message: "You have already accepted this invite" });
         } else {
           setResultMsg(response.message);
         }
@@ -139,7 +152,7 @@ export const LinkInvite = () => {
     <>
     <div>
       <div>
-        <div className="mt-28 mb-10 mx-auto">
+        <div className="mt-28 mb-10 mx-auto px-[20px]">
           <div className="mx-2 md:mx-0 text-center w-full">
             <h1 className="text-2xl font-bold md:text-3xl">Hello, there.</h1>
             <p className="leading-6 text-gray-600 font-sm">
@@ -210,8 +223,8 @@ export const LinkInvite = () => {
                 <p
                   className={
                     resultMsg.message === "Successful!"
-                      ? "text-green-600"
-                      : "text-red-600"
+                      ? "text-green-600 text-center w-full"
+                      : "text-red-600 text-center w-full"
                   }
                 >
                   {resultMsg.message}
@@ -219,7 +232,7 @@ export const LinkInvite = () => {
               ) : (
                 ""
               )}
-              <form className="flex-1 w-full" onSubmit={addParticipant}>
+              <form className="flex-1 w-full" onSubmit={addParticipant} id="form">
                 <div className="my-4 flex flex-col">
                   <label className="text-base font-semibold mb-1">
                     Full Name
@@ -284,24 +297,26 @@ export const LinkInvite = () => {
                     />
                   </div>
                 )}
+                <div className="my-[50px] md:mt-[70px] flex w-full md:w-[50%] md:mx-auto justify-center gap-8 md:justify-between">
+                <button
+                  type="submit"
+                  form="form"
+                  className="font-medium rounded-[4px] bg-[#1070ff] text-white py-[12px] md:px-[32px] px-1.5 md:text-[20px] text-base"
+                  onClick={addParticipant}
+                >
+                  {isSubmit ? 'Please wait...' : 'Send Invite'}
+                </button>
+                <button
+                  type="button"
+                  className="rounded-[4px] border border-[#1070FF] text-[#1070FF] py-[12px] md:px-[32px] px-1.5 md:text-lg text-base"
+                  onClick={() => declineInvite()}
+                >
+                  Decline Invite
+                </button>
+              </div>
               </form>
             </div>
-            <div className="my-[50px] md:mt-[70px] flex w-full md:w-[50%] md:mx-auto justify-center gap-8 md:justify-between">
-            <button
-              type="submit"
-              className="font-medium rounded-[4px] bg-[#1070ff] text-white py-[12px] md:px-[32px] px-1.5 md:text-[20px] text-base"
-              onClick={addParticipant}
-            >
-              Accept Invite
-            </button>
-            <button
-              type="button"
-              className="rounded-[4px] border border-[#1070FF] text-[#1070FF] py-[12px] md:px-[32px] px-1.5 md:text-lg text-base"
-              onClick={() => declineInvite()}
-            >
-              Decline Invite
-            </button>
-          </div>
+
           </div>
         </div>
       </div>
