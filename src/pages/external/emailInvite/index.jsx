@@ -64,10 +64,11 @@ export const EmailInvite = () => {
     if (result.status === "success") {
       setTimeout(() => {
         setResultMsg({ message: "Successful!" });
-        // navigate("/event_invite_response");
       }, 2000);
-    } else if (result.status) {
-      setResultMsg(result.message);
+    } else if (result.status === 'error') {
+      setTimeout(() => {
+        setResultMsg({ message: "Successful!" });
+      }, 2000);
     }
   };
 
@@ -87,9 +88,16 @@ export const EmailInvite = () => {
           setResultMsg("");
           setIsLoading(false);
           setModal(true)
-        } else if (result.status) {
-          setResultMsg(result.message);
+        } else if (result.status === "error") {
+          setSuccessMessage("Successful!");
+          setResultMsg("");
           setIsLoading(false);
+          setModal(true)
+        } else if(result.status === "fail") {
+          setResultMsg("You have already accepted this invite");
+          setIsLoading(false);
+        } else {
+          setResultMsg(result.message);
         }
       })
       .catch((error) => {
@@ -139,7 +147,7 @@ export const EmailInvite = () => {
                 <br /> You can view the details below..
               </p>
               {resultMsg ? (
-                <p className="text-red-500 font-bold">{resultMsg}</p>
+                <p className="text-red-500 font-bold text-center w-full">{resultMsg}</p>
               ) : (
                 ""
               )}
